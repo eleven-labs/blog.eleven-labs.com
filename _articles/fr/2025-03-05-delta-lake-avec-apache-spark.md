@@ -1,11 +1,11 @@
 ---
 contentType: article
 lang: fr
-date: '2025-03-05'
-slug: delta-lake-avec-apache-spark
-title: Delta Lake avec Apache Spark
+date: '2025-02-19'
+slug: delta-lake-apache-spark
+title: Créer un Delta Lake avec Apache Spark : 
 excerpt: >-
-  Il existe différent format de fichier pour stocker la donnée : parquet, avro, csv. Connaissez-vous le format Delta Lake ? Découvrons les fonctionnalités de ce format.
+  Il existe différents formats de fichier pour stocker la donnée : parquet, avro, csv. Connaissez-vous le format Delta Lake ? Découvrons ensemble les fonctionnalités de ce format.
 categories:
   - architecture
 authors:
@@ -19,13 +19,13 @@ cover:
   alt: Delta Lake avec Apache Spark
   path: /imgs/articles/2025-03-05-delta-lake-avec-apache-spark/cover.jpg
 seo:
-  title: "Delta Lake avec Apache Spark"
-  description: "Delta Lake : Optimisez vos coûts de stockage tout en ayant le principe ACID des bases de données"
+  title: "Data Lake avec Apache Spark : Guide complet pour l’intégration et l’analyse de données"
+  description: "Découvrez comment Apache Spark optimise votre Data Lake : stockage, traitement et analyse de données à grande échelle. Guide pas à pas et exemples concrets."
 ---
 
 ## Qu'est ce que le format de fichier Delta Lake ?
 
-Initié par les créateur du moteur [Apache Spark](/fr/demarrer-apache-spark/), et également de la solution SaaS [Databricks](https://www.databricks.com/fr), ce format est une surcouche au format [parquet](https://parquet.apache.org/). Il apporte le concept [ACID](https://fr.wikipedia.org/wiki/Propri%C3%A9t%C3%A9s_ACID) (Atomicité, Cohérence, Isolation et Durabilité) sur les fichiers parquet dans du stockage de type objet (tel que [Google Cloud Storage](https://cloud.google.com/storage/), [AWS S3](https://aws.amazon.com/fr/s3/)). Ansi, nous pouvons bénéficier d'un stockage à très bas coût et les bénéfices d'une table dans une base de données (en particulier la notion ACID).
+Initié par les créateurs du moteur [Apache Spark](/fr/demarrer-apache-spark/), et également de la solution SaaS [Databricks](https://www.databricks.com/fr), ce format est une surcouche au format [parquet](https://parquet.apache.org/). Il apporte le concept [ACID](https://fr.wikipedia.org/wiki/Propri%C3%A9t%C3%A9s_ACID) (Atomicité, Cohérence, Isolation et Durabilité) sur les fichiers parquet dans du stockage de type objet (tel que [Google Cloud Storage](https://cloud.google.com/storage/), [AWS S3](https://aws.amazon.com/fr/s3/)). Ansi, nous pouvons bénéficier d'un stockage à très bas coût et les bénéfices d'une table dans une base de données (en particulier la notion ACID).
 
 ## Les bénéfices d'utiliser Delta Lake
 
@@ -37,7 +37,7 @@ Comme vu précédemment, il y a la notion de transaction ACID, à cela s'ajoute 
 
 Le format _Delta Lake_ se veut être les fondations d'une architecture de type _[Lakehouse](https://www.databricks.com/fr/glossary/data-lakehouse)_. L'industrie de la data évolue vers cette architecture afin de réduire drastriquement les coûts, et cela permet également de réduire la barrière entre les différents utilisateurs. Avec l'avènement de l'intelligence artificielle, les équipes _Data Scientiest_ ont besoin d'accéder à de la données fraîche.
 
-## Installer et configuration Spark pour utiliser Delta Lake
+## Installation et configuration d'Apache Spark pour utiliser Delta Lake
 
 Reprenons le code de notre précédent article [Démarrer avec Apache Spark étape par étape](/fr/demarrer-apache-spark/).
 
@@ -105,7 +105,7 @@ spark = (
 )
 ```
 
-Votre session Spark est prêt pour utiliser le format _Delta Lake_.
+Votre session Spark est prête pour utiliser le format _Delta Lake_.
 
 ## Enregistrement de la table en delta
 
@@ -115,7 +115,7 @@ Lors de l'écriture de la table dans le dossier `datalake/`, il faut changer le 
 df_clean.write.format("delta").partitionBy("date").save("datalake/count-bike-nantes")
 ```
 
-Voilà, votre table est maintenant enregistré format delta.
+Voilà, votre table est maintenant enregistrée au format delta.
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
 Si vous relancez le script, vous allez avoir une erreur car le répertoire existe déjà. Soit vous supprimez le dossier, soit vous ajoutez l'option `mode("overwrite")` pour écraser la table existante.
@@ -125,7 +125,7 @@ Si vous relancez le script, vous allez avoir une erreur car le répertoire exist
 
 Il y a eu une mise à jour de la source de données. Il faut donc les intégrer. Pour cela, nous allons utiliser la fonction `merge()` de la lib Python _Delta Lake_.
 
-Cette fonction va automatiquement faire la mise à jour de la table en fonction des conditions. Si la ligne est nouvelle dans la source, alors elle sera ajouté. Si elle existe déjà et qu'elle a changé, alors la ligne dans la table des destinations elle sera mise à jour.
+Cette fonction va automatiquement faire la mise à jour de la table en fonction des conditions. Si la ligne est nouvelle dans la source, alors elle sera ajoutée. Si elle existe déjà et qu'elle a changé, alors la ligne dans la table des destinations elle sera mise à jour.
 
 Voyons en détail son utilisation.
 
@@ -143,7 +143,7 @@ pip install delta-spark==3.2.0
 Ajoutez cette dépendance dans votre fichier requirements.txt ou autre gestionnaire de paquet Python.
 </div>
 
-Nous effectuons toujours notre calcul avec notre nouveau fichier source. Ensuite, nous avons besoin de lire notre table de destination. Généralement, cette table est qualifié de _Gold_ (Or) car c'est une table avec des données agrégés et à forte valeur.
+Nous effectuons toujours notre calcul avec notre nouveau fichier source. Ensuite, nous avons besoin de lire notre table de destination. Généralement, cette table est qualifiée de _Gold_ (Or) car c'est une table avec des données agrégées et à forte valeur.
 
 Voici le nouveau fichier à ingérer avec les nouvelles données. Il y a une mise à jour et une nouvelle ligne.
 
@@ -188,7 +188,7 @@ La fonction `merge()` prend en entrée un _[DataFrame](https://spark.apache.org/
 
 Ensuite, des conditions de merge sont appliqués :
 - `whenMatchedUpdateAll()`, s'il existe une correspondance entre les deux _DataFrame_ sur ces clefs, alors la ligne dans le _DataFrame_ de destination (la gold) est mise à jour.
-- `whenNotMatchedInsertAll()`, s'il n'existe pas de correspondance entre les deux _DataFrame_ sur ces clefs, alors la ligne dans le _DataFrame_ de destination (la gold) est ajoutée. destination.
+- `whenNotMatchedInsertAll()`, s'il n'existe pas de correspondance entre les deux _DataFrame_ sur ces clefs, alors la ligne dans le _DataFrame_ de destination (la gold) est ajoutée.
 
 Enfin, la fonction `execute()` va appliquer les modifications.
 
@@ -217,11 +217,11 @@ Après l'exécution, la table est à jour :
 +-----------+--------------------+-----+----------+-------------+
 ```
 
-En quelques lignes, votre table sera facilement mis à jour. En fonction de votre besoin métier, ajustez les conditons de merge.
+En quelques lignes, votre table sera facilement mise à jour. En fonction de votre besoin métier, ajustez les conditons de merge.
 
 ## Revenir à une version précédente
 
-En plus de respecter les principes ACID, le format _Delta Lake_ a d'autre fonctionnalité tel que le retour en arrière.
+En plus de respecter les principes ACID, le format _Delta Lake_ a d'autres fonctionnalités tel que le retour en arrière.
 
 Ainsi, si je souhaite annuler une opération, je peux revenir à une version précédente de la table.
 
@@ -293,7 +293,7 @@ Contenu de la table :
 
 La gestion des versions dans _Delta Lake_ permet de facilement retourner en arrière en cas d'erreur.
 
-## Conclusion
+## Conclusion : optimiser vos coûts de stockage tout en ayant le principe ACID des bases de données
 
 A travers cet article, nous avons découvert un format de fichier qui permet de stocker des données comme dans une base de données traditionnelle. Elle facilite la manipulation et la mise à jour des tables grâce à la fonction de `merge()`. Les fonctionnalités d'historique et de retour en arrière offre une sécurité pour supplémentaire en cas d'erreur de manipulation. Il est alors aisé de faire un retour en arrière.
 
