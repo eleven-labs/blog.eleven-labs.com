@@ -19,8 +19,8 @@ cover:
   alt: Delta Lake avec Apache Spark
   path: /imgs/articles/2025-03-05-delta-lake-avec-apache-spark/cover.jpg
 seo:
-  title: "Data Lake avec Apache Spark : Guide complet pour l’intégration et l’analyse de données"
-  description: "Découvrez comment Apache Spark optimise votre Data Lake : stockage, traitement et analyse de données à grande échelle. Guide pas à pas et exemples concrets."
+  title: "Data Lake avec Apache Spark : Guide pour l’analyse de données"
+  description: "Découvrez comment Apache Spark optimise votre Data Lake : stockage, traitement et analyse de données à grande échelle. Guide pas à pas et exemple concret."
 ---
 
 ## Qu'est ce que le format de fichier Delta Lake ?
