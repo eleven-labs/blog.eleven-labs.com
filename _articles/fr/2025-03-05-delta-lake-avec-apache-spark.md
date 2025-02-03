@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: '2025-02-19'
+date: '2025-03-05'
 slug: delta-lake-apache-spark
 title: Créer un Delta Lake avec Apache Spark
 excerpt: >-
