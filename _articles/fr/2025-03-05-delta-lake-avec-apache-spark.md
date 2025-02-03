@@ -3,7 +3,7 @@ contentType: article
 lang: fr
 date: '2025-02-19'
 slug: delta-lake-apache-spark
-title: Créer un Delta Lake avec Apache Spark : 
+title: Créer un Delta Lake avec Apache Spark
 excerpt: >-
   Il existe différents formats de fichier pour stocker la donnée : parquet, avro, csv. Connaissez-vous le format Delta Lake ? Découvrons ensemble les fonctionnalités de ce format.
 categories:
