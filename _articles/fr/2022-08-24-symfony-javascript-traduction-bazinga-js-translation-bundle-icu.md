@@ -12,6 +12,8 @@ excerpt: >-
   implémentent le front dans l'application Symfony avec Twig et du Javascript.
   Nous allons refaire le point sur le fonctionnement des traductions et sur le
   formattage ICU.
+cover:
+  path: /imgs/articles/2022-08-24-symfony-javascript-traduction-bazinga-js-translation-bundle-icu/cover.jpg
 categories:
   - php
   - javascript

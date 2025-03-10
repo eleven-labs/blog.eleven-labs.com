@@ -11,6 +11,10 @@ excerpt: >
   notre expérience pour vous donner une meilleure vision de pourquoi on n'est
   pas si nombreuses, pourquoi certaines abandonnent, et, surtout, comment faire
   pour que ça change.
+cover:
+  alt: Les femmes dans l'informatique
+  path: /imgs/articles/2021-03-08-les-femmes-dans-linformatique/cover.jpg
+  position: southeast
 categories: []
 authors:
   - marishka
