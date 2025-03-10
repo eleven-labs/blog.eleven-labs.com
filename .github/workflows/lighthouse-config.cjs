@@ -9,12 +9,12 @@ module.exports = {
     skipAudits: ['uses-http2'],
   },
   audits: [
-    'metrics/first-contentful-paint-3g',
+    'metrics/first-contentful-paint',
   ],
   categories: {
     performance: ({
       auditRefs: [
-        { id: 'first-contentful-paint-3g', weight: 0 },
+        { id: 'first-contentful-paint', weight: 0 },
       ],
     }),
   },
