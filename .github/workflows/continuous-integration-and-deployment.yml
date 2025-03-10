@@ -96,7 +96,7 @@ jobs:
 
       - name: Audit URLs using Lighthouse
         id: lighthouse_audit
-        uses: treosh/lighthouse-ci-action@v9
+        uses: treosh/lighthouse-ci-action@v12
         with:
           urls: |
             ${{ env.ENV_URL }}/
