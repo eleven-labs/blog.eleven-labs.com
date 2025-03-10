@@ -9,7 +9,7 @@ module.exports = {
     skipAudits: ['uses-http2'],
   },
   audits: [
-    'metrics/first-contentful-paint-3g',
+    'metrics/first-contentful-paint',
   ],
   categories: {
     performance: ({
