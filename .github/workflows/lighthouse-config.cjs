@@ -14,7 +14,7 @@ module.exports = {
   categories: {
     performance: ({
       auditRefs: [
-        { id: 'first-contentful-paint-3g', weight: 0 },
+        { id: 'first-contentful-paint', weight: 0 },
       ],
     }),
   },
