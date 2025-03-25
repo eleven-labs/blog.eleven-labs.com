@@ -27,7 +27,7 @@ Ce mardi 11 Mars 2025, je me suis rendue au l’événement [**Build with Gemini
 
 Mon utilisation de l’IA avant d’y aller se résumait à utiliser des modèles conversationnelles comme ChatGPT ou Mistral, ou des assistants comme Codium sur mon IDE, et j’avais envie de passer au niveau supérieur.
 
-![Keynote Build with Gemini]({BASE_URL}/imgs/articles/2025-03-26-mon-premier-evenement-sur-l-ia-build-with-gemini/keynote.jpg)
+![Keynote Build with Gemini]({BASE_URL}/imgs/articles/2025-03-26-mon-premier-evenement-sur-l-ia-build-with-gemini/keynote.jpg?width=500)
 
 ## Les conférences sur les cas d’utilisations
 
@@ -36,17 +36,17 @@ Parmi les conférences que j’ai le plus apprécié, il y a les deux présenté
 Matt a su expliquer l’ensemble de sa démarche en utilisant des outils Google, qu’ils soient IA ou non, et d’insister sur l’importance de la *data*.
 Dans le cas des cartes Pokémon, la problématique était de pouvoir facilement, en prenant en photo puis en passant ses cartes au fur et à mesure devant une webcam, d’identifier exactement la carte : nom et extension. Grâce à Vertex AI, il a entraîné son propre modèle pour reconnaître une carte une photo (même si maintenant on peut le faire facilement avec Google AI Studio) et l’a couplé avec Cloud Run pour avoir un endpoint accessible.
 
-![Entraînez votre propre modèle de reconnaissance de cartes Pokémons, avec Vertex AI et AlloyDB]({BASE_URL}/imgs/articles/2025-03-26-mon-premier-evenement-sur-l-ia-build-with-gemini/pokemon.jpg)
+![Entraînez votre propre modèle de reconnaissance de cartes Pokémons, avec Vertex AI et AlloyDB]({BASE_URL}/imgs/articles/2025-03-26-mon-premier-evenement-sur-l-ia-build-with-gemini/pokemon.jpg?width=500)
 
 Pour identifier et comparer sa carte, il a inséré dans une base de données AlloyDB l’ensemble des cartes existantes. Mais comment comparer 2 images ? Pour cela, il leur crée un *embedding*, une représentation vectorielle des données qui capturent ses caractéristiques essentielles. Dans le cas d’une image, ça sera les bords, formes, motifs, textures, couleurs, etc. Cela donne un vecteur à plusieurs centaines de dimensions qui est inséré en base de données.
 
 AlloyDB est un fork de Postgresql, et grâce à l’extension [**pgvector**](https://www.postgresql.org/about/news/pgvector-070-released-2852/), il est possible de comparer des vecteurs entre eux.
 
-![Slide montrant le comparaison des vecteurs]({BASE_URL}/imgs/articles/2025-03-26-mon-premier-evenement-sur-l-ia-build-with-gemini/vector_slides.jpg)
+![Slide montrant le comparaison des vecteurs]({BASE_URL}/imgs/articles/2025-03-26-mon-premier-evenement-sur-l-ia-build-with-gemini/vector_slides.jpg?width=500)
 
 Il existe plusieurs façons de comparer, mais nous allons rester sur celle qui nous intéresse : les images les plus proches que notre propre carte.
 *ici mettre code SQL*
-![Slide montrant la requête pour comparer des vecteurs]({BASE_URL}/imgs/articles/2025-03-26-mon-premier-evenement-sur-l-ia-build-with-gemini/vector_sql.jpg)
+![Slide montrant la requête pour comparer des vecteurs]({BASE_URL}/imgs/articles/2025-03-26-mon-premier-evenement-sur-l-ia-build-with-gemini/vector_sql.jpg?width=500)
 
 
 Grâce à toutes ses explications, j’ai envie de faire la même chose pour trier ma collection de timbres.
@@ -58,7 +58,7 @@ Sa deuxième conférence apportait de nouveaux outils que je ne connaissais pas 
 La conférence *Plateforme d'IA générative : architecture évolutive et maîtrisée* présenté par Didier Girard et Aurélien Pelletier m’a éclairée justement sur plusieurs notions de l’IA, mais aussi comment l’intégrer dans les SI.
 Ils ont remis l’accent sur l’importance de la *data* pour avoir une bonne IA, et ont présenté et expliqués les différents éléments qu’on peut trouver dans l’IA et dans son architecture.
 
-![IA et architecture]({BASE_URL}/imgs/articles/2025-03-26-mon-premier-evenement-sur-l-ia-build-with-gemini/archi.jpg)
+![IA et architecture]({BASE_URL}/imgs/articles/2025-03-26-mon-premier-evenement-sur-l-ia-build-with-gemini/archi.jpg?width=500)
 
 ### Les models
 
@@ -79,7 +79,7 @@ Il s’agit d’outil permettant d’organiser et d’automatiser des processus.
 
 Comme parlé plus haut, il y a LangChain, mais qui serait déjà dépassé par [LangGraph](https://www.langchain.com/langgraph).
 
-<div class="admonition tip" markdown="1"><p class="admonition-title"></p>
+<div class="admonition tip" markdown="1"><p class="admonition-title">Conclusion</p>
 L’IA avance très rapidement, et tout est obsolète au bout de 3 mois. Cela ne veut pas dire qu’il faut attendre que ça se stabilise, mais plutôt d’avoir une architecture résiliente pour pouvoir changer rapidement. A la fin, ils ont rappelé l’importance d’avoir une gouvernance fort sur la Data.
 
 </div>
