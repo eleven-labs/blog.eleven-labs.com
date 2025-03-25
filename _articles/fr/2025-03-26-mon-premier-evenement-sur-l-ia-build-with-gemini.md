@@ -2,11 +2,11 @@
 contentType: article
 lang: fr
 date: 2025-03-26
-slug: mon-premier-evenement-sur-l-ia-build-with-gemini
+slug: build-with-gemini-google-ia
 title: "Mon premier événement sur l'IA : Build with Gemini"
 excerpt: "Retour sur ma première journée de conférences autour de l'IA au Grand Rex à Paris"
 cover:
-    alt: "Mon premier événement sur l'IA : Build with Gemini"
+    alt: "Conférence Build with Gemini par Google sur l'intelligence artificielle au Grand Rex à Paris"
     path: /imgs/articles/2025-03-26-mon-premier-evenement-sur-l-ia-build-with-gemini/cover.jpg
     position: left top
 categories:
@@ -16,20 +16,19 @@ keywords:
 - Google
 - Gemini
 - Architecture
-- Pokemon
 authors:
     - marianne
 seo:
-    title: "Mon premier événement sur l'IA : Build with Gemini"
-    description: "Retour sur ma première journée de conférences autour de l'IA au Grand Rex à Paris"
+    title: "Retour sur ma première journée de conférences autour de l'IA au Grand Rex à Paris"
+    description: "Conférences, cas d’usage concrets, architecture IA… Retour d’expérience sur l’événement Build with Gemini, ma première immersion dans le monde de l’intelligence artificielle organisée par Google à Paris."
 ---
-Ce mardi 11 Mars 2025, je me suis rendue au l’événement [**Build with Gemini**](https://cloudonair.withgoogle.com/events/build-with-gemini?utm_source=sales_contacts&utm_medium=email&utm_campaign=FY25-Q1-emea-EME27592-physicalevent-er-developers-summit-fr&utm_content=victoria&utm_term=-), une journée de conférences tournées autour de l’IA, organisé par Google au Grand Rex à Paris.
+Ce mardi 11 Mars 2025, je me suis rendue à l’événement [**Build with Gemini**](https://cloudonair.withgoogle.com/events/build-with-gemini?utm_source=sales_contacts&utm_medium=email&utm_campaign=FY25-Q1-emea-EME27592-physicalevent-er-developers-summit-fr&utm_content=victoria&utm_term=-), une journée de conférences autour de l’IA organisée par Google au Grand Rex à Paris.
 
-Mon utilisation de l’IA avant d’y aller se résumait à utiliser des modèles conversationnelles comme ChatGPT ou Mistral, ou des assistants comme Codium sur mon IDE, et j’avais envie de passer au niveau supérieur.
+Mon utilisation de l’IA avant d’y aller se limitait à des modèles conversationnels comme ChatGPT ou Mistral, ou à des assistants comme Codeium sur mon IDE. J’avais envie de passer au niveau supérieur.
 
 ![Keynote Build with Gemini]({BASE_URL}/imgs/articles/2025-03-26-mon-premier-evenement-sur-l-ia-build-with-gemini/keynote.jpg?width=500)
 
-## Les conférences sur les cas d’utilisations
+## Les conférences sur les cas d’utilisation
 
 Parmi les conférences que j’ai le plus apprécié, il y a les deux présentés par [Matt Cornillon](https://github.com/Matthieu68857) intitulés  *Entraînez votre propre modèle de reconnaissance de cartes Pokémons, avec Vertex AI et AlloyDB* et *Discutez avec vos données : créer un chatbot pour jeux de société avec AlloyDB, Gemini et LangChain*. On ne va pas se mentir, les titres évidement geek (quasiment putaclic) m’ont attirée, mais avoir des exemples de cas d’usages concrets sont beaucoup plus pédagogiques.
 
