@@ -19,8 +19,8 @@ keywords:
 authors:
     - marianne
 seo:
-    title: "Retour sur ma première journée de conférences autour de l'IA au Grand Rex à Paris"
-    description: "Conférences, cas d’usage concrets, architecture IA… Retour d’expérience sur l’événement Build with Gemini, ma première immersion dans le monde de l’intelligence artificielle organisée par Google à Paris."
+    title: "Build with Gemini : Conférence IA"
+    description: "Conférences, cas d’usage concrets, architecture IA… Retour d’expérience sur l’événement Build with Gemini."
 ---
 Ce mardi 11 Mars 2025, je me suis rendue à l’événement [**Build with Gemini**](https://cloudonair.withgoogle.com/events/build-with-gemini?utm_source=sales_contacts&utm_medium=email&utm_campaign=FY25-Q1-emea-EME27592-physicalevent-er-developers-summit-fr&utm_content=victoria&utm_term=-), une journée de conférences autour de l’IA organisée par Google au Grand Rex à Paris.
 
