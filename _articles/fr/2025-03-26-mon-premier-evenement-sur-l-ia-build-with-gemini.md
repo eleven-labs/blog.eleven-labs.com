@@ -37,7 +37,7 @@ Dans le cas des cartes Pokémon, la problématique était de pouvoir facilement,
 
 ![Entraînez votre propre modèle de reconnaissance de cartes Pokémons, avec Vertex AI et AlloyDB]({BASE_URL}/imgs/articles/2025-03-26-mon-premier-evenement-sur-l-ia-build-with-gemini/pokemon.jpg?width=500)
 
-Pour identifier et comparer sa carte, il a inséré dans une base de données AlloyDB l’ensemble des cartes existantes. Mais comment comparer 2 images ? Pour cela, il leur crée un *embedding*, une représentation vectorielle des données qui capturent ses caractéristiques essentielles. Dans le cas d’une image, ça sera les bords, formes, motifs, textures, couleurs, etc. Cela donne un vecteur à plusieurs centaines de dimensions qui est inséré en base de données.
+Pour identifier et comparer sa carte, il a inséré dans une base de données AlloyDB l’ensemble des cartes existantes. Mais comment comparer 2 images ? Pour cela, il leur applique un *embedding* qui capturent ses caractéristiques essentielles pour créer une représentation vectorielle des données. Dans le cas d’une image, ça sera les bords, formes, motifs, textures, couleurs, etc. Cela donne un vecteur à plusieurs centaines de dimensions qui sera inséré en base de données.
 
 AlloyDB est un fork de Postgresql, et grâce à l’extension [**pgvector**](https://www.postgresql.org/about/news/pgvector-070-released-2852/), il est possible de comparer des vecteurs entre eux.
 
