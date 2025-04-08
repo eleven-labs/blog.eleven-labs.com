@@ -64,9 +64,9 @@ Dans la barre de recherche, cela se traduit souvent par :
 
 ### Exemple : la barre de recherche de YouTube
 
-![Interface de la barre de recherche sur YouTube, affichage visuel minimaliste]({BASE_URL}/imgs/articles/2025-04-07-barre-recherche-accessible/yt-visuel.png)
+![Interface de la barre de recherche sur YouTube, affichage visuel minimaliste]({BASE_URL}/imgs/articles/2025-04-07-concevoir-barre-recherche-accessible-react-html/yt-visuel.png)
 
-![Structure HTML de la barre de recherche YouTube, inspectée dans l'outil développeur]({BASE_URL}/imgs/articles/2025-04-07-barre-recherche-accessible/yt-html.png)
+![Structure HTML de la barre de recherche YouTube, inspectée dans l'outil développeur]({BASE_URL}/imgs/articles/2025-04-07-concevoir-barre-recherche-accessible-react-html/yt-html.png)
 
 Elle illustre parfaitement cette approche minimaliste, avec ses forces et ses points faibles en matière d’accessibilité.
 
@@ -125,7 +125,7 @@ Ce modèle est inclusif pour :
 
 ### **Version React / MUI**
 
-![Composant React avec Material UI affichant une barre de recherche accessible avec label visible]({BASE_URL}/imgs/articles/2025-04-07-barre-recherche-accessible/a11y-react.png)
+![Composant React avec Material UI affichant une barre de recherche accessible avec label visible]({BASE_URL}/imgs/articles/2025-04-07-concevoir-barre-recherche-accessible-react-html/a11y-react.png)
 
 ```tsx
 "use client";
@@ -223,19 +223,19 @@ L’idée est simple : **conserver la structure accessible dans le code, même s
 
 - [**Access42**](https://access42.net/) utilise des labels masqués mais accessibles dans ses composants.
 
-![Barre de recherche accessible utilisée par Access42 avec label masqué mais accessible]({BASE_URL}/imgs/articles/2025-04-07-barre-recherche-accessible/access42-visuel.png)
+![Barre de recherche accessible utilisée par Access42 avec label masqué mais accessible]({BASE_URL}/imgs/articles/2025-04-07-concevoir-barre-recherche-accessible-react-html/access42-visuel.png)
 
-![Structure HTML inspectée de la barre de recherche d’Access42]({BASE_URL}/imgs/articles/2025-04-07-barre-recherche-accessible/access42-html.png)
+![Structure HTML inspectée de la barre de recherche d’Access42]({BASE_URL}/imgs/articles/2025-04-07-concevoir-barre-recherche-accessible-react-html/access42-html.png)
 
 - [**DSFR**](https://www.systeme-de-design.gouv.fr/) **(Design System de l’Etat Français)** propose des [barres de recherche](https://www.systeme-de-design.gouv.fr/composants-et-modeles/composants/barre-de-recherche/) épurées, avec une structure accessible malgré un design discret.
 
-![Barre de recherche du Design System de l’État Français (DSFR) avec interface épurée]({BASE_URL}/imgs/articles/2025-04-07-barre-recherche-accessible/dsfr-visuel.png)
+![Barre de recherche du Design System de l’État Français (DSFR) avec interface épurée]({BASE_URL}/imgs/articles/2025-04-07-concevoir-barre-recherche-accessible-react-html/dsfr-visuel.png)
 
-![Code HTML de la barre de recherche DSFR affiché dans l’inspecteur]({BASE_URL}/imgs/articles/2025-04-07-barre-recherche-accessible/dsfr-html.png)
+![Code HTML de la barre de recherche DSFR affiché dans l’inspecteur]({BASE_URL}/imgs/articles/2025-04-07-concevoir-barre-recherche-accessible-react-html/dsfr-html.png)
 
 ### **Version React / MUI de la barre minimaliste accessible**
 
-![Composant React minimaliste avec MUI affichant une barre de recherche épurée mais accessible]({BASE_URL}/imgs/articles/2025-04-07-barre-recherche-accessible/a11y-react-minimalism.png)
+![Composant React minimaliste avec MUI affichant une barre de recherche épurée mais accessible]({BASE_URL}/imgs/articles/2025-04-07-concevoir-barre-recherche-accessible-react-html/a11y-react-minimalism.png)
 
 ```tsx
 "use client";
@@ -328,7 +328,7 @@ Un minimalisme accessible existe, mais il demande une rigueur de conception pour
 
 Pour finir, voici un exemple concret de deux barres de recherche que nous avons vues ensemble :
 
-![Comparatif entre la barre de recherche minimaliste et la version avec label visible et bouton texte]({BASE_URL}/imgs/articles/2025-04-07-barre-recherche-accessible/comparatif.png)
+![Comparatif entre la barre de recherche minimaliste et la version avec label visible et bouton texte]({BASE_URL}/imgs/articles/2025-04-07-concevoir-barre-recherche-accessible-react-html/comparatif.png)
 
 > En haut, la version minimaliste : épurée, discrète, mais avec des repères réduits.
 > 
