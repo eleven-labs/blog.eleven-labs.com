@@ -25,8 +25,8 @@ keywords:
 authors:
     - marigo
 seo:
-    title: "Concevoir une barre de recherche accessible: bonnes pratiques et exemples React/MUI"
-    description: Concevez une barre de recherche accessible et conforme RGAA grâce à ce guide complet avec bonnes pratiques, erreurs à éviter et exemples HTML et React/MUI.
+  title: "Concevoir une barre de recherche accessible en React et HTML"
+  description: Concevez une barre de recherche accessible et conforme RGAA grâce à ce guide complet avec bonnes pratiques, erreurs à éviter et exemples HTML et React/MUI.
 ---
 
 # Concevoir une barre de recherche accessible : méthodes, erreurs fréquentes et bonnes pratiques
