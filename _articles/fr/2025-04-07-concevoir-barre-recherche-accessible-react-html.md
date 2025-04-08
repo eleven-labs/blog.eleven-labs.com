@@ -3,7 +3,7 @@ contentType: article
 lang: fr
 date: 2025-04-07
 slug: concevoir-barre-recherche-accessible-react-html
-title: "Concevoir une barre de recherche accessible: guide complet avec exemples React et HTML"
+title: "Concevoir une barre de recherche accessible : méthodes, erreurs fréquentes et bonnes pratiques"
 excerpt: Apprenez à concevoir une barre de recherche accessible pour le web, conforme RGAA. Bonnes pratiques, erreurs fréquentes à éviter et exemples concrets en HTML et React/MUI.
 cover:
     alt: Illustration accessibilité d'une barre de recherche pour le web inclusif
@@ -28,8 +28,6 @@ seo:
   title: "Concevoir une barre de recherche accessible en React et HTML"
   description: Concevez une barre de recherche accessible et conforme RGAA grâce à ce guide complet avec bonnes pratiques, erreurs à éviter et exemples HTML et React/MUI.
 ---
-
-# Concevoir une barre de recherche accessible : méthodes, erreurs fréquentes et bonnes pratiques
 
 ## Introduction
 
