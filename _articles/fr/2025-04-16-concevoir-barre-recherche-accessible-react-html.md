@@ -31,18 +31,14 @@ seo:
 
 ## Introduction
 
-Sur de nombreux sites web, la barre de recherche est un point d’entrée essentiel.
+Sur de nombreux sites web, la barre de recherche est un composant d'interface essentiel.
 
-Pourtant, malgré son apparente simplicité, elle est souvent négligée dans les projets d’accessibilité.
-
-Trop minimaliste, elle risque de devenir incompréhensible ou inutilisable pour certains utilisateurs.
-
-Trop complexe ou mal structurée, elle peut créer des obstacles pour les personnes qui s’appuient sur des technologies d’assistance ou qui rencontrent des difficultés cognitives, motrices ou visuelles.
+Pourtant, mal conçue, elle peut devenir un véritable obstacle pour les utilisateurs qui dépendent des technologies d'assistance ou rencontrent des difficultés cognitives, motrices ou visuelles.
 
 Dans cet article, je vous propose un tour d’horizon clair et concret :
 
 1. Pourquoi le design minimaliste peut poser problème en accessibilité.
-2. Comment construire une barre de recherche pleinement accessible, qui répond aux exigences RGAA et aux usages réels de vos utilisateurs.
+2. Comment construire une barre de recherche pleinement accessible, qui répond aux exigences [RGAA](https://accessibilite.numerique.gouv.fr/) et aux usages réels de vos utilisateurs.
 3. Si l’on veut conserver un design épuré, quelles précautions adopter pour concilier esthétique et accessibilité.
 
 Objectif : dépasser la simple conformité pour viser **une accessibilité universelle**, au service de toutes et tous.
@@ -55,8 +51,8 @@ Le minimalisme est une tendance forte du design web.
 
 Dans la barre de recherche, cela se traduit souvent par :
 
-- L’absence de label visible,
-- L’utilisation du seul placeholder comme indication,
+- **L’absence de d'étiquette de champ de formulaire visible**,
+- L’utilisation du seul placeholder comme indication, qui n'est pas une étiquette
 - Une icône de loupe en guise de bouton, parfois sans texte accessible,
 - Et dans certains cas, une dépendance totale au JavaScript pour fonctionner.
 
@@ -68,21 +64,25 @@ Dans la barre de recherche, cela se traduit souvent par :
 
 Elle illustre parfaitement cette approche minimaliste, avec ses forces et ses points faibles en matière d’accessibilité.
 
-**Les points positifs à souligner :**
+#### Les points positifs à souligner
 
 - Le champ est inclus dans un `<form>` natif, garantissant une navigation au clavier efficace.
 - Le focus est clairement visible et accessible.
-- Les boutons et icônes disposent d’attributs `aria-label`, facilitant leur utilisation avec un lecteur d’écran.
+- Les boutons et icônes disposent d’attributs `aria-label`, facilitant leur utilisation avec les technologies d'assistances.
 
-**Les points de vigilance liés au minimalisme :**
+#### Les points de vigilance liés au minimalisme
 
-- Aucun label visible n'accompagne le champ de saisie, privant ainsi certains utilisateurs de repères visuels constants.
+- Aucune étiquette de champ de formulaire visible n'accompagne le champ de saisie, privant ainsi certains utilisateurs de repères visuels constants.
 - Le placeholder, seule indication visible, disparaît à la saisie, risquant de déstabiliser des utilisateurs souffrant de troubles cognitifs ou d'attention.
 - L’utilisation d’une simple icône pour représenter le bouton de recherche, parfois sans texte alternatif explicite, limite sa compréhension immédiate.
 
 Ces choix de conception minimaliste, s'ils peuvent paraître élégants visuellement, présentent des défis réels pour l'accessibilité.
 
-> Même si le minimalisme offre une esthétique épurée, il est essentiel de maintenir des repères visuels et textuels accessibles afin d'assurer une expérience utilisateur inclusive.
+<div class="admonition info" markdown="1"><p class="admonition-title">Minimalisme et accessibilité</p>
+
+Même si le minimalisme offre une esthétique épurée, il est essentiel de maintenir des repères visuels et textuels accessibles afin d'assurer une expérience utilisateur inclusive.
+</div>
+
 
 ## La barre de recherche pensée pour l’accessibilité universelle
 
@@ -104,12 +104,12 @@ Pour garantir l’accessibilité de votre barre de recherche, commencez par les 
 </form>
 ```
 
-**Pourquoi cette structure est efficace**
+#### Pourquoi cette structure est efficace
 
 - **Formulaire natif :** garantit la soumission, avec ou sans JavaScript.
-- **Label visible associé au champ :** apporte une information constante et utile pour tous les profils d’utilisateurs.
-- **Placeholder complémentaire :** illustre le type de recherche possible, mais ne se substitue pas au label.
-- **Bouton textuel explicite :** essentiel pour la navigation au clavier et les aides techniques.
+- **Etiquette visible associé au champ :** apporte une information constante et utile pour tous les profils d’utilisateurs.
+- **Placeholder complémentaire :** illustre le type de recherche possible, mais ne se substitue pas à l'étiquette de champ de formulaire.
+- **Bouton avec intitulé explicite :** essentiel pour la navigation au clavier et les aides techniques.
 
 Ce modèle est inclusif pour :
 
@@ -118,14 +118,16 @@ Ce modèle est inclusif pour :
 - Les personnes souffrant de troubles cognitifs ou de la mémoire,
 - Les utilisateurs de dispositifs tactiles ou en situation de navigation dégradée.
 
-> **Astuce :** Ajoutez autocomplete="search" pour améliorer l’expérience sur mobile et bénéficier des suggestions natives des navigateurs.
-> 
+<div class="admonition tip" markdown="1"><p class="admonition-title">Astuce</p>
 
-### **Version React / MUI**
+Ajoutez l’attribut `autocomplete="search"` pour améliorer l’expérience utilisateur et bénéficier des suggestions natives des navigateurs.
+</div>
 
-![Composant React avec Material UI affichant une barre de recherche accessible avec label visible]({BASE_URL}/imgs/articles/2025-04-16-concevoir-barre-recherche-accessible-react-html/a11y-react.png)
+### Version React / MUI
 
-```tsx
+![Composant React avec Material UI affichant une barre de recherche accessible avec étiquette visible]({BASE_URL}/imgs/articles/2025-04-16-concevoir-barre-recherche-accessible-react-html/a11y-react.png)
+
+```javascript
 "use client";
 import React, { useState, useCallback } from "react";
 import { Box, InputBase, Button, Typography } from "@mui/material";
@@ -210,18 +212,41 @@ L’idée est simple : **conserver la structure accessible dans le code, même s
 </form>
 ```
 
-**Pourquoi ça fonctionne**
+#### À propos de la classe sr-only
+
+La classe `sr-only` (abréviation de screen-reader only) permet de **masquer visuellement du texte tout en le laissant lisible par les technologies d’assistance, comme les lecteurs d’écran**.
+
+Contrairement à des propriétés CSS comme `display: none;` ou `visibility: hidden;`, qui cachent totalement le contenu, la classe `sr-only` utilise des techniques CSS spécifiques pour retirer le texte de l’affichage sans l’exclure de la lecture par les aides techniques.
+
+Par exemple, voici un style robuste recommandé :
+
+```css
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+```
+
+#### Pourquoi ça fonctionne
 
 - Le formulaire est natif, garantissant la soumission clavier.
-- Le label est masqué visuellement (`sr-only`), mais reste accessible aux technologies d’assistance.
+- L'étiquette de champ de formulaire est masquée visuellement (`sr-only`), mais reste accessible aux technologies d’assistance.
 - Le bouton contient du texte accessible, même si l’icône est le seul élément visible à l’écran.
 - Le placeholder est complémentaire, non essentiel.
 
 ### Exemples inspirants
 
-- [**Access42**](https://access42.net/) utilise des labels masqués mais accessibles dans ses composants.
+- [**Access42**](https://access42.net/) utilise des étiquettes masquées mais accessibles dans ses composants.
 
-![Barre de recherche accessible utilisée par Access42 avec label masqué mais accessible]({BASE_URL}/imgs/articles/2025-04-16-concevoir-barre-recherche-accessible-react-html/access42-visuel.png)
+![Barre de recherche accessible utilisée par Access42 avec étiquette masquée mais accessible]({BASE_URL}/imgs/articles/2025-04-16-concevoir-barre-recherche-accessible-react-html/access42-visuel.png)
 
 ![Structure HTML inspectée de la barre de recherche d’Access42]({BASE_URL}/imgs/articles/2025-04-16-concevoir-barre-recherche-accessible-react-html/access42-html.png)
 
@@ -231,11 +256,11 @@ L’idée est simple : **conserver la structure accessible dans le code, même s
 
 ![Code HTML de la barre de recherche DSFR affiché dans l’inspecteur]({BASE_URL}/imgs/articles/2025-04-16-concevoir-barre-recherche-accessible-react-html/dsfr-html.png)
 
-### **Version React / MUI de la barre minimaliste accessible**
+### Version React / MUI de la barre minimaliste accessible
 
 ![Composant React minimaliste avec MUI affichant une barre de recherche épurée mais accessible]({BASE_URL}/imgs/articles/2025-04-16-concevoir-barre-recherche-accessible-react-html/a11y-react-minimalism.png)
 
-```tsx
+```javascript
 "use client";
 import React, { useState, useCallback } from "react";
 import { Box, InputBase, IconButton } from "@mui/material";
@@ -298,19 +323,27 @@ export default function AccessibleSearchBar() {
 }
 ```
 
-**Pourquoi cette approche est accessible**
+#### Pourquoi cette approche est accessible
 
 - **Structure HTML correcte :** le formulaire est natif grâce à `<Box component="form">`.
-- **Label masqué mais présent :** le label `<label>` est masqué visuellement mais reste accessible.
-- **Accessibilité MUI maîtrisée :** grâce aux `aria-label` sur les champs et le bouton.
+- **Pas d'étiquette masquée mais un usage réfléchi d'`aria-label`** : contrairement à la version HTML qui utilise une étiquette masquée (`sr-only`), cette implémentation React/MUI repose sur l’attribut `aria-label` pour fournir un intitulé de champ de formulaire aux technologies d’assistance.
+- **Bouton avec `aria-label` explicite** : l’icône seule ne suffit pas, mais grâce à l’attribut `aria-label="Rechercher"`, le bouton est compréhensible par les technologies d'assistances.
 - **Navigation clavier fluide** : grâce à la structure native du formulaire.
-- **Compatible sans JS côté client** (Next.js redirige même si la page est statique ou SSR).
+
+<div class="admonition note" markdown="1"><p class="admonition-title">Bon à savoir</p>
+
+Dans cette version React, nous n’avons pas ajouté d’étiquette masquée comme dans l’exemple HTML classique. Pour autant, l’attribut aria-label sur le champ de saisie et sur le bouton permet d’assurer une restitution correcte par les technologies d’assistance. **Cette solution est parfaitement valide tant que le `aria-label` est bien rédigé et suffisamment descriptif pour informer sur la fonction du champ et du bouton.** 
+</div>
 
 **Astuce complémentaire**
 
 Pour améliorer encore l’accessibilité, vous pouvez utiliser les hooks MUI pour gérer le focus visuel, ou intégrer les annonces de résultats dynamiques via `aria-live`.
 
-> Même avec un framework JS moderne, privilégiez toujours la sémantique HTML et enrichissez-la progressivement avec des rôles et attributs ARIA seulement lorsque nécessaire.
+<div class="admonition note" markdown="1"><p class="admonition-title">Bon à savoir</p>
+
+Même avec un framework JavaScript moderne, privilégiez toujours la sémantique HTML et enrichissez-la progressivement avec des rôles et attributs ARIA seulement lorsque nécessaire.
+</div>
+
 
 **Attention toutefois**
 
@@ -319,24 +352,23 @@ Même avec ces bonnes pratiques, le design minimaliste présente des limites pou
 - Les repères visuels étant plus subtils, les personnes âgées ou souffrant de troubles cognitifs peuvent avoir des difficultés à identifier la fonction du champ.
 - En environnement tactile, un bouton trop discret ou trop petit peut pénaliser l’usage.
 
-> Conclusion  :
-Un minimalisme accessible existe, mais il demande une rigueur de conception pour éviter les fausses bonnes idées (ex. : supprimer le label au profit du seul placeholder).
+<div class="admonition warning" markdown="1"><p class="admonition-title">Attention</p>
+
+Un minimalisme accessible existe, mais il demande une rigueur de conception pour éviter les fausses bonnes idées — par exemple, supprimer l’étiquette de champ de formulaire au profit du seul placeholder.
+</div>
+
 
 ## Comparatif
 
 Pour finir, voici un exemple concret de deux barres de recherche que nous avons vues ensemble :
 
-![Comparatif entre la barre de recherche minimaliste et la version avec label visible et bouton texte]({BASE_URL}/imgs/articles/2025-04-16-concevoir-barre-recherche-accessible-react-html/comparatif.png)
+![Comparatif entre la barre de recherche minimaliste et la version avec étiquette visible et bouton texte]({BASE_URL}/imgs/articles/2025-04-16-concevoir-barre-recherche-accessible-react-html/comparatif.png)
 
-> En haut, la version minimaliste : épurée, discrète, mais avec des repères réduits.
-> 
-> 
-> **En bas**, la version avec un label visible et un bouton explicite, plus rassurante pour l’ensemble des utilisateurs.
-> 
+**En haut**, la version minimaliste : épurée, discrète, mais avec des repères réduits.
+
+**En bas**, la version avec une étiquette visible et un bouton explicite, plus rassurante pour l’ensemble des utilisateurs.
 
 **Et vous, laquelle pensez-vous être la plus compréhensible pour le plus grand nombre ?**
-
----
 
 ## Conclusion : concevoir pour tous les profils d’utilisateurs
 
@@ -353,12 +385,15 @@ Retenez ceci :
     - Aux utilisateurs de dispositifs tactiles,
     - Aux personnes en situation de stress ou de fatigue.
 
-> Peu importe la solution que vous adoptez, retenez que l’accessibilité ne bride pas la créativité.
-Au contraire, elle enrichit vos interfaces pour les rendre plus robustes, inclusives et pérennes.
-> 
+<div class="admonition info" markdown="1"><p class="admonition-title">À retenir</p>
 
-<aside>
-Récapitulatif des critères RGAA pour une barre de recherche accessible :
+Peu importe la solution que vous adoptez, retenez que l’accessibilité ne bride pas la créativité. Au contraire, elle enrichit vos interfaces pour les rendre plus robustes, inclusives et pérennes.
+</div>
+
+
+### Références
+
+#### Critères RGAA
 
 - **4.1.1** : Chaque champ de formulaire a-t-il une étiquette ?
 - **4.1.2** : Chaque champ de formulaire est-il correctement étiqueté ?
@@ -368,4 +403,18 @@ Récapitulatif des critères RGAA pour une barre de recherche accessible :
 - **7.1.1** : Chaque fonctionnalité est-elle disponible au clavier et sans dépendance au JavaScript ?
 - **8.5.1** : Le focus est-il visible autour des éléments interactifs ?
 - **10.11.1** : Chaque zone cliquable ou contrôle a-t-il des dimensions suffisantes ?
-</aside>
+
+#### Ressources
+
+- **RGAA 4.1** — [Référentiel général d’amélioration de l’accessibilité](https://accessibilite.numerique.gouv.fr/methode/criteres/)  
+  Les critères précis appliqués dans cet article (intitulé de champ de formulaire, saisie assistée, ordre de tabulation, etc.)
+
+- **La Lutine du Web — Julie Moynat**  
+  [Le vaste monde des alternatives textuelles : le texte masqué en CSS](https://www.lalutineduweb.fr/alternatives-textuelles-texte-masque-css/)  
+  Excellente ressource pour comprendre l’utilisation et les bonnes pratiques autour de `.sr-only`.
+
+- **Access42** — [Ressources sur l’accessibilité numérique](https://access42.net/)  
+  Bonnes pratiques et exemples de composants accessibles.
+
+- **Design System de l’État Français (DSFR)** — [Barre de recherche](https://www.systeme-de-design.gouv.fr/composants-et-modeles/composants/barre-de-recherche/)  
+  Exemples de mise en œuvre de composants accessibles dans des environnements gouvernementaux.
