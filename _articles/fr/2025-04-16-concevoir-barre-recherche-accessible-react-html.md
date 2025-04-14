@@ -123,7 +123,7 @@ Ce modèle est inclusif pour :
 Ajoutez l’attribut `autocomplete="search"` pour améliorer l’expérience utilisateur et bénéficier des suggestions natives des navigateurs.
 </div>
 
-### Version React / MUI
+### Exemple : Une implémentation optimale en React / MUI
 
 ![Composant React avec Material UI affichant une barre de recherche accessible avec étiquette visible]({BASE_URL}/imgs/articles/2025-04-16-concevoir-barre-recherche-accessible-react-html/a11y-react.png)
 
