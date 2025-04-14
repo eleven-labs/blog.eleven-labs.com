@@ -88,7 +88,7 @@ Même si le minimalisme offre une esthétique épurée, il est essentiel de main
 
 Pour garantir l’accessibilité de votre barre de recherche, commencez par les bases solides du HTML sémantique.
 
-### Exemple d’implémentation optimale
+### Exemple : Une implémentation optimale en HTML
 
 ```html
 <form role="search" method="get" action="/recherche">
