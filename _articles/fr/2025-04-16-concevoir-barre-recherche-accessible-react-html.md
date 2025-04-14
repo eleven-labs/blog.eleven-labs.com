@@ -29,7 +29,7 @@ seo:
   description: Concevez une barre de recherche accessible et conforme RGAA grâce à ce guide complet avec bonnes pratiques, erreurs à éviter et exemples HTML et React/MUI.
 ---
 
-## Introduction
+## Introduction aux notions d'accessibilité d'une barre de recherche
 
 Sur de nombreux sites web, la barre de recherche est un composant d'interface essentiel.
 
