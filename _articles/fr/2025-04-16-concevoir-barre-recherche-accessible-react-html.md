@@ -194,7 +194,7 @@ Bonne nouvelle : minimalisme et accessibilité peuvent coexister, à condition d
 
 L’idée est simple : **conserver la structure accessible dans le code, même si certains éléments sont visuellement discrets ou masqués.**
 
-### Exemple de barre minimaliste accessible
+### Exemple : Une barre minimaliste accessible
 
 ```html
 <form role="search" method="get" action="/recherche">
