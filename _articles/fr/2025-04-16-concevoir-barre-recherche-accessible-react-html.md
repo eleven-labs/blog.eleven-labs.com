@@ -52,7 +52,7 @@ Le minimalisme est une tendance forte du design web.
 Dans la barre de recherche, cela se traduit souvent par :
 
 - **L’absence de d'étiquette de champ de formulaire visible**,
-- L’utilisation du seul placeholder comme indication, qui n'est pas une étiquette
+- L’utilisation du seul placeholder comme indication, qui n'est pas une étiquette,
 - Une icône de loupe en guise de bouton, parfois sans texte accessible,
 - Et dans certains cas, une dépendance totale au JavaScript pour fonctionner.
 
