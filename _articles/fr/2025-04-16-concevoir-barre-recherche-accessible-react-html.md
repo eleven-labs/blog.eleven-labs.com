@@ -235,7 +235,7 @@ Par exemple, voici un style robuste recommandé :
 }
 ```
 
-#### Pourquoi ça fonctionne
+### Pourquoi ça fonctionne
 
 - Le formulaire est natif, garantissant la soumission clavier.
 - L'étiquette de champ de formulaire est masquée visuellement (`sr-only`), mais reste accessible aux technologies d’assistance.
