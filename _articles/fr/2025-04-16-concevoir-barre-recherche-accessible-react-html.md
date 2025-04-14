@@ -212,7 +212,7 @@ L’idée est simple : **conserver la structure accessible dans le code, même s
 </form>
 ```
 
-#### À propos de la classe sr-only
+### À propos de la classe sr-only
 
 La classe `sr-only` (abréviation de screen-reader only) permet de **masquer visuellement du texte tout en le laissant lisible par les technologies d’assistance, comme les lecteurs d’écran**.
 
