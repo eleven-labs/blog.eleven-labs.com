@@ -1,4 +1,4 @@
-import type { Request, Response } from 'express';
+import type { RequestHandler } from 'express';
 import mime from 'mime';
 import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -7,7 +7,7 @@ import Sharp from 'sharp';
 import { DEFAULT_EXTENSION_FOR_IMAGES, IMAGE_CONTENT_TYPES } from '@/constants';
 import { ImageExtensionType, ImagePositionType } from '@/types';
 
-export const imageMiddleware = async (req: Request, res: Response): Promise<unknown> => {
+export const imageHandler: RequestHandler = async (req, res) => {
   try {
     const imagePath = resolve(process.cwd(), 'public', req.path.slice(1) as string);
     if (!existsSync(imagePath)) {

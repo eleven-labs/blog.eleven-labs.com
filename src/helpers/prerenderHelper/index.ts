@@ -1,6 +1,7 @@
 import { resolve } from 'node:path';
 
 import { DEFAULT_LANGUAGE, LANGUAGES_AVAILABLE, PATHS } from '@/constants';
+import { generateRobotsTxt } from '@/helpers/prerenderHelper/generateRobotsTxt';
 import { generatePath } from '@/helpers/routerHelper';
 
 import { generateFeedFile } from './generateFeedFile';
@@ -40,6 +41,9 @@ export const generateFiles = async (options: { rootDir: string; baseUrl: string 
     generateSitemap({
       rootDir: __dirname,
       sitemapEntries,
+    }),
+    generateRobotsTxt({
+      rootDir: __dirname,
     }),
   ]);
   generateFeedFile({ rootDir: __dirname });
