@@ -13,6 +13,9 @@ cover:
   position: top
 authors:
   - fpasquet
+seo:
+    title: "Créer une règle personnalisée avec ESLint PLugin"
+    description: "Apprenez à créer un plugin ESLint en TypeScript avec la nouvelle configuration flat config."
 ---
 
 Suite à notre [précédent article sur les Arbres Syntaxiques Abstraits (AST)]({BASE_URL}/fr/comprendre-et-exploiter-les-arbres-syntaxiques-abstraits), nous allons maintenant mettre en pratique ces connaissances pour créer un plugin ESLint personnalisé. Dans cet article, nous verrons comment développer une règle qui décourage l'utilisation de la propriété `style` dans les composants React, en utilisant TypeScript et la nouvelle configuration "flat config" d'ESLint.
