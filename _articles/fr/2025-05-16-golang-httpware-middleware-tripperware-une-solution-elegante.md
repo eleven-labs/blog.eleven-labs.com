@@ -52,7 +52,7 @@ Cette approche permet d'empiler plusieurs middlewares de manière élégante. Ht
 
 ### Le Concept de Tripperware en Go
 
-L'appellation `tripperware` est dérivé de l'interface GO `http.RoundTripper` utiliser par le client http de GO.
+L'appellation `tripperware` est dérivée de l'interface GO `http.RoundTripper` utiliser par le client HTTP de GO.
 
 ![Gol4ng visuel d'un tripperware]({BASE_URL}/imgs/articles/2025-05-16-golang-httpware-middleware-tripperware-une-solution-elegante/tripperware.jpg)
 
@@ -62,7 +62,7 @@ La signature type est la suivante :
 type Tripperware func(http.RoundTripper) http.RoundTripper
 ```
 
-De la même manière que pour les middleware il est possible d'empiler plusieurs tripperware de manière élégante.
+De la même manière que pour les middlewares il est possible d'empiler plusieurs tripperwares de manière élégante.
 
 ### Architecture de Httpware
 
@@ -88,7 +88,7 @@ La librairie s'articule autour de deux concepts clés :
 
 ## Exemples
 
-Voici par exemple un server http qui va logguer toutes les requêtes reçus (http://localhost:8080/*) au format curl :
+Voici par exemple un server HTTP qui va logguer toutes les requêtes reçus (http://localhost:8080/*) au format curl :
 
 ``` go
 package main
@@ -108,7 +108,7 @@ func main() {
 }
 ```
 
-Cette autre exemple ajoute un CorrelationID sur la requête et possède un rate limiter HTTP
+Cet autre exemple ajoute un CorrelationID sur la requête et possède un rate limiter HTTP
 
 ``` go
 package main
@@ -139,7 +139,7 @@ func main() {
 ```
 
 ### Création d'un Middleware Personnalisé
-Voici un exemple de middleware personnalisé pour mesurer le temps de réponse :
+Voici un exemple de middleware personnalisé qui mesure le temps de réponse :
 ``` go
 func TimingMiddleware() httpware.Middleware {
 	return func(next http.Handler) http.Handler {
@@ -187,7 +187,7 @@ func ContextAwareMiddleware() httpware.Middleware {
 Httpware se distingue d'autres solutions comme Gorilla Handlers par :
 - Sa simplicité d'utilisation
 - Son approche modulaire
-- Sa gestion native des ID de corrélation
+- Sa gestion native des IDs de corrélation
 - Sa compatibilité parfaite avec la bibliothèque standard
 
 ## Conclusion
