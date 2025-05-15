@@ -14,8 +14,8 @@ cover:
 authors:
   - amoutte
 seo:
-    title: "Gol4ng - Httpware : Middleware et Tripperware GO, une Solution Élégante."
-    description: "Httpware offre une approche simple et modulaire pour gérer les middlewares en Go, avec l'avantage notable de supporter également les tripperwares pour manipuler les requêtes HTTP côté client."
+  title: "Gol4ng Httpware : middlewares et tripperwares élégants en Go"
+  description: "Httpware offre une approche simple et élégante pour gérer les middlewares et tripperwares en Go."
 ---
 
 ## Introduction
