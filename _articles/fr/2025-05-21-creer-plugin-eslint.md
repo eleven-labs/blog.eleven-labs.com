@@ -6,11 +6,13 @@ slug: creer-plugin-eslint
 title: >-
   ESLint Plugin : Créer une règle personnalisée
 excerpt: >-
-  Découvrez comment créer un plugin ESLint en TypeScript avec la nouvelle configuration "flat config" pour limiter l'utilisation des styles inline dans les composants React, et publiez-le sur npm.
+  Découvrez comment créer un plugin ESLint en TypeScript avec la nouvelle configuration "flat config" et publiez-le sur npm.
 cover:
   alt: Description
   path: /imgs/articles/2025-05-21-creer-plugin-eslint/cover.png
   position: top
+categories:
+  - javascript
 authors:
   - fpasquet
 seo:
