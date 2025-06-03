@@ -9,7 +9,7 @@ excerpt: >-
   Httpware offre une approche simple et modulaire pour gérer les middlewares en Go, avec l'avantage notable de supporter également les tripperwares pour manipuler les requêtes HTTP côté client.
 cover:
   alt: Gol4ng httpware
-  path: /imgs/articles/2025-05-16-golang-httpware-middleware-tripperware-une-solution-elegante/cover.jpg
+  path: /imgs/articles/2025-06-06-golang-httpware-middleware-tripperware-une-solution-elegante/cover.jpg
   position: center
 authors:
   - amoutte
@@ -40,7 +40,7 @@ Découvrons cela ensemble.
 
 En Go, un middleware est essentiellement une fonction qui encapsule un handler HTTP.
 
-![Gol4ng visuel d'un middleware]({BASE_URL}/imgs/articles/2025-05-16-golang-httpware-middleware-tripperware-une-solution-elegante/middleware.jpg)
+![Gol4ng visuel d'un middleware]({BASE_URL}/imgs/articles/2025-06-06-golang-httpware-middleware-tripperware-une-solution-elegante/middleware.jpg)
 
 La signature type est la suivante :
 
@@ -54,7 +54,7 @@ Cette approche permet d'empiler plusieurs middlewares de manière élégante. Ht
 
 L'appellation `tripperware` est dérivée de l'interface GO `http.RoundTripper` utilisée par le client HTTP de GO.
 
-![Gol4ng visuel d'un tripperware]({BASE_URL}/imgs/articles/2025-05-16-golang-httpware-middleware-tripperware-une-solution-elegante/tripperware.jpg)
+![Gol4ng visuel d'un tripperware]({BASE_URL}/imgs/articles/2025-06-06-golang-httpware-middleware-tripperware-une-solution-elegante/tripperware.jpg)
 
 La signature type est la suivante :
 
