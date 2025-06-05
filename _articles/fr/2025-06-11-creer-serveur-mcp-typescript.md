@@ -2,7 +2,7 @@
 contentType: article
 lang: fr
 date: 2025-06-11
-slug: creer-serveur-mcp-typescript
+slug: model-context-protocol
 title: >-
   MCP Server : Implémenter un serveur Model Context Protocol en TypeScript
 excerpt: >-
@@ -30,11 +30,9 @@ Dans cet article, nous allons voir comment implémenter un serveur MCP en TypeSc
 Le code source complet de ce projet est disponible sur [GitHub](https://github.com/fpasquet/mcp-example). Vous y trouverez tous les fichiers mentionnés dans cet article ainsi que des exemples d'utilisation supplémentaires.
 </div>
 
-## Comprendre le Model Context Protocol
+Mais avant de plonger dans l'implémentation, prenons un moment pour comprendre ce qu'est le MCP et pourquoi il est devenu si important pour les applications modernes basées sur l'IA.
 
-Avant de plonger dans l'implémentation, prenons un moment pour comprendre ce qu'est le MCP et pourquoi il est devenu si important pour les applications modernes basées sur l'IA.
-
-### Qu'est-ce que le MCP ?
+## Qu'est-ce que le Model Context Prodocol (MCP) ?
 
 Le Model Context Protocol est un **standard ouvert** qui définit comment les modèles d'IA peuvent **demander et recevoir du contexte** spécifique à un utilisateur ou à une organisation. Ce protocole facilite l'intégration des LLMs avec des sources de données externes comme les outils de développement, les systèmes CRM, ou les bases de connaissances d'entreprise.
 
@@ -45,39 +43,39 @@ Le MCP s'appuie sur les fondations du **Language Server Protocol (LSP)**, un sta
 Le MCP résout un problème fondamental des LLMs : leur incapacité à accéder aux données privées ou spécifiques d'une organisation. En standardisant la façon dont ces modèles peuvent demander et recevoir du contexte, le MCP permet des intégrations plus profondes et des réponses plus pertinentes.
 </div>
 
-### MCP vs API traditionnelles : une approche révolutionnaire
+## Quelles différences entre le MCP et les APIs traditionnelles ?
 
 La différence fondamentale entre le MCP et les APIs traditionnelles réside dans leur conception et leur finalité :
 
-#### APIs traditionnelles : communication machine-machine
+### APIs traditionnelles : communication machine-machine
 
 Les APIs REST, GraphQL ou RPC sont conçues pour la communication entre applications. Elles suivent des paradigmes techniques stricts :
 
-- **Structure rigide** : Endpoints prédéfinis, schémas de données fixes
+- **Structure rigide** : Des endpoints prédéfinis, des schémas de données fixes
 - **Logique métier explicite** : Le client doit connaître précisément quels endpoints appeler et dans quel ordre
 - **Communication statique** : Requête → Réponse, sans adaptation au contexte conversationnel
 - **Granularité technique** : Orientées vers les besoins des développeurs, pas des utilisateurs finaux
 
-#### MCP : communication LLM-native
+### MCP : communication LLM-native
 
 Le MCP adopte une approche radicalement différente, pensée pour les capacités cognitives des LLMs :
 
 - **Découverte dynamique** : Les LLMs explorent automatiquement les capacités disponibles
 - **Adaptation contextuelle** : Les tools et ressources s'adaptent au contexte de la conversation
-- **Sémantique enrichie** : Descriptions en langage naturel, métadonnées expressives
+- **Sémantique enrichie** : Des descriptions en langage naturel, des métadonnées expressives
 - **Orchestration intelligente** : Le LLM détermine quand et comment utiliser chaque fonctionnalité
 
-### Pourquoi créer un MCP Server ?
+## Quels sont les bénéfices de créer un MCP Server ?
 
-Un MCP Server offre plusieurs avantages:
+Un MCP Server offre plusieurs avantages :
 
 - **Contexte dynamique**: Fournir aux modèles d'IA des données à jour provenant de vos systèmes.
 - **Économie de tokens**: Éviter d'utiliser de précieux tokens de contexte pour des données statiques.
 - **Sécurité améliorée**: Contrôler précisément quelles données sont accessibles au modèle.
 - **Expérience utilisateur enrichie**: Permettre à l'IA de répondre en se basant sur des données personnalisées.
-- **Intelligence contextuelle**: Les LLMs peuvent découvrir et utiliser les fonctionnalités de manière autonome selon les besoins de la conversation.
+- **Intelligence contextuelle**: Permettre aux LLMs de découvrir et utiliser les fonctionnalités de manière autonome selon les besoins de la conversation.
 
-### Architecture du MCP
+## L'architecture du MCP
 
 Le protocole MCP suit une architecture client-serveur simple :
 
@@ -104,11 +102,11 @@ flowchart LR
     server <--> tools
 ```
 
-### Transport et couches de communication
+## Choix du transport et des couches de communication
 
 Le choix du transport détermine comment votre serveur MCP communique avec les clients. Trois options principales sont disponibles :
 
-#### STDIO (Standard Input/Output)
+### STDIO (Standard Input/Output)
 
 Le transport STDIO est parfait pour :
 - **Applications desktop** : Intégration directe dans Claude Desktop, Cursor, Windsurf
@@ -137,7 +135,7 @@ run().catch((error) => {
 });
 ```
 
-#### SSE (Server-Sent Events)
+### SSE (Server-Sent Events)
 
 Le transport SSE convient mieux pour :
 - **Applications web** : Intégration dans des interfaces web modernes
@@ -162,7 +160,7 @@ app.listen(PORT, () => {
 });
 ```
 
-#### Transport personnalisé
+### Transport personnalisé
 
 Vous pouvez également créer votre propre couche de transport en implémentant les interfaces MCP. Cela permet d'adapter la communication à vos besoins spécifiques (WebSocket, TCP, etc.).
 
@@ -173,7 +171,7 @@ Vous pouvez également créer votre propre couche de transport en implémentant 
 - **Transport custom** : pour des besoins de communication spécifiques
 </div>
 
-### Les trois piliers de MCP
+## Les trois fonctionnalités piliers du Model Context Protocol
 
 Un serveur MCP peut exposer trois types de fonctionnalités :
 
@@ -181,7 +179,7 @@ Un serveur MCP peut exposer trois types de fonctionnalités :
 - **Resources** : Données structurées accessibles aux LLM (documentation, bases de connaissances)
 - **Prompts** : Templates de prompts réutilisables avec paramètres dynamiques
 
-### Exemples d'implémentations existantes
+## Cas d'usages d'implémentations existantes
 
 Plusieurs grandes entreprises ont déjà adopté le MCP :
 
@@ -192,7 +190,7 @@ Plusieurs grandes entreprises ont déjà adopté le MCP :
 
 Ces implémentations permettent aux LLMs d'accéder à des données spécifiques comme les tickets Jira, les pull requests GitHub, ou les documents Notion, tout en respectant les permissions des utilisateurs.
 
-## Implémentation du serveur MCP
+## Exemple d'implémentation pratique du serveur MCP
 
 ### Structure de base du serveur
 
@@ -409,7 +407,7 @@ private setupToolHandlers() {
 - **Sécurité** : Validez les permissions et l'accès aux données sensibles
 </div>
 
-### Implémentation des Ressources
+### Implémentation des ressources
 
 Les ressources constituent la mémoire documentaire de votre serveur MCP. Contrairement aux tools qui exécutent des actions, les ressources fournissent un accès structuré à des données de référence, de la documentation, ou du contenu statique que les LLMs peuvent consulter pour enrichir leurs réponses.
 
@@ -589,13 +587,13 @@ L'onglet "Tools" permet de tester chaque fonction individuellement. Voici un exe
 
 L'inspecteur génère automatiquement des formulaires basés sur vos schémas Zod et affiche les réponses formatées.
 
-### Exploration des Ressources
+### Exploration des ressources
 
 L'onglet "Resources" liste toutes vos ressources disponibles et permet de les consulter directement :
 
 ![Consultation des ressources]({BASE_URL}/imgs/articles/2025-06-11-creer-serveur-mcp-typescript/screenshot-inspector-resources.png)
 
-### Test des Prompts
+### Test des prompts
 
 L'onglet "Prompts" permet de tester vos templates avec différents paramètres :
 
