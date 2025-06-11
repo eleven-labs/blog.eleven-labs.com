@@ -69,11 +69,10 @@ Le MCP adopte une approche radicalement différente, pensée pour les capacités
 
 Un MCP Server offre plusieurs avantages :
 
-- **Contexte dynamique**: Fournir aux modèles d'IA des données à jour provenant de vos systèmes.
-- **Économie de tokens**: Éviter d'utiliser de précieux tokens de contexte pour des données statiques.
-- **Sécurité améliorée**: Contrôler précisément quelles données sont accessibles au modèle.
-- **Expérience utilisateur enrichie**: Permettre à l'IA de répondre en se basant sur des données personnalisées.
-- **Intelligence contextuelle**: Permettre aux LLMs de découvrir et utiliser les fonctionnalités de manière autonome selon les besoins de la conversation.
+- **Contexte dynamique**: Fournir aux modèles d'IA des données à jour provenant de vos systèmes
+- **Sécurité améliorée**: Contrôler précisément quelles données sont accessibles au modèle
+- **Expérience utilisateur enrichie**: Permettre à l'IA de répondre en se basant sur des données personnalisées
+- **Intelligence contextuelle**: Permettre aux LLMs de découvrir et utiliser les fonctionnalités de manière autonome selon les besoins de la conversation
 
 ## L'architecture du MCP
 
@@ -101,6 +100,23 @@ flowchart LR
     transport <--> server
     server <--> tools
 ```
+
+Le processus d'interaction suit un **cycle orchestré** qui transforme une simple question utilisateur en une série d'actions intelligentes et contextualisées :
+
+1. **Demande utilisateur** : L'utilisateur formule une requête naturelle, par exemple : *"Donne-moi les détails sur l'astronaute Alice"*
+2. **Analyse cognitive par le LLM** : Le modèle de langage analyse la demande et identifie qu'il a besoin de données externes spécifiques pour fournir une réponse complète et précise
+3. **Sélection d'outils** : Le client MCP recherche parmi les outils disponibles celui qui peut traiter cette demande spécifique.
+4. **Transmission structurée** : Le client formate la requête selon le schéma attendu par le serveur MCP et l'envoie via la couche de transport configurée
+5. **Exécution métier** : Le serveur MCP traite la requête en utilisant sa logique métier (interrogation de base de données, appel d'API, calculs, etc.) et prépare une réponse structurée
+6. **Retour contextualisé** : Le serveur renvoie les données formatées au client MCP, qui les transmet au LLM
+7. **Présentation finale** : Le LLM combine les données reçues avec ses capacités conversationnelles pour générer une réponse naturelle et contextuelle à l'utilisateur
+
+<div class="admonition info" markdown="1"><p class="admonition-title">À retenir</p>
+
+Cette orchestration permet au système de fonctionner de manière **totalement transparente** pour l'utilisateur final. L'utilisateur n'a pas conscience de la complexité technique sous-jacente - il formule simplement sa demande en langage naturel et reçoit une réponse enrichie et contextuelle.
+
+C'est cette **symbiose entre intelligence artificielle et données métier** qui fait la force du protocole MCP.
+</div>
 
 ## Choix du transport et des couches de communication
 
