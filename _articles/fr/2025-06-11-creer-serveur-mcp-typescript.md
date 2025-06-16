@@ -80,7 +80,7 @@ Le protocole MCP suit une architecture client-serveur simple :
 
 - **Serveurs MCP** : Exposent des données et des fonctionnalités aux applications IA
 - **Clients MCP** : Applications IA qui consomment les ressources et outils des serveurs
-- **Transport** : Couche de communication (STDIO / SSE / personalisé)
+- **Transport** : Couche de communication (STDIO / HTTP Streamable / personalisé)
 - **Hôtes MCP** : Héberge un LLM et amène une couche d’intelligence en orchestrant dynamiquement l’appel aux bons outils en fonction du contexte de la conversation, permettant ainsi des interactions enrichies et contextualisées, parfois, l’hôte MCP contient aussi le client MCP et le transport. Parmi les clients les plus populaires, on trouve Claude Desktop, Github Copilot, Cursor, Windsurf, Cline, Kilo Code ...
 
 ```mermaid
@@ -106,7 +106,7 @@ Le processus d'interaction suit un **cycle orchestré** qui transforme une simpl
 1. **Demande utilisateur** : L'utilisateur formule une requête naturelle, par exemple : *"Donne-moi les détails sur l'astronaute Alice"*
 2. **Analyse cognitive par le LLM** : Le modèle de langage analyse la demande et identifie qu'il a besoin de données externes spécifiques pour fournir une réponse complète et précise
 3. **Sélection d'outils** : Le client MCP recherche parmi les outils disponibles celui qui peut traiter cette demande spécifique.
-4. **Transmission structurée** : Le client formate la requête selon le schéma attendu par le serveur MCP et l'envoie via la couche de transport configurée
+4. **Transmission structurée** : Le client formate la requête selon le protocole *JSON-RPC 2.0* et l'envoie via la couche de transport configurée
 5. **Exécution métier** : Le serveur MCP traite la requête en utilisant sa logique métier (interrogation de base de données, appel d'API, calculs, etc.) et prépare une réponse structurée
 6. **Retour contextualisé** : Le serveur renvoie les données formatées au client MCP, qui les transmet au LLM
 7. **Présentation finale** : Le LLM combine les données reçues avec ses capacités conversationnelles pour générer une réponse naturelle et contextuelle à l'utilisateur
@@ -117,6 +117,46 @@ Cette orchestration permet au système de fonctionner de manière **totalement t
 
 C'est cette **symbiose entre intelligence artificielle et données métier** qui fait la force du protocole MCP.
 </div>
+
+## Format de communication : JSON-RPC 2.0
+
+Le protocole MCP utilise **JSON-RPC 2.0** comme format standard pour toutes les communications entre clients et serveurs. Ce choix apporte :
+
+- **Standardisation** : Format bien établi et largement supporté
+- **Simplicité** : Structure claire pour les requêtes et réponses
+- **Extensibilité** : Facilite l'ajout de nouvelles méthodes et paramètres
+- **Interopérabilité** : Compatible avec de nombreux langages et plateformes
+
+Exemple de requête JSON-RPC 2.0 :
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "tools/call",
+  "params": {
+    "name": "get_astronaut_details",
+    "arguments": {
+      "name": "Alice"
+    }
+  }
+}
+```
+
+Exemple de réponse JSON-RPC 2.0 :
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "🚀 PROFIL ASTRONAUTE ..."
+      }
+    ]
+  }
+}
+```
 
 ## Choix du transport et des couches de communication
 
@@ -151,16 +191,19 @@ run().catch((error) => {
 });
 ```
 
-### SSE (Server-Sent Events)
+### HTTP Streamable
 
-Le transport SSE convient mieux pour :
+Le transport HTTP Streamable (qui remplace l'ancien SSE) convient mieux pour :
+
 - **Applications web** : Intégration dans des interfaces web modernes
-- **Déploiement distant** : Serveurs hébergés à distance
+- **Déploiement distant** : Serveurs hébergés à distance accessibles via HTTP
 - **Multi-clients** : Support de plusieurs connexions simultanées
+- **Streaming bidirectionnel** : Communication en temps réel avec streaming des réponses
+- **Compatibilité web** : Fonctionne avec les standards HTTP modernes
 
 ```typescript
-// apps/mcp-server-sse/src/mcp-server-sse.ts
-import { registerMcpServerSse } from '@repo/mcp/utils/register-mcp-server-sse';
+// apps/mcp-server-http/src/mcp-server-http.ts
+import { registerMcpServerHttp } from '@repo/mcp/utils/register-mcp-server-http';
 import cors from 'cors';
 import express from 'express';
 
@@ -168,23 +211,24 @@ const PORT = process.env.PORT ?? 3000;
 const app = express();
 
 app.use(cors());
-registerMcpServerSse(app);
+registerMcpServerHttp(app);
 
 app.listen(PORT, () => {
-  console.error(`MCP SSE server started on port ${PORT}`);
-  console.error(`SSE endpoint: http://localhost:${PORT}/sse`);
+  console.error(`MCP HTTP server started on port ${PORT}`);
+  console.error(`HTTP endpoint: http://localhost:${PORT}/mcp`);
 });
 ```
 
 ### Transport personnalisé
 
-Vous pouvez également créer votre propre couche de transport en implémentant les interfaces MCP. Cela permet d'adapter la communication à vos besoins spécifiques (WebSocket, TCP, etc.).
+Vous pouvez également créer votre propre couche de transport en implémentant les interfaces MCP. Cela permet d'adapter la communication à vos besoins spécifiques (TCP/Unix Sockets, protocoles propriétaires, etc.).
 
 <div class="admonition info" markdown="1"><p class="admonition-title">À retenir</p>
 
 - Utilisez **STDIO** pour les intégrations desktop, l'accès aux ressources système locales et un développement rapide
-- Préférez **SSE** pour des architectures web ou des déploiements à grande échelle
+- Préférez **HTTP Streamable** pour des architectures web ou des déploiements cloud ou des besoins de scalabilité
 - **Transport custom** : pour des besoins de communication spécifiques
+- Tous les transports utilisent le format **JSON-RPC 2.0** pour assurer la compatibilité et la standardisation
 </div>
 
 ## Les trois fonctionnalités piliers du Model Context Protocol
