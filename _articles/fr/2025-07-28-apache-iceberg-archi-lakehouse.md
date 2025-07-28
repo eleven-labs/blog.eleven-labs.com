@@ -19,7 +19,7 @@ cover:
   alt: Apache Iceberg pour une architecture lakehouse sur AWS
   path: /imgs/articles/2025-07-07-apache-iceberg-archi-lakehouse/cover.jpg
 seo:
-  title: "Apache Iceberg sur AWS : construire une architecture lakehouse moderne"
+  title: "Construire une architecture lakehouse avec Apache Iceberg sur AWS"
   description: Découvrez comment utiliser Apache Iceberg sur AWS pour créer une architecture adaptée aux enjeux de gouvernance, scalabilité et requêtage optimisé.
 ---
 
