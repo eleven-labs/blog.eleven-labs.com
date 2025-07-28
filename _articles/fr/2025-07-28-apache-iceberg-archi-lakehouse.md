@@ -17,7 +17,7 @@ authors:
   - ahoudaibi
 cover:
   alt: Apache Iceberg pour une architecture lakehouse sur AWS
-  path: /imgs/articles/2025-07-07-apache-iceberg-archi-lakehouse/cover.jpg
+  path: /imgs/articles/2025-07-28-apache-iceberg-archi-lakehouse/cover.png
 seo:
   title: "Architecture lakehouse avec Apache Iceberg sur AWS"
   description: Découvrez comment utiliser Apache Iceberg sur AWS pour créer une architecture adaptée aux enjeux de gouvernance, scalabilité et requêtage optimisé.
@@ -29,7 +29,7 @@ Apache Iceberg est un format de table ouvert pour les données volumineuses, con
 
 ### Schéma d'architecture
 
-![alt of image]({BASE_URL}/imgs/articles/2025-07-07-apache-iceberg-archi-lakehouse/iceberg-archi.png)
+![alt of image]({BASE_URL}/imgs/articles/2025-07-28-apache-iceberg-archi-lakehouse/iceberg-archi.png)
 
 ### Structure des tables Iceberg
 Apache Iceberg utilise une architecture hiérarchique de métadonnées composée de trois niveaux principaux pour gérer efficacement les données :
@@ -248,7 +248,7 @@ Avant de manipuler des données, il faut d’abord créer une table Iceberg. Cel
 
 En se connectant à la console *Minio* au chemin suivant: *local-bucket/DATA/db/signup/data*. On voit bien dans l'espace de stockage que les données sont physiquement partitionnés par date.
 
-![alt of image]({BASE_URL}/imgs/articles/2025-07-07-apache-iceberg-archi-lakehouse/physical_partition.png)
+![alt of image]({BASE_URL}/imgs/articles/2025-07-28-apache-iceberg-archi-lakehouse/physical_partition.png)
 
 ### Insert
 Une fois la table créée, on peut y insérer des données. Apache Iceberg supporte l’insertion, ce qui permet d’ajouter de nouvelles lignes de manière simple et transactionnelle, même dans un environnement distribué.
