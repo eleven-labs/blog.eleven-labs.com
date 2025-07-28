@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: 2025-07-07
+date: 2025-07-28
 slug: apache-iceberg-archi-lakehouse
 title: Apache Iceberg pour une architecture lakehouse sur AWS
 excerpt: Ce guide présente Apache Iceberg, un format de table moderne pour les données volumineuses, la gestion des versions et des performances optimisées.
@@ -19,8 +19,8 @@ cover:
   alt: Apache Iceberg pour une architecture lakehouse sur AWS
   path: /imgs/articles/2025-07-07-apache-iceberg-archi-lakehouse/cover.jpg
 seo:
-  title: "Apache Iceberg : pour une architecture lakehouse sur AWS"
-  description: Découvrez Apache Iceberg, la solution open-source pour un lakehouse moderne sur AWS. Optimisez vos données et analytics big data.
+  title: "Apache Iceberg sur AWS : construire une architecture lakehouse moderne"
+  description: Découvrez comment utiliser Apache Iceberg sur AWS pour créer une architecture adaptée aux enjeux de gouvernance, scalabilité et requêtage optimisé.
 ---
 
 Apache Iceberg est un format de table ouvert pour les données volumineuses, conçu pour résoudre les problèmes de performance et de fiabilité des formats traditionnels comme Apache Hive. Il offre une approche moderne pour gérer les métadonnées de tables, permettant des opérations ACID, la gestion des versions et des performances optimisées pour les requêtes analytiques.
@@ -215,9 +215,9 @@ spark = (
 ```
 Maintenant que les bases sont posées, voyons concrètement comment interagir avec une table Iceberg à travers différentes opérations, telles que l’insertion de données, la mise à jour, ou encore la gestion de l’évolution du schéma.
 
-### Quelques opérations de base
+## Quelques opérations de base
 
-#### Create
+### Create
 Avant de manipuler des données, il faut d’abord créer une table Iceberg. Celle-ci peut être définie à l’aide d’une simple requête SQL, avec le schéma de colonnes souhaité et le format de stockage approprié ou directement à partir d'un dataframe spark. Voici un exemple de création de table avec partitionnement.
 
 ```python
@@ -250,7 +250,7 @@ En se connectant à la console *Minio* au chemin suivant: *local-bucket/DATA/db/
 
 ![alt of image]({BASE_URL}/imgs/articles/2025-07-07-apache-iceberg-archi-lakehouse/physical_partition.png)
 
-#### Insert
+### Insert
 Une fois la table créée, on peut y insérer des données. Apache Iceberg supporte l’insertion, ce qui permet d’ajouter de nouvelles lignes de manière simple et transactionnelle, même dans un environnement distribué.
 
 ```python
@@ -280,7 +280,7 @@ Une fois la table créée, on peut y insérer des données. Apache Iceberg suppo
 +---+-----+-----------+
 ```
 
-#### Merge (ici stratégie en UPSERT)
+### Merge (ici stratégie en UPSERT)
 Apache Iceberg prend également en charge l’instruction `MERGE INTO`, qui permet de réaliser des opérations de type *upsert*.  
 Un **upsert** est une combinaison de deux opérations : **update** (mise à jour) et **insert** (insertion). Si la donnée existe déjà (selon une condition), elle est mise à jour ; sinon, elle est insérée.  
 C’est une opération particulièrement utile pour intégrer des flux de données incrémentales ou faire de la synchronisation avec des sources externes.
@@ -322,7 +322,7 @@ C’est une opération particulièrement utile pour intégrer des flux de donné
 +---+-------------+-----------+
 ```
 
-#### Insert avec évolution du schema automatique
+### Insert avec évolution du schema automatique
 L’un des avantages majeurs d’Apache Iceberg est sa capacité à gérer l’évolution de schéma sans interruption. Cela signifie qu’il est possible d’insérer des données contenant de nouvelles colonnes non encore présentes dans la table, sans générer d’erreur. Iceberg ajoutera automatiquement les colonnes manquantes au schéma, tout en conservant les versions précédentes pour garantir la compatibilité et le time travel.
 
 ```python
@@ -388,7 +388,7 @@ L’un des avantages majeurs d’Apache Iceberg est sa capacité à gérer l’�
 +---+-------------+-----------+-----------------+---------+
 ```
 
-#### Listing des snapshots
+### Listing des snapshots
 ```python
     snapshots_df = spark.sql(f"SELECT * FROM db.signup.snapshots").orderBy(
         "committed_at",
@@ -409,7 +409,7 @@ L’un des avantages majeurs d’Apache Iceberg est sa capacité à gérer l’�
 +-------------+-------------------+-------------------+---------+--------------------+--------------------+
 ```
 
-#### Lecture à partir d'un snapshot précédent (time travel)
+### Lecture à partir d'un snapshot précédent (time travel)
 ```python
     first_snapshot_id = snapshots_df.limit(1).collect()[0].snapshot_id
     spark.read.option("snapshot-id", first_snapshot_id).format("iceberg").load(
