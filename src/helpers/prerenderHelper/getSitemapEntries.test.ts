@@ -1,4 +1,4 @@
-import { getSitemapEntries } from './getSitemapEntries';
+import { getSitemapEntries, SitemapEntry } from './getSitemapEntries';
 
 describe('getSitemapEntries', () => {
   test('should generate sitemap entries correctly', () => {
@@ -11,20 +11,37 @@ describe('getSitemapEntries', () => {
       };
     });
     vi.mock('@/helpers/markdownContentManagerHelper', () => ({
-      getPosts: (): { lang: string; slug: string; categories: string[]; authors: string[] }[] => [
-        { lang: 'fr', slug: 'post-1', categories: ['architecture'], authors: ['author-1'] },
-        { lang: 'en', slug: 'post-2', categories: ['php'], authors: ['author-1'] },
+      getPosts: (): {
+        lang: string;
+        slug: string;
+        categories: string[];
+        authors: string[];
+        date: string;
+        cover?: { path: string };
+      }[] => [
+        {
+          lang: 'fr',
+          slug: 'post-1',
+          categories: ['architecture'],
+          authors: ['author-1'],
+          date: '2024-01-01T00:00:00',
+          cover: { path: '/imgs/post-1/cover.png' },
+        },
+        { lang: 'en', slug: 'post-2', categories: ['php'], authors: ['author-1'], date: '2024-01-01T00:00:00' },
       ],
       getAuthors: (): { username: string }[] => [{ username: 'author-1' }],
     }));
 
     // Expected result
-    const expectedSitemapEntries = [
-      { priority: 1, links: [{ lang: 'fr', url: '/fr/post-1/' }] },
-      { priority: 1, links: [{ lang: 'en', url: '/en/post-2/' }] },
+    const expectedSitemapEntries: SitemapEntry[] = [
       {
-        priority: 0.8,
-        changefreq: 'weekly',
+        links: [{ lang: 'fr', url: '/fr/post-1/' }],
+        lastModified: '2024-01-01T00:00:00',
+        image: { url: '/imgs/post-1/cover-w400-h245-x2.avif' },
+      },
+      { links: [{ lang: 'en', url: '/en/post-2/' }], lastModified: '2024-01-01T00:00:00' },
+      {
+        changeFrequency: 'weekly',
         links: [
           { lang: 'fr', url: '/' },
           { lang: 'fr', url: '/fr/' },
@@ -32,17 +49,15 @@ describe('getSitemapEntries', () => {
         ],
       },
       {
-        priority: 0.7,
-        changefreq: 'weekly',
+        changeFrequency: 'weekly',
         links: [
           { lang: 'fr', url: '/fr/categories/all/' },
           { lang: 'en', url: '/en/categories/all/' },
         ],
       },
-      { priority: 0.7, changefreq: 'weekly', links: [{ lang: 'en', url: '/en/categories/php/' }] },
-      { priority: 0.7, changefreq: 'weekly', links: [{ lang: 'fr', url: '/fr/categories/architecture/' }] },
+      { changeFrequency: 'weekly', links: [{ lang: 'en', url: '/en/categories/php/' }] },
+      { changeFrequency: 'weekly', links: [{ lang: 'fr', url: '/fr/categories/architecture/' }] },
       {
-        priority: 0.5,
         links: [
           { lang: 'fr', url: '/fr/authors/author-1/' },
           { lang: 'en', url: '/en/authors/author-1/' },
