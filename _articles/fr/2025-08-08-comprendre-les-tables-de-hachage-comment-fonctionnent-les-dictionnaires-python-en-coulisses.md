@@ -8,8 +8,6 @@ excerpt: Description of the article (Visible on the list pages)
 cover:
     alt: Alt image
     path: /imgs/articles/2025-08-08-comprendre-les-tables-de-hachage-comment-fonctionnent-les-dictionnaires-python-en-coulisses/cover.jpg
-categories:
-    - python
 authors:
     - quaxzse
 ---
