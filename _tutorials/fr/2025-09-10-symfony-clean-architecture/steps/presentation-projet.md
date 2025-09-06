@@ -9,9 +9,9 @@ title: Présentation du projet
 
 Avant de présenter le projet, voici une liste de concepts dont vous pourrez vous servir comme d'un pense-bête tout au long de ce tutoriel.
 
-- Domain: 
-- Infrastructure: 
-- Use Case: 
+- Domain: Le coeur de la logique métier, indépendant de tout framework, base de donnée et librairie externe. Il contient les objets et les règles métier, ainsi que des contrats d'interface.
+- Infrastructure: La couche la plus externe, qui contient le framework, les librairies et toutes les implémentations techniques concrètes (base de donnée, service d'email, API externes, ...).
+- Use Case: La couche qui orchestre l'application, en coordonnant le Domain et l'Infrastructure ensemble. Ici on cherche à accomplir des *process* métier, en se servant des règles métier du Domain, le tout facilité par l'Infrastructure.
 
 Le Domain est le coeur de votre application, il contient tous les objets métier & les règles fonctionnelles. 
 

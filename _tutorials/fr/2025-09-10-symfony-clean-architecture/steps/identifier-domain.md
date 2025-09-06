@@ -196,4 +196,66 @@ Super ! Notre `Card` est dorénavant capable de se comporter. On distinguera les
 
 ### Interfaces & Exceptions
 
-Dernière partie de ce chapitre sur le Domain, les interfaces.
+On a presque finit d'implémenter le Domain, mais on va être confronté à un problème: comment pourrai-je plus tard communiquer avec l'Infrastructure ?
+Deux réponses à cela:
+- La couche Domain de doit **jamais** appeler une autre couche, elle ne dépend de personne.
+- La couche Applicative par contre, qui contient les *UseCases*, doit pouvoir orchestrer le Domain **et** l'Infrfastructure ensemble, mais sans pour autant **dépendre** de l'Infra.
+
+La solution ? Les Interfaces ! On va ajouter dans notre Domain des contrats d'interface que notre Application pourra utiliser, sans avoir besoin de savoir quelles sont les implémentations concrètes de ces interfaces côté Infrastructure.
+
+Par exemple, c'est typiquement ce genre d'interface que nous allons mettre ici :
+
+```php
+interface CardRepositoryInterface
+{
+    public function listAllCards(): iterable;
+
+    public function findCard(string $id): ?Card;
+
+    /** @throws CardCreationException */
+    public function createNewCard(Card $card): void;
+
+    /** @throws CardEditException */
+    public function editCard(Card $card): void;
+
+    /** @throws CardRemovalException */
+    public function removeCard(string $id): void;
+
+    /** @return iterable<Card> */
+    public function findTodayCards(): iterable;
+}
+```
+
+On n'ajoutera dans nos interfaces **que** les méthodes dont nous sommes sûr qu'elles seront utiles à notre Application, ni plus, ni moins. Cela permet notamment de ne pas être parasité par les nombreuses autres méthodes et propriétés que nous mettent à disposition Framework, librairies, APIs, ORMs,..
+
+Pour les ORMs comme Doctrine par exemple, on n'exposera pas la `Connection` à la base de donnée, le `QueryBuilder`, ou encore toutes les fonctions toutes faites telles que `find`, `findOneBby`, etc... qui n'ont aucun **sens métier** dans notre Application.
+C'est nous qui définissons, avec des termes clairs et logiques, le nom de nos interfaces et de leurs méthodes, et on laisse le soin à l'Infrastructure de se débrouiller avec cela.
+
+
+<div class="admonition important" markdown="1"><p class="admonition-important">Important</p>
+Pour rappel, le but ici est <b>théoriquement</b> de pouvoir être capable de se débarasser de la couche Infrastructure et de la remplacer par une autre (changement de Framework, d'ORM, ou d'autres API..), sans que cela ait la moindre incidence sur notre Domain ou notre couche Applicative.
+
+Même s'il est peu probable que vous changiez votre Framework, c'est en respectant au maximum cette philosophie que vous ne ferez plus l'erreur de développer une fonctionnalité en <i>partant du Framework</i>, mais bien de penser d'abord aux besoins et aux règles métier, et en implémentant l'Infra seulement à la <b>fin</b>, et en vous servant des Interfaces que vous aurez peut-être créé.
+</div>
+
+Enfin, on remarquera que mon Interface peut lever des Exceptions particulières et personnalisées. Celles-ci permettent de dire à l'Infrastructure quelle Exception elle doit lever à quel moment, pour que notre couche Applicative sache à quoi l'erreur correspond, et comment réagir.
+
+Ces Exceptions sont rangées dans le Domain au même titre que les Interface, comme par exemple:
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Domain\Exception;
+
+class CardRemovalException extends \Exception
+{
+    public function __construct(string $message = 'Failed to remove card', int $code = 0, ?\Throwable $previous = null)
+    {
+        parent::__construct($message, $code, $previous);
+    }
+}
+```
+
+Rendez-vous sur le repo Github pour voir plus d'Interfaces et d'Exceptions.
