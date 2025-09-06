@@ -5,6 +5,16 @@ slug: presentation-projet
 title: Présentation du projet
 ---
 
+## Rappels Clean Architecture
+
+Avant de présenter le projet, voici une liste de concepts dont vous pourrez vous servir comme d'un pense-bête tout au long de ce tutoriel.
+
+- Domain: 
+- Infrastructure: 
+- Use Case: 
+
+Le Domain est le coeur de votre application, il contient tous les objets métier & les règles fonctionnelles. 
+
 ## La Boîte de Leitner
 
 Durant ce tutoriel, nous allons prendre un projet existant, une application Symfony classique, et très simple, pour petit à petit la migrer vers une architure Clean.
@@ -44,16 +54,15 @@ Prenez le temps de découvrir et de vous familiariser avec l'application.
 Pour le moment vous pouvez découvrir l'application via une interface simpliste développée en twig, pour mieux comprendre son fonctionnement. Mais lors du passage en Clean Archi, nous ferons la bascule vers une API ne retournant que du JSON, pour rester simple, sans superflu, et se focaliser sur l'essentiel.
 </div>
 
-## Identifier le Domain
+Vous trouverez également une Entité `Card` dont voici les propriétés:
+- `$question`: La question associée à la Carte
+- `$answer`: La réponse
+- `$initialTestDate`: La date initiale à laquelle la question nous est soumise
+- `$delay`: Le délai entre la `$initialTestDate` et la prochaine date de test (on incrémente cette valeur à chaque fois qu'on répond correctement à la question)
+- `$active`: La Carte est-elle activée ou désactivée
 
-Comme vous pouvez le constater, notre architecture est celle par défaut proposée par Symfony lorsqu'on crée un nouveau projet: tous les dossiers dans le `src/` et dans un namespace `App`.
-Et c'est très bien comme ça, surtout pour un projet de cette taille.
-Mais comme tout projet, il peut être amené à grossir, et là, on regrettera peut-être de ne pas s'être imposé à l'avance des contraintes d'architecture.
+C'est en jouant avec ces simples propriétés que notre Leitner Box est fonctionnelle.
+On dispose d'un CRUD dans le Controller, ainsi que d'une méthode pour soumettre des réponses aux questions.
+On dispose également d'une commande qui permet de nous envoyer un mail tous les jours avec les nouvelles cartes auxquelles répondre.
 
-Il est donc l'heure de prendre le problème à la racine et d'identifier le coeur de métier de notre application.
-
-Pour cela, on veut identifier 2 concepts:
-- Les objets métiers, et leur *comportement*
-- Les règles métier
-
-
+Je vous laisse explorer le repo pour plus de détails !

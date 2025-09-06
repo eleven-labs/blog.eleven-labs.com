@@ -7,6 +7,8 @@ title: Identifier le Domain
 
 ## Le Domain: Objets, comportement et règles
 
+### Anemic Domain
+
 Comme vous pouvez le constater, notre architecture est celle par défaut proposée par Symfony lorsqu'on crée un nouveau projet: tous les dossiers dans le `src/` et dans un namespace `App`.
 Et c'est très bien comme ça, surtout pour un projet de cette taille.
 Mais comme tout projet, il peut être amené à grossir, et là, on regrettera peut-être de ne pas s'être imposé à l'avance des contraintes d'architecture.
@@ -39,10 +41,13 @@ Mais je pense qu'il est intéressant de comprendre comment les ORMs ont modifié
 C'est en revenant à la base de l'<i>Objet</i> que nous allons pouvoir aller de l'avant.
 </div>
 
-Reprenons notre object `Card` qui n'est pour le moment qu'une entité Doctrine, ne reflettant que de la donnée persitée en base.
-Oublions la base de donnée. De quoi à besoin ma `Card` pour fonctionner ?
+### Propriétés & Immutabilité
 
-Voici ma proposition:
+Reprenons notre object `Card` qui n'est pour le moment qu'une entité Doctrine, ne reflettant que de la donnée persitée en base.
+Oublions la base de donnée. De quoi à besoin ma `Card` pour fonctionner ? On ne conservera que les propriétés qui ont un **sens fonctionnellement**. Pas besoin de garder des timestamp tels que `$updatedAt` par exemple (à moins que cette valeur ait une vraie utilité fonctionnelle).
+Dans notre cas, la `Card` était déjà plutôt bien définie, avec peu de propriétés.
+
+Voici donc ma proposition:
 
 ```php
 <?php
@@ -72,9 +77,123 @@ readonly class Card
     }
 
     // ...
+}
 ```
 
-=> immutable object
-=> namespace (composer.json psr4 autoload config)
-=> propriétés
-=> ajout du behavior
+Premier élément à noter, l'utilisation du `readonly` pour rendre cet objet immuable. Il est intéressant de garder tous ses `Domain objects` immuables pour la lisibilité du code et pour minimiser les erreurs. Une fois que je crée un objet Card, il ne changera jamais, donc aucun risque qu'un appel à une fonction cachée change secrètement la valeur d'une propriété avant que je persiste le tout en base: mon code gagne en fiabilité.
+
+<div  class="admonition question"  markdown="1"><p  class="admonition-title">Question</p>
+C'est super mais que faire si j'ai vraiment envie de modifier une propriété de mon objet ?
+</div>
+
+La solution dorénavant dans ce cas est assez simple. Imaginons que nous souhaitons désactiver une `Card` car on ne souhaite plus qu'elle apparaisse dans notre boîte.
+On rajoute cette fonction à notre classe :
+
+```php
+    // ...
+
+    /**
+     * Creates a new Card with the updated active status
+     */
+    public function withActive(bool $active): self
+    {
+        return new self(
+            $this->question,
+            $this->answer,
+            $this->initialTestDate,
+            $active,
+            $this->delay,
+            $this->id,
+        );
+    }
+
+    // ...
+```
+
+Puis j'appelle cette fonction ainsi :
+
+```php
+public function disableCard($card): Card
+{
+    $disabledCard = $card->withActive(false);
+
+    return $disabledCard;
+}
+```
+
+Quels sont les avantages d'une telle méthode ?
+- Par défaut mon objet est `immutable`, stable dans le temps, il garde le même `state`.
+- Je crée des fonctions `with*()` uniquement pour définir des situations dans lesquelles j'autorise des propriétés à changer
+- Je manipule plusieurs objets avec un nom et un état différents. Ainsi, chaque objet à son propre état, et si je les nomme bien, il est beaucoup plus aisé de les manipuler.
+
+Cela permet une meilleure fluidité de développement, plutôt que d'avoir par exemple plusieurs objets `$card1`, `$card2`, ... ou encore d'avoir un seul objet `$card` qui passe à la machine à laver: il passe dans plusieurs fonctions, durant plusieurs dizaines de lignes, et à la fin on ne sait plus quelles sont les valeurs de ses propriétés.
+
+
+Vous aurez également remarqué que nous avons changé le namespace en supprimant le préfixe `App`. Pour que ce changement fonctionne, n'oublions pas de modifier notre `composer.json` au niveau de l'autoload ainsi:
+
+```json
+"autoload": {
+    "psr-4": {
+        "Domain\\": "src/Domain/",
+        "Application\\": "src/Application/",
+        "Infrastructure\\": "src/Infrastructure/"
+    }
+}
+```
+
+Je vous offre un petit spoil des dossiers que nous allons créer par la suite, c'est cadeau !
+
+
+### Comportement
+
+Très bien, il ne nous reste plus qu'une chose à rajouter à notre objet, dont nous avons parlé plus tôt: un *comportement*.
+Moins de blabla, plus de code, voici quelques comportements à ajouter à notre `Card`:
+
+```php
+
+    /**
+     * Checks if the provided answer is correct for this card
+     */
+    public function isAnswerCorrect(string $answer): bool
+    {
+        return strtolower(trim($answer)) === strtolower($this->answer);
+    }
+
+    /**
+     * Handles a failed answer attempt by resetting the card's delay and setting the initial test date to now
+     */
+    public function handleFailedAnswer(): self
+    {
+        return $this->withInitialTestDate(new \DateTime())
+            ->withDelay(1);
+    }
+
+    /**
+     * Checks if this card is due for testing today
+     */
+    public function isDueForTesting(): bool
+    {
+        if (!$this->active) {
+            return false;
+        }
+
+        if (!$this->initialTestDate instanceof \DateTime) {
+            return false;
+        }
+
+        $dueDate = (clone $this->initialTestDate)->modify($this->delay . 'days');
+
+        return $dueDate <= new \DateTime('today');
+    }
+```
+
+<div class="admonition note" markdown="1"><p class="admonition-note">Note</p>
+Comme pour tous les exemples de ce tutoriel, gardez toujours le repository à portée de main pour retrouver chaque classe dans son intégralité et son contexte.
+En l'occurence, vous pourrez trouver d'autres exemples de comportements directement dans la classe Card.php du repo !
+</div>
+
+Super ! Notre `Card` est dorénavant capable de se comporter. On distinguera les comportements qui vérifient et renvoient un résultat comme notre `isAnswerCorrect`, des comportements qui renvoient une nouvelle instance de `Card` suite à une modification, comme le `handleFailedAnswer` qui renvoie une nouvelle `Card` avec son délai réinitialisé suite à une mauvaise réponse.
+
+### Interfaces & Exceptions
+
+Dernière partie de ce chapitre sur le Domain, les interfaces.
