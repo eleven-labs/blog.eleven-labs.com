@@ -52,6 +52,8 @@ Prenez le temps de découvrir et de vous familiariser avec l'application.
 
 <div class="admonition important" markdown="1"><p class="admonition-important">Important</p>
 Pour le moment vous pouvez découvrir l'application via une interface simpliste développée en twig, pour mieux comprendre son fonctionnement. Mais lors du passage en Clean Archi, nous ferons la bascule vers une API ne retournant que du JSON, pour rester simple, sans superflu, et se focaliser sur l'essentiel.
+Vous trouverons un fichier <code>tests/requests.http</code> dans lequel des requêtes HTTP sont prêtes à l'emploi (attention à changer les ID quand nécessaire). 
+Votre IDE devrait vous permettre de lancer ces requêtes directement depuis le fichier.
 </div>
 
 Vous trouverez également une Entité `Card` dont voici les propriétés:
