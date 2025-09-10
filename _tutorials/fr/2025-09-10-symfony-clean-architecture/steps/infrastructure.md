@@ -302,6 +302,55 @@ On peut donc faire appel à notre Application via le `CreateCardUseCase`. On sai
 
 C'est tout ! Notre Controller n'a pas à savoir ce qui se passe à l'intérieur de l'Application, il ne sert que de passe plat entre des données en entrée (qu'il faut certes valider et formatter), et des données en retour (que l'on peut vouloir serializer).
 
-Notre Domain est parfaitement bien isolé du reste, tout est faiblement couplé grâce aux interfaces, et je peux me concentrer sur l'essentiel: développer de la valeur métier.
-Bien sûr, je peux toujours m'amuser à choisir des implémentations techniques complexes, challengeantes ou farfelues si l'envie m'en prend, mais au moins mon code métier n'en pâtira jamais, et si un jour je fais de mauvais choix techniques, je peux juste tout remplacer sans toucher au coeur de mon application.
+## La Command
 
+N'oublions pas qu'un **cron** tourne tous les jours pour envoyer un mail si nécessaire, pour nous prévenir si des Cartes sont présentes dans le compartiment du jour, et qu'on doit y répondre.
+
+Pour cela, on s'est créé un cas d'usage dans la couche Application, et il ne nous reste plus qu'à l'appeler. Tirons profit du composant `Command` de Symfony, et ajoutons cette commande:
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Infrastructure\Symfony\Command;
+
+use Application\SendDailyCardsUseCase;
+use Symfony\Component\Console\Attribute\AsCommand;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+#[AsCommand(
+    name: 'app:daily-test-notif',
+    description: 'Daily Notification for test',
+)]
+class DailyTestNotifCommand extends Command
+{
+    public function __construct(private readonly SendDailyCardsUseCase $sendDailyCardsUseCase)
+    {
+        parent::__construct();
+    }
+
+    protected function configure(): void
+    {
+    }
+
+    protected function execute(InputInterface $input, OutputInterface $output): int
+    {
+        $this->sendDailyCardsUseCase->execute();
+
+        return Command::SUCCESS;
+    }
+}
+```
+
+On pourrait même rajouter un `try / catch` si jamais notre `UseCase` lève une `Exception`, pour afficher une erreur proprement dans le terminal.
+
+Et c'est tout, si demain on souhaite envoyer cet email en cliquant sur un bouton depuis une page, on pourra jeter cette commande, créer un Controller, appeler ce même `UseCase`, et rien d'autre que la couche Infrastructure n'aura a changer, pratique !
+
+## Félicitations !
+
+Notre Domain est parfaitement bien isolé du reste, tout est faiblement couplé grâce aux interfaces, et je peux me concentrer sur l'essentiel: développer de la valeur métier.
+
+Bien sûr, je peux toujours m'amuser à choisir des implémentations techniques complexes, challengeantes ou farfelues si l'envie m'en prend, mais au moins mon code métier n'en pâtira jamais, et si un jour je fais de mauvais choix techniques, je peux juste tout remplacer sans toucher au coeur de mon application.

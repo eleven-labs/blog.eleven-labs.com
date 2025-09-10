@@ -10,7 +10,8 @@ title: Introduction
 Alors que la Clean Architecture a plus le vent en poupe que jamais ces dernières années, j'ai moi-même passé beaucoup de temps à chercher des ressources en PHP, voire en Symfony (mon Framework de coeur), pour découvrir plus facilement cette philosophie.
 
 <div class="admonition warning" markdown="1"><p class="admonition-warning">Disclaimer</p>
-Oui, la Clean regroupe des concepts qui permettent justement de s'affranchir du Framework et du langage, afin d'en être le pus agnostique possible.
+Oui, la Clean regroupe des concepts qui permettent justement de s'affranchir du Framework, afin d'en être le plus agnostique possible.
+<br/>
 Mais je suis persuadé qu'à l'apprentissage, rien de mieux que des exemples avec lesquels nous sommes familiers, pour correctement assimiler ces principes.
 </div>
 
@@ -36,11 +37,12 @@ Avant de rentrer dans le vif du sujet, j'aimerais préciser le périmètre de mo
 Il peut exister autant d'applications de la Clean Architecture qu'il existe d'équipes de développeurs.
 **Mais** le point commun entre ces équipes sera le suivant: un système de couches qui protègent le métier et ses objets en son centre, découplés des implémentations techniques qui gravitent autour.
 
-Rassurez-vous, je vais malgré tout essayer de donner une vision la plus universelle possible de la Clean, afin que vous ne soyiez pas perdus en étant un jour onboardé sur un projet Clean.
+Je vais malgré tout essayer de donner une vision la plus universelle possible de la Clean, qui corresponde le plus possible à la réalité.
 Mais si certains de mes choix ne vous plaisent pas, n'oubliez pas que vous êtes libres d'adapter mes propositions à votre vision.
 
 <div class="admonition tip" markdown="1"><p class="admonition-tip">Tip</p>
 Souvent, on reste très attachés à la règle et aux dogmes quand on débute sur un sujet.
+<br/>
 Mais c'est en prenant de l'expérience et de la confiance que l'on peut intelligement tordre cette règle (sans jamais la transgresser) pour l'adapter à nos préférences !
 </div>
 
