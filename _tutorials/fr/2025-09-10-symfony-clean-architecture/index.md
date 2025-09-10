@@ -25,5 +25,5 @@ steps:
   - conclusion
 seo:
     title: La Clean Architecture appliquée à un projet Symfony
-    description: Développons ensemble un projet Symfony, en suivant les grands principes de la Clean Architecture. Bonnes pratiques, conseils et astuces pour que le mariage entre Symfony et Clean ne soit plus un secret pour vous !
+    description: Bonnes pratiques, conseils et astuces pour que le mariage entre Symfony et Clean ne soit plus un secret pour vous !
 ---
