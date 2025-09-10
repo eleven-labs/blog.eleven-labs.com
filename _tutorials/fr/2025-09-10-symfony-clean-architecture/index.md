@@ -19,9 +19,8 @@ steps:
   - introduction
   - presentation-projet
   - identifier-domain
-  - transformation-clean-domain
-  - transformation-clean-infrastructure
-  - transformation-clean-application
+  - application
+  - infrastructure
   - conclusion
 seo:
     title: La Clean Architecture appliquée à un projet Symfony
