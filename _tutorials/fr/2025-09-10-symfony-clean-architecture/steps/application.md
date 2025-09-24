@@ -13,7 +13,7 @@ Notre Domain est à présent riche en règles métier & comportement, il contien
 C'est là le but de la couche Application, aussi appelée UseCases, ou parfois même Services, bien que qu'à titre personnel, je n'aime pas le terme "Service" qui est trop générique et foure-tout à mon goût.
 
 Pour ma part, j'aime appeler cette couche "Application" et suffixer toutes les classes qu'elle contient par `...UseCase`. Je trouve cela plus parlant pour comprendre l'objectif de cette couche: orchestrer l'application au travers de *cas d'usages* métier.
-Chaque classe de cette couche doit répondre à un cas d'usage applicatif réel, et se service du Domain (Model, règles, Interfaces) pour y répondre.
+Chaque classe de cette couche doit répondre à un cas d'usage applicatif réel, et se servir du Domain (Model, règles, Interfaces) pour y répondre.
 
 En général, ces classes ne doivent contenir qu'une méthode `execute()` dont le but est d'*exécuter* le cas d'usage applicatif, rien de plus, rien de moins.
 
@@ -43,10 +43,10 @@ readonly class CreateCardUseCase
 }
 ```
 
-Voilà l'exemple le plus simple possible. On rappelle qu'à ce stade, le UseCase ne doit dépendre que de la couche inférieure à lui, soit le Domain, d'où l'injection du `CardRepositoryInterface`, définie plus tôt dans le Domain.
+Voilà l'exemple le plus simple possible. On rappelle qu'à ce stade selon le *flow of control*, le UseCase ne doit dépendre que de la couche inférieure à lui, soit le Domain, d'où l'injection du `CardRepositoryInterface`, définie dans le chapitre précédent sur le Domain.
 
 <div class="admonition note" markdown="1"><p class="admonition-note">Note</p>
-Dans la réalité, il est rare qu'un UseCase soit aussi dépouillé que celui-ci, un projet plus complet aurait nécessité certainement un traitement plus complet, comme réagir à la création de la Carte, ajouter des garde-fous, etc...
+Dans la réalité, il est rare qu'un UseCase soit aussi dépouillé que celui-ci, un projet plus complet aurait nécessité certainement un traitement plus exhaustif, comme réagir à la création de la Carte, ajouter des garde-fous, etc...
 </div>
 
 C'est bien joli mais il n'y a pas grand chose à orchestrer dans ce cas précis.
@@ -86,12 +86,13 @@ readonly class SolveCardUseCase
 
 Reprenons cette classe depuis le début:
 - Comme pour le UseCase précédent, on injecte le repository pour mettre à jour la `Card` dans la base de donnée en fonction de la réponse donnée
-- On se sert de la règle métier contenue dans la carte pour vérifier la validité de la réponse
-- On utilise le comportement de notre objet pour correctement gérer sa mise à jour en cas de bonne ou mauvaise réponse (cf Domain)
-- On met à jour la `Card` dans la base de donnée via l'interface du Repository.
+- Ma fonction `execute` prend en paramètre une `Card` et la réponse proposée
+- On se sert de la règle métier `isAnswerCorrect` contenue dans la carte pour vérifier la validité de la réponse
+- On utilise le comportement de notre objet (`handleSuccessfulAnswer` **ou** `handleFailedAnswer`) pour correctement gérer sa mise à jour en cas de bonne ou mauvaise réponse
+- On met à jour la `Card` dans la base de donnée via l'interface du Repository (méthode `editCard()`).
 
 Ce qui est important de remarquer, c'est qu'il n'y a aucune logique métier dans nos UseCase.
-Car ce n'est **pas son rôle**. Le UseCase doit simplement être appelé par l'Infrastructure (requête d'un utilisateur ou d'un système externe pour un cas d'usage précis à résoudre), et donner une réponse en orchestrant le Domain.
+Car ce n'est **pas son rôle**. Le UseCase sera simplement appelé par l'Infrastructure (requête d'un utilisateur par exemple), pour donner une réponse en orchestrant le Domain (vérification de règles, appels à des interfaces, ...).
 
 ### Maintenabilité et Tests
 
@@ -99,12 +100,12 @@ Car ce n'est **pas son rôle**. Le UseCase doit simplement être appelé par l'I
 
 Peut-être connaissez-vous l'adage ***Don't mock what you don't own*** ?
 
-Il peut être en effet compliqué d'essayer de mocker une classe provenant de librairies externes, commee Doctrine, car parfois elles sont complexes, et dépendent elles-mêmes d'autres classes que l'on comprend moins. La mocker pourrait même apporter des effets de bord indésirables lors des tests.
+Il peut être en effet compliqué d'essayer de mocker une classe provenant de librairies externes, comme Doctrine, car parfois elles sont complexes, et dépendent elles-mêmes d'autres classes que l'on comprend moins. La mocker pourrait même apporter des effets de bord indésirables lors des tests.
 
 Bonne nouvelle, ce problème n'existe pas ici ! Notre couche Application est protégée de l'Infrastructure et donc du Framework, des librairies externes, de l'ORM, etc...
 
 Jusqu'ici, tout nous appartient, grâce aux interfaces fournies par le Domain. Ces interfaces qui ne contiennent à chaque fois que le contrat nécéssaire au fonctionnement de notre projet, pas de superflu ni de détails d'implémentation. 
 
-On peut donc les mocker sans danger si l'on souhaite ajouter des tests unitaires !
+On peut donc les mocker sans danger si l'on souhaite ajouter des tests unitaires, car nous *possèdons* ces Interfaces !
 
 Grâce à tout cela, notre code est réellement maintenable, car il est totalement isolé du reste, il ne sait pas quelle base de données est utilisée par dessus, quel Framework, quel client mail, ... Tout cela pourrait changer du jour au lendemain que ça ne changerait rien pour notre Domain et notre Application, et surtout ... Les tests passeraient toujours !

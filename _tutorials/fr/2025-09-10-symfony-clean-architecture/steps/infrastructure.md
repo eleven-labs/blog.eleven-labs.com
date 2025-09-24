@@ -22,6 +22,8 @@ Ce qui nous donne ceci:
 src/
 └───Domain/
 │   
+└───Application/
+│   
 └───Infrastructure/
     │   └───Symfony/
         │   └───Command/
@@ -37,9 +39,7 @@ Par exemple, on a créé une `NotificationInterface` dans le Domain pour défini
 On implémente donc cette interface ainsi:
 
 ```php
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Infrastructure\Symfony\Mailer;
 
@@ -68,17 +68,17 @@ readonly class AppMailer implements Notification
 
 Et c'est tout ! Ainsi notre Domain reste agnostique de l'implémentation technique (il n'a pas à savoir quel type de Notification sera envoyée, un mail, un sms, ...), et notre Infrastructure sait ce qu'elle doit faire grâce au contrat d'interface. Ici donc, on injecte le Mailer de Symfony pour envoyer notre Notification.
 
+Demain, on pourrait préfèrer une notification via SMS, ou une push notification, il suffira d'ajouter ces classes. L'Application, elle, restera inchangée, car elle dépend uniquement de l'Interface `Notification`.
+
 
 ### Doctrine et DBAL
 
-Bien ! Parlons à présent de notre ORM, Doctrine. On le place dans un dossier à part, et dans notre cas nous n'avons que notre seul Repository à implémenter.
+Bien ! Parlons à présent de notre ORM, Doctrine. On le place dans un dossier à part, et dans notre cas nous n'avons qu'un seul Repository à implémenter.
 
 Voilà à quoi cela ressemble : 
 
 ```php
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Infrastructure\Doctrine\Repository;
 
@@ -131,7 +131,9 @@ Avantages de **DBAL** ? C'est beaucoup plus léger que l'ORM en entier, on n'inj
 De plus, les performances sont bien plus intéressantes qu'avec la surcouche de l'ORM.
 
 Inconvénient ? Pas de méthode magique (`findBy`, etc...), il faut écrire toutes nos requêtes, même les plus simples (je vois ça aussi comme un avantage pour garder le contrôle sur les données récupérées et la performance).
-De plus, qui dit pas d'*ORM* dit pas de *mapping*. Et donc c'est à nous de faire ce mapping nous-mêmes, avec la méthode `mapToCard` que vous trouvez ci-dessus.
+
+Autre inconvénient, qui dit pas d'*ORM* dit pas de *mapping* automatique entre le résultat de la requête SQL et notre entité `Card`. Et donc c'est à nous de faire ce mapping nous-mêmes, avec la méthode `mapToCard` que vous trouvez ci-dessus.
+
 Dans notre monde simpliste, cette méthode suffit à couvrir tous nos usages, et on continue à gagner en performance sur l'usine qu'est l'ORM. Mais dans le monde réel, il faudra bien penser à valider le données récupérées, et faire un travail de maintenance constant sur ce genre de méthode pour qu'elle résiste au changement. De nombreuses autres alternatives exites sûrement, votre imagination est la seule limite !
 
 ### Les Requests, les DTOs et la Serialization
@@ -193,12 +195,20 @@ readonly class CreateCardRequest
 }
 ```
 
-<div class="admonition note" markdown="1"><p class="admonition-note">Note</p>
-Vous remarquerez le namespace de ces DTO, respectivement <code>Infrastructure\Symfony\Http\Response</code> & <code>Infrastructure\Symfony\Http\Requests</code>.
-J'ai fait le choix de les placer dans le répertoire <code>Symfony\Requests</code> car cela me parraissait le plus logique, mais surtout parce que les <code>Requests</code> utilisent le Validator et l'ObjectMapper de Symfony, ce qui en font des objets totalement dépendants du Framework.
+<div class="admonition important" markdown="1"><p class="admonition-important">Important</p>
+Vous vous demandez peut-être pourquoi je fais de la validation de données ici dans l'Infrastructure plutôt que via des règles de gestion dans le Domain. C'est vrai, ce devrait être le rôle du Domain de contenir ces règles !
+<br />
+Il est totalement normal de se poser cette question et c'est là une limite parfois floue qu'il vous reviendra de trancher: est-ce que je fais une validation <b>technique</b> (le format d'une donnée brute en entrée par exemple) ou une validation <b>fonctionnelle</b>, auquel cas il <b>faut</b> en effet que cette règle soit contenue dans le Domain.
+<br />
+Ici, je vérifie simplement que mes données en entrée ne sont pas vides, et j'estime que ça n'a aucun intérêt fonctionnel, et pas de valeur métier, je décide donc de laisser la charge de cette validation au <code>Validator</code> de Symfony.
+<br/>
+À vous d'arbitrer quand vous vous retrouverez dans des cas similaires !
 </div>
 
-Vous aurez remarquer que je n'ai pas encore mentionné l'utilisation de l'`ObjectMapper` dans notre `CreateCardRequest`. Prenons un instant pour parler de ce composant.
+Vous remarquerez le namespace de ces DTO, respectivement `Infrastructure\Symfony\Http\Response` & `Infrastructure\Symfony\Http\Requests`.
+J'ai fait le choix de les placer dans le répertoire `Symfony\Requests` car cela me parraissait le plus logique, mais surtout parce que les `Requests` utilisent le **Validator** et l'**ObjectMapper** de Symfony, ce qui en font des objets totalement dépendants du Framework.
+
+Vous aurez remarqué que je n'ai pas encore mentionné l'utilisation de l'`ObjectMapper` dans notre `CreateCardRequest`. Prenons un instant pour parler de ce composant.
 
 ### Symfony Object Mapper
 
@@ -206,7 +216,7 @@ Au moment où j'écris ces lignes, le nouveau composant Symfony `ObjectMapper` v
 C'est une super nouvelle car ce dernier va grandement faciliter le mapping d'un objet à un autre.
 Je vous laisse le [lien vers la documentation](https://symfony.com/doc/current/object_mapper.html) de ce nouveau composant pour en savoir plus.
 
-Ce qu'il faut retenir, c'est que Symfony va se servir du nom des propriétés de notre DTO pour les faire correspondre avec notre objet métier, sans avoir besoin de toujours créer un `new Card()` à chaque réception d'une `Request`.
+Ce qu'il faut retenir, c'est que Symfony va se servir du nom des propriétés de notre DTO pour les faire correspondre avec notre objet métier, sans avoir besoin de toujours créer un `new Card()` à chaque réception d'une `Request`. J'ai juste besoin d'ajouter l'attribut `#[Map(target: Card::class)]`, au dessus de mon DTO, et c'est bon il est prête à être mappé sur mon objet `Card`.
 
 Mais pour voir ce composant en action, il faut que l'on parle des `Controller`, où toute cette logique de communication avec l'extérieur va se dérouler.
 
@@ -252,7 +262,7 @@ class CardController extends AbstractController
 ```
 
 Dans ce cas ultra-simpliste, nous souhaitons simplement récupérer les `Card` auxquelles je dois répondre aujourd'hui. Je sais que j'ai un UseCase qui me permet de le faire, auquel je fais appel.
-Puis, je décide de serializer les données car je ne veux pas exposer les réponses aux questions dans ce cas précis. Enfin je retourne mes données, c'est tout !
+Puis, je décide de serializer les données car je ne veux pas exposer les réponses aux questions dans ce cas précis. Pour cela j'utilise le `TestCardDto` créé précédemment. Enfin je retourne mes données, c'est tout !
 
 La logique sera un poil plus complexe lorsqu'il s'agira de vouloir créer une nouvelle `Card`:
 

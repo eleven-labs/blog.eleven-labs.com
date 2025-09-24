@@ -19,4 +19,6 @@ Et voilà ! Je trouve cela beaucoup plus sain de se concentrer sur notre *métie
 
 J'espère que ce tutoriel vous a plu et vous aura appris des choses, n'oubliez pas qu'il n'y a jamais **une seule** manière de faire, donc adaptez toujours ce que vous lisez à votre situation, votre équipe, et votre sensibilité.
 
+Et pour terminer j'aimerais remercier [Noel]({BASE_URL}/fr/authors/nkania/) qui m'aura bien aidé lors mon auto-formation à la Clean Architecture, et sans qui ce tutoriel n'existerai pas !
+
 Merci d'avoir suivi jusqu'ici et à très bientôt sur le blog d'Eleven Labs 👋
