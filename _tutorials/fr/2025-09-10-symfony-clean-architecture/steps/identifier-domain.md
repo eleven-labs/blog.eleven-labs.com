@@ -9,7 +9,7 @@ title: Identifier le Domain
 
 ### Anemic Domain
 
-Comme vous pouvez le constater, notre architecture est celle par défaut proposée par Symfony lorsqu'on crée un nouveau projet: tous les dossiers dans le `src/` et dans un namespace `App`.
+Comme vous pouvez le constater, notre architecture est celle par défaut proposée par Symfony lorsqu'on crée un nouveau projet: tous les dossiers sont dans `src/` et dans un namespace `App`.
 Et c'est très bien comme ça, surtout pour un projet de cette taille.
 Mais comme tout projet, il peut être amené à grossir, et là, on regrettera peut-être de ne pas s'être imposé à l'avance des contraintes d'architecture.
 
@@ -17,7 +17,7 @@ Il est donc l'heure de prendre le problème à la racine et d'identifier le coeu
 
 Première bonne pratique quand on adopte la Clean Architecture, toujours commencer son développement par le `Domain`, toujours *from bottom to top*. On commence donc par créer un nouveau dossier `src/Domain`.
 
-Et pour savoir ce que l'on va mettre dedans, on va essayer d'identifier ces 2 concepts:
+Et pour savoir ce que l'on va mettre dedans, on va essayer d'identifier 2 concepts:
 - Les objets métiers (*Domain Model*), et leur *comportement*
 - Les règles métier
 
@@ -29,7 +29,7 @@ Prenons un peu de temps sur cette notion, car elle est cruciale, et souvent oubl
 
 Comme très bien expliqué dans cet [article de Martin Fowler](https://martinfowler.com/bliki/AnemicDomainModel.html), un fléau s'est abattu sur le monde de l'orienté objet: l'***Anemic Domain Model***, ou le ***Domaine Anémique*** en bon français.
 
-Il s'agit d'un **anti-pattern**, dans lequel nos objets se sont appauvris pour ne contenir plus que la donnée: des propriétés, des relations avec d'autres objets, ainsi que tout un panel de *getter* et *setter*. En résumé, ça ressemble grandement à notre bonne vieille entité Doctrine.
+Il s'agit d'un **anti-pattern**, dans lequel nos objets se sont appauvris pour ne contenir plus que la donnée: c'est-à-dire uniquement des **propriétés**, des **relations** avec d'autres objets, ainsi que tout un panel de *getter* et *setter*. En résumé, ça ressemble grandement à notre bonne vieille entité Doctrine.
 
 Le problème avec cette approche, c'est que nos objets ne sont plus que des coquilles vides de sens, qui ne font que transiter de la donnée entre la base de données et notre application, mais qui n'ont aucun *comportement*, aucun *behavior*.
 
@@ -39,7 +39,7 @@ Ainsi, la tendance des dernières années à systèmatiquement séparer les **do
 
 Le *Service* ne devrait qu'orchestrer et coordonner les objets ensemble et avec le reste du programme, mais pas contenir de connaissance ou de comportement métier.
 
-J'insiste sur ce point car il s'agit, **à mon sens**, d'un concept qui m'a vraiment aidé à comprendre ce que je faisais "de travers", et m'a donné un nouvel angle de compréhension de la solution qu'est la Clean Architecture: redonner le pouvoir au Domain.
+J'insiste sur ce point car il s'agit, **à mon sens**, d'un concept qui m'a vraiment aidé à comprendre ce que je faisais "de travers", et m'a donné un nouvel angle de compréhension de la solution qu'est la Clean Architecture: **redonner le pouvoir au Domain**.
 
 <div class="admonition note" markdown="1"><p class="admonition-note">Note</p>
 Je ne porte aucun jugement sur une pratique que j'utilise moi-même encore régulièrement.
@@ -50,7 +50,7 @@ C'est en revenant à la base de l'<i>Objet</i> que nous allons pouvoir aller de 
 
 ### Propriétés & Immutabilité
 
-Reprenons notre object `Card` qui n'est pour le moment qu'une entité Doctrine, ne reflettant que de la donnée persitée en base.
+Reprenons notre objet `Card` qui n'est pour le moment qu'une entité Doctrine, ne reflettant que de la donnée persitée en base.
 Oublions la base de donnée. De quoi à besoin ma `Card` pour fonctionner ? On ne conservera que les propriétés qui ont un **sens fonctionnellement**. Pas besoin de garder des timestamp tels que `$updatedAt` par exemple (à moins que cette valeur ait une vraie utilité fonctionnelle).
 Dans notre cas, la `Card` était déjà plutôt bien définie, avec peu de propriétés.
 
@@ -87,7 +87,7 @@ readonly class Card
 }
 ```
 
-Premier élément à noter, l'utilisation du `readonly` pour rendre cet objet immuable. Il est intéressant de garder tous ses *Domain Objbect Models* immuables pour la lisibilité du code et pour minimiser les erreurs. Une fois que je crée un objet Card, il ne changera jamais, donc aucun risque qu'un appel à une fonction cachée change secrètement la valeur d'une propriété avant que je persiste le tout en base: mon code gagne en fiabilité.
+Premier élément à noter, l'utilisation du `readonly` pour rendre cet objet immuable. Il est intéressant de garder tous ses *Domain Object Models* immuables pour la lisibilité du code et pour minimiser les erreurs. Une fois que je crée un objet Card, il ne changera jamais, donc aucun risque qu'un appel à une fonction cachée change secrètement la valeur d'une propriété avant que je persiste le tout en base: mon code gagne en fiabilité.
 
 <div  class="admonition question"  markdown="1"><p  class="admonition-title">Question</p>
 C'est super mais que faire si j'ai vraiment envie de modifier une propriété de mon objet ?
@@ -117,7 +117,7 @@ On rajoute cette fonction à notre classe :
     // ...
 ```
 
-Puis j'appelle cette fonction ainsi :
+Puis j'appelle cette fonction ainsi, pour qu'elle me retourne un nouvel objet, avec la propriété `active` modifiée :
 
 ```php
 public function disableCard($card): Card
@@ -130,10 +130,10 @@ public function disableCard($card): Card
 
 Quels sont les avantages d'une telle méthode ?
 - Par défaut mon objet est `immutable`, stable dans le temps, il garde le même `state`.
-- Je crée des fonctions `with*()` uniquement pour définir des situations dans lesquelles j'autorise des propriétés à changer. Le nom de ces fonctions à un sens, contrairement à de simples `setters`.
+- Je crée des fonctions `with*()` uniquement pour définir des situations dans lesquelles j'autorise des propriétés à changer. Le nom de ces fonctions ont un sens, contrairement à de simples `setters`.
 - Plutôt que de manipuler 1 objet `Card`, que je modifie plusieurs fois au cours de mon programme, ici je retourne à chaque fois des objets différents. Chacun à son propre état, et si je les nomme bien, il est beaucoup plus aisé de les manipuler et de suivre ce qui se passe dans le code.
 
-Cela permet une meilleure fluidité de développement, plutôt que d'avoir par exemple plusieurs objets `$card1`, `$card2`, ... Ou pire, avoir un seul objet `$card` qui passe à la machine à laver, se faisant muter de fonction en fonction, durant plusieurs dizaines de lignes, et à la fin on ne sait plus quelles sont les valeurs de ses propriétés.
+Cela permet une meilleure fluidité de développement, plutôt que d'avoir par exemple un seul objet `$card` qui passe à la machine à laver, se faisant muter de fonction en fonction, durant plusieurs dizaines de lignes, et à la fin on ne sait plus quelles sont les valeurs de ses propriétés.
 
 
 Vous aurez également remarqué que nous avons changé le namespace en supprimant le préfixe `App`. Pour que ce changement fonctionne, n'oublions pas de modifier notre `composer.json` au niveau de l'autoload ainsi:
@@ -197,10 +197,10 @@ Moins de blabla, plus de code, voici quelques comportements à ajouter à notre 
 <div class="admonition note" markdown="1"><p class="admonition-note">Note</p>
 Comme pour tous les exemples de ce tutoriel, le contenu des classes n'est pas exhaustif. Pour voir le code dans son intégralité, gardez en parallèle une <a href="https://github.com/ArthurJCQ/leitner-box/tree/refacto-clean">page Github</a> ouverte avec le code complet de notre application.
 <br/>
-En l'occurence, vous pourrez trouver d'autres exemples de comportements directement dans la classe `Card.php` du repo !
+En l'occurence, vous pourrez trouver d'autres exemples de comportements directement dans la classe <code>Card.php</code> du repo !
 </div>
 
-Super ! Notre `Card` est dorénavant capable de se comporter. On distinguera les règles métier qui vérifient et renvoient un résultat comme notre `isAnswerCorrect`, des **comportements** qui renvoient une nouvelle instance de `Card` suite à une modification, comme le `handleFailedAnswer` qui renvoie une nouvelle `Card` avec son délai réinitialisé suite à une mauvaise réponse.
+Super ! Notre `Card` est dorénavant capable de se comporter. On distinguera les règles métier qui vérifient et renvoient un résultat comme notre `isAnswerCorrect`, des **comportements** qui renvoient une nouvelle instance de `Card` suite à une modification, comme le `handleFailedAnswer` qui renvoie une nouvelle `Card` avec son délai réinitialisé suite à une mauvaise réponse. Et vous l'aurez deviné, la fonction `disableCard`, que nous évoquions plus haut fait partie du **comportement** de notre `Card` !
 
 ### Interfaces & Exceptions
 
@@ -209,7 +209,21 @@ Deux réponses à cela:
 - La couche Domain de doit **jamais** appeler une autre couche, elle ne dépend de personne.
 - La couche Applicative par contre, qui contient les *UseCases*, doit pouvoir orchestrer le Domain **et** l'Infrastructure, mais sans pour autant **dépendre** de l'Infra.
 
-La solution ? Les Interfaces ! On va ajouter dans notre Domain des contrats d'interface que notre Application pourra utiliser, sans avoir besoin de savoir quelles sont les implémentations concrètes de ces interfaces côté Infrastructure.
+En fait, il faut imaginer ce que l'on appelle un **flow of control** en Clean Archi.
+
+![flow-of-control]({BASE_URL}/imgs/tutorials/2025-09-10-symfony-clean-architecture/flow-of-control.png)
+
+Ce *flow* est une flèche qui ne se dirige que dans un sens: elle part de l'Infra, passe par l'Application, et atteri dans le Domain.
+
+ Elle permet de schématiser la gestion des dépendances: L'infra peut dépendre de l'Application, qui peut dépendre du Domain, mais **jamais** dans le sens inverse. Le Domain n'a aucune dépendance vers l'Application, qui n'a aucune dépendance vers l'Infra.
+
+Le seul moyen de communiquer avec notre Infra, c'est de se rappeler du **D** de nos bons vieux principes SOLID: le **Dependency Inversion Principle**.
+
+Pour rappel, ce principe nous aide à découpler nos couches comme ceci:
+- Les modules de haut niveau (ici, notre Domain) ne doivent **pas** importer les modules de bas niveau (nos implémentations techniques dans l'Infrastructure). À la place, on doit utiliser... des **Interfaces** !
+
+
+Et voilà on sait comment régler notre problème ! On va ajouter dans notre Domain des contrats d'interface que notre Application pourra utiliser, sans avoir besoin de savoir quelles sont les implémentations concrètes de ces interfaces côté Infrastructure.
 
 Par exemple, c'est typiquement ce genre d'interface que nous allons mettre ici :
 
@@ -241,7 +255,7 @@ C'est nous qui définissons, avec des termes clairs et logiques, le nom de nos i
 
 
 <div class="admonition important" markdown="1"><p class="admonition-important">Important</p>
-Pour rappel, le but ici est <b>théoriquement</b> de pouvoir être capable de se débarasser de la couche Infrastructure et de la remplacer par une autre (changement de Framework, d'ORM, ou d'autres API..), sans que cela ait la moindre incidence sur notre Domain ou notre couche Applicative.
+Pour rappel, le but ici est <b>théoriquement</b> de pouvoir être capable de se débarasser de la couche Infrastructure et de la remplacer par une autre (changement de Framework, d'ORM, ou d'autres API..), sans que cela ait la moindre incidence sur notre Domain ou notre couche Applicative, grâce au découplage.
 <br/>
 Même s'il est peu probable que vous changiez votre Framework, c'est en respectant au maximum cette philosophie que vous ne ferez plus l'erreur de développer une fonctionnalité en <i>partant du Framework</i>, mais bien de penser d'abord aux besoins et aux règles métier, et en implémentant l'Infra seulement à la <b>fin</b>, et en vous servant des Interfaces que vous aurez peut-être créé.
 </div>

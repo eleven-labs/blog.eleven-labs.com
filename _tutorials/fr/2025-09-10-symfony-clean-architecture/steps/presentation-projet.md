@@ -20,7 +20,8 @@ Le Domain est donc le coeur de votre application, il contient tous les objets m�
 Durant ce tutoriel, nous allons prendre un projet existant que j'ai développé, une application Symfony classique, et très simple, pour petit à petit la migrer vers une architure Clean.
 
 Pour cela, j'ai décidé de développer une Boîte de Leitner.
-La méthode Leitner, c'est une stratégie de d'apprentissage et de révision qui est décrite par les scientifiques comme l'une des plus efficaces.
+
+La méthode Leitner, c'est une stratégie d'apprentissage et de révision de fiches qui est décrite par les scientifiques comme l'une des plus efficaces.
 
 On image une boîte compartimentée avec des numéros. Chaque compartiment correspond à un jour, et chaque compartiment successif doit être de plus en plus espacé temporellement:
 - Compartiment 1: Jour 1
@@ -33,20 +34,21 @@ On image une boîte compartimentée avec des numéros. Chaque compartiment corre
 
 Puis on écrit des cartes, aussi appelées *flash cards*, ou cartes de révision, qui contiennent une question au recto, et la réponse au verso.
 
-Le jour 1 je sors les cartes présentes dans le compartiment 1. J'essaie de répondre à la question de chaque carte.
+Le jour 1 je sors les cartes présentes dans le compartiment 1 et j'essaie de répondre à chaque question de chaque carte:
 - Bonne réponse ? Je déplace la carte dans le compartiment 2
 - Mauvaise réponse ? Je replace la carte dans le premier compartiment.
 
-Et on continue ainsi de suite avec le jour suivant. À chaque bonne réponse, je déplace la carte au compartement suivant. À la moindre mauvaise réponse, la carte retourne dans le tout premier compartiment, et on recommence.
+Et on continue ainsi de suite avec le jour suivant. À chaque bonne réponse, je déplace la carte dans le compartement suivant. À la moindre mauvaise réponse, la carte retourne dans le tout premier compartiment, et on recommence.
 
 Si je répond correctement à une Carte se trouvant dans le dernier compartiment, alors la carte est retirée pour de bon: On estime que la notion est assimilée.
 
 Comme vous le devinez, ce système est assez simple à développer, et surtout à automatiser.
-J'aimerais pouvoir créer des cartes de révision, et que celles-ci me soient soumises régulièrement (via l'envoi d'un e-mail par exemple), pour que je puisse tenter d'y répondre, et qu'elles soient automatiquement déplacées dans les compartiments correspondants.
 
-Et ainsi de suite, j'irai répondre aux cartes chaque jour où je reçois une notification.
+J'aimerais donc pouvoir créer des cartes de révision, et que celles-ci me soient soumises régulièrement (via l'envoi d'un e-mail par exemple), pour que je puisse tenter d'y répondre, et qu'elles soient automatiquement déplacées dans les compartiments correspondants.
 
-Pas de panique vous n'avez pas à tout développer de votre côte, on va partir ensemble de cette modeste base que vous retrouverez sur ce [repo Github](https://github.com/ArthurJCQ/leitner-box).
+Et ainsi de suite, je recevrai chaque jour une notification m'indiquant à quelles cartes je dois répondre aujourd'hui.
+
+Pas de panique vous n'avez pas à tout développer de votre côté, on va partir ensemble de cette modeste base de code que vous retrouverez sur ce [repo Github](https://github.com/ArthurJCQ/leitner-box).
 
 Ce projet utilise une base de donnéee **PostgreSQL** (dans un container Docker), **PHP 8.4** et **Symfony 7.3**.
 Avec Docker Compose et le [Symfony CLI](https://symfony.com/download), vous devriez être en mesure de lancer le projet.
@@ -56,14 +58,30 @@ Pour le reste, le `README` du projet devrait vous accompagner pour le setup (n'o
 Prenez le temps de découvrir et de vous familiariser avec l'application.
 
 <div class="admonition important" markdown="1"><p class="admonition-important">Important</p>
-Pour le moment vous pouvez découvrir l'application via une interface simpliste développée en twig, pour bien vous familiariser avec le concept de Leitner.
+Pour le moment vous pouvez découvrir l'application via une interface simpliste développée en Twig, pour bien vous familiariser avec le concept de Leitner.
 <br/>
 Lors du passage en Clean Archi, on supprimera la couche Twig, pour transformer notre Leitner Box en une API ne retournant que du JSON.
 <br/>
 Le but est de rester simple, sans superflu, et se focaliser sur l'essentiel. Et aussi de prouver qu'il est très simple, en Clean Archi, de changer le type de Réponse de nos Controller.
 <br/>
-Vous trouverons un fichier <code>tests/requests.http</code> dans lequel des requêtes HTTP sont prêtes à l'emploi (attention à changer les ID quand nécessaire) pour utiliser et tester l'API. Votre IDE devrait vous permettre de lancer ces requêtes directement depuis le fichier.
+Vous trouverez un fichier <code>tests/requests.http</code> dans lequel des requêtes HTTP sont prêtes à l'emploi (attention à changer les ID quand nécessaire) pour utiliser et tester l'API. Votre IDE devrait vous permettre de lancer ces requêtes directement depuis le fichier.
 </div>
+
+Pour un premier tour d'horizon, visitez la page d'accueil, puis créer votre première Carte. Une fois cela fait, elle apparaît dans votre liste de Cartes.
+
+À présent, on vous être notifié chaque jour des Cartes auxquelles on doit répondre. Pour cela, imaginons une tâche **cron** qui appellera la commande `DailyTestNotifCommand`.
+
+Pour cela, on le fait manuellement via le terminal:
+
+```bash
+$ bin/console app:daily-test-notif
+```
+
+Et voilà, un email est envoyé ! Pour le consulter, rendez-vous sur [](http://localhost:8025/), l'adresse Mailpit (automatiquement lancé via docker compose).
+
+Un lien vous redirigera vers une page où seules les cartes du jour vous seront proposées pour y répondre !
+- Bonne réponse ? Super, la Carte est "rangée" dans le compartiment suivant, il faudra y répondre à nouveau dans 3 jours.
+- Mauvaise réponse ? Dommage ! La carte reste dans le premier compartiment, venez retenter votre chance demain !
 
 Vous trouverez également une Entité `Card` dont voici les propriétés:
 - `$question`: La question associée à la Carte
@@ -189,13 +207,19 @@ class Card
 ```
 
 C'est en jouant avec ces simples propriétés que notre Leitner Box est fonctionnelle.
-On dispose d'un CRUD dans le Controller, ainsi que d'une méthode pour soumettre des réponses aux questions.
-On dispose également d'une commande qui permet de nous envoyer un mail tous les jours avec les nouvelles cartes auxquelles répondre. De là, on peut imaginer qu'un **cron** passe tous les jours pour exécuter cette commande et envoyer un mail si je dois répondre à des Cartes ce jour.
 
-Je vous laisse explorer le repo pour plus de détails sur cette version de l'app sans Clean Archi !
+On dispose d'un CRUD dans le Controller, ainsi que d'une méthode pour soumettre des réponses aux questions.
+
+Visitez le dossier `Service` et notamment la classe `HandleCardSolving` pour découvrir la logique qui se cache sous le capot.
+
+Vous dévouvrirez également la constante `TEST_DELAY`, qui représente le délai, en nombre de jours, entre chaque compartiments. J'ai choisi ces délais arbitrairement.
+
+Ici, si on répond bon à chaque fois, on répondra aux questions au J1, puis J+3, J+7, etc...
+
+Je vous laisse explorer le repo pour plus de détails sur cette version de l'app **sans** Clean Archi !
 
 <div class="admonition important" markdown="1"><p class="admonition-important">Important</p>
-À partir de maintenant, sur le <a href="https://github.com/ArthurJCQ/leitner-box/tree/refacto-clean">repo Github</a> de l'application, vous pouvez switcher sur la branche `refacto-clean` pour découvrir le projet entièrement réécrit en Clean.
+À partir de maintenant, sur le <a href="https://github.com/ArthurJCQ/leitner-box/tree/refacto-clean">repo Github</a> de l'application, vous pouvez switcher sur la branche <code>refacto-clean</code> pour découvrir le projet entièrement réécrit en Clean.
 <br/>
 Je vais progressivement montrer comment migrer l'architecture, et vous pourrez suivre pas à pas via le repo si vous ne souhaitez pas tout réécrire vous-même.
 </div>
