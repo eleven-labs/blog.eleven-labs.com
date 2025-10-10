@@ -101,7 +101,7 @@ C'est ainsi qu'on enregistre nos outils dans Mastra, et qu'on y aura accès dans
 Une fois le projet lancé, vous pourrez cliquer sur l'URL proposée dans votre console, très certainement http://localhost:3000.
 Et bienvenue sur Mastra Playground, votre interface de test pour Mastra.
 
-![Mastra Playground]({BASE_URL}/imgs/tutorials/mastra-ai-rag/mastra-playground.png)
+![Mastra Playground]({BASE_URL}/imgs/tutorials/2025-10-29-mastra-ai-rag/mastra-playground.png)
 
 Vous retrouverez sur le menu de gauche les Agents, Workflows que vous aurez développé, et serez même en mesure de tester vos Tools indépendamment.
 Pour la partie Observabilité, vous y trouverez des informations utiles sur l'exécution de vos Workflows, et les requêtes à vos Agents.

@@ -48,7 +48,7 @@ Et voilà ! On fournit une instruction, le modèle à utiliser (ici `openai/gpt-
 
 Pas grand-chose de plus à faire, notre Agent sait à présent comment se comporter et comment répondre aux questions. Pour cela, on peut utiliser le Mastra Playground.
 
-![Mastra Playground]({BASE_URL}/imgs/tutorials/mastra-ai-rag/agent-playground.png)
+![Mastra Playground]({BASE_URL}/imgs/tutorials/2025-10-29-mastra-ai-rag/agent-playground.png)
 
 On observe que notre Agent fait bien appel à notre `Tool`, et nous répond qu'un article existe sur le blog d'Eleven Labs à propos des femmes dans l'IT, avec sa date et un résumé du contenu !
 
