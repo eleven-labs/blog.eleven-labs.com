@@ -20,10 +20,8 @@ steps:
   - introduction
   - presentation-des-outils
   - setup
-  - worflow
-  - rag-and-tools
+  - workflow
+  - retrieval-tool
   - agent
-  - observabilite
-  - mcp
   - conclusion
 ---
