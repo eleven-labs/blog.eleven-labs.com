@@ -26,7 +26,7 @@ namespace Application;
 
 use Domain\Card;
 use Domain\CardRepositoryInterface;
-use Domain\Exception\CardCreationException;
+use Domain\Exception\CannotCreateCard;
 
 readonly class CreateCardUseCase
 {
@@ -35,7 +35,7 @@ readonly class CreateCardUseCase
     ) {
     }
 
-    /** @throws CardCreationException */
+    /** @throws CannotCreateCard */
     public function execute(Card $card): void
     {
         $this->cardRepository->createNewCard($card);
@@ -61,7 +61,7 @@ namespace Application;
 
 use Domain\Card;
 use Domain\CardRepositoryInterface;
-use Domain\Exception\CardEditException;
+use Domain\Exception\CannotEditCard;
 
 readonly class SolveCardUseCase
 {
@@ -70,16 +70,15 @@ readonly class SolveCardUseCase
     ) {
     }
 
-    /** @throws CardEditException */
+    /** @throws CannotEditCard */
     public function execute(Card $card, string $answer): bool
     {
-        $isCorrect = $card->isAnswerCorrect($answer);
-            ? $card->handleSuccessfulAnswer()
-            : $card->handleFailedAnswer();
+        // Update the card based on whether the answer was correct
+        $updatedCard = $card->resolve($answer);
 
         $this->cardRepository->editCard($updatedCard);
 
-        return $isCorrect;
+        return $card->isAnswerCorrect($answer);
     }
 }
 ```
@@ -87,9 +86,9 @@ readonly class SolveCardUseCase
 Reprenons cette classe depuis le début:
 - Comme pour le UseCase précédent, on injecte le repository pour mettre à jour la `Card` dans la base de donnée en fonction de la réponse donnée
 - Ma fonction `execute` prend en paramètre une `Card` et la réponse proposée
-- On se sert de la règle métier `isAnswerCorrect` contenue dans la carte pour vérifier la validité de la réponse
-- On utilise le comportement de notre objet (`handleSuccessfulAnswer` **ou** `handleFailedAnswer`) pour correctement gérer sa mise à jour en cas de bonne ou mauvaise réponse
+- On utilise le comportement de notre objet (la méthode `resolve($answer)`) pour correctement gérer sa mise à jour en cas de bonne ou mauvaise réponse
 - On met à jour la `Card` dans la base de donnée via l'interface du Repository (méthode `editCard()`).
+- On se sert de la règle métier `isAnswerCorrect` pour retourner `true` ou `false` en fonction de la validité de la réponse.
 
 Ce qui est important de remarquer, c'est qu'il n'y a aucune logique métier dans nos UseCase.
 Car ce n'est **pas son rôle**. Le UseCase sera simplement appelé par l'Infrastructure (requête d'un utilisateur par exemple), pour donner une réponse en orchestrant le Domain (vérification de règles, appels à des interfaces, ...).
@@ -104,8 +103,10 @@ Il peut être en effet compliqué d'essayer de mocker une classe provenant de li
 
 Bonne nouvelle, ce problème n'existe pas ici ! Notre couche Application est protégée de l'Infrastructure et donc du Framework, des librairies externes, de l'ORM, etc...
 
-Jusqu'ici, tout nous appartient, grâce aux interfaces fournies par le Domain. Ces interfaces qui ne contiennent à chaque fois que le contrat nécéssaire au fonctionnement de notre projet, pas de superflu ni de détails d'implémentation. 
+Jusqu'ici, tout nous appartient, grâce aux interfaces fournies par le Domain. Ces interfaces qui ne contiennent à chaque fois que le contrat nécéssaire au fonctionnement de notre projet, pas de superflu ni de détails d'implémentation.
 
 On peut donc les mocker sans danger si l'on souhaite ajouter des tests unitaires, car nous *possèdons* ces Interfaces !
 
 Grâce à tout cela, notre code est réellement maintenable, car il est totalement isolé du reste, il ne sait pas quelle base de données est utilisée par dessus, quel Framework, quel client mail, ... Tout cela pourrait changer du jour au lendemain que ça ne changerait rien pour notre Domain et notre Application, et surtout ... Les tests passeraient toujours !
+Ce que cela signifie en particulier, c'est qu'on ne teste que des *UseCase* qui ne représentent **que** de la logique métier. Ici, si vous faites une erreur d'implémentation d'une librairie, ou d'utilisation de votre Framework, ça ne viendra pas polluer le résultat de vos tests, qui isolent votre logique métier.
+Si votre test *fail*, il y a beaucoup plus de chances que ce soit vraiment un souci de cohérence de votre *métier*.

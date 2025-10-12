@@ -12,7 +12,7 @@ title: Ajouter une Infrastructure
 La première chose que nous allons mettre dans notre Infrastructure, c'est notre Framework, en l'occurence Symfony.
 Pour cela on commence par créer un dossier `Infrastructure\Symfony`, puis on va séparer chaque sous-dossier selon les Symfony Components utilisés.
 
-C'est une préférence personnelle, mais le fait que Symfony fonctionne avec des packages isolés les uns des autres qui peuvent être ajoutés briques par briques au fur et à mesure, cela facilite grandement le découpage des dossiers: 
+C'est une préférence personnelle, mais le fait que Symfony fonctionne avec des packages isolés les uns des autres qui peuvent être ajoutés briques par briques au fur et à mesure, cela facilite grandement le découpage des dossiers:
 
 1 package = 1 dossier
 
@@ -21,9 +21,9 @@ Ce qui nous donne ceci:
 ```
 src/
 └───Domain/
-│   
+│
 └───Application/
-│   
+│
 └───Infrastructure/
     │   └───Symfony/
         │   └───Command/
@@ -75,7 +75,7 @@ Demain, on pourrait préfèrer une notification via SMS, ou une push notificatio
 
 Bien ! Parlons à présent de notre ORM, Doctrine. On le place dans un dossier à part, et dans notre cas nous n'avons qu'un seul Repository à implémenter.
 
-Voilà à quoi cela ressemble : 
+Voilà à quoi cela ressemble :
 
 ```php
 <?php declare(strict_types=1);
@@ -91,7 +91,7 @@ class PostgresCardRepository implements CardRepositoryInterface
     public function __construct(private readonly Connection $connection)
     {
     }
-    
+
     public function findCard(string $id): ?Card
     {
         $queryBuilder = $this->connection->createQueryBuilder();
@@ -293,7 +293,7 @@ La logique sera un poil plus complexe lorsqu'il s'agira de vouloir créer une no
                 'message' => 'Card created successfully',
                 'card' => $card,
             ], Response::HTTP_CREATED);
-        } catch (CardCreationException $e) {
+        } catch (CannotCreateCard $e) {
             throw new BadRequestHttpException('Failed to create card: ' . $e->getMessage(), $e);
         }
     }

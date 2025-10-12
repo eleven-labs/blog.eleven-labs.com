@@ -33,7 +33,7 @@ Il s'agit d'un **anti-pattern**, dans lequel nos objets se sont appauvris pour n
 
 Le problème avec cette approche, c'est que nos objets ne sont plus que des coquilles vides de sens, qui ne font que transiter de la donnée entre la base de données et notre application, mais qui n'ont aucun *comportement*, aucun *behavior*.
 
-Martin Fowler, dans son article, explique selon lui qu'il n'y a aucun intérêt à faire de l'orienté objet si on n'utilise pas ce pourquoi l'Objet a été créé. Un objet se doit de combiner **donnée** et **logique**, et contenir des méthodes qui lui permettent de se **comporter**. 
+Martin Fowler, dans son article, explique selon lui qu'il n'y a aucun intérêt à faire de l'orienté objet si on n'utilise pas ce pourquoi l'Objet a été créé. Un objet se doit de combiner **donnée** et **logique**, et contenir des méthodes qui lui permettent de se **comporter**.
 
 Ainsi, la tendance des dernières années à systèmatiquement séparer les **données** dans les objets et la **logique** dans des services serait alors un non-sens total.
 
@@ -47,6 +47,8 @@ Mais je pense qu'il est intéressant de comprendre comment les <b>ORMs</b> ont m
 <br/>
 C'est en revenant à la base de l'<i>Objet</i> que nous allons pouvoir aller de l'avant.
 </div>
+
+Pour info, il existe un [article entier sur l'Anémie du Domain sur le Blog d'Eleven Labs](/fr/domain-anemia), si vous souhaitez aller plus loin.
 
 ### Propriétés & Immutabilité
 
@@ -148,6 +150,22 @@ Vous aurez également remarqué que nous avons changé le namespace en suppriman
 }
 ```
 
+<div class="admonition note" markdown="1"><p class="admonition-note">Note</p>
+Il existe une autre manière d'organiser son Architecture, qui est <i>par feature</i>. Dans ce cas, chaque fonctionnalité a son propre dossier Domain, Application, et Infrastructure.
+<br />
+Par exemple :
+<br />
+<code>
+src/feature1/Domain/feature1.model.php
+src/feature1/Infrastructure/feature1.controller.php
+src/feature1/UseCase/feature1.useCase.php
+</code>
+<br />
+Et ainsi de suite pour les autres fonctionnalités. C'est juste une autre manière de faire mais cela revient <b>exactement au même</b>.
+<br />
+Personnellement je préfère largement avoir une seule fois les dossiers <code>Domain</code>, <code>Application</code>, et <code>Infrastructure</code> à la racine, quitte à diviser par fonctionnalité en dessous.
+</div>
+
 Je vous offre un petit spoil des dossiers que nous allons créer par la suite, c'est cadeau !
 
 
@@ -157,22 +175,16 @@ Très bien, il ne nous reste plus qu'une chose à rajouter à notre objet, dont 
 Moins de blabla, plus de code, voici quelques comportements à ajouter à notre `Card`:
 
 ```php
-
     /**
-     * Checks if the provided answer is correct for this card
+     * Resolves the provided answer to the card
      */
-    public function isAnswerCorrect(string $answer): bool
+    public function resolve(string $answer): self
     {
-        return strtolower(trim($answer)) === strtolower($this->answer);
-    }
+        if ($this->isAnswerCorrect($answer)) {
+            return $this->handleSuccessfulAnswer();
+        }
 
-    /**
-     * Handles a failed answer attempt by resetting the card's delay and setting the initial test date to now
-     */
-    public function handleFailedAnswer(): self
-    {
-        return $this->withInitialTestDate(new \DateTime())
-            ->withDelay(1);
+        return $this->handleFailedAnswer();
     }
 
     /**
@@ -192,6 +204,23 @@ Moins de blabla, plus de code, voici quelques comportements à ajouter à notre 
 
         return $dueDate <= new \DateTime('today');
     }
+
+    /**
+     * Checks if the provided answer is correct for this card
+     */
+    public function isAnswerCorrect(string $answer): bool
+    {
+        return strtolower(trim($answer)) === strtolower($this->answer);
+    }
+
+    /**
+     * Handles a failed answer attempt by resetting the card's delay and setting the initial test date to now
+     */
+    private function handleFailedAnswer(): self
+    {
+        return $this->withInitialTestDate(new \DateTime())
+            ->withDelay(1);
+    }
 ```
 
 <div class="admonition note" markdown="1"><p class="admonition-note">Note</p>
@@ -200,7 +229,13 @@ Comme pour tous les exemples de ce tutoriel, le contenu des classes n'est pas ex
 En l'occurence, vous pourrez trouver d'autres exemples de comportements directement dans la classe <code>Card.php</code> du repo !
 </div>
 
-Super ! Notre `Card` est dorénavant capable de se comporter. On distinguera les règles métier qui vérifient et renvoient un résultat comme notre `isAnswerCorrect`, des **comportements** qui renvoient une nouvelle instance de `Card` suite à une modification, comme le `handleFailedAnswer` qui renvoie une nouvelle `Card` avec son délai réinitialisé suite à une mauvaise réponse. Et vous l'aurez deviné, la fonction `disableCard`, que nous évoquions plus haut fait partie du **comportement** de notre `Card` !
+Super ! Notre `Card` est dorénavant capable de se comporter. On distinguera les règles métier qui vérifient et renvoient un résultat comme notre `isAnswerCorrect`, des **comportements** qui renvoient une nouvelle instance de `Card` suite à une modification.
+À noter que nos comportements peuvent combiner des appels aux règles métier pour décider quoi faire, avec des appels à d'autres comportements.
+
+Prenons un exemple. La méthode `resolve` va décider d'appeler `handleFailedAnswer` OU `handleSuccessfulAnswer` en fonction du retour de la règle `isAnswerCorrect` !
+Et si la réponse est mauvaise, `handleFailedAnswer` va renvoyer une nouvelle `Card` avec son délai réinitialisé suite à la mauvaise réponse.
+
+Et vous l'aurez deviné, la fonction `disableCard`, que nous évoquions plus haut fait aussi partie du **comportement** de notre `Card` !
 
 ### Interfaces & Exceptions
 
@@ -234,13 +269,13 @@ interface CardRepositoryInterface
 
     public function findCard(string $id): ?Card;
 
-    /** @throws CardCreationException */
+    /** @throws CannotCreateCard */
     public function createNewCard(Card $card): void;
 
-    /** @throws CardEditException */
+    /** @throws CannotEditCard */
     public function editCard(Card $card): void;
 
-    /** @throws CardRemovalException */
+    /** @throws CannotRemoveCard */
     public function removeCard(string $id): void;
 
     /** @return iterable<Card> */
@@ -257,7 +292,11 @@ C'est nous qui définissons, avec des termes clairs et logiques, le nom de nos i
 <div class="admonition important" markdown="1"><p class="admonition-important">Important</p>
 Pour rappel, le but ici est <b>théoriquement</b> de pouvoir être capable de se débarasser de la couche Infrastructure et de la remplacer par une autre (changement de Framework, d'ORM, ou d'autres API..), sans que cela ait la moindre incidence sur notre Domain ou notre couche Applicative, grâce au découplage.
 <br/>
-Même s'il est peu probable que vous changiez votre Framework, c'est en respectant au maximum cette philosophie que vous ne ferez plus l'erreur de développer une fonctionnalité en <i>partant du Framework</i>, mais bien de penser d'abord aux besoins et aux règles métier, et en implémentant l'Infra seulement à la <b>fin</b>, et en vous servant des Interfaces que vous aurez peut-être créé.
+Ce n'est pas un <b>objectif en soi</b> de pouvoir changer de Framework du jour au lendemain. L'idée est de trouver le meilleur des deux mondes entre un meilleur confort de développement, et éviter le risque de burnout <b>si un jour</b> on est amené à faire un tel changement.
+<br/>
+De plus vous pouvez voir le problème en l'inversant : vous n'allez peut-être pas changer le Framework, <b>mais</b> prendre un morceau de votre code métier pour le migrer vers un autre micro-service par exemple, qui lui possède une toute autre Infrastructure. Et à ce moment-là, vous serez reconnaissant d'avoir un programme très faiblement couplé !
+<br/>
+En bref, c'est en respectant au maximum cette philosophie que vous ne ferez plus l'erreur de développer une fonctionnalité en <i>partant du Framework</i>, mais bien de penser d'abord aux besoins et aux règles métier, et en implémentant l'Infra seulement à la <b>fin</b>, et en vous servant des Interfaces que vous aurez peut-être créées.
 </div>
 
 Enfin, on remarquera que mon Interface peut lever des Exceptions particulières et personnalisées. Celles-ci permettent de communiquer à l'Infrastructure quelle Exception lever à quel moment, pour que notre couche Applicative sache à quoi l'erreur correspond, et comment réagir.
@@ -269,7 +308,7 @@ Ces Exceptions sont rangées dans le Domain au même titre que les Interfaces, c
 
 namespace Domain\Exception;
 
-class CardRemovalException extends \Exception
+class CannotRemoveCard extends \Exception
 {
     public function __construct(string $message = 'Failed to remove card', int $code = 0, ?\Throwable $previous = null)
     {
@@ -277,5 +316,7 @@ class CardRemovalException extends \Exception
     }
 }
 ```
+
+Pareil ici, ces Exceptions ont des noms clairs, on doit comprendre ce qu'il s'est passé simplement en lisant le nom de la classe, et il n'y pas forcément besoin d'ajouter le suffixe `Exception` si on ne veut pas être répétitif.
 
 Rendez-vous sur le [repo Github](https://github.com/ArthurJCQ/leitner-box/tree/refacto-clean) pour voir plus d'Interfaces et d'Exceptions.

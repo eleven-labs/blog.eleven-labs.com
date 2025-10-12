@@ -11,9 +11,16 @@ Avant de présenter le projet, voici une liste de concepts dont vous pourrez vou
 
 - **Domain**: Le coeur de la logique métier, indépendant de tout framework, base de donnée et librairie externe. Il contient les objets et les règles métier, ainsi que des contrats d'interface.
 - **Application**: La couche qui orchestre les cas d'usages métier, en coordonnant le Domain, ses règles et ses interfaces. Ici on cherche à accomplir des *UseCase* métier, en se servant des règles métier du Domain.
-- **Infrastructure**: La couche la plus externe, qui contient le framework, les librairies et toutes les implémentations techniques concrètes (base de donnée, service d'email, API externes, ...), selon les contrats d'Interface du Domain.
+- **Infrastructure**: La couche la plus externe, qui contient le framework, les librairies et toutes les implémentations techniques concrètes (base de donnée, service d'email, API externes, ...), selon les contrats d'Interface du Domain. On l'appellera parfois simplement **Infra** pour gagner du temps !
 
 Le Domain est donc le coeur de votre application, il contient tous les objets métier & les règles fonctionnelles.
+
+Souvent on peut voir une autre couche dans les projets Clean, la couche **Presentation**. C'est elle qui s'occupe de :
+- Récupérer le résultat d'une requête
+- Formater cette réponse au bon format (json, HTML, ...) et la retourner à l'utilisateur.
+
+Pour ma part, je n'utilise pas du tout cette couche. C'est un choix tout à fait personnel, je trouve que ça reste le rôle de l'Infrastructure, et je garde cette logique dans mes Controllers.
+Mais c'est une préférence qui peut être *challengée* dans vos projets bien entendu !
 
 ## La Boîte de Leitner
 
