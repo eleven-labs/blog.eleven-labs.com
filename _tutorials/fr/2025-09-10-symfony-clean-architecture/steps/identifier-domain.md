@@ -150,6 +150,8 @@ Vous aurez également remarqué que nous avons changé le namespace en suppriman
 }
 ```
 
+Je vous offre un petit spoil des dossiers que nous allons créer par la suite, c'est cadeau !
+
 <div class="admonition note" markdown="1"><p class="admonition-note">Note</p>
 Il existe une autre manière d'organiser son Architecture, qui est <i>par feature</i>. Dans ce cas, chaque fonctionnalité a son propre dossier Domain, Application, et Infrastructure.
 <br />
@@ -157,7 +159,9 @@ Par exemple :
 <br />
 <code>
 src/feature1/Domain/feature1.model.php
+<br />
 src/feature1/Infrastructure/feature1.controller.php
+<br />
 src/feature1/UseCase/feature1.useCase.php
 </code>
 <br />
@@ -165,9 +169,6 @@ Et ainsi de suite pour les autres fonctionnalités. C'est juste une autre maniè
 <br />
 Personnellement je préfère largement avoir une seule fois les dossiers <code>Domain</code>, <code>Application</code>, et <code>Infrastructure</code> à la racine, quitte à diviser par fonctionnalité en dessous.
 </div>
-
-Je vous offre un petit spoil des dossiers que nous allons créer par la suite, c'est cadeau !
-
 
 ### Comportement
 
