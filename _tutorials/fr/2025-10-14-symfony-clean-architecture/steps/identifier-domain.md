@@ -247,7 +247,7 @@ Deux réponses à cela:
 
 En fait, il faut imaginer ce que l'on appelle un **flow of control** en Clean Archi.
 
-![flow-of-control]({BASE_URL}/imgs/tutorials/2025-09-10-symfony-clean-architecture/flow-of-control.png)
+![flow-of-control]({BASE_URL}/imgs/tutorials/2025-10-14-symfony-clean-architecture/flow-of-control.png)
 
 Ce *flow* est une flèche qui ne se dirige que dans un sens: elle part de l'Infra, passe par l'Application, et atteri dans le Domain.
 

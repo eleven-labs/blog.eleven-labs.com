@@ -37,7 +37,7 @@ On image une boîte compartimentée avec des numéros. Chaque compartiment corre
 - Compartiment 4: Jour 10
 - ...
 
-![leitner-box]({BASE_URL}/imgs/tutorials/2025-09-10-symfony-clean-architecture/leitner-box.svg)
+![leitner-box]({BASE_URL}/imgs/tutorials/2025-10-14-symfony-clean-architecture/leitner-box.svg)
 
 Puis on écrit des cartes, aussi appelées *flash cards*, ou cartes de révision, qui contiennent une question au recto, et la réponse au verso.
 
