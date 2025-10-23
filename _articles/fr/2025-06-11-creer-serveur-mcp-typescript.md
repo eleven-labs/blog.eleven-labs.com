@@ -4,7 +4,7 @@ lang: fr
 date: 2025-06-11
 slug: model-context-protocol
 title: >-
-  MCP Server : Implémenter un serveur Model Context Protocol en TypeScript
+  Créer et implémenter un serveur Model Context Protocol (MCP) en TypeScript
 excerpt: >-
   Découvrez comment créer un serveur MCP en TypeScript à l'aide du SDK officiel. Apprenez à fournir un contexte riche aux LLMs.
 cover:
@@ -15,15 +15,15 @@ categories:
 authors:
   - fpasquet
 seo:
-    title: Implémenter un serveur Model Context Protocol en TypeScript
-    description: Guide complet pour créer un serveur MCP en TypeScript avec le SDK officiel et l'intégrer aux outils de développement.
+    title: Comment créer et déployer un serveur MCP avec TypeScript – Tutoriel
+    description: Apprenez à créer, configurer et déployer un serveur MCP étape par étape avec TypeScript. Un guide complet pour comprendre le protocole Model Context Protocol et construire votre serveur MCP.
 ---
 
-**Le Model Context Protocol (MCP)** représente une avancée majeure dans l'écosystème des **modèles de langage (LLMs)**. Ce protocole standardisé a été introduit par **Anthropic en novembre 2024** et permet aux LLMs d'accéder en temps réel au contexte spécifique des utilisateurs depuis différentes sources de données.
+**Le Model Context Protocol (MCP)** représente une avancée majeure dans l'écosystème des **modèles de langage (LLMs)**. Ce protocole standardisé, introduit par **Anthropic en novembre 2024** permet aux intelligences artificielles d’accéder en temps réel au contexte spécifique des utilisateurs via différentes sources de données.
 
-Depuis son lancement, le MCP a connu une adoption remarquablement rapide dans l'industrie. **OpenAI a adopté le standard MCP en mars 2025**, suivi rapidement par **Google en avril 2025** et par **Microsoft lors d'une annonce de Build 2025**, démontrant l'engagement de l'ensemble de l'industrie vers cette standardisation.
+Depuis son lancement, le MCP s’est imposé dans l’industrie. **OpenAI a adopté le standard MCP en mars 2025**, suivi par **Google en avril 2025**, puis **Microsoft lors de Build 2025**. Cette adoption massive confirme une tendance forte : la standardisation du dialogue entre les modèles d’intelligence artificielle et les systèmes métiers.
 
-Dans cet article, nous allons voir comment implémenter un serveur MCP en TypeScript avec le SDK officiel `@modelcontextprotocol/sdk`. Nous prendrons comme exemple un système de classement spatial avec des astronautes et des planètes, illustrant les concepts fondamentaux du protocole MCP.
+Dans cet article, on va voir comment construire un serveur MCP en TypeScript à l’aide du SDK officiel `@modelcontextprotocol/sdk`. L’objectif : comprendre les fondations du protocole, déployer un serveur MCP fonctionnel et apprendre à l’utiliser avec des outils comme Claude Desktop. Nous prendrons comme exemple un système de classement spatial avec des astronautes et des planètes, illustrant les concepts fondamentaux du protocole MCP.
 
 <div class="admonition note" markdown="1"><p class="admonition-title">Code source</p>
 
@@ -31,6 +31,7 @@ Le code source complet de ce projet est disponible sur [GitHub](https://github.c
 </div>
 
 Mais avant de plonger dans l'implémentation, prenons un moment pour comprendre ce qu'est le MCP et pourquoi il est devenu si important pour les applications modernes basées sur l'IA.
+
 
 ## Qu'est-ce que le Model Context Prodocol (MCP) ?
 
@@ -43,38 +44,33 @@ Le MCP s'appuie sur les fondations du **Language Server Protocol (LSP)**, un sta
 Le MCP résout un problème fondamental des LLMs : leur incapacité à accéder aux données privées ou spécifiques d'une organisation. En standardisant la façon dont ces modèles peuvent demander et recevoir du contexte, le MCP permet des intégrations plus profondes et des réponses plus pertinentes.
 </div>
 
-## Quelles différences entre le MCP et les APIs traditionnelles ?
 
-La différence fondamentale entre le MCP et les APIs traditionnelles réside dans leur conception et leur finalité :
+## Pourquoi créer un serveur MCP ?
 
-### APIs traditionnelles : communication machine-machine
+Créer un serveur MCP permet d’exposer des **fonctionnalités métiers et données dynamiques** directement exploitables par un modèle d’intelligence artificielle. Contrairement au [développement d'une API](https://eleven-labs.com/technologie/api/) classique (APIs REST, GraphQL ou RPC), un serveur MCP dialogue de manière cohérente avec le modèle, en langage naturel et via le protocole JSON-RPC.
 
-Les APIs REST, GraphQL ou RPC sont conçues pour la communication entre applications. Elles suivent des paradigmes techniques stricts :
-
-- **Structure rigide** : Des endpoints prédéfinis, des schémas de données fixes
-- **Logique métier explicite** : Le client doit connaître précisément quels endpoints appeler et dans quel ordre
-- **Communication statique** : Requête → Réponse, sans adaptation au contexte conversationnel
-- **Granularité technique** : Orientées vers les besoins des développeurs, pas des utilisateurs finaux
-
-### MCP : communication LLM-native
-
-Le MCP adopte une approche radicalement différente, pensée pour les capacités cognitives des LLMs :
-
-- **Découverte dynamique** : Les LLMs explorent automatiquement les capacités disponibles
-- **Adaptation contextuelle** : Les tools et ressources s'adaptent au contexte de la conversation
-- **Sémantique enrichie** : Des descriptions en langage naturel, des métadonnées expressives
-- **Orchestration intelligente** : Le LLM détermine quand et comment utiliser chaque fonctionnalité
-
-## Quels sont les bénéfices de créer un MCP Server ?
-
-Un MCP Server offre plusieurs avantages :
+Les bénéfices sont nombreux :
 
 - **Contexte dynamique**: Fournir aux modèles d'IA des données à jour provenant de vos systèmes
-- **Sécurité améliorée**: Contrôler précisément quelles données sont accessibles au modèle
+- **Sécurité améliorée**: Gestion fine des autorisations et de la sécurité des données
 - **Expérience utilisateur enrichie**: Permettre à l'IA de répondre en se basant sur des données personnalisées
 - **Intelligence contextuelle**: Permettre aux LLMs de découvrir et utiliser les fonctionnalités de manière autonome selon les besoins de la conversation
 
-## L'architecture du MCP
+En somme, un serveur MCP vous permet d’ajouter à vos applications un niveau d’intelligence contextuelle impossible à atteindre avec une simple API REST.
+
+
+## Quels langages peut-on utiliser pour créer un serveur MCP ?
+
+Même si ce tutoriel s’appuie sur **TypeScript**, le protocole MCP est compatible avec plusieurs langages :
+
+- [Python](https://eleven-labs.com/technologie/python/) : souvent utilisé pour la création rapide d’agents IA grâce à async/await.
+- [Node.js](https://eleven-labs.com/technologie/node-js/) : idéal pour les projets Firebase ou la manipulation en temps réel.
+- [PHP / Symfony](https://eleven-labs.com/technologie/php-symfony/) : possible via des implémentations JSON-RPC personnalisées.
+
+Chaque langage communique via le même protocole standardisé `ModelContextProtocol`, ce qui rend le système universel et interopérable.
+
+
+## Le fonctionnement et l'architecture du protocole MCP
 
 Le protocole MCP suit une architecture client-serveur simple :
 
@@ -118,6 +114,7 @@ Cette orchestration permet au système de fonctionner de manière **totalement t
 C'est cette **symbiose entre intelligence artificielle et données métier** qui fait la force du protocole MCP.
 </div>
 
+
 ## Format de communication : JSON-RPC 2.0
 
 Le protocole MCP utilise **JSON-RPC 2.0** comme format standard pour toutes les communications entre clients et serveurs. Ce choix apporte :
@@ -157,6 +154,7 @@ Exemple de réponse JSON-RPC 2.0 :
   }
 }
 ```
+
 
 ## Choix du transport et des couches de communication
 
@@ -231,6 +229,7 @@ Vous pouvez également créer votre propre couche de transport en implémentant 
 - Tous les transports utilisent le format **JSON-RPC 2.0** pour assurer la compatibilité et la standardisation
 </div>
 
+
 ## Les trois fonctionnalités piliers du Model Context Protocol
 
 Un serveur MCP peut exposer trois types de fonctionnalités :
@@ -239,7 +238,8 @@ Un serveur MCP peut exposer trois types de fonctionnalités :
 - **Resources** : Données structurées accessibles aux LLM (documentation, bases de connaissances)
 - **Prompts** : Templates de prompts réutilisables avec paramètres dynamiques
 
-## Cas d'usages d'implémentations existantes
+
+## Quelques exemples d'implémentations MCP existantes
 
 Plusieurs grandes entreprises ont déjà adopté le MCP :
 
@@ -250,7 +250,8 @@ Plusieurs grandes entreprises ont déjà adopté le MCP :
 
 Ces implémentations permettent aux LLMs d'accéder à des données spécifiques comme les tickets Jira, les pull requests GitHub, ou les documents Notion, tout en respectant les permissions des utilisateurs.
 
-## Exemple d'implémentation pratique du serveur MCP
+
+## Exemple pratique : implémentation d’un serveur MCP
 
 ### Structure de base du serveur
 
@@ -624,6 +625,7 @@ private setupPromptHandlers() {
 - **Documentation** : Documentez les cas d'usage et les paramètres de chaque prompt template
 </div>
 
+
 ## Test et debug avec l'inspecteur MCP
 
 L'inspecteur MCP est un outil essentiel pour tester et déboguer votre serveur. Il fournit une interface web interactive pour explorer vos tools, ressources et prompts.
@@ -666,6 +668,7 @@ L'onglet "Prompts" permet de tester vos templates avec différents paramètres :
 3. **Déboguez** les erreurs directement dans l'interface
 4. **Intégrez** avec votre client MCP (Claude Desktop, etc.)
 </div>
+
 
 ## Intégration avec Claude Desktop
 
@@ -746,6 +749,7 @@ Vous pouvez voir une conversation complète démontrant toutes ces fonctionnalit
 - Claude comprend intelligemment quel tool utiliser sans instruction explicite
 </div>
 
+
 ## Conclusion
 
 Le MCP représente bien plus qu'une simple évolution technique : c'est un **changement paradigmatique** dans la façon dont les LLMs interagissent avec nos systèmes d'information. Contrairement aux **APIs traditionnelles** qui nécessitent une programmation explicite pour chaque cas d'usage, le MCP permet aux modèles de langage de **découvrir, comprendre et utiliser intelligemment les ressources disponibles selon le contexte** de la conversation.
@@ -756,6 +760,8 @@ En somme, le **MCP ne remplace pas les API traditionnelles, mais les complète**
 
 Grâce au **SDK TypeScript**, il devient possible de créer des **serveurs MCP** robustes, capables d’exposer des **fonctionnalités métier**, des données contextuelles ou des outils dynamiques via une **interface standardisée**.
 
+Vous voulez aller plus loin et connecter vos systèmes à des modèles d’intelligence artificielle capables d’agir en temps réel sur vos données ? [Chez Eleven Labs, on construit des serveurs MCP et des agents IA sur mesure](https://eleven-labs.com/data-ia/developpement-ia/) capables d’automatiser vos processus, d’optimiser vos flux de données et d’améliorer durablement la performance de vos applications.
+
 <div class="admonition info" markdown="1"><p class="admonition-title">À retenir</p>
 
 - **Tools**: largement pris en charge par les hôtes et clients MCP, ils sont appelés automatiquement pour exécuter des actions dynamiques.
@@ -765,7 +771,7 @@ Grâce au **SDK TypeScript**, il devient possible de créer des **serveurs MCP**
 - **Inspecteur MCP**: outil essentiel pour le développement, le débogage et l’inspection en temps réel des agents et de leurs interactions.
 </div>
 
-Dans un **prochain article**, nous explorerons comment créer des clients MCP personnalisés et comment intégrer MCP dans des applications web modernes avec des frameworks comme Next.js.
+Dans un **prochain article**, nous explorerons comment créer des clients MCP personnalisés et comment intégrer MCP dans des applications web modernes avec des frameworks comme [Next.js](https://eleven-labs.com/technologie/next-js/).
 
 ## Ressources supplémentaires
 
