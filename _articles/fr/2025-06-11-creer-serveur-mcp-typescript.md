@@ -15,8 +15,8 @@ categories:
 authors:
   - fpasquet
 seo:
-    title: Comment créer et déployer un serveur MCP avec TypeScript – Tutoriel
-    description: Apprenez à créer, configurer et déployer un serveur MCP étape par étape avec TypeScript. Un guide complet pour comprendre le protocole Model Context Protocol et construire votre serveur MCP.
+    title: Comment créer un serveur MCP avec TypeScript – Tutoriel
+    description: Apprenez à créer, configurer et déployer un serveur Model Context Protocol étape par étape avec TypeScript.
 ---
 
 **Le Model Context Protocol (MCP)** représente une avancée majeure dans l'écosystème des **modèles de langage (LLMs)**. Ce protocole standardisé, introduit par **Anthropic en novembre 2024** permet aux intelligences artificielles d’accéder en temps réel au contexte spécifique des utilisateurs via différentes sources de données.
