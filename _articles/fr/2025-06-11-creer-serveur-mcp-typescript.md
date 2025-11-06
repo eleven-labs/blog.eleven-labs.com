@@ -15,7 +15,7 @@ categories:
 authors:
   - fpasquet
 seo:
-    title: Comment créer un serveur MCP avec TypeScript – Tutoriel
+    title: Créer un serveur MCP avec TypeScript – Guide
     description: Apprenez à créer, configurer et déployer un serveur Model Context Protocol étape par étape avec TypeScript.
 ---
 
@@ -61,13 +61,13 @@ En somme, un serveur MCP vous permet d’ajouter à vos applications un niveau d
 
 ## Quels langages peut-on utiliser pour créer un serveur MCP ?
 
-Même si ce tutoriel s’appuie sur **TypeScript**, le protocole MCP est compatible avec plusieurs langages :
+Même si ce tutoriel utilise TypeScript avec le SDK MCP officiel publié par Anthropic, il existe désormais plusieurs SDK MCP dans d’autres langages, permettant d’implémenter des serveurs MCP dans différents environnements :
 
-- [Python](https://eleven-labs.com/technologie/python/) : souvent utilisé pour la création rapide d’agents IA grâce à async/await.
-- [Node.js](https://eleven-labs.com/technologie/node-js/) : idéal pour les projets Firebase ou la manipulation en temps réel.
-- [PHP / Symfony](https://eleven-labs.com/technologie/php-symfony/) : possible via des implémentations JSON-RPC personnalisées.
+- TypeScript (SDK officiel) – celui utilisé dans cet article. C’est aujourd’hui le SDK le plus mature et le mieux documenté.
+- [Python](https://eleven-labs.com/technologie/python/) (SDK officiel également) – adapté si vos workflows IA ou data sont déjà en Python, ou si vos agents tournent dans un environnement scientifique / ML.
+- [PHP / Symfony](https://eleven-labs.com/technologie/php-symfony/) (SDK officiel annoncé) – [Symfony a annoncé la mise à disposition d’un SDK MCP natif](https://symfony.com/blog/symfony-to-provide-the-official-mcp-sdk) pour faciliter l’intégration du protocole dans les applications web et plateformes métiers existantes.
 
-Chaque langage communique via le même protocole standardisé `ModelContextProtocol`, ce qui rend le système universel et interopérable.
+Dans tous les cas, les serveurs communiquent via le même protocole MCP, ce qui garantit une interopérabilité totale : un agent IA pourra se connecter, découvrir et utiliser vos outils peu importe le langage utilisé côté serveur.
 
 
 ## Le fonctionnement et l'architecture du protocole MCP
