@@ -1,5 +1,5 @@
 import chokidar from 'chokidar';
-import express from 'express';
+import express, { RequestHandler } from 'express';
 import i18next from 'i18next';
 import i18nextHttpMiddleware from 'i18next-http-middleware';
 import { cpSync, statSync } from 'node:fs';
@@ -12,12 +12,24 @@ import { i18nResources } from '@/config/i18n/i18nResources';
 import { BASE_URL } from '@/constants';
 import { writeJsonDataFiles } from '@/helpers/contentHelper';
 import { loadDataByMarkdownFilePath } from '@/helpers/markdownContentManagerHelper';
+import { getRobotsTxt } from '@/helpers/prerenderHelper/generateRobotsTxt';
 import { getSitemap } from '@/helpers/prerenderHelper/generateSitemap';
 import { getSitemapEntries } from '@/helpers/prerenderHelper/getSitemapEntries';
 import { createRequestByExpressRequest } from '@/helpers/requestHelper';
-import { imageMiddleware } from '@/middlewares/imageMiddleware';
+import { imageHandler } from '@/requestHandlers/imageHandler';
 
 const isProd: boolean = process.env.NODE_ENV === 'production';
+
+const robotsTxtHandler: RequestHandler = (_, res) => {
+  const robotsTxt = getRobotsTxt();
+  res.status(200).set({ 'Content-Type': 'text/plain' }).end(robotsTxt);
+};
+
+const sitemapHandler: RequestHandler = (_, res) => {
+  const sitemapEntries = getSitemapEntries();
+  const sitemap = getSitemap(sitemapEntries);
+  res.status(200).set({ 'Content-Type': 'text/xml' }).end(sitemap);
+};
 
 const createServer = async (): Promise<void> => {
   i18next.use(i18nextHttpMiddleware.LanguageDetector).init({
@@ -41,13 +53,10 @@ const createServer = async (): Promise<void> => {
       dirname: __dirname,
     });
 
+    app.get(/\/imgs\//, imageHandler);
     app.use(BASE_URL, serveStatic(__dirname, { index: false }));
-
-    app.get('/sitemap.xml', (_, res) => {
-      const sitemapEntries = getSitemapEntries();
-      const sitemap = getSitemap(sitemapEntries);
-      res.status(200).set({ 'Content-Type': 'text/xml' }).end(sitemap);
-    });
+    app.get('/robots.txt', robotsTxtHandler);
+    app.get('/sitemap.xml', sitemapHandler);
 
     app.use('*', async (req, res, next) => {
       try {
@@ -93,14 +102,10 @@ const createServer = async (): Promise<void> => {
       });
     });
 
-    app.get(/\/imgs\//, imageMiddleware);
+    app.get(/\/imgs\//, imageHandler);
     app.use(vite.middlewares);
-
-    app.get('/sitemap.xml', (_, res) => {
-      const sitemapEntries = getSitemapEntries();
-      const sitemap = getSitemap(sitemapEntries);
-      res.status(200).set({ 'Content-Type': 'text/xml' }).end(sitemap);
-    });
+    app.get('/robots.txt', robotsTxtHandler);
+    app.get('/sitemap.xml', sitemapHandler);
 
     app.use('*', async (req, res, next) => {
       const url = req.originalUrl;
