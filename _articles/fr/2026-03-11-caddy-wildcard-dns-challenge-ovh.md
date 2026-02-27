@@ -27,28 +27,30 @@ J'ai cherché un peu de doc afin de le configurer correctement (notamment la par
 
 **Attention, j'utilise la version Docker de Caddy, mais vous pouvez tout de même suivre cet article si vous l'avez installé directement sur votre système !**
 
-**Prérequis** : Avoir installé Caddy version 2 (>2.10.0 pour ne pas avoir à ajouter l'option `auto_https prefer_wildcard`) via Docker ou directement.
+**Prérequis** : Avoir installé Caddy version 2 (>2.10.0 pour ne pas avoir à ajouter l'option `auto_https prefer_wildcard` plus de détail [ici](https://github.com/caddyserver/caddy/releases/tag/v2.10.0)) via Docker ou directement.
 
 
 ## Trouver le bon plugin
 
 La première étape est de trouver son provider DNS dans le repository suivant : https://github.com/caddy-dns
-J'utilise personnellement ovh, le mien pour la suite de l'article sera donc : https://github.com/caddy-dns/ovh
+
+J'utilise personnellement ovh. Pour la suite de l'article ce sera donc : https://github.com/caddy-dns/ovh
 
 ## Installer le plugin
 
 Il faut maintenant ajouter le plugin à Caddy :
+
 Installation direct : `xcaddy build --with github.com/caddy-dns/ovh`
 
-Pour Docker il vous faut créer un Dockerfile avec le contenu suivant :
+Pour Docker on va créer un dossier par exemple dans notre home : `mkdir -p ~/caddy/config` (le dossier config vous sera utile juste après)
+
+Ensuite créer un Dockerfile avec le contenu suivant dans notre dossier `~/caddy` :
 ```
 FROM caddy:builder AS builder
 
 RUN --mount=type=cache,target=/go/pkg/mod \
     --mount=type=cache,target=/root/.cache/go-build \
     xcaddy build \
-    --with github.com/caddyserver/nginx-adapter \
-    --with github.com/hairyhenderson/caddy-teapot-module@v0.0.3-0 \
     --with github.com/caddy-dns/ovh
 
 FROM caddy:latest
@@ -58,13 +60,13 @@ COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 
 ## Préparer le Caddyfile
 
-Exemple de Caddyfile à utiliser (pour une installation via Docker le placer dans le path suivant : `caddyDir/config/Caddyfile` il sera utilisé par le `compose.yaml` plus tard) :
+Exemple de Caddyfile à utiliser (pour une installation via Docker le placer dans le path suivant : `~/caddy/config/Caddyfile` il sera utilisé par le `compose.yaml` plus tard) :
 ```
 {
     debug
 }
 
-*.domain.com {
+*.example.com {
     tls {
         dns ovh {
             endpoint {$OVH_ENDPOINT}
@@ -76,17 +78,21 @@ Exemple de Caddyfile à utiliser (pour une installation via Docker le placer dan
     respond "it works !"
 }
 ```
-(n'oubliez pas de remplacer `domain.com` par votre nom de domaine)
+(n'oubliez pas de remplacer `example.com` par votre nom de domaine)
+
+Les variables d'environnements nécessaires à la configuration d'OVH seront renseignées dans les chapitres suivants.
 
 **Attention, ici j'ai pris l'exemple de configuration pour ovh, veillez à la remplacer par celle de votre provider que vous trouverez dans le README du repository https://github.com/caddy-dns de votre provider.**
 
-## Trouver les crédentials du provider OVH
+## Trouver les identifiants du provider OVH
 
-Afin de trouver les informations requise par Letsencrypt pour communiquer et gérer nos enregistrements DNS OVH le README nous indique qu'il va falloir aller créer une application (avec accès API) à notre compte OVH.
+Afin de trouver les informations requise par Let's Encrypt pour communiquer et gérer nos enregistrements DNS OVH le README nous indique qu'il va falloir aller créer une application (avec accès API) à notre compte OVH.
 
 La documentation Caddy nous redirige vers ce lien : https://github.com/libdns/ovh#authenticating
+
 Qui ensuite nous mène ici : https://github.com/ovh/go-ovh#supported-apis
-L'idée est de trouver quelle est notre OVHcloud région afin de suivre le lien "Create script credentials (all keys at once)".
+
+L'idée est de trouver quelle est notre OVH région afin de suivre le lien "Create script credentials (all keys at once)".
 
 La mienne étant Europe, je vais donc suivre https://eu.api.ovh.com/createToken/
 
@@ -98,20 +104,20 @@ Vous allez remplir le formulaire de la manière suivante :
 
 ![Formulaire ovh rempli]({BASE_URL}/imgs/articles/2026-03-11-caddy-wildcard-dns-challenge-ovh/ovhdnschallengeapikey.png)
 
-Si vous avez un doute référez vous à la page que j'ai indiqué précédemment : https://github.com/libdns/ovh#authenticating je vous conseille de suivre la configuration pour un simple domaine mais si vous avez vocation à laisser votre Caddy gérer plusieurs domaines différents alors vous devriez suivre la configuration pour multiple domaines !
+Si vous avez un doute référez vous à la page que j'ai indiqué précédemment : https://github.com/libdns/ovh#authenticating . Je vous conseille de suivre la configuration pour un simple domaine, mais si vous avez vocation à laisser votre Caddy gérer plusieurs domaines différents, alors vous devriez suivre la configuration pour multiple domaines !
 
-Une fois enregistré n'oubliez pas de sauvegarder les informations suivantes (**Attention, vous ne pourrez plus accéder à ces informations par la suite**) :
+Une fois enregistré, n'oubliez pas de sauvegarder les informations suivantes (**Attention, vous ne pourrez plus accéder à ces informations par la suite**) :
 - **application key**
 - **application secret**
 - **consumer key**
 
 Nous allons les utiliser dés maintenant !
 
-## Ajouter les crédentials du provider OVH
+## Ajouter les identifiants du provider OVH
 
 Si vous avez installé Caddy directement alors modifier les info dans votre Caddyfile.
 
-Si vous avez utilisé docker je vous conseille de fournir ces infos via un `compose.yaml` :
+Si vous avez utilisé Docker je vous conseille de fournir ces infos via un `compose.yaml` :
 ```
 services:
   caddy:
@@ -144,16 +150,18 @@ Relancer Caddy pour qu'il prenne en compte votre nouvelle configuration
 
 Sans Docker :
 `sudo systemctl restart caddy`
+
 Avec Docker :
 `sudo docker compose up -d && sudo docker compose logs -f`
 
-Rendez-vous sur votre-domain.com et vous devriez voir la phrase "it works !" ainsi qu'un certificat tls !
+Rendez-vous sur votre nom de domaine et vous devriez voir la phrase "it works !" ainsi qu'un certificat tls !
 
 Si vous voulez tester un sous domain, rien de plus simple.
-Ajoutez le bloc suivant à votre Caddyfile
+
+Ajoutez le bloc suivant à votre Caddyfile (en modifiant bien `subdomain.example.com` par votre nom de domaine et le sous domain désiré)
 ```
-subdomain.domain.com: {
-respond "subdomain works !"
+subdomain.example.com: {
+  respond "subdomain works !"
 }
 ```
 
@@ -164,10 +172,10 @@ Have fun !
 
 ## Liens utiles
 
-https://caddyserver.com/docs/automatic-https#wildcard-certificates
-https://caddyserver.com/docs/caddyfile/patterns#wildcard-certificates
-https://caddyserver.com/docs/automatic-https#dns-challenge
-https://caddy.community/t/how-to-use-dns-provider-modules-in-caddy-2/8148
-https://github.com/caddy-dns/ovh
-https://github.com/libdns/ovh#authenticating
-https://github.com/ovh/go-ovh#supported-apis
+- https://caddyserver.com/docs/automatic-https#wildcard-certificates
+- https://caddyserver.com/docs/caddyfile/patterns#wildcard-certificates
+- https://caddyserver.com/docs/automatic-https#dns-challenge
+- https://caddy.community/t/how-to-use-dns-provider-modules-in-caddy-2/8148
+- https://github.com/caddy-dns/ovh
+- https://github.com/libdns/ovh#authenticating
+- https://github.com/ovh/go-ovh#supported-apis
