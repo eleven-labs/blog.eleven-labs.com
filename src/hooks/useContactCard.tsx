@@ -1,4 +1,5 @@
-import { ContactCardProps } from '@eleven-labs/design-system';
+import type { ContactCardProps } from '@eleven-labs/design-system';
+
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 

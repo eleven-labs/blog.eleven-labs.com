@@ -1,3 +1,11 @@
+import type {
+  CategoryType,
+  TransformedArticleData,
+  TransformedAuthorData,
+  TransformedPostData,
+  TransformedTutorialData,
+} from '@/types';
+
 import {
   CATEGORIES,
   DEFAULT_LANGUAGE,
@@ -9,13 +17,6 @@ import {
   PATHS,
 } from '@/constants';
 import { generatePath } from '@/helpers/routerHelper';
-import {
-  CategoryType,
-  TransformedArticleData,
-  TransformedAuthorData,
-  TransformedPostData,
-  TransformedTutorialData,
-} from '@/types';
 
 export type Urls = {
   lang: string;

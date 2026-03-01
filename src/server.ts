@@ -1,7 +1,7 @@
 import chokidar from 'chokidar';
 import express from 'express';
 import i18next from 'i18next';
-import i18nextHttpMiddleware from 'i18next-http-middleware';
+import * as i18nextHttpMiddleware from 'i18next-http-middleware';
 import { cpSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
 import cookiesMiddleware from 'universal-cookie-express';
@@ -20,7 +20,7 @@ import { imageMiddleware } from '@/middlewares/imageMiddleware';
 const isProd: boolean = process.env.NODE_ENV === 'production';
 
 const createServer = async (): Promise<void> => {
-  i18next.use(i18nextHttpMiddleware.LanguageDetector).init({
+  await i18next.use(i18nextHttpMiddleware.LanguageDetector).init({
     ...i18nConfig,
     resources: i18nResources,
   });
@@ -49,8 +49,8 @@ const createServer = async (): Promise<void> => {
       res.status(200).set({ 'Content-Type': 'text/xml' }).end(sitemap);
     });
 
-    app.use('*', async (req, res, next) => {
-      try {
+    app.use('*', (req, res, next) => {
+      void (async (): Promise<void> => {
         const { render } = await import('./entry-server.js');
         const request = createRequestByExpressRequest(req);
         const cookies = (req as unknown as { universalCookies: Record<string, string> }).universalCookies;
@@ -62,9 +62,7 @@ const createServer = async (): Promise<void> => {
           scripts,
         });
         res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
-      } catch (e) {
-        next(e);
-      }
+      })().catch(next);
     });
   } else {
     const { createServer: createViteServer } = await import('vite');
@@ -75,11 +73,11 @@ const createServer = async (): Promise<void> => {
     });
 
     const assetsWatcher = chokidar.watch(ASSETS_DIR, { cwd: ASSETS_DIR });
-    assetsWatcher.on('all', (event, filePath) => {
+    assetsWatcher.on('all', (_event, filePath) => {
       cpSync(resolve(ASSETS_DIR, filePath), resolve(IMGS_DIR, filePath), { recursive: true });
     });
 
-    writeJsonDataFiles();
+    void writeJsonDataFiles();
 
     const markdownWatcher = chokidar.watch([ARTICLES_DIR, AUTHORS_DIR]);
     markdownWatcher.on('change', (filePath) => {
@@ -93,7 +91,9 @@ const createServer = async (): Promise<void> => {
       });
     });
 
-    app.get(/\/imgs\//, imageMiddleware);
+    app.get(/\/imgs\//, (req, res, next) => {
+      void imageMiddleware(req, res).catch(next);
+    });
     app.use(vite.middlewares);
 
     app.get('/sitemap.xml', (_, res) => {
@@ -102,10 +102,10 @@ const createServer = async (): Promise<void> => {
       res.status(200).set({ 'Content-Type': 'text/xml' }).end(sitemap);
     });
 
-    app.use('*', async (req, res, next) => {
+    app.use('*', (req, res, next) => {
       const url = req.originalUrl;
 
-      try {
+      void (async (): Promise<void> => {
         const { render } = await vite.ssrLoadModule('/src/entry-server.tsx');
         const request = createRequestByExpressRequest(req);
         const cookies = (req as unknown as { universalCookies: Record<string, string> }).universalCookies;
@@ -123,10 +123,10 @@ const createServer = async (): Promise<void> => {
 
         const htmlWithViteHMRClient = await vite.transformIndexHtml(url, html);
         res.status(200).set({ 'Content-Type': 'text/html' }).end(htmlWithViteHMRClient);
-      } catch (e) {
-        vite.ssrFixStacktrace(e as Error);
-        next(e);
-      }
+      })().catch((error: unknown) => {
+        vite.ssrFixStacktrace(error as Error);
+        next(error);
+      });
     });
   }
 
@@ -136,4 +136,4 @@ const createServer = async (): Promise<void> => {
   });
 };
 
-createServer();
+void createServer();

@@ -1,9 +1,8 @@
-import { PostCardListProps } from '@eleven-labs/design-system';
+import type { PostCardListContainerProps } from './PostCardListContainer';
+import type { PostCardListProps } from '@eleven-labs/design-system';
 
 import { IMAGE_FORMATS, NUMBER_OF_ITEMS_PER_PAGE } from '@/constants';
 import { usePostsForCardList } from '@/hooks/usePostsForCardList';
-
-import { PostCardListContainerProps } from './PostCardListContainer';
 
 export const usePostCardListContainer = ({
   allPosts,

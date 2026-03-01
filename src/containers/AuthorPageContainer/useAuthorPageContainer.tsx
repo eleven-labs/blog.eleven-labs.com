@@ -1,14 +1,17 @@
-import { AuthorPageProps, SocialNetworkName } from '@eleven-labs/design-system';
+import type { AuthorPageProps, SocialNetworkName } from '@eleven-labs/design-system';
+
+import type { PostCardListContainerProps } from '@/containers/PostCardListContainer';
+import type { AuthorPageData } from '@/types';
+
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLoaderData, useParams } from 'react-router-dom';
 
 import { PATHS } from '@/constants';
-import { PostCardListContainer, PostCardListContainerProps } from '@/containers/PostCardListContainer';
+import { PostCardListContainer } from '@/containers/PostCardListContainer';
 import { generatePath } from '@/helpers/routerHelper';
 import { useNewsletterCard } from '@/hooks/useNewsletterCard';
 import { useTitle } from '@/hooks/useTitle';
-import { AuthorPageData } from '@/types';
 
 export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
   const { t, i18n } = useTranslation();

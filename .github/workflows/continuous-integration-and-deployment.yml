@@ -21,8 +21,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Restore NPM Cache
-        uses: ./.github/actions/restore-npm-cache
+      - name: Setup Node.js and restore pnpm cache
+        uses: ./.github/actions/setup-nodejs-and-restore-pnpm-cache
 
       - name: Sets env vars for dev
         if: github.event_name == 'pull_request'
@@ -39,7 +39,7 @@ jobs:
           echo "BASE_URL=/" >> $GITHUB_ENV
 
       - name: Build
-        run: npm run prerender
+        run: pnpm prerender
         env:
           NODE_ENV: production
           BASE_URL: ${{ env.BASE_URL }}
@@ -77,7 +77,7 @@ jobs:
         run: aws cloudfront create-invalidation --distribution-id "${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}" --paths "${{ env.BASE_URL }}*"
 
       - name: Indexing on Algolia
-        run: npm run indexation:algolia
+        run: pnpm indexation:algolia
         env:
           ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
           ALGOLIA_API_INDEXING_KEY: ${{ secrets.ALGOLIA_API_INDEXING_KEY }}

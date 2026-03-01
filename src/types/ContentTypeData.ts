@@ -1,18 +1,18 @@
-import { z } from 'zod';
+import type { z } from 'zod';
 
-import {
+import type {
   AuthorDataValidationSchema,
   PostDataSchemaValidation,
   TutorialDataSchemaValidation,
   TutorialStepDataValidationSchema,
 } from '@/config/schemaValidation';
-import { MARKDOWN_CONTENT_TYPES } from '@/constants';
+import type { MARKDOWN_CONTENT_TYPES } from '@/constants';
 
 export interface ContentTypeData {
   contentType: (typeof MARKDOWN_CONTENT_TYPES)[keyof typeof MARKDOWN_CONTENT_TYPES];
 }
 
-export interface CommonPostData extends z.infer<typeof PostDataSchemaValidation> {}
+export type CommonPostData = z.infer<typeof PostDataSchemaValidation>;
 
 export interface ArticleData extends CommonPostData {
   contentType: 'article';

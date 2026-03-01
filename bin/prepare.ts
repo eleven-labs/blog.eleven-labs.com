@@ -1,7 +1,7 @@
 import { cpSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-(async (): Promise<void> => {
+((): void => {
   try {
     const designSystemRootDir = resolve(process.cwd(), 'node_modules/@eleven-labs/design-system/dist');
     const destDir = resolve(process.cwd(), 'public');

@@ -1,5 +1,6 @@
+import type express from 'express';
+
 import { Headers, Request } from 'cross-fetch';
-import express from 'express';
 
 export const createFetchHeaders = (requestHeaders: express.Request['headers']): Headers => {
   const headers = new Headers();

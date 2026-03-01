@@ -1,15 +1,16 @@
-import { LayoutTemplateProps } from '@eleven-labs/design-system';
+import type { LayoutTemplateProps } from '@eleven-labs/design-system';
+
+import type { LayoutTemplateData } from '@/types';
+
 import { useHead, useLink, useMeta, useScript } from 'hoofd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { matchPath, useLoaderData, useLocation } from 'react-router-dom';
 
 import { themeColor } from '@/config/website';
-import { BASE_URL, GOOGLE_SITE_VERIFICATION } from '@/constants';
-import { PATHS } from '@/constants';
+import { BASE_URL, GOOGLE_SITE_VERIFICATION , PATHS } from '@/constants';
 import { generateUrl } from '@/helpers/assetHelper';
 import { getUrl } from '@/helpers/getUrlHelper';
-import { LayoutTemplateData } from '@/types';
 
 import { HeaderContainer } from './HeaderContainer';
 import { useFooterContainer } from './useFooterContainer';

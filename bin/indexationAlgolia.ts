@@ -1,6 +1,6 @@
 import { indexationAlglolia } from '@/helpers/indexationAlgoliaHelper';
 
-(async (): Promise<void> => {
+void (async (): Promise<void> => {
   try {
     await indexationAlglolia({
       appId: process.env.ALGOLIA_APP_ID as string,

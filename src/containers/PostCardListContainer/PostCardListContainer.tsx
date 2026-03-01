@@ -1,7 +1,9 @@
-import { ComponentPropsWithoutRef, PostCardList } from '@eleven-labs/design-system';
-import React from 'react';
+import type { ComponentPropsWithoutRef} from '@eleven-labs/design-system';
 
-import { PostListPageData } from '@/types';
+import type { PostListPageData } from '@/types';
+
+import { PostCardList } from '@eleven-labs/design-system';
+import React from 'react';
 
 import { usePostCardListContainer } from './usePostCardListContainer';
 

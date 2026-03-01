@@ -1,4 +1,5 @@
-import { ResourceStore } from 'i18next';
+import type { ResourceStore } from 'i18next';
+
 import * as React from 'react';
 
 import { GTM_ID } from '@/constants';

@@ -1,4 +1,4 @@
-import { ArticleData, AuthorData, TutorialData, TutorialStepData } from './ContentTypeData';
+import type { ArticleData, AuthorData, TutorialData, TutorialStepData } from './ContentTypeData';
 
 export interface TransformedArticleData
   extends Pick<ArticleData, 'lang' | 'slug' | 'cover' | 'title' | 'excerpt' | 'authors' | 'categories'> {

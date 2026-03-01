@@ -1,10 +1,12 @@
+import type {
+  ComponentPropsWithoutRef,
+  ReminderVariantType} from '@eleven-labs/design-system';
+
 import {
   Box,
-  ComponentPropsWithoutRef,
   Flex,
   Link,
   Reminder,
-  ReminderVariantType,
   SyntaxHighlighter,
 } from '@eleven-labs/design-system';
 import React from 'react';

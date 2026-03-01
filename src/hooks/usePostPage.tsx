@@ -1,4 +1,8 @@
-import { Box, PostPageProps } from '@eleven-labs/design-system';
+import type { PostPageProps } from '@eleven-labs/design-system';
+
+import type { PostPageData } from '@/types';
+
+import { Box } from '@eleven-labs/design-system';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
@@ -12,7 +16,6 @@ import { useContactCard } from '@/hooks/useContactCard';
 import { useDateToString } from '@/hooks/useDateToString';
 import { usePostsForCardList } from '@/hooks/usePostsForCardList';
 import { useSeoPost } from '@/hooks/useSeoPost';
-import { PostPageData } from '@/types';
 
 export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' | 'summary' | 'children'> => {
   const { t, i18n } = useTranslation();

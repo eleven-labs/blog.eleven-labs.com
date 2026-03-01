@@ -1,3 +1,5 @@
+import type { ImagePositionType, PostPageData } from '@/types';
+
 import { useMeta, useScript } from 'hoofd';
 import { useTranslation } from 'react-i18next';
 
@@ -5,7 +7,6 @@ import { DEVICES, IMAGE_FORMATS, PATHS } from '@/constants';
 import { generateUrl, getCoverPath } from '@/helpers/assetHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useTitle } from '@/hooks/useTitle';
-import { ImagePositionType, PostPageData } from '@/types';
 
 export const useSeoPost = (post: PostPageData): void => {
   const { i18n } = useTranslation();

@@ -1,5 +1,6 @@
+import type { DeviceType, ImageExtensionType, ImageFormatType } from '@/types';
+
 import { getEnv } from '@/helpers/getEnvHelper';
-import { DeviceType, ImageExtensionType, ImageFormatType } from '@/types';
 
 export const IS_SSR = import.meta.env?.SSR ?? false;
 export const IS_PRERENDER = import.meta.env?.MODE === 'prerender';

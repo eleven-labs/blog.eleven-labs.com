@@ -1,5 +1,3 @@
-import './styles';
-
 import i18next from 'i18next';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -9,8 +7,10 @@ import { i18nConfig } from '@/config/i18n/i18n.config';
 import { HeaderContainer } from '@/containers/LayoutTemplateContainer/HeaderContainer';
 import { SearchPageContentContainer } from '@/containers/SearchPageContainer';
 
+import './styles';
+
 const i18n = i18next.createInstance().use(initReactI18next);
-i18n.init({
+void i18n.init({
   ...i18nConfig,
   lng: window.initialLanguage,
   resources: window.initialI18nStore,

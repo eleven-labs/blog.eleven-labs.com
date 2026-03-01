@@ -1,3 +1,5 @@
+import type * as ConstantsModule from '@/constants';
+
 import { generateUrl, getPathFile } from './assetHelper';
 
 describe('getPathFile', () => {
@@ -13,7 +15,7 @@ describe('getPathFile', () => {
 
 describe('generateUrl', () => {
   vi.mock('@/constants', async () => {
-    const actual = await vi.importActual<typeof import('@/constants')>('@/constants');
+    const actual = await vi.importActual<typeof ConstantsModule>('@/constants');
     return {
       ...actual,
       HOST_URL: 'https://blog.eleven-labs.com',

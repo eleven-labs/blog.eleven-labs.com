@@ -1,4 +1,7 @@
-import { HomePageProps } from '@eleven-labs/design-system';
+import type { HomePageProps } from '@eleven-labs/design-system';
+
+import type { PostListPageData } from '@/types';
+
 import { useLink, useMeta } from 'hoofd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -11,7 +14,6 @@ import { generatePath } from '@/helpers/routerHelper';
 import { useNewsletterCard } from '@/hooks/useNewsletterCard';
 import { usePostsForCardList } from '@/hooks/usePostsForCardList';
 import { useTitle } from '@/hooks/useTitle';
-import { PostListPageData } from '@/types';
 
 export const useHomePageContainer = (): HomePageProps => {
   const { t, i18n } = useTranslation();
