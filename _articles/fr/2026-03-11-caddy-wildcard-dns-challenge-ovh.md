@@ -27,7 +27,9 @@ J'ai cherché un peu de doc afin de le configurer correctement (notamment la par
 
 **Attention, j'utilise la version Docker de Caddy, mais vous pouvez tout de même suivre cet article si vous l'avez installé directement sur votre système !**
 
-**Prérequis** : Avoir installé Caddy version 2 (>2.10.0 pour ne pas avoir à ajouter l'option `auto_https prefer_wildcard` plus de détail [ici](https://github.com/caddyserver/caddy/releases/tag/v2.10.0)) via Docker ou directement.
+**Prérequis** : 
+- Avoir installé Caddy version 2 (>2.10.0 pour ne pas avoir à ajouter l'option `auto_https prefer_wildcard` plus de détail [ici](https://github.com/caddyserver/caddy/releases/tag/v2.10.0)) via Docker ou directement.
+- Au niveau de votre provider dns avoir déjà redirigé vos domaines sur votre serveur, cela inclus votre domain de base + le wildcard de votre domain, donc par exemple avoir un enregistrement du type `*.example.com IN A 1.1.1.1` (où `1.1.1.1` correspond à l'ip de votre serveur) si vous utilisez ovh vous pouvez vous référer à cette [doc](https://help.ovhcloud.com/csm/fr-dns-edit-dns-zone?id=kb_article_view&sysparm_article=KB0051684)
 
 
 ## Trouver le bon plugin
@@ -66,7 +68,7 @@ Exemple de Caddyfile à utiliser (pour une installation via Docker le placer dan
     debug
 }
 
-*.example.com {
+*.example.com, example.com {
     tls {
         dns ovh {
             endpoint {$OVH_ENDPOINT}
@@ -75,7 +77,10 @@ Exemple de Caddyfile à utiliser (pour une installation via Docker le placer dan
             consumer_key {$OVH_CONSUMER_KEY}
         }
     }
-    respond "it works !"
+    # default handle
+    handle {
+      respond "it works !"
+    }
 }
 ```
 (n'oubliez pas de remplacer `example.com` par votre nom de domaine)
@@ -159,13 +164,30 @@ Rendez-vous sur votre nom de domaine et vous devriez voir la phrase "it works !"
 Si vous voulez tester un sous domain, rien de plus simple.
 
 Ajoutez le bloc suivant à votre Caddyfile (en modifiant bien `subdomain.example.com` par votre nom de domaine et le sous domain désiré)
+
 ```
-subdomain.example.com: {
+@subdomain host subdomain.example.com
+handle @subdomain: {
   respond "subdomain works !"
 }
 ```
 
-Relancez Caddy et allez tester votre sous-domaine :)
+Dans le bloc précédemment ajouté, entre le bloc `tls` et l'instruction `handle`
+
+Relancez Caddy via les commandes suivantes :
+
+Sans Docker :
+`sudo systemctl reload caddy`
+
+Avec Docker :
+`sudo docker compose exec -w /etc/caddy caddy caddy reload`
+
+Si vous avez une erreur sur le formattage de votre fichier Caddy vous pouvez utiliser la commande suivante :
+`sudo docker compose exec -w /etc/caddy caddy caddy fmt --override`
+
+Puis reload Caddy.
+
+Et allez tester votre sous-domaine :)
 
 Have fun !
 
