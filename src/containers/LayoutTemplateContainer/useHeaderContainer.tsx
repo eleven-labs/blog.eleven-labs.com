@@ -1,17 +1,19 @@
-import { AutocompleteProps, HeaderProps } from '@eleven-labs/design-system';
+import type { AutocompleteProps, HeaderProps } from '@eleven-labs/design-system';
+
+import type { HeaderContainerProps } from '@/containers/LayoutTemplateContainer/HeaderContainer';
+import type { AlgoliaPostData } from '@/types';
+
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { contactUrl } from '@/config/website';
 import { IS_SSR, NUMBER_OF_ITEMS_FOR_SEARCH, PATHS } from '@/constants';
-import { HeaderContainerProps } from '@/containers/LayoutTemplateContainer/HeaderContainer';
 import { TransWithHtml } from '@/containers/TransWithHtml';
 import { trackContentSearchEvent } from '@/helpers/dataLayerHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
 import { useDateToString } from '@/hooks/useDateToString';
 import { useDebounce } from '@/hooks/useDebounce';
-import { AlgoliaPostData } from '@/types';
 
 export const useHeaderContainer = ({ layoutTemplateData }: HeaderContainerProps): HeaderProps => {
   const { t, i18n } = useTranslation();
@@ -35,7 +37,7 @@ export const useHeaderContainer = ({ layoutTemplateData }: HeaderContainerProps)
   React.useEffect(() => {
     if (debouncedSearch.length > 0) {
       trackContentSearchEvent(debouncedSearch);
-      algoliaSearchIndex
+      void algoliaSearchIndex
         .search<AlgoliaPostData>(debouncedSearch, {
           hitsPerPage: NUMBER_OF_ITEMS_FOR_SEARCH,
           facetFilters: [`lang:${i18n.language}`],
@@ -44,7 +46,7 @@ export const useHeaderContainer = ({ layoutTemplateData }: HeaderContainerProps)
           setSearchHits(hits);
         });
     }
-  }, [i18n.language, debouncedSearch]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [i18n.language, debouncedSearch]);
 
   const items = React.useMemo<AutocompleteProps['items']>(
     () =>
@@ -66,7 +68,7 @@ export const useHeaderContainer = ({ layoutTemplateData }: HeaderContainerProps)
           href: generatePath(PATHS.POST, { lang: i18n.language, slug: hit.slug }),
         },
       })),
-    [i18n.language, searchHits] // eslint-disable-line react-hooks/exhaustive-deps
+    [i18n.language, searchHits]
   );
 
   return {

@@ -1,6 +1,9 @@
 FROM node:20-bookworm
 
-RUN npx -y playwright install --with-deps chromium
+ENV npm_config_update_notifier=false \
+    npm_config_fund=false
+
+RUN npm install -g pnpm@10.30.3
 
 ENV NODE_ENV development
 
@@ -9,7 +12,5 @@ RUN mkdir -p /var/www/app \
   && chown -R node:node /var/www/app
 
 WORKDIR /var/www/app
-
-USER node:node
 
 EXPOSE 3000

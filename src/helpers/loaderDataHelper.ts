@@ -1,8 +1,6 @@
-import { LoaderFunctionArgs } from '@remix-run/router/utils';
-import fetch from 'cross-fetch';
+import type { LoaderFunctionArgs } from '@remix-run/router/utils';
 
-import { BASE_URL, IS_PRERENDER, IS_SSR, MARKDOWN_CONTENT_TYPES } from '@/constants';
-import {
+import type {
   ArticlePageData,
   AuthorPageData,
   CategoryType,
@@ -10,6 +8,10 @@ import {
   PostListPageData,
   TutorialPageData,
 } from '@/types';
+
+import fetch from 'cross-fetch';
+
+import { BASE_URL, IS_PRERENDER, IS_SSR, MARKDOWN_CONTENT_TYPES } from '@/constants';
 
 const cache = new Map();
 

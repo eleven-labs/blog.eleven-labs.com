@@ -1,4 +1,6 @@
-import i18next, { i18n } from 'i18next';
+import type { i18n } from 'i18next';
+
+import i18next from 'i18next';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
@@ -8,13 +10,13 @@ import { render } from '@/entry-server';
 import { createRequestByUrl } from '@/helpers/requestHelper';
 import { getHtmlTemplatePropsByManifest } from '@/helpers/ssrHelper';
 
-const getI18nInstanceByLang = (lang: string): i18n => {
+const getI18nInstanceByLang = async (lang: string): Promise<i18n> => {
   const i18n = i18next.createInstance();
-  i18n.init({
+  await i18n.init({
     ...i18nConfig,
     resources: i18nResources,
   });
-  i18n.changeLanguage(lang);
+  await i18n.changeLanguage(lang);
   return i18n;
 };
 
@@ -29,7 +31,7 @@ export const generateHtmlFiles = async (options: {
   });
 
   for (const { lang, url } of options.urls) {
-    const i18n = getI18nInstanceByLang(lang);
+    const i18n = await getI18nInstanceByLang(lang);
 
     const html = await render({
       request: createRequestByUrl({ url }),

@@ -1,9 +1,12 @@
+import type { FormatEnum, OutputInfo } from 'sharp';
+
+import type { ImagePositionType } from '@/types';
+
 import { basename, dirname, extname, resolve } from 'node:path';
-import Sharp, { FormatEnum, OutputInfo } from 'sharp';
+import Sharp from 'sharp';
 
 import { DEFAULT_EXTENSION_FOR_IMAGES, DEVICES, SIZES_BY_IMAGE_FORMAT } from '@/constants';
 import { getPosts } from '@/helpers/markdownContentManagerHelper';
-import { ImagePositionType } from '@/types';
 
 const resizeImage = async (options: {
   imagePath: string;
@@ -43,18 +46,22 @@ export const generateImageFormats = async (): Promise<void> => {
   performance.mark('generate-image-formats-start');
 
   const transformedBufferPromises: Promise<OutputInfo>[] = [];
-  const covers: { path: string; position?: ImagePositionType }[] = posts
-    .filter((post) => post.cover?.path)
-    .map((post) => ({
-      path: post.cover!.path,
-      position: post.cover?.position,
-    }));
+  const covers: { path: string; position?: ImagePositionType }[] = posts.flatMap((post) =>
+    post.cover?.path
+      ? [
+          {
+            path: post.cover.path,
+            position: post.cover.position,
+          },
+        ]
+      : []
+  );
   covers.push({
     path: '/imgs/default-cover.jpg',
   });
 
   for (const { path, position } of covers) {
-    const imagePath = resolve(process.cwd(), 'public', path!.slice(1) as string);
+    const imagePath = resolve(process.cwd(), 'public', path.slice(1));
     const directoryPath = dirname(imagePath);
     const filename = basename(imagePath, extname(imagePath));
 

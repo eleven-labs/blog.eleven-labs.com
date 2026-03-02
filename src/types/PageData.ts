@@ -1,6 +1,6 @@
-import { CategoryType } from '@/types/CategoryType';
-import { ImagePositionType } from '@/types/ImagePositionType';
-import {
+import type { CategoryType } from '@/types/CategoryType';
+import type { ImagePositionType } from '@/types/ImagePositionType';
+import type {
   TransformedArticleData,
   TransformedAuthorData,
   TransformedPostDataWithTransformedAuthors,

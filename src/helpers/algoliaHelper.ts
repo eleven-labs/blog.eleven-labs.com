@@ -1,4 +1,6 @@
-import algoliasearch, { SearchClient, SearchIndex } from 'algoliasearch';
+import type { SearchClient, SearchIndex } from 'algoliasearch';
+
+import algoliasearch from 'algoliasearch';
 
 export const getAlgoliaSearchClient = (options: { appId: string; apiKey: string }): SearchClient =>
   algoliasearch(options.appId, options.apiKey);

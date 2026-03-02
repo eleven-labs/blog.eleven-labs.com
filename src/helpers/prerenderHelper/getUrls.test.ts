@@ -1,3 +1,5 @@
+import type * as ConstantsModule from '@/constants';
+
 import { LANGUAGES, MARKDOWN_CONTENT_TYPES } from '@/constants';
 
 import {
@@ -10,7 +12,7 @@ import {
 
 describe('getSitemapEntries', () => {
   vi.mock('@/constants', async () => {
-    const mod = await vi.importActual<typeof import('@/constants')>('@/constants');
+    const mod = await vi.importActual<typeof ConstantsModule>('@/constants');
     return {
       ...mod,
       IS_DEBUG: false,

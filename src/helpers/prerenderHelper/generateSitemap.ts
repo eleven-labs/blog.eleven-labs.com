@@ -39,10 +39,10 @@ export const getSitemap = (
   });
 };
 
-export const generateSitemap = async (options: {
+export const generateSitemap = (options: {
   rootDir: string;
   sitemapEntries: { links: { lang: string; url: string }[]; changefreq?: string; priority?: number }[];
-}): Promise<void> => {
+}): void => {
   const sitemap = getSitemap(options.sitemapEntries);
   writeFileSync(resolve(options.rootDir, 'sitemap.xml'), sitemap, 'utf8');
 };

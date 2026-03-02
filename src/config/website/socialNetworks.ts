@@ -1,4 +1,4 @@
-import { IconNameType } from '@eleven-labs/design-system';
+import type { IconNameType } from '@eleven-labs/design-system';
 
 import { generateUrl } from '@/helpers/assetHelper';
 

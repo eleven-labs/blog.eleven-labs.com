@@ -1,7 +1,7 @@
+import type { HtmlTemplateProps } from '@/templates/HtmlTemplate';
+
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-
-import { HtmlTemplateProps } from '@/templates/HtmlTemplate';
 
 export const getHtmlTemplatePropsByManifest = (options: {
   dirname: string;

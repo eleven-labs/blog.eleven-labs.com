@@ -12,7 +12,7 @@ const prerender = async (): Promise<void> => {
 
   try {
     const { generateFiles } = await vite.ssrLoadModule('/src/helpers/prerenderHelper');
-    generateFiles({
+    await generateFiles({
       rootDir: resolve(process.cwd(), 'dist'),
       baseUrl,
     });
@@ -20,8 +20,8 @@ const prerender = async (): Promise<void> => {
     console.error(error);
     process.exit(1);
   } finally {
-    vite.close();
+    await vite.close();
   }
 };
 
-prerender();
+void prerender();

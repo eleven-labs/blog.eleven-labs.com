@@ -1,7 +1,7 @@
-import { type Resource } from 'i18next';
+import type { DataLayerEventAvailable } from '@/helpers/dataLayerHelper';
+import type { LayoutTemplateData } from '@/types';
 
-import { DataLayerEventAvailable } from '@/helpers/dataLayerHelper';
-import { LayoutTemplateData } from '@/types';
+import { type Resource } from 'i18next';
 
 export {};
 

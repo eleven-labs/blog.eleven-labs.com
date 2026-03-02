@@ -1,7 +1,7 @@
+import type { ArticlePageData } from '@/types';
+
 import { PostPage } from '@eleven-labs/design-system';
 import React from 'react';
-
-import { ArticlePageData } from '@/types';
 
 import { useArticlePageContainer } from './useArticlePageContainer';
 

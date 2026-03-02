@@ -1,11 +1,4 @@
-import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
-import { dirname, resolve } from 'node:path';
-
-import { DATA_DIR } from '@/app-paths';
-import { CATEGORIES, LANGUAGES, LANGUAGES_AVAILABLE_WITH_DT, MARKDOWN_CONTENT_TYPES } from '@/constants';
-import { getArticles, getAuthors, getTutorials } from '@/helpers/markdownContentManagerHelper';
-import { intersection } from '@/helpers/objectHelper';
-import {
+import type {
   AuthorPageData,
   LayoutTemplateData,
   PostListPageData,
@@ -14,6 +7,14 @@ import {
   TransformedPostData,
   TransformedPostDataWithoutContent,
 } from '@/types';
+
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+
+import { DATA_DIR } from '@/app-paths';
+import { CATEGORIES, LANGUAGES, LANGUAGES_AVAILABLE_WITH_DT, MARKDOWN_CONTENT_TYPES } from '@/constants';
+import { getArticles, getAuthors, getTutorials } from '@/helpers/markdownContentManagerHelper';
+import { intersection } from '@/helpers/objectHelper';
 
 export const getAuthorPageData = (options: {
   posts: TransformedPostDataWithoutContent[];

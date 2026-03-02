@@ -12,12 +12,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Restore NPM Cache
-        uses: ./.github/actions/restore-npm-cache
+      - name: Setup Node.js and restore pnpm cache
+        uses: ./.github/actions/setup-nodejs-and-restore-pnpm-cache
 
       - name: Validate markdown authors and posts
         id: validate_markdown
-        run: CI=true npm run validate-markdown
+        run: CI=true pnpm validate-markdown
 
       - name: Add a comment to the PR after failed markdown validation
         uses: marocchino/sticky-pull-request-comment@v2
@@ -47,11 +47,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Restore NPM Cache
-        uses: ./.github/actions/restore-npm-cache
+      - name: Setup Node.js and restore pnpm cache
+        uses: ./.github/actions/setup-nodejs-and-restore-pnpm-cache
 
       - name: Lint code
-        run: npm run lint:es
+        run: pnpm lint
 
   compile:
     runs-on: ubuntu-latest
@@ -59,11 +59,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Restore NPM Cache
-        uses: ./.github/actions/restore-npm-cache
+      - name: Setup Node.js and restore pnpm cache
+        uses: ./.github/actions/setup-nodejs-and-restore-pnpm-cache
 
-      - name: Run Compile TypeScript
-        run: npx tsc
+      - name: Run TypeScript type-check
+        run: pnpm type-check
 
   test:
     runs-on: ubuntu-latest
@@ -71,11 +71,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Restore NPM Cache
-        uses: ./.github/actions/restore-npm-cache
+      - name: Setup Node.js and restore pnpm cache
+        uses: ./.github/actions/setup-nodejs-and-restore-pnpm-cache
 
       - name: Run Tests
-        run: npm run test
+        run: pnpm test
 
   build:
     runs-on: ubuntu-latest
@@ -83,8 +83,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Restore NPM Cache
-        uses: ./.github/actions/restore-npm-cache
+      - name: Setup Node.js and restore pnpm cache
+        uses: ./.github/actions/setup-nodejs-and-restore-pnpm-cache
 
       - name: Build Application
-        run: WITH_DOWNLOAD_TRANSLATIONS_AND_GENERATE_IMAGE_FORMATS=false npm run build
+        run: WITH_DOWNLOAD_TRANSLATIONS_AND_GENERATE_IMAGE_FORMATS=false pnpm build

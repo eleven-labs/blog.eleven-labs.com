@@ -1,6 +1,6 @@
-version: '3.5'
 services:
   app:
+    tty: true
     build:
       context: ./
       dockerfile: Dockerfile-dev
@@ -8,9 +8,11 @@ services:
       - .env
     volumes:
       - ./:/var/www/app
+      - app_node_modules:/var/www/app/node_modules
     ports:
-      - 6009:6009
       - 5173:5173
       - 24678:24678
-    command: ['sh', '-c', 'npm ci && npx --yes concurrently "npm run start:storybook" "npm run start:dev"']
+    command: ['sh', '-c', 'pnpm install && pnpm start:dev']
 
+volumes:
+  app_node_modules:

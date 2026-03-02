@@ -1,0 +1,25 @@
+name: setup-nodejs-and-restore-pnpm-cache
+description: Setup Node.js and restore pnpm cache
+runs:
+  using: composite
+  steps:
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 10.30.3
+        run_install: false
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: pnpm
+        cache-dependency-path: pnpm-lock.yaml
+    - name: Restore pnpm cache
+      uses: actions/cache@v3
+      with:
+        path: "**/node_modules"
+        key: cache-node-modules-${{ runner.os }}-20.x-${{ hashFiles('pnpm-lock.yaml') }}
+        restore-keys: cache-node-modules-${{ runner.os }}-20.x-
+    - name: Prepare project
+      shell: bash
+      run: pnpm prepare

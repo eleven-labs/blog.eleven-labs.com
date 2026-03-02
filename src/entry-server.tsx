@@ -1,7 +1,11 @@
+import type { Request } from 'cross-fetch';
+import type { i18n } from 'i18next';
+
+import type { HtmlTemplateProps } from '@/templates/HtmlTemplate';
+
 import { createStaticHandler } from '@remix-run/router';
-import { Request, Response } from 'cross-fetch';
+import { Response } from 'cross-fetch';
 import { toStatic } from 'hoofd';
-import { i18n } from 'i18next';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { createStaticRouter, StaticRouterProvider } from 'react-router-dom/server';
@@ -9,7 +13,7 @@ import { createStaticRouter, StaticRouterProvider } from 'react-router-dom/serve
 import { routes } from '@/config/router';
 import { BASE_URL, IS_DEBUG, LANGUAGES } from '@/constants';
 import { RootContainer } from '@/containers/RootContainer';
-import { HtmlTemplate, HtmlTemplateProps } from '@/templates/HtmlTemplate';
+import { HtmlTemplate } from '@/templates/HtmlTemplate';
 
 export type RenderOptions = {
   request: Request;
@@ -29,7 +33,9 @@ export const render = async (options: RenderOptions): Promise<string> => {
   }
 
   if (context instanceof Response) {
-    throw context;
+    const error = new Error(`Unexpected Response while rendering ${options.request.url}`);
+    error.cause = context;
+    throw error;
   }
   const router = createStaticRouter(routes, context);
 
