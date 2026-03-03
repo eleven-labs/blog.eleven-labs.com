@@ -19,7 +19,7 @@ keywords:
 authors:
     - iregaibi
 seo:
-    title: "Automatic Persisted Queries: Optimiser vos requêtes sans sacrifier la flexibilité"
+    title: "Optimiser vos requêtes avec les Automatic Persisted Queries"
     description: Voyons comment, tout en silence, les Automatic Persisted Queries peuvent vous aider à résoudre l'un des problémes les plus discrets de vos APIs GraphQL
 ---
 GraphQL a un problème connu de tous ses utilisateurs : les requêtes peuvent être très volumineuses. Une query avec plusieurs fragments, des variables imbriquées, des filtres, ça peut facilement peser plusieurs centaines d'octets, et ce pour chaque appel et chaque utilisateur. La bande passante peut rapidement devenir un sujet sérieux.
