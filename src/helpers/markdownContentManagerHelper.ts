@@ -1,3 +1,15 @@
+import type {
+  ArticleData,
+  AuthorData,
+  ResultData,
+  TransformedArticleData,
+  TransformedAuthorData,
+  TransformedPostData,
+  TransformedTutorialData,
+  TutorialData,
+  TutorialStepData,
+} from '@/types';
+
 import GithubSlugger from 'github-slugger';
 import { globSync } from 'glob';
 import matter from 'gray-matter';
@@ -12,17 +24,6 @@ import { ASSETS_DIR, MARKDOWN_FILE_PATHS } from '@/app-paths';
 import { MARKDOWN_CONTENT_TYPES } from '@/constants';
 import { getPathFile } from '@/helpers/assetHelper';
 import { markdownToHtml as defaultMarkdownToHtml } from '@/helpers/markdownToHtmlHelper';
-import {
-  ArticleData,
-  AuthorData,
-  ResultData,
-  TransformedArticleData,
-  TransformedAuthorData,
-  TransformedPostData,
-  TransformedTutorialData,
-  TutorialData,
-  TutorialStepData,
-} from '@/types';
 
 interface MarkdownCacheData<TData = ResultData> {
   data: TData;

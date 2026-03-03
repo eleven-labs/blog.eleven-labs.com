@@ -12,4 +12,4 @@ const dev = async (): Promise<void> => {
   await vite.ssrLoadModule('/src/server.ts');
 };
 
-dev();
+void dev();

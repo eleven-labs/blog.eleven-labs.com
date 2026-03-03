@@ -1,15 +1,18 @@
-import { SearchPageContentProps } from '@eleven-labs/design-system';
+import type { SearchPageContentProps } from '@eleven-labs/design-system';
+
+import type { PostCardListContainerProps } from '@/containers/PostCardListContainer';
+import type { AlgoliaPostData, LanguageType } from '@/types';
+
 import { useLink, useTitleTemplate } from 'hoofd';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { DEFAULT_LANGUAGE, IS_SSR, PATHS } from '@/constants';
-import { PostCardListContainer, PostCardListContainerProps } from '@/containers/PostCardListContainer';
+import { PostCardListContainer } from '@/containers/PostCardListContainer';
 import { TransWithHtml } from '@/containers/TransWithHtml';
 import { generatePath } from '@/helpers/routerHelper';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
 import { useTitle } from '@/hooks/useTitle';
-import { AlgoliaPostData, LanguageType } from '@/types';
 
 export const useSearchPageContentContainer = (): SearchPageContentProps => {
   const { t, i18n } = useTranslation();
@@ -51,8 +54,8 @@ export const useSearchPageContentContainer = (): SearchPageContentProps => {
       setIsLoading(false);
     };
 
-    searchData(search);
-  }, [search, i18n.language]); // eslint-disable-line react-hooks/exhaustive-deps
+    void searchData(search);
+  }, [search, i18n.language]);
 
   return {
     title: (

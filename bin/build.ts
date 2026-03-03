@@ -1,7 +1,6 @@
 import { cpSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { build as buildVite } from 'vite';
-import { createServer as createViteServer } from 'vite';
+import { build as buildVite, createServer as createViteServer } from 'vite';
 
 import { downloadTranslations } from '../src/helpers/downloadTranslationsHelper';
 import { generateImageFormats } from '../src/helpers/generateImageFormats';
@@ -35,7 +34,7 @@ const writeJsonDataFilesAndFeedFile = async (): Promise<void> => {
   } catch (e) {
     console.error(e);
   } finally {
-    vite.close();
+    await vite.close();
   }
 };
 
@@ -79,4 +78,4 @@ const build = async (): Promise<void> => {
   }
 };
 
-build();
+void build();

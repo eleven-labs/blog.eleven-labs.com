@@ -1,4 +1,4 @@
-import { InitOptions } from 'i18next';
+import type { InitOptions } from 'i18next';
 
 import { BASE_URL, DEFAULT_LANGUAGE, IS_DEBUG, LANGUAGES, LANGUAGES_AVAILABLE } from '@/constants';
 

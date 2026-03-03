@@ -1,11 +1,13 @@
 import type { Request, Response } from 'express';
+
+import type { ImageExtensionType, ImagePositionType } from '@/types';
+
 import mime from 'mime';
 import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import Sharp from 'sharp';
 
 import { DEFAULT_EXTENSION_FOR_IMAGES, IMAGE_CONTENT_TYPES } from '@/constants';
-import { ImageExtensionType, ImagePositionType } from '@/types';
 
 export const imageMiddleware = async (req: Request, res: Response): Promise<unknown> => {
   try {
@@ -62,7 +64,7 @@ export const imageMiddleware = async (req: Request, res: Response): Promise<unkn
 
     // Send the response with the resized and converted image
     res.type(contentType).setHeader('Cache-Control', 'public, max-age=86400').send(transformedBuffer);
-  } catch (error) {
+  } catch (_error) {
     res.status(500).json({ error: 'An error occurred while processing the image.' });
   }
 };

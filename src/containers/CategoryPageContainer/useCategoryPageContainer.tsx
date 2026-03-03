@@ -1,17 +1,20 @@
-import { CategoryPageProps } from '@eleven-labs/design-system';
+import type { CategoryPageProps } from '@eleven-labs/design-system';
+
+import type { PostCardListContainerProps } from '@/containers/PostCardListContainer';
+import type { PostListPageData } from '@/types';
+
 import { useLink, useMeta } from 'hoofd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLoaderData, useParams } from 'react-router-dom';
 
 import { DEFAULT_LANGUAGE, MARKDOWN_CONTENT_TYPES, PATHS } from '@/constants';
-import { PostCardListContainer, PostCardListContainerProps } from '@/containers/PostCardListContainer';
+import { PostCardListContainer } from '@/containers/PostCardListContainer';
 import { TransWithHtml } from '@/containers/TransWithHtml';
 import { generatePath } from '@/helpers/routerHelper';
 import { useBreadcrumb } from '@/hooks/useBreadcrumb';
 import { useNewsletterCard } from '@/hooks/useNewsletterCard';
 import { useTitle } from '@/hooks/useTitle';
-import { PostListPageData } from '@/types';
 
 export const useCategoryPageContainer = (): CategoryPageProps => {
   const { categoryName, page } = useParams<{ categoryName?: string; page?: string }>();

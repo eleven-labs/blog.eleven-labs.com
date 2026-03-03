@@ -1,4 +1,4 @@
-import { TransformedPostData } from '@/types/TransformedContentTypeData';
+import type { TransformedPostData } from '@/types/TransformedContentTypeData';
 
 interface AlgoliaData {
   objectID: string;

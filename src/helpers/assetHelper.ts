@@ -1,5 +1,13 @@
 import type { PictureProps } from '@eleven-labs/design-system';
 
+import type {
+  DeviceType,
+  ImageExtensionType,
+  ImageFormatType,
+  ImagePositionType,
+  TransformedPostDataWithTransformedAuthors,
+} from '@/types';
+
 import {
   BASE_URL,
   DEFAULT_EXTENSION_FOR_IMAGES,
@@ -9,13 +17,6 @@ import {
   IMAGE_POSITIONS,
   SIZES_BY_IMAGE_FORMAT,
 } from '@/constants';
-import {
-  DeviceType,
-  ImageExtensionType,
-  ImageFormatType,
-  ImagePositionType,
-  TransformedPostDataWithTransformedAuthors,
-} from '@/types';
 
 const basename = (path: string, extension: string = ''): string => {
   const filename = path.split('/').pop() || '';

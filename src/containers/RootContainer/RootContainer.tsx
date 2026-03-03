@@ -1,5 +1,6 @@
+import type { i18n } from 'i18next';
+
 import { useLang, useTitleTemplate } from 'hoofd';
-import { i18n } from 'i18next';
 import React from 'react';
 import { I18nextProvider } from 'react-i18next';
 

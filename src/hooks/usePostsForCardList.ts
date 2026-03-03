@@ -1,11 +1,13 @@
-import { PostCardListProps } from '@eleven-labs/design-system';
+import type { PostCardListProps } from '@eleven-labs/design-system';
+
+import type { ImageFormatType, TransformedPostDataWithTransformedAuthors } from '@/types';
+
 import { useTranslation } from 'react-i18next';
 
 import { PATHS } from '@/constants';
 import { getCover } from '@/helpers/assetHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useDateToString } from '@/hooks/useDateToString';
-import { ImageFormatType, TransformedPostDataWithTransformedAuthors } from '@/types';
 
 export const usePostsForCardList = (options: {
   posts?: TransformedPostDataWithTransformedAuthors[];

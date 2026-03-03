@@ -1,4 +1,4 @@
-import { Resource } from 'i18next';
+import type { Resource } from 'i18next';
 
 import translationsEn from '@/translations/en.translations.json';
 import frTranslations from '@/translations/fr.translations.json';

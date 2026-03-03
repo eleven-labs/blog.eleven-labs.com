@@ -1,9 +1,11 @@
+import type * as ConstantsModule from '@/constants';
+
 import { getSitemapEntries } from './getSitemapEntries';
 
 describe('getSitemapEntries', () => {
   test('should generate sitemap entries correctly', () => {
     vi.mock('@/constants', async () => {
-      const mod = await vi.importActual<typeof import('@/constants')>('@/constants');
+      const mod = await vi.importActual<typeof ConstantsModule>('@/constants');
       return {
         ...mod,
         IS_DEBUG: false,

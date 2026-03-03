@@ -1,5 +1,6 @@
-import { Plugin } from 'unified';
-import { Literal, Node, Parent } from 'unist';
+import type { Plugin } from 'unified';
+import type { Literal, Node, Parent } from 'unist';
+
 import { visit } from 'unist-util-visit';
 
 interface ImageNode extends Node {
@@ -9,11 +10,7 @@ interface ImageNode extends Node {
   title?: string;
 }
 
-interface FigcaptionNode extends Parent {
-  type: 'figcaption';
-}
-
-interface FigureNode extends Parent<ImageNode | FigcaptionNode> {
+interface FigureNode extends Parent {
   type: 'figure';
 }
 
@@ -21,7 +18,7 @@ export const remarkFigurePlugin: Plugin<[]> = () => (tree) => {
   visit(tree, 'paragraph', (node: Parent) => {
     if (
       node.children?.[0]?.type === 'image' &&
-      (node.children?.[1] as Literal<string>)?.value?.trim()?.match(/^Figure:/)
+      ((node.children?.[1] as Literal)?.value as string)?.trim()?.match(/^Figure:/)
     ) {
       const imageNode = node.children[0] as ImageNode;
 
@@ -34,7 +31,7 @@ export const remarkFigurePlugin: Plugin<[]> = () => (tree) => {
             type: 'figcaption',
             data: { hName: 'figcaption' },
             children: node.children.splice(2),
-          },
+          } as Node,
         ],
       };
 

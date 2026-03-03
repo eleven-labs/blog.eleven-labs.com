@@ -1,8 +1,9 @@
-import { SearchIndex } from 'algoliasearch';
+import type { SearchIndex } from 'algoliasearch';
+
+import type { AlgoliaPostData, TransformedAuthorData, TransformedPostData } from '@/types';
 
 import { getAlgoliaSearchClient, getAlgoliaSearchIndex } from '@/helpers/algoliaHelper';
 import { getAuthors, getPosts } from '@/helpers/markdownContentManagerHelper';
-import { AlgoliaPostData, TransformedAuthorData, TransformedPostData } from '@/types';
 
 const savePosts = async (options: {
   posts: TransformedPostData[];

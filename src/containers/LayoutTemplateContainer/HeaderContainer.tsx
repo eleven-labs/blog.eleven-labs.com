@@ -1,7 +1,7 @@
+import type { LayoutTemplateData } from '@/types';
+
 import { Header } from '@eleven-labs/design-system';
 import React from 'react';
-
-import { LayoutTemplateData } from '@/types';
 
 import { useHeaderContainer } from './useHeaderContainer';
 

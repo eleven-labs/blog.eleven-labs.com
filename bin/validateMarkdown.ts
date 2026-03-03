@@ -1,8 +1,10 @@
-import { MarkdownInvalidError, validateMarkdown } from '@/helpers/markdownHelper';
+import type { MarkdownInvalidError } from '@/helpers/markdownHelper';
+
+import { validateMarkdown } from '@/helpers/markdownHelper';
 
 const IS_CI = Boolean(process.env.CI);
 
-(async (): Promise<void> => {
+((): void => {
   try {
     validateMarkdown();
   } catch (e) {

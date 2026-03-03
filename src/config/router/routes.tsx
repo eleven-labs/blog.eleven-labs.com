@@ -1,5 +1,8 @@
+import type { Params, RouteObject } from 'react-router';
+
+import type { LanguageType, LayoutTemplateData } from '@/types';
+
 import React from 'react';
-import { Params, RouteObject } from 'react-router';
 import { Outlet } from 'react-router-dom';
 
 import { LANGUAGES_AVAILABLE_WITH_DT, PATHS } from '@/constants';
@@ -16,7 +19,6 @@ import {
   loadPostListPageData,
   loadPostPageData,
 } from '@/helpers/loaderDataHelper';
-import { LanguageType, LayoutTemplateData } from '@/types';
 
 export const routes: RouteObject[] = [
   {
