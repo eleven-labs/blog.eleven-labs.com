@@ -132,26 +132,26 @@ Le client commence par envoyer uniquement le hash de la query, et ce n'est qu'en
 
 ## Qu'est-ce que ça apporte ?
 
-#### Réduction de la taille des requêtes
+### Réduction de la taille des requêtes
 Une fois la query persistée et enregistrée par le serveur, seul le hash de la query est envoyé dans l'appel. On peut passer d'une requête de plusieurs centaines d'octets à seulement un hash. Plus la query est longue, plus le gain est significatif.
 
-#### Compatibilité avec le cache HTTP
+### Compatibilité avec le cache HTTP
 Avec un hash, qui sera toujours le même, pour tous les utilisateurs et quel que soit le moment de l'appel, il devient possible de transformer les requêtes POST en requêtes GET.
 Les réponses peuvent facilement être mises en cache via un CDN par exemple.
 
-#### Aucune coordination nécessaire
+### Aucune coordination nécessaire
 L'avantage par rapport aux Persisted Queries est que cela ne requiert pas un enregistrement manuel dans le serveur. Les hash sont générés à la volée lors de l'appel, et cela fonctionne de façon autonome et automatique.
 
 
 ## Les limites des APQ
-#### Le premier aller-retour
+### Le premier aller-retour
 Chaque nouvelle query sera requêtée deux fois, car c'est ainsi que le système fonctionne. On peut en déduire que les applications à requêtes très dynamiques ne sont pas les meilleures candidates pour la mise en place des APQ.
 C'est une solution qui vise surtout les queries stables et répétées, ce qui répond à la majorité des cas.
 
-#### Sécurité du hash
+### Sécurité du hash
 Le hash identifie la query, mais il ne l'authentifie pas. Quelqu'un qui connaît un hash peut l'utiliser. Les APQ ne remplacent pas une vraie stratégie de sécurité.
 
-#### Cache
+### Cache
 Si un cache mémoire par défaut est utilisé, un redémarrage efface les queries persistées. Pour contrer ce problème, on peut s'orienter vers un cache distribué comme Redis, partagé entre toutes les instances du serveur. Les queries persistées survivent aux redémarrages et restent disponibles en cas d'évolution.
 
 ## Conclusion
