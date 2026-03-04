@@ -15,21 +15,21 @@ categories:
 authors:
   - nkania
 seo:
-    title: Installer et configurer Caddy 2 avec certificat SSL pour tous vos sous-domaines
-    description: Sécuriser votre serveur avec des certificat SSL pour tous vos sous-domaines grâce au DNS challenge
+    title: Configurer un certificat SSL wildcard avec Caddy 2 (DNS Challenge OVH)
+    description: Guide complet pour configurer un certificat SSL wildcard avec Caddy 2 grâce au DNS challenge OVH. Docker, plugin DNS et configuration du Caddyfile.
 ---
 
-Suite aux offres OVH VPS 2026 j'ai décidé de migrer mon vieux Digital ocean toujours bloqué sur une debian 12.
-J'aime héberger mes différents services en utilisant des containers en mettant un reverse proxy devant.
+Suite aux offres OVH VPS 2026 j'ai décidé de migrer mon vieux Digital Ocean toujours bloqué sur une debian 12.
+J'aime héberger mes différents services en utilisant des containers et en mettant un reverse proxy devant.
 Sur mon ancienne configuration j'utilisais Traefik, pour changer un peu j'ai décidé que c'était l'occasion de tester Caddy.
 
-J'ai cherché un peu de doc afin de le configurer correctement (notamment la partie wildcard avec dns challenge) et je n'ai pas trouvé d'article récent en parlant, du coup je vous partage mon expérience en espérant pouvoir vous aider :)
+J'ai cherché un peu de doc afin de le configurer correctement (notamment la partie wildcard avec dns challenge) et je n'ai pas trouvé d'article récent parlant de ce sujet, du coup je vous partage mon expérience en espérant pouvoir vous aider :)
 
 **Attention, j'utilise la version Docker de Caddy, mais vous pouvez tout de même suivre cet article si vous l'avez installé directement sur votre système !**
 
 **Prérequis** : 
-- Avoir installé Caddy version 2 (>2.10.0 pour ne pas avoir à ajouter l'option `auto_https prefer_wildcard` plus de détail [ici](https://github.com/caddyserver/caddy/releases/tag/v2.10.0)) via Docker ou directement.
-- Au niveau de votre provider dns avoir déjà redirigé vos domaines sur votre serveur, cela inclus votre domain de base + le wildcard de votre domain, donc par exemple avoir un enregistrement du type `*.example.com IN A 1.1.1.1` (où `1.1.1.1` correspond à l'ip de votre serveur) si vous utilisez ovh vous pouvez vous référer à cette [doc](https://help.ovhcloud.com/csm/fr-dns-edit-dns-zone?id=kb_article_view&sysparm_article=KB0051684)
+- Avoir installé Caddy version 2 (>2.10.0 pour ne pas avoir à ajouter l'option `auto_https prefer_wildcard` plus de détails [ici](https://github.com/caddyserver/caddy/releases/tag/v2.10.0)) via Docker ou directement.
+- Au niveau de votre provider dns avoir déjà redirigé vos domaines sur votre serveur, cela inclut votre domain de base + le wildcard de votre domain, donc par exemple avoir un enregistrement du type `*.example.com IN A 1.1.1.1` (où `1.1.1.1` correspond à l'ip de votre serveur) si vous utilisez ovh vous pouvez vous référer à cette [doc](https://help.ovhcloud.com/csm/fr-dns-edit-dns-zone?id=kb_article_view&sysparm_article=KB0051684)
 
 
 ## Trouver le bon plugin
@@ -85,13 +85,13 @@ Exemple de Caddyfile à utiliser (pour une installation via Docker le placer dan
 ```
 (n'oubliez pas de remplacer `example.com` par votre nom de domaine)
 
-Les variables d'environnements nécessaires à la configuration d'OVH seront renseignées dans les chapitres suivants.
+Les variables d'environnement nécessaires à la configuration d'OVH seront renseignées dans les chapitres suivants.
 
-**Attention, ici j'ai pris l'exemple de configuration pour ovh, veillez à la remplacer par celle de votre provider que vous trouverez dans le README du repository https://github.com/caddy-dns de votre provider.**
+**Attention, ici j'ai pris l'exemple de configurations pour ovh, veillez à la remplacer par celle de votre provider que vous trouverez dans le README du repository https://github.com/caddy-dns de votre provider.**
 
 ## Trouver les identifiants du provider OVH
 
-Afin de trouver les informations requise par Let's Encrypt pour communiquer et gérer nos enregistrements DNS OVH le README nous indique qu'il va falloir aller créer une application (avec accès API) à notre compte OVH.
+Afin de trouver les informations requises par Let's Encrypt pour communiquer et gérer nos enregistrements DNS OVH le README nous indique qu'il va falloir aller créer une application (avec accès API) à notre compte OVH.
 
 La documentation Caddy nous redirige vers ce lien : https://github.com/libdns/ovh#authenticating
 
@@ -116,11 +116,11 @@ Une fois enregistré, n'oubliez pas de sauvegarder les informations suivantes (*
 - **application secret**
 - **consumer key**
 
-Nous allons les utiliser dés maintenant !
+Nous allons les utiliser dès maintenant !
 
 ## Ajouter les identifiants du provider OVH
 
-Si vous avez installé Caddy directement alors modifier les info dans votre Caddyfile.
+Si vous avez installé Caddy directement alors modifiez les info dans votre Caddyfile.
 
 Si vous avez utilisé Docker je vous conseille de fournir ces infos via un `compose.yaml` :
 ```
@@ -151,7 +151,7 @@ volumes:
 ## Conclusion
 
 Le moment de vérité est arrivé !
-Relancer Caddy pour qu'il prenne en compte votre nouvelle configuration
+Relancez Caddy pour qu'il prenne en compte votre nouvelle configuration
 
 Sans Docker :
 `sudo systemctl restart caddy`
