@@ -15,8 +15,8 @@ categories:
 authors:
   - nkania
 seo:
-    title: Configurer un certificat SSL wildcard avec Caddy 2 (DNS Challenge OVH)
-    description: Guide complet pour configurer un certificat SSL wildcard avec Caddy 2 grâce au DNS challenge OVH. Docker, plugin DNS et configuration du Caddyfile.
+    title: Configurer un certificat SSL wildcard avec Caddy 2
+    description: Guide complet pour configurer un certificat SSL wildcard avec Caddy 2 grâce au DNS challenge OVH.
 ---
 
 Suite aux offres OVH VPS 2026 j'ai décidé de migrer mon vieux Digital Ocean toujours bloqué sur une debian 12.
