@@ -8,7 +8,7 @@ title: >-
 excerpt: >-
   Sécuriser votre serveur avec des certificat SSL pour tous vos sous-domaines grâce au DNS challenge
 cover:
-  path: /imgs/articles/2026-03-11-caddy-wildcard-dns-challenge-ovh/cover.svg
+  path: /imgs/articles/2026-03-11-caddy-wildcard-dns-challenge-ovh/cover.jpeg
   position: center
 categories:
   - architecture
