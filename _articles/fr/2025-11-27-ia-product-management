@@ -1,0 +1,86 @@
+---
+contentType: article
+lang: fr
+date: 2025-11-27
+slug: ia-product-management
+title: Comment j'utilise l'IA dans mon quotidien en tant que PO/PM
+excerpt: Découvrez mes conseils pour faire de l'intelligence artificielle un levier de performance en tant que Product Manager.
+cover:
+    alt: Alt image
+    path: _assets/articles/2025-11-27-ia-product-management/cover.png
+    position: top | right top | right | right bottom | bottom | left bottom | left | left top | center | north | northeast | east | southeast | south | southwest | west | northwest // Default value is center
+categories:
+    - PO | PM | agile | IA
+keywords:
+- IA
+- AI
+- How to use AI
+- Product Manager
+- Product Owner
+- User Stories
+- Backlog
+authors:
+    - Simon Thouvenel
+seo:
+    title: Utilisation de l'IA en tant que Product Manager
+    description: Découvrez mes conseils pour faire de l'intelligence artificielle un levier de performance en tant que Product Manager.
+---
+# Comment j'utilise l'IA dans mon quotidien en tant que PO/PM
+
+## Contexte
+
+Cela fait 8 ans que j'exerce ce métier, et au tout début jusqu'à l'arrivée de l'IA, je faisais toutes mes User Stories à la main. Comme un artisan. Fautes d'orthographe incluses. Avec l'IA, mon quotidien a changé, et je trouve que c'est pour le mieux.
+
+## 1. Comment je bossais avant et comment ce n'était pas toujours optimal
+
+### L'écriture des US
+
+Avant, écrire une EPIC, avec les Features et les US me prenait plusieurs jours, je m'y perdais, après un refinement je devais changer les US, mais des erreurs pouvaient se glisser, donc j'avais des US à jour à 99 % mais le 1 % restant provoquait des problèmes de compréhension : « Simon, je comprends pas, au début de ta spec tu disais ça, mais à la fin c'est différent, du coup je fais quoi ? »
+
+De par cette question, le doute s'insinuait : « Mon dieu, est-ce que je n'ai pas fait la même bêtise ailleurs ? » et c'était reparti pour revoir TOUTES les US.
+
+### Les refinements
+
+Le refinement c'est à la fois mon moment préféré comme le moment où tu peux te dire « Mais je n'ai vraiment pas du tout tout anticipé en fait ». Donc j'avais cette impression d'avoir fait perdre du temps à tout le monde car les questions technico-fonctionnelles peuvent en partie être répondues, mais comme j'étais pressé par le temps, et le seul PO, je n'arrivais pas toujours à bien anticiper.
+
+## 2. Comment je fais aujourd'hui
+
+### Pose ton UserFlow
+
+Aujourd'hui ma réflexion est : Comment puis-je optimiser mon temps sur l'essentiel et « automatiser » le chronophage ?
+
+Ayant une pensée en « arborescence », l'un des moyens que je préfère dès lors que je dois répondre à un nouveau besoin c'est de commencer par esquisser un Diagramme/UserFlow sur Figjam (ou Miro, ou équivalent).
+
+Ceci me permet de voir tous les scénarios possibles (happy flow, edge cases, non happy flow etc.) et de composer des règles de gestion. Pendant ce moment-là, je n'hésite pas à prendre mon temps car il est tellement plus simple de changer une case de place que de refaire une US, et donc tu itères encore et encore. Une fois le UserFlow posé avec règles de gestion, j'ajoute ensuite le contexte dans l'encadrement. Et je l'exporte en PDF.
+
+J'ouvre ensuite mon projet dans l'IA Claude où je pose le prompt suivant : « Tu es un expert Backend étant sous cette techno xxx, un expert Front End expert sous cette techno xxx, un DevOps, un Data Architect et un Data Scientist. Contexte : vous êtes ma squad, je suis votre PM, et nous sommes en refinement. Besoin : je vais vous présenter un UserFlow, et vous allez me poser des questions sur des sujets que je n'aurais pas anticipés et éventuellement me proposer deux solutions. La première solution est la solution cible et la deuxième est la solution MVP. » À ceci j'ajoute le UserFlow dans le prompt.
+
+Je reçois environ une dizaine de questions, et commence une série de questions/réponses me permettant de revisiter le UserFlow.
+
+Et je réitère cette façon de faire jusqu'à ce que je sois sûr de moi. Si toutefois des réponses trop techniques apparaissent, alors je les note et je les poserai directement à ma squad pour voir la pertinence de la question.
+
+### Décompose ton UserFlow pour créer un premier backlog
+
+Maintenant que le UserFlow paraît valide, je demande à Claude de prendre une autre casquette : « Celui d'expert PM/PO. » Ma première question est de voir s'il comprend bien ce que le UF veut dire, pourquoi je fais cette fonctionnalité, et les implications que cela entraîne. Au début, il va se perdre un peu, mais en utilisant le même projet, il apprendra de lui-même et aura tout le contexte et les précédentes règles de gestion, rendant le travail encore plus efficace.
+
+Par la suite, je lui demande de me proposer un découpage. Généralement il a tendance à séparer en US distinctes tous les cas d'erreurs. Je lui demande d'intégrer dans une seule et même US les happy flow/non happy flow/erreurs etc.
+
+Une fois satisfait, je lui demande d'écrire les US avec des critères d'acceptation sous format Gherkin.
+
+Le résultat est plutôt bluffant.
+
+Tu peux avoir en deux jours, un UserFlow étoffé, un backlog rempli, et un versioning de proposé. Ce même travail, seul sans aide, pourrait prendre 5-7 jours ouvrés.
+
+Si d'aventure, je dois modifier les US, alors j'indique à Claude dans quel artefact effectuer les modifications et qu'il change les US en conséquence.
+
+Il est important de relire ce qu'il propose mais il y a peu de choses à jeter.
+
+### Balance tes US dans "Make" de Figma
+
+Une fois les US faites, je donne le tout à Make par Figma (ou Lovable) et je lui demande de me faire trois prototypes pouvant répondre à ces US. Ceci peut permettre d'aider à l'idéation pour le Product Designer/UX Designer. C'est d'autant plus intéressant dès lors que Make connaît ton Design System car il va reprendre les composants et permettre de voir tout de suite ce qui marche le mieux.
+
+## Conclusion
+
+L'IA aide, l'IA facilite, Praise the IA, mais… (il y a toujours un mais) L'IA ne fera pas tout pour toi. Tu restes l'artisan qui utilise juste de meilleurs outils. Revois, corrige, ajuste ce qui est proposé, et en parallèle suite aux hallucinations de l'IA, revois tes prompts pour être encore plus juste et pertinent.
+
+Ne te perds pas en chemin avec l'IA, garde bien tes compétences avec toi et améliore-les car si jamais l'IA n'est plus, tu devras de nouveau tout faire toi-même.
