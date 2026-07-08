@@ -8,7 +8,7 @@ excerpt: "Vous étiez coincé pour vos recherches volumineuses entre un GET à r
 cover:
     alt: "Nouveau verbe HTTP : QUERY"
     path: /imgs/articles/2026-07-08-http-query-method/cover.jpg
-    position: left top
+    position: center
 categories:
     - architecture
 keywords:
@@ -29,7 +29,9 @@ Dans de nombreux projets web, nous avons toujours des listes : produits, utilisa
 
 Mais malheureusement, avec le verbe GET, nous n'avons parfois pas le choix d'avoir des URLs à rallonge.
 
-> ?colors=Bleu&clothingSizes=FR+38&minPrice=16224&maxPrice=59945&sort=price_asc
+```bash
+?colors=Bleu&clothingSizes=FR+38&minPrice=16224&maxPrice=59945&sort=price_asc
+```
 
 Pour gagner en visibilité et en praticité (car il peut y avoir des règles sur le nombre de caractères que doit faire une URL), il arrive de voir des routes de GET list transformées en POST. Sauf que ce verbe est défini par [Mozilla - MDN Web Docs](https://developer.mozilla.org/fr/docs/Web/HTTP/Reference/Methods) :
 
@@ -64,7 +66,8 @@ La prise en main de QUERY est facile.
 Étudions la réponse.
 
 ##### Response headers
-```
+
+```bash
 HTTP/1.1 200 OK
 Server: nginx/1.27.5
 Content-Type: application/json
