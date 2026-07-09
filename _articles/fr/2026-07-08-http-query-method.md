@@ -33,7 +33,7 @@ Mais malheureusement, avec le verbe GET, nous n'avons parfois pas le choix d'avo
 ?colors=Bleu&clothingSizes=FR+38&minPrice=16224&maxPrice=59945&sort=price_asc
 ```
 
-Pour gagner en visibilité et en praticité (car il peut y avoir des règles sur le nombre de caractères que doit faire une URL), il arrive de voir des routes de GET list transformées en POST. Sauf que ce verbe est défini par [Mozilla - MDN Web Docs](https://developer.mozilla.org/fr/docs/Web/HTTP/Reference/Methods) :
+Pour gagner en visibilité et en praticité (car il peut y avoir des règles sur le nombre de caractères que peut comporter une URL), il arrive de voir des routes de listing en GET transformées en POST. Or, ce verbe, également défini dans une [RFC](https://datatracker.ietf.org/doc/html/rfc7231#section-4.3.3), a cette définition chez [Mozilla - MDN Web Docs](https://developer.mozilla.org/fr/docs/Web/HTTP/Reference/Methods) :
 
 > La méthode POST soumet une entité à la ressource spécifiée, provoquant souvent un changement d'état ou des effets secondaires sur le serveur.
 
@@ -43,7 +43,9 @@ Bref, on tord POST pour nos besoins.
 
 ### Mini projet pour tester
 
-Grâce à l'IA, j'ai pu créer rapidement un [mini projet](https://github.com/ElevenMarianne/my-little-api-query) (~8$) pour tester le nouveau verbe HTTP (évidemment en PHP). Il s'agit d'une API permettant d'accéder à une liste de timbres. Elle possède des filtres tels qu'une fourchette d'années, le pays, le prix ou encore la couleur.
+Grâce à l'IA, j'ai pu créer rapidement un [mini projet](https://github.com/ElevenMarianne/my-little-api-query) pour tester le nouveau verbe HTTP (évidemment en PHP). Il s'agit d'une API permettant d'accéder à une liste de timbres. Elle possède des filtres tels qu'une fourchette d'années, le pays, le prix ou encore la couleur.
+
+Symfony a déjà intégré le verbe QUERY dès sa [version 7.4](https://github.com/symfony/http-foundation/releases/tag/v7.4.0-BETA1), alors que la méthode n'était encore qu'un *Internet-Draft IETF* pour la release d'octobre 2025.
 
 ### Exemples d'utilisation
 
