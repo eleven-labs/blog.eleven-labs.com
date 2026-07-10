@@ -7,7 +7,7 @@ title: "Nouveau verbe HTTP : QUERY"
 excerpt: "Vous étiez coincé pour vos recherches volumineuses entre un GET à rallonge ou détourner le POST dans vos APIs, QUERY est là pour répondre à ce besoin"
 cover:
     alt: "Nouveau verbe HTTP : QUERY"
-    path: /imgs/articles/2026-07-08-http-query-method/cover.jpg
+    path: /imgs/articles/2026-07-15-http-query-method/cover.jpg
     position: center
 categories:
     - architecture
@@ -219,7 +219,7 @@ private function buildCacheKey(Request $request): string
 
 Maintenant que ce verbe est en *"Proposed Standard"*, il n'y a plus qu'à espérer que l'infra soit rapidement mise à jour (s'il y avait des restrictions) pour pouvoir l'utiliser. Il est déjà possible de saisir le verbe HTTP qu'on veut dans Postman si vous souhaitez tester.
 
-![Screenshot Postman avec QUERY]({BASE_URL}/imgs/articles/2026-07-08-http-query-method/postman-verbe-query.png)
+![Screenshot Postman avec QUERY]({BASE_URL}/imgs/articles/2026-07-15-http-query-method/postman-verbe-query.png)
 
 ## Sources
 - [RFC Editor](https://www.rfc-editor.org/info/rfc10008/)
