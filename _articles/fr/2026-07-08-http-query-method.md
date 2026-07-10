@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: 2026-07-08
+date: 2026-07-15
 slug: http-query-method
 title: "Nouveau verbe HTTP : QUERY"
 excerpt: "Vous étiez coincé pour vos recherches volumineuses entre un GET à rallonge ou détourner le POST dans vos APIs, QUERY est là pour répondre à ce besoin"
@@ -17,8 +17,8 @@ keywords:
 authors:
     - marianne
 seo:
-    title: "Nouveau verbe HTTP : QUERY"
-    description: "Vous étiez coincé pour vos recherches volumineuses entre un GET à rallonge ou détourner le POST dans vos APIs, QUERY est là pour répondre à ce besoin"
+    title: "HTTP QUERY : le nouveau verbe pour les recherches complexes dans les APIs"
+    description: "GET trop limité, POST détourné ? Le nouveau verbe HTTP QUERY apporte une réponse aux recherches volumineuses dans les APIs REST."
 ---
 
 Depuis le 15 juin 2026, la [RFC 10008: The HTTP QUERY Method](https://www.rfc-editor.org/info/rfc10008/) est en *"Proposed Standard"* après [plus de 10 ans en draft](https://datatracker.ietf.org/doc/rfc10008/). Ce nouveau verbe HTTP va permettre de régler un souci régulier dans nos APIs : gérer les requêtes GET avec beaucoup de paramètres de filtrage.
@@ -41,17 +41,13 @@ Bref, on tord POST pour nos besoins.
 
 ## Comment utiliser QUERY ?
 
-### Mini projet pour tester
-
 Grâce à l'IA, j'ai pu créer rapidement un [mini projet](https://github.com/ElevenMarianne/my-little-api-query) pour tester le nouveau verbe HTTP (évidemment en PHP). Il s'agit d'une API permettant d'accéder à une liste de timbres. Elle possède des filtres tels qu'une fourchette d'années, le pays, le prix ou encore la couleur.
 
 Symfony a déjà intégré le verbe QUERY dès sa [version 7.4](https://github.com/symfony/http-foundation/releases/tag/v7.4.0-BETA1), alors que la méthode n'était encore qu'un *Internet-Draft IETF* pour la release d'octobre 2025.
 
-### Exemples d'utilisation
+### Filtre par pays et pagination
 
-#### Filtre par pays et pagination
-
-##### Request
+#### Request
 
 ```bash
 curl -si -X QUERY 'http://localhost:8090/api/stamps' \
@@ -67,7 +63,7 @@ La prise en main de QUERY est facile.
 
 Étudions la réponse.
 
-##### Response headers
+#### Response headers
 
 ```bash
 HTTP/1.1 200 OK
@@ -91,7 +87,7 @@ $response = new JsonResponse($result);
 $response->headers->set('X-Cache', $fromCache ? 'HIT' : 'MISS');
 ```
 
-##### Response body
+#### Response body
 ```json
 {
    "items":[
@@ -124,7 +120,7 @@ $response->headers->set('X-Cache', $fromCache ? 'HIT' : 'MISS');
 }
 ```
 
-#### Filtre par année minimum, maximum, pays, couleur et pagination
+### Filtre par année minimum, maximum, pays, couleur et pagination
 
 Passons un exemple plus complexe.
 
