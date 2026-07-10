@@ -88,6 +88,7 @@ $response->headers->set('X-Cache', $fromCache ? 'HIT' : 'MISS');
 ```
 
 #### Response body
+
 ```json
 {
    "items":[
