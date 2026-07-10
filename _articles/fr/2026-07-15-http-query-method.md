@@ -17,7 +17,7 @@ keywords:
 authors:
     - marianne
 seo:
-    title: "HTTP QUERY : le nouveau verbe pour les recherches complexes dans les APIs"
+    title: "HTTP QUERY : le nouveau verbe pour les API REST"
     description: "GET trop limité, POST détourné ? Le nouveau verbe HTTP QUERY apporte une réponse aux recherches volumineuses dans les APIs REST."
 ---
 
