@@ -79,7 +79,7 @@ X-Robots-Tag: noindex
 ```
 
 Vous pouvez voir ici que le header *X-Cache* est *MISS* car c'est la première fois que j'appelle la route avec ce filtre. Si j'appelle avec le même filtre dans les 60s, le header *X-Cache* sera *HIT*.
-
+Je l'ai appelé X-Cache mais vous pouvez le nommer comme vous le voulez, ce n'est pas une norme.
 ```php
 [$result, $fromCache] = $cache->getOrCompute($request, $criteria);
 
