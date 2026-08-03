@@ -8,7 +8,10 @@ excerpt: >-
   Vous faites partie d’une petite équipe, avec des features à sortir très
   rapidement et un PoC pour tester un produit, mais vous n'avez pas ou peu de
   connaissances techniques ? Le NoCode est fait pour vous !
-oldCover: /assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cover.jpg
+cover:
+  alt: Automatisation de workflow Integromat
+  path: /imgs/articles/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cover.jpg
+  position: northeast
 categories: []
 authors:
   - marianne

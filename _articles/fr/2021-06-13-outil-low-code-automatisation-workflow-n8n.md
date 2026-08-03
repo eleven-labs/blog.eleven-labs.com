@@ -7,7 +7,9 @@ title: 'n8n, outil low-code d''automatisation de workflow'
 excerpt: >-
   Découverte et prise en main de n8n.io, outil low-code open-source pour
   automatiser facilement des workflows.
-oldCover: /assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/n8n.png
+cover:
+  alt: Automatisation de workflow
+  path: /imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/cover.jpg
 categories: []
 authors:
   - marianne
