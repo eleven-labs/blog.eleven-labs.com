@@ -80,6 +80,23 @@ export const isExternalLink = (url: string): boolean => {
   return /^(?!(http(s)?:\/\/)?([^.]+)\.?eleven-labs\.com|^\/).*$/.test(url);
 };
 
+/**
+ * Code fence children are not always a plain string: a nested element makes `String(children)`
+ * collapse to `[object Object]`, silently replacing the snippet. Walk the tree and keep the text.
+ */
+const getTextContent = (children: React.ReactNode): string =>
+  React.Children.toArray(children)
+    .map((child) => {
+      if (typeof child === 'string' || typeof child === 'number') {
+        return String(child);
+      }
+
+      return React.isValidElement<{ children?: React.ReactNode }>(child)
+        ? getTextContent(child.props.children)
+        : '';
+    })
+    .join('');
+
 const cleanMarkdown = (content: string): string => content.replace(/\{BASE_URL}\//g, `${process.env.BASE_URL || '/'}`);
 
 export const markdownToHtml = (content: string): string => {
@@ -140,9 +157,10 @@ export const markdownToHtml = (content: string): string => {
           );
         },
         code: ({ node, className, children, ...props }): React.JSX.Element => {
-          const match = /language-(\w+)/.exec(className || '');
+          // Hyphens included, so that `language-objective-c` is not truncated to `objective`.
+          const match = /language-([\w-]+)/.exec(className || '');
+          const code = getTextContent(children);
           if (className && className.match('mermaid')) {
-            const code: string = (children as string[]).join(' ');
             return (
               <Flex as="pre" justifyContent="center" alignItems="center" className="mermaid">
                 {code}
@@ -150,7 +168,7 @@ export const markdownToHtml = (content: string): string => {
             );
           }
           return match ? (
-            <SyntaxHighlighter children={String(children).replace(/\n$/, '')} language={match[1]} {...props} />
+            <SyntaxHighlighter children={code.replace(/\n$/, '')} language={match[1]} {...props} />
           ) : (
             <Box as="code" px="xxs-2" bg="ultra-light-grey" color="ultra-dark-grey" textSize="xs">
               {children}

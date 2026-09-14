@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@eleven-labs/design-system':
-        specifier: ^0.37.3
-        version: 0.37.3(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^0.37.5
+        version: 0.37.5(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@remix-run/router':
         specifier: ^1.16.0
         version: 1.23.2
@@ -492,8 +492,8 @@ packages:
   '@dual-bundle/import-meta-resolve@4.2.1':
     resolution: {integrity: sha512-id+7YRUgoUX6CgV0DtuhirQWodeeA7Lf4i2x71JS/vtA5pRb/hIGWlw+G6MeXvsM+MXrz0VAydTGElX1rAfgPg==}
 
-  '@eleven-labs/design-system@0.37.3':
-    resolution: {integrity: sha512-h16o2cgdagA3i+jNCUeafCwinBxpy5t6ErDbszaUiofYHhSM37vu1zLQ0Sp+dERsfZsSE/qAKvliXQho5vRUwQ==}
+  '@eleven-labs/design-system@0.37.5':
+    resolution: {integrity: sha512-3w1RrX7hvuaHW3T3JnZSawjZQ3HTJNb91vv5RRniV8kjtZGNouxCCnUxSB+LcvYCAZZHMQGcadc3nZLh/HlwCw==}
     engines: {node: '>= 20.0'}
     peerDependencies:
       react: ^18.2.0
@@ -5664,7 +5664,7 @@ snapshots:
 
   '@dual-bundle/import-meta-resolve@4.2.1': {}
 
-  '@eleven-labs/design-system@0.37.3(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@eleven-labs/design-system@0.37.5(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       autosuggest-highlight: 3.3.4
       classnames: 2.5.1
