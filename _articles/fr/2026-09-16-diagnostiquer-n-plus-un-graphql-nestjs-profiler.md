@@ -45,19 +45,6 @@ Sur l'application d'exemple, cette query interroge 3 systèmes différents. Elle
 - **Solution** : un DataLoader par source de données, scopé à la requête, qui batche et déduplique les clés demandées.
 - **Résultat** : 10 allers-retours ramenés à 3, et un coût qui ne dépend plus du nombre de produits renvoyés.
 
-<div class="admonition note" markdown="1"><p class="admonition-title">À propos des mesures</p>
-
-Les chiffres de cet article proviennent de l'application d'exemple de NestJS Profiler, exécutée localement. Ils comparent 2 stratégies sur le même scénario et ne constituent pas un benchmark universel : les durées dépendent de la machine, de l'état des services et de la latence de l'API externe. Le nombre d'allers-retours reste la mesure la plus robuste.
-</div>
-
-|                          |   Avant DataLoader | Après DataLoader |
-|--------------------------|-------------------:|-----------------:|
-| Requêtes SQL             |                  1 |                1 |
-| Requêtes MongoDB         |                  4 |            **1** |
-| Appels HTTP sortants     |                  5 |            **1** |
-| Total des allers-retours |                 10 |            **3** |
-| Tags du profiler         | `N+1 ×4`, `N+1 ×5` |            Aucun |
-
 ## Qu'est-ce qu'un problème N+1 dans une API GraphQL NestJS ?
 
 Un N+1 apparaît lorsqu'une query récupère une liste, puis qu'un résolveur de champ imbriqué déclenche une lecture supplémentaire pour chaque élément de cette liste.
@@ -358,7 +345,7 @@ FEATURE_DATALOADER=true
 
 Relancez ensuite l'application, envoyez exactement la même query et ouvrez le nouveau profil avec son `X-Debug-Token-Link`.
 
-## Mesurer les performances GraphQL avant et après DataLoader
+## Compter les appels GraphQL avant et après DataLoader
 
 La correction n'est terminée que lorsqu'elle est vérifiée sur la même opération.
 
@@ -378,14 +365,11 @@ Les tags `N+1` disparaissent du profil.
 | Requêtes MongoDB | 4 | **1** |
 | Appels HTTP sortants | 5 | **1** |
 | Total des allers-retours | 10 | **3** |
-| Temps réseau HTTP cumulé | 125 ms | **12 ms** |
-| Durée avec 4 produits | 25 à 46 ms | 18 à 24 ms |
-| Durée avec 20 produits | Environ 132 ms | Environ 21 ms |
 | Tags de performance | `N+1 ×4`, `N+1 ×5` | Aucun |
 
 ![Liste des profils GraphQL avant et après DataLoader : les tags N plus un disparaissent après le batching]({BASE_URL}/imgs/articles/2026-09-11-diagnostiquer-n-plus-un-graphql-nestjs-profiler/profiles-list-comparison.png)
 
-Le gain de latence est modéré avec 4 produits, car les appels initiaux partaient déjà en parallèle. Avec 20 produits, la différence devient beaucoup plus nette.
+Le gain se lit surtout à l'échelle. Avec 4 produits, la query passe de 10 allers-retours à 3. Avec 20 produits, elle passerait de 26 à 3.
 
 Le résultat important est structurel : le nombre d'accès à MongoDB ne dépend plus du nombre de produits renvoyés, et les appels HTTP sont regroupés et dédupliqués.
 
