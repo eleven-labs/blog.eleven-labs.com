@@ -84,7 +84,9 @@ Avec 20 produits, notre scénario déclenche 26 allers-retours :
 1 requête SQL + 20 requêtes MongoDB + 5 appels HTTP
 ```
 
-Un N+1 n'est donc pas forcément une query lente sur un petit jeu de données. C'est surtout une complexité qui évolue avec le nombre d'éléments retournés. Si vous débutez sur le sujet, [GraphQL, kesako ?]({BASE_URL}/fr/graphql-kesako/) revient sur le fonctionnement des schémas et des résolveurs, et [la mise en place d'une API GraphQL avec Apollo]({BASE_URL}/fr/commencer-avec-apollojs/) détaille la structuration d'un serveur Node.js.
+Un N+1 n'est donc pas forcément une query lente sur un petit jeu de données. C'est surtout une complexité qui évolue avec le nombre d'éléments retournés.
+
+Si vous débutez sur le sujet, [GraphQL, kesako ?]({BASE_URL}/fr/graphql-kesako/) revient sur le fonctionnement des schémas et des résolveurs, et [la mise en place d'une API GraphQL avec Apollo]({BASE_URL}/fr/commencer-avec-apollojs/) détaille la structuration d'un serveur Node.js.
 
 ## Le scénario GraphQL utilisé : PostgreSQL, MongoDB et API HTTP
 
@@ -192,7 +194,7 @@ X-Debug-Token-Link: /_profiler/ebab37ec-3ace-4569-8890-8360ee9e0d3a
 
 Ouvrez `X-Debug-Token-Link`, ou accédez à `/_profiler` puis filtrez les profils GraphQL.
 
-NestJS Profiler rassemble les informations techniques d'une même exécution : opération GraphQL, trace d'exécution, requêtes SQL et MongoDB, appels HTTP sortants, logs et exceptions. Ici, l'important est de commencer par la **trace d'exécution**, puis de confirmer les répétitions dans les panneaux de détail. Le détail de ce que remonte le collecteur est documenté dans le package [`@eleven-labs/nest-profiler-graphql`](https://nest-profiler.eleven-labs.com/docs/packages/nest-profiler-graphql).
+NestJS Profiler rassemble les informations techniques d'une même exécution : opération GraphQL, trace d'exécution, requêtes SQL et MongoDB, appels HTTP sortants, logs et exceptions. Ici, l'important est de commencer par la **trace d'exécution**, puis de confirmer les répétitions dans les panneaux de détail. Ce qu'il collecte sur une opération GraphQL est décrit dans le package [`@eleven-labs/nest-profiler-graphql`](https://nest-profiler.eleven-labs.com/docs/packages/nest-profiler-graphql).
 
 ![Profil de la query GraphQL products dans NestJS Profiler, avec les tags N plus un sur MongoDB et les appels HTTP]({BASE_URL}/imgs/articles/2026-09-11-diagnostiquer-n-plus-un-graphql-nestjs-profiler/profile-graphql-overview.png)
 
@@ -233,7 +235,7 @@ Une des requêtes de l'exemple ne retourne aucun avis. Elle reste pourtant un al
 
 ### N+1 sur une API externe : 5 appels HTTP vers les auteurs
 
-Le panneau **HTTP Client**, alimenté par le package [`@eleven-labs/nest-profiler-http`](https://nest-profiler.eleven-labs.com/docs/packages/nest-profiler-http), montre les appels effectués par `Review.author`.
+Le panneau **HTTP Client** montre les appels effectués par `Review.author`. Ces appels sont collectés par le package [`@eleven-labs/nest-profiler-http`](https://nest-profiler.eleven-labs.com/docs/packages/nest-profiler-http).
 
 ![Panneau HTTP Client de NestJS Profiler montrant 5 appels vers l'API auteurs, dont 2 requêtes vers le même utilisateur]({BASE_URL}/imgs/articles/2026-09-11-diagnostiquer-n-plus-un-graphql-nestjs-profiler/http-client-n-plus-one.png)
 
@@ -452,4 +454,4 @@ Pour aller plus loin :
 
 Un N+1 n'est pas forcément visible dans les temps de réponse locaux. En revanche, il laisse une trace : des appels répétitifs que personne n'a écrits explicitement, mais que NestJS Profiler rend visibles.
 
-Avec 1 query, 2 profils et des DataLoaders, vous pouvez passer d'une intuition à une optimisation mesurée de vos resolvers GraphQL NestJS.
+Avec 1 query, 2 profils et des DataLoaders, vous pouvez passer d'une intuition à une optimisation mesurée.
