@@ -3,7 +3,7 @@ contentType: article
 lang: fr
 date: 2026-09-16
 slug: diagnostiquer-n-plus-un-graphql-nestjs-profiler
-title: "N+1 GraphQL dans NestJS : le détecter et le corriger avec NestJS Profiler"
+title: "N+1 GraphQL dans NestJS : détecter avec NestJS Profiler, corriger avec DataLoader"
 excerpt: "Une query GraphQL NestJS peut cacher un N+1 : 10 allers-retours SQL, MongoDB et HTTP pour 4 produits. Détectez-le avec NestJS Profiler, corrigez-le avec DataLoader et vérifiez le gain."
 cover:
   alt: "NestJS Profiler affiche une query GraphQL avec des requêtes MongoDB et des appels HTTP répétés, signalés comme un problème N plus un"
@@ -21,22 +21,29 @@ keywords:
   - performance
   - apollo
   - mongoose
-  - typescript
+  - mongodb
   - api graphql
 authors:
   - fpasquet
 seo:
-  title: "N+1 GraphQL NestJS : corriger avec DataLoader"
-  description: "Tutoriel NestJS : détectez un N+1 GraphQL avec NestJS Profiler, corrigez-le avec DataLoader et réduisez 10 allers-retours SQL, MongoDB et HTTP à 3."
+  title: "GraphQL N+1 NestJS : corriger avec DataLoader"
+  description: "Détectez un N+1 GraphQL dans NestJS et corrigez-le avec DataLoader : exemple complet, profiling et passage de 10 à 3 allers-retours SQL, MongoDB et HTTP."
 ---
 
-Une query GraphQL NestJS peut sembler rapide tout en exécutant beaucoup trop d'allers-retours vers vos dépendances.
+Un problème **N+1** dans une API GraphQL NestJS apparaît lorsqu'un résolveur de champ imbriqué déclenche une lecture supplémentaire pour chaque élément renvoyé. La query peut sembler rapide tout en exécutant beaucoup trop d'allers-retours vers PostgreSQL, MongoDB ou une API externe.
 
-C'est le problème **N+1** : un résolveur de champ imbriqué déclenche une lecture supplémentaire pour chaque élément renvoyé. Tant que le jeu de données est petit et que les dépendances répondent vite, ce défaut peut rester invisible. Il devient coûteux dès que le catalogue, la latence réseau ou le trafic augmentent.
+Tant que le jeu de données est petit et que les dépendances répondent vite, ce défaut reste invisible. Il devient coûteux dès que le catalogue, la latence réseau ou le trafic augmentent.
 
-Dans ce tutoriel, nous allons détecter un N+1 dans une API GraphQL NestJS, le corriger avec DataLoader, puis vérifier le résultat avec NestJS Profiler.
+Dans ce tutoriel, nous allons détecter un N+1 GraphQL dans NestJS avec NestJS Profiler, puis le corriger avec des DataLoaders scopés à la requête, capables de grouper les clés demandées et de dédupliquer les lectures d'une même opération.
 
 Sur l'application d'exemple, cette query interroge 3 systèmes différents. Elle passe de **10 allers-retours à 3** : une requête SQL, une requête MongoDB et un appel HTTP.
+
+**En résumé :**
+
+- **Symptôme** : le nombre de requêtes SQL, MongoDB ou HTTP augmente avec le nombre d'éléments renvoyés par la query.
+- **Cause** : chaque résolveur de champ imbriqué charge sa donnée individuellement, sans connaître les autres éléments de la liste.
+- **Solution** : un DataLoader par source de données, scopé à la requête, qui batche et déduplique les clés demandées.
+- **Résultat** : 10 allers-retours ramenés à 3, et un coût qui ne dépend plus du nombre de produits renvoyés.
 
 <div class="admonition note" markdown="1"><p class="admonition-title">À propos des mesures</p>
 
@@ -51,7 +58,7 @@ Les chiffres de cet article proviennent de l'application d'exemple de NestJS Pro
 | Total des allers-retours |                 10 |            **3** |
 | Tags du profiler         | `N+1 ×4`, `N+1 ×5` |            Aucun |
 
-## Qu'est-ce qu'un problème N+1 en GraphQL ?
+## Qu'est-ce qu'un problème N+1 dans une API GraphQL NestJS ?
 
 Un N+1 apparaît lorsqu'une query récupère une liste, puis qu'un résolveur de champ imbriqué déclenche une lecture supplémentaire pour chaque élément de cette liste.
 
@@ -77,9 +84,9 @@ Avec 20 produits, notre scénario déclenche 26 allers-retours :
 1 requête SQL + 20 requêtes MongoDB + 5 appels HTTP
 ```
 
-Un N+1 n'est donc pas forcément une query lente sur un petit jeu de données. C'est surtout une complexité qui évolue avec le nombre d'éléments retournés.
+Un N+1 n'est donc pas forcément une query lente sur un petit jeu de données. C'est surtout une complexité qui évolue avec le nombre d'éléments retournés. Si vous débutez sur le sujet, [GraphQL, kesako ?]({BASE_URL}/fr/graphql-kesako/) revient sur le fonctionnement des schémas et des résolveurs, et [la mise en place d'une API GraphQL avec Apollo]({BASE_URL}/fr/commencer-avec-apollojs/) détaille la structuration d'un serveur Node.js.
 
-## Le scénario GraphQL utilisé
+## Le scénario GraphQL utilisé : PostgreSQL, MongoDB et API HTTP
 
 L'application d'exemple de NestJS Profiler simule un backend de marketplace découpé en contextes métier. La query de démonstration est la suivante :
 
@@ -143,7 +150,7 @@ Chaque résolveur est correct pris isolément : il ne connaît que l'élément q
 
 Pour comprendre plus précisément comment NestJS exécute un résolveur et traverse les différentes couches de l'application, consultez [le cycle de vie d'une requête NestJS]({BASE_URL}/fr/nestjs-le-cycle-de-vie-dune-requete/).
 
-## Reproduire le N+1 localement
+## Reproduire le N+1 GraphQL localement
 
 Le dépôt contient l'application d'exemple complète. Pour lancer le scénario :
 
@@ -172,9 +179,9 @@ Une fois l'application démarrée :
 - `http://localhost:3000/_profiler` ouvre NestJS Profiler.
 - `http://localhost:3000/api` ouvre Swagger pour explorer le reste de l'exemple.
 
-Envoyez la query `products` depuis Apollo Sandbox.
+Envoyez la query `products` depuis Apollo Sandbox. Pour brancher le profiler sur votre propre application NestJS, la page [Getting started](https://nest-profiler.eleven-labs.com/docs/getting-started) décrit l'installation complète.
 
-## Détecter le N+1 avec NestJS Profiler
+## Comment détecter un N+1 GraphQL dans NestJS avec le profiler
 
 NestJS Profiler associe un token à chaque exécution. Après la query GraphQL, les headers de réponse permettent de retrouver directement le profil concerné :
 
@@ -185,13 +192,13 @@ X-Debug-Token-Link: /_profiler/ebab37ec-3ace-4569-8890-8360ee9e0d3a
 
 Ouvrez `X-Debug-Token-Link`, ou accédez à `/_profiler` puis filtrez les profils GraphQL.
 
-NestJS Profiler rassemble les informations techniques d'une même exécution : opération GraphQL, trace d'exécution, requêtes SQL et MongoDB, appels HTTP sortants, logs et exceptions. Ici, l'important est de commencer par la **trace d'exécution**, puis de confirmer les répétitions dans les panneaux de détail.
+NestJS Profiler rassemble les informations techniques d'une même exécution : opération GraphQL, trace d'exécution, requêtes SQL et MongoDB, appels HTTP sortants, logs et exceptions. Ici, l'important est de commencer par la **trace d'exécution**, puis de confirmer les répétitions dans les panneaux de détail. Le détail de ce que remonte le collecteur est documenté dans le package [`@eleven-labs/nest-profiler-graphql`](https://nest-profiler.eleven-labs.com/docs/packages/nest-profiler-graphql).
 
 ![Profil de la query GraphQL products dans NestJS Profiler, avec les tags N plus un sur MongoDB et les appels HTTP]({BASE_URL}/imgs/articles/2026-09-11-diagnostiquer-n-plus-un-graphql-nestjs-profiler/profile-graphql-overview.png)
 
-### Lire l'execution trace
+### Lire l'execution trace d'une opération GraphQL
 
-L'onglet **Performance** affiche une *execution trace* qui remet les événements dans leur ordre d'exécution. Avec le filtre **I/O only**, elle ne conserve que les opérations qui sortent du processus : SQL, MongoDB, HTTP, cache et autres dépendances externes.
+L'onglet **Performance** affiche une *execution trace* qui remet les événements dans leur ordre d'exécution. Avec le filtre **I/O only**, elle ne conserve que les opérations qui sortent du processus : SQL, MongoDB, HTTP, cache et autres dépendances externes. L'ensemble des panneaux est décrit dans [la documentation de l'interface du profiler](https://nest-profiler.eleven-labs.com/docs/profiler-ui).
 
 Dans le profil initial, la trace fait apparaître :
 
@@ -208,9 +215,9 @@ La trace permet aussi de distinguer 2 notions souvent confondues :
 - Les appels HTTP partent en parallèle ; cela limite la latence visible localement.
 - Ils restent malgré tout trop nombreux ; ils consomment des connexions, du budget de rate limiting et des ressources chez la dépendance externe.
 
-### MongoDB : 4 lectures des reviews
+### N+1 sur MongoDB : 4 lectures des reviews
 
-Le panneau **Database**, sous-onglet **MongoDB**, confirme que le résolveur `Product.reviews` déclenche une opération `find` par produit.
+Le panneau **Database**, sous-onglet **MongoDB**, confirme que le résolveur `Product.reviews` déclenche une opération `find` par produit. Ces requêtes sont collectées par le package [`@eleven-labs/nest-profiler-mongoose`](https://nest-profiler.eleven-labs.com/docs/packages/nest-profiler-mongoose).
 
 ![Panneau MongoDB de NestJS Profiler montrant 4 requêtes find répétées pour charger les reviews de produits]({BASE_URL}/imgs/articles/2026-09-11-diagnostiquer-n-plus-un-graphql-nestjs-profiler/database-mongodb-n-plus-one.png)
 
@@ -224,9 +231,9 @@ Chaque ligne indique notamment :
 
 Une des requêtes de l'exemple ne retourne aucun avis. Elle reste pourtant un aller-retour complet vers MongoDB. Plus le catalogue grandit, plus ce coût augmente.
 
-### HTTP : 5 appels vers les auteurs
+### N+1 sur une API externe : 5 appels HTTP vers les auteurs
 
-Le panneau **HTTP Client** montre les appels effectués par `Review.author`.
+Le panneau **HTTP Client**, alimenté par le package [`@eleven-labs/nest-profiler-http`](https://nest-profiler.eleven-labs.com/docs/packages/nest-profiler-http), montre les appels effectués par `Review.author`.
 
 ![Panneau HTTP Client de NestJS Profiler montrant 5 appels vers l'API auteurs, dont 2 requêtes vers le même utilisateur]({BASE_URL}/imgs/articles/2026-09-11-diagnostiquer-n-plus-un-graphql-nestjs-profiler/http-client-n-plus-one.png)
 
@@ -236,7 +243,7 @@ Mais le profil révèle aussi un doublon : `/users/1` est demandé 2 fois pendan
 
 Ces 2 problèmes appellent une même solution dans notre cas : un DataLoader scopé à la requête, capable de grouper les clés et de mémoriser celles déjà demandées.
 
-## Corriger le N+1 GraphQL avec DataLoader
+## Corriger un N+1 GraphQL NestJS avec DataLoader
 
 [DataLoader](https://github.com/graphql/dataloader) collecte les clés demandées pendant la même phase de résolution GraphQL, puis appelle une fonction de batch avec l'ensemble de ces clés.
 
@@ -262,7 +269,7 @@ export class DirectProductReviewsLoader implements ProductReviewsLoader {
 
 Chaque produit entraîne donc son propre `find({ productId })`.
 
-### Après : batcher les reviews par produit
+### Après : un DataLoader NestJS pour batcher les relations
 
 La version DataLoader collecte les identifiants de produits et appelle une unique méthode `findByProducts()` qui construit un filtre MongoDB avec `$in`.
 
@@ -301,7 +308,7 @@ export class DataLoaderProductReviewsLoader implements ProductReviewsLoader {
 Le tableau retourné doit garder le même ordre que les clés demandées : une position du tableau correspond à une clé donnée, même lorsqu'aucun résultat n'est trouvé. C'est la source d'erreur la plus fréquente lors de l'écriture d'une fonction de batch.
 </div>
 
-### Batcher et dédupliquer les auteurs
+### Dédupliquer les appels HTTP avec un second DataLoader
 
 Batcher les reviews est aussi ce qui permet de batcher les auteurs : quand toutes les reviews sont disponibles dans la même phase de résolution, les identifiants d'auteurs peuvent être regroupés par un second DataLoader.
 
@@ -349,7 +356,7 @@ FEATURE_DATALOADER=true
 
 Relancez ensuite l'application, envoyez exactement la même query et ouvrez le nouveau profil avec son `X-Debug-Token-Link`.
 
-## Vérifier le gain avec NestJS Profiler
+## Mesurer les performances GraphQL avant et après DataLoader
 
 La correction n'est terminée que lorsqu'elle est vérifiée sur la même opération.
 
@@ -380,7 +387,7 @@ Le gain de latence est modéré avec 4 produits, car les appels initiaux partaie
 
 Le résultat important est structurel : le nombre d'accès à MongoDB ne dépend plus du nombre de produits renvoyés, et les appels HTTP sont regroupés et dédupliqués.
 
-## DataLoader n'est pas toujours la solution
+## DataLoader, jointure ou cache : quelle solution au N+1 GraphQL ?
 
 DataLoader est adapté lorsqu'une opération GraphQL résout plusieurs clés individuelles et que la source de données peut répondre à ces clés en lot.
 
@@ -406,9 +413,17 @@ Dans d'autres cas, une autre approche peut être plus pertinente :
 
 Il faut compter les lectures réellement émises pendant une opération, et non seulement lire les résolveurs. NestJS Profiler regroupe les requêtes répétées par empreinte et les marque dans la trace ainsi que dans les panneaux Database ou HTTP Client.
 
+### Comment implémenter un DataLoader dans NestJS avec GraphQL ?
+
+Le plus simple dans NestJS est de créer un provider `@Injectable({ scope: Scope.REQUEST })` qui instancie le `DataLoader` dans son constructeur, expose une méthode `load()` et se fait injecter dans le résolveur de champ. Le scope requête remplace l'approche consistant à attacher les loaders au contexte GraphQL : NestJS crée une instance par requête et l'injection reste standard.
+
 ### Un DataLoader suffit-il à corriger tous les N+1 ?
 
 Non. Il faut que la source puisse servir plusieurs clés en une fois. Sans endpoint de batch côté API externe, un DataLoader peut toujours dédupliquer une même clé, mais il ne peut pas réduire plusieurs clés distinctes à un seul appel.
+
+### DataLoader ou jointure SQL : que choisir ?
+
+Quand la relation vit dans la même base et que vous savez avant l'exécution qu'elle sera demandée, une jointure, un `relations` TypeORM ou un `populate` reste plus direct. DataLoader devient intéressant lorsque le champ est optionnel dans le schéma, lorsque les données viennent de sources différentes, ou lorsque plusieurs résolveurs demandent les mêmes clés pendant la même opération.
 
 ### Pourquoi les loaders doivent-ils être scopés à la requête ?
 
@@ -429,11 +444,12 @@ NestJS Profiler est un projet open source inspiré du Symfony Web Profiler. Il p
 Pour aller plus loin :
 
 - [Découvrir NestJS Profiler](https://nest-profiler.eleven-labs.com/)
-- [Lire la documentation de NestJS Profiler](https://nest-profiler.eleven-labs.com/docs)
+- [Installer NestJS Profiler dans une application NestJS](https://nest-profiler.eleven-labs.com/docs/getting-started)
+- [Profiler les opérations GraphQL avec le package dédié](https://nest-profiler.eleven-labs.com/docs/packages/nest-profiler-graphql)
 - [Explorer l'application d'exemple](https://nest-profiler.eleven-labs.com/docs/example-api)
 - [Tester la démo en ligne](https://nest-profiler-example.eleven-labs.com/_profiler)
 - [Accéder au dépôt GitHub](https://github.com/eleven-labs/nest-profiler)
 
 Un N+1 n'est pas forcément visible dans les temps de réponse locaux. En revanche, il laisse une trace : des appels répétitifs que personne n'a écrits explicitement, mais que NestJS Profiler rend visibles.
 
-Avec 1 query, 2 profils et des DataLoaders, vous pouvez passer d'une intuition à une optimisation mesurée.
+Avec 1 query, 2 profils et des DataLoaders, vous pouvez passer d'une intuition à une optimisation mesurée de vos resolvers GraphQL NestJS.

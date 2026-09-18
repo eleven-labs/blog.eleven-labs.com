@@ -444,3 +444,5 @@ L'implémentation de GraphQL en Go est plutôt simple à prendre en main et les 
 Il nous est également possible de bien structurer celle-ci afin de séparer notamment les queries, les mutations et les autres composants.
 
 Si vous voulez tester cette structure, les sources sont disponibles ici : https://github.com/eko/graphql-go-structure
+
+Quel que soit le langage, un résolveur de champ imbriqué peut multiplier les lectures vers la base ou les API externes. Pour voir ce problème et sa résolution par le batching, lisez [comment résoudre un problème N+1 dans une API GraphQL avec DataLoader]({BASE_URL}/fr/diagnostiquer-n-plus-un-graphql-nestjs-profiler/).
