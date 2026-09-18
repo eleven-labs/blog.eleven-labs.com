@@ -345,7 +345,7 @@ FEATURE_DATALOADER=true
 
 Relancez ensuite l'application, envoyez exactement la même query et ouvrez le nouveau profil avec son `X-Debug-Token-Link`.
 
-## Compter les appels GraphQL avant et après DataLoader
+## Mesurer les performances GraphQL avant et après DataLoader
 
 La correction n'est terminée que lorsqu'elle est vérifiée sur la même opération.
 
