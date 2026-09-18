@@ -768,5 +768,3 @@ La démo [CodeSandbox](https://codesandbox.io/s/github/eleven-labs/article-start
 ### Conclusion
 
 Vous avez ici un exemple clair et poussé d'une API GraphQL. Nous travaillons actullement sur la mise en place de tooling pour gérer le monitoring et la mise en cache. Nous vous invitons à suivre notre blog et à participer à la communauté GraphQL !
-
-Pour aller plus loin côté diagnostic, l'article [N+1 GraphQL dans NestJS]({BASE_URL}/fr/diagnostiquer-n-plus-un-graphql-nestjs-profiler/) montre comment mesurer les allers-retours réellement émis par une query avant et après l'ajout de DataLoaders.

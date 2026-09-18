@@ -198,5 +198,3 @@ Je vous invite desormais à lire les deux Codelabs suivant:
 
  - [Utiliser GraphQL avec apollo]({BASE_URL}/fr/graphql-avec-apollo/)
  - [Utiliser GraphQL avec Symfony]({BASE_URL}/fr/graphql-avec-symfony/)
-
-Une fois votre API en place, le piège de performance le plus courant reste le N+1 sur les résolveurs de champs : cet article explique comment [détecter et corriger un N+1 GraphQL avec NestJS et DataLoader]({BASE_URL}/fr/diagnostiquer-n-plus-un-graphql-nestjs-profiler/).
