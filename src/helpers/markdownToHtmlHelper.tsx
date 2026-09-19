@@ -97,6 +97,32 @@ const getTextContent = (children: React.ReactNode): string =>
     })
     .join('');
 
+// Minimal shape of the hast nodes walked below: @types/hast is not a direct
+// dependency, and only these few fields are needed.
+type HastNode = { type: string };
+type HastElement = {
+  type: 'element';
+  tagName: string;
+  properties?: Record<string, unknown>;
+  children: HastNode[];
+};
+
+const isElement = (node: HastNode, tagName?: string): node is HastElement =>
+  node.type === 'element' && (tagName === undefined || (node as HastElement).tagName === tagName);
+
+const getNodeText = (node: HastNode): string => {
+  if (node.type === 'text') {
+    return (node as HastNode & { value: string }).value;
+  }
+  return isElement(node) ? node.children.map(getNodeText).join('') : '';
+};
+
+const findChildElement = (node: HastElement, tagName: string): HastElement | undefined =>
+  node.children.find((child): child is HastElement => isElement(child, tagName));
+
+const getChildElements = (node: HastElement, tagName: string): HastElement[] =>
+  node.children.filter((child): child is HastElement => isElement(child, tagName));
+
 const cleanMarkdown = (content: string): string => content.replace(/\{BASE_URL}\//g, `${process.env.BASE_URL || '/'}`);
 
 export const markdownToHtml = (content: string): string => {
@@ -127,6 +153,32 @@ export const markdownToHtml = (content: string): string => {
         }
       },
     })
+    .use(rehypeRewrite, {
+      selector: 'table',
+      rewrite: (node): void => {
+        const table = node as unknown as HastElement;
+        if (!isElement(table, 'table')) {
+          return;
+        }
+        const head = findChildElement(table, 'thead');
+        const body = findChildElement(table, 'tbody');
+        const headRow = head && findChildElement(head, 'tr');
+        if (!headRow || !body) {
+          return;
+        }
+
+        // Carried by every cell so the stacked mobile layout can label it with
+        // its column header, which is hidden at that width.
+        const labels = getChildElements(headRow, 'th').map((cell) => getNodeText(cell).trim());
+        for (const row of getChildElements(body, 'tr')) {
+          getChildElements(row, 'td').forEach((cell, index) => {
+            if (labels[index]) {
+              cell.properties = { ...cell.properties, 'data-label': labels[index] };
+            }
+          });
+        }
+      },
+    })
     .use(rehypeReact, {
       createElement: React.createElement,
       Fragment: React.Fragment,
@@ -144,6 +196,13 @@ export const markdownToHtml = (content: string): string => {
 
           return <Box {...(props as ComponentPropsWithoutRef<'div'>)}>{children}</Box>;
         },
+        // Wrapped so the table scrolls on itself instead of widening the whole
+        // document, the way code blocks already do.
+        table: ({ node, children, ...props }): React.JSX.Element => (
+          <Box className="post-page__table">
+            <table {...(props as ComponentPropsWithoutRef<'table'>)}>{children}</table>
+          </Box>
+        ),
         a: ({ node, children, ...props }): React.JSX.Element => {
           if (isExternalLink(props.href as string)) {
             props['rel'] = 'nofollow noreferrer';

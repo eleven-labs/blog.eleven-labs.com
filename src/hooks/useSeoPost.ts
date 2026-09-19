@@ -3,18 +3,15 @@ import type { ImagePositionType, PostPageData } from '@/types';
 import { useMeta, useScript } from 'hoofd';
 import { useTranslation } from 'react-i18next';
 
-import { DEVICES, IMAGE_FORMATS, PATHS } from '@/constants';
-import { generateUrl, getCoverPath } from '@/helpers/assetHelper';
+import { PATHS, SOCIAL_IMAGE_FORMAT } from '@/constants';
+import { generateUrl, getSocialCoverPath } from '@/helpers/assetHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useTitle } from '@/hooks/useTitle';
 
 export const useSeoPost = (post: PostPageData): void => {
   const { i18n } = useTranslation();
-  const coverPath = getCoverPath({
+  const coverPath = getSocialCoverPath({
     path: post.cover?.path,
-    format: IMAGE_FORMATS.POST_COVER,
-    pixelRatio: 2,
-    device: DEVICES.DESKTOP,
     position: post?.cover?.position as ImagePositionType,
   });
   const coverUrl = generateUrl(coverPath);
@@ -28,6 +25,10 @@ export const useSeoPost = (post: PostPageData): void => {
   useMeta({ property: 'og:type', content: 'article' });
   useMeta({ property: 'og:description', content: description });
   useMeta({ property: 'og:image', content: coverUrl });
+  useMeta({ property: 'og:image:width', content: `${SOCIAL_IMAGE_FORMAT.width}` });
+  useMeta({ property: 'og:image:height', content: `${SOCIAL_IMAGE_FORMAT.height}` });
+  useMeta({ name: 'twitter:card', content: 'summary_large_image' });
+  useMeta({ name: 'twitter:image', content: coverUrl });
 
   useMeta({ property: 'article:author', content: authors });
   useMeta({ property: 'article:publisher', content: 'Eleven Labs' });
@@ -49,6 +50,8 @@ export const useSeoPost = (post: PostPageData): void => {
       image: {
         '@type': 'ImageObject',
         url: coverUrl,
+        width: SOCIAL_IMAGE_FORMAT.width,
+        height: SOCIAL_IMAGE_FORMAT.height,
       },
       publisher: {
         '@type': 'Organization',
