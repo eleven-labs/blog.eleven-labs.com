@@ -28,7 +28,8 @@ export const useHomePageContainer = (): HomePageProps => {
           (i18n.language === LANGUAGES.DT || post.lang === i18n.language)
       )
       .slice(0, 3),
-    imageFormat: IMAGE_FORMATS.HIGHLIGHTED_ARTICLE_POST_CARD_COVER,
+    imageFormat: IMAGE_FORMATS.HIGHLIGHTED_POST_CARD_COVER,
+    withLcpCandidateOnFirstPost: true,
   });
   const lastTutorialsForCardList = usePostsForCardList({
     posts: postListPageData.posts
@@ -38,7 +39,7 @@ export const useHomePageContainer = (): HomePageProps => {
           (i18n.language === LANGUAGES.DT || post.lang === i18n.language)
       )
       .slice(0, 2),
-    imageFormat: IMAGE_FORMATS.HIGHLIGHTED_TUTORIAL_POST_CARD_COVER,
+    imageFormat: IMAGE_FORMATS.HIGHLIGHTED_POST_CARD_COVER,
   });
 
   useTitle(t('pages.home.seo.title'));

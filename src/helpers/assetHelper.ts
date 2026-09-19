@@ -16,6 +16,7 @@ import {
   IMAGE_CONTENT_TYPES,
   IMAGE_POSITIONS,
   SIZES_BY_IMAGE_FORMAT,
+  SOCIAL_IMAGE_FORMAT,
 } from '@/constants';
 
 const basename = (path: string, extension: string = ''): string => {
@@ -26,16 +27,42 @@ const basename = (path: string, extension: string = ''): string => {
 const dirname = (path: string): string => path.split('/').slice(0, -1).join('/') || '';
 const extname = (path: string): string => path.split('.').pop() || '';
 
+const DEFAULT_COVER_PATH = '/imgs/default-cover.jpg';
+
 export const getPathFile = (path: string): string => `${BASE_URL}${path.slice(1)}`;
 
 export const generateUrl = (path: string): string => `${HOST_URL}${path}`;
 
+const buildCoverPath = ({
+  path,
+  width,
+  height,
+  pixelRatio,
+  extension,
+  position,
+}: {
+  path: string;
+  width: number;
+  height: number;
+  pixelRatio: number;
+  extension: ImageExtensionType;
+  position: ImagePositionType;
+}): string => {
+  const isProd: boolean = process.env.NODE_ENV === 'production';
+  const directoryPath = dirname(path);
+  const filename = basename(path, extname(path));
+
+  return isProd
+    ? `${directoryPath}/${filename}-w${width}-h${height}-x${pixelRatio}.${extension}`
+    : `${path}?width=${width}&height=${height}&pixelRatio=${pixelRatio}&position=${position}&format=${extension}`;
+};
+
 export const getCoverPath = ({
-  path = '/imgs/default-cover.jpg',
+  path = DEFAULT_COVER_PATH,
   format,
   device,
   pixelRatio,
-  extension = DEFAULT_EXTENSION_FOR_IMAGES,
+  extension,
   position = IMAGE_POSITIONS.CENTER,
 }: {
   path?: string;
@@ -45,15 +72,33 @@ export const getCoverPath = ({
   extension?: ImageExtensionType;
   position?: ImagePositionType;
 }): string => {
-  const isProd: boolean = process.env.NODE_ENV === 'production';
-  const directoryPath = dirname(path);
-  const filename = basename(path, extname(path));
   const imageFormat = SIZES_BY_IMAGE_FORMAT[device][format];
 
-  return isProd
-    ? `${directoryPath}/${filename}-w${imageFormat.width}-h${imageFormat.height}-x${pixelRatio}.${extension}`
-    : `${path}?width=${imageFormat.width}&height=${imageFormat.height}&pixelRatio=${pixelRatio}&position=${position}&format=${extension}`;
+  return buildCoverPath({
+    path,
+    width: imageFormat.width,
+    height: imageFormat.height,
+    pixelRatio,
+    extension: extension ?? imageFormat.extension ?? DEFAULT_EXTENSION_FOR_IMAGES,
+    position,
+  });
 };
+
+export const getSocialCoverPath = ({
+  path = DEFAULT_COVER_PATH,
+  position = IMAGE_POSITIONS.CENTER,
+}: {
+  path?: string;
+  position?: ImagePositionType;
+}): string =>
+  buildCoverPath({
+    path,
+    width: SOCIAL_IMAGE_FORMAT.width,
+    height: SOCIAL_IMAGE_FORMAT.height,
+    pixelRatio: 1,
+    extension: SOCIAL_IMAGE_FORMAT.extension,
+    position,
+  });
 
 export const getSrcSet = (
   options: Omit<Parameters<typeof getCoverPath>[0], 'pixelRatio'> & { pixelRatios: number[] }
@@ -62,8 +107,15 @@ export const getSrcSet = (
     .map((pixelRatio) => `${getPathFile(getCoverPath({ ...options, pixelRatio }))} ${pixelRatio}x`)
     .join(', ');
 
-export const getMediaByDevice = (device: DeviceType): string =>
-  device === DEVICES.DESKTOP ? '(min-width: 572px)' : '(max-width: 571px)';
+// Kept in sync with the design system breakpoints (sm: 571px, md: 1001px) so the
+// downloaded file always matches the layout actually rendered at that width.
+export const MEDIA_BY_DEVICE: Record<DeviceType, string> = {
+  [DEVICES.DESKTOP]: '(min-width: 1001px)',
+  [DEVICES.TABLET]: '(min-width: 572px) and (max-width: 1000px)',
+  [DEVICES.MOBILE]: '(max-width: 571px)',
+};
+
+export const getMediaByDevice = (device: DeviceType): string => MEDIA_BY_DEVICE[device];
 
 export const getSources = (options: {
   path?: string;
@@ -79,10 +131,18 @@ export const getSources = (options: {
       pixelRatios: [2, 1],
       position: options.position,
     }),
-    type: IMAGE_CONTENT_TYPES[DEFAULT_EXTENSION_FOR_IMAGES],
+    type: IMAGE_CONTENT_TYPES[SIZES_BY_IMAGE_FORMAT[device][options.format].extension ?? DEFAULT_EXTENSION_FOR_IMAGES],
   }));
 
-export const getCover = (post: TransformedPostDataWithTransformedAuthors, format: ImageFormatType): PictureProps => ({
+// `isLcpCandidate` is reserved for the single cover that can be the largest
+// contentful paint of the page (the article hero, the first card of a list).
+// Every other cover stays lazy so a list of a dozen thumbnails does not compete
+// with it for bandwidth.
+export const getCover = (
+  post: TransformedPostDataWithTransformedAuthors,
+  format: ImageFormatType,
+  { isLcpCandidate = false }: { isLcpCandidate?: boolean } = {}
+): PictureProps => ({
   sources: getSources({ path: post.cover?.path, format, position: post?.cover?.position as ImagePositionType }),
   img: {
     src: getPathFile(
@@ -97,8 +157,8 @@ export const getCover = (post: TransformedPostDataWithTransformedAuthors, format
     alt: post.cover?.alt ?? post.title,
     width: SIZES_BY_IMAGE_FORMAT[DEVICES.DESKTOP][format].width,
     height: SIZES_BY_IMAGE_FORMAT[DEVICES.DESKTOP][format].height,
-    loading: 'eager',
-    decoding: 'sync',
-    fetchPriority: 'high',
+    loading: isLcpCandidate ? 'eager' : 'lazy',
+    decoding: isLcpCandidate ? 'sync' : 'async',
+    fetchPriority: isLcpCandidate ? 'high' : 'auto',
   },
 });
