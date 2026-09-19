@@ -8,8 +8,16 @@ import { useTranslation } from 'react-i18next';
 import { useLoaderData } from 'react-router-dom';
 
 import { websiteUrl } from '@/config/website';
-import { DEFAULT_LANGUAGE, IMAGE_FORMATS, LANGUAGES, MARKDOWN_CONTENT_TYPES, PATHS } from '@/constants';
+import {
+  DEFAULT_LANGUAGE,
+  IMAGE_FORMATS,
+  LANGUAGES,
+  LANGUAGES_AVAILABLE,
+  MARKDOWN_CONTENT_TYPES,
+  PATHS,
+} from '@/constants';
 import { TransWithHtml } from '@/containers/TransWithHtml';
+import { getUrl } from '@/helpers/getUrlHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useNewsletterCard } from '@/hooks/useNewsletterCard';
 import { usePostsForCardList } from '@/hooks/usePostsForCardList';
@@ -42,11 +50,14 @@ export const useHomePageContainer = (): HomePageProps => {
   });
 
   useTitle(t('pages.home.seo.title'));
+  // The home is the only page that exists in every language whatever the content published
+  for (const lang of LANGUAGES_AVAILABLE) {
+    useLink({ rel: 'alternate', hreflang: lang, href: getUrl(generatePath(PATHS.HOME, { lang })) });
+  }
   useLink({
-    rel: 'canonical',
-    href: generatePath(PATHS.ROOT, {
-      lang: DEFAULT_LANGUAGE,
-    }),
+    rel: 'alternate',
+    hreflang: 'x-default',
+    href: getUrl(generatePath(PATHS.HOME, { lang: DEFAULT_LANGUAGE })),
   });
 
   return {

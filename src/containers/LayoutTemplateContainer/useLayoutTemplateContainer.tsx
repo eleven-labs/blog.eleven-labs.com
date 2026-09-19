@@ -8,9 +8,10 @@ import { useTranslation } from 'react-i18next';
 import { matchPath, useLoaderData, useLocation } from 'react-router-dom';
 
 import { themeColor } from '@/config/website';
-import { BASE_URL, GOOGLE_SITE_VERIFICATION , PATHS } from '@/constants';
+import { DEFAULT_LANGUAGE, GOOGLE_SITE_VERIFICATION, PATHS } from '@/constants';
 import { generateUrl } from '@/helpers/assetHelper';
 import { getUrl } from '@/helpers/getUrlHelper';
+import { generatePath } from '@/helpers/routerHelper';
 
 import { HeaderContainer } from './HeaderContainer';
 import { useFooterContainer } from './useFooterContainer';
@@ -20,7 +21,9 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   const location = useLocation();
   const footer = useFooterContainer();
   const layoutTemplateData = useLoaderData() as LayoutTemplateData;
-  const isHomePage = Boolean(matchPath(PATHS.ROOT, location.pathname));
+  const isRootPage = Boolean(matchPath(PATHS.ROOT, location.pathname));
+  // The root serves the same page as the home of the default language, only one of them should be indexed
+  const canonicalUrl = getUrl(isRootPage ? generatePath(PATHS.HOME, { lang: DEFAULT_LANGUAGE }) : location.pathname);
 
   useHead({
     metas: [
@@ -40,20 +43,26 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
         name: 'theme-color',
         content: themeColor,
       },
+      {
+        name: 'robots',
+        content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+      },
     ],
     language: i18n.language,
   });
   useMeta({ property: 'og:locale', content: i18n.language });
   useMeta({ property: 'og:site_name', content: 'Blog Eleven Labs' });
-  useMeta({ property: 'og:url', content: getUrl(`${location.pathname}${location.search}`) });
+  useMeta({ property: 'og:url', content: canonicalUrl });
+  useLink({ rel: 'canonical', href: canonicalUrl });
   useScript({
     type: 'application/ld+json',
     text: JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'Blog Eleven Labs',
-      url: BASE_URL,
-      ...(isHomePage
+      url: getUrl(generatePath(PATHS.HOME, { lang: i18n.language })),
+      inLanguage: i18n.language,
+      ...(isRootPage
         ? {
             potentialAction: {
               '@type': 'SearchAction',
@@ -72,9 +81,6 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   useLink({ rel: 'apple-touch-icon', sizes: '152x152', href: generateUrl('/imgs/icons/apple-icon-152x152.png') });
   useLink({ rel: 'apple-touch-icon', sizes: '180x180', href: generateUrl('/imgs/icons/apple-icon-180x180.png') });
 
-  useLink({ rel: 'preconnect', href: 'https://fonts.googleapis.com' });
-  useLink({ rel: 'preconnect', href: 'https://fonts.gstatic.com' });
-  useLink({ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap' });
   useLink({ rel: 'alternate', type: 'application/rss+xml', href: generateUrl('/feed.xml') });
 
   return {
