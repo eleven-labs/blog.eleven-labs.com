@@ -22,7 +22,10 @@ export const useCategoryPageContainer = (): CategoryPageProps => {
   const postListPageData = useLoaderData() as PostListPageData;
   const newsletterCard = useNewsletterCard();
   const breadcrumb = useBreadcrumb({ categoryName: categoryName as string });
-  useTitle(t(`pages.category.${categoryName}.seo.title`, { categoryName }));
+  const currentPage = page ? parseInt(page, 10) : 1;
+  const seoTitle = t(`pages.category.${categoryName}.seo.title`, { categoryName });
+  // "Page" is spelled the same way in every language of the blog, no translation key is needed
+  useTitle(currentPage > 1 ? `${seoTitle} - Page ${currentPage}` : seoTitle);
   useMeta({ name: 'description', content: t(`pages.category.${categoryName}.seo.description`) });
 
   const getPaginatedLink: PostCardListContainerProps['getPaginatedLink'] = (page: number) => ({
@@ -51,7 +54,7 @@ export const useCategoryPageContainer = (): CategoryPageProps => {
     postCardList: (
       <PostCardListContainer
         getPaginatedLink={getPaginatedLink}
-        currentPage={page ? parseInt(page, 10) : 1}
+        currentPage={currentPage}
         allPosts={postListPageData.posts}
       />
     ),
