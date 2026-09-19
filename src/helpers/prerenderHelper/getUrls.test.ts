@@ -22,9 +22,9 @@ describe('getSitemapEntries', () => {
 
   it('should return URLs of home page grouped by language', () => {
     const expectedUrls: ReturnType<typeof getHomePageUrls> = [
-      { lang: 'fr', url: '/' },
       { lang: 'fr', url: '/fr/' },
       { lang: 'en', url: '/en/' },
+      { lang: 'fr', url: '/' },
     ];
     expect(getHomePageUrls()).toEqual(expectedUrls);
   });

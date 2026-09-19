@@ -24,14 +24,14 @@ export type Urls = {
 }[][];
 
 export const getHomePageUrls = (): Urls[0] => [
-  {
-    lang: DEFAULT_LANGUAGE,
-    url: generatePath(PATHS.ROOT, { lang: DEFAULT_LANGUAGE }),
-  },
   ...LANGUAGES_AVAILABLE_WITH_DT.map((lang) => ({
     lang,
     url: generatePath(PATHS.HOME, { lang }),
   })),
+  {
+    lang: DEFAULT_LANGUAGE,
+    url: generatePath(PATHS.ROOT, { lang: DEFAULT_LANGUAGE }),
+  },
 ];
 
 export const getCategoryPageUrls = (

@@ -3,12 +3,12 @@ import type { CategoryPageProps } from '@eleven-labs/design-system';
 import type { PostCardListContainerProps } from '@/containers/PostCardListContainer';
 import type { PostListPageData } from '@/types';
 
-import { useLink, useMeta } from 'hoofd';
+import { useMeta } from 'hoofd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLoaderData, useParams } from 'react-router-dom';
 
-import { DEFAULT_LANGUAGE, MARKDOWN_CONTENT_TYPES, PATHS } from '@/constants';
+import { MARKDOWN_CONTENT_TYPES, PATHS } from '@/constants';
 import { PostCardListContainer } from '@/containers/PostCardListContainer';
 import { TransWithHtml } from '@/containers/TransWithHtml';
 import { generatePath } from '@/helpers/routerHelper';
@@ -22,15 +22,11 @@ export const useCategoryPageContainer = (): CategoryPageProps => {
   const postListPageData = useLoaderData() as PostListPageData;
   const newsletterCard = useNewsletterCard();
   const breadcrumb = useBreadcrumb({ categoryName: categoryName as string });
-  useTitle(t(`pages.category.${categoryName}.seo.title`, { categoryName }));
+  const currentPage = page ? parseInt(page, 10) : 1;
+  const seoTitle = t(`pages.category.${categoryName}.seo.title`, { categoryName });
+  // "Page" is spelled the same way in every language of the blog, no translation key is needed
+  useTitle(currentPage > 1 ? `${seoTitle} - Page ${currentPage}` : seoTitle);
   useMeta({ name: 'description', content: t(`pages.category.${categoryName}.seo.description`) });
-  useLink({
-    rel: 'canonical',
-    href: generatePath(categoryName ? PATHS.CATEGORY : PATHS.ROOT, {
-      lang: DEFAULT_LANGUAGE,
-      categoryName: categoryName,
-    }),
-  });
 
   const getPaginatedLink: PostCardListContainerProps['getPaginatedLink'] = (page: number) => ({
     href: generatePath(PATHS.CATEGORY_PAGINATED, { lang: i18n.language, categoryName, page }),
@@ -58,7 +54,7 @@ export const useCategoryPageContainer = (): CategoryPageProps => {
     postCardList: (
       <PostCardListContainer
         getPaginatedLink={getPaginatedLink}
-        currentPage={page ? parseInt(page, 10) : 1}
+        currentPage={currentPage}
         allPosts={postListPageData.posts}
       />
     ),
