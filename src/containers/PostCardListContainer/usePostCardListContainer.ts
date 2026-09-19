@@ -20,6 +20,7 @@ export const usePostCardListContainer = ({
     numberOfItems: NUMBER_OF_ITEMS_PER_PAGE,
     posts,
     imageFormat: IMAGE_FORMATS.POST_CARD_COVER,
+    withLcpCandidateOnFirstPost: true,
   });
 
   return {
