@@ -14,16 +14,19 @@ export const usePostsForCardList = (options: {
   isLoading?: boolean;
   numberOfItems?: number;
   imageFormat: ImageFormatType;
+  withLcpCandidateOnFirstPost?: boolean;
 }): PostCardListProps['posts'] => {
   const { getDateToString } = useDateToString();
   const { t, i18n } = useTranslation();
 
   return options.isLoading && options.numberOfItems
     ? Array.from({ length: options.numberOfItems })
-    : (options.posts ?? []).map((post) => ({
+    : (options.posts ?? []).map((post, index) => ({
         contentType: post.contentType,
         slug: post.slug,
-        cover: getCover(post, options.imageFormat),
+        cover: getCover(post, options.imageFormat, {
+          isLcpCandidate: (options.withLcpCandidateOnFirstPost ?? false) && index === 0,
+        }),
         title: post.title,
         excerpt: post.excerpt,
         date: getDateToString({ date: post.date }),

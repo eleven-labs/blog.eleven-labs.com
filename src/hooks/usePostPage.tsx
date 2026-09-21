@@ -46,7 +46,7 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
 
   return {
     breadcrumb,
-    cover: getCover(post, IMAGE_FORMATS.POST_COVER),
+    cover: getCover(post, IMAGE_FORMATS.POST_COVER, { isLcpCandidate: true }),
     header: {
       title: post.title,
       date: getDateToString({ date: post.date }),

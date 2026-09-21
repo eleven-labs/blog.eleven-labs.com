@@ -38,7 +38,7 @@
     ]
   },
   "dependencies": {
-    "@eleven-labs/design-system": "^0.37.5",
+    "@eleven-labs/design-system": "^0.38.0",
     "@remix-run/router": "^1.16.0",
     "algoliasearch": "^4.23.3",
     "classnames": "^2.5.1",
