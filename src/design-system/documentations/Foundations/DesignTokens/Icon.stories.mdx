@@ -1,0 +1,45 @@
+import { Meta } from '@storybook/addon-docs';
+import { Layout, Table } from '@/storybook/components';
+import { Text, Icon } from '@/design-system';
+import { iconTokenNameList } from '@/design-system/constants';
+
+<Meta
+    title="Foundations/Design Tokens/Icon"
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: { hidden: true }
+        },
+        backgrounds: {
+            disable: true,
+            grid: {
+                disable: true,
+            }
+        },
+    }}
+/>
+
+<Layout
+    title="Icon"
+    description="All available icons"
+>
+    <Table
+        title="Common"
+        columns={[
+            {
+                name: 'name',
+                label: 'Name',
+            },
+            {
+                name: 'preview',
+                label: 'Preview',
+            }
+        ]}
+        rows={iconTokenNameList.map((iconName) => ({
+          name: (
+              <Text fontWeight="medium">{iconName}</Text>
+          ),
+          preview: <Icon name={iconName} width="5rem" height="5rem" color="navy" size="5rem" />,
+        }))}
+    />
+</Layout>

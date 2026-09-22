@@ -1,5 +1,4 @@
-import type { PictureProps } from '@eleven-labs/design-system';
-
+import type { PictureProps } from '@/design-system';
 import type {
   DeviceType,
   ImageExtensionType,

@@ -1,0 +1,18 @@
+@use 'sass:map';
+@use '@/design-system/styles/abstracts' as *;
+
+.container-content {
+  // Capped so the content keeps a readable line length on a wide desktop
+  // screen, where 85vw alone stretches it past 2000px.
+  --max-width-content: 1280px;
+
+  width: calc(100vw - #{map-get-strict($token-variables, 'spacing', 's')} * 2);
+  margin-left: #{map-get-strict($token-variables, 'spacing', 's')};
+  margin-right: #{map-get-strict($token-variables, 'spacing', 's')};
+
+  @include create-media-queries('md') {
+    max-width: min(85vw, var(--max-width-content));
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

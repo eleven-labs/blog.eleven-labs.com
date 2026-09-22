@@ -1,5 +1,4 @@
-import type { LayoutTemplateProps } from '@eleven-labs/design-system';
-
+import type { LayoutTemplateProps } from '@/templates';
 import type { LayoutTemplateData } from '@/types';
 
 import { useHead, useLink, useMeta, useScript } from 'hoofd';

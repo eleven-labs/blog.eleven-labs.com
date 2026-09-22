@@ -1,0 +1,10 @@
+{
+  "width": {
+    "full": {
+      "value": "100%"
+    },
+    "screen": {
+      "value": "100vw"
+    }
+  }
+}

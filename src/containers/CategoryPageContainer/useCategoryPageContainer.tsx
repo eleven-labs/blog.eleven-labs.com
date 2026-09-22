@@ -1,6 +1,5 @@
-import type { CategoryPageProps } from '@eleven-labs/design-system';
-
 import type { PostCardListContainerProps } from '@/containers/PostCardListContainer';
+import type { CategoryPageProps } from '@/pages';
 import type { PostListPageData } from '@/types';
 
 import { useLink, useMeta } from 'hoofd';

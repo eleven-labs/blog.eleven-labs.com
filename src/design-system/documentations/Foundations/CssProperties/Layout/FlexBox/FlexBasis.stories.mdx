@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs';
+import { Layout, DesignTokenTable } from '@/storybook/components';
+import { cssProperties } from '@/design-system/constants';
+
+<Meta
+    title="Foundations/Css Properties/Layout/FlexBox/FlexBasis"
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: { hidden: true }
+        },
+        backgrounds: {
+            disable: true,
+            grid: {
+                disable: true,
+            }
+        },
+    }}
+/>
+
+<Layout
+    title="CSS Properties"
+    description="Flex Basis CSS property scales"
+>
+    <DesignTokenTable
+        title="Flex Basis"
+        tokenVariables={cssProperties['flex-basis']}
+    />
+</Layout>

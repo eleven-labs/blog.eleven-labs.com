@@ -1,0 +1,55 @@
+{
+  "typography": {
+    "heading-markup": {
+      "base": {
+        "line-height": {
+          "value": "{line-height.base.value}"
+        },
+        "font-weight": {
+          "value": "{font-weight.regular.value}"
+        },
+        "margin-top": {
+          "value": "{spacing.l}"
+        }
+      },
+      "s": {
+        "font-size": {
+          "value": "16px"
+        },
+        "margin-bottom": {
+          "value": "{spacing.xxs}"
+        }
+      },
+      "m": {
+        "font-size": {
+          "value": "{typography.heading-markup.s.font-size.value} + 2"
+        },
+        "margin-bottom": {
+          "value": "{spacing.xs}"
+        }
+      },
+      "l": {
+        "font-size": {
+          "value": "{typography.heading-markup.m.font-size.value} + 2"
+        },
+        "font-weight": {
+          "value": "{font-weight.medium.value}"
+        },
+        "margin-bottom": {
+          "value": "{spacing.s}"
+        }
+      },
+      "xl": {
+        "font-size": {
+          "value": "{typography.heading-markup.l.font-size.value} + 2"
+        },
+        "font-weight": {
+          "value": "{font-weight.semi-bold.value}"
+        },
+        "margin-bottom": {
+          "value": "{spacing.m}"
+        }
+      }
+    }
+  }
+}

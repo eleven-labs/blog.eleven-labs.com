@@ -1,0 +1,26 @@
+{
+  "typography": {
+    "heading-markup": {
+      "s": {
+        "font-size": {
+          "value": "24px"
+        }
+      },
+      "m": {
+        "font-size": {
+          "value": "{typography.heading-markup.s.font-size.value} + 2"
+        }
+      },
+      "l": {
+        "font-size": {
+          "value": "{typography.heading-markup.m.font-size.value} + 2"
+        }
+      },
+      "xl": {
+        "font-size": {
+          "value": "{typography.heading-markup.m.font-size.value} + 2"
+        }
+      }
+    }
+  }
+}

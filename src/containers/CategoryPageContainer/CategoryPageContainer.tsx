@@ -1,5 +1,6 @@
-import { CategoryPage } from '@eleven-labs/design-system';
 import React from 'react';
+
+import { CategoryPage } from '@/pages';
 
 import { useCategoryPageContainer } from './useCategoryPageContainer';
 

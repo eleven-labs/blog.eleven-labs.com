@@ -1,6 +1,5 @@
-import type { SearchPageContentProps } from '@eleven-labs/design-system';
-
 import type { PostCardListContainerProps } from '@/containers/PostCardListContainer';
+import type { SearchPageContentProps } from '@/pages';
 import type { AlgoliaPostData, LanguageType } from '@/types';
 
 import { useLink, useTitleTemplate } from 'hoofd';

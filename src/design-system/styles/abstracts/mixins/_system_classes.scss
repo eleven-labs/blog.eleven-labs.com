@@ -1,0 +1,14 @@
+@use '../functions/map-get-strict' as *;
+@use './utility-classes' as *;
+
+@mixin system-classes($prop-list) {
+  @each $prop-name, $options in $prop-list {
+    @include utility-classes(map-get-strict($options, 'property-css'), map-get-strict($options, 'value-list'), map-get-strict($options, 'prefix-class-name'));
+  }
+}
+
+@mixin system-classes-with-breakpoints($prop-list) {
+  @each $prop-name, $options in $prop-list {
+    @include utility-classes-with-breakpoints(map-get-strict($options, 'property-css'), map-get-strict($options, 'value-list'), map-get-strict($options, 'prefix-class-name'));
+  }
+}

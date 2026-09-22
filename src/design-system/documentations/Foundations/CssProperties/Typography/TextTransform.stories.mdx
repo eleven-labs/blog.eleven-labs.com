@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs';
+import { Layout, DesignTokenTable } from '@/storybook/components';
+import { cssProperties } from '@/design-system/constants';
+
+<Meta
+    title="Foundations/Css Properties/Typography/TextTransform"
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: { hidden: true }
+        },
+        backgrounds: {
+            disable: true,
+            grid: {
+                disable: true,
+            }
+        },
+    }}
+/>
+
+<Layout
+    title="CSS Properties"
+    description="Text transform CSS property scales"
+>
+    <DesignTokenTable
+        title="Text transform"
+        tokenVariables={cssProperties['text-transform']}
+    />
+</Layout>

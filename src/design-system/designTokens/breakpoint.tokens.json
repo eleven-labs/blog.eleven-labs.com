@@ -1,0 +1,20 @@
+{
+  "breakpoint": {
+    "xs": {
+      "value": "0",
+      "comment": "no minimum width value because we are in mobile-first"
+    },
+    "sm": {
+      "value": "571",
+      "comment": "minimum width value for a small devices (tablets)"
+    },
+    "md": {
+      "value": "1001",
+      "comment": "minimum width value for a medium devices, (desktops)"
+    },
+    "lg": {
+      "value": "1201",
+      "comment": "minimum width value for a large devices (wide screen)"
+    }
+  }
+}

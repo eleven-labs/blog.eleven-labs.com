@@ -1,5 +1,6 @@
-import { SearchPageContent } from '@eleven-labs/design-system';
 import React from 'react';
+
+import { SearchPageContent } from '@/pages';
 
 import { useSearchPageContentContainer } from './useSearchPageContentContainer';
 

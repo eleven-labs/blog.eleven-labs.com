@@ -1,0 +1,87 @@
+import { Meta } from '@storybook/addon-docs';
+import { Layout, Table } from '@/storybook/components';
+import { Text } from '@/design-system';
+import { tokenVariables, textSizeTokenNameList } from '@/design-system/constants';
+import { getValueOfCssPropertyInDesignTokens } from '@/design-system/helpers/storybookHelper';
+import { get } from '@/design-system/helpers/objectHelper';
+
+<Meta
+    title="Foundations/Design Tokens/Typography/Text"
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: { hidden: true }
+        },
+        backgrounds: {
+            disable: true,
+            grid: {
+                disable: true,
+            }
+        },
+    }}
+/>
+
+<Layout
+    title="Typography"
+    description="Text token scales"
+>
+    <Table
+        title="Text"
+        columns={[
+            {
+                name: 'name',
+                label: 'Name',
+            },
+            {
+                name: 'preview',
+                label: 'Preview',
+            },
+            {
+              name: 'fontFamily',
+              label: 'Font Family',
+            },
+            {
+                name: 'mobile',
+                label: 'Value for mobile',
+            },
+            {
+                name: 'desktop',
+                label: 'Value for desktop',
+            },
+        ]}
+        rows={textSizeTokenNameList
+          .filter(tokenName => tokenName !== 'base')
+          .map((tokenName) => ({
+            name: (
+                <Text fontWeight="medium">text-{tokenName}</Text>
+            ),
+            preview: (
+                <Text size={tokenName}>
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </Text>
+            ),
+            fontFamily: get(tokenVariables, 'font-family.base.value'),
+            mobile: `${getValueOfCssPropertyInDesignTokens({
+                path: 'typography.text',
+                tokenName,
+                propertyCSS: 'font-size'
+            })} / ${getValueOfCssPropertyInDesignTokens({
+              path: 'typography.text',
+              tokenName,
+              propertyCSS: 'line-height'
+            })}`,
+            desktop: `${getValueOfCssPropertyInDesignTokens({
+                path: 'typography.text',
+                tokenName,
+                propertyCSS: 'font-size',
+                isDesktop: true,
+            })} / ${getValueOfCssPropertyInDesignTokens({
+              path: 'typography.text',
+              tokenName,
+              device: 'desktop',
+              propertyCSS: 'line-height',
+              isDesktop: true,
+            })}`,
+        }))}
+    />
+</Layout>

@@ -1,6 +1,5 @@
-import type { AuthorPageProps, SocialNetworkName } from '@eleven-labs/design-system';
-
 import type { PostCardListContainerProps } from '@/containers/PostCardListContainer';
+import type { AuthorPageProps, SocialNetworkName } from '@/pages';
 import type { AuthorPageData } from '@/types';
 
 import React from 'react';

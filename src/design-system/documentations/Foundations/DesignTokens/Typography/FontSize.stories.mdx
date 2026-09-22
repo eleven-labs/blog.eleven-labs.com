@@ -1,0 +1,45 @@
+import { Meta } from '@storybook/addon-docs';
+import { Layout, Table } from '@/storybook/components';
+import { Text } from '@/design-system';
+import { tokenVariables } from '@/design-system/constants';
+
+<Meta
+    title="Foundations/Design Tokens/Typography/FontSize"
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: { hidden: true }
+        },
+        backgrounds: {
+            disable: true,
+            grid: {
+                disable: true,
+            }
+        },
+    }}
+/>
+
+<Layout
+    title="Typography"
+    description="Font size token scales"
+>
+    <Table
+        title="Font Size"
+        columns={[
+            {
+                name: 'name',
+                label: 'Name',
+            },
+            {
+                name: 'value',
+                label: 'Value',
+            },
+        ]}
+        rows={Object.entries(tokenVariables['font-size']).map(([tokenName, token]) => ({
+            name: (
+                <Text fontWeight="medium">{tokenName}</Text>
+            ),
+            value: token.value,
+        }))}
+    />
+</Layout>

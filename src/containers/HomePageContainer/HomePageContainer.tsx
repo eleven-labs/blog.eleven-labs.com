@@ -1,5 +1,6 @@
-import { HomePage } from '@eleven-labs/design-system';
 import React from 'react';
+
+import { HomePage } from '@/pages';
 
 import { useHomePageContainer } from './useHomePageContainer';
 

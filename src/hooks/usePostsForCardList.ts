@@ -1,5 +1,4 @@
-import type { PostCardListProps } from '@eleven-labs/design-system';
-
+import type { PostCardListProps } from '@/components';
 import type { ImageFormatType, TransformedPostDataWithTransformedAuthors } from '@/types';
 
 import { useTranslation } from 'react-i18next';

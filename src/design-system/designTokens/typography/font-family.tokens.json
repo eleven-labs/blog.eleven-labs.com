@@ -1,0 +1,19 @@
+{
+  "font-family": {
+    "base": {
+      "value": "'Montserrat', sans-serif",
+      "name": "Montserrat",
+      "weights": ["regular", "medium", "semi-bold"]
+    },
+    "heading": {
+      "value": "'Agdasima', sans-serif",
+      "name": "Agdasima",
+      "weights": ["regular", "bold"]
+    },
+    "blockquote": {
+      "value": "Georgia, 'Times New Roman', Times, serif",
+      "name": "Georgia",
+      "weights": ["regular"]
+    }
+  }
+}

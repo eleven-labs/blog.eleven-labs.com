@@ -28,3 +28,13 @@ public/fonts
 public/imgs
 public/feed.xml
 .env
+
+# Design system (fichiers générés : svgs optimisés, icônes React, design tokens)
+public/svgs
+src/design-system/components/Atoms/Svgs
+src/design-system/constants/tokenVariables.ts
+src/design-system/constants/tokenVariablesDesktop.ts
+src/design-system/styles/_token-custom-properties.scss
+src/design-system/styles/_token-custom-properties-desktop.scss
+src/design-system/styles/abstracts/variables/_token-variables.scss
+src/design-system/styles/abstracts/variables/_variables.scss

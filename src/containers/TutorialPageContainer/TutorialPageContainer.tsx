@@ -1,7 +1,8 @@
 import type { TutorialPageData } from '@/types';
 
-import { PostPage } from '@eleven-labs/design-system';
 import React from 'react';
+
+import { PostPage } from '@/pages';
 
 import { useTutorialPageContainer } from './useTutorialPageContainer';
 

@@ -1,8 +1,9 @@
 import type { TransProps } from 'react-i18next';
 
-import { Link, Text } from '@eleven-labs/design-system';
 import React from 'react';
 import { Trans } from 'react-i18next';
+
+import { Link, Text } from '@/design-system';
 
 export interface TransWithHtmlProps extends Pick<TransProps<string>, 'i18nKey' | 'values'> {
   onlyLineBreak?: boolean;
