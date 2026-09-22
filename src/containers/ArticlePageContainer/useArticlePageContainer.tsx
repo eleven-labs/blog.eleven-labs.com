@@ -1,12 +1,11 @@
-import type { PostPageProps } from '@eleven-labs/design-system';
-
+import type { PostPageProps } from '@/pages';
 import type { ArticlePageData } from '@/types';
 
-import { Box } from '@eleven-labs/design-system';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { MARKDOWN_CONTENT_TYPES } from '@/constants';
+import { Box } from '@/design-system';
 import { slugify } from '@/helpers/stringHelper';
 import { usePostPage } from '@/hooks/usePostPage';
 

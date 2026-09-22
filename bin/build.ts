@@ -11,6 +11,7 @@ const WITH_DOWNLOAD_TRANSLATIONS_AND_GENERATE_IMAGE_FORMATS =
   process.env.WITH_DOWNLOAD_TRANSLATIONS_AND_GENERATE_IMAGE_FORMATS !== 'false';
 const ROOT_DIR = process.cwd();
 const ASSETS_DIR = resolve(ROOT_DIR, '_assets');
+const IMGS_DIR = resolve(ROOT_DIR, 'src/assets/imgs');
 const OUT_DIR = resolve(ROOT_DIR, 'dist');
 const PUBLIC_DIR = resolve(ROOT_DIR, 'public');
 const OUT_PUBLIC_DIR = resolve(OUT_DIR, 'public');
@@ -40,9 +41,8 @@ const writeJsonDataFilesAndFeedFile = async (): Promise<void> => {
 
 const build = async (): Promise<void> => {
   try {
-    const designSystemRootDir = resolve(process.cwd(), 'node_modules/@eleven-labs/design-system/dist');
     cpSync(ASSETS_DIR, resolve(PUBLIC_DIR, 'imgs'), { recursive: true });
-    cpSync(resolve(designSystemRootDir, 'imgs'), resolve(PUBLIC_DIR, 'imgs'), { recursive: true });
+    cpSync(IMGS_DIR, resolve(PUBLIC_DIR, 'imgs'), { recursive: true });
     await writeJsonDataFilesAndFeedFile();
     if (WITH_DOWNLOAD_TRANSLATIONS_AND_GENERATE_IMAGE_FORMATS) {
       await Promise.all([generateImageFormats(), downloadTranslations()]);

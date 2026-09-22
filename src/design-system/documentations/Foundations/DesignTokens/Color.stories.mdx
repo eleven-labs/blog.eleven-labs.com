@@ -1,0 +1,68 @@
+import { Meta } from '@storybook/addon-docs';
+import { Layout, Table } from '@/storybook/components';
+import { Box, Text } from '@/design-system';
+import { tokenVariables } from '@/design-system/constants';
+
+<Meta
+  title="Foundations/Design Tokens/Color"
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    },
+    backgrounds: {
+      disable: true,
+      grid: {
+        disable: true,
+      }
+    },
+  }}
+/>
+
+<Layout
+  title="Color"
+  description="Color palettes used by both design and engineering"
+>
+  <Table
+    columns={[
+      {
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        name: 'preview',
+        label: 'Preview',
+      },
+      {
+        name: 'value',
+        label: 'Value',
+      },
+      {
+        name: 'usage',
+        label: 'Usage',
+      },
+    ]}
+    rows={Object.entries(tokenVariables.color).map(([tokenName, token]) => ({
+      name: (
+        <Text
+          weight="medium"
+        >
+          {tokenName}
+        </Text>
+      ),
+      preview: (
+        <Box
+          bg={tokenName}
+          style={{
+            boxSizing: 'border-box',
+            width: '200px',
+            height: '50px',
+            border: '1px solid'
+          }}
+        />
+      ),
+      value: token?.value,
+      usage: token?.description,
+    }))}
+  />
+</Layout>

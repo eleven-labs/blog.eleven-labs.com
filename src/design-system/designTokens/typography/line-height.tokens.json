@@ -1,0 +1,13 @@
+{
+  "line-height": {
+    "base": {
+      "value": "{line-height.medium.value}"
+    },
+    "medium": {
+      "value": "1.2"
+    },
+    "large": {
+      "value": "1.5"
+    }
+  }
+}

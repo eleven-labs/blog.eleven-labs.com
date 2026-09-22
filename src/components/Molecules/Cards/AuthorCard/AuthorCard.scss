@@ -1,0 +1,35 @@
+@use '@/design-system/styles/abstracts' as *;
+
+.author-card {
+  --avatar-img-author-card: 72px;
+
+  border-radius: 4px;
+  position: relative;
+
+  &__link {
+    font-family: #{map-get-strict($token-variables, 'font-family', 'heading')};
+    letter-spacing: 1px;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__avatar-img {
+    border-radius: 50px;
+    height: var(--avatar-img-author-card);
+    width: var(--avatar-img-author-card);
+
+    &--empty {
+      background-image: url('/imgs/astronaut.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}

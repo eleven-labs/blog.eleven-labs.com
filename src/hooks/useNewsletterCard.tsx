@@ -1,4 +1,4 @@
-import type { NewsletterCardProps } from '@eleven-labs/design-system';
+import type { NewsletterCardProps } from '@/components';
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';

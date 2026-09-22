@@ -1,13 +1,12 @@
-import type { PostPageProps } from '@eleven-labs/design-system';
-
+import type { PostPageProps } from '@/pages';
 import type { PostPageData } from '@/types';
 
-import { Box } from '@eleven-labs/design-system';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 
 import { IMAGE_FORMATS, PATHS } from '@/constants';
+import { Box } from '@/design-system';
 import { getCover } from '@/helpers/assetHelper';
 import { getUrl } from '@/helpers/getUrlHelper';
 import { generatePath } from '@/helpers/routerHelper';

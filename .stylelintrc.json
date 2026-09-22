@@ -1,3 +1,9 @@
 {
-  "extends": "stylelint-config-standard-scss"
+  "extends": "stylelint-config-standard-scss",
+  "ignoreFiles": [
+    "src/design-system/styles/_token-custom-properties.scss",
+    "src/design-system/styles/_token-custom-properties-desktop.scss",
+    "src/design-system/styles/abstracts/variables/_token-variables.scss",
+    "src/design-system/styles/abstracts/variables/_variables.scss"
+  ]
 }

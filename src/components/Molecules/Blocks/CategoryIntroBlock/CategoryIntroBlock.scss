@@ -1,0 +1,16 @@
+@use '@/design-system/styles/abstracts' as *;
+
+.category-intro-block {
+  background-image: var(--background-image, url('/imgs/category-intro-block-mobile.jpg'));
+  background-size: cover;
+  background-position: bottom;
+
+  &__container {
+    background-color: #{map-get-strict($token-variables, 'color', 'primary')};
+    opacity: 0.9;
+  }
+
+  @include create-media-queries('md') {
+    --background-image: url('/imgs/category-intro-block-desktop.jpg');
+  }
+}

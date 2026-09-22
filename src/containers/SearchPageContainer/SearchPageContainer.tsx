@@ -1,7 +1,9 @@
-import { Box, LayoutContentWithSidebar, NewsletterCard } from '@eleven-labs/design-system';
 import React from 'react';
 
+import { NewsletterCard } from '@/components';
+import { Box } from '@/design-system';
 import { useNewsletterCard } from '@/hooks/useNewsletterCard';
+import { LayoutContentWithSidebar } from '@/templates';
 
 import { SearchPageContentContainer } from './SearchPageContentContainer';
 

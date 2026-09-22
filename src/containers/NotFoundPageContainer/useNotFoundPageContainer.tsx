@@ -1,4 +1,4 @@
-import type { NotFoundPageProps } from '@eleven-labs/design-system';
+import type { NotFoundPageProps } from '@/pages';
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';

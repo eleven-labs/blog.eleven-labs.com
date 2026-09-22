@@ -1,0 +1,63 @@
+{
+  "typography": {
+    "heading": {
+      "base": {
+        "font-family": {
+          "value": "{font-family.heading}"
+        },
+        "line-height": {
+          "value": "{line-height.base}"
+        },
+        "letter-spacing": {
+          "value": "0px"
+        }
+      },
+      "xs": {
+        "font-family": {
+          "value": "{font-family.base}"
+        },
+        "font-size": {
+          "value": "16px"
+        },
+        "font-weight": {
+          "value": "{font-weight.semi-bold}"
+        }
+      },
+      "s": {
+        "font-size": {
+          "value": "16px"
+        },
+        "font-weight": {
+          "value": "{font-weight.bold}"
+        }
+      },
+      "m": {
+        "font-size": {
+          "value": "{typography.heading.s.font-size} + 8"
+        },
+        "font-weight": {
+          "value": "{font-weight.bold}"
+        }
+      },
+      "l": {
+        "font-size": {
+          "value": "{typography.heading.m.font-size} + 8"
+        }
+      },
+      "xl": {
+        "font-size": {
+          "value": "{typography.heading.l.font-size} + 8"
+        },
+        "font-weight": {
+          "value": "{font-weight.regular}"
+        },
+        "text-transform": {
+          "value": "uppercase"
+        },
+        "letter-spacing": {
+          "value": "2px"
+        }
+      }
+    }
+  }
+}

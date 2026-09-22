@@ -1,0 +1,48 @@
+{
+  "color": {
+    "primary": {
+      "value": "#0A4084"
+    },
+    "primary-dark": {
+      "value": "#194180"
+    },
+    "primary-very-dark": {
+      "value": "#093670"
+    },
+    "secondary": {
+      "value": "#E9F1F8"
+    },
+    "secondary-dark": {
+      "value": "#C5D3E9"
+    },
+    "info": {
+      "value": "#DD3156",
+      "comment": "Used to provide additional information to the user without conveying any particular level of importance."
+    },
+    "accent": {
+      "value": "#F8FA9B",
+      "comment": "A distinct accent color for content."
+    },
+    "ultra-light-grey": {
+      "value": "#EDEDED"
+    },
+    "light-grey": {
+      "value": "#C4C4C4"
+    },
+    "grey": {
+      "value": "#9B9B9B"
+    },
+    "dark-grey": {
+      "value": "#757575"
+    },
+    "ultra-dark-grey": {
+      "value": "#333333"
+    },
+    "black": {
+      "value": "#000"
+    },
+    "white": {
+      "value": "#FFF"
+    }
+  }
+}

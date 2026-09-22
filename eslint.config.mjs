@@ -97,6 +97,17 @@ export default [
     },
   },
   {
-    ignores: ['coverage/**', 'dist/**', 'eslint.config.mjs', 'node_modules/**', 'public/**', 'storybook-static/**'],
+    ignores: [
+      'coverage/**',
+      'dist/**',
+      'eslint.config.mjs',
+      'node_modules/**',
+      'public/**',
+      'storybook-static/**',
+      // Générés par svgr et style-dictionary (cf. le script build:design-system)
+      'src/design-system/components/Atoms/Svgs/**',
+      'src/design-system/constants/tokenVariables.ts',
+      'src/design-system/constants/tokenVariablesDesktop.ts',
+    ],
   },
 ];

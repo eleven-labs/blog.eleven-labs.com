@@ -17,11 +17,11 @@
     "jsx": "react",
     "baseUrl": ".",
     "paths": {
+      "@/storybook/*": [
+        ".storybook/*"
+      ],
       "@/*": [
         "src/*"
-      ],
-      "@storybook-decorators": [
-        ".storybook/decorators"
       ]
     },
     "types": ["vitest/globals", "@types/gtag.js"]

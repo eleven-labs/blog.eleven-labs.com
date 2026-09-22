@@ -1,5 +1,4 @@
-import type { AutocompleteProps, HeaderProps } from '@eleven-labs/design-system';
-
+import type { AutocompleteProps, HeaderProps } from '@/components';
 import type { HeaderContainerProps } from '@/containers/LayoutTemplateContainer/HeaderContainer';
 import type { AlgoliaPostData } from '@/types';
 

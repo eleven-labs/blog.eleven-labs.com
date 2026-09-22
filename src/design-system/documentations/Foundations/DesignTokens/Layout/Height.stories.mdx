@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs';
+import { Layout, DesignTokenTable } from '@/storybook/components';
+import { tokenVariables } from '@/design-system/constants';
+
+<Meta
+    title="Foundations/Design Tokens/Layout/Height"
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: { hidden: true }
+        },
+        backgrounds: {
+            disable: true,
+            grid: {
+                disable: true,
+            }
+        },
+    }}
+/>
+
+<Layout
+    title="Layout"
+    description="Height token scales"
+>
+    <DesignTokenTable
+        title="Height"
+        tokenVariables={tokenVariables['height']}
+    />
+</Layout>

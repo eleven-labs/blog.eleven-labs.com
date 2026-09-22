@@ -1,0 +1,28 @@
+@use '@/design-system/styles/abstracts' as *;
+
+.summary-card {
+  $this: &;
+
+  border-radius: 4px;
+
+  &--primary {
+    #{$this}__section {
+      color: black;
+    }
+  }
+
+  &--secondary {
+    #{$this}__section {
+      color: #{map-get-strict($token-variables, 'color', 'grey')};
+
+      &--active {
+        color: #{map-get-strict($token-variables, 'color', 'primary')};
+        ~ #{$this}__section {
+          color: black;
+        }
+      }
+    }
+  }
+
+
+}

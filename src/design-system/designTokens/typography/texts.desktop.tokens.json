@@ -1,0 +1,30 @@
+{
+  "typography": {
+    "text": {
+      "xs": {
+        "font-size": {
+          "value": "14px"
+        },
+        "icon-size": {
+          "value": "{typography.text.s.font-size.value} + 2"
+        }
+      },
+      "s": {
+        "font-size": {
+          "value": "{typography.text.xs.font-size.value} + 2"
+        },
+        "icon-size": {
+          "value": "{typography.text.s.font-size.value} + 2"
+        }
+      },
+      "m": {
+        "font-size": {
+          "value": "{typography.text.s.font-size.value} + 4"
+        },
+        "icon-size": {
+          "value": "{typography.text.m.font-size.value} + 2"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+import { Meta } from '@storybook/addon-docs';
+import { Layout, Table } from '@/storybook/components';
+import { Box, Text } from '@/design-system';
+import { tokenVariables } from '@/design-system/constants';
+
+<Meta
+    title="Foundations/Design Tokens/Spacing"
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: { hidden: true }
+        },
+        backgrounds: {
+            disable: true,
+            grid: {
+                disable: true,
+            }
+        },
+    }}
+/>
+
+<Layout
+    title="Spacing"
+    description="Spacing token scales"
+>
+    <Table
+        title="Scale"
+        columns={[
+            {
+                name: 'name',
+                label: 'Name',
+            },
+            {
+                name: 'preview',
+                label: 'Preview',
+            },
+            {
+                name: 'value',
+                label: 'Value',
+            },
+        ]}
+        rows={Object.entries(tokenVariables.spacing).map(([tokenName, token]) => ({
+            name: (
+                <Text fontWeight="medium">{tokenName}</Text>
+            ),
+            preview: (
+                <Box
+                    bg="primary"
+                    style={{
+                        height: `var(--spacing-${tokenName})`,
+                        width: '200px',
+                    }}
+                />
+            ),
+            value: token.value,
+        }))}
+    />
+</Layout>
