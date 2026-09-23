@@ -31,6 +31,10 @@
       "en": "English",
       "dt": "DT"
     },
+    "reading_time": {
+      "hour": "h",
+      "minute": "min"
+    },
     "tutorial-tag": "Tutorial",
     "newsletter-card": {
       "title": "Sign up to our<br />AstroNews!",

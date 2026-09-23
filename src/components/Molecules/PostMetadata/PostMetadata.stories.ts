@@ -12,7 +12,7 @@ type Story = StoryObj<typeof PostMetadata>;
 export const Overview: Story = {};
 Overview.args = {
   date: '09 fév. 2021',
-  readingTime: 24,
+  readingTime: { label: '24 min', dateTime: 'PT24M' },
   authors: [
     { username: 'jdoe', name: 'J. Doe' },
     { username: 'jdupont', name: 'J. Dupont' },

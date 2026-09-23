@@ -21,7 +21,11 @@ export type PostMetadataVariantType = 'primary' | 'secondary';
 
 export interface PostMetadataProps extends VariantProps<typeof postMetadataVariants> {
   date?: string;
-  readingTime?: number;
+  /** Le temps de lecture déjà formaté, et sa durée ISO 8601 pour l'attribut `datetime`. */
+  readingTime?: {
+    label: string;
+    dateTime: string;
+  };
   authors?: {
     username: string;
     name: string;
@@ -70,7 +74,11 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
           >
             <div className="flex content-center items-center gap-xxs">
               {variant === 'secondary' && <Icon name="access-time" size="24px" className="text-light-grey" />}
-              {readingTime && <Text render={<span />}>{`${readingTime}mn`}</Text>}
+              {readingTime && (
+                <Text render={<time dateTime={readingTime.dateTime} />} className="whitespace-nowrap">
+                  {readingTime.label}
+                </Text>
+              )}
             </div>
           </Skeleton>
         );

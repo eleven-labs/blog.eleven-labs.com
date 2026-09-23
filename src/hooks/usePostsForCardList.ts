@@ -7,6 +7,7 @@ import { PATHS } from '@/constants';
 import { getCover } from '@/helpers/assetHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useDateToString } from '@/hooks/useDateToString';
+import { useReadingTime } from '@/hooks/useReadingTime';
 
 export const usePostsForCardList = (options: {
   posts?: TransformedPostDataWithTransformedAuthors[];
@@ -16,6 +17,7 @@ export const usePostsForCardList = (options: {
   withLcpCandidateOnFirstPost?: boolean;
 }): PostCardListProps['posts'] => {
   const { getDateToString } = useDateToString();
+  const { getReadingTime } = useReadingTime();
   const { t, i18n } = useTranslation();
 
   return options.isLoading && options.numberOfItems
@@ -29,7 +31,7 @@ export const usePostsForCardList = (options: {
         title: post.title,
         excerpt: post.excerpt,
         date: getDateToString({ date: post.date }),
-        readingTime: post.readingTime,
+        readingTime: getReadingTime(post.readingTime),
         authors: post.authors,
         link: {
           hrefLang: i18n.language,

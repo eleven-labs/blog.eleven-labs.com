@@ -1,3 +1,4 @@
+import type { PostMetadataProps } from '@/components';
 import type { ShareLinksProps } from '@/components/Molecules/ShareLinks';
 import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
@@ -11,7 +12,7 @@ import { cn } from '@/design-system/helpers/cn';
 export interface PostHeaderProps {
   title: React.ReactNode;
   date: string;
-  readingTime: number;
+  readingTime: PostMetadataProps['readingTime'];
   authors: {
     username: string;
     name: string;
