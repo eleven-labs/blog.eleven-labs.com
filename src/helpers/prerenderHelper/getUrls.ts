@@ -157,34 +157,31 @@ export const getPostPageUrls = (postsData: Pick<TransformedPostData, 'lang' | 's
       : []),
   ]);
 
-export const getTutorialStepPageUrls = (
+export type Redirect = {
+  lang: string;
+  from: string;
+  to: string;
+};
+
+// Every step of a tutorial now lives in a section of the tutorial page, its former url points to that section
+export const getTutorialStepRedirects = (
   postsData: (
     | Pick<TransformedArticleData, 'contentType'>
     | Pick<TransformedTutorialData, 'lang' | 'slug' | 'contentType' | 'steps'>
   )[]
-): Urls => {
+): Redirect[] => {
   const tutorials = postsData.filter(
     (post) => post.contentType === MARKDOWN_CONTENT_TYPES.TUTORIAL && post.steps
   ) as Pick<TransformedTutorialData, 'lang' | 'contentType' | 'steps' | 'slug'>[];
 
-  return tutorials.reduce((urls, tutorial) => {
-    const steps = tutorial.steps.slice(1);
-    urls.push(
-      ...steps.map((step) => [
-        {
-          lang: tutorial.lang,
-          url: generatePath(PATHS.POST, { lang: tutorial.lang, slug: tutorial.slug, step: step.slug }),
-        },
-        ...(IS_DEBUG
-          ? [
-              {
-                lang: LANGUAGES.DT,
-                url: generatePath(PATHS.POST, { lang: LANGUAGES.DT, slug: tutorial.slug, step: step.slug }),
-              },
-            ]
-          : []),
-      ])
-    );
-    return urls;
-  }, [] as Urls);
+  return tutorials.flatMap((tutorial) =>
+    [tutorial.lang, ...(IS_DEBUG ? [LANGUAGES.DT] : [])].flatMap((lang) =>
+      // The first step was already served on the url of the tutorial
+      tutorial.steps.slice(1).map((step) => ({
+        lang,
+        from: generatePath(PATHS.TUTORIAL_STEP, { lang, slug: tutorial.slug, step: step.slug }),
+        to: `${generatePath(PATHS.POST, { lang, slug: tutorial.slug })}#${step.slug}`,
+      }))
+    )
+  );
 };

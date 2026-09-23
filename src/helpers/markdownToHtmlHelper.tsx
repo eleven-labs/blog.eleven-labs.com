@@ -14,6 +14,10 @@ import { unified } from 'unified';
 import { Link, Reminder, SyntaxHighlighter } from '@/design-system';
 import { intersection } from '@/helpers/objectHelper';
 import { remarkFigurePlugin } from '@/helpers/remarkPlugins/remarkFigurePlugin';
+import {
+  remarkSectionHeadingsPlugin,
+  type RemarkSectionHeadingsOptions,
+} from '@/helpers/remarkPlugins/remarkSectionHeadingsPlugin';
 
 const getReminderVariantByAdmonitionVariant = (admonitionVariant: string): ReminderVariantType => {
   switch (admonitionVariant) {
@@ -117,9 +121,10 @@ const getChildElements = (node: HastElement, tagName: string): HastElement[] =>
 
 const cleanMarkdown = (content: string): string => content.replace(/\{BASE_URL}\//g, `${process.env.BASE_URL || '/'}`);
 
-export const markdownToHtml = (content: string): string => {
+export const markdownToHtml = (content: string, options: { section?: RemarkSectionHeadingsOptions } = {}): string => {
   const reactComponent = unified()
     .use(remarkParse)
+    .use(options.section ? [[remarkSectionHeadingsPlugin, options.section]] : [])
     .use(remarkFigurePlugin)
     .use(remarkGfm)
     .use(remark2rehype, { allowDangerousHtml: true })
@@ -229,6 +234,9 @@ export const markdownToHtml = (content: string): string => {
         img: ({ node, ...props }): React.JSX.Element => {
           const urlParams = new URLSearchParams(props.src?.split('?')?.[1] ?? '');
           return React.createElement('img', {
+            // A tutorial gathers all of its steps on one page, its images are only loaded when read
+            loading: 'lazy',
+            decoding: 'async',
             ...props,
             style: {
               maxWidth: urlParams.get('maxWidth') ? `${urlParams.get('maxWidth')}px` : undefined,

@@ -4,12 +4,11 @@ import type { RelatedPostListProps } from './RelatedPostList';
 
 import type { ContactCardProps, SummaryCardProps } from '@/components';
 import type { PictureProps } from '@/design-system';
-import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
 import React from 'react';
 
 import { ContactCard, SummaryCard } from '@/components';
-import { Button, Divider, Picture } from '@/design-system';
+import { Divider, Picture } from '@/design-system';
 
 import { PostFooter } from './PostFooter';
 import { PostHeader } from './PostHeader';
@@ -27,8 +26,6 @@ export interface PostPageContentProps {
   footer: PostFooterProps;
   contactCard: ContactCardProps;
   relatedPostList: RelatedPostListProps;
-  previousLink?: { label: string } & ComponentPropsWithoutRef<'a'>;
-  nextLink?: { label: string } & ComponentPropsWithoutRef<'a'>;
   className?: string;
 }
 
@@ -41,8 +38,6 @@ export const PostPageContent: React.FC<PostPageContentProps> = ({
   footer,
   relatedPostList,
   contactCard,
-  previousLink: { label: previousLinkLabel, ...previousLink } = {},
-  nextLink: { label: nextLinkLabel, ...nextLink } = {},
 }) => (
   <>
     <div>
@@ -61,20 +56,6 @@ export const PostPageContent: React.FC<PostPageContentProps> = ({
         {...summary}
       />
       <div className="post-content mt-l md:mt-m">{children}</div>
-      {variant === 'tutorial' && (
-        <div className="flex gap-l">
-          {previousLinkLabel && previousLink && (
-            <Button render={<a {...previousLink} />} className="mt-l" variant="secondary">
-              {previousLinkLabel}
-            </Button>
-          )}
-          {nextLinkLabel && nextLink && (
-            <Button render={<a {...nextLink} />} className="mt-l">
-              {nextLinkLabel}
-            </Button>
-          )}
-        </div>
-      )}
       <PostFooter className="mt-l" {...footer} />
     </div>
     <Divider />

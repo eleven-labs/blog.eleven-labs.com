@@ -7,7 +7,7 @@ import {
   getCategoryPageUrls,
   getHomePageUrls,
   getPostPageUrls,
-  getTutorialStepPageUrls,
+  getTutorialStepRedirects,
 } from './getUrls';
 
 describe('getSitemapEntries', () => {
@@ -139,7 +139,7 @@ describe('getSitemapEntries', () => {
     expect(getPostPageUrls(mockPosts)).toEqual(expectedUrls);
   });
 
-  it('should return URLs of tutorial step page grouped by language', () => {
+  it('should redirect every step of a tutorial but the first one to its section', () => {
     const mockPosts = [
       { contentType: MARKDOWN_CONTENT_TYPES.ARTICLE },
       {
@@ -174,14 +174,14 @@ describe('getSitemapEntries', () => {
           },
         ],
       },
-    ] as Parameters<typeof getTutorialStepPageUrls>[0];
-    const expectedUrls: ReturnType<typeof getTutorialStepPageUrls> = [
-      [{ lang: 'fr', url: '/fr/tutorial-1/tutorial-step/' }],
-      [{ lang: 'fr', url: '/fr/tutorial-1/conclusion/' }],
-      [{ lang: 'en', url: '/en/tutorial-2/tutorial-step/' }],
-      [{ lang: 'en', url: '/en/tutorial-2/conclusion/' }],
+    ] as Parameters<typeof getTutorialStepRedirects>[0];
+    const expectedRedirects: ReturnType<typeof getTutorialStepRedirects> = [
+      { lang: 'fr', from: '/fr/tutorial-1/tutorial-step/', to: '/fr/tutorial-1/#tutorial-step' },
+      { lang: 'fr', from: '/fr/tutorial-1/conclusion/', to: '/fr/tutorial-1/#conclusion' },
+      { lang: 'en', from: '/en/tutorial-2/tutorial-step/', to: '/en/tutorial-2/#tutorial-step' },
+      { lang: 'en', from: '/en/tutorial-2/conclusion/', to: '/en/tutorial-2/#conclusion' },
     ];
 
-    expect(getTutorialStepPageUrls(mockPosts)).toEqual(expectedUrls);
+    expect(getTutorialStepRedirects(mockPosts)).toEqual(expectedRedirects);
   });
 });

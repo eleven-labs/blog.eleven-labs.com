@@ -34,7 +34,9 @@ export const NUMBER_OF_ITEMS_PER_PAGE = 12;
 export const PATHS = {
   ROOT: '/',
   HOME: '/:lang/',
-  POST: '/:lang/:slug/:step?/',
+  POST: '/:lang/:slug/',
+  // A tutorial used to serve each of its steps on its own url, they are now permanently redirected to their section
+  TUTORIAL_STEP: '/:lang/:slug/:step/',
   AUTHOR: '/:lang/authors/:authorUsername/',
   AUTHOR_PAGINATED: '/:lang/authors/:authorUsername/pages/:page/',
   CATEGORY: '/:lang/categories/:categoryName/',

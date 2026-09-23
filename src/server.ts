@@ -9,13 +9,14 @@ import cookiesMiddleware from 'universal-cookie-express';
 import { ARTICLES_DIR, ASSETS_DIR, AUTHORS_DIR, IMGS_DIR } from '@/app-paths';
 import { i18nConfig } from '@/config/i18n/i18n.config';
 import { i18nResources } from '@/config/i18n/i18nResources';
-import { BASE_URL } from '@/constants';
+import { BASE_URL, PATHS } from '@/constants';
 import { writeJsonDataFiles } from '@/helpers/contentHelper';
 import { loadDataByMarkdownFilePath } from '@/helpers/markdownContentManagerHelper';
 import { getSitemap } from '@/helpers/prerenderHelper/generateSitemap';
 import { getSitemapEntries } from '@/helpers/prerenderHelper/getSitemapEntries';
 import { createRequestByExpressRequest } from '@/helpers/requestHelper';
 import { imageMiddleware } from '@/middlewares/imageMiddleware';
+import { tutorialStepRedirectMiddleware } from '@/middlewares/tutorialStepRedirectMiddleware';
 
 const isProd: boolean = process.env.NODE_ENV === 'production';
 
@@ -48,6 +49,8 @@ const createServer = async (): Promise<void> => {
       const sitemap = getSitemap(sitemapEntries);
       res.status(200).set({ 'Content-Type': 'text/xml' }).end(sitemap);
     });
+
+    app.get(PATHS.TUTORIAL_STEP.replace('/:lang/', `${BASE_URL}:lang/`), tutorialStepRedirectMiddleware);
 
     app.use('*', (req, res, next) => {
       void (async (): Promise<void> => {
@@ -101,6 +104,8 @@ const createServer = async (): Promise<void> => {
       const sitemap = getSitemap(sitemapEntries);
       res.status(200).set({ 'Content-Type': 'text/xml' }).end(sitemap);
     });
+
+    app.get(PATHS.TUTORIAL_STEP.replace('/:lang/', `${BASE_URL}:lang/`), tutorialStepRedirectMiddleware);
 
     app.use('*', (req, res, next) => {
       const url = req.originalUrl;

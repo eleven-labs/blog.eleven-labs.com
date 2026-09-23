@@ -138,6 +138,12 @@ export const getTutorials = (): TransformedTutorialData[] => {
   const tutorialSteps = getCollection<TutorialStepData>(MARKDOWN_CONTENT_TYPES.TUTORIAL_STEP);
   return getCollection<TutorialData>(MARKDOWN_CONTENT_TYPES.TUTORIAL).reduce<TransformedTutorialData[]>(
     (currentTutorials, { data }) => {
+      // Every step is a section of the tutorial page: the slug of a step is the id of its section,
+      // no heading of any step can take it over
+      const slugger = new GithubSlugger();
+      for (const step of data.steps) {
+        slugger.slug(step);
+      }
       const steps = data.steps.reduce<TransformedTutorialData['steps']>((currentSteps, step) => {
         const currentStep = tutorialSteps.find(
           (tutorialStep) => tutorialStep.data.tutorial === data.slug && tutorialStep.data.slug === step
@@ -147,7 +153,9 @@ export const getTutorials = (): TransformedTutorialData[] => {
             slug: currentStep.data.slug,
             title: currentStep.data?.title,
             readingTime: getReadingTime(currentStep.content),
-            content: currentStep.html,
+            content: defaultMarkdownToHtml(currentStep.content, {
+              section: { title: currentStep.data.title, slugger },
+            }),
           });
         }
 
