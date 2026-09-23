@@ -72,11 +72,6 @@ jobs:
       - name: Deploy to S3
         run: aws s3 sync "dist/public/" "s3://${{ vars.AWS_BUCKET_NAME }}${{ env.BASE_URL }}" --delete
 
-      - name: Redirect the former urls of the tutorial steps
-        run: bin/apply-s3-redirects.sh "${{ vars.AWS_BUCKET_NAME }}"
-        env:
-          BASE_URL: ${{ env.BASE_URL }}
-
       - name: Clear caches
         run: aws cloudfront create-invalidation --distribution-id "${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}" --paths "${{ env.BASE_URL }}*"
 

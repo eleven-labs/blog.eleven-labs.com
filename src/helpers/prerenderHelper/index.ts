@@ -52,7 +52,6 @@ export const generateFiles = async (options: { rootDir: string; baseUrl: string 
     rootDir: __dirname,
     baseUrl: options.baseUrl,
     redirects: getTutorialStepRedirects(getPosts()),
-    manifestFilePath: resolve(options.rootDir, 'redirects.json'),
   });
 
   console.log('🦖🖨 Your static site is ready to deploy from dist');

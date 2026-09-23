@@ -21,6 +21,7 @@ Setting up the blog
 
 - [For developers](documentations/setup-for-dev.md)
 - [For others](documentations/setup-for-others.md)
+- [Infrastructure and redirects](documentations/infra.md)
 
 ----------
 
