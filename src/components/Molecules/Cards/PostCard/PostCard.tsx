@@ -1,5 +1,6 @@
 import type { VariantProps } from 'class-variance-authority';
 
+import type { PostMetadataProps } from '@/components';
 import type { PictureProps } from '@/design-system';
 import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
@@ -35,7 +36,7 @@ export interface PostCardProps extends VariantProps<typeof postCardVariants> {
   title?: string;
   excerpt?: string;
   date?: string;
-  readingTime?: number;
+  readingTime?: PostMetadataProps['readingTime'];
   authors?: { username: string; name: string }[];
   link?: ComponentPropsWithoutRef<'a'>;
   tutorialLabel?: string;

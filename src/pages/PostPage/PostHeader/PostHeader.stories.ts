@@ -9,7 +9,7 @@ const meta: Meta<typeof PostHeader> = {
   args: {
     title: 'Title',
     date: '08 fév. 2021',
-    readingTime: 24,
+    readingTime: { label: '24 min', dateTime: 'PT24M' },
     authors: [
       {
         username: 'jdoe',

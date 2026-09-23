@@ -27,7 +27,7 @@ Overview.args = {
   },
   title: `Phasellus quis mollis ex. Nullam tristique nisl eu orci ullamcorper hendrerit vestibulum elementum metus nulla, scelerisque finibus`,
   date: '09 fév. 2021',
-  readingTime: 24,
+  readingTime: { label: '24 min', dateTime: 'PT24M' },
   authors: [
     { username: 'jdoe', name: 'John Doe' },
     { username: 'jdupont', name: 'Jane Dupont' },

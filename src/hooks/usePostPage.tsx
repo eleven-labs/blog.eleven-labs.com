@@ -13,12 +13,14 @@ import { useBreadcrumb } from '@/hooks/useBreadcrumb';
 import { useContactCard } from '@/hooks/useContactCard';
 import { useDateToString } from '@/hooks/useDateToString';
 import { usePostsForCardList } from '@/hooks/usePostsForCardList';
+import { useReadingTime } from '@/hooks/useReadingTime';
 import { useSeoPost } from '@/hooks/useSeoPost';
 
 export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' | 'summary' | 'children'> => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const { getDateToString } = useDateToString();
+  const { getReadingTime } = useReadingTime();
   useSeoPost(post);
 
   const contactCard = useContactCard();
@@ -48,7 +50,7 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
     header: {
       title: post.title,
       date: getDateToString({ date: post.date }),
-      readingTime: post.readingTime,
+      readingTime: getReadingTime(post.readingTime),
       authors,
       shareLinks: {
         urlToShare: getUrl(location.pathname),

@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import { PATHS, SOCIAL_IMAGE_FORMAT } from '@/constants';
 import { generateUrl, getSocialCoverPath } from '@/helpers/assetHelper';
+import { toIsoDuration } from '@/helpers/durationHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useTitle } from '@/hooks/useTitle';
 
@@ -42,6 +43,7 @@ export const useSeoPost = (post: PostPageData): void => {
       headline: post.title,
       description: post.excerpt,
       datePublished: post.date,
+      timeRequired: toIsoDuration(post.readingTime),
       author: post.authors.map((author) => ({
         '@type': 'Person',
         name: author.name,
