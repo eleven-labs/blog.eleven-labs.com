@@ -3,6 +3,7 @@ import type { Redirect } from './getUrls';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
+import { BASE_URL } from '@/constants';
 import { getUrl } from '@/helpers/getUrlHelper';
 
 const escapeHtmlAttribute = (value: string): string =>
@@ -14,7 +15,8 @@ const escapeHtmlAttribute = (value: string): string =>
  */
 export const getRedirectHtml = (redirect: Pick<Redirect, 'lang' | 'to'>): string => {
   const target = escapeHtmlAttribute(redirect.to);
-  const canonicalUrl = escapeHtmlAttribute(getUrl(redirect.to.split('#')[0]));
+  // HOST_URL already ends with the base url of the environment, the path must not repeat it
+  const canonicalUrl = escapeHtmlAttribute(getUrl(`/${redirect.to.split('#')[0].slice(BASE_URL.length)}`));
 
   return [
     '<!DOCTYPE html>',
