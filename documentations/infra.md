@@ -10,6 +10,7 @@ Le blog est un site statique : `pnpm prerender` génère `dist/public/`, que la 
 | Staging et PR | `blog.staging.eleven-labs.com` | un environnement par branche |
 
 - Chaque distribution CloudFront a pour origine un bucket S3 nommé comme son domaine. Leurs identifiants ne sont volontairement pas écrits ici : ils sont dans les variables et secrets GitHub de la CI (`AWS_BUCKET_NAME`, `AWS_CLOUDFRONT_DISTRIBUTION_ID`) ou se retrouvent avec la commande ci-dessous.
+- Les buckets S3 sont en **`eu-west-3`** (Paris).
 - CloudFront lit le bucket par son **endpoint REST**, avec un Origin Access Control. Le bucket n'est pas public.
 - Chaque pull request est déployée sur le staging sous un préfixe portant le nom de sa branche, par exemple `https://blog.staging.eleven-labs.com/feat/single-page-tutorials/`.
 
@@ -17,7 +18,9 @@ Le blog est un site statique : `pnpm prerender` génère `dist/public/`, que la 
 
 ## Lambda@Edge
 
-Les fonctions sont en `us-east-1`, obligatoire pour Lambda@Edge, avec le runtime `nodejs20.x`. Chaque distribution a les siennes.
+Chaque distribution a les siennes, avec le runtime `nodejs20.x`.
+
+> Contrairement aux buckets (`eu-west-3`), les Lambda@Edge sont en **`us-east-1`**. AWS l'impose pour toute fonction associée à une distribution CloudFront, qui la réplique ensuite sur ses points de présence, Paris compris. Les commandes `aws lambda` de ce document prennent donc `--region us-east-1`, et CloudFront est un service global, sans région.
 
 | Événement | Fonction | Rôle |
 | --- | --- | --- |
