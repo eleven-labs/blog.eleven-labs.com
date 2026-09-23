@@ -4,10 +4,10 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { contact, socialNetworks, websiteUrl } from '@/config/website';
-import { LANGUAGES_AVAILABLE_WITH_DT, PATHS } from '@/constants';
+import { LANGUAGES_AVAILABLE_WITH_DT } from '@/constants';
 import { TransWithHtml } from '@/containers/TransWithHtml';
 import { Text } from '@/design-system';
-import { generatePath } from '@/helpers/routerHelper';
+import { getHomePath } from '@/helpers/routerHelper';
 
 export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
   const { t, i18n } = useTranslation();
@@ -50,7 +50,7 @@ export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
         label: t(`common.languages.${currentLang}`),
         ...(!isActive
           ? {
-              href: generatePath(PATHS.HOME, { lang: currentLang }),
+              href: getHomePath(currentLang),
               onClick: () => i18n.changeLanguage(currentLang),
             }
           : {}),

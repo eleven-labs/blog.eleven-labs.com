@@ -7,9 +7,10 @@ import { useTranslation } from 'react-i18next';
 import { matchPath, useLoaderData, useLocation } from 'react-router-dom';
 
 import { themeColor } from '@/config/website';
-import { BASE_URL, GOOGLE_SITE_VERIFICATION , PATHS } from '@/constants';
+import { GOOGLE_SITE_VERIFICATION, PATHS } from '@/constants';
 import { generateUrl } from '@/helpers/assetHelper';
 import { getUrl } from '@/helpers/getUrlHelper';
+import { getHomePath } from '@/helpers/routerHelper';
 
 import { HeaderContainer } from './HeaderContainer';
 import { useFooterContainer } from './useFooterContainer';
@@ -19,7 +20,10 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   const location = useLocation();
   const footer = useFooterContainer();
   const layoutTemplateData = useLoaderData() as LayoutTemplateData;
-  const isHomePage = Boolean(matchPath(PATHS.ROOT, location.pathname));
+  const isRootPage = Boolean(matchPath(PATHS.ROOT, location.pathname));
+  const isHomePage = isRootPage || Boolean(matchPath(PATHS.HOME, location.pathname));
+  // The root serves the same page as the home of the default language, only the root should be indexed
+  const canonicalUrl = getUrl(isHomePage ? getHomePath(i18n.language) : location.pathname);
 
   useHead({
     metas: [
@@ -39,20 +43,26 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
         name: 'theme-color',
         content: themeColor,
       },
+      {
+        name: 'robots',
+        content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+      },
     ],
     language: i18n.language,
   });
   useMeta({ property: 'og:locale', content: i18n.language });
   useMeta({ property: 'og:site_name', content: 'Blog Eleven Labs' });
-  useMeta({ property: 'og:url', content: getUrl(`${location.pathname}${location.search}`) });
+  useMeta({ property: 'og:url', content: canonicalUrl });
+  useLink({ rel: 'canonical', href: canonicalUrl });
   useScript({
     type: 'application/ld+json',
     text: JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'Blog Eleven Labs',
-      url: BASE_URL,
-      ...(isHomePage
+      url: getUrl(getHomePath(i18n.language)),
+      inLanguage: i18n.language,
+      ...(isRootPage
         ? {
             potentialAction: {
               '@type': 'SearchAction',

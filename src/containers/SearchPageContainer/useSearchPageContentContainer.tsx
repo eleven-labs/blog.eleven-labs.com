@@ -2,14 +2,13 @@ import type { PostCardListContainerProps } from '@/containers/PostCardListContai
 import type { SearchPageContentProps } from '@/pages';
 import type { AlgoliaPostData, LanguageType } from '@/types';
 
-import { useLink, useTitleTemplate } from 'hoofd';
+import { useMeta, useTitleTemplate } from 'hoofd';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { DEFAULT_LANGUAGE, IS_SSR, PATHS } from '@/constants';
+import { IS_SSR } from '@/constants';
 import { PostCardListContainer } from '@/containers/PostCardListContainer';
 import { TransWithHtml } from '@/containers/TransWithHtml';
-import { generatePath } from '@/helpers/routerHelper';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
 import { useTitle } from '@/hooks/useTitle';
 
@@ -20,10 +19,7 @@ export const useSearchPageContentContainer = (): SearchPageContentProps => {
   const search = new URLSearchParams(!IS_SSR ? window.location.search : '').get('search') || '';
   useTitleTemplate('Blog Eleven Labs - %s');
   useTitle(t('pages.search.seo.title', { search }));
-  useLink({
-    rel: 'canonical',
-    href: generatePath(PATHS.SEARCH, { lang: DEFAULT_LANGUAGE }),
-  });
+  useMeta({ name: 'robots', content: 'noindex, follow' });
 
   const [postsBySearch, setPostsBySearch] = useState<PostCardListContainerProps['allPosts']>([]);
 

@@ -2,12 +2,12 @@ import type { PostCardListContainerProps } from '@/containers/PostCardListContai
 import type { CategoryPageProps } from '@/pages';
 import type { PostListPageData } from '@/types';
 
-import { useLink, useMeta } from 'hoofd';
+import { useMeta } from 'hoofd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLoaderData, useParams } from 'react-router-dom';
 
-import { DEFAULT_LANGUAGE, MARKDOWN_CONTENT_TYPES, PATHS } from '@/constants';
+import { MARKDOWN_CONTENT_TYPES, PATHS } from '@/constants';
 import { PostCardListContainer } from '@/containers/PostCardListContainer';
 import { TransWithHtml } from '@/containers/TransWithHtml';
 import { generatePath } from '@/helpers/routerHelper';
@@ -23,13 +23,6 @@ export const useCategoryPageContainer = (): CategoryPageProps => {
   const breadcrumb = useBreadcrumb({ categoryName: categoryName as string });
   useTitle(t(`pages.category.${categoryName}.seo.title`, { categoryName }));
   useMeta({ name: 'description', content: t(`pages.category.${categoryName}.seo.description`) });
-  useLink({
-    rel: 'canonical',
-    href: generatePath(categoryName ? PATHS.CATEGORY : PATHS.ROOT, {
-      lang: DEFAULT_LANGUAGE,
-      categoryName: categoryName,
-    }),
-  });
 
   const getPaginatedLink: PostCardListContainerProps['getPaginatedLink'] = (page: number) => ({
     href: generatePath(PATHS.CATEGORY_PAGINATED, { lang: i18n.language, categoryName, page }),
