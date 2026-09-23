@@ -49,6 +49,9 @@ export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
+      {/* Posé avant le rendu : les styles réservés aux navigateurs qui exécutent le JavaScript s'appliquent
+          dès le premier affichage, sans saut de mise en page (voir les étapes d'un tutoriel) */}
+      <script dangerouslySetInnerHTML={{ __html: "document.documentElement.setAttribute('data-js', '');" }} />
       {metas?.map((meta, index) => (
         <meta key={index} {...meta} />
       ))}

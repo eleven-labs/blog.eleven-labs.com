@@ -78,4 +78,47 @@ describe('enhanceSummaries', () => {
     });
     expect(window.location.hash).toBe('#conclusion');
   });
+
+  describe('in a tutorial', () => {
+    beforeEach(() => {
+      cleanup();
+      const steps = document.createElement('div');
+      steps.setAttribute('data-tutorial-steps', '');
+      document.body.appendChild(steps);
+      document.querySelectorAll('section').forEach((section) => steps.appendChild(section));
+      document.getElementById('conclusion')!.innerHTML = '<h3 id="last-words">Last words</h3>';
+      document.getElementById('last-words')!.scrollIntoView = vi.fn();
+      window.location.hash = '';
+      cleanup = enhanceSummaries();
+    });
+
+    it('should highlight the step displayed, whatever the scroll', () => {
+      expect(getStates()).toBe('auu');
+
+      scrollToSection('conclusion');
+      expect(getStates()).toBe('auu');
+    });
+
+    it('should follow the step the anchor points to and bring the reader back to it', () => {
+      window.location.hash = 'installation';
+      window.dispatchEvent(new HashChangeEvent('hashchange'));
+      expect(getStates()).toBe('pau');
+      expect(document.getElementById('installation')!.scrollIntoView).toHaveBeenCalledWith({
+        behavior: 'instant',
+        block: 'start',
+      });
+
+      window.location.hash = 'last-words';
+      window.dispatchEvent(new HashChangeEvent('hashchange'));
+      expect(getStates()).toBe('ppa');
+    });
+
+    it('should navigate to the step chosen in the summary bar', () => {
+      const bar = document.querySelector('details') as HTMLDetailsElement;
+      (bar.querySelector('a[data-summary-link="installation"]') as HTMLAnchorElement).click();
+
+      expect(bar.open).toBe(false);
+      expect(window.location.hash).toBe('#installation');
+    });
+  });
 });

@@ -5,8 +5,10 @@ const ACTIVE_SECTION_OFFSET = 120;
 
 /**
  * The post pages are not hydrated: their summaries are static HTML, whose anchor links already work without
- * JavaScript. This follows the section being read to highlight it in every summary of the page, the
- * sidebar card as well as the sticky bar of the small screens.
+ * JavaScript. This highlights the current section in every summary of the page, the sidebar card as well as
+ * the sticky bar of the small screens:
+ * - in an article, the section being read, which follows the scroll;
+ * - in a tutorial, the step displayed, which follows the anchor of the url (see `[data-tutorial-steps]`).
  */
 export const enhanceSummaries = (): (() => void) => {
   const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[data-summary-link]'));
@@ -52,9 +54,20 @@ export const enhanceSummaries = (): (() => void) => {
     }
   };
 
+  const tutorialSteps = document.querySelector<HTMLElement>('[data-tutorial-steps]');
+  const getAnchorTarget = (): HTMLElement | null =>
+    window.location.hash ? document.getElementById(decodeURIComponent(window.location.hash.slice(1))) : null;
+
   let animationFrame: number | undefined;
   const updateActiveSection = (): void => {
     animationFrame = undefined;
+    if (tutorialSteps) {
+      // The step displayed is the one the anchor points to, or that holds its target; the first one otherwise
+      const step = getAnchorTarget()?.closest<HTMLElement>('[data-tutorial-steps] > section');
+      setActiveSection((step ?? sections[0]).id);
+      return;
+    }
+
     const passedSections = sections.filter((section) => section.getBoundingClientRect().top <= ACTIVE_SECTION_OFFSET);
     setActiveSection((passedSections[passedSections.length - 1] ?? sections[0]).id);
   };
@@ -64,9 +77,23 @@ export const enhanceSummaries = (): (() => void) => {
     }
   };
 
+  // The browser scrolls to the anchor before the step it points to is displayed: the reader is brought back
+  // to its target once shown, at once, as when turning a page
+  const onHashChange = (): void => {
+    updateActiveSection();
+    getAnchorTarget()?.scrollIntoView({ behavior: 'instant', block: 'start' });
+  };
+
   updateActiveSection();
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll, { passive: true });
+  const pageListeners: [string, () => void][] = tutorialSteps
+    ? [['hashchange', onHashChange]]
+    : [
+        ['scroll', onScroll],
+        ['resize', onScroll],
+      ];
+  for (const [pageEvent, listener] of pageListeners) {
+    window.addEventListener(pageEvent, listener, { passive: true });
+  }
 
   // The section chosen in the sticky bar must stay visible: the list folds up first. Folding it during
   // the native navigation to the anchor would cancel its scroll, so the scroll is done here instead.
@@ -80,6 +107,11 @@ export const enhanceSummaries = (): (() => void) => {
 
     event.preventDefault();
     bar.open = false;
+    // A tutorial displays its steps through the anchor: it must be navigated to, so that `:target` follows
+    if (tutorialSteps && window.location.hash !== `#${section.id}`) {
+      window.location.hash = section.id;
+      return;
+    }
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     section.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
     if (window.location.hash !== `#${section.id}`) {
@@ -91,8 +123,9 @@ export const enhanceSummaries = (): (() => void) => {
   }
 
   return (): void => {
-    window.removeEventListener('scroll', onScroll);
-    window.removeEventListener('resize', onScroll);
+    for (const [pageEvent, listener] of pageListeners) {
+      window.removeEventListener(pageEvent, listener);
+    }
     for (const bar of bars) {
       bar.removeEventListener('click', onBarClick);
     }

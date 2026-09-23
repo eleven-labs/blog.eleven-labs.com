@@ -28,31 +28,36 @@ export const useTutorialPageContainer = (tutorial: TutorialPageData): PostPagePr
       })),
       sectionActive: tutorial.steps[0]?.slug,
     },
-    // Every step is in the HTML served, the navigation only moves from one section to another
-    children: tutorial.steps.map((step, index) => {
-      const previousStep = tutorial.steps[index - 1];
-      const nextStep = tutorial.steps[index + 1];
+    // Every step is in the HTML served, but the reader only sees one at a time: see `[data-tutorial-steps]`
+    // in PostContent.css. The navigation moves from one step to another through their anchors.
+    children: (
+      <div data-tutorial-steps>
+        {tutorial.steps.map((step, index) => {
+          const previousStep = tutorial.steps[index - 1];
+          const nextStep = tutorial.steps[index + 1];
 
-      return (
-        <section key={step.slug} id={step.slug}>
-          <h2>{step.title}</h2>
-          <div dangerouslySetInnerHTML={{ __html: step.content }} />
-          {(previousStep || nextStep) && (
-            <div className="flex gap-l">
-              {previousStep && (
-                <Button render={<a {...getStepLink(previousStep)} />} className="mt-l" variant="secondary">
-                  {t('pages.tutorial.previous_button')}
-                </Button>
+          return (
+            <section key={step.slug} id={step.slug}>
+              <h2>{step.title}</h2>
+              <div dangerouslySetInnerHTML={{ __html: step.content }} />
+              {(previousStep || nextStep) && (
+                <div data-tutorial-step-nav className="gap-l">
+                  {previousStep && (
+                    <Button render={<a {...getStepLink(previousStep)} />} className="mt-l" variant="secondary">
+                      {t('pages.tutorial.previous_button')}
+                    </Button>
+                  )}
+                  {nextStep && (
+                    <Button render={<a {...getStepLink(nextStep)} />} className="mt-l">
+                      {t('pages.tutorial.next_button')}
+                    </Button>
+                  )}
+                </div>
               )}
-              {nextStep && (
-                <Button render={<a {...getStepLink(nextStep)} />} className="mt-l">
-                  {t('pages.tutorial.next_button')}
-                </Button>
-              )}
-            </div>
-          )}
-        </section>
-      );
-    }),
+            </section>
+          );
+        })}
+      </div>
+    ),
   };
 };
