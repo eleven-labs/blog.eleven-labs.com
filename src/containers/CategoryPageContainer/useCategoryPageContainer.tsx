@@ -10,8 +10,9 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import { MARKDOWN_CONTENT_TYPES, PATHS } from '@/constants';
 import { PostCardListContainer } from '@/containers/PostCardListContainer';
 import { TransWithHtml } from '@/containers/TransWithHtml';
-import { generatePath } from '@/helpers/routerHelper';
+import { generatePath, getHomePath } from '@/helpers/routerHelper';
 import { useBreadcrumb } from '@/hooks/useBreadcrumb';
+import { useBreadcrumbListSchema } from '@/hooks/useBreadcrumbListSchema';
 import { useNewsletterCard } from '@/hooks/useNewsletterCard';
 import { useTitle } from '@/hooks/useTitle';
 
@@ -26,6 +27,13 @@ export const useCategoryPageContainer = (): CategoryPageProps => {
   // "Page" is spelled the same way in every language of the blog, no translation key is needed
   useTitle(currentPage > 1 ? `${seoTitle} - Page ${currentPage}` : seoTitle);
   useMeta({ name: 'description', content: t(`pages.category.${categoryName}.seo.description`) });
+  useBreadcrumbListSchema([
+    { name: t('common.breadcrumb.home_label'), path: getHomePath(i18n.language) },
+    {
+      name: t(`common.categories.${categoryName ?? 'all'}`),
+      path: generatePath(PATHS.CATEGORY, { lang: i18n.language, categoryName: categoryName ?? 'all' }),
+    },
+  ]);
 
   const getPaginatedLink: PostCardListContainerProps['getPaginatedLink'] = (page: number) => ({
     href: generatePath(PATHS.CATEGORY_PAGINATED, { lang: i18n.language, categoryName, page }),

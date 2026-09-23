@@ -11,26 +11,19 @@ export interface BreadcrumbProps {
 }
 
 export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className }) => (
-  <ol
-    itemScope
-    itemType="https://schema.org/BreadcrumbList"
-    className={cn('my-[1em] flex list-none gap-xxs-3 p-0 font-semibold', className)}
-  >
+  <ol className={cn('my-[1em] flex list-none gap-xxs-3 p-0 font-semibold', className)}>
     {items.map(({ label, ...itemLink }, index) => (
       <Fragment key={index}>
-        <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+        <li>
           {itemLink.href ? (
-            <Link itemProp="item" {...itemLink}>
-              <Text render={<span />} itemProp="name">
-                {label}
-              </Text>
+            <Link {...itemLink}>
+              <Text render={<span />}>{label}</Text>
             </Link>
           ) : (
-            <Text render={<span />} itemProp="name" className="font-normal">
+            <Text render={<span />} className="font-normal">
               {label}
             </Text>
           )}
-          <meta itemProp="position" content={(index + 1).toString()} />
         </li>
         {index < items.length - 1 && <Text render={<span />}>{'>'}</Text>}
       </Fragment>

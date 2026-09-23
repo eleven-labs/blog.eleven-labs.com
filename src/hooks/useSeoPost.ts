@@ -10,6 +10,7 @@ import { generateUrl, getSocialCoverPath } from '@/helpers/assetHelper';
 import { toIsoDuration } from '@/helpers/durationHelper';
 import { getUrl } from '@/helpers/getUrlHelper';
 import { generatePath, getHomePath } from '@/helpers/routerHelper';
+import { useBreadcrumbListSchema } from '@/hooks/useBreadcrumbListSchema';
 import { useTitle } from '@/hooks/useTitle';
 
 export const useSeoPost = (post: PostPageData): void => {
@@ -91,41 +92,13 @@ export const useSeoPost = (post: PostPageData): void => {
     }),
   });
 
-  useScript({
-    type: 'application/ld+json',
-    text: JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: t('common.breadcrumb.home_label'),
-          item: getUrl(getHomePath(i18n.language)),
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: t(`common.categories.${categoryName ?? 'all'}`),
-          item: getUrl(generatePath(PATHS.CATEGORY, { lang: i18n.language, categoryName: categoryName ?? 'all' })),
-        },
-        {
-          '@type': 'ListItem',
-          position: 3,
-          name: post.title,
-          item: getUrl(generatePath(PATHS.POST, { lang: i18n.language, slug: post.slug })),
-        },
-        ...(currentStepTitle
-          ? [
-              {
-                '@type': 'ListItem',
-                position: 4,
-                name: currentStepTitle,
-                item: postUrl,
-              },
-            ]
-          : []),
-      ],
-    }),
-  });
+  useBreadcrumbListSchema([
+    { name: t('common.breadcrumb.home_label'), path: getHomePath(i18n.language) },
+    {
+      name: t(`common.categories.${categoryName ?? 'all'}`),
+      path: generatePath(PATHS.CATEGORY, { lang: i18n.language, categoryName: categoryName ?? 'all' }),
+    },
+    { name: post.title, path: generatePath(PATHS.POST, { lang: i18n.language, slug: post.slug }) },
+    ...(currentStepTitle ? [{ name: currentStepTitle, path: location.pathname }] : []),
+  ]);
 };
