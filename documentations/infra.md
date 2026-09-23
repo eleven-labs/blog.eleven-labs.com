@@ -106,3 +106,6 @@ DISTRIBUTION_ID=$(aws cloudfront list-distributions --profile <profil> \
 | 2024-10-28 | staging | `blog-staging-origin-request-lambda:5` | Redirections AMP, slash final, réécriture `index.html`. |
 | — | production | `blog-prod-origin-request-lambda:3` | Idem. |
 | 2026-09-23 | staging | `blog-staging-origin-request-lambda:6` | Redirection des anciennes URL d'étape de tutoriel (#1247). |
+| 2026-09-23 | production | `blog-prod-origin-request-lambda:4` | Idem, déployée après le merge de #1256. Le cache des tutoriels (`/fr/<tutoriel>/*`) a été invalidé. |
+
+La version en service de chaque environnement est la dernière de ce tableau. Pour revenir en arrière, il suffit de réassocier la version précédente, qui reste publiée (voir **Rollback**).
