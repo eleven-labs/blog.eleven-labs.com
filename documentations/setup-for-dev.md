@@ -101,6 +101,7 @@ Here is the file's template.
 contentType: article
 lang: en | fr
 date: YYYY-MM-DD
+updatedAt: YYYY-MM-DD (optional, date of the last significant update, exposed as `dateModified` in the structured data)
 slug: slug of the article (No space dashes instead)
 title: Title of the article
 excerpt: Description of the article (Visible on the list pages)
@@ -214,6 +215,7 @@ Inside the folder named `YYYY-MM-DD-slug` you created, add a file named `index.m
 contentType: tutorial
 lang: en | fr
 date: YYYY-MM-DD
+updatedAt: YYYY-MM-DD (optional, date of the last significant update, exposed as `dateModified` in the structured data)
 slug: Slug of the tutorial (No space dashes instead)
 title: Title of the tutorial
 excerpt: Description of the tutorial (Visible on the list pages)
