@@ -6,8 +6,6 @@ describe('getSitemap', () => {
   test('should use the default language url as loc and keep a single url per language', () => {
     const sitemap = getSitemap([
       {
-        priority: 0.8,
-        changefreq: 'weekly',
         links: [
           { lang: 'fr', url: '/fr/post-1/' },
           { lang: 'en', url: '/en/post-1/' },
@@ -26,8 +24,6 @@ describe('getSitemap', () => {
   test('should keep the root as the url of the home in the default language', () => {
     const sitemap = getSitemap([
       {
-        priority: 0.8,
-        changefreq: 'weekly',
         links: [
           { lang: 'fr', url: '/' },
           { lang: 'en', url: '/en/' },
@@ -42,16 +38,23 @@ describe('getSitemap', () => {
   });
 
   test('should expose the lastmod when it is known', () => {
-    const sitemap = getSitemap([{ priority: 1, lastmod: '2025-06-02', links: [{ lang: 'fr', url: '/fr/post-1/' }] }]);
+    const sitemap = getSitemap([{ lastmod: '2025-06-02', links: [{ lang: 'fr', url: '/fr/post-1/' }] }]);
 
     expect(sitemap).toContain('<lastmod>2025-06-02</lastmod>');
   });
 
   test('should not add alternate links when the page exists in a single language', () => {
-    const sitemap = getSitemap([{ priority: 1, links: [{ lang: 'fr', url: '/fr/post-1/' }] }]);
+    const sitemap = getSitemap([{ links: [{ lang: 'fr', url: '/fr/post-1/' }] }]);
 
     expect(sitemap).toContain(`<loc>${HOST_URL}/fr/post-1/</loc>`);
     expect(sitemap).not.toContain('xhtml:link');
     expect(sitemap).not.toContain('x-default');
+  });
+
+  test('should not declare priority nor changefreq, ignored by Google', () => {
+    const sitemap = getSitemap([{ links: [{ lang: 'fr', url: '/fr/post-1/' }] }]);
+
+    expect(sitemap).not.toContain('<priority>');
+    expect(sitemap).not.toContain('<changefreq>');
   });
 });

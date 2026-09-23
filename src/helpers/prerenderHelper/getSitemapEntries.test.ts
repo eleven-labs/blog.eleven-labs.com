@@ -36,26 +36,22 @@ describe('getSitemapEntries', () => {
 
     // Expected result
     const expectedSitemapEntries = [
-      { priority: 1, lastmod: '2025-06-02', links: [{ lang: 'fr', url: '/fr/post-1/' }] },
-      { priority: 1, lastmod: '2024-03-08', links: [{ lang: 'en', url: '/en/post-2/' }] },
       {
-        priority: 0.8,
-        changefreq: 'weekly',
         links: [
           { lang: 'fr', url: '/' },
           { lang: 'en', url: '/en/' },
         ],
       },
       {
-        priority: 0.7,
-        changefreq: 'weekly',
         links: [
           { lang: 'fr', url: '/fr/categories/all/' },
           { lang: 'en', url: '/en/categories/all/' },
         ],
       },
-      { priority: 0.7, changefreq: 'weekly', links: [{ lang: 'en', url: '/en/categories/php/' }] },
-      { priority: 0.7, changefreq: 'weekly', links: [{ lang: 'fr', url: '/fr/categories/architecture/' }] },
+      { links: [{ lang: 'en', url: '/en/categories/php/' }] },
+      { links: [{ lang: 'fr', url: '/fr/categories/architecture/' }] },
+      { lastmod: '2025-06-02', links: [{ lang: 'fr', url: '/fr/post-1/' }] },
+      { lastmod: '2024-03-08', links: [{ lang: 'en', url: '/en/post-2/' }] },
     ];
 
     const sitemapEntries = getSitemapEntries();

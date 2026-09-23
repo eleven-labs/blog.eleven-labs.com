@@ -13,7 +13,7 @@ import { generatePath } from '@/helpers/routerHelper';
 export const getSitemapEntries = (): SitemapEntry[] => {
   const posts = getPosts();
 
-  // Google relies on lastmod to schedule its recrawls, unlike priority and changefreq
+  // Google relies on lastmod to schedule its recrawls, it ignores priority and changefreq
   const lastmodByUrl = new Map<string, string>();
   for (const post of posts) {
     const lastmod = (post.updatedAt ?? post.date).slice(0, 10);
@@ -26,35 +26,16 @@ export const getSitemapEntries = (): SitemapEntry[] => {
   }
   const getLastmod = (links: { url: string }[]): string | undefined => lastmodByUrl.get(links[0].url);
 
-  const rootEntry: SitemapEntry = {
-    priority: 0.8,
-    links: getHomePageUrls(),
-    changefreq: 'weekly',
-  };
-
-  const categoryPageUrls = getCategoryPageUrls(posts);
-  const categoryEntries: SitemapEntry[] = categoryPageUrls.map((urls) => ({
-    priority: 0.7,
-    links: urls,
-    changefreq: 'weekly',
-  }));
-
-  const postPageUrls = getPostPageUrls(posts);
-  const postEntries: SitemapEntry[] = postPageUrls.map((urls) => ({
-    priority: 1,
-    lastmod: getLastmod(urls),
-    links: urls,
-  }));
-
-  const tutorialStepUrls = getTutorialStepPageUrls(posts);
-  const tutorialStepEntries: SitemapEntry[] = tutorialStepUrls.map((urls) => ({
-    priority: 0.9,
-    lastmod: getLastmod(urls),
-    links: urls,
-  }));
+  const toSitemapEntry = (links: { lang: string; url: string }[]): SitemapEntry => ({
+    lastmod: getLastmod(links),
+    links,
+  });
 
   // The author pages are not indexed, they have no place in the sitemap
-  return [rootEntry, ...categoryEntries, ...postEntries, ...tutorialStepEntries].sort(
-    (a, b) => (b?.priority ?? 0) - (a?.priority ?? 0)
-  );
+  return [
+    getHomePageUrls(),
+    ...getCategoryPageUrls(posts),
+    ...getPostPageUrls(posts),
+    ...getTutorialStepPageUrls(posts),
+  ].map(toSitemapEntry);
 };

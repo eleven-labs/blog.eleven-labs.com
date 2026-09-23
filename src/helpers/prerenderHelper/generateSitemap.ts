@@ -7,8 +7,6 @@ import { generateUrl } from '@/helpers/assetHelper';
 
 export type SitemapEntry = {
   links: { lang: string; url: string }[];
-  changefreq?: string;
-  priority?: number;
   lastmod?: string;
 };
 
@@ -19,9 +17,8 @@ export const getSitemap = (sitemapEntries: SitemapEntry[]): string => {
       $: {
         xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9',
         'xmlns:xhtml': 'http://www.w3.org/1999/xhtml',
-        'xmlns:news': 'http://www.google.com/schemas/sitemap-news/0.9',
       },
-      url: sitemapEntries.map(({ links, priority, changefreq, lastmod }) => {
+      url: sitemapEntries.map(({ links, lastmod }) => {
         const defaultLink = links.find((link) => link.lang === DEFAULT_LANGUAGE) ?? links[0];
         const alternateLinks = links.filter(
           (link, index) => links.findIndex((currentLink) => currentLink.lang === link.lang) === index
@@ -29,8 +26,6 @@ export const getSitemap = (sitemapEntries: SitemapEntry[]): string => {
         return {
           loc: generateUrl(defaultLink.url),
           ...(lastmod ? { lastmod } : {}),
-          ...(changefreq ? { changefreq } : {}),
-          priority: priority?.toFixed(1) ?? 0.3,
           ...(alternateLinks.length > 1
             ? {
                 'xhtml:link': [...alternateLinks, { lang: 'x-default', url: defaultLink.url }].map((link) => ({
