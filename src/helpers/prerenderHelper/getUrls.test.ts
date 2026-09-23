@@ -23,7 +23,6 @@ describe('getSitemapEntries', () => {
   it('should return URLs of home page grouped by language', () => {
     const expectedUrls: ReturnType<typeof getHomePageUrls> = [
       { lang: 'fr', url: '/' },
-      { lang: 'fr', url: '/fr/' },
       { lang: 'en', url: '/en/' },
     ];
     expect(getHomePageUrls()).toEqual(expectedUrls);

@@ -8,7 +8,6 @@ import type {
 
 import {
   CATEGORIES,
-  DEFAULT_LANGUAGE,
   IS_DEBUG,
   LANGUAGES,
   LANGUAGES_AVAILABLE_WITH_DT,
@@ -16,23 +15,18 @@ import {
   NUMBER_OF_ITEMS_PER_PAGE,
   PATHS,
 } from '@/constants';
-import { generatePath } from '@/helpers/routerHelper';
+import { generatePath, getHomePath } from '@/helpers/routerHelper';
 
 export type Urls = {
   lang: string;
   url: string;
 }[][];
 
-export const getHomePageUrls = (): Urls[0] => [
-  {
-    lang: DEFAULT_LANGUAGE,
-    url: generatePath(PATHS.ROOT, { lang: DEFAULT_LANGUAGE }),
-  },
-  ...LANGUAGES_AVAILABLE_WITH_DT.map((lang) => ({
+export const getHomePageUrls = (): Urls[0] =>
+  LANGUAGES_AVAILABLE_WITH_DT.map((lang) => ({
     lang,
-    url: generatePath(PATHS.HOME, { lang }),
-  })),
-];
+    url: getHomePath(lang),
+  }));
 
 export const getCategoryPageUrls = (
   postsData: Pick<TransformedPostData, 'lang' | 'contentType' | 'categories'>[]
