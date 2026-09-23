@@ -6,6 +6,8 @@ import { I18nextProvider, initReactI18next } from 'react-i18next';
 import { i18nConfig } from '@/config/i18n/i18n.config';
 import { HeaderContainer } from '@/containers/LayoutTemplateContainer/HeaderContainer';
 import { SearchPageContentContainer } from '@/containers/SearchPageContainer';
+import { enhanceStickyHeader } from '@/helpers/stickyHeaderHelper';
+import { enhanceSummaries } from '@/helpers/summaryHelper';
 
 import './styles.css';
 
@@ -48,6 +50,18 @@ const loadMermaidScript = (): void => {
   script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js';
   document.body.appendChild(script);
 };
+
+const enhancePage = (): void => {
+  enhanceStickyHeader();
+  enhanceSummaries();
+};
+
+// A module script may run once the document is already parsed
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', enhancePage);
+} else {
+  enhancePage();
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const twitterTweetElements = document.getElementsByClassName('twitter-tweet');

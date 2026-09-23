@@ -89,7 +89,11 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   return {
     header: (
       <>
-        <div id="header">
+        {/* Sur les petits écrans l'en-tête suit la lecture, voir src/helpers/stickyHeaderHelper.ts */}
+        <div
+          id="header"
+          className="max-md:sticky max-md:top-0 max-md:z-20 max-md:transition-transform max-md:data-hidden:-translate-y-full"
+        >
           <HeaderContainer layoutTemplateData={layoutTemplateData} />
         </div>
         <script

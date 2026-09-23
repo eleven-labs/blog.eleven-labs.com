@@ -7,7 +7,7 @@ import type { PictureProps } from '@/design-system';
 
 import React from 'react';
 
-import { ContactCard, SummaryCard } from '@/components';
+import { ContactCard, SummaryBar } from '@/components';
 import { Divider, Picture } from '@/design-system';
 
 import { PostFooter } from './PostFooter';
@@ -50,7 +50,7 @@ export const PostPageContent: React.FC<PostPageContentProps> = ({
           img={{ ...cover.img, className: 'block h-auto w-full rounded-s object-cover aspect-video' }}
         />
       )}
-      <SummaryCard
+      <SummaryBar
         className="mt-l md:hidden"
         variant={variant === 'tutorial' ? 'secondary' : 'primary'}
         {...summary}

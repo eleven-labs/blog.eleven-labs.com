@@ -8,16 +8,12 @@ import { MARKDOWN_CONTENT_TYPES } from '@/constants';
 import { Button } from '@/design-system';
 import { usePostPage } from '@/hooks/usePostPage';
 
-import { scrollToSection, useActiveSection } from './useActiveSection';
-
 export const useTutorialPageContainer = (tutorial: TutorialPageData): PostPageProps => {
   const { t } = useTranslation();
   const postPageProps = usePostPage(tutorial);
-  const activeStepSlug = useActiveSection(tutorial.steps.map((step) => step.slug));
 
   const getStepLink = (step: TutorialPageData['steps'][number]): React.ComponentPropsWithoutRef<'a'> => ({
     href: `#${step.slug}`,
-    onClick: (event) => scrollToSection(event, step.slug),
   });
 
   return {
@@ -30,7 +26,7 @@ export const useTutorialPageContainer = (tutorial: TutorialPageData): PostPagePr
         label: step.title,
         ...getStepLink(step),
       })),
-      sectionActive: activeStepSlug,
+      sectionActive: tutorial.steps[0]?.slug,
     },
     // Every step is in the HTML served, the navigation only moves from one section to another
     children: tutorial.steps.map((step, index) => {
@@ -38,7 +34,7 @@ export const useTutorialPageContainer = (tutorial: TutorialPageData): PostPagePr
       const nextStep = tutorial.steps[index + 1];
 
       return (
-        <section key={step.slug} id={step.slug} className="scroll-mt-m">
+        <section key={step.slug} id={step.slug}>
           <h2>{step.title}</h2>
           <div dangerouslySetInnerHTML={{ __html: step.content }} />
           {(previousStep || nextStep) && (

@@ -32,8 +32,9 @@ export const PostPage: React.FC<PostPageProps> = ({
         </PostPageContent>
       }
       sidebar={
+        // Le sommaire reste à l'écran pendant la lecture ; trop long, il défile sur lui-même
         <SummaryCard
-          className="max-md:hidden"
+          className="max-md:hidden md:sticky md:top-m md:max-h-[calc(100vh-2*var(--spacing-m))] md:overflow-y-auto"
           variant={variant === 'tutorial' ? 'secondary' : 'primary'}
           {...summary}
         />

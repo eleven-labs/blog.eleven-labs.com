@@ -6,6 +6,16 @@
 /* Volontairement hors de toute cascade layer : ces règles doivent primer, comme le faisaient
    les feuilles SCSS d'origine, sur les styles tiers et sur les utilitaires. */
 .post-content {
+  /* Une section atteinte par une ancre ne se colle pas au bord de l'écran, ni sous la barre de
+     sommaire qui reste en haut de l'écran sur les petits écrans. */
+  [id] {
+    scroll-margin-top: var(--spacing-m);
+
+    @media (width < 1001px) {
+      scroll-margin-top: 88px;
+    }
+  }
+
   /* Les titres reprennent l'échelle « markup », plus resserrée que celle de l'interface. */
   h2,
   h3,
