@@ -1,10 +1,11 @@
 import type { VariantProps } from 'class-variance-authority';
 
+import type { ElementTagName, PolymorphicProps } from '@/design-system/types';
+
 import { cva } from 'class-variance-authority';
 import * as React from 'react';
 
 import { cn } from '@/design-system/helpers/cn';
-import { polyRef } from '@/design-system/helpers/polyRef';
 
 export const textVariants = cva('', {
   variants: {
@@ -16,15 +17,25 @@ export const textVariants = cva('', {
   },
 });
 
-export interface TextProps extends VariantProps<typeof textVariants> {
+export interface TextOwnProps extends VariantProps<typeof textVariants> {
   className?: string;
   children?: React.ReactNode;
 }
 
-export const Text = polyRef<'p', TextProps>(({ as: As = 'p', size, className, children, ...props }, ref) => (
-  <As {...props} ref={ref} className={cn(textVariants({ size }), className)}>
-    {children}
-  </As>
-));
+export type TextProps<TTagName extends ElementTagName = 'p'> = PolymorphicProps<TTagName, TextOwnProps>;
 
-Text.displayName = 'Text';
+export const Text = <TTagName extends ElementTagName = 'p'>({
+  as,
+  size,
+  className,
+  children,
+  ...props
+}: TextProps<TTagName>): React.JSX.Element => {
+  const Tag = (as ?? 'p') as React.ElementType;
+
+  return (
+    <Tag {...props} className={cn(textVariants({ size }), className)}>
+      {children}
+    </Tag>
+  );
+};

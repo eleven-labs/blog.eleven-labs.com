@@ -1,11 +1,12 @@
 import type { VariantProps } from 'class-variance-authority';
 
+import type { ElementTagName, PolymorphicProps } from '@/design-system/types';
+
 import { cva } from 'class-variance-authority';
 import * as React from 'react';
 
 import { Icon, Text } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
-import { polyRef } from '@/design-system/helpers/polyRef';
 
 export const buttonVariants = cva(
   'inline-flex flex-row items-center justify-center rounded-[100px] border-transparent px-m py-xs font-heading text-s font-bold tracking-[1px] uppercase disabled:cursor-not-allowed',
@@ -23,16 +24,25 @@ export const buttonVariants = cva(
   }
 );
 
-export interface ButtonProps extends VariantProps<typeof buttonVariants> {
+export interface ButtonOwnProps extends VariantProps<typeof buttonVariants> {
   className?: string;
   children: React.ReactNode;
 }
 
-export const Button = polyRef<'button', ButtonProps>(
-  ({ as: As = 'button', variant = 'primary', className, children, ...props }, ref) => (
-    <As
+export type ButtonProps<TTagName extends ElementTagName = 'button'> = PolymorphicProps<TTagName, ButtonOwnProps>;
+
+export const Button = <TTagName extends ElementTagName = 'button'>({
+  as,
+  variant = 'primary',
+  className,
+  children,
+  ...props
+}: ButtonProps<TTagName>): React.JSX.Element => {
+  const Tag = (as ?? 'button') as React.ElementType;
+
+  return (
+    <Tag
       {...props}
-      ref={ref}
       data-text={typeof children === 'string' ? children : ''}
       className={cn(buttonVariants({ variant }), className)}
     >
@@ -40,8 +50,6 @@ export const Button = polyRef<'button', ButtonProps>(
       {variant === 'secondary' && <Icon name="arrow" style={{ transform: 'scaleX(-1)' }} />}
       <Text as="span">{children}</Text>
       {variant !== 'secondary' && <Icon name="arrow" />}
-    </As>
-  )
-);
-
-Button.displayName = 'Button';
+    </Tag>
+  );
+};

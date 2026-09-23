@@ -5,7 +5,6 @@ import React from 'react';
 import { PostMetadata } from '@/components';
 import { Heading, Link, Text, TextHighlight } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
-import { polyRef } from '@/design-system/helpers/polyRef';
 
 export interface AutocompleteItem {
   slug: string;
@@ -30,10 +29,10 @@ export type AutocompleteResultOptions = {
 
 export type AutocompleteResultProps = AutocompleteResultOptions;
 
-export const AutocompleteResult = polyRef<'div', AutocompleteResultProps>(
+/** La ref est celle que downshift pose sur le menu, via `getMenuProps()`. */
+export const AutocompleteResult = React.forwardRef<HTMLDivElement, AutocompleteResultProps>(
   (
     {
-      as: As = 'div',
       isOpen = false,
       items,
       searchValue,
@@ -45,7 +44,7 @@ export const AutocompleteResult = polyRef<'div', AutocompleteResultProps>(
     },
     ref
   ) => (
-    <As
+    <div
       {...props}
       ref={ref}
       hidden={!isOpen}
@@ -100,7 +99,7 @@ export const AutocompleteResult = polyRef<'div', AutocompleteResultProps>(
           </Text>
         </div>
       )}
-    </As>
+    </div>
   )
 );
 

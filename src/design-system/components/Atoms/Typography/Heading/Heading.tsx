@@ -1,10 +1,11 @@
 import type { VariantProps } from 'class-variance-authority';
 
+import type { ElementTagName, PolymorphicProps } from '@/design-system/types';
+
 import { cva } from 'class-variance-authority';
 import * as React from 'react';
 
 import { cn } from '@/design-system/helpers/cn';
-import { polyRef } from '@/design-system/helpers/polyRef';
 
 export const headingVariants = cva('font-heading tracking-normal', {
   variants: {
@@ -19,15 +20,25 @@ export const headingVariants = cva('font-heading tracking-normal', {
   },
 });
 
-export interface HeadingProps extends VariantProps<typeof headingVariants> {
+export interface HeadingOwnProps extends VariantProps<typeof headingVariants> {
   className?: string;
   children?: React.ReactNode;
 }
 
-export const Heading = polyRef<'p', HeadingProps>(({ as: As = 'p', size, className, children, ...props }, ref) => (
-  <As {...props} ref={ref} className={cn(headingVariants({ size }), className)}>
-    {children}
-  </As>
-));
+export type HeadingProps<TTagName extends ElementTagName = 'p'> = PolymorphicProps<TTagName, HeadingOwnProps>;
 
-Heading.displayName = 'Heading';
+export const Heading = <TTagName extends ElementTagName = 'p'>({
+  as,
+  size,
+  className,
+  children,
+  ...props
+}: HeadingProps<TTagName>): React.JSX.Element => {
+  const Tag = (as ?? 'p') as React.ElementType;
+
+  return (
+    <Tag {...props} className={cn(headingVariants({ size }), className)}>
+      {children}
+    </Tag>
+  );
+};
