@@ -11,6 +11,7 @@ services:
       - app_node_modules:/var/www/app/node_modules
     ports:
       - 5173:5173
+      - 6006:6006
       - 24678:24678
     command: ['sh', '-c', 'pnpm install && pnpm start:dev']
 

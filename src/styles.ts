@@ -1,3 +1,3 @@
-import '@eleven-labs/design-system/style.css';
+import '@/design-system/styles/common.scss';
 
 import './templates';

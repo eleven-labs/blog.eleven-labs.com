@@ -3,16 +3,27 @@ on: pull_request
 jobs:
   build:
     name: calibreapp/image-actions
+    # L'action pousse ses images optimisées sur la branche de la pull request, ce qui relance ce
+    # workflow. Sans ce garde-fou, chaque passe de compression en déclenche une autre et la pull
+    # request accumule les commits jusqu'à ce que les gains passent sous les seuils.
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
+        uses: actions/checkout@v4
 
       - name: Compress Images
         uses: calibreapp/image-actions@main
         with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           jpegQuality: "80"
           pngQuality: "80"
           webpQuality: "80"
+          # La compression avec perte n'est pas idempotente : repasser sur une image déjà traitée
+          # gagne encore une dizaine de pour cent. Au-delà du seuil par défaut de 5 %, chaque push
+          # produisait un nouveau commit sur les mêmes fichiers.
+          minPctChange: "25"
           ignorePaths: "node_modules/**,build"

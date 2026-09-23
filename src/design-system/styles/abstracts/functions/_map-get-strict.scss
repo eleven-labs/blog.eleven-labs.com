@@ -1,0 +1,9 @@
+@use 'sass:map';
+
+@function map-get-strict($map, $keys...) {
+  @if map.get($map, $keys...) {
+    @return map.get($map, $keys...);
+  } @else {
+    @error "Specified #{$keys} does not exist in the mapping";
+  }
+}

@@ -1,5 +1,4 @@
-import type { HomePageProps } from '@eleven-labs/design-system';
-
+import type { HomePageProps } from '@/pages';
 import type { PostListPageData } from '@/types';
 
 import { useLink, useMeta } from 'hoofd';

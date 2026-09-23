@@ -1,14 +1,5 @@
-import type {
-  ComponentPropsWithoutRef,
-  ReminderVariantType} from '@eleven-labs/design-system';
+import type { ComponentPropsWithoutRef, ReminderVariantType } from '@/design-system';
 
-import {
-  Box,
-  Flex,
-  Link,
-  Reminder,
-  SyntaxHighlighter,
-} from '@eleven-labs/design-system';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import rehypeRaw from 'rehype-raw';
@@ -20,6 +11,7 @@ import remarkParse from 'remark-parse';
 import remark2rehype from 'remark-rehype';
 import { unified } from 'unified';
 
+import { Box, Flex, Link, Reminder, SyntaxHighlighter } from '@/design-system';
 import { intersection } from '@/helpers/objectHelper';
 import { remarkFigurePlugin } from '@/helpers/remarkPlugins/remarkFigurePlugin';
 

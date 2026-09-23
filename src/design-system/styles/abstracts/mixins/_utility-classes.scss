@@ -1,0 +1,48 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use './create-media-queries' as *;
+@use '../variables' as *;
+
+@mixin utility-classes($property-css, $list, $prefix-class-name: null) {
+  @each $name, $value in $list {
+    $class-name: #{$name};
+
+    @if $prefix-class-name {
+      $class-name: #{$prefix-class-name}-#{$name};
+    }
+
+    .#{$class-name} {
+      @if meta.type-of($property-css) == 'list' {
+        @each $current-property-css in $property-css {
+          #{$current-property-css}: #{$value};
+        }
+      } @else {
+        #{$property-css}: #{$value};
+      }
+    }
+  }
+}
+
+@mixin utility-classes-with-breakpoints($property-css, $list, $prefix-class-name: null) {
+  @each $breakpoint-name, $breakpoint-value in map.get($token-variables, 'breakpoint') {
+    @include create-media-queries($breakpoint-name) {
+      @each $name, $value in $list {
+        $class-name: #{$name}\@#{$breakpoint-name};
+
+        @if $prefix-class-name {
+          $class-name: #{$prefix-class-name}-#{$name}\@#{$breakpoint-name};
+        }
+
+        .#{$class-name} {
+          @if meta.type-of($property-css) == 'list' {
+            @each $current-property-css in $property-css {
+              #{$current-property-css}: #{$value};
+            }
+          } @else {
+            #{$property-css}: #{$value};
+          }
+        }
+      }
+    }
+  }
+}

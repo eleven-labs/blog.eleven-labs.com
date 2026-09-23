@@ -1,4 +1,4 @@
-import type { BreadcrumbProps } from '@eleven-labs/design-system';
+import type { BreadcrumbProps } from '@/design-system';
 
 import { useTranslation } from 'react-i18next';
 

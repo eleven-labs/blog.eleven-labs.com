@@ -1,0 +1,40 @@
+{
+  "spacing": {
+    "0": {
+      "value": "0"
+    },
+    "xxs-3": {
+      "value": "4px"
+    },
+    "xxs-2": {
+      "value": "6px"
+    },
+    "xxs": {
+      "value": "8px"
+    },
+    "xs": {
+      "value": "12px"
+    },
+    "s": {
+      "value": "16px"
+    },
+    "m": {
+      "value": "24px"
+    },
+    "l": {
+      "value": "32px"
+    },
+    "xl": {
+      "value": "42px"
+    },
+    "xxl": {
+      "value": "64px"
+    },
+    "xxl-2": {
+      "value": "128px"
+    },
+    "xxl-3": {
+      "value": "164px"
+    }
+  }
+}

@@ -1,0 +1,97 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+$flex-direction-list: map.get($css-properties, 'flex-direction');
+$flex-wrap-list: map.get($css-properties, 'flex-wrap');
+$align-items-list: map.get($css-properties, 'align-items');
+$align-content-list: map.get($css-properties, 'align-content');
+$justify-content-list: map.get($css-properties, 'justify-content');
+$align-self-list: map.get($css-properties, 'align-self');
+$spacing-list: map.get($token-variables, 'spacing');
+$flex-basis-list: map.get($css-properties, 'flex-basis');
+$flex-list: map.get($css-properties, 'flex');
+$spacing-list: map.get($token-variables, 'spacing');
+$flex-or-grid-prop-list: (
+  'alignItems': (
+    'prefix-class-name': 'items',
+    'property-css': 'align-items',
+    'value-list': $align-items-list,
+  ),
+  'alignContent': (
+    'prefix-class-name': 'content',
+    'property-css': 'align-content',
+    'value-list': $align-content-list,
+  ),
+  'justifyContent': (
+    'prefix-class-name': 'justify',
+    'property-css': 'justify-content',
+    'value-list': $justify-content-list,
+  ),
+  'gap': (
+    'prefix-class-name': 'gap',
+    'property-css': 'gap',
+    'value-list': $spacing-list,
+  ),
+  'gapX': (
+    'prefix-class-name': 'gap-x',
+    'property-css': 'gap-x',
+    'value-list': $spacing-list,
+  ),
+  'gapY': (
+    'prefix-class-name': 'gap-y',
+    'property-css': 'gap-y',
+    'value-list': $spacing-list,
+  ),
+);
+$flex-or-grid-item-prop-list: (
+  'alignSelf': (
+    'prefix-class-name': 'self',
+    'property-css': 'align-self',
+    'value-list': $align-self-list,
+  ),
+);
+$flex-prop-list: (
+  'flexDirection':  (
+    'prefix-class-name': 'flex',
+    'property-css': 'flex-direction',
+    'value-list': $flex-direction-list,
+  ),
+  'flexWrap': (
+    'prefix-class-name': 'flex',
+    'property-css': 'flex-wrap',
+    'value-list': $flex-wrap-list,
+  ),
+);
+$flex-item-prop-list: (
+  'flexBasis': (
+    'prefix-class-name': 'basis',
+    'property-css': 'flex-basis',
+    'value-list': $flex-basis-list,
+  ),
+  'flex': (
+    'prefix-class-name': 'flex',
+    'property-css': 'flex',
+    'value-list': $flex-list,
+  ),
+);
+
+
+/*
+ * Flex Or Grid System Class Names
+ */
+@include system-classes-with-breakpoints($flex-or-grid-prop-list);
+
+/*
+ * Flex Or Grid Item System Class Names
+ */
+@include system-classes-with-breakpoints($flex-or-grid-item-prop-list);
+
+/*
+ * Flex System Class Names
+ */
+@include system-classes-with-breakpoints($flex-prop-list);
+
+/*
+ * Flex Item System Class Names
+ */
+@include system-classes-with-breakpoints($flex-item-prop-list);

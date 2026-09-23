@@ -1,0 +1,155 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Concepts and Architecture" />
+
+# Concepts and Architecture
+
+## Concepts
+
+This Design System will be based on **4 concepts**:
+
+- **Design Tokens**
+
+    > Design tokens are the visual design atoms of the design system — specifically, they are named entities that store visual design attributes. We use them in place of hard-coded values (such as hex values for color or pixel values for spacing) in order to maintain a scalable and consistent visual system for UI development. [Salesforce, Lightning Design System](https://www.lightningdesignsystem.com/design-tokens/).
+
+    Design Tokens originated at Salesforce, where [https://twitter.com/jina](Jina) and [https://twitter.com/jonnyl](Jon) coined the term. A good explanation can be found on [Jina Anne's Youtube](https://www.youtube.com/watch?v=q5qIowMyVt8).
+
+    The [W3C Design Tokens Community Group](https://github.com/design-tokens/community-group) aims to establish a standard on which tools can rely on for sharing design tokens. This plugin aims to be W3C compliant so you could take your JSON and move to another tool someday.
+
+    Our design tokens will be designed by designers and developers in JSON files, we will just have to consume these tokens and transform them into **Sass and TypeScript files** using [**Style Dictionary**](https://amzn.github.io/style-dictionary/).
+
+    > For more explanation on the Design Token, I invite you to read this [article](https://specifyapp.com/blog/introduction-to-design-tokens).<br />
+    How to manage your Design Tokens with **Style Dictionary**, I invite you to read this [article](https://didoo.medium.com/how-to-manage-your-design-tokens-with-style-dictionary-98c795b938aa).
+
+- **Atomic Design**
+
+    [**Atomic Design**](https://atomicdesign.bradfrost.com/) is a new approach to modular design conceived by [**Brad Frost**](https://bradfrost.com/) to create Design Systems from simpler components: atoms, molecules, organisms, templates and pages.
+
+    Like chemical atoms and molecules, the elements of the interface must be alive, evolving. This method would allow designers and developers to design coherent user interfaces (UI), better adapted to current needs and uses. Atomic design allows the client to see the design steps.
+
+    ![Atomic Design](documentations/imgs/atomic-design-tokens.jpg)
+
+    > For more details you can read Brad Frost's article [here](https://bradfrost.com/blog/post/extending-atomic-design/).
+
+
+- **Utility classes and BEM**
+
+    > For more details you can read an [article](https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/) on a Scalable CSS Architecture with **Utility Classes** and **BEM**.<br />
+    Here is an [article](https://blog.logrocket.com/css-utility-classes-library-extendable-styles/) that explains what **Utility Classes** are and their interest in a Design System
+
+- **All components are polymorphic**
+
+  A polymorphic component is an element that has the ability to adopt the behavior and appearance of any HTML element. This means that the same component can be displayed as an anchor (hyperlink) or as a button, while maintaining visual consistency. It is essential to note that, visually, this component remains the same, regardless of the role it plays.
+
+  > We use the `react-polymorphed` library, for more details, you can read this [documentation](https://www.npmjs.com/package/react-polymorphed)
+
+- **System Props**
+
+    Inspired by **Chakra UI**, **System Props** allows you to add accessories to your components to modify their style, the only difference is that we do not use **CSS-in-JS** but **CSS Utility Classes**.
+    **System Props** to improve reusability, predictability, and standardization across our design system.
+
+    > Here are the two libraries that inspired the System Props, [Chakra UI](https://chakra-ui.com/docs/styled-system/style-props) and [System Props](https://system-props.com/)
+
+## Architecture
+
+### Directory and file architecture in this project
+
+```
+└───src
+│   └───design-system
+│   │   └───assets
+│   │   └───components
+│   │   └───constants
+│   │   └───designTokens
+│   │   └───documentations
+│   │   └───helpers
+│   │   └───styles
+│   │   └───types
+```
+
+The design system lives in the `src/design-system` folder of the blog. It only holds generic
+components: everything tied to the blog itself (cards, blocks, header, footer, templates and pages)
+lives beside it, in `src/components`, `src/templates` and `src/pages`.
+
+#### assets:
+
+Here are the assets of the Design System, such as **fonts**, **logo**, **icons** ...
+
+#### components:
+
+```
+└───src
+│   └───design-system
+│   │   └───components
+│   │   │   └───Atoms
+│   │   │   └───Layout
+│   │   │   └───Molecules
+```
+
+This folder only contains UI components. Each of them must have an associated story.
+These components must not have any business logic, nor state management (they can only be manipulated thanks to their properties).
+
+What is essential to a component:
+
+- Define the **properties interface** and extend it with an already defined component or a native element if it's an html tag
+- Have an associated **story** to be able to view it in **storybook**
+
+#### constants:
+
+This folder contains constants common to the whole Design System like **tokenNameList**, **cssProperties**, **systemProps** and documentation variables for the storybook.
+
+#### designTokens:
+
+It contains all the design tokens that are used with style dictionary to generate **CSS Custom Properties**, **SCSS variables** and **Typescript variables**.
+
+#### documentations:
+
+Here is all the documentation that will be used by the storybook.
+
+#### helpers:
+
+Helper functions make complicated or repetitive tasks a bit easier, and keep your code DRY.
+
+#### styles:
+
+To write most of our stylesheets, we will take a utility-first approach CSS with **utility classes** and **BEM**.
+
+```
+└───src
+│   └───design-system
+│   │   └───styles
+│   │   │   └───abstracts
+│   │   │   │   └───functions
+│   │   │   │   └───mixins
+│   │   │   │   └───variables
+│   │   │   └───utilities
+│   │   │   └───_base.scss
+│   │   │   └───_reset.scss
+│   │   │   └───_token-custom-properties.scss
+│   │   │   └───common.scss
+```
+
+We split our stylesheets into separate files using *Partials*. We then import our partials using an `@use` directive, into one master stylesheet, in our case the `common.scss` file.
+
+The **abstracts** folder will contain all mixins, functions, variables.
+
+The **utilities** folder will contain all utility classes.
+
+The **_base.scss** holds the boilerplate code for the project.
+
+The **_reset.scss** contains all a reset some HTML elements.
+
+The **_token-custom-properties.scss** contains all CSS variables, this file is **autogenerated** and uses the **Design Tokens**..
+
+The **common.scss** must contain ONLY the imports of the above files, it's the entry point.
+
+Each component can have its own stylesheet, if possible use the existing components with the **System Props** to avoid adding custom style.
+
+This is essential for an SCSS stylesheet of a component:
+
+- use **SASS** with a **BEM** approach to style the component and native CSS **pseudo classes** as much as possible.
+- never declare the same CSS property more than twice (width, height, etc...). Change their values using the global or internal [**"CSS Custom Properties"**](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties).
+
+#### types:
+
+These are all common types related to the whole design system, **component property interfaces** should not be included.

@@ -1,0 +1,53 @@
+@use 'sass:map';
+@use '@/design-system/styles/abstracts' as *;
+
+.search-field {
+  $this: &;
+
+  position: relative;
+
+  &__input {
+    width: 100%;
+    padding: #{map-get-strict($token-variables, 'spacing', 'xs')} calc(#{map-get-strict($token-variables, 'spacing', 'xxl')} + #{map-get-strict($token-variables, 'spacing', 'xl')}) #{map-get-strict($token-variables, 'spacing', 'xs')} #{map-get-strict($token-variables, 'spacing', 'xs')};
+    font-family: #{map-get-strict($token-variables, 'font-family', 'base')};
+    font-size: var(--font-size-input, #{map-get-strict($token-variables, 'typography', 'text', 'xs', 'font-size')});
+    line-height: #{map-get-strict($token-variables, 'line-height', 'large')};
+    border-width: var(--border-width-input-search-field, 2px);
+    border-style: solid;
+    border-color: var(--border-color-input-search-field, transparent);
+    border-radius: 22px;
+    background-color: #{map-get-strict($token-variables, 'color', 'secondary')};
+
+    &, &::placeholder {
+      color: #{map-get-strict($token-variables, 'color', 'primary')};
+    }
+
+    &:focus-visible {
+      outline: none;
+
+      --border-width-input-search-field: 2px;
+      --border-color-input-search-field: #{map-get-strict($token-variables, 'color', 'primary')};
+
+      box-shadow: 0 4px 30px rgb(0 0 0 / 6%);
+    }
+  }
+
+  &__actions-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: #{map-get-strict($token-variables, 'spacing', 'xxs')} 0;
+  }
+
+  &__separator-button {
+    height: 100%;
+    width: 1px;
+    background-color: #{map-get-strict($token-variables, 'color', 'grey')};
+  }
+
+  &__button-action {
+    background: transparent;
+    border: none;
+  }
+}

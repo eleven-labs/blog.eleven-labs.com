@@ -12,7 +12,7 @@ This website is 100% [TypeScript](https://www.typescriptlang.org/) with a [Jamst
 
 It was developed based on the boilerplate [React SSR with Vite and Prerender](https://github.com/eleven-labs/typescript-boilerplates).
 
-It uses Eleven Labs [Design System](https://github.com/eleven-labs/design-system).
+It embeds the Eleven Labs design system, in the `src/design-system` folder. Its components are documented in [Storybook](https://storybook.js.org/), which you can browse with `pnpm start:storybook`.
 
 ----------
 

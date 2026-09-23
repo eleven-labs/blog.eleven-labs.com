@@ -1,0 +1,8 @@
+@use '@/design-system/styles/abstracts' as *;
+
+.divider {
+  border: none;
+  height: 1px;
+  width: 100%;
+  background-color: #{map-get-strict($token-variables, 'color', 'secondary-dark')};
+}

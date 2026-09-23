@@ -1,12 +1,12 @@
-import type { LayoutTemplateProps} from '@eleven-labs/design-system';
+import type { LayoutTemplateProps } from '@/templates';
 
-import { Text } from '@eleven-labs/design-system';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { contact, socialNetworks, websiteUrl } from '@/config/website';
 import { LANGUAGES_AVAILABLE_WITH_DT, PATHS } from '@/constants';
 import { TransWithHtml } from '@/containers/TransWithHtml';
+import { Text } from '@/design-system';
 import { generatePath } from '@/helpers/routerHelper';
 
 export const useFooterContainer = (): LayoutTemplateProps['footer'] => {

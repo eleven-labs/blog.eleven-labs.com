@@ -1,0 +1,16 @@
+{
+  "radius": {
+    "xs": {
+      "value": "4px",
+      "comment": "Extra small border radius"
+    },
+    "s": {
+      "value": "4px",
+      "comment": "Small border radius"
+    },
+    "full-rounded": {
+      "value": "50%",
+      "comment": "Pill-shaped border radius (for fully rounded corners)"
+    }
+  }
+}

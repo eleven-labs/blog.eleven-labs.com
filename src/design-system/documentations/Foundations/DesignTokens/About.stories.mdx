@@ -1,0 +1,42 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Foundations/Design Tokens/About" />
+
+# Design Tokens
+
+Design tokens are the abstract concepts our system is built on: color, spacing, typography and the like.
+
+They are represented as data, in our case json, and are used instead of hard-coded values to ensure the flexibility and unity of all our product experiences.
+
+Design tokens are directly integrated into our component library.
+
+The design tokens are directly integrated into our component library, so we use [Style Dictionary](https://amzn.github.io/style-dictionary/) to generate `CSS`, `SCSS` and `TypeScript` variables from a single source, removing roadblocks, errors, and inefficiencies across our workflow.
+
+## Directory and file architecture of the Design Tokens
+
+```
+design_system
+└───bin
+│   └───build-design-tokens
+└───src
+│   └───designTokens
+│   │   └───asset
+│   │   │   └───font.tokens.json
+│   │   └───typography
+│   │   │   └───heading.tokens.json
+│   │   │   └───text.tokens.json
+│   │   │   └───typography.tokens.json
+│   │   └───breakpoint.tokens.json
+│   │   └───color.token.json
+│   │   └───spacing.token.json
+```
+
+In the `bin/build-design-tokens` directory is the command to generate the `CSS`, `SCSS` and `TypeScript` files.
+
+The command is:
+
+```
+yarn build:design-tokens
+```
+
+Then in the `src/designTokens` folder is the definition of the tokens.

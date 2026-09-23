@@ -1,0 +1,18 @@
+@use '@/design-system/styles/abstracts' as *;
+
+.blockquote {
+  font-family: Georgia, #{map-get-strict($token-variables, 'font-family', 'blockquote')};
+
+  &::before, &::after {
+    content: "“";
+    display: block;
+    height: 5rem;
+    font-size: 8rem;
+    font-weight: #{map-get-strict($token-variables, 'font-weight', 'medium')};
+    color: #{map-get-strict($token-variables, 'color', 'primary')};
+  }
+
+  &::after {
+    transform: rotate(180deg);
+  }
+}

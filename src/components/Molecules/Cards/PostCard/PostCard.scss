@@ -1,0 +1,89 @@
+@use '@/design-system/styles/abstracts' as *;
+
+.post-card {
+  $this: &;
+
+  --background-color-post-card: white;
+  --cover-width-post-card: 100%;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: #{map-get-strict($token-variables, 'spacing', 's')};
+  padding: #{map-get-strict($token-variables, 'spacing', 's')};
+  background-color: var(--background-color-post-card);
+  border-radius: #{map-get-strict($token-variables, 'radius', 's')};
+
+  // Holds the cover and carries its width: a percentage set on the <img> cannot
+  // resolve against the card.
+  &__media {
+    flex: none;
+    width: var(--cover-width-post-card);
+
+    > picture, > .skeleton {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  // Every variant, at every breakpoint, renders the cover in the same 16/9 box:
+  // a single source image framed once is enough for all of them.
+  &__cover {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: #{map-get-strict($token-variables, 'radius', 'xs')};
+  }
+
+  &--highlight-dark {
+    --background-color-post-card: rgb(0 0 0 / 15%);
+
+    color: white;
+
+    #{$this}__link {
+      color: white;
+    }
+  }
+
+  // Only variant to put the cover aside the text, and only once the card is wide
+  // enough for it: below that the cover would be too small to carry anything.
+  &--side-image {
+    @include create-media-queries('sm') {
+      --cover-width-post-card: clamp(160px, 32%, 288px);
+
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__link {
+    color: black;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // Sits on the title line rather than being pinned to the card corner, where
+  // it would overlap the cover now that the thumbnail fills its box.
+  &__heading, &__heading-wrapper {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__tutoriel-tag {
+    flex: none;
+    font-family: #{map-get-strict($token-variables, 'font-family', 'heading')};
+    letter-spacing: 0.5px;
+    background-color: #{map-get-strict($token-variables, 'color', 'accent')};
+    border-radius: #{map-get-strict($token-variables, 'radius', 'xs')};
+  }
+}
