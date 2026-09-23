@@ -5,12 +5,10 @@ import type { BreadcrumbProps, PictureProps } from '@/design-system';
 import React from 'react';
 
 import { SummaryCard } from '@/components';
-import { Box, Breadcrumb } from '@/design-system';
+import { Breadcrumb } from '@/design-system';
 import { LayoutContentWithSidebar } from '@/templates/LayoutContentWithSidebar';
 
 import { PostPageContent } from './PostPageContent';
-
-import './PostPage.scss';
 
 export interface PostPageProps extends PostPageContentProps {
   breadcrumb: BreadcrumbProps;
@@ -25,15 +23,21 @@ export const PostPage: React.FC<PostPageProps> = ({
   children,
   ...postPageContent
 }) => (
-  <Box mx="auto" className="post-page">
-    <Breadcrumb mx={{ xs: 'xs', md: '0' }} {...breadcrumb} />
+  <div className="mx-auto">
+    <Breadcrumb className="mx-xs md:mx-0" {...breadcrumb} />
     <LayoutContentWithSidebar
       content={
         <PostPageContent {...postPageContent} variant={variant} summary={summary} cover={cover}>
           {children}
         </PostPageContent>
       }
-      sidebar={<SummaryCard hiddenBelow="md" variant={variant === 'tutorial' ? 'secondary' : 'primary'} {...summary} />}
+      sidebar={
+        <SummaryCard
+          className="max-md:hidden"
+          variant={variant === 'tutorial' ? 'secondary' : 'primary'}
+          {...summary}
+        />
+      }
     />
-  </Box>
+  </div>
 );

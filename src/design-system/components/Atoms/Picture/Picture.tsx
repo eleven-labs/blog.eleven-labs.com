@@ -1,15 +1,14 @@
-import type { SpacingSystemProps } from '@/design-system/types';
-
 import React from 'react';
 
-import { Box } from '@/design-system';
+import { cn } from '@/design-system/helpers/cn';
 
-export interface PictureProps extends SpacingSystemProps {
+export interface PictureProps {
   img: React.ComponentPropsWithoutRef<'img'> & { fetchPriority?: 'high' | 'low' | 'auto' };
   sources?: React.ComponentPropsWithoutRef<'source'>[];
+  className?: string;
 }
 
-export const Picture: React.FC<PictureProps> = ({ img, sources, ...props }) => {
+export const Picture: React.FC<PictureProps> = ({ img, sources, className }) => {
   const { fetchPriority, ...imgProps } = img;
 
   // React 18 ne connaît pas la propriété `fetchPriority` : il la recopie telle quelle dans le DOM
@@ -17,9 +16,9 @@ export const Picture: React.FC<PictureProps> = ({ img, sources, ...props }) => {
   const fetchPriorityAttribute = fetchPriority ? { fetchpriority: fetchPriority } : {};
 
   return (
-    <Box as="picture" display="block" {...props}>
+    <picture className={cn('block', className)}>
       {sources?.map((source, key) => <source key={key} {...source} />)}
       <img {...imgProps} {...fetchPriorityAttribute} alt={img.alt} />
-    </Box>
+    </picture>
   );
 };

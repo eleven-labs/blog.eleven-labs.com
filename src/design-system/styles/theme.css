@@ -1,0 +1,141 @@
+/**
+ * Design tokens du blog, exposés à Tailwind.
+ *
+ * Les valeurs qui changent au-delà de `md` (toute la typographie) sont déclarées comme propriétés
+ * personnalisées sur `:root`, puis référencées depuis `@theme inline` : une seule classe utilitaire
+ * (`text-heading-xl`) suffit alors à couvrir les deux paliers, comme le faisait l'ancien système.
+ */
+
+:root {
+  /* Corps de texte */
+  --font-size-text-xs: 12px;
+  --font-size-text-s: 14px;
+  --font-size-text-m: 18px;
+
+  /* Titres de l'interface */
+  --font-size-heading-xs: 16px;
+  --font-size-heading-s: 16px;
+  --font-size-heading-m: 24px;
+  --font-size-heading-l: 32px;
+  --font-size-heading-xl: 40px;
+  --letter-spacing-heading-xl: 2px;
+
+  /* Titres rédigés en markdown */
+  --font-size-markup-s: 16px;
+  --font-size-markup-m: 18px;
+  --font-size-markup-l: 20px;
+  --font-size-markup-xl: 22px;
+}
+
+@media (width >= 1001px) {
+  :root {
+    --font-size-text-xs: 14px;
+    --font-size-text-s: 16px;
+    --font-size-text-m: 20px;
+    --font-size-heading-xs: 20px;
+    --font-size-heading-s: 24px;
+    --font-size-heading-m: 32px;
+    --font-size-heading-l: 40px;
+    --font-size-heading-xl: 64px;
+    --letter-spacing-heading-xl: 3px;
+    --font-size-markup-s: 24px;
+    --font-size-markup-m: 26px;
+    --font-size-markup-l: 28px;
+    --font-size-markup-xl: 28px;
+  }
+}
+
+/* `static` : toutes les variables sont émises, même inutilisées, pour que la documentation
+   du storybook puisse les relire dans la feuille de style. */
+@theme static {
+  /* ------------------------------------------------------------------ Couleurs */
+  --color-primary: #0a4084;
+  --color-primary-dark: #194180;
+  --color-primary-very-dark: #093670;
+  --color-secondary: #e9f1f8;
+  --color-secondary-dark: #c5d3e9;
+
+  /* Porte une information complémentaire, sans notion d'importance. */
+  --color-info: #dd3156;
+
+  /* Couleur d'accentuation du contenu. */
+  --color-accent: #f8fa9b;
+  --color-ultra-light-grey: #ededed;
+  --color-light-grey: #c4c4c4;
+  --color-grey: #9b9b9b;
+  --color-dark-grey: #757575;
+  --color-ultra-dark-grey: #333;
+  --color-black: #000;
+  --color-white: #fff;
+
+  /* --------------------------------------------------------------- Breakpoints */
+
+  /* Le blog est pensé « mobile first » : `xs` n'a pas de valeur minimale. */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 571px;
+  --breakpoint-md: 1001px;
+  --breakpoint-lg: 1201px;
+
+  /* ------------------------------------------------------------------ Espaces */
+  --spacing-xxs-3: 4px;
+  --spacing-xxs-2: 6px;
+  --spacing-xxs: 8px;
+  --spacing-xs: 12px;
+  --spacing-s: 16px;
+  --spacing-m: 24px;
+  --spacing-l: 32px;
+  --spacing-xl: 42px;
+  --spacing-xxl: 64px;
+  --spacing-xxl-2: 128px;
+  --spacing-xxl-3: 164px;
+
+  /* ------------------------------------------------------------------- Arrondis */
+  --radius-xs: 4px;
+  --radius-s: 4px;
+  --radius-full-rounded: 50%;
+
+  /* ------------------------------------------------------------------ Polices */
+  --font-base: 'Montserrat', sans-serif;
+  --font-heading: 'Agdasima', sans-serif;
+  --font-blockquote: georgia, 'Times New Roman', times, serif;
+
+  /* Conserve la pile monospace historique du navigateur pour le code. */
+  --font-mono: monospace, monospace;
+  --default-font-family: var(--font-base);
+  --default-mono-font-family: var(--font-mono);
+
+  /* ------------------------------------------------------------ Interlignages */
+  --leading-base: 1.2;
+  --leading-large: 1.5;
+
+  /* ------------------------------------------------------- Tailles de police */
+  --text-*: initial;
+}
+
+@theme inline {
+  --text-xs: var(--font-size-text-xs);
+  --text-xs--line-height: var(--leading-large);
+  --text-s: var(--font-size-text-s);
+  --text-s--line-height: var(--leading-large);
+  --text-m: var(--font-size-text-m);
+  --text-m--line-height: var(--leading-large);
+  --text-heading-xs: var(--font-size-heading-xs);
+  --text-heading-xs--line-height: var(--leading-base);
+  --text-heading-s: var(--font-size-heading-s);
+  --text-heading-s--line-height: var(--leading-base);
+  --text-heading-m: var(--font-size-heading-m);
+  --text-heading-m--line-height: var(--leading-base);
+  --text-heading-l: var(--font-size-heading-l);
+  --text-heading-l--line-height: var(--leading-base);
+  --text-heading-xl: var(--font-size-heading-xl);
+  --text-heading-xl--line-height: var(--leading-base);
+  --text-markup-s: var(--font-size-markup-s);
+  --text-markup-s--line-height: var(--leading-base);
+  --text-markup-m: var(--font-size-markup-m);
+  --text-markup-m--line-height: var(--leading-base);
+  --text-markup-l: var(--font-size-markup-l);
+  --text-markup-l--line-height: var(--leading-base);
+  --text-markup-xl: var(--font-size-markup-xl);
+  --text-markup-xl--line-height: var(--leading-base);
+  --tracking-heading-xl: var(--letter-spacing-heading-xl);
+}

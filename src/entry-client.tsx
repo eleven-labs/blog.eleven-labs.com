@@ -7,7 +7,7 @@ import { i18nConfig } from '@/config/i18n/i18n.config';
 import { HeaderContainer } from '@/containers/LayoutTemplateContainer/HeaderContainer';
 import { SearchPageContentContainer } from '@/containers/SearchPageContainer';
 
-import './styles';
+import './styles.css';
 
 const i18n = i18next.createInstance().use(initReactI18next);
 void i18n.init({

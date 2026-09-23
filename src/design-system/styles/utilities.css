@@ -1,0 +1,17 @@
+/**
+ * Utilitaires propres au blog, c'est-à-dire ceux qu'aucune classe Tailwind ne couvre.
+ */
+
+/**
+ * Largeur de contenu commune à toutes les pages. Elle est plafonnée pour qu'une ligne reste
+ * lisible sur un écran large, où 85vw seul l'étirerait au-delà de 2000px.
+ */
+@utility container-content {
+  width: calc(100vw - (2 * var(--spacing-s)));
+  margin-inline: var(--spacing-s);
+
+  @media (width >= theme(--breakpoint-md)) {
+    max-width: min(85vw, 1280px);
+    margin-inline: auto;
+  }
+}

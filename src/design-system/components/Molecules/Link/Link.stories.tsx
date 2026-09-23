@@ -1,12 +1,10 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import * as React from 'react';
+import type { LinkProps } from '@/design-system';
 
-import { Heading, Text } from '@/design-system';
+import { Link } from '@/design-system';
 
-import { Link } from './Link';
-
-export default {
+const meta: Meta<LinkProps> = {
   component: Link,
   args: {
     children: 'Link Label',
@@ -16,23 +14,13 @@ export default {
   parameters: {
     layout: 'centered',
   },
-} as Meta<typeof Link>;
-
-const Template: StoryFn<typeof Link> = (args) => <Link {...args} />;
-
-export const LinkWithText = Template.bind({});
-LinkWithText.args = {
-  as: Text,
-  size: 'm',
 };
 
-export const LinkWithHeading = Template.bind({});
-LinkWithHeading.args = {
-  as: Heading,
-  size: 'l',
-};
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const LinkWithIcon = Template.bind({});
-LinkWithIcon.args = {
-  icon: 'language',
+export const Overview: Story = {};
+
+export const LinkWithIcon: Story = {
+  args: { icon: 'language' },
 };

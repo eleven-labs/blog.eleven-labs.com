@@ -1,41 +1,37 @@
-import type { FlexProps } from '@/design-system';
 import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
 import React from 'react';
 
-import { Button, Flex, Heading, Text } from '@/design-system';
-
-import './ContactCard.scss';
+import { Button, Heading, Text } from '@/design-system';
+import { cn } from '@/design-system/helpers/cn';
 
 export type ContactCardProps = {
   title: React.ReactNode;
   description: React.ReactNode;
   link: { label: React.ReactNode } & ComponentPropsWithoutRef<'a'>;
-} & FlexProps;
+  className?: string;
+};
 
 export const ContactCard: React.FC<ContactCardProps> = ({
   title,
   description,
   link: { label: linkLabel, ...link },
-  ...props
+  className,
 }) => (
-  <Flex {...props} justifyContent="center" alignItems="center" py="l" className="contact-card">
-    <Flex
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      gap="m"
-      textAlign="center"
-      className="contact-card__container"
-      px="m"
-    >
-      <Heading size="l" color="primary">
+  <div
+    className={cn(
+      'flex items-center justify-center rounded-xs bg-white bg-[url(/imgs/contact-background.png)] bg-contain bg-bottom-right bg-no-repeat py-l',
+      className
+    )}
+  >
+    <div className="flex max-w-140 flex-col items-center justify-center gap-m px-m text-center">
+      <Heading size="l" className="text-primary">
         {title}
       </Heading>
       <Text size="s">{description}</Text>
-      <Button as="a" {...link}>
+      <Button render={<a {...link} />}>
         {linkLabel}
       </Button>
-    </Flex>
-  </Flex>
+    </div>
+  </div>
 );

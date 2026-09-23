@@ -5,33 +5,26 @@ import parse from 'autosuggest-highlight/parse';
 import * as React from 'react';
 
 import { Text } from '@/design-system';
-import { polyRef } from '@/design-system/helpers/polyRef';
 
 export interface TextHighlightProps extends TextProps {
   text: string;
+  /** Portion du texte à mettre en avant, en général la saisie de l'utilisateur. */
   textQuery?: string;
 }
 
-export const TextHighlight = polyRef<'p', TextHighlightProps>(({ text, textQuery = '', ...props }, ref) => {
+export const TextHighlight: React.FC<TextHighlightProps> = ({ text, textQuery = '', ...props }) => {
   const parts = React.useMemo(() => {
     const matches = match(text, textQuery, { findAllOccurrences: true });
     return parse(text, matches);
   }, [text, textQuery]);
 
   return (
-    <Text {...props} ref={ref}>
+    <Text {...props}>
       {parts.map((part, index) => (
-        <Text
-          as="span"
-          key={index}
-          fontWeight={part.highlight ? 'medium' : 'regular'}
-          color={part.highlight ? 'info' : 'black'}
-        >
+        <span key={index} className={part.highlight ? 'font-medium text-info' : 'font-normal text-black'}>
           {part.text}
-        </Text>
+        </span>
       ))}
     </Text>
   );
-});
-
-TextHighlight.displayName = 'TextHighlight';
+};

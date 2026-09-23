@@ -1,71 +1,30 @@
 import { Meta } from '@storybook/addon-docs';
-import { Layout, Table } from '@/storybook/components';
-import { Text } from '@/design-system';
-import { tokenVariables } from '@/design-system/constants';
+import { Layout, DesignTokenTable } from '@/storybook/components';
+import { fontFamilyTokenNameList } from '@/design-system';
 
 <Meta
-    title="Foundations/Design Tokens/Typography/FontFamily"
+    title="Foundations/Design Tokens/Typography/Font Family"
     parameters={{
         viewMode: 'docs',
-        previewTabs: {
-            canvas: { hidden: true }
-        },
-        backgrounds: {
-            disable: true,
-            grid: {
-                disable: true,
-            }
-        },
+        previewTabs: { canvas: { hidden: true } },
+        backgrounds: { disable: true, grid: { disable: true } },
     }}
 />
 
 <Layout
     title="Typography"
-    description="Font Family token scales"
+    description="Font families, available through <code>font-base</code>, <code>font-heading</code> and <code>font-blockquote</code>"
 >
-    <Table
-        title="Font Family"
-        columns={[
-            {
-                name: 'name',
-                label: 'Name',
-            },
-            {
-                name: 'preview',
-                label: 'Preview',
-            },
-            {
-                name: 'weight_name',
-                label: 'Weight Name',
-            },
-            {
-                name: 'weight_value',
-                label: 'Weight Value',
-            }
-        ]}
-        rows={Object.entries(tokenVariables["font-family"]).reduce((rows, [tokenName, token]) => {
-            const rowsByWeight = token.weights.map(weight => ({
-                name: (
-                    <Text>{tokenName} - {weight}</Text>
-                ),
-                preview: (
-                    <Text style={{ fontFamily: token.value }} fontWeight={weight}>
-                        {token.name} {weight}
-                    </Text>
-                ),
-                weight_name: (
-                    <Text>
-                        {weight}
-                    </Text>
-                ),
-                weight_value: (
-                    <Text>
-                        {tokenVariables['font-weight'][weight].value}
-                    </Text>
-                ),
-            }));
-
-          return [...rows, ...rowsByWeight];
-        }, [])}
+    <DesignTokenTable
+        title="Font family"
+        tokens={fontFamilyTokenNameList.map((tokenName) => ({
+            name: tokenName,
+            cssVariable: `--font-${tokenName}`,
+            preview: (
+                <p className="text-m" style={{ fontFamily: `var(--font-${tokenName})` }}>
+                    The quick brown fox jumps over the lazy dog
+                </p>
+            ),
+        }))}
     />
 </Layout>

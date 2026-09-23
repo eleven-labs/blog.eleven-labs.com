@@ -9,7 +9,7 @@ import type { ComponentPropsWithoutRef } from '@/design-system/types';
 import React from 'react';
 
 import { ContactCard, SummaryCard } from '@/components';
-import { Box, Button, Divider, Flex, Picture } from '@/design-system';
+import { Button, Divider, Picture } from '@/design-system';
 
 import { PostFooter } from './PostFooter';
 import { PostHeader } from './PostHeader';
@@ -34,7 +34,6 @@ export interface PostPageContentProps {
 
 export const PostPageContent: React.FC<PostPageContentProps> = ({
   variant = 'article',
-
   summary,
   cover,
   header,
@@ -46,32 +45,38 @@ export const PostPageContent: React.FC<PostPageContentProps> = ({
   nextLink: { label: nextLinkLabel, ...nextLink } = {},
 }) => (
   <>
-    <Box>
+    <div>
       <PostHeader {...header} />
-      <Divider mt="m" />
-      {cover && <Picture {...cover} mt="l" img={{ ...cover.img, className: 'post-page__cover' }} />}
-      <SummaryCard mt="l" hiddenAbove="md" variant={variant === 'tutorial' ? 'secondary' : 'primary'} {...summary} />
-      <Box mt={{ xs: 'l', md: 'm' }} className="post-page__content">
-        {children}
-      </Box>
-      {variant === 'tutorial' && (
-        <>
-          <Flex gap="l">
-            {previousLinkLabel && previousLink && (
-              <Button as="a" mt="l" variant="secondary" {...previousLink}>
-                {previousLinkLabel}
-              </Button>
-            )}
-            {nextLinkLabel && nextLink && (
-              <Button as="a" mt="l" {...nextLink}>
-                {nextLinkLabel}
-              </Button>
-            )}
-          </Flex>
-        </>
+      <Divider className="mt-m" />
+      {cover && (
+        <Picture
+          {...cover}
+          className="mt-l"
+          img={{ ...cover.img, className: 'block h-auto w-full rounded-s object-cover aspect-video' }}
+        />
       )}
-      <PostFooter mt="l" {...footer} />
-    </Box>
+      <SummaryCard
+        className="mt-l md:hidden"
+        variant={variant === 'tutorial' ? 'secondary' : 'primary'}
+        {...summary}
+      />
+      <div className="post-content mt-l md:mt-m">{children}</div>
+      {variant === 'tutorial' && (
+        <div className="flex gap-l">
+          {previousLinkLabel && previousLink && (
+            <Button render={<a {...previousLink} />} className="mt-l" variant="secondary">
+              {previousLinkLabel}
+            </Button>
+          )}
+          {nextLinkLabel && nextLink && (
+            <Button render={<a {...nextLink} />} className="mt-l">
+              {nextLinkLabel}
+            </Button>
+          )}
+        </div>
+      )}
+      <PostFooter className="mt-l" {...footer} />
+    </div>
     <Divider />
     <ContactCard {...contactCard} />
     {relatedPostList.posts.length > 0 && <RelatedPostList {...relatedPostList} />}

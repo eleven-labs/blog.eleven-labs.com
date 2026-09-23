@@ -1,86 +1,27 @@
 import { Meta } from '@storybook/addon-docs';
-import { Layout, Table } from '@/storybook/components';
-import { Heading, Text } from '@/design-system';
-import { tokenVariables, headingSizeTokenNameList } from '@/design-system/constants';
-import { getValueOfCssPropertyInDesignTokens } from '@/design-system/helpers/storybookHelper';
-import { get } from '@/design-system/helpers/objectHelper';
+import { Layout, DesignTokenTable } from '@/storybook/components';
+import { Heading, headingSizeList } from '@/design-system';
 
 <Meta
     title="Foundations/Design Tokens/Typography/Heading"
     parameters={{
         viewMode: 'docs',
-        previewTabs: {
-            canvas: { hidden: true }
-        },
-        backgrounds: {
-            disable: true,
-            grid: {
-                disable: true,
-            }
-        },
+        previewTabs: { canvas: { hidden: true } },
+        backgrounds: { disable: true, grid: { disable: true } },
     }}
 />
 
 <Layout
     title="Typography"
-    description="Heading token scales"
+    description="Heading token scales, available through <code>text-heading-*</code> — or, better, through the <code>Heading</code> component, which also carries the family and the weight."
 >
-    <Table
+    <DesignTokenTable
         title="Heading"
-        columns={[
-            {
-                name: 'name',
-                label: 'Name',
-            },
-            {
-                name: 'preview',
-                label: 'Preview',
-            },
-            {
-              name: 'fontFamily',
-              label: 'Font Family',
-            },
-            {
-                name: 'mobile',
-                label: 'Value for mobile',
-            },
-            {
-                name: 'desktop',
-                label: 'Value for desktop',
-            },
-        ]}
-        rows={headingSizeTokenNameList
-          .filter(tokenName => tokenName !== 'base')
-          .map(tokenName => ({
-            name: (
-                <Text fontWeight="medium">heading-{tokenName}</Text>
-            ),
-            preview: (
-                <Heading size={tokenName}>
-                    Title
-                </Heading>
-            ),
-            fontFamily: get(tokenVariables, 'typography.heading.base.font-family.value'),
-            mobile: `${getValueOfCssPropertyInDesignTokens({
-                path: 'typography.heading',
-                tokenName,
-                propertyCSS: 'font-size'
-            })} / ${getValueOfCssPropertyInDesignTokens({
-              path: 'typography.heading',
-              tokenName,
-              propertyCSS: 'line-height'
-            })}`,
-            desktop: `${getValueOfCssPropertyInDesignTokens({
-                path: 'typography.heading',
-                tokenName,
-                propertyCSS: 'font-size',
-                isDesktop: true,
-            })} / ${getValueOfCssPropertyInDesignTokens({
-              path: 'typography.heading',
-              tokenName,
-              propertyCSS: 'line-height',
-              isDesktop: true,
-            })}`,
+        withDesktop
+        tokens={headingSizeList.map((tokenName) => ({
+            name: `heading-${tokenName}`,
+            cssVariable: `--font-size-heading-${tokenName}`,
+            preview: <Heading size={tokenName}>Title</Heading>,
         }))}
     />
 </Layout>

@@ -1,6 +1,0 @@
-.storybook-table {
-  &__head, &__row {
-    display: grid;
-    grid-template-columns: repeat(var(--storybook-table-grid-cols), minmax(0,1fr));
-  }
-}

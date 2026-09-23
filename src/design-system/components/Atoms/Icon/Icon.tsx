@@ -1,36 +1,27 @@
-import type { ColorSystemProps, IconNameType, MarginSystemProps } from '@/design-system/types';
+import type { IconNameType } from '@/design-system/types';
 
-import classNames from 'classnames';
 import * as React from 'react';
 
-import { Svgs } from '@/design-system';
-import { marginSystemProps } from '@/design-system/constants';
+import { Svgs } from '@/design-system/components/Atoms';
+import { cn } from '@/design-system/helpers/cn';
 import { pascalCase } from '@/design-system/helpers/stringHelper';
-import { colorSystemClassName, omitSystemProps, spacingSystemClassName } from '@/design-system/helpers/systemPropsHelper';
 
-export type IconProps = Omit<React.SVGProps<SVGSVGElement>, 'name' | 'color'> &
-  MarginSystemProps &
-  Pick<ColorSystemProps, 'color'> & {
-    name: IconNameType;
-    size?: string | number;
-    width?: string | number;
-    height?: string | number;
-  };
+export type IconProps = Omit<React.SVGProps<SVGSVGElement>, 'name' | 'color'> & {
+  name: IconNameType;
+  /** Raccourci pour dimensionner l'icône, qui se mesure en `em`. */
+  size?: string | number;
+};
 
-export const Icon: React.FC<IconProps> = ({ name, size, width, height, ...svgProps }) => {
+export const Icon: React.FC<IconProps> = ({ name, size, width, height, className, style, ...svgProps }) => {
   const Svg = (Svgs as Record<string, React.FC<React.SVGProps<SVGSVGElement>>>)[pascalCase(name)];
+
   return (
     <Svg
-      {...omitSystemProps({ props: svgProps, systemPropNames: [...Object.keys(marginSystemProps), 'color'] })}
-      className={classNames(
-        'icon',
-        spacingSystemClassName(svgProps),
-        colorSystemClassName(svgProps),
-        svgProps?.className
-      )}
+      {...svgProps}
+      className={cn(className)}
       height={height ?? '1em'}
       width={width ?? '1em'}
-      style={{ fontSize: size, ...svgProps.style }}
+      style={{ fontSize: size, ...style }}
     />
   );
 };

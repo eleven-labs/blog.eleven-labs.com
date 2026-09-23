@@ -1,37 +1,26 @@
-import type { BoxProps } from '@/design-system';
+import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
-import classNames from 'classnames';
-import React from 'react';
+import * as React from 'react';
 
-import { Box } from '@/design-system';
-import { polyRef } from '@/design-system/helpers/polyRef';
+import { cn } from '@/design-system/helpers/cn';
 
-import './Skeleton.scss';
-
-export interface SkeletonProps extends BoxProps {
+export interface SkeletonProps extends ComponentPropsWithoutRef<'div'> {
+  /** À `false`, le contenu est rendu tel quel, sans habillage. */
   isLoading?: boolean;
 }
 
-export const Skeleton = polyRef<'div', SkeletonProps>(({ as = 'div', isLoading = true, children, ...props }, ref) => (
-  <>
-    {isLoading ? (
-      <Box
-        {...props}
-        as={as}
-        ref={ref}
-        bg="ultra-light-grey"
-        className={classNames(isLoading ? ['skeleton', 'animate-pulse'] : undefined, props.className)}
-      >
-        {children ?? (
-          <Box>
-            <>&nbsp;</>
-          </Box>
-        )}
-      </Box>
-    ) : (
-      children
-    )}
-  </>
-));
+export const Skeleton: React.FC<SkeletonProps> = ({ isLoading = true, className, children, ...props }) => {
+  if (!isLoading) {
+    return <>{children}</>;
+  }
 
-Skeleton.displayName = 'Skeleton';
+  return (
+    <div
+      {...props}
+      // Le contenu reste en place pour donner sa taille au bloc, mais n'est plus visible.
+      className={cn('animate-pulse bg-ultra-light-grey *:invisible *:cursor-default', className)}
+    >
+      {children ?? <div>&nbsp;</div>}
+    </div>
+  );
+};

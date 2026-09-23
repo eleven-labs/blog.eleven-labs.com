@@ -1,7 +1,6 @@
 import { Meta } from '@storybook/addon-docs';
-import { Layout, Table } from '@/storybook/components';
-import { Box, Text } from '@/design-system';
-import { tokenVariables } from '@/design-system/constants';
+import { Layout, DesignTokenTable } from '@/storybook/components';
+import { colorTokenNameList } from '@/design-system';
 
 <Meta
   title="Foundations/Design Tokens/Color"
@@ -23,46 +22,16 @@ import { tokenVariables } from '@/design-system/constants';
   title="Color"
   description="Color palettes used by both design and engineering"
 >
-  <Table
-    columns={[
-      {
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        name: 'preview',
-        label: 'Preview',
-      },
-      {
-        name: 'value',
-        label: 'Value',
-      },
-      {
-        name: 'usage',
-        label: 'Usage',
-      },
-    ]}
-    rows={Object.entries(tokenVariables.color).map(([tokenName, token]) => ({
-      name: (
-        <Text
-          weight="medium"
-        >
-          {tokenName}
-        </Text>
-      ),
+  <DesignTokenTable
+    tokens={colorTokenNameList.map((tokenName) => ({
+      name: tokenName,
+      cssVariable: `--color-${tokenName}`,
       preview: (
-        <Box
-          bg={tokenName}
-          style={{
-            boxSizing: 'border-box',
-            width: '200px',
-            height: '50px',
-            border: '1px solid'
-          }}
+        <div
+          className="box-border h-[50px] w-[200px] border border-black"
+          style={{ backgroundColor: `var(--color-${tokenName})` }}
         />
       ),
-      value: token?.value,
-      usage: token?.description,
     }))}
   />
 </Layout>

@@ -4,13 +4,9 @@ import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 
 import { SearchField } from '@/design-system';
-import { systemPropsControls } from '@/design-system/constants/storybook';
 
-export default {
+const meta: Meta<typeof SearchField> = {
   component: SearchField,
-  argTypes: {
-    ...systemPropsControls,
-  },
   args: {
     input: {
       placeholder: 'Nom d’article, auteur ...',
@@ -28,7 +24,9 @@ export default {
       default: 'ultra-light-grey',
     },
   },
-} as Meta<typeof SearchField>;
+};
+
+export default meta;
 
 const Template: StoryFn<typeof SearchField> = (args) => <SearchField {...args} />;
 

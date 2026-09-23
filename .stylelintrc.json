@@ -1,9 +1,34 @@
 {
-  "extends": "stylelint-config-standard-scss",
-  "ignoreFiles": [
-    "src/design-system/styles/_token-custom-properties.scss",
-    "src/design-system/styles/_token-custom-properties-desktop.scss",
-    "src/design-system/styles/abstracts/variables/_token-variables.scss",
-    "src/design-system/styles/abstracts/variables/_variables.scss"
-  ]
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "theme",
+          "source",
+          "utility",
+          "variant",
+          "custom-variant",
+          "reference",
+          "plugin",
+          "config",
+          "apply"
+        ]
+      }
+    ],
+    "function-no-unknown": [
+      true,
+      {
+        "ignoreFunctions": [
+          "theme"
+        ]
+      }
+    ],
+    "import-notation": null,
+    "selector-class-pattern": null,
+    "custom-property-pattern": null,
+    "media-query-no-invalid": null,
+    "no-invalid-position-declaration": null
+  }
 }

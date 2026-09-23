@@ -3,7 +3,7 @@ import type { NotFoundBlockProps } from '@/components';
 import React from 'react';
 
 import { NotFoundBlock } from '@/components';
-import { Box, Heading, Skeleton } from '@/design-system';
+import { Heading, Skeleton } from '@/design-system';
 
 export type SearchPageContentProps = {
   title: React.ReactNode;
@@ -23,17 +23,17 @@ export const SearchPageContent: React.FC<SearchPageContentProps> = ({
   !isLoading && searchNotFound ? (
     <NotFoundBlock {...searchNotFound} />
   ) : (
-    <Box>
+    <div>
       <Skeleton isLoading={isLoading}>
-        <Heading size="m" fontWeight="medium" color="primary">
+        <Heading size="m" className="text-primary">
           {title}
         </Heading>
       </Skeleton>
       <Skeleton isLoading={isLoading}>
-        <Heading size="s" mb="l">
+        <Heading size="s" className="mb-l">
           {description}
         </Heading>
       </Skeleton>
       {postCardList}
-    </Box>
+    </div>
   );

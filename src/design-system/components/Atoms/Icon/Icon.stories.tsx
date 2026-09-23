@@ -2,17 +2,14 @@ import type { Meta, StoryFn } from '@storybook/react';
 
 import * as React from 'react';
 
-import { Icon } from '@/design-system';
-import { iconTokenNameList } from '@/design-system/constants';
-import { marginSystemPropsControls } from '@/design-system/constants/storybook';
+import { Icon , iconNameList } from '@/design-system';
 
-export default {
+const meta: Meta<typeof Icon> = {
   component: Icon,
   argTypes: {
-    ...marginSystemPropsControls,
     name: {
       control: 'select',
-      options: iconTokenNameList,
+      options: iconNameList,
     },
     size: {
       control: 'text',
@@ -20,13 +17,15 @@ export default {
   },
   args: {
     size: '10rem',
-    color: 'primary',
+    className: 'text-primary',
     name: 'access-time',
   },
   parameters: {
     layout: 'centered',
   },
-} as Meta<typeof Icon>;
+};
+
+export default meta;
 
 const Template: StoryFn<typeof Icon> = (args) => <Icon {...args} />;
 

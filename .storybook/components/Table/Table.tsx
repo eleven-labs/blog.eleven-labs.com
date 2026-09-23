@@ -1,48 +1,49 @@
-import './Table.scss';
-
 import React from 'react';
 
-import { Box, BoxProps, Heading } from '@/design-system';
+import { Heading } from '@/design-system';
+import { cn } from '@/design-system/helpers/cn';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export interface TableProps<TRow = any> extends BoxProps {
-  title: string;
+export interface TableProps<TRow = any> {
+  title?: string;
   columns: {
     name: string;
     label: string;
   }[];
   rows: TRow[];
+  className?: string;
 }
 
-export const Table: React.FC<TableProps> = ({ title, columns, rows, ...boxProps }) => (
-  <Box {...boxProps}>
-    <Heading as="p" size="l" mb="xxs">
-      {title}
-    </Heading>
-    <div
-      className="storybook-table"
-      style={
-        {
-          '--storybook-table-grid-cols': columns.length,
-        } as React.CSSProperties
-      }
-    >
-      <Box py="xs" bg="secondary" color="primary-light" className="storybook-table__head">
-        {columns.map((column) => (
-          <Box key={column.name} px="xxs">
-            {column.label}
-          </Box>
-        ))}
-      </Box>
-      {rows.map((row, index) => (
-        <Box key={index} py="s" className="storybook-table__row">
+export const Table: React.FC<TableProps> = ({ title, columns, rows, className }) => {
+  const gridStyle = {
+    gridTemplateColumns: `repeat(${columns.length}, minmax(0, 1fr))`,
+  } as React.CSSProperties;
+
+  return (
+    <div className={cn(className)}>
+      {title && (
+        <Heading size="l" className="mb-xxs">
+          {title}
+        </Heading>
+      )}
+      <div>
+        <div className="grid bg-secondary py-xs text-primary" style={gridStyle}>
           {columns.map((column) => (
-            <Box key={column.name} px="xxs">
-              {row[column.name] || '-'}
-            </Box>
+            <div key={column.name} className="px-xxs">
+              {column.label}
+            </div>
           ))}
-        </Box>
-      ))}
+        </div>
+        {rows.map((row, index) => (
+          <div key={index} className="grid py-s" style={gridStyle}>
+            {columns.map((column) => (
+              <div key={column.name} className="px-xxs">
+                {row[column.name] || '-'}
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
-  </Box>
-);
+  );
+};

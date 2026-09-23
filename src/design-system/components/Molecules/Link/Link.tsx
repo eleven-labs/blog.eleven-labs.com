@@ -1,39 +1,32 @@
-import type { BoxProps } from '@/design-system';
 import type { IconNameType } from '@/design-system/types';
 
-import classNames from 'classnames';
+import { useRender } from '@base-ui/react/use-render';
 import * as React from 'react';
 
-import { Box, Flex, Icon, Text } from '@/design-system';
-import { polyRef } from '@/design-system/helpers/polyRef';
+import { Icon, Text } from '@/design-system';
+import { cn } from '@/design-system/helpers/cn';
 
-import './Link.scss';
-
-export interface LinkProps extends BoxProps {
-  className?: string;
+export interface LinkProps extends useRender.ComponentProps<'a'> {
+  /** Affiche une icône devant le libellé, le lien passant alors en `inline-flex`. */
   icon?: IconNameType;
-  children?: React.ReactNode;
 }
 
-export const Link = polyRef<'a', LinkProps>(({ as = 'a', icon, className, children, ...props }, ref) =>
-  icon ? (
-    <Flex
-      {...props}
-      ref={ref}
-      as={as}
-      display="inline-flex"
-      alignItems="center"
-      color="info"
-      className={classNames('link', className)}
-    >
-      {icon && <Icon name={icon} />}
-      <Text as="span">{children}</Text>
-    </Flex>
-  ) : (
-    <Box {...props} ref={ref} as={as} color="info" className={classNames('link', className)}>
-      {children}
-    </Box>
-  )
-);
+const linkClassName = 'font-semibold text-info underline hover:no-underline';
 
-Link.displayName = 'Link';
+export const Link: React.FC<LinkProps> = ({ render, icon, className, children, ...props }) =>
+  useRender({
+    defaultTagName: 'a',
+    render,
+    props: {
+      ...props,
+      className: cn(linkClassName, icon && 'inline-flex items-center', className),
+      children: icon ? (
+        <>
+          <Icon name={icon} />
+          <Text render={<span />}>{children}</Text>
+        </>
+      ) : (
+        children
+      ),
+    },
+  });

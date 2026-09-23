@@ -1,7 +1,5 @@
 import type { SyntaxHighlighterProps as SyntaxHighlighterBaseProps } from 'react-syntax-highlighter';
 
-import type { MarginSystemProps } from '@/design-system/types';
-
 import React from 'react';
 import bash from 'react-syntax-highlighter/dist/esm/languages/prism/bash';
 import c from 'react-syntax-highlighter/dist/esm/languages/prism/c';
@@ -41,7 +39,9 @@ import { httpLanguage } from './httpLanguage';
 
 import './disablePrismAutoHighlight';
 
-export type SyntaxHighlighterProps = MarginSystemProps & Pick<SyntaxHighlighterBaseProps, 'language' | 'children'>;
+export type SyntaxHighlighterProps = Pick<SyntaxHighlighterBaseProps, 'language' | 'children'> & {
+  className?: string;
+};
 
 /**
  * `PrismLight` is imported from its own entry point rather than from the package index, which pulls

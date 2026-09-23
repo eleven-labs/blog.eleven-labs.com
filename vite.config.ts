@@ -1,3 +1,4 @@
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import * as path from 'node:path';
 import { visualizer } from 'rollup-plugin-visualizer';
@@ -8,20 +9,13 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig(({ mode, ssrBuild }) => ({
   plugins: [
     react(),
+    tailwindcss(),
     tsconfigPaths(),
     visualizer({ filename: `reports/bundle-${ssrBuild ? 'ssr' : 'client'}-${mode}-stats.html`, gzipSize: true }),
   ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
-    },
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        // L'API JS historique de Dart Sass est dépréciée et disparaîtra avec Dart Sass 2.
-        api: 'modern-compiler',
-      },
     },
   },
   ssr: {

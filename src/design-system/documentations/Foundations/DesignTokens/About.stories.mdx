@@ -6,37 +6,61 @@ import { Meta } from '@storybook/addon-docs';
 
 Design tokens are the abstract concepts our system is built on: color, spacing, typography and the like.
 
-They are represented as data, in our case json, and are used instead of hard-coded values to ensure the flexibility and unity of all our product experiences.
+They are used instead of hard-coded values to ensure the flexibility and unity of all our product experiences.
 
-Design tokens are directly integrated into our component library.
+## Where they live
 
-The design tokens are directly integrated into our component library, so we use [Style Dictionary](https://amzn.github.io/style-dictionary/) to generate `CSS`, `SCSS` and `TypeScript` variables from a single source, removing roadblocks, errors, and inefficiencies across our workflow.
-
-## Directory and file architecture of the Design Tokens
-
-```
-design_system
-└───bin
-│   └───build-design-tokens
-└───src
-│   └───designTokens
-│   │   └───asset
-│   │   │   └───font.tokens.json
-│   │   └───typography
-│   │   │   └───heading.tokens.json
-│   │   │   └───text.tokens.json
-│   │   │   └───typography.tokens.json
-│   │   └───breakpoint.tokens.json
-│   │   └───color.token.json
-│   │   └───spacing.token.json
-```
-
-In the `bin/build-design-tokens` directory is the command to generate the `CSS`, `SCSS` and `TypeScript` files.
-
-The command is:
+Since the move to **Tailwind CSS v4**, the tokens are declared directly in CSS — Tailwind is configured
+from a stylesheet rather than from a JavaScript file:
 
 ```
-yarn build:design-tokens
+src
+└───design-system
+│   └───styles
+│   │   └───theme.css       ← the tokens
+│   │   └───base.css        ← global rules completing Tailwind's preflight
+│   │   └───utilities.css   ← the few utilities Tailwind does not provide
+│   │   └───index.css       ← entry point
 ```
 
-Then in the `src/designTokens` folder is the definition of the tokens.
+`theme.css` holds a single `@theme` block. Every entry of that block becomes both a CSS custom
+property and a family of utility classes:
+
+```css
+@theme static {
+  --color-primary: #0a4084;
+  --spacing-m: 24px;
+  --radius-s: 4px;
+}
+```
+
+```html
+<div class="bg-primary p-m rounded-s">…</div>
+```
+
+## Tokens that change with the viewport
+
+The whole typographic scale is bigger past the `md` breakpoint. Rather than duplicating every class,
+the sizes are declared as custom properties redefined inside a media query, then referenced from
+`@theme inline`:
+
+```css
+:root { --font-size-heading-xl: 40px; }
+
+@media (width >= 1001px) {
+  :root { --font-size-heading-xl: 64px; }
+}
+
+@theme inline {
+  --text-heading-xl: var(--font-size-heading-xl);
+  --text-heading-xl--line-height: var(--leading-base);
+}
+```
+
+A single `text-heading-xl` class then covers both breakpoints, exactly as the previous design tokens
+pipeline did.
+
+## Reading the values
+
+The tables in this section read the custom properties straight out of the stylesheet the browser has
+loaded: what they show is what the page applies, for the mobile scale as well as the desktop one.

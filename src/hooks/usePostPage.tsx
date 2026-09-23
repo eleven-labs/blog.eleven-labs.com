@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 
 import { IMAGE_FORMATS, PATHS } from '@/constants';
-import { Box } from '@/design-system';
 import { getCover } from '@/helpers/assetHelper';
 import { getUrl } from '@/helpers/getUrlHelper';
 import { generatePath } from '@/helpers/routerHelper';
@@ -33,7 +32,7 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
     (author) => ({
       username: author.username,
       name: author.name,
-      description: <Box dangerouslySetInnerHTML={{ __html: author.content }} />,
+      description: <div dangerouslySetInnerHTML={{ __html: author.content }} />,
       avatarImageUrl: author.avatarImageUrl,
       link: {
         label: t('common.post.footer.author.link_label'),

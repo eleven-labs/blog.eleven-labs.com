@@ -1,0 +1,206 @@
+/**
+ * Mise en forme du HTML produit à partir du markdown : ces éléments n'existent pas dans le JSX,
+ * ils ne peuvent donc pas porter de classes utilitaires.
+ */
+
+/* Volontairement hors de toute cascade layer : ces règles doivent primer, comme le faisaient
+   les feuilles SCSS d'origine, sur les styles tiers et sur les utilitaires. */
+.post-content {
+  /* Les titres reprennent l'échelle « markup », plus resserrée que celle de l'interface. */
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-top: var(--spacing-l);
+    line-height: var(--leading-base);
+  }
+
+  h2 {
+    margin-bottom: var(--spacing-m);
+    font-size: var(--font-size-markup-xl);
+    font-weight: 600;
+  }
+
+  h3 {
+    margin-bottom: var(--spacing-s);
+    font-size: var(--font-size-markup-l);
+    font-weight: 500;
+  }
+
+  h4 {
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-markup-m);
+    font-weight: 400;
+  }
+
+  h5 {
+    margin-bottom: var(--spacing-xxs);
+    font-size: var(--font-size-markup-s);
+    font-weight: 400;
+  }
+
+  /* Le preflight neutralise la taille des titres : `h1` et `h6`, absents de l'échelle ci-dessus,
+     retrouvent ici le rendu par défaut du navigateur. */
+  h1 {
+    font-size: 2em;
+    font-weight: 700;
+  }
+
+  h6 {
+    font-size: 0.67em;
+    font-weight: 700;
+  }
+
+  p,
+  ul,
+  ol,
+  blockquote {
+    margin: 0 0 var(--spacing-xs);
+  }
+
+  /* Le preflight retire puces et retrait des listes, que le markdown attend. */
+  ul,
+  ol {
+    padding-left: 40px;
+    list-style-position: outside;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  /* Marge verticale par défaut du navigateur, que le preflight supprime. */
+  pre {
+    margin: 1em 0;
+    font-size: var(--font-size-text-xs);
+  }
+
+  /* Filet 3D par défaut du navigateur, que le preflight remplace par un trait plein. */
+  hr {
+    height: 0;
+    margin: 0.5em auto;
+    overflow: visible;
+    border: 1px inset;
+  }
+
+  figure {
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    margin: var(--spacing-xs) auto;
+  }
+
+  blockquote {
+    padding: 0 var(--spacing-xxl);
+    font-family: var(--font-blockquote);
+    font-size: var(--font-size-text-m);
+    font-style: italic;
+    line-height: var(--leading-base);
+
+    &::before,
+    &::after {
+      display: block;
+      height: 3rem;
+      color: var(--color-primary);
+      font-size: 8rem;
+      font-weight: 500;
+      line-height: 6rem;
+      content: '“';
+    }
+
+    &::before {
+      margin-left: calc(var(--spacing-xxl) * -1);
+    }
+
+    &::after {
+      margin-right: calc(var(--spacing-xxl) * -1);
+      transform: rotate(180deg);
+    }
+  }
+
+  table {
+    width: 100%;
+    text-align: left;
+
+    thead {
+      background-color: var(--color-primary);
+      color: var(--color-secondary);
+    }
+
+    th,
+    td {
+      padding: var(--spacing-xs);
+      border: 1px solid var(--color-primary-very-dark);
+    }
+
+    tbody tr {
+      background-color: var(--color-white);
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: var(--color-secondary-dark);
+    }
+
+    /* Sur téléphone le tableau est empilé, une ligne par bloc, chaque cellule préfixée par
+       l'en-tête de sa colonne : plus rien n'a besoin de défiler horizontalement. */
+    @media (width < theme(--breakpoint-sm)) {
+      thead {
+        display: none;
+      }
+
+      tbody,
+      tr,
+      td {
+        display: block;
+      }
+
+      tbody tr,
+      tbody tr:nth-child(even) {
+        margin-bottom: var(--spacing-xs);
+        background-color: var(--color-white);
+      }
+
+      /* Reste un bloc : passer la cellule en flex ferait de chaque élément en ligne qu'elle
+         contient, un `code` par exemple, un élément flex à part entière. */
+      td {
+        border-width: 0 0 1px;
+
+        /* Écrase l'alignement en ligne posé par GFM sur les colonnes alignées : une fois
+           empilés, libellé et valeur alignés à droite se lisent mal. */
+        text-align: left !important;
+        overflow-wrap: anywhere;
+
+        &:last-child {
+          border-bottom-width: 0;
+        }
+
+        &[data-label]::before {
+          display: block;
+          margin-bottom: var(--spacing-xxs-3);
+          color: var(--color-primary);
+          font-weight: 700;
+          content: attr(data-label);
+        }
+      }
+    }
+  }
+
+  iframe {
+    display: block;
+    max-width: 100%;
+    margin: var(--spacing-xs) auto;
+  }
+}
+
+/* Défile sur lui-même pour qu'un tableau large n'élargisse pas la page sur un téléphone. */
+.post-content-table {
+  max-width: 100%;
+  overflow-x: auto;
+}

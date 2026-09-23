@@ -10,7 +10,6 @@ import { LayoutContentWithSidebar } from './LayoutContentWithSidebar';
 const meta: Meta<typeof LayoutContentWithSidebar> = {
   component: LayoutContentWithSidebar,
   args: {
-    my: 'xl',
     content: <>Content</>,
     sidebar: (
       <SummaryCard

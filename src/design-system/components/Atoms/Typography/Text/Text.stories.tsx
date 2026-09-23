@@ -2,15 +2,10 @@ import type { Meta, StoryFn } from '@storybook/react';
 
 import * as React from 'react';
 
-import { systemPropsControls } from '@/design-system/constants/storybook';
-
 import { Text } from './Text';
 
-export default {
+const meta: Meta<typeof Text> = {
   component: Text,
-  argTypes: {
-    ...systemPropsControls,
-  },
   args: {
     size: 'm',
     children: 'Example Text',
@@ -18,7 +13,9 @@ export default {
   parameters: {
     layout: 'centered',
   },
-} as Meta<typeof Text>;
+};
+
+export default meta;
 
 const Template: StoryFn<typeof Text> = (args) => <Text {...args} />;
 

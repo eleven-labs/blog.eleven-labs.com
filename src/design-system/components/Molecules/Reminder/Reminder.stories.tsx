@@ -4,23 +4,25 @@ import React from 'react';
 
 import { Reminder, reminderVariantList } from './Reminder';
 
-export default {
+const meta: Meta<typeof Reminder> = {
   component: Reminder,
   args: {
     variant: 'note',
     title: 'Title',
     children: 'Lorem ipsum',
   },
-} as Meta<typeof Reminder>;
+};
+
+export default meta;
 
 const Template: StoryFn<typeof Reminder> = (args) => <Reminder {...args} />;
 
 export const Overview = Template.bind({});
 
-export const All: StoryFn<typeof Text> = () => (
+export const All: StoryFn<typeof Reminder> = () => (
   <>
     {reminderVariantList.map((variant) => (
-      <Reminder key={variant} variant={variant} title={variant} mb="m">
+      <Reminder key={variant} variant={variant} title={variant} className="mb-m">
         Lorem ipsum
       </Reminder>
     ))}

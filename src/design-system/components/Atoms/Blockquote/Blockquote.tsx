@@ -1,16 +1,22 @@
-import type { ComponentPropsWithoutRef, MarginSystemProps } from '@/design-system/types';
+import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
-import classNames from 'classnames';
 import React from 'react';
 
-import { Text } from '@/design-system';
+import { cn } from '@/design-system/helpers/cn';
 
-import './Blockquote.scss';
-
-export interface BlockquoteProps extends MarginSystemProps, Omit<ComponentPropsWithoutRef<'blockquote'>, 'align'> {}
+export type BlockquoteProps = Omit<ComponentPropsWithoutRef<'blockquote'>, 'align'>;
 
 export const Blockquote: React.FC<BlockquoteProps> = ({ children, className, ...props }) => (
-  <Text as="blockquote" {...props} pl="m" size="m" italic className={classNames('blockquote', className)}>
+  <blockquote
+    {...props}
+    className={cn(
+      'pl-m font-blockquote text-m italic',
+      // Les guillemets ouvrants et fermants, le second étant le premier retourné.
+      "before:block before:h-20 before:text-[8rem] before:font-medium before:text-primary before:content-['“']",
+      "after:block after:h-20 after:rotate-180 after:text-[8rem] after:font-medium after:text-primary after:content-['“']",
+      className
+    )}
+  >
     {children}
-  </Text>
+  </blockquote>
 );

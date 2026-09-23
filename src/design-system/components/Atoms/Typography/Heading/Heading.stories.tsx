@@ -2,18 +2,16 @@ import type { Meta, StoryFn } from '@storybook/react';
 
 import * as React from 'react';
 
-import { headingSizeTokenNameList } from '@/design-system/constants';
-import { systemPropsControls } from '@/design-system/constants/storybook';
+import { headingSizeList } from '@/design-system';
 
 import { Heading } from './Heading';
 
-export default {
+const meta: Meta<typeof Heading> = {
   component: Heading,
   argTypes: {
-    ...systemPropsControls,
     size: {
       control: { type: 'radio' },
-      options: headingSizeTokenNameList,
+      options: headingSizeList,
     },
   },
   args: {
@@ -23,7 +21,9 @@ export default {
   parameters: {
     layout: 'centered',
   },
-} as Meta<typeof Heading>;
+};
+
+export default meta;
 
 const Template: StoryFn<typeof Heading> = (args) => <Heading {...args} />;
 
