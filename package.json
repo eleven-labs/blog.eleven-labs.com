@@ -10,7 +10,6 @@
     "build:icons": "svgr --config-file svgr.config.cjs --typescript -d src/design-system/components/Atoms/Svgs public/svgs",
     "postinstall": "sh -c 'git rev-parse --is-inside-work-tree >/dev/null 2>&1 && husky || true'",
     "ts-node": "tsx --import ./bin/loaders/registerStyleStub.mjs -r dotenv/config",
-    "download-translations": "pnpm ts-node bin/downloadTranslations",
     "generate-image-formats": "pnpm ts-node bin/generateImageFormats",
     "validate-markdown": "pnpm ts-node bin/validateMarkdown",
     "indexation:algolia": "pnpm ts-node bin/indexationAlgolia",

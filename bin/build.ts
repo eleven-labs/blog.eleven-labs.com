@@ -2,13 +2,11 @@ import { cpSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { build as buildVite, createServer as createViteServer } from 'vite';
 
-import { downloadTranslations } from '../src/helpers/downloadTranslationsHelper';
 import { generateImageFormats } from '../src/helpers/generateImageFormats';
 
 const BASE_URL = process.env.BASE_URL || '/';
 const MODE = process.env.NODE_ENV || 'production';
-const WITH_DOWNLOAD_TRANSLATIONS_AND_GENERATE_IMAGE_FORMATS =
-  process.env.WITH_DOWNLOAD_TRANSLATIONS_AND_GENERATE_IMAGE_FORMATS !== 'false';
+const WITH_GENERATE_IMAGE_FORMATS = process.env.WITH_GENERATE_IMAGE_FORMATS !== 'false';
 const ROOT_DIR = process.cwd();
 const ASSETS_DIR = resolve(ROOT_DIR, '_assets');
 const IMGS_DIR = resolve(ROOT_DIR, 'src/assets/imgs');
@@ -44,8 +42,8 @@ const build = async (): Promise<void> => {
     cpSync(ASSETS_DIR, resolve(PUBLIC_DIR, 'imgs'), { recursive: true });
     cpSync(IMGS_DIR, resolve(PUBLIC_DIR, 'imgs'), { recursive: true });
     await writeJsonDataFilesAndFeedFile();
-    if (WITH_DOWNLOAD_TRANSLATIONS_AND_GENERATE_IMAGE_FORMATS) {
-      await Promise.all([generateImageFormats(), downloadTranslations()]);
+    if (WITH_GENERATE_IMAGE_FORMATS) {
+      await generateImageFormats();
     }
 
     if (args.ssr) {

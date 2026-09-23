@@ -87,4 +87,4 @@ jobs:
         uses: ./.github/actions/setup-nodejs-and-restore-pnpm-cache
 
       - name: Build Application
-        run: WITH_DOWNLOAD_TRANSLATIONS_AND_GENERATE_IMAGE_FORMATS=false pnpm build
+        run: WITH_GENERATE_IMAGE_FORMATS=false pnpm build
