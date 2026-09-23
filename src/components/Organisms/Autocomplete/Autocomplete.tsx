@@ -14,6 +14,8 @@ export type AutocompleteOptions = {
   searchLink: Exclude<AutocompleteResultOptions['searchLink'], undefined>;
   defaultValue?: string;
   onEnter?: (value: string) => void;
+  /** Appelé après que le bouton de fermeture du champ l'a vidé. */
+  onClose?: () => void;
   className?: string;
 };
 
@@ -30,6 +32,7 @@ export const Autocomplete: React.FC<AutocompleteProps> = ({
   onInputValueChange,
   onSelectedItemChange,
   onEnter,
+  onClose: onCloseProp,
   isOpen: defaultIsOpen,
   className,
 }) => {
@@ -62,7 +65,10 @@ export const Autocomplete: React.FC<AutocompleteProps> = ({
     isOpen: defaultIsOpen,
   });
 
-  const onClose = (): void => selectItem(null);
+  const onClose = (): void => {
+    selectItem(null);
+    onCloseProp?.();
+  };
 
   const itemsWithDownshiftProps = React.useMemo(
     () =>
@@ -74,7 +80,8 @@ export const Autocomplete: React.FC<AutocompleteProps> = ({
   );
 
   return (
-    // Les résultats se déploient sous le champ à partir de `md`, et sur toute la page en dessous.
+    // Les résultats se déploient sous le champ à partir de `md`, et sur toute la largeur du panneau de
+    // recherche de l'en-tête en dessous.
     <div className={cn('md:relative', className)}>
       {/* Le champ n'affiche pas de libellé : on en rend un pour les lecteurs d'écran, faute de
           quoi l'`aria-labelledby` posé par downshift ne désigne aucun élément de la page. */}

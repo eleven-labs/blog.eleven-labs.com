@@ -9,7 +9,8 @@
       "tutorial": "Tutoriels"
     },
     "header": {
-      "contact_label_link": "Contact"
+      "contact_label_link": "Contact",
+      "search_label_button": "Rechercher un article"
     },
     "autocomplete": {
       "placeholder": "Nom d’article, auteur...",

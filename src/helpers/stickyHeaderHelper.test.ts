@@ -34,7 +34,9 @@ describe('enhanceStickyHeader', () => {
         }) as unknown as MediaQueryList
     );
     document.body.innerHTML =
-      '<div id="header"><header><div data-header-menu style="display: none"></div></header></div>' +
+      '<div id="header"><header>' +
+      '<div data-header-menu style="display: none"></div><div data-header-search style="display: none"></div>' +
+      '</header></div>' +
       '<a id="anchor" href="#section">Section</a>';
     Object.defineProperty(document.querySelector('header'), 'offsetHeight', { value: HEADER_HEIGHT });
     scrollTo(0);
@@ -67,6 +69,12 @@ describe('enhanceStickyHeader', () => {
 
   it('should keep the header while the menu is open', () => {
     (document.querySelector('[data-header-menu]') as HTMLElement).style.display = 'flex';
+    scrollTo(500);
+    expect(getHeaderContainer().hasAttribute('data-hidden')).toBe(false);
+  });
+
+  it('should keep the header while the search field is open', () => {
+    (document.querySelector('[data-header-search]') as HTMLElement).style.display = 'block';
     scrollTo(500);
     expect(getHeaderContainer().hasAttribute('data-hidden')).toBe(false);
   });
