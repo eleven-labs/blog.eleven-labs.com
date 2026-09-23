@@ -71,9 +71,9 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   useLink({ rel: 'apple-touch-icon', sizes: '152x152', href: generateUrl('/imgs/icons/apple-icon-152x152.png') });
   useLink({ rel: 'apple-touch-icon', sizes: '180x180', href: generateUrl('/imgs/icons/apple-icon-180x180.png') });
 
-  useLink({ rel: 'preconnect', href: 'https://fonts.googleapis.com' });
-  useLink({ rel: 'preconnect', href: 'https://fonts.gstatic.com' });
-  useLink({ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap' });
+  // Les préconnexions aux domaines de Google Fonts et la feuille de style des deux polices du blog
+  // sont posées une fois pour toutes par `HtmlTemplate` : les répéter ici n'ajoutait rien, et la
+  // feuille de Work Sans bloquait le rendu pour une police que plus aucune règle n'utilise.
   useLink({ rel: 'alternate', type: 'application/rss+xml', href: generateUrl('/feed.xml') });
 
   return {
