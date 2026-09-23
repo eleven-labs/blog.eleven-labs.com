@@ -21,7 +21,7 @@ export const Layout: React.FC<LayoutProps> = ({ title, description, children }) 
       <main>
         {title && (
           <div className="bg-primary px-l py-xxl text-white">
-            <Heading as="p" size="xl">
+            <Heading size="xl">
               {title}
             </Heading>
             {description && <Text size="m" className="mt-xxs" dangerouslySetInnerHTML={{ __html: description }} />}

@@ -41,6 +41,11 @@ export default [
     },
     rules: {
       ...jsxA11yPlugin.configs.recommended.rules,
+      // Les composants du design system injectent le contenu dans l'élément passé à `render` :
+      // `<Button render={<a href="…" />}>Libellé</Button>` rend bien un lien libellé, mais le
+      // plugin ne voit que la balise vide.
+      'jsx-a11y/anchor-has-content': 'off',
+      'jsx-a11y/heading-has-content': 'off',
       'import/first': 'error',
       'import/newline-after-import': 'error',
       'import/no-duplicates': 'error',

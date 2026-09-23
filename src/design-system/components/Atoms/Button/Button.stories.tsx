@@ -1,12 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import type { ButtonProps } from '@/design-system';
+import React from 'react';
 
 import { Button } from '@/design-system';
 
-// Le composant étant polymorphe, on fige la balise pour que storybook connaisse les attributs de
-// `<button>`, `disabled` en tête.
-const meta: Meta<ButtonProps<'button'>> = {
+const meta: Meta<typeof Button> = {
   component: Button,
   args: {
     variant: 'primary',
@@ -34,6 +32,6 @@ export const ButtonWithVariantAccent: Story = {
 };
 
 // Plusieurs appelants rendent le bouton en lien : la balise change, le rendu non.
-export const ButtonAsLink: StoryObj<ButtonProps<'a'>> = {
-  args: { as: 'a', href: 'https://eleven-labs.com/', target: '_blank' },
+export const ButtonAsLink: Story = {
+  args: { render: <a href="https://eleven-labs.com/" target="_blank" rel="noreferrer" /> },
 };

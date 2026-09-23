@@ -1,9 +1,8 @@
 import type { VariantProps } from 'class-variance-authority';
+import type * as React from 'react';
 
-import type { ElementTagName, PolymorphicProps } from '@/design-system/types';
-
+import { useRender } from '@base-ui/react/use-render';
 import { cva } from 'class-variance-authority';
-import * as React from 'react';
 
 import { cn } from '@/design-system/helpers/cn';
 
@@ -17,25 +16,11 @@ export const textVariants = cva('', {
   },
 });
 
-export interface TextOwnProps extends VariantProps<typeof textVariants> {
-  className?: string;
-  children?: React.ReactNode;
-}
+export interface TextProps extends useRender.ComponentProps<'p'>, VariantProps<typeof textVariants> {}
 
-export type TextProps<TTagName extends ElementTagName = 'p'> = PolymorphicProps<TTagName, TextOwnProps>;
-
-export const Text = <TTagName extends ElementTagName = 'p'>({
-  as,
-  size,
-  className,
-  children,
-  ...props
-}: TextProps<TTagName>): React.JSX.Element => {
-  const Tag = (as ?? 'p') as React.ElementType;
-
-  return (
-    <Tag {...props} className={cn(textVariants({ size }), className)}>
-      {children}
-    </Tag>
-  );
-};
+export const Text: React.FC<TextProps> = ({ render, size, className, ...props }) =>
+  useRender({
+    defaultTagName: 'p',
+    render,
+    props: { ...props, className: cn(textVariants({ size }), className) },
+  });

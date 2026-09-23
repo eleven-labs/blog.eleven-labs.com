@@ -4,7 +4,7 @@ import type { LinkProps } from '@/design-system';
 
 import { Link } from '@/design-system';
 
-const meta: Meta<LinkProps<'a'>> = {
+const meta: Meta<LinkProps> = {
   component: Link,
   args: {
     children: 'Link Label',

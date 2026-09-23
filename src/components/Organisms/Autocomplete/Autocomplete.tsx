@@ -83,7 +83,7 @@ export const Autocomplete: React.FC<AutocompleteProps> = ({
       </label>
       <SearchField
         input={getInputProps({ placeholder, onKeyDown: handleKeyDown })}
-        buttonSearch={{ as: 'a', ...searchLinkProps }}
+        buttonSearch={{ render: <a {...searchLinkProps} /> }}
         buttonClose={{ onClick: onClose }}
         className="relative z-3"
       />

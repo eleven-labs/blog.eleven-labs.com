@@ -25,11 +25,11 @@ export const HomeIntroBlock: React.FC<HomeIntroBlockProps> = ({
       <Heading size="s" className="text-info uppercase">
         {intro}
       </Heading>
-      <Heading as="h1" size="xl" className="mt-m text-primary">
+      <Heading render={<h1 />} size="xl" className="mt-m text-primary">
         {title}
       </Heading>
       <Text className="mt-l">{description}</Text>
-      <Button {...elevenLabsLink} as="a" className="mt-l">
+      <Button render={<a {...elevenLabsLink} />} className="mt-l">
         {elevelLabsLinkLabel}
       </Button>
     </div>

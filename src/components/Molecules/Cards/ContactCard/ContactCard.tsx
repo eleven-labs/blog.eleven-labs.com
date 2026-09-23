@@ -29,7 +29,7 @@ export const ContactCard: React.FC<ContactCardProps> = ({
         {title}
       </Heading>
       <Text size="s">{description}</Text>
-      <Button as="a" {...link}>
+      <Button render={<a {...link} />}>
         {linkLabel}
       </Button>
     </div>

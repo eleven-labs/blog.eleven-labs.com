@@ -35,7 +35,7 @@ export const LastTutorialsBlock: React.FC<LastTutorialsBlockProps> = ({
         <Heading size="m">{title}</Heading>
         <Icon name="underline" className="text-white" width="56px" />
         <Text className="mt-l">{description}</Text>
-        <Button className="mt-l" as="a" variant="accent" {...linkSeeMore}>
+        <Button render={<a {...linkSeeMore} />} className="mt-l" variant="accent">
           {labelLinkSeeMore}
         </Button>
       </div>

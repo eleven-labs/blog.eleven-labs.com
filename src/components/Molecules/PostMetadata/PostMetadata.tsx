@@ -54,7 +54,7 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
             {/* La date ne se coupe pas : elle garde toujours la largeur de son contenu. */}
             <div className="flex min-w-max content-center items-center gap-xxs">
               {variant === 'secondary' && <Icon name="calendar" size="24px" className="text-light-grey" />}
-              {date && <Text as="span">{date}</Text>}
+              {date && <Text render={<span />}>{date}</Text>}
             </div>
           </Skeleton>
         );
@@ -70,7 +70,7 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
           >
             <div className="flex content-center items-center gap-xxs">
               {variant === 'secondary' && <Icon name="access-time" size="24px" className="text-light-grey" />}
-              {readingTime && <Text as="span">{`${readingTime}mn`}</Text>}
+              {readingTime && <Text render={<span />}>{`${readingTime}mn`}</Text>}
             </div>
           </Skeleton>
         );
@@ -82,8 +82,8 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
             {variant === 'secondary' && <Icon name="person" size="24px" className="text-light-grey" />}
             {authors.map(({ username, name, link }, authorIndex) => (
               <Fragment key={username}>
-                {link ? <Link {...link}>{name}</Link> : <Text as="span">{name}</Text>}
-                {authorIndex !== authors.length - 1 && <Text as="span">{' & '}</Text>}
+                {link ? <Link {...link}>{name}</Link> : <Text render={<span />}>{name}</Text>}
+                {authorIndex !== authors.length - 1 && <Text render={<span />}>{' & '}</Text>}
               </Fragment>
             ))}
           </>
@@ -108,7 +108,7 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
 
     if (variant !== 'secondary' && index !== displayedFields.length - 1) {
       currentFields.push(
-        <Text key={`circle-${displayedField}`} as="span">
+        <Text key={`circle-${displayedField}`} render={<span />}>
           •
         </Text>
       );

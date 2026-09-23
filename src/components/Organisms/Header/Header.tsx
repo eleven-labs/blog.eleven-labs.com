@@ -43,7 +43,7 @@ export const Header: React.FC<HeaderProps> = ({
     </a>
     <div className={cn(menuClassName, menuIsOpen ? 'max-md:flex' : 'max-md:hidden')}>
       {categories.map(({ label, ...categoryLink }, index) => (
-        <Link as="a" key={index} {...categoryLink} data-internal-link="category" className={menuItemClassName}>
+        <Link key={index} {...categoryLink} data-internal-link="category" className={menuItemClassName}>
           {label}
         </Link>
       ))}
@@ -56,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({
         </>
       )}
       <div className="mt-m flex items-center justify-center md:hidden">
-        <Button as="a" {...contactLink}>
+        <Button render={<a {...contactLink} />}>
           {contactLinkLabel}
         </Button>
       </div>

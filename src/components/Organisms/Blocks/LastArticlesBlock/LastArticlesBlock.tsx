@@ -34,7 +34,7 @@ export const LastArticlesBlock: React.FC<LastArticlesBlockProps> = ({
       ))}
     </div>
     <div className="flex items-center justify-center">
-      <Button className="mt-l" as="a" {...linkSeeMore}>
+      <Button render={<a {...linkSeeMore} />} className="mt-l">
         {labelLinkSeeMore}
       </Button>
     </div>

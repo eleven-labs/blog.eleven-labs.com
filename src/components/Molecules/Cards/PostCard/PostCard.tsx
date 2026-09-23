@@ -73,7 +73,7 @@ export const PostCard: React.FC<PostCardProps> = ({
       <div className="flex items-start justify-between gap-xs">
         <Skeleton isLoading={isLoading} className="min-w-0 flex-1">
           <Heading
-            as="h2"
+            render={<h2 />}
             size="xs"
             className={cn(
               'min-w-0 flex-1',
@@ -85,10 +85,8 @@ export const PostCard: React.FC<PostCardProps> = ({
             )}
           >
             <Text
-              as="a"
-              {...link}
+              render={<a {...link} data-internal-link="post" />}
               size="m"
-              data-internal-link="post"
               // Le lien couvre toute la carte, qui devient ainsi cliquable d'un bout à l'autre.
               className={cn(
                 "before:absolute before:inset-0 before:z-1 before:content-['_']",

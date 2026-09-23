@@ -47,7 +47,7 @@ export const AuthorPageContent: React.FC<AuthorPageContentProps> = ({ author, ti
                   </Link>
                 </Text>
                 {index !== (author.socialNetworks?.length ?? 0) - 1 && (
-                  <Text as="span" className="mx-xxs">
+                  <Text render={<span />} className="mx-xxs">
                     •
                   </Text>
                 )}

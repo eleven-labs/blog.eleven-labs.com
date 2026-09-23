@@ -64,12 +64,12 @@ export const PostPageContent: React.FC<PostPageContentProps> = ({
       {variant === 'tutorial' && (
         <div className="flex gap-l">
           {previousLinkLabel && previousLink && (
-            <Button as="a" className="mt-l" variant="secondary" {...previousLink}>
+            <Button render={<a {...previousLink} />} className="mt-l" variant="secondary">
               {previousLinkLabel}
             </Button>
           )}
           {nextLinkLabel && nextLink && (
-            <Button as="a" className="mt-l" {...nextLink}>
+            <Button render={<a {...nextLink} />} className="mt-l">
               {nextLinkLabel}
             </Button>
           )}

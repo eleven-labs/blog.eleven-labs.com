@@ -33,7 +33,7 @@ export const AuthorCard: React.FC<AuthorCardProps> = ({
         <Text size="m" className="font-semibold text-primary">
           {name}
         </Text>
-        <Text as="div" size="xs" className="mt-xxs-3 italic">
+        <Text render={<div />} size="xs" className="mt-xxs-3 italic">
           {description}
         </Text>
       </div>

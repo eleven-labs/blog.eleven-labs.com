@@ -1,7 +1,6 @@
 import type { VariantProps } from 'class-variance-authority';
 
-import type { ElementTagName, PolymorphicProps } from '@/design-system/types';
-
+import { useRender } from '@base-ui/react/use-render';
 import { cva } from 'class-variance-authority';
 import * as React from 'react';
 
@@ -24,32 +23,23 @@ export const buttonVariants = cva(
   }
 );
 
-export interface ButtonOwnProps extends VariantProps<typeof buttonVariants> {
-  className?: string;
-  children: React.ReactNode;
-}
+export interface ButtonProps extends useRender.ComponentProps<'button'>, VariantProps<typeof buttonVariants> {}
 
-export type ButtonProps<TTagName extends ElementTagName = 'button'> = PolymorphicProps<TTagName, ButtonOwnProps>;
-
-export const Button = <TTagName extends ElementTagName = 'button'>({
-  as,
-  variant = 'primary',
-  className,
-  children,
-  ...props
-}: ButtonProps<TTagName>): React.JSX.Element => {
-  const Tag = (as ?? 'button') as React.ElementType;
-
-  return (
-    <Tag
-      {...props}
-      data-text={typeof children === 'string' ? children : ''}
-      className={cn(buttonVariants({ variant }), className)}
-    >
-      {/* La flèche précède le libellé, retournée, quand le bouton ramène en arrière. */}
-      {variant === 'secondary' && <Icon name="arrow" style={{ transform: 'scaleX(-1)' }} />}
-      <Text as="span">{children}</Text>
-      {variant !== 'secondary' && <Icon name="arrow" />}
-    </Tag>
-  );
-};
+export const Button: React.FC<ButtonProps> = ({ render, variant = 'primary', className, children, ...props }) =>
+  useRender({
+    defaultTagName: 'button',
+    render,
+    props: {
+      ...props,
+      'data-text': typeof children === 'string' ? children : '',
+      className: cn(buttonVariants({ variant }), className),
+      children: (
+        <>
+          {/* La flèche précède le libellé, retournée, quand le bouton ramène en arrière. */}
+          {variant === 'secondary' && <Icon name="arrow" style={{ transform: 'scaleX(-1)' }} />}
+          <Text render={<span />}>{children}</Text>
+          {variant !== 'secondary' && <Icon name="arrow" />}
+        </>
+      ),
+    },
+  });

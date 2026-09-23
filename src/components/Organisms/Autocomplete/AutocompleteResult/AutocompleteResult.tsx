@@ -65,8 +65,7 @@ export const AutocompleteResult = React.forwardRef<HTMLDivElement, AutocompleteR
                 )}
               >
                 <TextHighlight
-                  as="a"
-                  {...link}
+                  render={<a {...link} />}
                   size="s"
                   text={title}
                   textQuery={searchValue}

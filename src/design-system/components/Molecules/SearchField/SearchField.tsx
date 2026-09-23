@@ -1,15 +1,14 @@
-import type { ComponentPropsWithoutRef, ElementTagName } from '@/design-system/types';
-
+import { useRender } from '@base-ui/react/use-render';
 import * as React from 'react';
 
 import { CloseButton, Icon } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
 
-export interface SearchFieldProps extends ComponentPropsWithoutRef<'div'> {
-  input: ComponentPropsWithoutRef<'input'>;
-  /** Rendu en `<button>`, ou dans la balise passée en `as` — un lien dans l'autocomplétion. */
-  buttonSearch: ComponentPropsWithoutRef<'a'> & { as?: ElementTagName };
-  buttonClose?: ComponentPropsWithoutRef<'button'>;
+export interface SearchFieldProps extends useRender.ElementProps<'div'> {
+  input: useRender.ElementProps<'input'>;
+  /** Rendu en `<button>`, ou dans l'élément passé en `render` — un lien dans l'autocomplétion. */
+  buttonSearch: useRender.ComponentProps<'button'>;
+  buttonClose?: useRender.ElementProps<'button'>;
 }
 
 export const SearchField: React.FC<SearchFieldProps> = ({
@@ -19,8 +18,17 @@ export const SearchField: React.FC<SearchFieldProps> = ({
   className,
   ...props
 }) => {
-  const { as, ...buttonSearchProps } = buttonSearch;
-  const ButtonSearchTag = (as ?? 'button') as React.ElementType;
+  const { render: buttonSearchRender, ...buttonSearchProps } = buttonSearch;
+
+  const searchButton = useRender({
+    defaultTagName: 'button',
+    render: buttonSearchRender,
+    props: {
+      ...buttonSearchProps,
+      className: 'border-none bg-transparent',
+      children: <Icon name="search" size="2.5rem" className="mx-xs text-primary" />,
+    },
+  });
 
   return (
     <div {...props} className={cn('relative', className)}>
@@ -34,9 +42,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
       />
       <div className="absolute top-0 right-0 flex h-full items-center justify-center py-xxs">
         {Boolean(input.value) && <CloseButton {...buttonClose} variant="secondary" />}
-        <ButtonSearchTag {...buttonSearchProps} className="border-none bg-transparent">
-          <Icon name="search" size="2.5rem" className="mx-xs text-primary" />
-        </ButtonSearchTag>
+        {searchButton}
       </div>
     </div>
   );

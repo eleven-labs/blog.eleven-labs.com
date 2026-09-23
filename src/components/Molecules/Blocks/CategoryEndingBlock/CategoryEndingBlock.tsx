@@ -23,7 +23,7 @@ export const CategoryEndingBlock: React.FC<CategoryEndingBlockProps> = ({
     </Text>
     <Text className="mt-m">{description}</Text>
     {expertiseLinkLabel && (
-      <Button as="a" className="mt-l" {...expertiseLink}>
+      <Button render={<a {...expertiseLink} />} className="mt-l">
         {expertiseLinkLabel}
       </Button>
     )}

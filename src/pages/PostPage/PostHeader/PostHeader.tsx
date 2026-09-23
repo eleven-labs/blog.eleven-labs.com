@@ -30,7 +30,7 @@ export const PostHeader: React.FC<PostHeaderProps> = ({
   className,
 }) => (
   <div className={cn('text-xs', className)}>
-    <Heading as="h1" size="xl" className="text-primary">
+    <Heading render={<h1 />} size="xl" className="text-primary">
       {title}
     </Heading>
     <div className="mt-m flex flex-col justify-between gap-xs md:flex-row">

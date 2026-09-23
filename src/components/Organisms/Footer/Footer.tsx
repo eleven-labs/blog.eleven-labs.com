@@ -73,7 +73,7 @@ export const Footer: React.FC<FooterProps> = ({
               />
             </a>
           ))}
-          <Button as="a" {...contactLink}>
+          <Button render={<a {...contactLink} />}>
             {contactLabel}
           </Button>
         </div>

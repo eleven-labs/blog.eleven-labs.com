@@ -21,18 +21,18 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className }) => (
         <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
           {itemLink.href ? (
             <Link itemProp="item" {...itemLink}>
-              <Text as="span" itemProp="name">
+              <Text render={<span />} itemProp="name">
                 {label}
               </Text>
             </Link>
           ) : (
-            <Text as="span" itemProp="name" className="font-normal">
+            <Text render={<span />} itemProp="name" className="font-normal">
               {label}
             </Text>
           )}
           <meta itemProp="position" content={(index + 1).toString()} />
         </li>
-        {index < items.length - 1 && <Text as="span">{'>'}</Text>}
+        {index < items.length - 1 && <Text render={<span />}>{'>'}</Text>}
       </Fragment>
     ))}
   </ol>

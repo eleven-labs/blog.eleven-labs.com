@@ -22,7 +22,7 @@ export const Table: React.FC<TableProps> = ({ title, columns, rows, className })
   return (
     <div className={cn(className)}>
       {title && (
-        <Heading as="p" size="l" className="mb-xxs">
+        <Heading size="l" className="mb-xxs">
           {title}
         </Heading>
       )}

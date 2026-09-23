@@ -43,6 +43,7 @@
     ]
   },
   "dependencies": {
+    "@base-ui/react": "^1.8.0",
     "@remix-run/router": "^1.16.0",
     "algoliasearch": "^4.23.3",
     "autosuggest-highlight": "^3.3.4",

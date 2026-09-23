@@ -206,7 +206,7 @@ export const markdownToHtml = (content: string): string => {
           }
 
           return (
-            <Link as="a" {...(props as ComponentPropsWithoutRef<'a'>)} style={{ overflowWrap: 'anywhere' }}>
+            <Link {...(props as ComponentPropsWithoutRef<'a'>)} style={{ overflowWrap: 'anywhere' }}>
               {children}
             </Link>
           );
