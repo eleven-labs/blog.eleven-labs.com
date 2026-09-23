@@ -1,17 +1,25 @@
-import type { ComponentPropsWithoutRef, SpacingSystemProps } from '@/design-system/types';
+import type { VariantProps } from 'class-variance-authority';
 
-import classNames from 'classnames';
+import type { ComponentPropsWithoutRef } from '@/design-system/types';
+
+import { cva } from 'class-variance-authority';
 import React, { Fragment } from 'react';
 
-import { Flex, Icon, Link, Skeleton, Text } from '@/design-system';
+import { Icon, Link, Skeleton, Text } from '@/design-system';
+import { cn } from '@/design-system/helpers/cn';
 
-import './PostMetadata.scss';
+export const postMetadataVariants = cva('flex flex-wrap items-center text-s', {
+  variants: {
+    variant: {
+      primary: 'gap-xxs font-heading font-bold tracking-[0.5px] text-info uppercase',
+      secondary: 'gap-s font-semibold text-primary',
+    },
+  },
+});
 
-export const postMetadataVariant = ['primary', 'secondary'] as const;
-export type PostMetadataVariantType = (typeof postMetadataVariant)[number];
+export type PostMetadataVariantType = 'primary' | 'secondary';
 
-export interface PostMetadataProps extends SpacingSystemProps {
-  variant?: PostMetadataVariantType;
+export interface PostMetadataProps extends VariantProps<typeof postMetadataVariants> {
   date?: string;
   readingTime?: number;
   authors?: {
@@ -21,6 +29,7 @@ export interface PostMetadataProps extends SpacingSystemProps {
   }[];
   isLoading?: boolean;
   displayedFields?: ('date' | 'readingTime' | 'authors')[];
+  className?: string;
 }
 
 export const PostMetadata: React.FC<PostMetadataProps> = ({
@@ -30,7 +39,7 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
   authors,
   isLoading = false,
   displayedFields = ['date', 'readingTime', 'authors'],
-  ...props
+  className,
 }) => {
   const fields = displayedFields.reduce<React.ReactNode[]>((currentFields, displayedField, index) => {
     switch (displayedField) {
@@ -39,13 +48,14 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
           <Skeleton
             key={displayedField}
             isLoading={isLoading}
-            display="inline-block"
+            className="inline-block"
             style={{ minWidth: 60, minHeight: 16 }}
           >
-            <Flex alignContent="center" alignItems="center" gap="xxs" className="post-metadata__date">
-              {variant === 'secondary' && <Icon name="calendar" size="24px" color="light-grey" />}
+            {/* La date ne se coupe pas : elle garde toujours la largeur de son contenu. */}
+            <div className="flex min-w-max content-center items-center gap-xxs">
+              {variant === 'secondary' && <Icon name="calendar" size="24px" className="text-light-grey" />}
               {date && <Text as="span">{date}</Text>}
-            </Flex>
+            </div>
           </Skeleton>
         );
         break;
@@ -55,13 +65,13 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
           <Skeleton
             key={displayedField}
             isLoading={isLoading}
-            display="inline-block"
+            className="inline-block"
             style={{ minWidth: 26, minHeight: 16 }}
           >
-            <Flex alignContent="center" alignItems="center" gap="xxs">
-              {variant === 'secondary' && <Icon name="access-time" size="24px" color="light-grey" />}
+            <div className="flex content-center items-center gap-xxs">
+              {variant === 'secondary' && <Icon name="access-time" size="24px" className="text-light-grey" />}
               {readingTime && <Text as="span">{`${readingTime}mn`}</Text>}
-            </Flex>
+            </div>
           </Skeleton>
         );
         break;
@@ -69,7 +79,7 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
       case 'authors': {
         const authorChildren = authors && (
           <>
-            {variant === 'secondary' && <Icon name="person" size="24px" color="light-grey" />}
+            {variant === 'secondary' && <Icon name="person" size="24px" className="text-light-grey" />}
             {authors.map(({ username, name, link }, authorIndex) => (
               <Fragment key={username}>
                 {link ? <Link {...link}>{name}</Link> : <Text as="span">{name}</Text>}
@@ -82,13 +92,11 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
           <Skeleton
             key={displayedField}
             isLoading={isLoading}
-            display="inline-block"
+            className="inline-block"
             style={{ minWidth: 50, minHeight: 16 }}
           >
             {variant === 'secondary' ? (
-              <Flex alignContent="center" alignItems="center" gap="xxs" className="post-metadata__authors">
-                {authorChildren}
-              </Flex>
+              <div className="flex content-center items-center gap-xxs">{authorChildren}</div>
             ) : (
               <>{authorChildren}</>
             )}
@@ -109,16 +117,5 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
     return currentFields;
   }, []);
 
-  return (
-    <Flex
-      {...props}
-      alignItems="center"
-      textSize="s"
-      flexWrap="wrap"
-      gap={variant === 'secondary' ? 's' : 'xxs'}
-      className={classNames('post-metadata', { [`post-metadata--${variant}`]: variant })}
-    >
-      {fields}
-    </Flex>
-  );
+  return <div className={cn(postMetadataVariants({ variant }), className)}>{fields}</div>;
 };

@@ -17,10 +17,10 @@ const Template: StoryFn<typeof Reminder> = (args) => <Reminder {...args} />;
 
 export const Overview = Template.bind({});
 
-export const All: StoryFn<typeof Text> = () => (
+export const All: StoryFn<typeof Reminder> = () => (
   <>
     {reminderVariantList.map((variant) => (
-      <Reminder key={variant} variant={variant} title={variant} mb="m">
+      <Reminder key={variant} variant={variant} title={variant} className="mb-m">
         Lorem ipsum
       </Reminder>
     ))}

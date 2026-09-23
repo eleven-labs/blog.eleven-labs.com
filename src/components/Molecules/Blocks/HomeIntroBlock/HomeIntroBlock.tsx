@@ -1,18 +1,16 @@
-import type { FlexProps } from '@/design-system';
 import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
-import classNames from 'classnames';
 import React from 'react';
 
-import { Box, Button, Flex, Heading, Text } from '@/design-system';
+import { Button, Heading, Text } from '@/design-system';
+import { cn } from '@/design-system/helpers/cn';
 
-import './HomeIntroBlock.scss';
-
-export interface HomeIntroBlockProps extends FlexProps {
+export interface HomeIntroBlockProps {
   intro: React.ReactNode;
   title: React.ReactNode;
   description: React.ReactNode;
   elevenLabsLink: { label: string } & ComponentPropsWithoutRef<'a'>;
+  className?: string;
 }
 
 export const HomeIntroBlock: React.FC<HomeIntroBlockProps> = ({
@@ -20,27 +18,22 @@ export const HomeIntroBlock: React.FC<HomeIntroBlockProps> = ({
   title,
   description,
   elevenLabsLink: { label: elevelLabsLinkLabel, ...elevenLabsLink },
-  ...props
+  className,
 }) => (
-  <Flex {...props} className={classNames('home-intro-block', props.className)}>
-    <Flex
-      alignItems="baseline"
-      flexDirection="column"
-      className="home-intro-block__container"
-      flex="1"
-      py={{ xs: '0', md: 'xl' }}
-    >
-      <Heading size="s" color="info" textTransform="uppercase">
+  <div className={cn('flex bg-white', className)}>
+    <div className="flex flex-1 flex-col items-baseline py-0 max-md:mx-auto max-md:my-xl max-md:max-w-[90vw] md:ml-[5vw] md:py-xl">
+      <Heading size="s" className="text-info uppercase">
         {intro}
       </Heading>
-      <Heading as="h1" size="xl" mt="m" color="primary">
+      <Heading as="h1" size="xl" className="mt-m text-primary">
         {title}
       </Heading>
-      <Text mt="l">{description}</Text>
-      <Button {...elevenLabsLink} as="a" mt="l">
+      <Text className="mt-l">{description}</Text>
+      <Button {...elevenLabsLink} as="a" className="mt-l">
         {elevelLabsLinkLabel}
       </Button>
-    </Flex>
-    <Box flex="1" className="home-intro-block__background" hiddenBelow="md" />
-  </Flex>
+    </div>
+    {/* L'astronaute n'apparaît qu'à partir de `md`, faute de place à côté du texte en dessous. */}
+    <div className="flex-1 max-md:hidden md:bg-[url(/imgs/home-intro-block.png)] md:bg-contain md:bg-top-right md:bg-no-repeat" />
+  </div>
 );

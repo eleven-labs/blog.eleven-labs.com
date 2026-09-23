@@ -2,15 +2,10 @@ import type { Meta, StoryFn } from '@storybook/react';
 
 import * as React from 'react';
 
-import { systemPropsControls } from '@/design-system/constants/storybook';
-
 import { Text } from './Text';
 
 export default {
   component: Text,
-  argTypes: {
-    ...systemPropsControls,
-  },
   args: {
     size: 'm',
     children: 'Example Text',

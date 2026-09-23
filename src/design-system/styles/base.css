@@ -1,0 +1,107 @@
+/**
+ * Complète le preflight de Tailwind pour retrouver exactement les réglages globaux du blog.
+ *
+ * Le blog s'appuyait auparavant sur `normalize.css` et `sanitize.css` : les quelques règles que ces
+ * feuilles posaient et que le preflight ne reprend pas sont reconduites ici, afin que le rendu reste
+ * identique au pixel près.
+ */
+@layer base {
+  /* ----------------------------------------------------------------------- Document */
+  html {
+    cursor: default;
+    font-size: 16px;
+    tab-size: 4;
+
+    /* Un mot plus long que sa colonne est coupé plutôt que de la déborder. */
+    overflow-wrap: break-word;
+  }
+
+  body {
+    background-color: var(--color-secondary);
+    font-family: var(--font-base);
+  }
+
+  ::before,
+  ::after {
+    text-decoration: inherit;
+    vertical-align: inherit;
+  }
+
+  /* ------------------------------------------------------------------------ Éléments */
+
+  /* Le preflight fait hériter la décoration : le blog, lui, ne souligne aucun lien par défaut. */
+  a {
+    text-decoration: none;
+  }
+
+  /* Le preflight passe les médias en bloc ; ici ils restent dans le fil du texte, comme une icône
+     posée au milieu d'une phrase. */
+  img,
+  svg,
+  video,
+  canvas,
+  audio,
+  iframe,
+  embed,
+  object {
+    display: inline;
+  }
+
+  /* Une icône sans `fill` propre se teinte de la couleur du texte. */
+  svg:not([fill]) {
+    fill: currentcolor;
+  }
+
+  /* Un bloc de code défile sur lui-même plutôt que d'élargir la page. */
+  pre {
+    overflow: auto;
+  }
+
+  /* Le preflight annule les marges ; le filet horizontal garde celles du navigateur. */
+  hr {
+    margin: revert;
+  }
+
+  small {
+    font-size: 80%;
+  }
+
+  /* ------------------------------------------------------- Contrôles de formulaire */
+
+  /* Le preflight uniformise les contrôles ; le blog s'en remet au navigateur pour la gouttière et
+     l'interligne des boutons, et pour toute la police des champs — le formulaire de la newsletter,
+     dont le balisage ne nous appartient pas, en dépend. */
+  button {
+    padding: revert;
+    line-height: normal;
+  }
+
+  button,
+  select {
+    text-transform: none;
+  }
+
+  input,
+  optgroup,
+  select,
+  textarea {
+    font: revert;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  /* ---------------------------------------------------------------------- Curseurs */
+  button,
+  [role='button'],
+  [role='link'],
+  [aria-controls] {
+    cursor: pointer;
+  }
+
+  [aria-disabled='true'],
+  [disabled] {
+    cursor: not-allowed;
+  }
+}

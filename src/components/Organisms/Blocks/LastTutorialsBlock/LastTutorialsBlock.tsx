@@ -1,20 +1,19 @@
 import type { PostCardProps } from '@/components';
-import type { FlexProps } from '@/design-system';
 import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
 import React from 'react';
 
 import { PostCard } from '@/components';
-import { Icon, Flex, Box, Button, Heading, Text } from '@/design-system';
+import { Button, Heading, Icon, Text } from '@/design-system';
+import { cn } from '@/design-system/helpers/cn';
 
-import './LastTutorialsBlock.scss';
-
-export interface LastTutorialsBlockProps extends FlexProps {
+export interface LastTutorialsBlockProps {
   title: React.ReactNode;
   description: React.ReactNode;
   posts: Partial<PostCardProps>[];
   tutorialLabel: string;
   linkSeeMore: { label: string } & ComponentPropsWithoutRef<'a'>;
+  className?: string;
 }
 
 export const LastTutorialsBlock: React.FC<LastTutorialsBlockProps> = ({
@@ -23,34 +22,30 @@ export const LastTutorialsBlock: React.FC<LastTutorialsBlockProps> = ({
   tutorialLabel,
   posts,
   linkSeeMore: { label: labelLinkSeeMore, ...linkSeeMore },
-  ...props
+  className,
 }) => (
-  <Box bg="primary" color="white">
-    <Flex
-      flexDirection={{ xs: 'column', md: 'row' }}
-      justifyContent="center"
-      alignItems="center"
-      {...props}
-      py="xl"
-      mx={{ xs: 's', md: 'auto' }}
-      gap="xl"
-      className="last-tutorials-block container-content"
+  <div className="bg-primary text-white">
+    <div
+      className={cn(
+        'container-content flex flex-col items-center justify-center gap-xl py-xl md:flex-row',
+        className
+      )}
     >
-      <Box className="last-tutorials-block__content">
+      <div className="flex-1">
         <Heading size="m">{title}</Heading>
-        <Icon name="underline" color="white" width="56px" />
-        <Text mt="l">{description}</Text>
-        <Button mt="l" as="a" variant="accent" {...linkSeeMore}>
+        <Icon name="underline" className="text-white" width="56px" />
+        <Text className="mt-l">{description}</Text>
+        <Button className="mt-l" as="a" variant="accent" {...linkSeeMore}>
           {labelLinkSeeMore}
         </Button>
-      </Box>
-      <Flex gap="l" className="last-tutorials-block__post-list">
+      </div>
+      <div className="grid w-full gap-l md:flex-2 md:grid-cols-2">
         {posts.map((post, index) => (
           <React.Fragment key={post?.slug ?? index}>
             <PostCard variant="highlight-dark" tutorialLabel={tutorialLabel} {...(post || {})} />
           </React.Fragment>
         ))}
-      </Flex>
-    </Flex>
-  </Box>
+      </div>
+    </div>
+  </div>
 );

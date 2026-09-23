@@ -1,29 +1,33 @@
-import type { FlexProps } from '@/design-system';
+import type { VariantProps } from 'class-variance-authority';
+
 import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
-import classNames from 'classnames';
+import { cva } from 'class-variance-authority';
 import React from 'react';
 
-import { Box, Flex } from '@/design-system';
+import { cn } from '@/design-system/helpers/cn';
 
-import './CloseButton.scss';
+export const closeButtonVariants = cva('relative flex flex-col gap-xxs bg-transparent', {
+  variants: {
+    variant: {
+      primary: 'size-[30px] [--close-button-color:var(--color-primary)]',
+      secondary: 'size-[20px] [--close-button-color:var(--color-grey)]',
+    },
+  },
+  defaultVariants: {
+    variant: 'primary',
+  },
+});
 
-export const closeButtonVariant = ['primary', 'secondary'] as const;
-export type CloseButtonVariantType = (typeof closeButtonVariant)[number];
+export interface CloseButtonProps
+  extends ComponentPropsWithoutRef<'button'>,
+    VariantProps<typeof closeButtonVariants> {}
 
-export interface CloseButtonProps extends FlexProps, ComponentPropsWithoutRef<'button'> {
-  variant?: CloseButtonVariantType;
-}
+const lineClassName = 'absolute top-1/2 left-0 h-[2px] w-full bg-(--close-button-color)';
 
-export const CloseButton: React.FC<CloseButtonProps> = ({ variant, ...props }) => (
-  <Flex
-    as="button"
-    {...props}
-    flexDirection="column"
-    gap="xxs"
-    className={classNames('close-button', { [`close-button--${variant}`]: variant })}
-  >
-    <Box className="close-button__line close-button__line--horizontal" />
-    <Box className="close-button__line close-button__line--vertical" />
-  </Flex>
+export const CloseButton: React.FC<CloseButtonProps> = ({ variant, className, ...props }) => (
+  <button type="button" {...props} className={cn(closeButtonVariants({ variant }), className)}>
+    <div className={cn(lineClassName, 'rotate-45')} />
+    <div className={cn(lineClassName, '-rotate-45')} />
+  </button>
 );

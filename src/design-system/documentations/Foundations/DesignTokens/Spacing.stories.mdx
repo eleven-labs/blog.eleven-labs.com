@@ -1,7 +1,6 @@
 import { Meta } from '@storybook/addon-docs';
-import { Layout, Table } from '@/storybook/components';
-import { Box, Text } from '@/design-system';
-import { tokenVariables } from '@/design-system/constants';
+import { Layout, DesignTokenTable } from '@/storybook/components';
+import { spacingTokenNameList } from '@/design-system';
 
 <Meta
     title="Foundations/Design Tokens/Spacing"
@@ -21,38 +20,19 @@ import { tokenVariables } from '@/design-system/constants';
 
 <Layout
     title="Spacing"
-    description="Spacing token scales"
+    description="Spacing token scales, available on every spacing utility: <code>p-m</code>, <code>mt-xl</code>, <code>gap-xxs</code>…"
 >
-    <Table
+    <DesignTokenTable
         title="Scale"
-        columns={[
-            {
-                name: 'name',
-                label: 'Name',
-            },
-            {
-                name: 'preview',
-                label: 'Preview',
-            },
-            {
-                name: 'value',
-                label: 'Value',
-            },
-        ]}
-        rows={Object.entries(tokenVariables.spacing).map(([tokenName, token]) => ({
-            name: (
-                <Text fontWeight="medium">{tokenName}</Text>
-            ),
+        tokens={spacingTokenNameList.map((tokenName) => ({
+            name: tokenName,
+            cssVariable: `--spacing-${tokenName}`,
             preview: (
-                <Box
-                    bg="primary"
-                    style={{
-                        height: `var(--spacing-${tokenName})`,
-                        width: '200px',
-                    }}
+                <div
+                    className="w-[200px] bg-primary"
+                    style={{ height: `var(--spacing-${tokenName})` }}
                 />
             ),
-            value: token.value,
         }))}
     />
 </Layout>

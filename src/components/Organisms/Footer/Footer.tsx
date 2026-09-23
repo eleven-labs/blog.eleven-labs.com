@@ -3,9 +3,7 @@ import type { ComponentPropsWithoutRef, IconNameType } from '@/design-system/typ
 import React from 'react';
 
 import { Logo } from '@/components';
-import { Box, Button, Flex, Heading, Icon, Link, Text } from '@/design-system';
-
-import './Footer.scss';
+import { Button, Heading, Icon, Link, Text } from '@/design-system';
 
 export interface FooterProps {
   introBlock: {
@@ -32,55 +30,29 @@ export const Footer: React.FC<FooterProps> = ({
   socialLinks,
   languageLinks,
 }) => (
-  <Box
-    as="footer"
-    bg="primary-dark"
-    color="white"
-    textAlign={{ xs: 'center', md: 'left' }}
-    textSize="s"
-    className="footer"
-  >
-    <Flex
-      flexDirection={{ xs: 'column', md: 'row' }}
-      justifyContent="center"
-      alignItems={{ xs: 'center', md: 'end' }}
-      py="m"
-      bg="primary-very-dark"
-      className="footer__intro"
-      gap="s"
-    >
+  <footer className="bg-primary-dark text-center text-s text-white md:text-left">
+    <div className="flex flex-col items-center justify-center gap-s bg-primary-very-dark py-m md:flex-row md:items-end">
       <Heading size="s">{introBlock.title}</Heading>
-      <Box as="a" {...elevenLabsSiteLink} className="footer__intro-link">
+      <a {...elevenLabsSiteLink} className="text-white underline">
         {introBlock.description}
-      </Box>
-    </Flex>
-    <Flex
-      flexDirection={{ xs: 'column', md: 'row' }}
-      justifyContent="around"
-      alignItems="center"
-      pt={{ xs: 'l', md: 'xl' }}
-      pb={{ xs: 'l', md: 'xl' }}
-      mx="s"
-    >
-      <Box mb="xl">
-        <Flex justifyContent={{ xs: 'center', md: 'start' }} alignItems="center" mb="xxs">
+      </a>
+    </div>
+    <div className="mx-s flex flex-col items-center justify-around py-l md:flex-row md:py-xl">
+      <div className="mb-xl">
+        <div className="mb-xxs flex items-center justify-center md:justify-start">
           <Logo name="website" size="2.5em" />
-        </Flex>
-      </Box>
-      <Box>
-        <Flex flexDirection={{ xs: 'column', md: 'row' }} gap={{ md: 'xl' }}>
+        </div>
+      </div>
+      <div>
+        <div className="flex flex-col md:flex-row md:gap-xl">
           {addressList.map((currentContact, contactIndex) => (
-            <Box key={contactIndex} mb="m">
-              {currentContact.title && (
-                <Text fontWeight="bold" mb="xxs-2">
-                  {currentContact.title}
-                </Text>
-              )}
+            <div key={contactIndex} className="mb-m">
+              {currentContact.title && <Text className="mb-xxs-2 font-bold">{currentContact.title}</Text>}
               {currentContact.description}
-            </Box>
+            </div>
           ))}
-        </Flex>
-        <Flex justifyContent={{ xs: 'center', md: 'start' }} alignItems="center" flexWrap="wrap" gap="s">
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-s md:justify-start">
           {socialLinks.map(({ iconName, ...linkProps }, socialLinkIndex) => (
             <a
               key={socialLinkIndex}
@@ -97,33 +69,32 @@ export const Footer: React.FC<FooterProps> = ({
               <Icon
                 name={iconName}
                 size="36px"
-                color={iconName === 'twitter' ? 'black' : 'white'}
-                className="footer__social-icon"
+                className={iconName === 'twitter' ? 'rounded-[6px] text-black' : 'rounded-[6px] text-white'}
               />
             </a>
           ))}
           <Button as="a" {...contactLink}>
             {contactLabel}
           </Button>
-        </Flex>
-      </Box>
-    </Flex>
-    <Flex py="s" justifyContent="center" alignItems="center" className="footer__language-links-container">
-      <Box mr="xxs">
+        </div>
+      </div>
+    </div>
+    <div className="flex items-center justify-center border-t border-[rgb(0_0_0/20%)] py-s">
+      <div className="mr-xxs">
         <Icon size="28px" name="language" />
-      </Box>
+      </div>
       {languageLinks.map(({ label, isActive, ...linkProps }, index) => (
         <React.Fragment key={index}>
           {isActive ? (
-            <Text fontWeight="bold">{label}</Text>
+            <Text className="font-bold">{label}</Text>
           ) : (
             <Link {...linkProps} data-internal-link="home">
               {label}
             </Link>
           )}
-          {languageLinks.length - 1 !== index && <Box mx="s" />}
+          {languageLinks.length - 1 !== index && <div className="mx-s" />}
         </React.Fragment>
       ))}
-    </Flex>
-  </Box>
+    </div>
+  </footer>
 );

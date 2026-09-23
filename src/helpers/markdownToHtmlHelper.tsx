@@ -11,7 +11,7 @@ import remarkParse from 'remark-parse';
 import remark2rehype from 'remark-rehype';
 import { unified } from 'unified';
 
-import { Box, Flex, Link, Reminder, SyntaxHighlighter } from '@/design-system';
+import { Link, Reminder, SyntaxHighlighter } from '@/design-system';
 import { intersection } from '@/helpers/objectHelper';
 import { remarkFigurePlugin } from '@/helpers/remarkPlugins/remarkFigurePlugin';
 
@@ -180,20 +180,24 @@ export const markdownToHtml = (content: string): string => {
           const reminderProps = props as { ['reminder-variant']?: ReminderVariantType; ['reminder-title']?: string };
           if (reminderProps?.['reminder-variant'] && reminderProps?.['reminder-title']) {
             return (
-              <Reminder mb="xs" variant={reminderProps['reminder-variant']} title={reminderProps['reminder-title']}>
+              <Reminder
+                className="mb-xs"
+                variant={reminderProps['reminder-variant']}
+                title={reminderProps['reminder-title']}
+              >
                 {children}
               </Reminder>
             );
           }
 
-          return <Box {...(props as ComponentPropsWithoutRef<'div'>)}>{children}</Box>;
+          return <div {...(props as ComponentPropsWithoutRef<'div'>)}>{children}</div>;
         },
         // Wrapped so the table scrolls on itself instead of widening the whole
         // document, the way code blocks already do.
         table: ({ node, children, ...props }): React.JSX.Element => (
-          <Box className="post-page__table">
+          <div className="post-content-table">
             <table {...(props as ComponentPropsWithoutRef<'table'>)}>{children}</table>
-          </Box>
+          </div>
         ),
         a: ({ node, children, ...props }): React.JSX.Element => {
           if (isExternalLink(props.href as string)) {
@@ -213,17 +217,13 @@ export const markdownToHtml = (content: string): string => {
           const code = getTextContent(children);
           if (className && className.match('mermaid')) {
             return (
-              <Flex as="pre" justifyContent="center" alignItems="center" className="mermaid">
-                {code}
-              </Flex>
+              <pre className="mermaid flex items-center justify-center">{code}</pre>
             );
           }
           return match ? (
             <SyntaxHighlighter children={code.replace(/\n$/, '')} language={match[1]} {...props} />
           ) : (
-            <Box as="code" px="xxs-2" bg="ultra-light-grey" color="ultra-dark-grey" textSize="xs">
-              {children}
-            </Box>
+            <code className="bg-ultra-light-grey px-xxs-2 text-xs text-ultra-dark-grey">{children}</code>
           );
         },
         img: ({ node, ...props }): React.JSX.Element => {

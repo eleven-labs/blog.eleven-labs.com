@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { NewsletterCard } from '@/components';
-import { Box } from '@/design-system';
 import { useNewsletterCard } from '@/hooks/useNewsletterCard';
 import { LayoutContentWithSidebar } from '@/templates';
 
@@ -17,9 +16,9 @@ export const SearchPageContainer: React.FC = () => {
   return (
     <LayoutContentWithSidebar
       content={
-        <Box id="searchPageContent">
+        <div id="searchPageContent">
           <SearchPageContentContainer />
-        </Box>
+        </div>
       }
       sidebar={sidebar}
     />

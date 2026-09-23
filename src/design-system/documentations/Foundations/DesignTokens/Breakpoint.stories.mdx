@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/addon-docs';
 import { Layout, DesignTokenTable } from '@/storybook/components';
-import { tokenVariables } from '@/design-system/constants';
+import { breakpointTokenNameList } from '@/design-system';
 
 <Meta
     title="Foundations/Design Tokens/Breakpoint"
@@ -20,10 +20,12 @@ import { tokenVariables } from '@/design-system/constants';
 
 <Layout
     title="Breakpoint"
-    description="Breakpoint token scales"
+    description="The blog is written mobile first: <code>xs</code> has no minimum width, and every other breakpoint is a <code>min-width</code> variant — <code>md:flex-row</code>. The <code>max-*</code> variants target everything below one of them."
 >
     <DesignTokenTable
-        title="Scale"
-        tokenVariables={tokenVariables['breakpoint']}
+        tokens={breakpointTokenNameList.map((tokenName) => ({
+            name: tokenName,
+            cssVariable: `--breakpoint-${tokenName}`,
+        }))}
     />
 </Layout>

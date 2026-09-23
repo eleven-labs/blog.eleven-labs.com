@@ -1,45 +1,35 @@
 import { Meta } from '@storybook/addon-docs';
 import { Layout, Table } from '@/storybook/components';
-import { Text } from '@/design-system';
-import { tokenVariables } from '@/design-system/constants';
+import { Text, fontWeightList } from '@/design-system';
 
 <Meta
-    title="Foundations/Design Tokens/Typography/FontWeight"
+    title="Foundations/Design Tokens/Typography/Font Weight"
     parameters={{
         viewMode: 'docs',
-        previewTabs: {
-            canvas: { hidden: true }
-        },
-        backgrounds: {
-            disable: true,
-            grid: {
-                disable: true,
-            }
-        },
+        previewTabs: { canvas: { hidden: true } },
+        backgrounds: { disable: true, grid: { disable: true } },
     }}
 />
 
 <Layout
     title="Typography"
-    description="Font weight token scales"
+    description="Font weights. Tailwind's own scale is used as is: <code>font-normal</code>, <code>font-medium</code>, <code>font-semibold</code> and <code>font-bold</code>."
 >
     <Table
-        title="Font Weight"
+        title="Font weight"
         columns={[
-            {
-                name: 'name',
-                label: 'Name',
-            },
-            {
-                name: 'value',
-                label: 'Value',
-            },
+            { name: 'name', label: 'Class' },
+            { name: 'preview', label: 'Preview' },
+            { name: 'value', label: 'Value' },
         ]}
-        rows={Object.entries(tokenVariables['font-weight']).map(([tokenName, token]) => ({
-            name: (
-                <Text fontWeight="medium">{tokenName}</Text>
+        rows={fontWeightList.map(({ name, value }) => ({
+            name: <Text className="font-medium">font-{name}</Text>,
+            preview: (
+                <p className="text-m" style={{ fontWeight: value }}>
+                    The quick brown fox jumps over the lazy dog
+                </p>
             ),
-            value: token.value,
+            value,
         }))}
     />
 </Layout>

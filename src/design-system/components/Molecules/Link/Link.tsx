@@ -1,38 +1,29 @@
-import type { BoxProps } from '@/design-system';
 import type { IconNameType } from '@/design-system/types';
 
-import classNames from 'classnames';
 import * as React from 'react';
 
-import { Box, Flex, Icon, Text } from '@/design-system';
+import { Icon, Text } from '@/design-system';
+import { cn } from '@/design-system/helpers/cn';
 import { polyRef } from '@/design-system/helpers/polyRef';
 
-import './Link.scss';
-
-export interface LinkProps extends BoxProps {
+export interface LinkProps {
   className?: string;
   icon?: IconNameType;
   children?: React.ReactNode;
 }
 
-export const Link = polyRef<'a', LinkProps>(({ as = 'a', icon, className, children, ...props }, ref) =>
+const linkClassName = 'font-semibold text-info underline hover:no-underline';
+
+export const Link = polyRef<'a', LinkProps>(({ as: As = 'a', icon, className, children, ...props }, ref) =>
   icon ? (
-    <Flex
-      {...props}
-      ref={ref}
-      as={as}
-      display="inline-flex"
-      alignItems="center"
-      color="info"
-      className={classNames('link', className)}
-    >
-      {icon && <Icon name={icon} />}
+    <As {...props} ref={ref} className={cn(linkClassName, 'inline-flex items-center', className)}>
+      <Icon name={icon} />
       <Text as="span">{children}</Text>
-    </Flex>
+    </As>
   ) : (
-    <Box {...props} ref={ref} as={as} color="info" className={classNames('link', className)}>
+    <As {...props} ref={ref} className={cn(linkClassName, className)}>
       {children}
-    </Box>
+    </As>
   )
 );
 

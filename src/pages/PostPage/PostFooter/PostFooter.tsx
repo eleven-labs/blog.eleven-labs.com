@@ -1,25 +1,25 @@
 import type { AuthorCardProps } from '@/components';
-import type { BoxProps } from '@/design-system';
 
 import React from 'react';
 
 import { AuthorCard } from '@/components';
-import { Box, Flex, Heading } from '@/design-system';
+import { Heading } from '@/design-system';
 
-export interface PostFooterProps extends BoxProps {
+export interface PostFooterProps {
   title: React.ReactNode;
   authors: AuthorCardProps[];
+  className?: string;
 }
 
-export const PostFooter: React.FC<PostFooterProps> = ({ title, authors, ...props }) => (
-  <Box {...props}>
-    <Heading mb="xxs" size="m" color="primary">
+export const PostFooter: React.FC<PostFooterProps> = ({ title, authors, className }) => (
+  <div className={className}>
+    <Heading size="m" className="mb-xxs text-primary">
       {title}
     </Heading>
-    <Flex mt="l" flexDirection="column" gap="s">
+    <div className="mt-l flex flex-col gap-s">
       {authors.map((author, authorIndex) => (
         <AuthorCard key={authorIndex} {...author} />
       ))}
-    </Flex>
-  </Box>
+    </div>
+  </div>
 );

@@ -1,41 +1,42 @@
 import type { PostCardProps } from '@/components';
-import type { BoxProps } from '@/design-system';
 import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
 import React from 'react';
 
 import { PostCard } from '@/components';
-import { Box, Button, Flex, Heading } from '@/design-system';
+import { Button, Heading } from '@/design-system';
+import { cn } from '@/design-system/helpers/cn';
 
-import './LastArticlesBlock.scss';
-
-export interface LastArticlesBlockProps extends BoxProps {
+export interface LastArticlesBlockProps {
   title: React.ReactNode;
   posts: Partial<PostCardProps>[];
   linkSeeMore: { label: string } & ComponentPropsWithoutRef<'a'>;
+  className?: string;
 }
 
 export const LastArticlesBlock: React.FC<LastArticlesBlockProps> = ({
   title,
   posts,
   linkSeeMore: { label: labelLinkSeeMore, ...linkSeeMore },
-  ...props
+  className,
 }) => (
-  <Box {...props} my="xl" className="last-articles-block container-content">
-    <Heading size="m" color="primary">
+  <div className={cn('container-content my-xl', className)}>
+    <Heading size="m" className="text-primary">
       {title}
     </Heading>
-    <Flex mt="l" gap="m" className="last-articles-block__post-list">
+    {/* Deux colonnes sur un écran moyen, trois au-delà : la troisième carte n'apparaît qu'une fois
+        qu'elle a la place de remplir sa propre colonne. */}
+    <div className="mt-l grid gap-m md:grid-cols-2 lg:grid-cols-3 md:[&>*:last-child]:hidden lg:[&>*:last-child]:flex">
       {posts.map((post, index) => (
         <React.Fragment key={post?.slug ?? index}>
           <PostCard variant="highlight-light" {...(post || {})} />
         </React.Fragment>
       ))}
-    </Flex>
-    <Flex justifyContent="center" alignItems="center">
-      <Button mt="l" as="a" {...linkSeeMore}>
+    </div>
+    <div className="flex items-center justify-center">
+      <Button className="mt-l" as="a" {...linkSeeMore}>
         {labelLinkSeeMore}
       </Button>
-    </Flex>
-  </Box>
+    </div>
+  </div>
 );

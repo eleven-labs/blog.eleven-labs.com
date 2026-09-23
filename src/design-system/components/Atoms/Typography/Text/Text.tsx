@@ -1,20 +1,30 @@
-import type { BoxProps } from '@/design-system';
-import type { TextSizeType } from '@/design-system/types';
+import type { VariantProps } from 'class-variance-authority';
 
-import classNames from 'classnames';
+import { cva } from 'class-variance-authority';
 import * as React from 'react';
 
-import { Box } from '@/design-system';
+import { cn } from '@/design-system/helpers/cn';
 import { polyRef } from '@/design-system/helpers/polyRef';
 
-export interface TextProps extends Omit<BoxProps, 'textSize'> {
-  size?: TextSizeType;
+export const textVariants = cva('', {
+  variants: {
+    size: {
+      xs: 'text-xs',
+      s: 'text-s',
+      m: 'text-m',
+    },
+  },
+});
+
+export interface TextProps extends VariantProps<typeof textVariants> {
+  className?: string;
+  children?: React.ReactNode;
 }
 
-export const Text = polyRef<'p', TextProps>(({ as = 'p', size, className, children, ...props }, ref) => (
-  <Box {...props} as={as} ref={ref} className={classNames({ [`text-${size}`]: Boolean(size) }, className)}>
+export const Text = polyRef<'p', TextProps>(({ as: As = 'p', size, className, children, ...props }, ref) => (
+  <As {...props} ref={ref} className={cn(textVariants({ size }), className)}>
     {children}
-  </Box>
+  </As>
 ));
 
 Text.displayName = 'Text';

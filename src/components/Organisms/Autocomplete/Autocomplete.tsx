@@ -1,34 +1,31 @@
 import type { AutocompleteItem, AutocompleteResultOptions } from './AutocompleteResult';
 import type { UseComboboxProps } from 'downshift';
 
-import type { BoxProps, SearchFieldProps } from '@/design-system';
-
-import classNames from 'classnames';
 import { useCombobox } from 'downshift';
 import React from 'react';
 
-import { Box, SearchField } from '@/design-system';
-import { polyRef } from '@/design-system/helpers';
+import { SearchField } from '@/design-system';
+import { cn } from '@/design-system/helpers/cn';
+import { polyRef } from '@/design-system/helpers/polyRef';
 
 import { AutocompleteResult } from './AutocompleteResult';
-
-import './Autocomplete.scss';
 
 export type AutocompleteOptions = {
   placeholder: string;
   searchLink: Exclude<AutocompleteResultOptions['searchLink'], undefined>;
   defaultValue?: string;
   onEnter?: (value: string) => void;
+  className?: string;
 };
 
-export type AutocompleteProps = BoxProps &
-  AutocompleteOptions &
+export type AutocompleteProps = AutocompleteOptions &
   Omit<AutocompleteResultOptions, 'highlightedIndex' | 'searchLink'> &
   Pick<UseComboboxProps<AutocompleteItem>, 'onInputValueChange' | 'onSelectedItemChange' | 'isOpen'>;
 
 export const Autocomplete = polyRef<'div', AutocompleteProps>(
   (
     {
+      as: As = 'div',
       placeholder,
       defaultValue,
       items = [],
@@ -38,6 +35,7 @@ export const Autocomplete = polyRef<'div', AutocompleteProps>(
       onSelectedItemChange,
       onEnter,
       isOpen: defaultIsOpen,
+      className,
       ...props
     },
     ref
@@ -83,15 +81,18 @@ export const Autocomplete = polyRef<'div', AutocompleteProps>(
     );
 
     return (
-      <Box {...props} className={classNames('autocomplete', props.className)} ref={ref}>
-        <Box as="label" {...getLabelProps()} className="autocomplete__label">
+      // Les résultats se déploient sous le champ à partir de `md`, et sur toute la page en dessous.
+      <As {...props} ref={ref} className={cn('md:relative', className)}>
+        {/* Le champ n'affiche pas de libellé : on en rend un pour les lecteurs d'écran, faute de
+            quoi l'`aria-labelledby` posé par downshift ne désigne aucun élément de la page. */}
+        <label {...getLabelProps()} className="sr-only">
           {placeholder}
-        </Box>
+        </label>
         <SearchField
           input={getInputProps({ placeholder, onKeyDown: handleKeyDown })}
-          buttonSearch={{ as: 'a', ...searchLinkProps } as unknown as SearchFieldProps['buttonSearch']}
+          buttonSearch={{ as: 'a', ...searchLinkProps }}
           buttonClose={{ onClick: onClose }}
-          className="autocomplete__input"
+          className="relative z-3"
         />
         <AutocompleteResult
           isOpen={isOpen && inputValue.length > 0}
@@ -106,7 +107,7 @@ export const Autocomplete = polyRef<'div', AutocompleteProps>(
           }}
           searchNotFound={searchNotFound}
         />
-      </Box>
+      </As>
     );
   }
 );

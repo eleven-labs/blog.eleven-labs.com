@@ -4,6 +4,7 @@ import globals from 'globals';
 import importPlugin from 'eslint-plugin-import';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 import perfectionist from 'eslint-plugin-perfectionist';
+import tailwindcss from 'eslint-plugin-tailwindcss';
 import tseslint from 'typescript-eslint';
 
 const files = ['src/**/*.{ts,tsx}', 'bin/**/*.ts'];
@@ -58,6 +59,42 @@ export default [
           varsIgnorePattern: '^_',
         },
       ],
+    },
+  },
+  { ...tailwindcss.configs.recommended, files },
+  {
+    files,
+    settings: {
+      tailwindcss: {
+        // Le thème étant décrit en CSS, le plugin a besoin du point d'entrée pour connaître les
+        // classes valides, y compris celles issues de `@theme` et de `@utility`.
+        cssConfigPath: './src/styles.css',
+      },
+    },
+    rules: {
+      // Le HTML issu du markdown porte des classes qui ne sont pas des utilitaires Tailwind.
+      'tailwindcss/no-custom-classname': [
+        'error',
+        {
+          whitelist: [
+            'post\\-content(\\-table)?',
+            'reminder\\-\\-[a-z]+',
+            'reminder\\-title',
+            'mermaid',
+            // Classes du formulaire Webmecanik, dont le balisage ne nous appartient pas.
+            'mauticform.*',
+            'btn(\\-default)?',
+          ],
+        },
+      ],
+    },
+  },
+  {
+    // Le helper `cn` passe une variable aux fonctions que le plugin sait lire : il n'a rien à
+    // analyser ici.
+    files: ['src/design-system/helpers/cn.ts'],
+    rules: {
+      'tailwindcss/no-custom-classname': 'off',
     },
   },
   {

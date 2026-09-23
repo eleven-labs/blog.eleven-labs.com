@@ -1,23 +1,23 @@
 import type { PostCardProps } from '@/components';
-import type { BoxProps } from '@/design-system';
 
 import React from 'react';
 
 import { PostCard } from '@/components';
-import { Box, Heading } from '@/design-system';
+import { Heading } from '@/design-system';
 
-export interface RelatedPostListProps extends BoxProps {
+export interface RelatedPostListProps {
   relatedPostListTitle: string;
   posts: PostCardProps[];
+  className?: string;
 }
 
-export const RelatedPostList: React.FC<RelatedPostListProps> = ({ relatedPostListTitle, posts, ...props }) => (
-  <Box {...props}>
-    <Heading mb="m" size="m" color="primary">
+export const RelatedPostList: React.FC<RelatedPostListProps> = ({ relatedPostListTitle, posts, className }) => (
+  <div className={className}>
+    <Heading size="m" className="mb-m text-primary">
       {relatedPostListTitle}
     </Heading>
     {posts.map((post, index) => (
-      <PostCard key={post?.slug ?? index} {...post} mt="s" />
+      <PostCard key={post?.slug ?? index} {...post} className="mt-s" />
     ))}
-  </Box>
+  </div>
 );

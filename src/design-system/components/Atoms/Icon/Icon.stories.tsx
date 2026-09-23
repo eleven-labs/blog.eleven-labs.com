@@ -2,17 +2,14 @@ import type { Meta, StoryFn } from '@storybook/react';
 
 import * as React from 'react';
 
-import { Icon } from '@/design-system';
-import { iconTokenNameList } from '@/design-system/constants';
-import { marginSystemPropsControls } from '@/design-system/constants/storybook';
+import { Icon , iconNameList } from '@/design-system';
 
 export default {
   component: Icon,
   argTypes: {
-    ...marginSystemPropsControls,
     name: {
       control: 'select',
-      options: iconTokenNameList,
+      options: iconNameList,
     },
     size: {
       control: 'text',

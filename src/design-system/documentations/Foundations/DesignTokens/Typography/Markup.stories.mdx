@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs';
+import { Layout, DesignTokenTable } from '@/storybook/components';
+import { markupSizeList } from '@/design-system';
+
+<Meta
+    title="Foundations/Design Tokens/Typography/Markup"
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: { canvas: { hidden: true } },
+        backgrounds: { disable: true, grid: { disable: true } },
+    }}
+/>
+
+<Layout
+    title="Typography"
+    description="Sizes applied to the headings written in markdown. They are tighter than the interface scale, and mapped onto <code>h5</code> to <code>h2</code> by <code>PostContent.css</code>."
+>
+    <DesignTokenTable
+        title="Markup"
+        withDesktop
+        tokens={markupSizeList.map((tokenName) => ({
+            name: `markup-${tokenName}`,
+            cssVariable: `--font-size-markup-${tokenName}`,
+            preview: (
+                <p className="leading-base" style={{ fontSize: `var(--font-size-markup-${tokenName})` }}>
+                    Title
+                </p>
+            ),
+        }))}
+    />
+</Layout>

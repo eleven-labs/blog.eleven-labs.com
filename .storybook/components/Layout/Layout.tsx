@@ -1,7 +1,7 @@
 import { Canvas } from '@storybook/addon-docs';
 import React from 'react';
 
-import { Box, Heading, Text } from '@/design-system';
+import { Heading, Text } from '@/design-system';
 
 export interface LayoutProps {
   title?: string;
@@ -20,16 +20,14 @@ export const Layout: React.FC<LayoutProps> = ({ title, description, children }) 
     <Canvas>
       <main>
         {title && (
-          <Box bg="primary" color="white" px="l" py="xxl">
+          <div className="bg-primary px-l py-xxl text-white">
             <Heading as="p" size="xl">
               {title}
             </Heading>
-            {description && <Text mt="xxs" size="m" dangerouslySetInnerHTML={{ __html: description }} />}
-          </Box>
+            {description && <Text size="m" className="mt-xxs" dangerouslySetInnerHTML={{ __html: description }} />}
+          </div>
         )}
-        <Box mt="s" px="l">
-          {children}
-        </Box>
+        <div className="mt-s px-l">{children}</div>
       </main>
     </Canvas>
   </>

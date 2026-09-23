@@ -1,13 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '@/design-system';
-import { spacingSystemPropsControls } from '@/design-system/constants/storybook';
 
 const meta: Meta<typeof Button> = {
   component: Button,
-  argTypes: {
-    ...spacingSystemPropsControls,
-  },
   args: {
     variant: 'primary',
     disabled: false,

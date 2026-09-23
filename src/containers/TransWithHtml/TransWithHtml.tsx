@@ -15,7 +15,7 @@ export const TransWithHtml: React.FC<TransWithHtmlProps> = ({ i18nKey, values, o
     values={values}
     components={{
       br: <br />,
-      ...(onlyLineBreak ? {} : { strong: <Text as="strong" />, em: <Text as="em" italic />, a: <Link /> }),
+      ...(onlyLineBreak ? {} : { strong: <Text as="strong" />, em: <Text as="em" className="italic" />, a: <Link /> }),
     }}
   />
 );

@@ -4,13 +4,9 @@ import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 
 import { SearchField } from '@/design-system';
-import { systemPropsControls } from '@/design-system/constants/storybook';
 
 export default {
   component: SearchField,
-  argTypes: {
-    ...systemPropsControls,
-  },
   args: {
     input: {
       placeholder: 'Nom d’article, auteur ...',

@@ -4,7 +4,7 @@ import type { PaginationProps } from '@/design-system';
 import React from 'react';
 
 import { PostCard } from '@/components';
-import { Flex, Pagination } from '@/design-system';
+import { Pagination } from '@/design-system';
 
 export interface PostCardListProps {
   posts: Partial<PostCardProps>[];
@@ -13,14 +13,12 @@ export interface PostCardListProps {
 }
 
 export const PostCardList: React.FC<PostCardListProps> = ({ posts, pagination, isLoading = false }) => (
-  <>
-    <Flex flexDirection="column" gap="m">
-      {posts.map((post, index) => (
-        <React.Fragment key={post?.slug ?? index}>
-          <PostCard {...(post || {})} isLoading={isLoading} />
-        </React.Fragment>
-      ))}
-      {pagination && pagination?.totalPages > 1 && <Pagination mx="auto" {...pagination} />}
-    </Flex>
-  </>
+  <div className="flex flex-col gap-m">
+    {posts.map((post, index) => (
+      <React.Fragment key={post?.slug ?? index}>
+        <PostCard {...(post || {})} isLoading={isLoading} />
+      </React.Fragment>
+    ))}
+    {pagination && pagination?.totalPages > 1 && <Pagination className="mx-auto" {...pagination} />}
+  </div>
 );

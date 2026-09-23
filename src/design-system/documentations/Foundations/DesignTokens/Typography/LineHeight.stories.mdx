@@ -1,29 +1,25 @@
 import { Meta } from '@storybook/addon-docs';
 import { Layout, DesignTokenTable } from '@/storybook/components';
-import { tokenVariables } from '@/design-system/constants';
+import { lineHeightTokenNameList } from '@/design-system';
 
 <Meta
-    title="Foundations/Design Tokens/Typography/LineHeight"
+    title="Foundations/Design Tokens/Typography/Line Height"
     parameters={{
         viewMode: 'docs',
-        previewTabs: {
-            canvas: { hidden: true }
-        },
-        backgrounds: {
-            disable: true,
-            grid: {
-                disable: true,
-            }
-        },
+        previewTabs: { canvas: { hidden: true } },
+        backgrounds: { disable: true, grid: { disable: true } },
     }}
 />
 
 <Layout
     title="Typography"
-    description="Line weight token scales"
+    description="Line heights, available through <code>leading-base</code> and <code>leading-large</code>. Headings use the first one, body copy the second one."
 >
     <DesignTokenTable
-        title="Line Height"
-        tokenVariables={tokenVariables['line-height']}
+        title="Line height"
+        tokens={lineHeightTokenNameList.map((tokenName) => ({
+            name: tokenName,
+            cssVariable: `--leading-${tokenName}`,
+        }))}
     />
 </Layout>

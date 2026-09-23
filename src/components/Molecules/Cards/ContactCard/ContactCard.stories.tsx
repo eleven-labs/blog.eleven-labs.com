@@ -12,7 +12,7 @@ const meta: Meta<typeof ContactCard> = {
     title: (
       <>
         Vous souhaitez en savoir plus sur le sujet ?<br />
-        <Text as="span" fontWeight="bold">
+        <Text as="span" className="font-bold">
           Organisons un échange !
         </Text>
       </>

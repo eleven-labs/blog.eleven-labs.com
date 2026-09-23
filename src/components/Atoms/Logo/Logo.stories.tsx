@@ -3,12 +3,10 @@ import type { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 
 import { Logo, logoName } from '@/components';
-import { marginSystemPropsControls } from '@/design-system/constants/storybook';
 
 export default {
   component: Logo,
   argTypes: {
-    ...marginSystemPropsControls,
     name: {
       control: 'select',
       options: logoName,

@@ -21,14 +21,9 @@ export const TextHighlight = polyRef<'p', TextHighlightProps>(({ text, textQuery
   return (
     <Text {...props} ref={ref}>
       {parts.map((part, index) => (
-        <Text
-          as="span"
-          key={index}
-          fontWeight={part.highlight ? 'medium' : 'regular'}
-          color={part.highlight ? 'info' : 'black'}
-        >
+        <span key={index} className={part.highlight ? 'font-medium text-info' : 'font-normal text-black'}>
           {part.text}
-        </Text>
+        </span>
       ))}
     </Text>
   );

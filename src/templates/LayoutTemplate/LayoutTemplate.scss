@@ -1,5 +1,0 @@
-@use '@/design-system/styles/abstracts' as *;
-
-.layout-template {
-  min-height: #{map-get-strict($token-variables, 'height', 'screen')};
-}

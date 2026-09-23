@@ -1,0 +1,109 @@
+/* stylelint-disable selector-class-pattern */
+
+/**
+ * Habillage du formulaire d'inscription à la newsletter, dont le balisage est produit par
+ * Webmecanik : ses classes ne sont pas les nôtres et ne peuvent pas porter d'utilitaires.
+ */
+
+/* Volontairement hors de toute cascade layer : ces règles doivent primer, comme le faisaient
+   les feuilles SCSS d'origine, sur les styles tiers et sur les utilitaires. */
+.mauticform_wrapper {
+  --color-error: red;
+
+  font-size: var(--font-size-text-s);
+
+  .mauticform-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mauticform-checkboxgrp-row {
+    display: flex;
+    gap: var(--spacing-s);
+    margin-top: var(--spacing-m);
+
+    input {
+      margin-top: var(--spacing-xxs-2);
+    }
+
+    label {
+      flex: 1;
+    }
+  }
+
+  .mauticform-label {
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .mauticform-required .mauticform-label::after {
+    display: inline;
+    color: var(--color-error);
+    content: ' *';
+  }
+
+  .mauticform-errormsg {
+    margin-top: var(--spacing-xxs);
+    color: var(--color-error);
+  }
+
+  .mauticform-input {
+    padding: var(--spacing-s) var(--spacing-m);
+    border: 1px solid var(--color-accent);
+    border-radius: 100px;
+    background-color: transparent;
+    color: var(--color-white);
+
+    &:focus {
+      border-color: var(--color-white);
+      outline: 0;
+    }
+  }
+
+  input[type='checkbox'] {
+    display: grid;
+    width: 1.15em;
+    height: 1.15em;
+    margin: calc(0.15em * 2) 0 0;
+    border: 0.15em solid var(--color-accent);
+    border-radius: 0.15em;
+    appearance: none;
+    color: currentcolor;
+    font: inherit;
+    place-content: center;
+    transform: translateY(-0.075em);
+
+    &::before {
+      width: 0.65em;
+      height: 0.65em;
+      background-color: canvastext;
+      box-shadow: inset 1em 1em var(--color-accent);
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      color: #fff;
+      content: '';
+      transform: scale(0);
+      transform-origin: bottom left;
+      transition: 120ms transform ease-in-out;
+    }
+
+    &:checked::before {
+      transform: scale(1);
+    }
+  }
+
+  a {
+    color: var(--color-white);
+    text-decoration: underline;
+  }
+
+  .mauticform-button-wrapper .mauticform-button.btn-default {
+    margin-top: var(--spacing-l);
+    padding: var(--spacing-s) var(--spacing-m);
+    border: none;
+    border-radius: 100px;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}

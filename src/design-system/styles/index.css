@@ -1,0 +1,10 @@
+@import 'tailwindcss' source(none);
+@import './theme.css';
+@import './base.css';
+@import './utilities.css';
+@import '../components/Molecules/Reminder/Reminder.css';
+
+/* Les sources sont déclarées explicitement : la détection automatique lirait aussi les milliers
+   de fichiers markdown de `_articles`, qui ne contiennent aucune classe. */
+@source '../../';
+@source '../../../.storybook';

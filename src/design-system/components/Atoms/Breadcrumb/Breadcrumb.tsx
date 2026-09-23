@@ -1,27 +1,20 @@
-import type { ComponentPropsWithoutRef, MarginSystemProps } from '@/design-system/types';
+import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
-import classNames from 'classnames';
 import React, { Fragment } from 'react';
 
-import { Flex, Link, Text } from '@/design-system';
+import { Link, Text } from '@/design-system';
+import { cn } from '@/design-system/helpers/cn';
 
-import './Breadcrumb.scss';
-
-export interface BreadcrumbProps extends MarginSystemProps {
+export interface BreadcrumbProps {
   items: ({ label: string } & ComponentPropsWithoutRef<'a'>)[];
   className?: string;
 }
 
-export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, ...props }) => (
-  <Flex
-    {...props}
-    as="ol"
+export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className }) => (
+  <ol
     itemScope
     itemType="https://schema.org/BreadcrumbList"
-    p="0"
-    gap="xxs-3"
-    fontWeight="semi-bold"
-    className={classNames('breadcrumb', props.className)}
+    className={cn('my-[1em] flex list-none gap-xxs-3 p-0 font-semibold', className)}
   >
     {items.map(({ label, ...itemLink }, index) => (
       <Fragment key={index}>
@@ -33,7 +26,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, ...props }) => (
               </Text>
             </Link>
           ) : (
-            <Text as="span" itemProp="name" fontWeight="regular">
+            <Text as="span" itemProp="name" className="font-normal">
               {label}
             </Text>
           )}
@@ -42,5 +35,5 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, ...props }) => (
         {index < items.length - 1 && <Text as="span">{'>'}</Text>}
       </Fragment>
     ))}
-  </Flex>
+  </ol>
 );

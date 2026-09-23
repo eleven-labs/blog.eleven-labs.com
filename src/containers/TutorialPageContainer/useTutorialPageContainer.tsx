@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
 import { MARKDOWN_CONTENT_TYPES, PATHS } from '@/constants';
-import { Box } from '@/design-system';
 import { generatePath } from '@/helpers/routerHelper';
 import { usePostPage } from '@/hooks/usePostPage';
 
@@ -34,7 +33,7 @@ export const useTutorialPageContainer = (tutorial: TutorialPageData): PostPagePr
       })),
       sectionActive: currentTutorialStep?.slug ?? firstStep.slug,
     },
-    children: <Box dangerouslySetInnerHTML={{ __html: currentTutorialStep?.content ?? tutorial.steps[0].content }} />,
+    children: <div dangerouslySetInnerHTML={{ __html: currentTutorialStep?.content ?? tutorial.steps[0].content }} />,
     previousLink: previousStep
       ? {
           label: t('pages.tutorial.previous_button'),

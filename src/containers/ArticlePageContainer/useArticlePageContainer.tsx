@@ -5,7 +5,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { MARKDOWN_CONTENT_TYPES } from '@/constants';
-import { Box } from '@/design-system';
 import { slugify } from '@/helpers/stringHelper';
 import { usePostPage } from '@/hooks/usePostPage';
 
@@ -26,6 +25,6 @@ export const useArticlePageContainer = (article: ArticlePageData): PostPageProps
           href: `#${heading.id}`,
         })),
     },
-    children: <Box dangerouslySetInnerHTML={{ __html: article.content }} />,
+    children: <div dangerouslySetInnerHTML={{ __html: article.content }} />,
   };
 };

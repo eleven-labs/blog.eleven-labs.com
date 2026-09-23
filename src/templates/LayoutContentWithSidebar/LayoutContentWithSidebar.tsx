@@ -1,15 +1,10 @@
-import type { ComponentPropsWithoutRef, MarginSystemProps } from '@/design-system/types';
+import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
-import classNames from 'classnames';
 import React from 'react';
 
-import { Flex } from '@/design-system';
+import { cn } from '@/design-system/helpers/cn';
 
-import './LayoutContentWithSidebar.scss';
-
-export interface LayoutContentWithSidebarProps
-  extends MarginSystemProps,
-    Omit<ComponentPropsWithoutRef<'main'>, 'content'> {
+export interface LayoutContentWithSidebarProps extends Omit<ComponentPropsWithoutRef<'div'>, 'content'> {
   content: React.ReactNode;
   sidebar: React.ReactNode;
 }
@@ -20,19 +15,9 @@ export const LayoutContentWithSidebar: React.FC<LayoutContentWithSidebarProps> =
   className,
   ...props
 }) => (
-  <Flex
-    {...props}
-    flexDirection={{ xs: 'column', md: 'row' }}
-    gap="xl"
-    my="xl"
-    mx={{ xs: 's', md: 'auto' }}
-    className={classNames('layout-content-with-sidebar', 'container-content', className)}
-  >
-    <Flex flexDirection="column" as="main" flex="1" gap="xl" className="layout-content-with-sidebar__content">
-      {content}
-    </Flex>
-    <Flex as="aside" flexDirection="column" gap="xl" className="layout-content-with-sidebar__sidebar">
-      {sidebar}
-    </Flex>
-  </Flex>
+  <div {...props} className={cn('container-content my-xl flex flex-col gap-xl md:flex-row', className)}>
+    {/* Le contenu occupe 70% de la largeur, gouttière déduite ; la colonne latérale le reste. */}
+    <main className="flex flex-1 flex-col gap-xl md:w-[calc(70%-var(--spacing-xl))]">{content}</main>
+    <aside className="flex flex-col gap-xl md:w-[30%]">{sidebar}</aside>
+  </div>
 );

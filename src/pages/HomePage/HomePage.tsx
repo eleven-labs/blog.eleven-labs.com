@@ -21,6 +21,6 @@ export const HomePage: React.FC<HomePageProps> = ({
     <HomeIntroBlock {...homeIntroBlock} />
     <LastArticlesBlock {...lastArticlesBlock} />
     {lastTutorialsBlock && <LastTutorialsBlock {...lastTutorialsBlock} />}
-    <NewsletterCard my="xl" variant="horizontal" className="container-content" {...newsletterCard} />
+    <NewsletterCard variant="horizontal" className="container-content my-xl" {...newsletterCard} />
   </>
 );

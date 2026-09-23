@@ -1,40 +1,31 @@
-import type { FlexProps } from '@/design-system';
-
-import classNames from 'classnames';
 import * as React from 'react';
 
-import { Box, Flex, Svgs, Text } from '@/design-system';
+import { Svgs, Text } from '@/design-system';
+import { cn } from '@/design-system/helpers/cn';
 import { polyRef } from '@/design-system/helpers/polyRef';
-
-import './Logo.scss';
 
 export const logoName = ['website', 'blog'] as const;
 export type LogoNameType = (typeof logoName)[number];
 
-export interface LogoProps extends FlexProps {
+export interface LogoProps {
   name: LogoNameType;
+  /** Le logo se dimensionne à partir de sa taille de police : tout est exprimé en `em` et `ex`. */
   size?: string | number;
+  className?: string;
 }
 
-export const Logo = polyRef<'div', LogoProps>(({ name, size, ...props }, ref) => (
-  <Flex
-    {...props}
-    ref={ref}
-    justifyContent="center"
-    alignItems="center"
-    className={classNames('logo', props.className)}
-    style={{ fontSize: size }}
-  >
+export const Logo = polyRef<'div', LogoProps>(({ as: As = 'div', name, size, className, ...props }, ref) => (
+  <As {...props} ref={ref} className={cn('flex items-center justify-center', className)} style={{ fontSize: size }}>
     <Svgs.Logo height="1em" />
     {name === 'blog' ? (
-      <Box className="logo__blog">
-        <Text fontWeight="medium">Eleven Labs</Text>
-        <Text fontWeight="bold">Le blog</Text>
-      </Box>
+      <div className="ml-[0.2ex] text-[1ex] leading-none">
+        <Text className="font-medium">Eleven Labs</Text>
+        <Text className="font-bold">Le blog</Text>
+      </div>
     ) : (
-      <Text fontWeight="medium" className="logo__website">
-        Eleven Labs
-      </Text>
+      <Text className="ml-[0.2ex] text-[1.5ex] leading-none font-medium">Eleven Labs</Text>
     )}
-  </Flex>
+  </As>
 ));
+
+Logo.displayName = 'Logo';

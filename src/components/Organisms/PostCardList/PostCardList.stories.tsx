@@ -5,7 +5,6 @@ import type { PostCardListProps } from '@/components';
 import React from 'react';
 
 import * as PostCardStories from '@/components/Molecules/Cards/PostCard/PostCard.stories';
-import { Box } from '@/design-system';
 import PaginationStories from '@/design-system/components/Molecules/Pagination/Pagination.stories';
 
 import { PostCardList } from './PostCardList';
@@ -24,9 +23,9 @@ const meta: Meta<typeof PostCardList> = {
   },
   decorators: [
     (Story): React.ReactElement => (
-      <Box p="s" mx="auto" style={{ maxWidth: '764px' }}>
+      <div className="mx-auto max-w-191 p-s">
         <Story />
-      </Box>
+      </div>
     ),
   ],
 };
