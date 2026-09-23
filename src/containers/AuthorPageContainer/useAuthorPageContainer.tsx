@@ -2,6 +2,7 @@ import type { PostCardListContainerProps } from '@/containers/PostCardListContai
 import type { AuthorPageProps, SocialNetworkName } from '@/pages';
 import type { AuthorPageData } from '@/types';
 
+import { useMeta } from 'hoofd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLoaderData, useParams } from 'react-router-dom';
@@ -9,6 +10,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import { PATHS } from '@/constants';
 import { PostCardListContainer } from '@/containers/PostCardListContainer';
 import { generatePath } from '@/helpers/routerHelper';
+import { getTextSummaryFromHtml } from '@/helpers/stringHelper';
 import { useNewsletterCard } from '@/hooks/useNewsletterCard';
 import { useTitle } from '@/hooks/useTitle';
 
@@ -17,7 +19,17 @@ export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
   const { authorUsername, page } = useParams<{ authorUsername: string; page?: string }>();
   const authorPageData = useLoaderData() as AuthorPageData;
   const newsletterCard = useNewsletterCard();
-  useTitle(t('pages.author.seo.title', { authorName: authorPageData?.author.name }));
+  const currentPage = page ? parseInt(page, 10) : 1;
+  const seoTitle = t('pages.author.seo.title', { authorName: authorPageData?.author.name });
+  // "Page" is spelled the same way in every language of the blog, no translation key is needed
+  useTitle(currentPage > 1 ? `${seoTitle} - Page ${currentPage}` : seoTitle);
+  // The biography of the author is the only description available without a new translation key
+  useMeta({
+    name: 'description',
+    content: getTextSummaryFromHtml(authorPageData?.author.content ?? '', 155) || seoTitle,
+  });
+  // Thin pages (a biography and a list) that use crawl budget without bringing clicks, their links are still followed
+  useMeta({ name: 'robots', content: 'noindex, follow' });
 
   const getPaginatedLink: PostCardListContainerProps['getPaginatedLink'] = (page: number) => ({
     href: generatePath(PATHS.AUTHOR_PAGINATED, { lang: i18n.language, authorUsername, page }),
@@ -61,7 +73,7 @@ export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
     postCardList: (
       <PostCardListContainer
         getPaginatedLink={getPaginatedLink}
-        currentPage={page ? parseInt(page, 10) : 1}
+        currentPage={currentPage}
         allPosts={posts}
       />
     ),

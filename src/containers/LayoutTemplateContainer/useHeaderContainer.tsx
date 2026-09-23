@@ -9,7 +9,7 @@ import { contactUrl } from '@/config/website';
 import { IS_SSR, NUMBER_OF_ITEMS_FOR_SEARCH, PATHS } from '@/constants';
 import { TransWithHtml } from '@/containers/TransWithHtml';
 import { trackContentSearchEvent } from '@/helpers/dataLayerHelper';
-import { generatePath } from '@/helpers/routerHelper';
+import { generatePath, getHomePath } from '@/helpers/routerHelper';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
 import { useDateToString } from '@/hooks/useDateToString';
 import { useDebounce } from '@/hooks/useDebounce';
@@ -75,7 +75,7 @@ export const useHeaderContainer = ({ layoutTemplateData }: HeaderContainerProps)
     onToggleMenu: () => setMenuIsOpen((currentIsOpen) => !currentIsOpen),
     homeLink: {
       hrefLang: i18n.language,
-      href: generatePath(PATHS.HOME, { lang: i18n.language }),
+      href: getHomePath(i18n.language),
     },
     categories:
       layoutTemplateData.categories.map((currentCategoryName) => ({

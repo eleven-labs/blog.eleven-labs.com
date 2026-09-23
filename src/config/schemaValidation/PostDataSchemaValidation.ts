@@ -10,6 +10,10 @@ export const PostDataSchemaValidation = z.object({
   } as const),
   lang: z.nativeEnum(LANGUAGES),
   date: z.coerce.date().transform((date) => date.toISOString().slice(0, 10)),
+  updatedAt: z.coerce
+    .date()
+    .transform((date) => date.toISOString().slice(0, 10))
+    .optional(),
   slug: z.string().regex(/^[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/, 'Kebab case format not respected'),
   title: z.string(),
   excerpt: z.string(),

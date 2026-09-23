@@ -5,6 +5,7 @@ export interface TransformedArticleData
   contentType: 'article';
   summary: { id: string; level: number; text: string }[];
   date: string;
+  updatedAt?: string;
   readingTime: number;
   content: string;
 }
@@ -13,6 +14,7 @@ export interface TransformedTutorialData
   extends Pick<TutorialData, 'lang' | 'slug' | 'cover' | 'title' | 'excerpt' | 'authors' | 'categories'> {
   contentType: 'tutorial';
   date: string;
+  updatedAt?: string;
   readingTime: number;
   steps: (Pick<TutorialStepData, 'slug' | 'title'> & { content: string; readingTime: number })[];
 }

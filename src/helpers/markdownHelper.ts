@@ -68,6 +68,41 @@ export const validateExistingAssets = (content: string): boolean => {
   return true;
 };
 
+// Google relies on the alternative text to understand an image and to rank it in Google Images
+export const getImagesWithoutAlt = (content: string): { image: string; line: number }[] => {
+  const imagesWithoutAlt: { image: string; line: number }[] = [];
+  let isInCodeBlock = false;
+
+  content.split('\n').forEach((lineContent, index) => {
+    if (/^\s*(`{3,}|~{3,})/.test(lineContent)) {
+      isInCodeBlock = !isInCodeBlock;
+      return;
+    }
+    if (isInCodeBlock) {
+      return;
+    }
+    for (const match of lineContent.replace(/`[^`]*`/g, '').matchAll(/!\[\s*\]\([^)]*\)/g)) {
+      imagesWithoutAlt.push({ image: match[0], line: index + 1 });
+    }
+  });
+
+  return imagesWithoutAlt;
+};
+
+export const findImagesWithoutAlt = (): { markdownFilePathRelative: string; image: string; line: number }[] =>
+  [
+    ...globSync(`${ARTICLES_DIR}/**/*.md`),
+    ...globSync(`${TUTORIALS_DIR}/**/index.md`),
+    ...globSync(`${TUTORIALS_DIR}/**/steps/*.md`),
+  ]
+    .sort()
+    .flatMap((markdownFilePath) =>
+      getImagesWithoutAlt(readFileSync(markdownFilePath, { encoding: 'utf-8' })).map((imageWithoutAlt) => ({
+        markdownFilePathRelative: path.relative(process.cwd(), markdownFilePath),
+        ...imageWithoutAlt,
+      }))
+    );
+
 export const validateHeaders = (headings: { level: number; text: string }[]): boolean => {
   const minLevel = 2;
   const maxLevel = 5;

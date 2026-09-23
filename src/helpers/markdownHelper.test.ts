@@ -5,6 +5,7 @@ import { z } from 'zod';
 
 import {
   getDataInMarkdownFile,
+  getImagesWithoutAlt,
   validateAuthor,
   validateExistingAssets,
   validateHeaders,
@@ -522,5 +523,27 @@ describe('validateMarkdownContent', () => {
     expect(() => validateMarkdownContent(options)).toThrow(
       `The markdown of the file "${options.markdownFilePath}" is invalid! The img tag are no longer allowed, please use markdown syntax! ${tagInvalid}`
     );
+  });
+});
+
+describe('getImagesWithoutAlt', () => {
+  it('should list the images without alternative text with their line', () => {
+    const content = [
+      '## Title',
+      '![A described image]({BASE_URL}/imgs/articles/post/described.png)',
+      '![]({BASE_URL}/imgs/articles/post/undescribed.png)',
+      'Text and ![ ]({BASE_URL}/imgs/articles/post/blank.png?width=500)',
+    ].join('\n');
+
+    expect(getImagesWithoutAlt(content)).toEqual([
+      { image: '![]({BASE_URL}/imgs/articles/post/undescribed.png)', line: 3 },
+      { image: '![ ]({BASE_URL}/imgs/articles/post/blank.png?width=500)', line: 4 },
+    ]);
+  });
+
+  it('should ignore the images inside code', () => {
+    const content = ['```markdown', '![](image.png)', '```', 'Use `![](image.png)` to add an image'].join('\n');
+
+    expect(getImagesWithoutAlt(content)).toEqual([]);
   });
 });

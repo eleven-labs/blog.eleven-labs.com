@@ -124,6 +124,7 @@ export const getArticles = (): TransformedArticleData[] =>
       currentArticles.push({
         ...data,
         date: new Date(data.date).toISOString(),
+        updatedAt: data.updatedAt ? new Date(data.updatedAt).toISOString() : undefined,
         summary: extractHeaders(content),
         readingTime: getReadingTime(content),
         content: html,
@@ -155,6 +156,7 @@ export const getTutorials = (): TransformedTutorialData[] => {
       currentTutorials.push({
         ...data,
         date: new Date(data.date).toISOString(),
+        updatedAt: data.updatedAt ? new Date(data.updatedAt).toISOString() : undefined,
         readingTime: steps.reduce((currentReadingTime, step) => currentReadingTime + getReadingTime(step.content), 0),
         steps,
       });

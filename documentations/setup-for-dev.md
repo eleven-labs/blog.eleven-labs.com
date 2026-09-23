@@ -101,6 +101,7 @@ Here is the file's template.
 contentType: article
 lang: en | fr
 date: YYYY-MM-DD
+updatedAt: YYYY-MM-DD (optional, date of the last significant update, exposed as `dateModified` in the structured data)
 slug: slug of the article (No space dashes instead)
 title: Title of the article
 excerpt: Description of the article (Visible on the list pages)
@@ -111,7 +112,7 @@ cover:
 categories:
     - javascript | php | agile | architecture
 keywords:
-- keyword (limited to 10, must not be identical to the categories, used for SEO and search)
+- keyword (limited to 10, must not be identical to the categories, informative only: not used for SEO nor for the search)
 authors:
     - author's username
 seo:
@@ -157,6 +158,8 @@ Then in the markdown content, insert the tag:
 ```md
 ![alt of image]({BASE_URL}/imgs/articles/YYYY-MM-DD-slug/image-name.png)
 ```
+
+Always describe the image between the brackets: Google relies on this alternative text to understand the image and to show it in Google Images. `pnpm validate-markdown` warns about every image without one. Prefer a descriptive file name too (`event-driven-architecture.png` rather than `image1.png`).
 
 To add an image with a figure and a figcaption you just need to write this syntax:
 
@@ -214,13 +217,14 @@ Inside the folder named `YYYY-MM-DD-slug` you created, add a file named `index.m
 contentType: tutorial
 lang: en | fr
 date: YYYY-MM-DD
+updatedAt: YYYY-MM-DD (optional, date of the last significant update, exposed as `dateModified` in the structured data)
 slug: Slug of the tutorial (No space dashes instead)
 title: Title of the tutorial
 excerpt: Description of the tutorial (Visible on the list pages)
 categories:
     - javascript | php | agile | architecture
 keywords:
-- keyword (limited to 10, must not be identical to the categories, used for SEO and search)
+- keyword (limited to 10, must not be identical to the categories, informative only: not used for SEO nor for the search)
 authors:
     - author's username
 steps:
