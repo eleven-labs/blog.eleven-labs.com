@@ -28,6 +28,8 @@ export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
     name: 'description',
     content: getTextSummaryFromHtml(authorPageData?.author.content ?? '', 155) || seoTitle,
   });
+  // Thin pages (a biography and a list) that use crawl budget without bringing clicks, their links are still followed
+  useMeta({ name: 'robots', content: 'noindex, follow' });
 
   const getPaginatedLink: PostCardListContainerProps['getPaginatedLink'] = (page: number) => ({
     href: generatePath(PATHS.AUTHOR_PAGINATED, { lang: i18n.language, authorUsername, page }),

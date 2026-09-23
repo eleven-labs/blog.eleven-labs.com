@@ -1,12 +1,14 @@
 import { resolve } from 'node:path';
 
 import { DEFAULT_LANGUAGE, LANGUAGES_AVAILABLE, PATHS } from '@/constants';
+import { getAuthors, getPosts } from '@/helpers/markdownContentManagerHelper';
 import { generatePath } from '@/helpers/routerHelper';
 
 import { generateFeedFile } from './generateFeedFile';
 import { generateHtmlFiles } from './generateHtmlFiles';
 import { generateSitemap } from './generateSitemap';
 import { getSitemapEntries } from './getSitemapEntries';
+import { getAuthorPageUrls } from './getUrls';
 
 export const generateFiles = async (options: { rootDir: string; baseUrl: string }): Promise<void> => {
   const __dirname = resolve(options.rootDir, 'public');
@@ -21,6 +23,8 @@ export const generateFiles = async (options: { rootDir: string; baseUrl: string 
     }));
 
   urls.push(
+    // The author pages are left out of the sitemap but must still be generated
+    ...getAuthorPageUrls(getPosts(), getAuthors()).flat(),
     ...LANGUAGES_AVAILABLE.map((lang) => ({
       lang,
       url: generatePath(PATHS.SEARCH, { lang }),

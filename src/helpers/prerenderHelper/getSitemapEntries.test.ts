@@ -56,13 +56,6 @@ describe('getSitemapEntries', () => {
       },
       { priority: 0.7, changefreq: 'weekly', links: [{ lang: 'en', url: '/en/categories/php/' }] },
       { priority: 0.7, changefreq: 'weekly', links: [{ lang: 'fr', url: '/fr/categories/architecture/' }] },
-      {
-        priority: 0.5,
-        links: [
-          { lang: 'fr', url: '/fr/authors/author-1/' },
-          { lang: 'en', url: '/en/authors/author-1/' },
-        ],
-      },
     ];
 
     const sitemapEntries = getSitemapEntries();
