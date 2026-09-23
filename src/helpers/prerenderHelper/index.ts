@@ -6,9 +6,10 @@ import { generatePath } from '@/helpers/routerHelper';
 
 import { generateFeedFile } from './generateFeedFile';
 import { generateHtmlFiles } from './generateHtmlFiles';
+import { generateRedirectFiles } from './generateRedirectFiles';
 import { generateSitemap } from './generateSitemap';
 import { getSitemapEntries } from './getSitemapEntries';
-import { getAuthorPageUrls } from './getUrls';
+import { getAuthorPageUrls, getTutorialStepRedirects } from './getUrls';
 
 export const generateFiles = async (options: { rootDir: string; baseUrl: string }): Promise<void> => {
   const __dirname = resolve(options.rootDir, 'public');
@@ -47,6 +48,11 @@ export const generateFiles = async (options: { rootDir: string; baseUrl: string 
     }),
   ]);
   generateFeedFile({ rootDir: __dirname });
+  generateRedirectFiles({
+    rootDir: __dirname,
+    baseUrl: options.baseUrl,
+    redirects: getTutorialStepRedirects(getPosts()),
+  });
 
   console.log('🦖🖨 Your static site is ready to deploy from dist');
 };

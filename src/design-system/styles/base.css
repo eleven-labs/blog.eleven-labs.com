@@ -16,6 +16,13 @@
     overflow-wrap: break-word;
   }
 
+  /* Un lien d'ancre, comme ceux des sommaires, fait défiler la page jusqu'à sa cible. */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
   body {
     background-color: var(--color-secondary);
     font-family: var(--font-base);

@@ -2,10 +2,10 @@ import type { ImagePositionType, PostPageData } from '@/types';
 
 import { useMeta, useScript } from 'hoofd';
 import { useTranslation } from 'react-i18next';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import { logo } from '@/config/website';
-import { MARKDOWN_CONTENT_TYPES, PATHS, SOCIAL_IMAGE_FORMAT } from '@/constants';
+import { PATHS, SOCIAL_IMAGE_FORMAT } from '@/constants';
 import { generateUrl, getSocialCoverPath } from '@/helpers/assetHelper';
 import { toIsoDuration } from '@/helpers/durationHelper';
 import { getUrl } from '@/helpers/getUrlHelper';
@@ -16,7 +16,6 @@ import { useTitle } from '@/hooks/useTitle';
 export const useSeoPost = (post: PostPageData): void => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
-  const { step } = useParams<{ step?: string }>();
   const coverPath = getSocialCoverPath({
     path: post.cover?.path,
     position: post?.cover?.position as ImagePositionType,
@@ -27,14 +26,8 @@ export const useSeoPost = (post: PostPageData): void => {
   const postUrl = getUrl(location.pathname);
   const dateModified = post.updatedAt ?? post.date;
   const categoryName = post.categories?.[0];
-  // Every step of a tutorial is a page of its own, it cannot share the title of the tutorial
-  const currentStepTitle =
-    post.contentType === MARKDOWN_CONTENT_TYPES.TUTORIAL
-      ? post.steps.find((currentStep) => currentStep.slug === step)?.title
-      : undefined;
-  const title = post?.seo?.title ?? post.title;
 
-  useTitle(currentStepTitle ? `${title} - ${currentStepTitle}` : title);
+  useTitle(post?.seo?.title ?? post.title);
   useMeta({ name: 'author', content: authors });
   useMeta({ name: 'description', content: description });
 
@@ -61,7 +54,7 @@ export const useSeoPost = (post: PostPageData): void => {
         '@id': postUrl,
       },
       url: postUrl,
-      headline: currentStepTitle ? `${post.title} - ${currentStepTitle}` : post.title,
+      headline: post.title,
       description: post.excerpt,
       inLanguage: post.lang,
       datePublished: post.date,
@@ -99,6 +92,5 @@ export const useSeoPost = (post: PostPageData): void => {
       path: generatePath(PATHS.CATEGORY, { lang: i18n.language, categoryName: categoryName ?? 'all' }),
     },
     { name: post.title, path: generatePath(PATHS.POST, { lang: i18n.language, slug: post.slug }) },
-    ...(currentStepTitle ? [{ name: currentStepTitle, path: location.pathname }] : []),
   ]);
 };

@@ -144,10 +144,4 @@ WithVariantTutorial.args = {
     sections: SummaryCardStories.WithVariantSecondary.args?.sections,
     sectionActive: SummaryCardStories.WithVariantSecondary.args?.sectionActive,
   } as PostPageProps['summary'],
-  previousLink: {
-    label: 'Précédent',
-  },
-  nextLink: {
-    label: 'Suivant',
-  },
 };

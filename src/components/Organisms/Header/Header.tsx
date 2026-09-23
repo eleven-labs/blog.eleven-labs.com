@@ -41,7 +41,7 @@ export const Header: React.FC<HeaderProps> = ({
     <a {...homeLink} className="text-primary">
       <Logo name="blog" className="text-[2rem] md:text-[2.75rem]" />
     </a>
-    <div className={cn(menuClassName, menuIsOpen ? 'max-md:flex' : 'max-md:hidden')}>
+    <div data-header-menu className={cn(menuClassName, menuIsOpen ? 'max-md:flex' : 'max-md:hidden')}>
       {categories.map(({ label, ...categoryLink }, index) => (
         <Link key={index} {...categoryLink} data-internal-link="category" className={menuItemClassName}>
           {label}
