@@ -29,9 +29,14 @@ const SEARCH_ID = 'header-search';
 const menuClassName =
   'flex font-heading font-bold tracking-[0.5px] uppercase md:mx-xs md:gap-m lg:mx-0 lg:gap-xl max-md:fixed max-md:top-[80px] max-md:bottom-0 max-md:left-0 max-md:z-10 max-md:w-full max-md:flex-col max-md:border-t-[0.5px] max-md:border-secondary-dark max-md:bg-white';
 
-/* Sous `md` le champ de recherche ne s'affiche qu'à la demande, sur toute la largeur sous l'en-tête. */
+/* Sous `md` le champ de recherche ne s'affiche qu'à la demande, sur toute la largeur sous l'en-tête.
+   Il ne dépasse pas le bas de l'écran (`100%` y vaut la hauteur de l'en-tête) : les suggestions
+   défilent à l'intérieur, l'en-tête restant collé en haut de la page. */
 const searchClassName =
-  'max-md:absolute max-md:top-full max-md:left-0 max-md:z-10 max-md:w-full max-md:border-y-[0.5px] max-md:border-ultra-light-grey max-md:bg-white max-md:p-s';
+  'max-md:absolute max-md:top-full max-md:left-0 max-md:z-10 max-md:flex max-md:max-h-[calc(100dvh-100%)] max-md:w-full max-md:flex-col max-md:border-y-[0.5px] max-md:border-ultra-light-grey max-md:bg-white max-md:p-s';
+
+/* Le burger et la croix partagent la même boîte, pour que la loupe ne bouge pas quand le menu s'ouvre. */
+const menuButtonClassName = 'size-[30px] justify-center p-0';
 
 const menuItemClassName =
   'self-center font-bold text-info no-underline hover:text-primary hover:underline max-md:border-b-[0.5px] max-md:border-secondary-dark max-md:px-m max-md:py-xs';
@@ -110,7 +115,11 @@ export const Header: React.FC<HeaderProps> = ({
         data-header-search
         className={cn(searchClassName, !searchIsOpen && 'max-md:hidden')}
       >
-        <Autocomplete {...autocomplete} onClose={closeSearch} />
+        <Autocomplete
+          {...autocomplete}
+          className={cn('max-md:flex max-md:min-h-0 max-md:flex-col', autocomplete.className)}
+          onClose={closeSearch}
+        />
       </div>
       <div className="flex items-center gap-s md:hidden">
         <button
@@ -119,12 +128,16 @@ export const Header: React.FC<HeaderProps> = ({
           aria-label={searchButtonLabel}
           aria-expanded={searchIsOpen}
           aria-controls={SEARCH_ID}
-          className="flex bg-transparent text-primary"
+          className="flex bg-transparent p-0 text-primary"
           onClick={onToggleSearch}
         >
           <Icon name="search" size="2.5rem" />
         </button>
-        {menuIsOpen ? <CloseButton onClick={onToggleMenu} /> : <BurgerButton onClick={onToggleMenu} />}
+        {menuIsOpen ? (
+          <CloseButton className={menuButtonClassName} onClick={onToggleMenu} />
+        ) : (
+          <BurgerButton className={menuButtonClassName} onClick={onToggleMenu} />
+        )}
       </div>
     </header>
   );

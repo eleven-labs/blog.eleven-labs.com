@@ -49,8 +49,10 @@ export const AutocompleteResult = React.forwardRef<HTMLDivElement, AutocompleteR
       ref={ref}
       hidden={!isOpen}
       className={cn(
-        'absolute left-0 z-2 mt-s w-full bg-white px-s pt-s filter-[drop-shadow(0_4px_14px_rgb(0_0_0/25%))]',
-        'md:-mt-m md:rounded-b-xs md:px-0 md:pt-l',
+        'mt-s bg-white px-s pt-s',
+        // Sous `md` les suggestions restent dans le panneau de recherche de l'en-tête et y défilent.
+        'max-md:-mx-s max-md:min-h-0 max-md:overflow-y-auto max-md:overscroll-contain',
+        'md:absolute md:left-0 md:z-2 md:-mt-m md:w-full md:rounded-b-xs md:px-0 md:pt-l md:filter-[drop-shadow(0_4px_14px_rgb(0_0_0/25%))]',
         className
       )}
     >
