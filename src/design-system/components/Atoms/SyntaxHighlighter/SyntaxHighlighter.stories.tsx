@@ -4,7 +4,7 @@ import React from 'react';
 
 import { SyntaxHighlighter } from './SyntaxHighlighter';
 
-export default {
+const meta: Meta<typeof SyntaxHighlighter> = {
   component: SyntaxHighlighter,
   args: {
     language: 'typescript',
@@ -55,7 +55,9 @@ export default {
       ],
     },
   },
-} as Meta<typeof SyntaxHighlighter>;
+};
+
+export default meta;
 
 const Template: StoryFn<typeof SyntaxHighlighter> = (args) => <SyntaxHighlighter {...args} />;
 

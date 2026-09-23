@@ -5,7 +5,7 @@ import * as React from 'react';
 
 import { SearchField } from '@/design-system';
 
-export default {
+const meta: Meta<typeof SearchField> = {
   component: SearchField,
   args: {
     input: {
@@ -24,7 +24,9 @@ export default {
       default: 'ultra-light-grey',
     },
   },
-} as Meta<typeof SearchField>;
+};
+
+export default meta;
 
 const Template: StoryFn<typeof SearchField> = (args) => <SearchField {...args} />;
 

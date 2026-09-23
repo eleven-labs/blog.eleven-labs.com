@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import { Text } from './Text';
 
-export default {
+const meta: Meta<typeof Text> = {
   component: Text,
   args: {
     size: 'm',
@@ -13,7 +13,9 @@ export default {
   parameters: {
     layout: 'centered',
   },
-} as Meta<typeof Text>;
+};
+
+export default meta;
 
 const Template: StoryFn<typeof Text> = (args) => <Text {...args} />;
 

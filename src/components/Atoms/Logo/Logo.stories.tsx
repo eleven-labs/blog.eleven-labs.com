@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import { Logo, logoName } from '@/components';
 
-export default {
+const meta: Meta<typeof Logo> = {
   component: Logo,
   argTypes: {
     name: {
@@ -17,13 +17,15 @@ export default {
   },
   args: {
     name: 'blog',
-    color: 'primary',
+    className: 'text-primary',
     size: '10em',
   },
   parameters: {
     layout: 'centered',
   },
-} as Meta<typeof Logo>;
+};
+
+export default meta;
 
 const Template: StoryFn<typeof Logo> = (args) => <Logo {...args} />;
 

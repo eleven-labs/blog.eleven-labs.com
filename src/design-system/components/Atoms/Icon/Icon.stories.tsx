@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import { Icon , iconNameList } from '@/design-system';
 
-export default {
+const meta: Meta<typeof Icon> = {
   component: Icon,
   argTypes: {
     name: {
@@ -17,13 +17,15 @@ export default {
   },
   args: {
     size: '10rem',
-    color: 'primary',
+    className: 'text-primary',
     name: 'access-time',
   },
   parameters: {
     layout: 'centered',
   },
-} as Meta<typeof Icon>;
+};
+
+export default meta;
 
 const Template: StoryFn<typeof Icon> = (args) => <Icon {...args} />;
 

@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import { TextHighlight } from '@/design-system';
 
-export default {
+const meta: Meta<typeof TextHighlight> = {
   component: TextHighlight,
   args: {
     text: `Suspendisse potenti. Etiam egestas lacus velit, et tempor metus mollis react. Donec ut vulputate leo ...`,
@@ -13,7 +13,9 @@ export default {
   parameters: {
     layout: 'centered',
   },
-} as Meta<typeof TextHighlight>;
+};
+
+export default meta;
 
 const Template: StoryFn<typeof TextHighlight> = (args) => <TextHighlight {...args} />;
 

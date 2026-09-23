@@ -4,7 +4,7 @@ import React from 'react';
 
 import { Skeleton, Text } from '@/design-system';
 
-export default {
+const meta: Meta<typeof Skeleton> = {
   component: Skeleton,
   args: {
     isLoading: true,
@@ -13,7 +13,9 @@ export default {
   parameters: {
     layout: 'centered',
   },
-} as Meta<typeof Skeleton>;
+};
+
+export default meta;
 
 const Template: StoryFn<typeof Skeleton> = (args) => <Skeleton {...args} />;
 

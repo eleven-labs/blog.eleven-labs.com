@@ -6,7 +6,7 @@ import { headingSizeList } from '@/design-system';
 
 import { Heading } from './Heading';
 
-export default {
+const meta: Meta<typeof Heading> = {
   component: Heading,
   argTypes: {
     size: {
@@ -21,7 +21,9 @@ export default {
   parameters: {
     layout: 'centered',
   },
-} as Meta<typeof Heading>;
+};
+
+export default meta;
 
 const Template: StoryFn<typeof Heading> = (args) => <Heading {...args} />;
 

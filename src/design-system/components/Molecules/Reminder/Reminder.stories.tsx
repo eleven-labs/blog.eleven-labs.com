@@ -4,14 +4,16 @@ import React from 'react';
 
 import { Reminder, reminderVariantList } from './Reminder';
 
-export default {
+const meta: Meta<typeof Reminder> = {
   component: Reminder,
   args: {
     variant: 'note',
     title: 'Title',
     children: 'Lorem ipsum',
   },
-} as Meta<typeof Reminder>;
+};
+
+export default meta;
 
 const Template: StoryFn<typeof Reminder> = (args) => <Reminder {...args} />;
 

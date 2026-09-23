@@ -4,12 +4,14 @@ import React from 'react';
 
 import { Divider } from './Divider';
 
-export default {
+const meta: Meta<typeof Divider> = {
   component: Divider,
   args: {
-    bg: 'black',
+    className: 'bg-black',
   },
-} as Meta<typeof Divider>;
+};
+
+export default meta;
 
 const Template: StoryFn<typeof Divider> = (args) => <Divider {...args} />;
 
