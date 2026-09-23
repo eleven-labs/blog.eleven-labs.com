@@ -87,7 +87,7 @@ DISTRIBUTION_ID=$(aws cloudfront list-distributions --profile <profil> \
    ```
 5. Invalider le cache, puis vérifier :
    ```sh
-   aws cloudfront create-invalidation --profile <profil> --id "$DISTRIBUTION_ID" --paths "/*"
+   aws cloudfront create-invalidation --profile <profil> --distribution-id "$DISTRIBUTION_ID" --paths "/*"
    curl -sI https://blog.staging.eleven-labs.com/fr/symfony-clean-architecture/presentation-projet/
    # HTTP/2 301
    # location: https://blog.staging.eleven-labs.com/fr/symfony-clean-architecture/#presentation-projet
