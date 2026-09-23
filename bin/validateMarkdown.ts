@@ -3,7 +3,7 @@ import type { MarkdownInvalidError } from '@/helpers/markdownHelper';
 import { randomUUID } from 'node:crypto';
 import { appendFileSync } from 'node:fs';
 
-import { validateMarkdown } from '@/helpers/markdownHelper';
+import { findImagesWithoutAlt, validateMarkdown } from '@/helpers/markdownHelper';
 
 const IS_CI = Boolean(process.env.CI);
 
@@ -42,5 +42,19 @@ const setGithubOutput = (name: string, value: string): void => {
 
       process.exit(1);
     }
+  }
+
+  // Only a warning: the older contents still have images without alternative text, fixing them is an editorial work
+  const imagesWithoutAlt = findImagesWithoutAlt();
+  for (const { markdownFilePathRelative, image, line } of imagesWithoutAlt) {
+    const message = `Image without alternative text, describe it between the brackets for Google Images: ${image}`;
+    console.warn(
+      IS_CI
+        ? `::warning file=${markdownFilePathRelative},line=${line}::${message}`
+        : `${markdownFilePathRelative}:${line} ${message}`
+    );
+  }
+  if (imagesWithoutAlt.length) {
+    console.warn(`${imagesWithoutAlt.length} images without alternative text`);
   }
 })();
