@@ -6,6 +6,32 @@
 /* Volontairement hors de toute cascade layer : ces règles doivent primer, comme le faisaient
    les feuilles SCSS d'origine, sur les styles tiers et sur les utilitaires. */
 .post-content {
+  /* Un tutoriel contient toutes ses étapes dans le HTML servi, mais n'en affiche qu'une à la fois :
+     celle que vise l'ancre de l'URL (l'étape elle-même ou un titre qu'elle contient), sinon la première.
+     Les boutons Précédent et Suivant passent d'une étape à l'autre par leurs ancres. Sans JavaScript
+     (`data-js`, posé par HtmlTemplate), les étapes se lisent à la suite et ces boutons sont inutiles. */
+  [data-tutorial-step-nav] {
+    display: none;
+  }
+
+  :root[data-js] & {
+    [data-tutorial-steps] > section {
+      display: none;
+    }
+
+    [data-tutorial-steps] > section:is(:target, :has(:target)) {
+      display: block;
+    }
+
+    [data-tutorial-steps]:not(:has(:target)) > section:first-child {
+      display: block;
+    }
+
+    [data-tutorial-step-nav] {
+      display: flex;
+    }
+  }
+
   /* Une section atteinte par une ancre ne se colle pas au bord de l'écran, ni sous la barre de
      sommaire qui reste en haut de l'écran sur les petits écrans. */
   [id] {
