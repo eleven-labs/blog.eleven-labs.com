@@ -17,8 +17,6 @@ keywords:
 {/*
 <Reminder variant="example" title="Example">
 
-
-
 </Reminder>
 */}
 
@@ -27,7 +25,6 @@ WSL pour Windows SubSystem Linux, est une solution développée par Microsoft vo
 ## Un peu de contexte
 
 <Reminder variant="note" title="Note">
-
 
 Pour plus d'informations sur l'implémentation de WSL 2, une [vidéo de présentation](https://www.youtube.com/watch?v=lwhMThePdIo) et [des slides](https://medius.studios.ms/video/asset/PPT/B19-BRK3068) sont disponibles.
 
@@ -66,9 +63,7 @@ Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName Microsoft-Windows-
 Restart-Computer
 ```
 
-
 <Reminder variant="tip" title="Important">
-
 
 Votre ordinateur va redémarrer pour activer les fonctionnalités optionnelles de Windows.
 
@@ -139,13 +134,11 @@ Ouvrir votre navigateur et visiter [http://localhost](http://localhost)
 
 <Reminder variant="note" title="Note">
 
-
 Les distributions Linux conçues pour tourner dans WSL2 ne sont pas livrées avec des scripts de démarrage tels que System V, Systemd ou encore Upstart. Ce qui veut dire qu'il faudra lancer vous-même le démon docker au démarrage d'Ubuntu via `sudo service docker start`.
 
 </Reminder>
 
 <Reminder variant="info" title="À savoir">
-
 
 Par défaut Windows arrête les conteneurs Linux au bout de quelques secondes en l'absence de tâches de fond. Si telle est votre intention, pensez à arrêter le démon docker via `sudo service docker stop` avant d'éxécuter la commande `exit` ou de fermer votre terminal.
 
@@ -157,13 +150,11 @@ Si vous souhaitez démarrer automatiquement des services au lancement d'Ubuntu, 
 
 <Reminder variant="warning" title="Attention">
 
-
 La section de l'article **Access localhost ports from Windows** n'est plus nécessaire car la dernière version de WSL 2 le fait déjà.
 
 </Reminder>
 
 <Reminder variant="info" title="Info">
-
 
 Dans les grande lignes, l'astuce consiste à remplacer le shell de l'utilisateur `root` par un script qui lance systemd et qui vous authentifie sur votre session utilisateur via `nsenter`
 
@@ -189,9 +180,7 @@ Le schéma du fichier est décrit via JSON Schema, le lien est consultable via l
 
 Pour plus d'informations sur la personnalisation de Windows Terminal, je vous invite à consulter les articles de [Kayla Cinnamon](https://devblogs.microsoft.com/commandline/author/cinnamonmicrosoft-com/), Program Manager chez Microsoft mais aussi [cet article](https://www.hanselman.com/blog/NowIsTheTimeToMakeAFreshNewWindowsTerminalProfilesjson.aspx) de [Scott Hanselman](https://twitter.com/shanselman)
 
-
 <Reminder variant="info" title="Info">
-
 
 Des thèmes pour Windows Terminal sont disponibles dans le dépôt Github [mbadolato/iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/windowsterminal). Personnellement, j'utilise le thème `Argonaut` pour mon shell Ubuntu.
 
@@ -236,7 +225,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 <Reminder variant="info" title="Info">
 
-
 Par défaut, dans Windows Terminal, l'opération **coller** se fait via <kbd>🖱️ Droit</kbd> ou la combinaison <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>V</kbd>. Le script les intercepte pour replacer les séquences `\r\n` par `\n`
 
 </Reminder>
@@ -260,7 +248,6 @@ Commencez par installer un serveur X pour Windows tel que :
 
 <Reminder variant="tip" title="Astuce">
 
-
 Si vous utilisez X410, activez l'option **Allow Public Access**.
 
 ![x410-public-access]({BASE_URL}/imgs/articles/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/x410-public-access.gif  "X410 Allow Public Access")
@@ -268,7 +255,6 @@ Si vous utilisez X410, activez l'option **Allow Public Access**.
 </Reminder>
 
 <Reminder variant="tip" title="Astuce">
-
 
 Pour VcXsrv, utilisez l'utilitaire Xlaunch, conservez les options par défaut et choisissez **Disable Access Control**.
 
@@ -317,11 +303,9 @@ alias xdg-open="open"
 
 <Reminder variant="warning" title="Précision">
 
-
 Ceci n'est pas une liste exhaustive, mais de plus en plus de logiciels prévoient le support de WSL 2.
 
 </Reminder>
-
 
 ### Visual Studio Code
 
@@ -331,6 +315,10 @@ Ceci n'est pas une liste exhaustive, mais de plus en plus de logiciels prévoien
 
 ### PHPStorm
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The 2019.3 Early Access Program gets close to the finish line. But we have something new for you in the fresh build – WSL Support! <a href="https://t.co/PgVZbyYoAU">https://t.co/PgVZbyYoAU</a> <a href="https://t.co/wvzdEOrYAo">pic.twitter.com/wvzdEOrYAo</a></p>&mdash; JetBrains PhpStorm (@phpstorm) <a href="https://twitter.com/phpstorm/status/1187633307896430592?ref_src=twsrc%5Etfw">October 25, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<Tweet url="https://twitter.com/phpstorm/status/1187633307896430592?ref_src=twsrc%5Etfw" author="JetBrains PhpStorm (@phpstorm)" date="October 25, 2019">
+
+The 2019.3 Early Access Program gets close to the finish line. But we have something new for you in the fresh build – WSL Support! [https://t.co/PgVZbyYoAU](https://t.co/PgVZbyYoAU) [pic.twitter.com/wvzdEOrYAo](https://t.co/wvzdEOrYAo)
+
+</Tweet>
 
 L'[Early Access 2019.3 de PHPStorm](https://blog.jetbrains.com/phpstorm/tag/2019-3/) pour Windows ajoute le support de WSL et la fonctionnalité ne tardera pas à rejoindre la version stable de L'IDE.

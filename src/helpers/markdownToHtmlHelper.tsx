@@ -112,15 +112,6 @@ const rehypeJsxElements = () => (tree: Parameters<typeof visit>[0], file: { valu
     const properties = Object.fromEntries(
       attributes.map((attribute) => [attribute.name as string, attribute.value === null ? true : attribute.value])
     );
-    // A link can't contain another one: the urls of its text are autolinked by MDX, where the HTML keeps them as text
-    if (name === 'a') {
-      visit({ type: 'root', children } as never, 'element', (child: HastElement, childIndex, childParent) => {
-        if (child.tagName === 'a' && childParent && typeof childIndex === 'number') {
-          (childParent as unknown as HastElement).children.splice(childIndex, 1, ...child.children);
-          return childIndex;
-        }
-      });
-    }
     const element = h(name, properties as Record<string, string>);
     // The same children, so that the JSX elements they contain are converted as well
     element.children = children as typeof element.children;
@@ -214,12 +205,6 @@ const htmlComponents = {
     );
   },
   img: (props: ComponentPropsWithoutRef<'img'>): React.JSX.Element => <ContentImage {...props} />,
-  script: (props: ComponentPropsWithoutRef<'script'>): React.JSX.Element | null => {
-    if (props.src === 'https://platform.twitter.com/widgets.js') {
-      return null;
-    }
-    return React.createElement('script', props);
-  },
 };
 
 const cleanMarkdown = (content: string): string => content.replace(/\{BASE_URL}\//g, `${process.env.BASE_URL || '/'}`);

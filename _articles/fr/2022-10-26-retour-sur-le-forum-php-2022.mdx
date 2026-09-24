@@ -15,9 +15,11 @@ keywords: []
 Les 13 & 14 octobre 2022 a eu lieu le mythique Forum PHP 2022 organisé par l'AFUP, dans un lieu non moins mythique : DisneyLand Paris.
 C'est la première fois que l'AFUP vient poser ses valises dans ce lieu magique, plus précisément dans l'hôtel New York qui dispose de salles de conférences grandioses.
 
-<div style="display: flex; justify-content: center;">
-<blockquote class="twitter-tweet"><p lang="fr" dir="ltr">Et vous, il est comment votre vendredi ? <a href="https://t.co/SFMqKjIGfb">pic.twitter.com/SFMqKjIGfb</a></p>&mdash; AFUP (@afup) <a href="https://twitter.com/afup/status/1578341478518362112?ref_src=twsrc%5Etfw">October 7, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+<Tweet url="https://twitter.com/afup/status/1578341478518362112?ref_src=twsrc%5Etfw" author="AFUP (@afup)" date="October 7, 2022">
+
+Et vous, il est comment votre vendredi ? [pic.twitter.com/SFMqKjIGfb](https://t.co/SFMqKjIGfb)
+
+</Tweet>
 
 Les astronautes étaient présents pour assister aux différents talks proposés. Impossible bien entendu d'assister à tout, mais entre rappels et nouveaux apprentissages, voici un retour pêle-mêle sur les talks qui nous ont marqués !
 
@@ -39,9 +41,11 @@ Et c'est exactement le but de la PHP Foundation nouvellement créée. D'après e
 
 Pour retrouver le support de présentation de ce talk :
 
-<div style="display: flex; justify-content: center;">
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Here is the material from the presentation on <a href="https://twitter.com/ThePHPF?ref_src=twsrc%5Etfw">@ThePHPF</a> that I just gave with <a href="https://twitter.com/pronskiy?ref_src=twsrc%5Etfw">@pronskiy</a> at <a href="https://twitter.com/afup?ref_src=twsrc%5Etfw">@afup</a> <a href="https://twitter.com/hashtag/ForumPHP?src=hash&amp;ref_src=twsrc%5Etfw">#ForumPHP</a>:<a href="https://t.co/wKUrOVuXrI">https://t.co/wKUrOVuXrI</a> <a href="https://t.co/RMbQNf4ibG">pic.twitter.com/RMbQNf4ibG</a></p>&mdash; Sebastian Bergmann (@s_bergmann) <a href="https://twitter.com/s_bergmann/status/1580487913858441216?ref_src=twsrc%5Etfw">October 13, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+<Tweet url="https://twitter.com/s_bergmann/status/1580487913858441216?ref_src=twsrc%5Etfw" author="Sebastian Bergmann (@s_bergmann)" date="October 13, 2022">
+
+Here is the material from the presentation on [@ThePHPF](https://twitter.com/ThePHPF?ref_src=twsrc%5Etfw) that I just gave with [@pronskiy](https://twitter.com/pronskiy?ref_src=twsrc%5Etfw) at [@afup](https://twitter.com/afup?ref_src=twsrc%5Etfw) [#ForumPHP](https://twitter.com/hashtag/ForumPHP?src=hash&ref_src=twsrc%5Etfw):[https://t.co/wKUrOVuXrI](https://t.co/wKUrOVuXrI) [pic.twitter.com/RMbQNf4ibG](https://t.co/RMbQNf4ibG)
+
+</Tweet>
 
 ## Comprenez comment PHP fonctionne, vos applications marcheront mieux
 
@@ -49,7 +53,6 @@ Le premier rappel et le plus important, qui a d'ailleurs été évoqué à de no
 Entre 2 requêtes distinctes, PHP oublie tout, ce qui est un avantage pour nous développeurs. Il est plus facile de coder sans se soucier de potentielles fuites mémoire entre deux requêtes, mais c'est également un coût en performance : à chaque requête, on ré-alloue la mémoire nécessaire, on ré-ouvre des connexions, etc.
 
 <Reminder variant="note" title="Note">
-
 
 Plutôt que d'utiliser les traditionnels `malloc` & `mfree` natifs du langage C, PHP utilise son propre gestionnaire de mémoire ZMM (pour Zend Memory Manager) afin d'optimiser l'allocation de mémoire en PHP, qui s'effectue à chaque requête.
 
@@ -69,16 +72,17 @@ Eh bien, au risque de vous décevoir, il n'y a pas de solution magique (auquel c
 
 <Reminder variant="tip" title="Important">
 
-
 En ce qui concerne l'OPCache, l'activer ne suffit pas, le configurer CORRECTEMENT est un point central, au risque d'être totalement contre-productif.
 
 </Reminder>
 
 J'en profite pour vous présenter le super compte Twitter de @mdesnouveaux, découvert pendant l'événement, qui a partagé sa prise de notes en format #sketchnotes, admirez :
 
-<div style="display: flex; justify-content: center;">
-<blockquote class="twitter-tweet"><p lang="fr" dir="ltr">Retour en <a href="https://twitter.com/hashtag/sketchnote?src=hash&amp;ref_src=twsrc%5Etfw">#sketchnote</a> sur la conférence de <a href="https://twitter.com/pascal_martin?ref_src=twsrc%5Etfw">@pascal_martin</a> au <a href="https://twitter.com/hashtag/ForumPHP?src=hash&amp;ref_src=twsrc%5Etfw">#ForumPHP</a> de l’<a href="https://twitter.com/afup?ref_src=twsrc%5Etfw">@afup</a> sur le fonctionnement de <a href="https://twitter.com/hashtag/php?src=hash&amp;ref_src=twsrc%5Etfw">#php</a> <a href="https://t.co/Ep2JeO0SK6">pic.twitter.com/Ep2JeO0SK6</a></p>&mdash; Mathieu Desnouveaux (@mdesnouveaux) <a href="https://twitter.com/mdesnouveaux/status/1580560861290110977?ref_src=twsrc%5Etfw">October 13, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+<Tweet url="https://twitter.com/mdesnouveaux/status/1580560861290110977?ref_src=twsrc%5Etfw" author="Mathieu Desnouveaux (@mdesnouveaux)" date="October 13, 2022">
+
+Retour en [#sketchnote](https://twitter.com/hashtag/sketchnote?src=hash&ref_src=twsrc%5Etfw) sur la conférence de [@pascal_martin](https://twitter.com/pascal_martin?ref_src=twsrc%5Etfw) au [#ForumPHP](https://twitter.com/hashtag/ForumPHP?src=hash&ref_src=twsrc%5Etfw) de l’[@afup](https://twitter.com/afup?ref_src=twsrc%5Etfw) sur le fonctionnement de [#php](https://twitter.com/hashtag/php?src=hash&ref_src=twsrc%5Etfw) [pic.twitter.com/Ep2JeO0SK6](https://t.co/Ep2JeO0SK6)
+
+</Tweet>
 
 ## Design Pattern Rules Engine
 
@@ -87,7 +91,6 @@ Une de mes conférences préférées, merci à Thibault Richard pour ce talk. La
 Ce design pattern implémente un système qui évalue un ensemble de **règles** pour définir les **actions** à mener.
 
 <Reminder variant="note" title="Note">
-
 
 C'est un design pattern avant tout indiqué dans un projet comprenant beaucoup de règles métier à vérifier. Si vous constatez une armée de `if (...)` qui commence à s'entasser dans votre code pour vérifier chacune d'entre elles, impactant la lisibilité et la testabilité de votre application, alors le Rules engine est fait pour vous.
 
@@ -108,16 +111,17 @@ De plus, avec un framework comme Symfony, implémenter ce design pattern peut ê
 
 <Reminder variant="note" title="Note">
 
-
 Vous pouvez même ajouter un attribut `priority` sur votre tag si vous souhaitez que vos règles soient appelées dans un ordre particulier, très pratique !
 
 Si des exemples de code sont plus parlant pour vous, retrouvez-en dans les [slides de Thibault](https://speakerdeck.com/trichard/un-moteur-bien-huile-forum-php-2022).
 
 </Reminder>
 
-<div style="display: flex; justify-content: center;">
-<blockquote class="twitter-tweet"><p lang="fr" dir="ltr">Mon <a href="https://twitter.com/hashtag/sketchnote?src=hash&amp;ref_src=twsrc%5Etfw">#sketchnote</a> de la conférence « un moteur bien huilé » donné par <a href="https://twitter.com/t__richard?ref_src=twsrc%5Etfw">@t__richard</a> lors du <a href="https://twitter.com/hashtag/forumphp?src=hash&amp;ref_src=twsrc%5Etfw">#forumphp</a> de l’<a href="https://twitter.com/afup?ref_src=twsrc%5Etfw">@afup</a> concernant le Rule engine pattern. Un sujet intéressant surtout que j’ai eu à implémenter un cas similaire. <a href="https://t.co/K0T39CDvWJ">pic.twitter.com/K0T39CDvWJ</a></p>&mdash; Mathieu Desnouveaux (@mdesnouveaux) <a href="https://twitter.com/mdesnouveaux/status/1581905545493037056?ref_src=twsrc%5Etfw">October 17, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+<Tweet url="https://twitter.com/mdesnouveaux/status/1581905545493037056?ref_src=twsrc%5Etfw" author="Mathieu Desnouveaux (@mdesnouveaux)" date="October 17, 2022">
+
+Mon [#sketchnote](https://twitter.com/hashtag/sketchnote?src=hash&ref_src=twsrc%5Etfw) de la conférence « un moteur bien huilé » donné par [@t\_\_richard](https://twitter.com/t__richard?ref_src=twsrc%5Etfw) lors du [#forumphp](https://twitter.com/hashtag/forumphp?src=hash&ref_src=twsrc%5Etfw) de l’[@afup](https://twitter.com/afup?ref_src=twsrc%5Etfw) concernant le Rule engine pattern. Un sujet intéressant surtout que j’ai eu à implémenter un cas similaire. [pic.twitter.com/K0T39CDvWJ](https://t.co/K0T39CDvWJ)
+
+</Tweet>
 
 ## Watch the clock
 
@@ -126,11 +130,9 @@ Pour venir à bout de ce problème, Andreas Heigl est là pour nous aiguiller.
 
 <Reminder variant="question" title="Question">
 
-
 Pourquoi est-ce si compliqué de tester des dates ?
 
 </Reminder>
-
 
 C'est surtout parce que les fonctions comme `time()` qui nous renvoient l'heure actuelle ne sont pas des *fonctions pures*, c'est-à-dire que la valeur de retour de la fonction n'est pas prédictible, quel que soit l'argument passé, même en utilisant un **DateTimeImmutable**.
 
@@ -154,16 +156,17 @@ Elle vous permettera d'accéder à ces différentes implémentations de la `Cloc
 
 Pour retrouver les slides d'Andreas :
 
-<div style="display: flex; justify-content: center;">
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Find the slides of my talk &quot;Watch the Clock&quot; earlier at <a href="https://twitter.com/hashtag/ForumPHP?src=hash&amp;ref_src=twsrc%5Etfw">#ForumPHP</a> at <a href="https://t.co/HZfZH25P6n">https://t.co/HZfZH25P6n</a> - and while you&#39;re there, why not also leave some feedback at <a href="https://t.co/nf7ZWmOLoT">https://t.co/nf7ZWmOLoT</a> ? Thanks!</p>&mdash; 💙💛Andreas Heigl @ 🏡 (@heiglandreas) <a href="https://twitter.com/heiglandreas/status/1580585784473632768?ref_src=twsrc%5Etfw">October 13, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+<Tweet url="https://twitter.com/heiglandreas/status/1580585784473632768?ref_src=twsrc%5Etfw" author="💙💛Andreas Heigl @ 🏡 (@heiglandreas)" date="October 13, 2022">
+
+Find the slides of my talk "Watch the Clock" earlier at [#ForumPHP](https://twitter.com/hashtag/ForumPHP?src=hash&ref_src=twsrc%5Etfw) at [https://t.co/HZfZH25P6n](https://t.co/HZfZH25P6n) - and while you're there, why not also leave some feedback at [https://t.co/nf7ZWmOLoT](https://t.co/nf7ZWmOLoT) ? Thanks!
+
+</Tweet>
 
 ## FrankenPHP
 
 Une fois n'est pas coutume, Kévin Dunglas a quelque chose sous la main à nous montrer. Et une fois n'est pas coutume, c'est un outil **expérimental** qu'il a créé lui-même qu'il nous présente. Voici FrankenPHP.
 
 <Reminder variant="question" title="Question">
-
 
 Quel est le problème de base ?
 
@@ -185,7 +188,6 @@ L'avantage ? Plus besoin de dockeriser plusieurs containers pour notre serveur w
 
 <Reminder variant="note" title="Note">
 
-
 Pour la config ? Plus qu'à éditer votre **Caddyfile** pour la partie Web server, et votre **php.ini** pour la partie applicative. FrankenPHP vient également avec une intégration spéciale Symfony pour en facilité l'interopérabilité.
 
 </Reminder>
@@ -198,16 +200,17 @@ Ce comportement est compatible avec Symfony et Laravel, et permet d'atteindre de
 
 <Reminder variant="tip" title="Important">
 
-
 S'il est **découragé** d'utiliser FrankenPHP en production pour le moment, c'est d'autant plus le cas pour son Worker Mode. Vous pouvez être sûr de faire face à des bugs en vous y essayant. Préférez plutôt tester l'outil en local et remonter les bugs à Kévin (voire de faire une PR, FrankenPHP est open source !) pour le faire grandir en maturité.
 
 </Reminder>
 
 Et pour finir, le site de [FrankenPHP](https://frankenphp.dev/), et ci-dessous notre habituel sketchnote :
 
-<div style="display: flex; justify-content: center;">
-<blockquote class="twitter-tweet"><p lang="fr" dir="ltr">Retour en <a href="https://twitter.com/hashtag/sketchnote?src=hash&amp;ref_src=twsrc%5Etfw">#sketchnote</a> sur la découverte de <a href="https://twitter.com/hashtag/frankenphp?src=hash&amp;ref_src=twsrc%5Etfw">#frankenphp</a>, un serveur d’application PHP par <a href="https://twitter.com/dunglas?ref_src=twsrc%5Etfw">@dunglas</a> lors de sa conférence au <a href="https://twitter.com/hashtag/ForumPHP?src=hash&amp;ref_src=twsrc%5Etfw">#ForumPHP</a> de l’<a href="https://twitter.com/afup?ref_src=twsrc%5Etfw">@afup</a> <a href="https://t.co/j9cXLAtETs">pic.twitter.com/j9cXLAtETs</a></p>&mdash; Mathieu Desnouveaux (@mdesnouveaux) <a href="https://twitter.com/mdesnouveaux/status/1580923228247461890?ref_src=twsrc%5Etfw">October 14, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+<Tweet url="https://twitter.com/mdesnouveaux/status/1580923228247461890?ref_src=twsrc%5Etfw" author="Mathieu Desnouveaux (@mdesnouveaux)" date="October 14, 2022">
+
+Retour en [#sketchnote](https://twitter.com/hashtag/sketchnote?src=hash&ref_src=twsrc%5Etfw) sur la découverte de [#frankenphp](https://twitter.com/hashtag/frankenphp?src=hash&ref_src=twsrc%5Etfw), un serveur d’application PHP par [@dunglas](https://twitter.com/dunglas?ref_src=twsrc%5Etfw) lors de sa conférence au [#ForumPHP](https://twitter.com/hashtag/ForumPHP?src=hash&ref_src=twsrc%5Etfw) de l’[@afup](https://twitter.com/afup?ref_src=twsrc%5Etfw) [pic.twitter.com/j9cXLAtETs](https://t.co/j9cXLAtETs)
+
+</Tweet>
 
 ## Conclusion
 

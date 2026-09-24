@@ -69,6 +69,20 @@ Une légende sans mise en forme peut aussi passer par `caption` :
 
 Comme pour une image markdown, `alt` décrit l'image, et les paramètres `maxWidth`, `maxHeight`, `width` et `height` de l'URL la dimensionnent (`schema.png?maxWidth=400`).
 
+### `Tweet`
+
+Un tweet intégré. La page affiche d'abord une carte avec l'auteur, le texte du tweet, écrit en markdown entre les balises, et la date, qui renvoie vers le tweet. Le script de Twitter la remplace ensuite par le tweet, avec ses images et ses réactions. La carte réserve la hauteur estimée du tweet, un peu plus haute quand il contient une image (un lien `pic.twitter.com`), pour que la page ne se décale presque pas à ce moment-là.
+
+```mdx
+<Tweet url="https://twitter.com/afup/status/1578341478518362112" author="AFUP (@afup)" date="7 octobre 2022">
+
+Et vous, il est comment votre vendredi ? [pic.twitter.com/SFMqKjIGfb](https://t.co/SFMqKjIGfb)
+
+</Tweet>
+```
+
+Le code d'intégration proposé par Twitter (`<blockquote class="twitter-tweet">` suivi d'un `<script>`) n'est pas à copier, il en fournit les valeurs : `url` est le lien vers le tweet, `author` le texte qui le précède (`Nom (@compte)`) et `date` le texte de ce lien.
+
 ## Particularités du MDX
 
 - `<` et `{` ouvrent une balise ou une expression : dans le texte, échappez-les (`\<`, `\{`) ou placez-les dans du code.

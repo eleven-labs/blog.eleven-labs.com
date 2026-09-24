@@ -51,6 +51,38 @@ describe('mdxToHtml', () => {
     );
   });
 
+  it('should render a tweet as the card that the Twitter script replaces with the embed', () => {
+    const html = mdxToHtml(
+      [
+        '<Tweet url="https://twitter.com/afup/status/1" author="AFUP (@afup)" date="7 octobre 2022">',
+        '',
+        'A **tweet** with a [link](https://t.co/a)',
+        '',
+        '</Tweet>',
+      ].join('\n')
+    );
+
+    expect(html).toContain('<div class="flex flex-col" style="min-height:240px"><blockquote class="twitter-tweet">');
+    expect(html).toContain('<span class="font-bold">AFUP</span><span class="text-grey"> @afup</span>');
+    expect(html).toContain('<p>A <strong>tweet</strong> with a <a href="https://t.co/a"');
+    // The Twitter script finds the tweet with the last link of the card
+    expect(html).toMatch(/<a href="https:\/\/twitter.com\/afup\/status\/1">7 octobre 2022<\/a><\/p><\/blockquote>/);
+  });
+
+  it('should reserve the height of the picture of a tweet', () => {
+    const html = mdxToHtml(
+      [
+        '<Tweet url="https://twitter.com/afup/status/1" author="AFUP (@afup)" date="7 octobre 2022">',
+        '',
+        'A picture [pic.twitter.com/a](https://t.co/a)',
+        '',
+        '</Tweet>',
+      ].join('\n')
+    );
+
+    expect(html).toContain('style="min-height:calc(225px + 55cqw)"');
+  });
+
   it.each(['Unknown', 'Blockquote', 'SyntaxHighlighter', 'Mermaid'])(
     'should throw on the component %s that is not allowed',
     (component) => {
@@ -83,12 +115,5 @@ describe('mdxToHtml with HTML', () => {
 
   it('should render an inline element on its own line as a paragraph', () => {
     expect(mdxToHtml('Text\n\n<cite>Source</cite>')).toEqual('<p>Text</p>\n<p><cite>Source</cite></p>');
-  });
-
-  it('should render a link whose text is an url as a single link', () => {
-    const html = mdxToHtml('A <a href="https://example.com">https://example.com</a> link');
-
-    expect(html.match(/<a /g)).toHaveLength(1);
-    expect(html).toContain('>https://example.com</a>');
   });
 });

@@ -161,6 +161,25 @@
     }
   }
 
+  /* La carte d'un tweet, avant que le script de Twitter la remplace par le tweet : elle en reprend les marges et
+     occupe la hauteur réservée par le composant Tweet. */
+  blockquote.twitter-tweet {
+    flex-grow: 1;
+    margin: 10px 0;
+    padding: var(--spacing-s);
+    border: 1px solid var(--color-ultra-light-grey);
+    border-radius: 12px;
+    background-color: var(--color-white);
+    font-family: inherit;
+    font-size: var(--font-size-text-s);
+    font-style: normal;
+
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+
   table {
     width: 100%;
     text-align: left;
