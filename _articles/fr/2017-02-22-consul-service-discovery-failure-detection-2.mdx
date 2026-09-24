@@ -120,7 +120,7 @@ $ docker run -d \
 Vous remarquez que nous partageons le socket Docker sur la machine. Cette solution peut être [controversée](https://www.lvh.io/posts/dont-expose-the-docker-socket-not-even-to-a-container.html mais dans le cas de cet article, passons là-dessus. Pour une architecture stable, nous préférerons enregistrer nous-même les services via l'API de Consul.
 L'option `-ip`  permet de préciser à Registrator l'IP sur laquelle nous voulons accéder aux services, à savoir l'IP de la machine et non pas l'IP interne du container Docker.
 
-Nous sommes prêts à démarrer notre service HTTP. Celui-ci est une simple image Docker "ekofr/http-ip" qui lance une application HTTP écrite en Go et qui affiche "hello, \<ip>" avec l'adresse IP du container courant.
+Nous sommes prêts à démarrer notre service HTTP. Celui-ci est une simple image Docker "ekofr/http-ip" qui lance une application HTTP écrite en Go et qui affiche `hello, <ip>` avec l'adresse IP du container courant.
 
 Pour le besoin de cet article, nous allons également créer un réseau différent entre les deux machines afin d'identifier des adresses IP différentes pour les deux services.
 

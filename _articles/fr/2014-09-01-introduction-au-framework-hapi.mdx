@@ -79,8 +79,8 @@ Détaillons ces 3 paramètres requis pour faire fonctionner notre route:
 1.  *method* : la méthode HTTP ('GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'). Tous les verbes HTTP sont acceptés hormis 'HEAD'
 2.  path : le chemin absolu vers la requête (attention, il doit commencer par un ‘/’). Le router d’Hapi nous permet d’extraire des segments de l’URL. Ainsi on pourra créer des routes de ce type
     -   ‘/hello’ : cette route répondra exclusivement à la  requête [http://localhost:3000/hello](http://localhost:3000/hello)
-    -   ‘/hello/\{name\}’ : cette route répondra ainsi sur [http://localhost:3000/hello/jean](http://localhost:3000/hello/jean)  ou encore  [http://localhost:3000/hello/isabelle](http://localhost:3000/hello/isabelle) . On accède au paramètre ‘name’ en ayant recours à request.params.name.
-3.  *handler* : une fonction qui porte la signature function (request, reply) \{...\} qui sera appelée pour générer la réponse à la requête. L’objet *request* est l’une des forces de Hapi. Il est créé à chaque requête entrante et ses propriétés et méthodes vont changer au cours de ce que les créateurs du framework appellent le ‘r*equest lifecycle*’ (le cycle de vie de la requête). L’objet *request* permet , entre autres choses, d’accéder aux paramètres de l’URL et à la query string. L’interface *reply* nous permettra de renvoyer une réponse au client. Elle peut prendre en paramètre un *String*, un *JSON*, un *Buffer*, un  *ReadableStream*, ou encore une *Error*.
+    -   `/hello/{name}` : cette route répondra ainsi sur [http://localhost:3000/hello/jean](http://localhost:3000/hello/jean)  ou encore  [http://localhost:3000/hello/isabelle](http://localhost:3000/hello/isabelle) . On accède au paramètre ‘name’ en ayant recours à request.params.name.
+3.  *handler* : une fonction qui porte la signature `function (request, reply) {...}` qui sera appelée pour générer la réponse à la requête. L’objet *request* est l’une des forces de Hapi. Il est créé à chaque requête entrante et ses propriétés et méthodes vont changer au cours de ce que les créateurs du framework appellent le ‘r*equest lifecycle*’ (le cycle de vie de la requête). L’objet *request* permet , entre autres choses, d’accéder aux paramètres de l’URL et à la query string. L’interface *reply* nous permettra de renvoyer une réponse au client. Elle peut prendre en paramètre un *String*, un *JSON*, un *Buffer*, un  *ReadableStream*, ou encore une *Error*.
 
 Pour mettre en pratique toutes ces nouvelles choses que l’on vient d’apprendre, créons une nouvelle route !
 
@@ -101,7 +101,7 @@ server.route({
 
 Relançons notre navigateur , rendons nous à l’adresse : [http://localhost:3000/hello/john/doe?occupation=developper](http://localhost:3000/hello/john/doe?occupation=developper)
 La réponse du serveur :
-\{firstName: "john", lastName: "doe",occupation: "developper"\}
+`{firstName: "john", lastName: "doe",occupation: "developper"}`
 
 Un petit plus, au fur et à mesure que grandit notre projet et / ou que l’on crée des routes dans des fichiers différents, il est difficile de savoir quelles sont toutes les routes déclarées. Les créateurs du framework ont pensé à tout ! Notre objet *server* dispose d’une méthode *table* qui, une fois appelée, nous permet de voir en un clin d’oeil l’ensemble des routes disponibles sur le serveur !
 
@@ -152,7 +152,7 @@ server.route({
 Le *handler* (paramètre obligatoire) est toujours présent, mais dans ce cas, il passe en clé de *config*
 Dans notre exemple, nous demandons à valider les paramètres *firstName* et *lastName*. Nous n’autorisons que des *string* ayant entre 3 et 20 caractères.
 
-Si nous essayons des mauvais paramètres, par exemple [http://localhost:3000/hello/j/doe?occupation=developper](http://localhost:3000/hello/j/doe?occupation=developper) … badaboum ! Hapi nous renvoie automatiquement une 400 (Bad Request) car la longueur du paramètre \{firstName\} est de 1 caractère. Or, dans nos règles de validation, nous avons précisé "min(3).max(20)".
+Si nous essayons des mauvais paramètres, par exemple [http://localhost:3000/hello/j/doe?occupation=developper](http://localhost:3000/hello/j/doe?occupation=developper) … badaboum ! Hapi nous renvoie automatiquement une 400 (Bad Request) car la longueur du paramètre `{firstName}` est de 1 caractère. Or, dans nos règles de validation, nous avons précisé "min(3).max(20)".
 De même, nous avons ajouté des critères de validation pour la query string. Ainsi, si nous tentons d’accéder à cette route sans renseigner *age*, Hapi nous renvoie une 404 car nous avons exigé qu‘il devait être ‘required()’ .
 Joi est un module complet que je ne vais pas détailler ici. Pour vous mettre l’eau à la bouche, sachez qu’il est possible d’introduire des petits algorithmes (par exemple, on pourra valider un paramètre en fonction de ce qui a été passé pour un autre paramètre, c’est très utile ! ). Pour une liste exhaustive de ses possibilités, je vous laisse lien vers la documentation : [https://github.com/hapijs/joi](https://github.com/hapijs/joi)
 
@@ -266,7 +266,7 @@ pack.register(
 
 Ici, on a créé deux serveurs, chacun ayant un propre label, notion que l’on pourrait comparer à un *tag*. Ensuite, on a explicitement déclaré une route pour le serveur avec le label *admin*. On a ensuite démarré notre pack. On y a inscrit notre plugin-example, c’est pourquoi l’URL ‘/plugin-example’ est disponible à la fois à l’adresse [http://localhost:8000/plugin-example](http://localhost:8000/plugin-example) mais aussi sur [http://localhost:8001/plugin-example](http://localhost:8001/plugin-example) !
 
-En revanche, nous avons attaché explicitement la route ‘admin/article/\{id\}’ à la variable server2. C’est pourquoi cette route n’est disponible que sur le port 8081 !
+En revanche, nous avons attaché explicitement la route `admin/article/{id}` à la variable server2. C’est pourquoi cette route n’est disponible que sur le port 8081 !
 
 Afin de faciliter la création d’un pack, Hapi met à notre disposition une méthode *compose* à partir d’un simple fichier de configuration. On pourrait ainsi réécrire le code précédemment utilisé pour notre pack de cette façon :
 

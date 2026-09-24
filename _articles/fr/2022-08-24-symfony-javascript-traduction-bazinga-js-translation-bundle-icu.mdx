@@ -24,7 +24,7 @@ Même si de plus en plus d'architectes séparent le back et le front pour qu'ils
 ## Comment sont gérés les traductions dans Symfony ?
 Dans les nombreux composants proposés par Symfony, il y a celui qui permet de gérer les traductions : [translation](https://symfony.com/doc/current/translation.html).
 
-Il permet de générer les traductions soit par une phrase, soit par une clé dans le PHP (avec le service Translator) ou dans les twigs. Les fichiers de traductions peuvent être en YAML, XML et PHP, et l'emplacement ainsi que la langue par défaut sont définis dans la [configuration](https://symfony.com/doc/current/translation.html#configuration). Ils sont généralement nommés messages.\{locale\}.yaml.
+Il permet de générer les traductions soit par une phrase, soit par une clé dans le PHP (avec le service Translator) ou dans les twigs. Les fichiers de traductions peuvent être en YAML, XML et PHP, et l'emplacement ainsi que la langue par défaut sont définis dans la [configuration](https://symfony.com/doc/current/translation.html#configuration). Ils sont généralement nommés `messages.{locale}.yaml`.
 ```php
 // PHP
 use Symfony\Contracts\Translation\TranslatorInterface;
@@ -77,7 +77,7 @@ D'ailleurs, ces solutions Saas utilisent un autre format que celui proposé de b
 ## Qu'est-ce que le format ICU ?
 Le format ICU (International Components for Unicode) est un format de message largement utilisé dans de nombreux systèmes logiciels de traduction tels que localize.biz (et vous pouvez en apprendre plus sur son utilisation sur l’article [Gestion des traductions avec localise.biz]({BASE_URL}/fr/gestion-des-traductions-avec-localise-biz/)), [phrase](https://phrase.com/), [lokalise](https://lokalise.com) ou encore [crowdin](https://crowdin.com/). Ce format permet de gérer des patterns tels que le pluriel.
 
-Le format ne fait pas varier l'utilisation et l'ordonnancement des clés des fichiers de traduction, mais les fichiers doivent être renommés messages.\{locale\}+intl-icu.yaml et les patterns modifiés.
+Le format ne fait pas varier l'utilisation et l'ordonnancement des clés des fichiers de traduction, mais les fichiers doivent être renommés `messages.{locale}+intl-icu.yaml` et les patterns modifiés.
 
 Reprenons l’exemple plus haut d’une traduction incluant le pluriel :
 ```yaml

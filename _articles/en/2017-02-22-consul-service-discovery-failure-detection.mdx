@@ -123,7 +123,7 @@ Here, you can notice that we share the host Docker socket in the container. This
 If you want to register services to Consul I recommend to register them using the Consul API in order to keep control on what's added in your Consul.
 
 The `-ip`  option allows to precise to Registrator that we want to register our services with the given IP address: so here the Docker machine IP address and not the Docker container internal IP address.
-We are now ready to start our HTTP service. This one is located under the "ekofr/http-ip" Docker image which is a simple Go HTTP application that renders "hello, \<ip>" with the IP address of the current container.
+We are now ready to start our HTTP service. This one is located under the "ekofr/http-ip" Docker image which is a simple Go HTTP application that renders `hello, <ip>` with the IP address of the current container.
 
 In order to fit this article needs, we will also create a different network for the two Docker machines in order to clearly identify IP addresses for our two services.
 

@@ -175,7 +175,7 @@ Dans la classe [StampQueryCacheService](https://github.com/ElevenMarianne/my-lit
 - la méthode (QUERY)
 - le chemin (/api/stamps)
 - le Content-Type
-- le body de la requête, canonicalisé (*ksortRecursive($body)* trie récursivement les clés du JSON pour que *\{"color":"blue","page":1\} et \{"page":1,"color":"blue"\}* donnent la même clé malgré l'ordre différent)
+- le body de la requête, canonicalisé (*ksortRecursive($body)* trie récursivement les clés du JSON pour que `{"color":"blue","page":1}` et `{"page":1,"color":"blue"}` donnent la même clé malgré l'ordre différent)
 
 Le tout est haché en SHA-256 pour former la clé finale (stamps_query_*\<hash\>*).
 
