@@ -12,7 +12,6 @@
     "ts-node": "tsx --import ./bin/loaders/registerStyleStub.mjs -r dotenv/config",
     "generate-image-formats": "pnpm ts-node bin/generateImageFormats",
     "validate-markdown": "pnpm ts-node bin/validateMarkdown",
-    "indexation:algolia": "pnpm ts-node bin/indexationAlgolia",
     "build": "pnpm ts-node bin/build",
     "prerender": "pnpm build && pnpm ts-node bin/prerender",
     "start:dev": "pnpm ts-node bin/dev",
@@ -44,7 +43,6 @@
   "dependencies": {
     "@base-ui/react": "^1.8.0",
     "@remix-run/router": "^1.16.0",
-    "algoliasearch": "^4.23.3",
     "autosuggest-highlight": "^3.3.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -69,7 +67,8 @@
     "serve-static": "^1.15.0",
     "tailwind-merge": "^3.7.0",
     "universal-cookie-express": "^7.1.4",
-    "xml2js": "^0.6.2"
+    "xml2js": "^0.6.2",
+    "zbsearch": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.24.5",

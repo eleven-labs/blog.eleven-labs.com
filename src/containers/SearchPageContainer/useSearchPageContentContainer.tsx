@@ -1,6 +1,6 @@
 import type { PostCardListContainerProps } from '@/containers/PostCardListContainer';
 import type { SearchPageContentProps } from '@/pages';
-import type { AlgoliaPostData, LanguageType } from '@/types';
+import type { LanguageType } from '@/types';
 
 import { useMeta, useTitleTemplate } from 'hoofd';
 import React, { useEffect, useState } from 'react';
@@ -9,13 +9,13 @@ import { useTranslation } from 'react-i18next';
 import { IS_SSR } from '@/constants';
 import { PostCardListContainer } from '@/containers/PostCardListContainer';
 import { TransWithHtml } from '@/containers/TransWithHtml';
-import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
+import { useSearchIndex } from '@/hooks/useSearchIndex';
 import { useTitle } from '@/hooks/useTitle';
 
 export const useSearchPageContentContainer = (): SearchPageContentProps => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const algoliaSearchIndex = useAlgoliaSearchIndex();
+  const { searchIndex, loadSearchIndex } = useSearchIndex();
   const search = new URLSearchParams(!IS_SSR ? window.location.search : '').get('search') || '';
   useTitleTemplate('Blog Eleven Labs - %s');
   useTitle(t('pages.search.seo.title', { search }));
@@ -24,33 +24,35 @@ export const useSearchPageContentContainer = (): SearchPageContentProps => {
   const [postsBySearch, setPostsBySearch] = useState<PostCardListContainerProps['allPosts']>([]);
 
   useEffect(() => {
-    const searchData = async (currentSearch: string): Promise<void> => {
-      const response = await algoliaSearchIndex.search<AlgoliaPostData>(currentSearch, {
-        hitsPerPage: 1000,
-        facetFilters: [`lang:${i18n.language}`],
-      });
+    loadSearchIndex();
+  }, [loadSearchIndex]);
 
-      const currentPostBySearch = response.hits.map<PostCardListContainerProps['allPosts'][0]>((hit) => ({
-        contentType: hit.contentType,
-        lang: hit.lang as LanguageType,
-        slug: hit.slug,
-        date: hit.date,
-        readingTime: hit.readingTime,
-        title: hit.title,
-        excerpt: hit.excerpt,
-        cover: hit.cover,
-        authors: hit.authorUsernames.map((authorUsername, index) => ({
-          username: authorUsername,
-          name: hit.authorNames[index],
-        })),
-        categories: [],
-      }));
-      setPostsBySearch(currentPostBySearch);
+  useEffect(() => {
+    if (!searchIndex) {
+      return;
+    }
+
+    void searchIndex.search(search).then((hits) => {
+      setPostsBySearch(
+        hits.map<PostCardListContainerProps['allPosts'][0]>((hit) => ({
+          contentType: hit.contentType,
+          lang: hit.lang as LanguageType,
+          slug: hit.slug,
+          date: hit.date,
+          readingTime: hit.readingTime,
+          title: hit.title,
+          excerpt: hit.excerpt,
+          cover: hit.cover,
+          authors: hit.authorUsernames.map((authorUsername, index) => ({
+            username: authorUsername,
+            name: hit.authorNames[index],
+          })),
+          categories: [],
+        }))
+      );
       setIsLoading(false);
-    };
-
-    void searchData(search);
-  }, [search, i18n.language]);
+    });
+  }, [searchIndex, search]);
 
   return {
     title: (
