@@ -135,30 +135,3 @@ describe('mdxToHtml', () => {
     }
   );
 });
-
-describe('mdxToHtml with HTML', () => {
-  it('should render an HTML link the same way as a markdown one', () => {
-    expect(mdxToHtml('A <a href="https://example.com">link</a> in a sentence.')).toEqual(
-      `<p>A <a href="https://example.com" rel="nofollow noreferrer" target="_blank" style="overflow-wrap:anywhere" ${LINK_CLASS}>link</a> in a sentence.</p>`
-    );
-  });
-
-  it('should render an HTML table the same way as a markdown one', () => {
-    expect(mdxToHtml('<table><tbody><tr><td>a</td></tr></tbody></table>')).toEqual(
-      '<div class="post-content-table"><table><tbody><tr><td>a</td></tr></tbody></table></div>'
-    );
-  });
-
-  it('should accept the attributes written as in HTML', () => {
-    expect(mdxToHtml('<span class="note" style="color: red">Red</span> text')).toEqual(
-      '<p><span class="note" style="color:red">Red</span> text</p>'
-    );
-    expect(
-      mdxToHtml('<iframe width="560" src="https://example.com/embed" frameborder="0" allowfullscreen></iframe>')
-    ).toEqual('<iframe width="560" src="https://example.com/embed" frameBorder="0" allowfullscreen=""></iframe>');
-  });
-
-  it('should render an inline element on its own line as a paragraph', () => {
-    expect(mdxToHtml('Text\n\n<cite>Source</cite>')).toEqual('<p>Text</p>\n<p><cite>Source</cite></p>');
-  });
-});

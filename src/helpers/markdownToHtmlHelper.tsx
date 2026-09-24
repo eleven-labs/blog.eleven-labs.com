@@ -1,7 +1,6 @@
 import type { ComponentPropsWithoutRef } from '@/design-system';
 
 import { evaluateSync } from '@mdx-js/mdx';
-import { h } from 'hastscript';
 import React from 'react';
 import * as runtime from 'react/jsx-runtime';
 import ReactDOMServer from 'react-dom/server';
@@ -70,70 +69,6 @@ const findChildElement = (node: HastElement, tagName: string): HastElement | und
 
 const getChildElements = (node: HastElement, tagName: string): HastElement[] =>
   node.children.filter((child): child is HastElement => isElement(child, tagName));
-
-type MdxJsxElement = {
-  type: 'mdxJsxFlowElement' | 'mdxJsxTextElement';
-  name: string | null;
-  attributes: { type: string; name?: string; value?: unknown }[];
-  children: HastNode[];
-  position?: { start: { line: number; offset: number }; end: { line: number; offset: number } };
-};
-
-// The HTML elements that start an HTML block in CommonMark, instead of being part of a paragraph
-const HTML_BLOCK_ELEMENTS = new Set(
-  (
-    'address article aside base basefont blockquote body caption center col colgroup dd details dialog dir div dl dt ' +
-    'fieldset figcaption figure footer form frame frameset h1 h2 h3 h4 h5 h6 head header hr html iframe legend li link ' +
-    'main menu menuitem nav noframes ol optgroup option p param pre script search section style summary table tbody ' +
-    'td textarea tfoot th thead title tr track ul'
-  ).split(' ')
-);
-
-/**
- * MDX only applies the components to the elements written in markdown, not to the HTML written as JSX. The
- * lowercase JSX elements with literal attributes become plain elements, so that they render the same way as the
- * elements written in markdown: links, tables, images…
- */
-const rehypeJsxElements = () => (tree: Parameters<typeof visit>[0], file: { value: unknown }) => {
-  const source = String(file.value);
-  visit(tree, (node: HastNode, index, parent) => {
-    if (node.type !== 'mdxJsxFlowElement' && node.type !== 'mdxJsxTextElement') {
-      return;
-    }
-    const { name, attributes, children, position } = node as unknown as MdxJsxElement;
-    const hasLiteralAttributes = attributes.every(
-      (attribute) =>
-        attribute.type === 'mdxJsxAttribute' && (attribute.value === null || typeof attribute.value === 'string')
-    );
-    if (!name || !/^[a-z]/.test(name) || !hasLiteralAttributes || !parent || typeof index !== 'number') {
-      return;
-    }
-
-    const properties = Object.fromEntries(
-      attributes.map((attribute) => [attribute.name as string, attribute.value === null ? true : attribute.value])
-    );
-    const element = h(name, properties as Record<string, string>);
-    // The same children, so that the JSX elements they contain are converted as well
-    element.children = children as typeof element.children;
-
-    // As in markdown, an inline element that starts a block on its own line is a paragraph, unless it is a lone
-    // self-closing tag or the item of a tight list
-    const lineStart = source.lastIndexOf('\n', (position?.start.offset ?? 0) - 1) + 1;
-    const previousLine = lineStart ? source.slice(source.lastIndexOf('\n', lineStart - 2) + 1, lineStart - 1) : '';
-    const isInTightList =
-      isElement(parent as HastNode, 'li') && !(parent as unknown as HastElement).children.some((child) => isElement(child, 'p'));
-    const isInlineLine =
-      node.type === 'mdxJsxFlowElement' &&
-      !HTML_BLOCK_ELEMENTS.has(name) &&
-      position?.start.line === position?.end.line &&
-      /^[\s>]*$/.test(previousLine) &&
-      !isInTightList &&
-      !source.slice(position?.start.offset, position?.end.offset).trimEnd().endsWith('/>');
-    (parent as unknown as HastElement).children[index] = (
-      isInlineLine ? h('p', [element as never]) : element
-    ) as unknown as HastNode;
-  });
-};
 
 // An inline style rather than the deprecated `align` attribute of the aligned columns, which the CSS would override
 const rehypeCellAlignToStyle = () => (tree: Parameters<typeof visit>[0]) => {
@@ -224,7 +159,6 @@ export const mdxToHtml = (content: string, options: MdxToHtmlOptions = {}): stri
     ] as NonNullable<Parameters<typeof evaluateSync>[1]['remarkPlugins']>,
     rehypePlugins: [
       rehypeSlug,
-      rehypeJsxElements,
       rehypeTableCellLabels,
       rehypeCellAlignToStyle,
     ] as NonNullable<Parameters<typeof evaluateSync>[1]['rehypePlugins']>,
