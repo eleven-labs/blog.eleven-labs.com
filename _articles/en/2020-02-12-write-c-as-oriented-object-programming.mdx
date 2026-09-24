@@ -24,8 +24,10 @@ Hi Astronauts, happy to see you again on this day, after a while without publish
 
 This article changes a bit from the previous ones. My goal here is to share my tips/good practices to any developer a bit motivated. This is why we are going to see a pretty simple subject, but from another point of view.
 
-Let's not waste time, and dive directly into the subject. We are going to talk about **C**, yes, yes, I really said **C**, you know this procedural language where you need to do all the allocations and frees by yourself.<br />
-This language is really important, the kernel of your computer is coded in **C**, and even if it's a bit difficult, you can actually do anything with it. Starting with this language will allow you to learn any other language really easily.<br />
+Let's not waste time, and dive directly into the subject. We are going to talk about **C**, yes, yes, I really said **C**, you know this procedural language where you need to do all the allocations and frees by yourself.
+
+This language is really important, the kernel of your computer is coded in **C**, and even if it's a bit difficult, you can actually do anything with it. Starting with this language will allow you to learn any other language really easily.
+
 This is why my school (damn, I feel old) teaches it as a first language, and to be frank I created a lot of softwares with it. The main issue at the time was that I didn't have the experience with programming that I have now. I have to admit that I wish I had someone to guide me and not the do the rookie mistakes I did.
 
 
@@ -35,7 +37,8 @@ You are a first year student and you need to code a little software that is able
 
 You have the first solution, that is coding in regular **C**, so it means a lot of code maintenance when some modifications happen, or you can take 30 minutes, and tell yourself, ok let's try to do things from a different angle. This is where I step in ;)
 
-We need to think oriented programming even if it's procedural code.<br />
+We need to think oriented programming even if it's procedural code.
+
 In order to do this, we will use 4 components of the **C** language :
 
 - **Structures**
@@ -59,7 +62,8 @@ We will use again the 2 previous notions. A chained list is a collection of stru
 
 I think that you might have an idea of what it's based on, function pointers are not meant to access data, but to access some functions declared in memory.
 
-So we just covered the big notions, now you know what we're going to realize.<br />
+So we just covered the big notions, now you know what we're going to realize.
+
 Let's dig into it.
 
 ## How to proceed:
@@ -162,7 +166,8 @@ list* get_object_at_index(list* my_list, int index) {
 }
 ```
 
-We create the function **add_in_list** that reproduces the **Add**, the function **remove_in_list** that reproduces **Remove** and the function **get_object_at_index** that reproduces **GetObjectAtIndex**.<br />
+We create the function **add_in_list** that reproduces the **Add**, the function **remove_in_list** that reproduces **Remove** and the function **get_object_at_index** that reproduces **GetObjectAtIndex**.
+
 Please do notice that those 3 methods take as parameters pointers that do not have a type ```C(void*)```, it means that you can use again these 3 functions in all your projects, so keep them somewhere :)
 
 - So far so good, we have our "models", our functions to play with. We're are all set I think, isn't it?
@@ -193,7 +198,8 @@ void print_list(list* my_list) {
 }
 ```
 
-So actually, it was missing a bit more than the **hello** function.<br />
+So actually, it was missing a bit more than the **hello** function.
+
 Let's add these 3 functions that by order:
 - Write a string on the output console.
 - Take a **plop** "object" as a parameter and display it on the console log.
@@ -339,10 +345,14 @@ Pretty cool isn't it? :)
 
 ## But why do all this?
 
-You are probably asking yourself, but why do all this?<br />
-For many reasons.<br />
-The first one is that it's really really fun. Imagine that you show this code to your dev partner, and you tell him, hey for once, let's do things like that.<br />
-Then when you arrive to present your project, with such an architecture, the guy in charge of the review will probably say: Damn Son Where'd Yyou find this???!!! Then he will see with you how to push it further and even give you some advices for your future projects.<br />
+You are probably asking yourself, but why do all this?
+
+For many reasons.
+
+The first one is that it's really really fun. Imagine that you show this code to your dev partner, and you tell him, hey for once, let's do things like that.
+
+Then when you arrive to present your project, with such an architecture, the guy in charge of the review will probably say: Damn Son Where'd Yyou find this???!!! Then he will see with you how to push it further and even give you some advices for your future projects.
+
 Also, it makes the code way more easy to read in my opinion, you just have a few complex functions, and then everything else is easy to understand.
 It also teaches you how to split your code and architecture your project with way less depedencies.
 

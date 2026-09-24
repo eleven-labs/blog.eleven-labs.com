@@ -198,9 +198,12 @@ readonly class CreateCardRequest
 <Reminder variant="tip" title="Important">
 
 
-Vous vous demandez peut-être pourquoi je fais de la validation de données ici dans l'Infrastructure plutôt que via des règles de gestion dans le Domain. C'est vrai, ce devrait être le rôle du Domain de contenir ces règles !<br />
-Il est totalement normal de se poser cette question et c'est là une limite parfois floue qu'il vous reviendra de trancher: est-ce que je fais une validation <b>technique</b> (le format d'une donnée brute en entrée par exemple) ou une validation <b>fonctionnelle</b>, auquel cas il <b>faut</b> en effet que cette règle soit contenue dans le Domain.<br />
-Ici, je vérifie simplement que mes données en entrée ne sont pas vides, et j'estime que ça n'a aucun intérêt fonctionnel, et pas de valeur métier, je décide donc de laisser la charge de cette validation au <code>Validator</code> de Symfony.<br />
+Vous vous demandez peut-être pourquoi je fais de la validation de données ici dans l'Infrastructure plutôt que via des règles de gestion dans le Domain. C'est vrai, ce devrait être le rôle du Domain de contenir ces règles !
+
+Il est totalement normal de se poser cette question et c'est là une limite parfois floue qu'il vous reviendra de trancher: est-ce que je fais une validation <b>technique</b> (le format d'une donnée brute en entrée par exemple) ou une validation <b>fonctionnelle</b>, auquel cas il <b>faut</b> en effet que cette règle soit contenue dans le Domain.
+
+Ici, je vérifie simplement que mes données en entrée ne sont pas vides, et j'estime que ça n'a aucun intérêt fonctionnel, et pas de valeur métier, je décide donc de laisser la charge de cette validation au <code>Validator</code> de Symfony.
+
 À vous d'arbitrer quand vous vous retrouverez dans des cas similaires !
 
 </Reminder>

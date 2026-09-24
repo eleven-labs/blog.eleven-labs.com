@@ -323,7 +323,6 @@ On récapitule différentes combinaisons intéressantes :
 |         |         |                 |    ✔️     |         | Crossplane observe seulement la ressource.                                                                                                               |
 |         |         |                 |           |         | Aucune managed policy, équivaut à mettre la ressource managée en "pause" (les modifications n'ont plus lieu.)                                                                                                                        |
 
-<br />
 
 <Reminder variant="tip" title="Important">
 
@@ -341,7 +340,7 @@ Pour mettre en place une abstraction, nous allons devoir combiner différents co
 
 ![Logo Crossplane]({BASE_URL}/imgs/articles/2024-05-20-crossplane-kubernetes/schema_crossplane_end_users.svg)
 
-<p style="text-align: center;">Schéma d'interfaçage entre les différents concepts Crossplane</p><br />
+<p style="text-align: center;">Schéma d'interfaçage entre les différents concepts Crossplane</p>
 
 #### Compositions
 
@@ -628,7 +627,7 @@ La liste ci-dessous ne concerne que les patches de ressources individuelles (res
 | CombineFromEnvironment    | Plusieurs champs issus de l'environnement d'une EnvironmentConfig | Un champ d'une ressource managée patchée.                 |
 | CombineToEnvironment      | Plusieurs champs d'une ressource managée patchée.                 | Un champ dans l'environnement d'une EnvironmentConfig       |
 
-N.B. : Les sources et destinations de ce tableau ne s'appliquent pas forcément pour les patches de ressource composite via les EnvironmentConfigs (qui seront détaillés dans la section appropriée)<br />
+N.B. : Les sources et destinations de ce tableau ne s'appliquent pas forcément pour les patches de ressource composite via les EnvironmentConfigs (qui seront détaillés dans la section appropriée)
 
 #### Nommage dynamique de ressources externes
 
