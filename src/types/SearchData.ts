@@ -7,4 +7,7 @@ export interface SearchPostData
   > {
   authorUsernames: string[];
   authorNames: string[];
+  keywords: string[];
+  /** Intertitres d'un article, ou titres des étapes d'un tutoriel. */
+  headings: string[];
 }

@@ -43,6 +43,8 @@
   "dependencies": {
     "@base-ui/react": "^1.8.0",
     "@remix-run/router": "^1.16.0",
+    "@zbsearch/stemmers": "^4.0.0",
+    "@zbsearch/stopwords": "^4.0.0",
     "autosuggest-highlight": "^3.3.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

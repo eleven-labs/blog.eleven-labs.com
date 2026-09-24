@@ -121,7 +121,7 @@ export const getPostListPageData = (options: {
 });
 
 export const getSearchData = (options: {
-  posts: TransformedPostDataWithoutContent[];
+  posts: TransformedPostData[];
   authors: TransformedAuthorData[];
 }): SearchPostData[] =>
   options.posts.map((post) => {
@@ -137,6 +137,11 @@ export const getSearchData = (options: {
       categories: post.categories || [],
       authorUsernames: authorsByPost.map((author) => author.username),
       authorNames: authorsByPost.map((author) => author.name),
+      keywords: post.keywords || [],
+      headings:
+        post.contentType === MARKDOWN_CONTENT_TYPES.TUTORIAL
+          ? post.steps.map((step) => step.title)
+          : post.summary.filter((heading) => heading.level === 2).map((heading) => heading.text),
       cover: post.cover,
     };
   });
@@ -194,7 +199,7 @@ export const writeJsonDataFiles = (): void => {
       writeJsonFileSync({
         filePath: resolve(DATA_DIR, `${lang}/search.json`),
         data: getSearchData({
-          posts: postsByLangWithoutContentOrSteps,
+          posts: postsByLang,
           authors,
         }),
       });
