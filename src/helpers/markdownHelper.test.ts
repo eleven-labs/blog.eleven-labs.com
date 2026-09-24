@@ -553,7 +553,7 @@ describe('validateMarkdownContent', () => {
   });
 
   it('should validate the headings of an MDX content', () => {
-    const content = '# Title\n\n<Blockquote>Quote</Blockquote>';
+    const content = '# Title\n\n<Reminder variant="tip" title="Tip">Text</Reminder>';
 
     expect(() => validateMarkdownContent({ markdownFilePath: '/path/to/file.mdx', content })).toThrow('The h1 "Title" is reserved for the title in the metadata at the top of the markdown!');
   });

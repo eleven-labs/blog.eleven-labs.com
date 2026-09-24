@@ -8,9 +8,47 @@ Les fichiers `.md` existants restent rendus comme avant, il n'est pas nécessair
 
 L'en-tête (frontmatter) est identique à celui d'un fichier `.md` et il est validé de la même manière.
 
+## Le markdown d'abord
+
+Un fichier `.mdx` s'écrit comme un fichier `.md` : tout ce que le markdown sait déjà rendre s'écrit en markdown, et le rendu est identique à celui d'un article `.md`. N'utilisez un composant que lorsque le markdown n'a pas d'équivalent.
+
+### Citation
+
+```md
+> La simplicité est la sophistication suprême.
+```
+
+### Bloc de code coloré
+
+````md
+```ts
+const answer: number = 42;
+```
+````
+
+### Diagramme Mermaid
+
+Un diagramme [Mermaid](https://mermaid.js.org/) s'écrit dans un bloc de code `mermaid` :
+
+````md
+```mermaid
+graph TD
+  A[Client] --> B[API]
+```
+````
+
+### Image avec légende
+
+Une image suivie d'une ligne `Figure:` :
+
+```md
+![Schéma de l'architecture]({BASE_URL}/imgs/articles/2026-09-24-mon-article/schema.png)
+Figure: *Source : Eleven Labs*
+```
+
 ## Composants disponibles
 
-Seuls les composants suivants sont utilisables, sans import. Tout autre composant fait échouer la validation.
+Seuls les composants suivants sont utilisables, sans import. Tout autre composant, y compris `Blockquote`, `SyntaxHighlighter` ou `Mermaid`, fait échouer la validation : utilisez la syntaxe markdown ci-dessus.
 
 ### `Reminder`
 
@@ -24,44 +62,19 @@ Le contenu est du **markdown** : laissez une ligne vide après la balise ouvrant
 </Reminder>
 ```
 
-### `Blockquote`
-
-Une citation mise en forme.
-
-```mdx
-<Blockquote>La simplicité est la sophistication suprême.</Blockquote>
-```
-
-### `SyntaxHighlighter`
-
-Un bloc de code coloré. Un bloc de code markdown (` ```js `) donne le même résultat et reste à privilégier.
-
-```mdx
-<SyntaxHighlighter language="js" children={`const answer = 42;`} />
-```
+C'est l'équivalent MDX des admonitions HTML des fichiers `.md` (`<div class="admonition tip" markdown="1">`).
 
 ### `Figure`
 
-Une image accompagnée de sa légende.
+Une image et sa légende, lorsque la légende ne tient pas sur la ligne `Figure:` du markdown.
 
 ```mdx
 <Figure src="{BASE_URL}/imgs/articles/2026-09-24-mon-article/schema.png" alt="Schéma de l'architecture" caption="Source : Eleven Labs" />
 ```
 
-La syntaxe markdown, une image suivie d'une ligne `Figure: légende`, reste disponible.
-
-### `Mermaid`
-
-Un diagramme [Mermaid](https://mermaid.js.org/). Un bloc de code ` ```mermaid ` donne le même résultat.
-
-```mdx
-<Mermaid chart={`graph TD
-  A[Client] --> B[API]`} />
-```
-
 ## Différences avec le markdown
 
-- `<`, `>`, `{` et `}` ont une signification en MDX : dans le texte, échappez-les (`\{`, `&lt;`) ou placez-les dans du code.
+- `<` et `{` ouvrent une balise ou une expression en MDX : dans le texte, échappez-les (`\<`, `\{`) ou placez-les dans du code.
 - Le HTML est interprété comme du JSX : utilisez `className` au lieu de `class` et fermez les balises vides (`<br />`).
 - Les admonitions en HTML (`<div class="admonition tip" markdown="1">`) ne sont pas prises en charge : utilisez le composant `Reminder`.
 - Les commentaires s'écrivent `{/* commentaire */}` au lieu de `<!-- commentaire -->`.
@@ -72,4 +85,4 @@ Un diagramme [Mermaid](https://mermaid.js.org/). Un bloc de code ` ```mermaid ` 
 
 ## Ajouter un composant
 
-Les composants autorisés sont déclarés dans `src/helpers/mdxComponents.tsx`. Le contenu est rendu en HTML statique : un composant ne doit pas dépendre d'un état ou d'événements côté client.
+Les composants autorisés sont déclarés dans `src/helpers/mdxComponents.tsx`. N'y ajoutez un composant que si le markdown n'a pas d'équivalent. Le contenu est rendu en HTML statique : un composant ne doit pas dépendre d'un état ou d'événements côté client.

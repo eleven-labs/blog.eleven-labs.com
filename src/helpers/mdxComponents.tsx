@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef, ReminderProps } from '@/design-system';
 
 import React from 'react';
 
-import { Blockquote, Reminder as ReminderBase, SyntaxHighlighter } from '@/design-system';
+import { Reminder as ReminderBase } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
 
 export interface FigureProps extends ComponentPropsWithoutRef<'figure'> {
@@ -23,24 +23,12 @@ export const Reminder: React.FC<ReminderProps> = ({ className, ...props }) => (
   <ReminderBase className={cn('mb-xs', className)} {...props} />
 );
 
-export interface MermaidProps {
-  chart?: string;
-  children?: React.ReactNode;
-}
-
-// Rendered by mermaid on the client, the same way as a ```mermaid code fence
-export const Mermaid: React.FC<MermaidProps> = ({ chart, children }) => (
-  <pre className="mermaid flex items-center justify-center">{chart ?? children}</pre>
-);
-
 /**
  * The only components an MDX content can use: any other one fails the compilation of the content,
- * and therefore the validation of the contents.
+ * and therefore the validation of the contents. Whatever the markdown already renders (quotes, code, mermaid
+ * diagrams) is written in markdown, the same way as in a `.md` content.
  */
 export const mdxComponents = {
-  Blockquote,
   Figure,
-  Mermaid,
   Reminder,
-  SyntaxHighlighter,
 };

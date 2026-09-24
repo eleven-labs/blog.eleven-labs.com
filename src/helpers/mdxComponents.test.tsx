@@ -1,34 +1,20 @@
 import { markdownToHtml, mdxToHtml } from './markdownToHtmlHelper';
 
 describe('mdxToHtml', () => {
-  it('should render the components of the design system', () => {
+  it('should render a reminder of the design system', () => {
     const html = mdxToHtml(
-      [
-        '<Reminder variant="warning" title="Attention">',
-        '',
-        'Some **markdown**',
-        '',
-        '</Reminder>',
-        '',
-        '<Blockquote>A quote</Blockquote>',
-      ].join('\n')
+      ['<Reminder variant="warning" title="Attention">', '', 'Some **markdown**', '', '</Reminder>'].join('\n')
     );
 
     expect(html).toContain('class="reminder--warning');
     expect(html).toContain('<p class="reminder-title');
     expect(html).toContain('<p>Some <strong>markdown</strong></p>');
-    expect(html).toMatch(/<blockquote class="[^"]+">A quote<\/blockquote>/);
   });
 
-  it('should render a figure and a mermaid diagram', () => {
-    const html = mdxToHtml(
-      '<Figure src="/imgs/schema.png" alt="Schema" caption="Source" />\n\n<Mermaid chart="graph TD; A-->B" />'
-    );
-
-    expect(html).toContain(
+  it('should render a figure', () => {
+    expect(mdxToHtml('<Figure src="/imgs/schema.png" alt="Schema" caption="Source" />')).toContain(
       '<figure><img src="/imgs/schema.png" alt="Schema" loading="lazy" decoding="async"/><figcaption>Source</figcaption></figure>'
     );
-    expect(html).toContain('<pre class="mermaid flex items-center justify-center">graph TD; A--&gt;B</pre>');
   });
 
   it('should render the markdown the same way as a markdown content', () => {
@@ -44,6 +30,14 @@ describe('mdxToHtml', () => {
       '```js',
       'const a = 1;',
       '```',
+      '',
+      '> A **quote**',
+      '> on two lines',
+      '',
+      '```mermaid',
+      'graph TD',
+      '  A[Client] --> B[API]',
+      '```',
     ].join('\n');
 
     // Only the line breaks between the blocks differ, they have no effect on the rendering
@@ -52,7 +46,10 @@ describe('mdxToHtml', () => {
     expect(normalize(mdxToHtml(content))).toEqual(normalize(markdownToHtml(content)));
   });
 
-  it('should throw on a component that is not allowed', () => {
-    expect(() => mdxToHtml('<Unknown />')).toThrow(/Unknown/);
-  });
+  it.each(['Unknown', 'Blockquote', 'SyntaxHighlighter', 'Mermaid'])(
+    'should throw on the component %s that is not allowed',
+    (component) => {
+      expect(() => mdxToHtml(`<${component} />`)).toThrow(new RegExp(component));
+    }
+  );
 });
