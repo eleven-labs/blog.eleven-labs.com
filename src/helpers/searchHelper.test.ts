@@ -123,6 +123,22 @@ describe('createSearchIndex with ambiguous words', () => {
     posts: [
       createPost({ slug: 'go-api', date: '2017-01-01T00:00:00.000Z', title: 'Construire une api en Go' }),
       createPost({ slug: 'go-hybrid', date: '2022-01-01T00:00:00.000Z', title: 'Should you go hybrid?' }),
+      createPost({ slug: 'flow-typing', date: '2017-01-01T00:00:00.000Z', title: 'Typer son code avec Flow' }),
+      createPost({ slug: 'flow-work', date: '2022-01-01T00:00:00.000Z', title: 'Retrouver son flow' }),
+      createPost({ slug: 'vue-js', date: '2018-01-01T00:00:00.000Z', title: 'SSR avec Symfony et Vue.js' }),
+      createPost({
+        slug: 'first-glance',
+        date: '2025-01-01T00:00:00.000Z',
+        title: 'Découper ses user stories',
+        excerpt: 'À première vue, ce n’est qu’un découpage',
+        headings: ['Vues et logique'],
+      }),
+      createPost({
+        slug: 'time-flies',
+        date: '2025-01-01T00:00:00.000Z',
+        title: 'PHP 7.1',
+        excerpt: 'Le temps passe vite !',
+      }),
       createPost({ slug: 'iam', date: '2025-01-01T00:00:00.000Z', title: 'IAM aws' }),
       createPost({
         slug: 'ia',
@@ -138,7 +154,14 @@ describe('createSearchIndex with ambiguous words', () => {
     (await searchIndex.search(term)).map((post) => post.slug);
 
   it('should rank the posts which name the term before the ones which contain a homonym', async () => {
-    expect(await searchSlugs('go')).toEqual(['go-api', 'go-hybrid']);
+    expect(await searchSlugs('flow')).toEqual(['flow-typing', 'flow-work']);
+  });
+
+  // « Vues et logique » : la majuscule d'un début de phrase ne fait pas du mot un nom.
+  it('should only find a technology which is also a common word in the posts which name it', async () => {
+    expect(await searchSlugs('go')).toEqual(['go-api']);
+    expect(await searchSlugs('vue')).toEqual(['vue-js']);
+    expect(await searchSlugs('vite')).toEqual([]);
   });
 
   it('should rank the posts which contain a short word before the ones which only start with it', async () => {

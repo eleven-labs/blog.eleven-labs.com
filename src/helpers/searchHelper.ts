@@ -54,7 +54,21 @@ const SHORT_WORD_MAX_LENGTH = 2;
 // seulement « React » mais presque tous les articles.
 const removePlural = (word: string): string => (/^.{2,}[^s][sx]$/.test(word) ? word.slice(0, -1) : word);
 
+// Noms de technologies qui sont aussi des mots courants, en français ou en anglais. Un article
+// n'est trouvé par l'un d'eux que s'il le cite comme un nom : « vite » ne trouve pas « le temps passe
+// vite », « vue » ne trouve pas « à première vue ».
+const AMBIGUOUS_WORDS = new Set(['express', 'go', 'next', 'rest', 'rust', 'spark', 'swift', 'vite', 'vue']);
+
 const WORD_PATTERN = /[\p{L}\p{N}]+/gu;
+
+// Une majuscule au début d'un texte ou d'une phrase ne dit rien du mot (« Vues spéciales »).
+const SENTENCE_START_PATTERN = /(^|[.!?:;|–—]|\s-)\s*$/;
+
+// Un mot est un nom s'il porte une majuscule ailleurs qu'en première lettre (« GraphQL », « IA »,
+// « iOS »), ou une majuscule en première lettre hors d'un début de phrase (« Symfony et Vue.js »).
+const isNameInText = (text: string, word: string, index: number): boolean =>
+  word.slice(1) !== word.slice(1).toLowerCase() ||
+  (word[0] !== word[0].toLowerCase() && !SENTENCE_START_PATTERN.test(text.slice(0, index)));
 
 export const createSearchIndex = (options: { lang: string; posts: SearchPostData[] }): SearchIndex => {
   const isFrench = options.lang === LANGUAGES.FR;
@@ -111,13 +125,13 @@ export const createSearchIndex = (options: { lang: string; posts: SearchPostData
     options.posts.map((post) => {
       const words = new Set<string>();
       const names = new Set<string>();
-      const addWords = (texts: string[], isName: (word: string) => boolean): void => {
+      const addWords = (texts: string[], isName: (text: string, word: string, index: number) => boolean): void => {
         for (const text of texts) {
-          for (const [word] of text.matchAll(WORD_PATTERN)) {
+          for (const { 0: word, index } of text.matchAll(WORD_PATTERN)) {
             const normalizedWord = normalizeWord(word);
             if (normalizedWord) {
               words.add(normalizedWord);
-              if (isName(word)) {
+              if (isName(text, word, index)) {
                 names.add(normalizedWord);
               }
             }
@@ -126,7 +140,7 @@ export const createSearchIndex = (options: { lang: string; posts: SearchPostData
       };
 
       addWords([...post.keywords, ...(post.categories ?? []), ...post.authorUsernames, ...post.authorNames], () => true);
-      addWords([post.title, post.excerpt, ...post.headings], (word) => word[0] !== word[0].toLowerCase());
+      addWords([post.title, post.excerpt, ...post.headings], isNameInText);
 
       return [post, { words, names }];
     })
@@ -134,6 +148,13 @@ export const createSearchIndex = (options: { lang: string; posts: SearchPostData
 
   const isNameMatch = (post: SearchPostData, searchWords: string[]): boolean =>
     searchWords.every((searchWord) => wordsByPost.get(post)!.names.has(searchWord));
+
+  const namesAmbiguousWords = (post: SearchPostData, searchWords: string[]): boolean => {
+    const { names } = wordsByPost.get(post)!;
+    return searchWords
+      .filter((searchWord) => AMBIGUOUS_WORDS.has(searchWord))
+      .every((searchWord) => [...names].some((name) => name.startsWith(searchWord)));
+  };
 
   const hasShortWords = (post: SearchPostData, searchWords: string[]): boolean =>
     searchWords
@@ -182,7 +203,7 @@ export const createSearchIndex = (options: { lang: string; posts: SearchPostData
 
       return getPosts(
         scoredHits
-          .filter((hit) => matchingIds.has(hit.id))
+          .filter((hit) => matchingIds.has(hit.id) && namesAmbiguousWords(getDocument(hit).post, searchWords))
           .map((hit) => ({
             ...hit,
             hasShortWords: hasShortWords(getDocument(hit).post, searchWords),
