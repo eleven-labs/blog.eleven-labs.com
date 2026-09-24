@@ -44,9 +44,9 @@ J'insiste sur ce point car il s'agit, **à mon sens**, d'un concept qui m'a vrai
 <Reminder variant="note" title="Note">
 
 Je ne porte aucun jugement sur une pratique que j'utilise moi-même encore régulièrement.
-Mais je pense qu'il est intéressant de comprendre comment les <b>ORMs</b> ont modifié la façon dont on perçoit le rôle d'un objet: une entité fortement liée au schéma de base de donnée, et qui ne représente que de la donnée.
+Mais je pense qu'il est intéressant de comprendre comment les **ORMs** ont modifié la façon dont on perçoit le rôle d'un objet: une entité fortement liée au schéma de base de donnée, et qui ne représente que de la donnée.
 
-C'est en revenant à la base de l'<i>Objet</i> que nous allons pouvoir aller de l'avant.
+C'est en revenant à la base de l'*Objet* que nous allons pouvoir aller de l'avant.
 
 </Reminder>
 
@@ -158,7 +158,7 @@ Je vous offre un petit spoil des dossiers que nous allons créer par la suite, c
 
 <Reminder variant="note" title="Note">
 
-Il existe une autre manière d'organiser son Architecture, qui est <i>par feature</i>. Dans ce cas, chaque fonctionnalité a son propre dossier Domain, Application, et Infrastructure.
+Il existe une autre manière d'organiser son Architecture, qui est *par feature*. Dans ce cas, chaque fonctionnalité a son propre dossier Domain, Application, et Infrastructure.
 
 Par exemple :
 
@@ -168,9 +168,9 @@ src/feature1/Infrastructure/feature1.controller.php
 src/feature1/UseCase/feature1.useCase.php
 ```
 
-Et ainsi de suite pour les autres fonctionnalités. C'est juste une autre manière de faire mais cela revient <b>exactement au même</b>.
+Et ainsi de suite pour les autres fonctionnalités. C'est juste une autre manière de faire mais cela revient **exactement au même**.
 
-Personnellement je préfère largement avoir une seule fois les dossiers <code>Domain</code>, <code>Application</code>, et <code>Infrastructure</code> à la racine, quitte à diviser par fonctionnalité en dessous.
+Personnellement je préfère largement avoir une seule fois les dossiers `Domain`, `Application`, et `Infrastructure` à la racine, quitte à diviser par fonctionnalité en dessous.
 
 </Reminder>
 
@@ -230,9 +230,9 @@ Moins de blabla, plus de code, voici quelques comportements à ajouter à notre 
 
 <Reminder variant="note" title="Note">
 
-Comme pour tous les exemples de ce tutoriel, le contenu des classes n'est pas exhaustif. Pour voir le code dans son intégralité, gardez en parallèle une <a href="https://github.com/ArthurJCQ/leitner-box/tree/refacto-clean">page Github</a> ouverte avec le code complet de notre application.
+Comme pour tous les exemples de ce tutoriel, le contenu des classes n'est pas exhaustif. Pour voir le code dans son intégralité, gardez en parallèle une [page Github](https://github.com/ArthurJCQ/leitner-box/tree/refacto-clean) ouverte avec le code complet de notre application.
 
-En l'occurence, vous pourrez trouver d'autres exemples de comportements directement dans la classe <code>Card.php</code> du repo !
+En l'occurence, vous pourrez trouver d'autres exemples de comportements directement dans la classe `Card.php` du repo !
 
 </Reminder>
 
@@ -298,13 +298,13 @@ C'est nous qui définissons, avec des termes clairs et logiques, le nom de nos i
 
 <Reminder variant="tip" title="Important">
 
-Pour rappel, le but ici est <b>théoriquement</b> de pouvoir être capable de se débarasser de la couche Infrastructure et de la remplacer par une autre (changement de Framework, d'ORM, ou d'autres API..), sans que cela ait la moindre incidence sur notre Domain ou notre couche Applicative, grâce au découplage.
+Pour rappel, le but ici est **théoriquement** de pouvoir être capable de se débarasser de la couche Infrastructure et de la remplacer par une autre (changement de Framework, d'ORM, ou d'autres API..), sans que cela ait la moindre incidence sur notre Domain ou notre couche Applicative, grâce au découplage.
 
-Ce n'est pas un <b>objectif en soi</b> de pouvoir changer de Framework du jour au lendemain. L'idée est de trouver le meilleur des deux mondes entre un meilleur confort de développement, et éviter le risque de burnout <b>si un jour</b> on est amené à faire un tel changement.
+Ce n'est pas un **objectif en soi** de pouvoir changer de Framework du jour au lendemain. L'idée est de trouver le meilleur des deux mondes entre un meilleur confort de développement, et éviter le risque de burnout **si un jour** on est amené à faire un tel changement.
 
-De plus vous pouvez voir le problème en l'inversant : vous n'allez peut-être pas changer le Framework, <b>mais</b> prendre un morceau de votre code métier pour le migrer vers un autre micro-service par exemple, qui lui possède une toute autre Infrastructure. Et à ce moment-là, vous serez reconnaissant d'avoir un programme très faiblement couplé !
+De plus vous pouvez voir le problème en l'inversant : vous n'allez peut-être pas changer le Framework, **mais** prendre un morceau de votre code métier pour le migrer vers un autre micro-service par exemple, qui lui possède une toute autre Infrastructure. Et à ce moment-là, vous serez reconnaissant d'avoir un programme très faiblement couplé !
 
-En bref, c'est en respectant au maximum cette philosophie que vous ne ferez plus l'erreur de développer une fonctionnalité en <i>partant du Framework</i>, mais bien de penser d'abord aux besoins et aux règles métier, et en implémentant l'Infra seulement à la <b>fin</b>, et en vous servant des Interfaces que vous aurez peut-être créées.
+En bref, c'est en respectant au maximum cette philosophie que vous ne ferez plus l'erreur de développer une fonctionnalité en *partant du Framework*, mais bien de penser d'abord aux besoins et aux règles métier, et en implémentant l'Infra seulement à la **fin**, et en vous servant des Interfaces que vous aurez peut-être créées.
 
 </Reminder>
 

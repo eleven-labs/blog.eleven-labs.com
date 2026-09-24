@@ -115,7 +115,7 @@ It's also possible to use the HTML markup to preload your resources:
 <link rel="preload" href="/fonts/myfont.woff2" as="font">
 ```
 
-Also, if you use the <a href="https://www.symfony.com">Symfony</a> PHP framework, please note that this one has implemented assets preloading in version 3.3. To use it, you just have to use the preload wrapper this way:
+Also, if you use the [Symfony](https://www.symfony.com) PHP framework, please note that this one has implemented assets preloading in version 3.3. To use it, you just have to use the preload wrapper this way:
 
 ```
 <link href="{{ preload(asset('/fonts/myfont.woff2'), { as: 'font' }) }}">

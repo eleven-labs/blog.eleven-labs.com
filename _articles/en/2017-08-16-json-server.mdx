@@ -28,7 +28,7 @@ Here comes `json-server`, it allows you to mock the API, and provide dynamic acc
 
 It provides common URL use cases like:
 - [Routes](#routes) (`/articles/1`)
-- [Filters](#filters) (`/articles/1/comments?author.username=rpierlot`)
+- [Filters](#filters-sort--operators) (`/articles/1/comments?author.username=rpierlot`)
 - [Pagination](#pagination) (`/articles?_page=2&_limit=10`)
 - [Full text search](#full-text-search) (`/articles?q=graphql`)
 - [Relationships](#relationships) (`/articles?_embed=comments`)
@@ -36,10 +36,10 @@ It provides common URL use cases like:
 and other miscellaneous stuff like:
 - `CORS` & `JSONP`
 - Ability to access remote schemas
-- [Randomly generated data](#random-data)
+- [Randomly generated data](#randomly-generated-data)
 - [Custom routes](#custom-routes)
 - [Middlewares](#middlewares)
-- [Ability to use `json-server` as a module in your NodeJS server](#nodejs-module)
+- [Ability to use `json-server` as a module in your NodeJS server](#as-a-nodejs-module)
 
 Okay, let's get to it.
 
@@ -159,8 +159,6 @@ $ curl http://localhost:3000/articles/1
 }
 ```
 
-<a name="routes"></a>
-
 ### Routes
 
 We can use almost all kinds of URIs to perform requests:
@@ -202,8 +200,6 @@ $ curl --data-urlencode "title=GraphQL" http://localhost:3000/authors/3/articles
 }
 ```
 
-<a name="filters"></a>
-
 #### Filters, sort & operators
 
 **Filtering** is done using query parameters: `GET http://localhost:3000/articles?title=GraphQL`.
@@ -223,8 +219,6 @@ In case we want to sort by multiple properties, we can write our properties sepa
 * `_gt` (greater than), `_lt` (less than), `_gte` (greater than or equal) and `_lte` (less than or equal): `GET http://localhost:3000/comments?score_gte=5` (assuming we have a `score` field in the comments)
 * `_ne`(not equal) negation of an expression `GET http://localhost:3000/comments?articleId_ne=2`
 * `_like` is an operator that can be applied to string properties, it gives the same result as an `SQL`'s `LIKE`. `GET http://localhost:3000/articles?title_like=API`
-
-<a name="pagination"></a>
 
 #### Pagination
 
@@ -252,8 +246,6 @@ Date: Sun, 30 Jul 2017 17:22:34 GMT
 Connection: keep-alive
 ```
 
-<a name="full-text-search"></a>
-
 #### Full text search
 
 We can implement a search feature in our app using full-text search by simply adding a `q` query parameter.
@@ -273,8 +265,6 @@ $ curl http://localhost:3000/articles?q=api
   }
 ]
 ```
-
-<a name="relationships"></a>
 
 #### Relationships
 
@@ -333,8 +323,6 @@ $ curl http://localhost:3000/comments?_expand=article
 ```
 
 Until now, we've seen only the routes part of `json-server`, there are a lot more things we can do, let's see what's next.
-
-<a name="random-data"></a>
 
 ### Randomly generated data
 
@@ -410,8 +398,6 @@ $ curl http://localhost:3000/messages
 
 And we can still perform requests on it as we've seen in the [routes](#routes) section.
 
-<a name="custom-routes"></a>
-
 ### Custom routes
 
 Let's imagine we are supposed to perform requests on several different endpoints on our future API, and these endpoints don't have the same URIs:
@@ -485,8 +471,6 @@ $ curl http://localhost:3000/api/groups/ducks/stats
   }
 ]
 ```
-
-<a name="middlewares"></a>
 
 ### Middlewares
 
@@ -578,8 +562,6 @@ Great! Obviously, it's a `200` HTTP status :-D
 ```bash
 GET /api/groups/ducks/stats 200 4.609 ms - 94
 ```
-
-<a name="nodejs-module"></a>
 
 ### As a NodeJS module
 

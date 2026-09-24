@@ -62,9 +62,9 @@ contains | `{% raw %}{{{% endraw %}` `{% raw %}}}{% endraw %}` | `{% raw %}param
 not contains | `{% raw %}!{{{% endraw %}` `{% raw %}}}{% endraw %}` | `{% raw %}param!{{value}}{% endraw %}` | X | X |  | X |
 and | `&` | `param>1&param<10` | X | X | X | X |
 not and | `!&` | `param>1!&param<10` |  | X |  | X |
-or | <code>&#124;</code> | <code>param>1&#124;param\<10</code> | X | X | X | X |
-not or | <code>!&#124;</code> | <code>param>1!&#124;param\<10</code> |  |  |  | X |
-exclusive or | <code>^&#124;</code> `⊕` | <code>param>1^&#124;param\<10</code> `param>1⊕param<10` |  |  |  | X |
+or | `\|` | `param>1\|param<10` | X | X | X | X |
+not or | `!\|` | `param>1!\|param<10` |  |  |  | X |
+exclusive or | `^\|` `⊕` | `param>1^\|param<10` `param>1⊕param<10` |  |  |  | X |
 
 > Yes, the library provides some bridges like doctrine `ORM`, `ODM` and `common` (collections filter).
 

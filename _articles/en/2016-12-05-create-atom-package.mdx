@@ -16,7 +16,7 @@ keywords:
   - package
 ---
 ## Introduction to Atom
-[Atom](https://atom.io) is an open-source text editor (mostly used by developers) which is multi-platform and developed by GitHub company. It is based on <a href="http://electron.atom.io/">Electron</a>, the Github-developed framework, which allows developers to build native desktop applications for any operating systems by writing Javascript code.
+[Atom](https://atom.io) is an open-source text editor (mostly used by developers) which is multi-platform and developed by GitHub company. It is based on [Electron](http://electron.atom.io/), the Github-developed framework, which allows developers to build native desktop applications for any operating systems by writing Javascript code.
 
 The main interesting feature of Atom is that it also has a great package management tool and packages are also written in Javascript so it's quite easy for anyone to create one. This article aims to talk about it.
 Finally, its community is also active as it already has a lot of available packages: `5 285` at this time.
@@ -73,7 +73,7 @@ Next, we have the `keymaps/my-package.json`  file which allows you to define sho
 Next, we will go into your package entry point. It is located into `lib/my-package.js` file.
 This file exports a default object which contains a `subscriptions`  property and also `activate()`  and `deactivate()`  methods.
 
-During package activation (inside `activate()` method), we will register a <a href="https://atom.io/docs/api/latest/CompositeDisposable">CompositeDisposable</a> type object inside our `subscriptions`  property and that will allow us to add and maybe later remove some commands offered by our package:
+During package activation (inside `activate()` method), we will register a [CompositeDisposable](https://atom.io/docs/api/latest/CompositeDisposable) type object inside our `subscriptions`  property and that will allow us to add and maybe later remove some commands offered by our package:
 
 ```js
 activate(state) {

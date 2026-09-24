@@ -30,20 +30,20 @@ Disons que vous travaillez sur votre application (Javascript, PHP, IOS, Android,
 
 Il fournit des cas d'utilisation d'URL comme :
 
-- [Les routes](#routes) (`/articles/1`)
-- [Les filtres](#filters) (`/articles/1/comments?author.username=rpierlot`)
-- [La pagination](#pagination) (`/articles?_page=2&_limit=10`)
-- [La recherche intégrale de texte](#full-text-search) (`/articles?q=graphql`)
-- [Les relations](#relationships) (`/articles?_embed=comments`)
+- [Les routes](#les-routes) (`/articles/1`)
+- [Les filtres](#filtres-tri-et-opérateurs) (`/articles/1/comments?author.username=rpierlot`)
+- [La pagination](#la-pagination) (`/articles?_page=2&_limit=10`)
+- [La recherche intégrale de texte](#la-recherche-intégrale-de-texte) (`/articles?q=graphql`)
+- [Les relations](#les-relations) (`/articles?_embed=comments`)
 
 Et d'autres choses diverses comme :
 
 - `CORS` & `JSONP`
 - La possibilité d'accéder aux schémas à distance
-- [La génération de données aléatoires](#random-data)
-- [Les routes personnalisées](#custom-routes)
+- [La génération de données aléatoires](#la-génération-de-données-aléatoire)
+- [Les routes personnalisées](#les-routes-personnalisées)
 - [Les middlewares](#middlewares)
-- [La possibilité d'utiliser `json-server` comme module dans votre serveur NodeJS](#nodejs-module)
+- [La possibilité d'utiliser `json-server` comme module dans votre serveur NodeJS](#en-tant-que-module-nodejs)
 
 ## Comment l'utiliser ?
 
@@ -160,8 +160,6 @@ $ curl http://localhost:3000/articles/1
 }
 ```
 
-<a name="routes"></a>
-
 ### Les routes
 
 On peut utiliser presque toutes sortes de requêtes : par exemple, pour insérer (créer) un nouvel auteur, on peut utiliser : `POST http://localhost:3000/authors`
@@ -201,8 +199,6 @@ $ curl --data-urlencode "title=GraphQL" http://localhost:3000/authors/3/articles
 }
 ```
 
-<a name="filters"></a>
-
 #### Filtres, tri et opérateurs
 
 **Le filtrage** se fait à l'aide de simples paramètres de requête : `GET http://localhost:3000/articles?title=GraphQL`.
@@ -224,8 +220,6 @@ Dans le cas où l'on veux trier par plusieurs propriétés, on peut écrire les 
 
 * `_ne` (not equal) négation d'une expression `GET http://localhost:3000/comments?articleId_ne=2`
 * `_like` est un opérateur qui peut être appliqué à des chaînes de caractères, il donne le même résultat que le `LIKE` de `SQL`. `GET http://localhost:3000/articles?title_like=API`
-
-<a name="pagination"></a>
 
 #### La pagination
 
@@ -252,8 +246,6 @@ Date: Sun, 30 Jul 2017 17:22:34 GMT
 Connection: keep-alive
 ```
 
-<a name="full-text-search"></a>
-
 #### La recherche intégrale de texte
 
 On peut implémenter une fonction de recherche dans notre application, en utilisant la fonctionnalité "recherche intégrale de texte" de json-server, avec le paramètre `q`.
@@ -273,8 +265,6 @@ $ curl http://localhost:3000/articles?q=api
   }
 ]
 ```
-
-<a name="relationships"></a>
 
 #### Les relations
 
@@ -333,8 +323,6 @@ $ curl http://localhost:3000/comments?_expand=article
 ```
 
 Jusqu'à présent, on n'a vu que les routes `json-server`, mais il y a encore plein de choses à découvrir.
-
-<a name="random-data"></a>
 
 ### La génération de données aléatoire
 
@@ -408,9 +396,7 @@ $ curl http://localhost:3000/messages
 ]
 ```
 
-Et on peut toujours effectuer des requêtes comme on l'a vu dans la section des [routes](#routes).
-
-<a name="custom-routes"></a>
+Et on peut toujours effectuer des requêtes comme on l'a vu dans la section des [routes](#les-routes).
 
 ### Les routes personnalisées
 
@@ -485,8 +471,6 @@ $ curl http://localhost:3000/api/groups/ducks/stats
   }
 ]
 ```
-
-<a name="middlewares"></a>
 
 ### Middlewares
 
@@ -578,8 +562,6 @@ Bien ! Évidemment, c'est un status HTTP `200` :-D.
 ```bash
 GET /api/groups/ducks/stats 200 4.609 ms - 94
 ```
-
-<a name="nodejs-module"></a>
 
 ### En tant que module NodeJS
 

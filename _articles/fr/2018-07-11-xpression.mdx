@@ -63,9 +63,9 @@ contient | `{% raw %}{{{% endraw %}` `{% raw %}}}{% endraw %}` | `{% raw %}param
 ne contient pas | `{% raw %}!{{{% endraw %}` `{% raw %}}}{% endraw %}` | `{% raw %}param!{{value}}{% endraw %}` | X | X |  | X |
 et | `&` | `param>1&param<10` | X | X | X | X |
 non et | `!&` | `param>1!&param<10` |  | X |  | X |
-ou | <code>&#124;</code> | <code>param>1&#124;param\<10</code> | X | X | X | X |
-non ou | <code>!&#124;</code> | <code>param>1!&#124;param\<10</code> |  |  |  | X |
-ou exclusif | <code>^&#124;</code> `⊕` | <code>param>1^&#124;param\<10</code> `param>1⊕param<10` |  |  |  | X |
+ou | `\|` | `param>1\|param<10` | X | X | X | X |
+non ou | `!\|` | `param>1!\|param<10` |  |  |  | X |
+ou exclusif | `^\|` `⊕` | `param>1^\|param<10` `param>1⊕param<10` |  |  |  | X |
 
 > Eh oui, la librairie fournit aussi des bridges vers doctrine `ORM`, `ODM` et `common` (pour filter les collections).
 

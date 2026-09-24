@@ -125,7 +125,7 @@ Etag: home560
 ```
 
 Be careful, the calculation of the ETag must be very carefully considered because it governs the cache time of the page, so it must be calculated with the dynamic data of the page.
-As explained in the first chapter, the key of the HTTP cache is the URL of the page. This can be a nuisance if your page is dynamic depending on the user, because the URL will be the same, but the content will be different. It will therefore be necessary to cache several contents for one URL. Fortunately, <a title="Tim Berners-Lee" href="https://fr.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners-Le</a>, the inventor of the HTTP protocol provided for this event by adding the header:
+As explained in the first chapter, the key of the HTTP cache is the URL of the page. This can be a nuisance if your page is dynamic depending on the user, because the URL will be the same, but the content will be different. It will therefore be necessary to cache several contents for one URL. Fortunately, [Tim Berners-Le](https://fr.wikipedia.org/wiki/Tim_Berners-Lee "Tim Berners-Lee"), the inventor of the HTTP protocol provided for this event by adding the header:
 
 ```sh
 Vary: Cookie User-agent
