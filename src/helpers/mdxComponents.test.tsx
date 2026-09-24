@@ -89,6 +89,22 @@ describe('mdxToHtml', () => {
     );
   });
 
+  it('should render a YouTube video with its ratio, lazily and without cookie', () => {
+    expect(mdxToHtml('<YouTube id="9Cfxm7cikMY" title="7 Ways AMP Makes Your Pages Fast" />')).toMatch(
+      /^<div class="mb-xs aspect-video w-full"><iframe class="size-full" src="https:\/\/www.youtube-nocookie.com\/embed\/9Cfxm7cikMY" title="7 Ways AMP Makes Your Pages Fast" loading="lazy"/
+    );
+  });
+
+  it('should render a video of the blog, with its type, ratio and captions', () => {
+    expect(mdxToHtml('<Video src="/imgs/video.webm" width={1600} height={900} />')).toEqual(
+      '<video class="mx-auto mb-xs w-full" style="aspect-ratio:1600 / 900" controls="" preload="metadata">' +
+        '<source src="/imgs/video.webm" type="video/webm"/></video>'
+    );
+    expect(mdxToHtml('<Video src="/imgs/video.mp4" captions="/imgs/video.vtt" />')).toContain(
+      '<source src="/imgs/video.mp4" type="video/mp4"/><track kind="captions" src="/imgs/video.vtt" default=""/>'
+    );
+  });
+
   it.each(['Unknown', 'Blockquote', 'SyntaxHighlighter', 'Mermaid'])(
     'should throw on the component %s that is not allowed',
     (component) => {

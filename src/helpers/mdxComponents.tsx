@@ -94,6 +94,57 @@ export const Tweet: React.FC<TweetProps> = ({ url, author, date, children }) => 
   );
 };
 
+export interface YouTubeProps {
+  id: string;
+  title: string;
+}
+
+/**
+ * A YouTube video, on the width of the post: its 16/9 ratio reserves its height before it loads, and the
+ * `youtube-nocookie.com` domain sets no cookie until the video is played.
+ */
+export const YouTube: React.FC<YouTubeProps> = ({ id, title }) => (
+  <div className="mb-xs aspect-video w-full">
+    <iframe
+      className="size-full"
+      src={`https://www.youtube-nocookie.com/embed/${id}`}
+      title={title}
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerPolicy="strict-origin-when-cross-origin"
+      allowFullScreen
+    />
+  </div>
+);
+
+export interface VideoProps {
+  src: string;
+  title?: string;
+  // The dimensions of the video, whose ratio reserves its height before it loads
+  width?: number;
+  height?: number;
+  // The WebVTT captions of a video with speech
+  captions?: string;
+}
+
+const VIDEO_TYPES: Record<string, string> = { mp4: 'video/mp4', ogv: 'video/ogg', webm: 'video/webm' };
+
+// A video hosted by the blog, its type telling the browser whether it can play it before loading it
+export const Video: React.FC<VideoProps> = ({ src, title, width, height, captions }) => (
+  // The videos without speech, such as screen recordings, have no captions
+  // eslint-disable-next-line jsx-a11y/media-has-caption
+  <video
+    className="mx-auto mb-xs w-full"
+    title={title}
+    style={width && height ? { aspectRatio: `${width} / ${height}` } : undefined}
+    controls
+    preload="metadata"
+  >
+    <source src={src} type={VIDEO_TYPES[src.split('?')[0].split('.').pop()?.toLowerCase() ?? '']} />
+    {captions && <track kind="captions" src={captions} default />}
+  </video>
+);
+
 /**
  * The only components an MDX content can use: any other one fails the compilation of the content,
  * and therefore the validation of the contents. Whatever the markdown already renders (quotes, code, mermaid
@@ -104,4 +155,6 @@ export const mdxComponents = {
   Kbd,
   Reminder,
   Tweet,
+  Video,
+  YouTube,
 };

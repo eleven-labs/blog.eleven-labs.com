@@ -91,6 +91,24 @@ Et vous, il est comment votre vendredi ? [pic.twitter.com/SFMqKjIGfb](https://t.
 
 Le code d'intégration proposé par Twitter (`<blockquote class="twitter-tweet">` suivi d'un `<script>`) n'est pas à copier, il en fournit les valeurs : `url` est le lien vers le tweet, `author` le texte qui le précède (`Nom (@compte)`) et `date` le texte de ce lien.
 
+### `YouTube`
+
+Une vidéo YouTube, sur toute la largeur de l'article. `id` est l'identifiant de la vidéo (`https://www.youtube.com/watch?v=<id>`) et `title` son titre, lu par les lecteurs d'écran.
+
+```mdx
+<YouTube id="9Cfxm7cikMY" title="7 Ways AMP Makes Your Pages Fast" />
+```
+
+La vidéo n'est chargée qu'à l'approche de sa position dans la page, depuis `youtube-nocookie.com`, qui ne dépose pas de cookie tant qu'elle n'est pas lancée.
+
+### `Video`
+
+Une vidéo hébergée par le blog, dans `_assets` (WebM, MP4 ou Ogg). `width` et `height`, les dimensions de la vidéo, réservent sa place avant son chargement. Une vidéo parlée a des sous-titres, au format WebVTT, dans `captions`.
+
+```mdx
+<Video src="{BASE_URL}/imgs/articles/2026-09-24-mon-article/demo.webm" width={1920} height={1080} />
+```
+
 ## Particularités du MDX
 
 - `<` et `{` ouvrent une balise ou une expression : dans le texte, échappez-les (`\<`, `\{`) ou placez-les dans du code.
