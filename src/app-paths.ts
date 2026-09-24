@@ -8,7 +8,7 @@ export const TUTORIALS_DIR = resolve(ROOT_DIR, '_tutorials');
 export const AUTHORS_DIR = resolve(ROOT_DIR, '_authors');
 export const MARKDOWN_FILE_PATHS = globSync([
   `${ARTICLES_DIR}/**/*.{md,mdx}`,
-  `${AUTHORS_DIR}/**/*.md`,
+  `${AUTHORS_DIR}/**/*.{md,mdx}`,
   `${TUTORIALS_DIR}/**/*.{md,mdx}`,
 ]);
 export const PUBLIC_DIR = resolve(ROOT_DIR, 'public');

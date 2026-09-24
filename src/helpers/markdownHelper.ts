@@ -294,7 +294,7 @@ export const validateTutorialStep = (options: {
   });
 
 export const validateMarkdown = (): boolean => {
-  const authorMarkdownFilePaths = globSync(`${AUTHORS_DIR}/**/*.md`);
+  const authorMarkdownFilePaths = globSync(`${AUTHORS_DIR}/**/*.{md,mdx}`);
   const articleMarkdownFilePaths = globSync(`${ARTICLES_DIR}/**/*.{md,mdx}`);
   const tutorialMarkdownFilePaths = globSync(`${TUTORIALS_DIR}/**/index.{md,mdx}`);
 
