@@ -84,9 +84,7 @@ Si, pour une raison quelconque, la synchronisation échoue, les événements res
 Cela signifie que les erreurs temporaires ou les pannes de système n'impactent pas la synchronisation des données.
 De plus, la possibilité de mettre en place des mécanismes de "retry" automatique garantit que les données seront finalement synchronisées avec succès, même en cas de problèmes temporaires.
 
-![Synchronisation de Hubspot vers le e-commerce]({BASE_URL}/imgs/articles/2023-12-05-integration-crm/integration-crm-schema-hubspot-to-e-commerce.png)
-
-<center>*Synchronisation de Hubspot vers le e-commerce*</center>
+<Figure src="{BASE_URL}/imgs/articles/2023-12-05-integration-crm/integration-crm-schema-hubspot-to-e-commerce.png" alt="Synchronisation de Hubspot vers le e-commerce">*Synchronisation de Hubspot vers le e-commerce*</Figure>
 
 Sur le schéma ci-dessus, voici les différentes étapes de la synchronisation Hubspot vers e-commerce :
 - Un webhook est déclenché côté Hubspot et réceptionné par le microservice de synchronisation (1)
@@ -100,9 +98,7 @@ Sur le schéma ci-dessus, voici les différentes étapes de la synchronisation H
 
 Enfin, la synchronisation s'effectue dans l'autre sens (bidirectionnelle) : de la platforme e-commerce vers HubSpot avec le schéma ci-dessous.
 
-![Synchronisation du e-commerce vers HubSpot]({BASE_URL}/imgs/articles/2023-12-05-integration-crm/integration-crm-schema-e-commerce-to-hubspot.png)
-
-<center>*Synchronisation du e-commerce vers HubSpot*</center>
+<Figure src="{BASE_URL}/imgs/articles/2023-12-05-integration-crm/integration-crm-schema-e-commerce-to-hubspot.png" alt="Synchronisation du e-commerce vers HubSpot">*Synchronisation du e-commerce vers HubSpot*</Figure>
 
 - Le e-commerce publie les IDs des `Company` et `Contacts` tels que définis côté e-commerce dans RabbitMQ (4)
 - Un Consumer consomme ces données et met à jour ces IDs dans les `Company` & `Contacts` côté Hubspot (4)
