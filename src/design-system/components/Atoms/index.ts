@@ -6,6 +6,7 @@ export * from './Button';
 export * from './CloseButton';
 export * from './Divider';
 export * from './Icon';
+export * from './Kbd';
 export * from './Picture';
 export * from './Skeleton';
 export * from './SyntaxHighlighter';

@@ -51,9 +51,9 @@ Pour résoudre les différents problèmes de compatibilité, de performances et 
 
 Lancer PowerShell en tant qu'administrateur
 
-- <kbd>⊞ Win</kbd> + <kbd>R</kbd>
+- <Kbd>⊞ Win</Kbd> + <Kbd>R</Kbd>
 - Saisir `powershell`
-- <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>↵ Entrée</kbd>
+- <Kbd>Ctrl</Kbd> + <Kbd>⇧ Shift</Kbd> + <Kbd>↵ Entrée</Kbd>
 
 Activer les fonctionnalités optionnelles nécessaires
 
@@ -168,7 +168,7 @@ Dans les grande lignes, l'astuce consiste à remplacer le shell de l'utilisateur
 
 ### Personnalisation
 
-L'application est personnalisable via un fichier `.json`. Utilisez <kbd>Ctrl</kbd> + <kbd>,</kbd> pour y accéder ou utilisez l'interface de l'application.
+L'application est personnalisable via un fichier `.json`. Utilisez <Kbd>Ctrl</Kbd> + <Kbd>,</Kbd> pour y accéder ou utilisez l'interface de l'application.
 
 ![windows-terminal-settings]({BASE_URL}/imgs/articles/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/windows-terminal-settings.gif  "Paramétrage de Windows Terminal")
 
@@ -197,8 +197,8 @@ Pour éviter de vous retrouver avec des doublements de lignes dans Windows Termi
 
 On va commencer par ouvrir le répertoire des scripts lancés au démarrage de Windows :
 
-- <kbd>⊞ Win</kbd> + <kbd>R</kbd>
-- Saisissez `shell:startup` puis <kbd>↵ Entrée</kbd>
+- <Kbd>⊞ Win</Kbd> + <Kbd>R</Kbd>
+- Saisissez `shell:startup` puis <Kbd>↵ Entrée</Kbd>
 - Créez un fichier `copy-paste-on-windows-terminal.ahk`
 - Éditez-le, et ajoutez le script suivant :
 
@@ -225,7 +225,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 <Reminder variant="info" title="Info">
 
-Par défaut, dans Windows Terminal, l'opération **coller** se fait via <kbd>🖱️ Droit</kbd> ou la combinaison <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>V</kbd>. Le script les intercepte pour replacer les séquences `\r\n` par `\n`
+Par défaut, dans Windows Terminal, l'opération **coller** se fait via <Kbd>🖱️ Droit</Kbd> ou la combinaison <Kbd>Ctrl</Kbd> + <Kbd>⇧ Shift</Kbd> + <Kbd>V</Kbd>. Le script les intercepte pour replacer les séquences `\r\n` par `\n`
 
 </Reminder>
 

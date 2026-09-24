@@ -83,6 +83,12 @@ describe('mdxToHtml', () => {
     expect(html).toContain('style="min-height:calc(225px + 55cqw)"');
   });
 
+  it('should render a key of the keyboard', () => {
+    expect(mdxToHtml('Press <Kbd>Ctrl</Kbd> + <Kbd>F5</Kbd>')).toMatch(
+      /^<p>Press <kbd class="[^"]*rounded-xs[^"]*">Ctrl<\/kbd> \+ <kbd class="[^"]*">F5<\/kbd><\/p>$/
+    );
+  });
+
   it.each(['Unknown', 'Blockquote', 'SyntaxHighlighter', 'Mermaid'])(
     'should throw on the component %s that is not allowed',
     (component) => {

@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef, ReminderProps } from '@/design-system';
 
 import React from 'react';
 
-import { Icon, Reminder as ReminderBase } from '@/design-system';
+import { Icon, Kbd, Reminder as ReminderBase } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
 
 /**
@@ -101,6 +101,7 @@ export const Tweet: React.FC<TweetProps> = ({ url, author, date, children }) => 
  */
 export const mdxComponents = {
   Figure,
+  Kbd,
   Reminder,
   Tweet,
 };
