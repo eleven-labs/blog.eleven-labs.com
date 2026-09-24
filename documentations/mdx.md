@@ -89,6 +89,16 @@ Et vous, il est comment votre vendredi ? [pic.twitter.com/SFMqKjIGfb](https://t.
 </Tweet>
 ```
 
+Un tweet qui n'est plus disponible, supprimé ou dont le compte est protégé, prend `unavailable` : il reste affiché sous forme de carte, que le script de Twitter ne remplace pas par un avertissement.
+
+```mdx
+<Tweet url="https://twitter.com/cath2nos/status/1047763114161328128" author="Catherine Denos (@cath2nos)" date="4 octobre 2018" unavailable>
+
+Conf suivante, l'UX en Terra Incognita par Sébastien Desbenoit
+
+</Tweet>
+```
+
 Le code d'intégration proposé par Twitter (`<blockquote class="twitter-tweet">` suivi d'un `<script>`) n'est pas à copier, il en fournit les valeurs : `url` est le lien vers le tweet, `author` le texte qui le précède (`Nom (@compte)`) et `date` le texte de ce lien.
 
 ### `YouTube`

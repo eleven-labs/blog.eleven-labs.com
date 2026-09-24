@@ -62,11 +62,28 @@ describe('mdxToHtml', () => {
       ].join('\n')
     );
 
-    expect(html).toContain('<div class="flex flex-col" style="min-height:240px"><blockquote class="twitter-tweet">');
+    expect(html).toContain(
+      '<div class="flex flex-col" style="min-height:240px"><blockquote class="tweet twitter-tweet">'
+    );
     expect(html).toContain('<span class="font-bold">AFUP</span><span class="text-grey"> @afup</span>');
     expect(html).toContain('<p>A <strong>tweet</strong> with a <a href="https://t.co/a"');
     // The Twitter script finds the tweet with the last link of the card
     expect(html).toMatch(/<a href="https:\/\/twitter.com\/afup\/status\/1">7 octobre 2022<\/a><\/p><\/blockquote>/);
+  });
+
+  it('should render an unavailable tweet as a card only, which the Twitter script ignores', () => {
+    const html = mdxToHtml(
+      [
+        '<Tweet url="https://twitter.com/afup/status/1" author="AFUP (@afup)" date="7 octobre 2022" unavailable>',
+        '',
+        'A deleted tweet',
+        '',
+        '</Tweet>',
+      ].join('\n')
+    );
+
+    expect(html).toContain('<div class="flex flex-col"><blockquote class="tweet">');
+    expect(html).not.toContain('twitter-tweet');
   });
 
   it('should reserve the height of the picture of a tweet', () => {

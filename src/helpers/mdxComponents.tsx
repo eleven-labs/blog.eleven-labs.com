@@ -48,6 +48,8 @@ export interface TweetProps {
   url: string;
   author: string;
   date: string;
+  // A tweet that X no longer displays, deleted or protected: the Twitter script would replace it with a notice
+  unavailable?: boolean;
   children?: React.ReactNode;
 }
 
@@ -67,16 +69,20 @@ const getText = (node: React.ReactNode): string =>
  * height of the embed, so that the page barely shifts once the embed displayed: 240px, or 225px plus the picture when
  * the tweet has one (a `pic.twitter.com` link), whose height follows the width of the tweet. These are the lowest
  * heights measured: a taller embed grows the block a little, rather than leaving an empty space under a shorter one.
+ * An unavailable tweet stays the card, which the Twitter script ignores, on the height of its text.
  */
-export const Tweet: React.FC<TweetProps> = ({ url, author, date, children }) => {
+export const Tweet: React.FC<TweetProps> = ({ url, author, date, unavailable, children }) => {
   // `Name (@handle)`, as written by the Twitter embeds
   const [, name = author, handle] = author.match(/^(.*?)\s*\((@[^)]+)\)$/) ?? [];
   const hasPicture = getText(children).includes('pic.twitter.com');
 
   return (
     <div className="@container mx-auto max-w-[550px]">
-      <div className="flex flex-col" style={{ minHeight: hasPicture ? 'calc(225px + 55cqw)' : '240px' }}>
-        <blockquote className="twitter-tweet">
+      <div
+        className="flex flex-col"
+        style={unavailable ? undefined : { minHeight: hasPicture ? 'calc(225px + 55cqw)' : '240px' }}
+      >
+        <blockquote className={cn('tweet', !unavailable && 'twitter-tweet')}>
           <div className="mb-xxs flex items-center justify-between gap-xs">
             <p className="mb-0">
               <span className="font-bold">{name}</span>
