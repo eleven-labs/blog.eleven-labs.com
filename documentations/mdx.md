@@ -37,15 +37,6 @@ graph TD
 ```
 ````
 
-### Image avec légende
-
-Une image suivie d'une ligne `Figure:` :
-
-```md
-![Schéma de l'architecture]({BASE_URL}/imgs/articles/2026-09-24-mon-article/schema.png)
-Figure: *Source : Eleven Labs*
-```
-
 ## Composants disponibles
 
 Seuls les composants suivants sont utilisables, sans import. Tout autre composant, y compris `Blockquote`, `SyntaxHighlighter` ou `Mermaid`, fait échouer la validation : utilisez la syntaxe markdown ci-dessus.
@@ -66,11 +57,21 @@ C'est l'équivalent MDX des admonitions HTML des fichiers `.md` (`<div class="ad
 
 ### `Figure`
 
-Une image et sa légende, lorsque la légende ne tient pas sur la ligne `Figure:` du markdown.
+Une image et sa légende. En MDX, c'est la syntaxe à privilégier plutôt que la ligne `Figure:` du markdown : l'image et sa légende sont regroupées, plus simples à écrire et à relire.
+
+La légende s'écrit entre les balises, en markdown :
+
+```mdx
+<Figure src="{BASE_URL}/imgs/articles/2026-09-24-mon-article/schema.png" alt="Schéma de l'architecture">*Source : [Eleven Labs](https://eleven-labs.com/)*</Figure>
+```
+
+Une légende sans mise en forme peut aussi passer par `caption` :
 
 ```mdx
 <Figure src="{BASE_URL}/imgs/articles/2026-09-24-mon-article/schema.png" alt="Schéma de l'architecture" caption="Source : Eleven Labs" />
 ```
+
+Comme pour une image markdown, `alt` décrit l'image, et les paramètres `maxWidth`, `maxHeight`, `width` et `height` de l'URL la dimensionnent (`schema.png?maxWidth=400`).
 
 ## Différences avec le markdown
 

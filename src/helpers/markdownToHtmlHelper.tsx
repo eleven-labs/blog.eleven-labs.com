@@ -16,7 +16,7 @@ import { unified } from 'unified';
 import { visit } from 'unist-util-visit';
 
 import { Link, Reminder, SyntaxHighlighter } from '@/design-system';
-import { mdxComponents } from '@/helpers/mdxComponents';
+import { ContentImage, mdxComponents } from '@/helpers/mdxComponents';
 import { remarkFigurePlugin } from '@/helpers/remarkPlugins/remarkFigurePlugin';
 import {
   remarkSectionHeadingsPlugin,
@@ -225,21 +225,7 @@ const htmlComponents: NonNullable<ComponentsWithNodeOptions['components']> = {
       <code className="bg-ultra-light-grey px-xxs-2 text-xs text-ultra-dark-grey">{children}</code>
     );
   },
-  img: ({ node, ...props }): React.JSX.Element => {
-    const urlParams = new URLSearchParams(props.src?.split('?')?.[1] ?? '');
-    return React.createElement('img', {
-      // A tutorial gathers all of its steps on one page, its images are only loaded when read
-      loading: 'lazy',
-      decoding: 'async',
-      ...props,
-      style: {
-        maxWidth: urlParams.get('maxWidth') ? `${urlParams.get('maxWidth')}px` : undefined,
-        maxHeight: urlParams.get('maxHeight') ? `${urlParams.get('maxHeight')}px` : undefined,
-        width: urlParams.get('width') ? `${urlParams.get('width')}px` : undefined,
-        height: urlParams.get('height') ? `${urlParams.get('height')}px` : undefined,
-      },
-    });
-  },
+  img: ({ node, ...props }): React.JSX.Element => <ContentImage {...props} />,
   script: ({ node, ...props }): React.JSX.Element | null => {
     if (props.src === 'https://platform.twitter.com/widgets.js') {
       return null;
