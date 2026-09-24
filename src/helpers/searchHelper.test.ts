@@ -116,3 +116,36 @@ describe('createSearchIndex', () => {
     expect(await searchSlugs('symfony', { limit: 2 })).toHaveLength(2);
   });
 });
+
+describe('createSearchIndex with ambiguous words', () => {
+  const searchIndex = createSearchIndex({
+    lang: 'fr',
+    posts: [
+      createPost({ slug: 'go-api', date: '2017-01-01T00:00:00.000Z', title: 'Construire une api en Go' }),
+      createPost({ slug: 'go-hybrid', date: '2022-01-01T00:00:00.000Z', title: 'Should you go hybrid?' }),
+      createPost({ slug: 'iam', date: '2025-01-01T00:00:00.000Z', title: 'IAM aws' }),
+      createPost({
+        slug: 'ia',
+        date: '2012-01-01T00:00:00.000Z',
+        title: 'Retour sur une longue journée de conférences',
+        excerpt: 'Des talks sur le design et la ia générative',
+      }),
+      createPost({ slug: 'react', date: '2019-01-01T00:00:00.000Z', title: 'Une application React' }),
+      createPost({ slug: 're-usage', date: '2025-01-01T00:00:00.000Z', title: 'Le ré-usage du code' }),
+    ],
+  });
+  const searchSlugs = async (term: string): Promise<string[]> =>
+    (await searchIndex.search(term)).map((post) => post.slug);
+
+  it('should rank the posts which name the term before the ones which contain a homonym', async () => {
+    expect(await searchSlugs('go')).toEqual(['go-api', 'go-hybrid']);
+  });
+
+  it('should rank the posts which contain a short word before the ones which only start with it', async () => {
+    expect(await searchSlugs('ia')).toEqual(['ia', 'iam']);
+  });
+
+  it('should not shorten a word being typed', async () => {
+    expect(await searchSlugs('rea')).toEqual(['react']);
+  });
+});
