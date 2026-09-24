@@ -1,5 +1,4 @@
 import type { ComponentsWithNodeOptions } from 'rehype-react/lib/complex-types';
-import type { RehypeRewriteOptions } from 'rehype-rewrite';
 
 import type { ComponentPropsWithoutRef, ReminderVariantType } from '@/design-system';
 
@@ -9,7 +8,6 @@ import * as runtime from 'react/jsx-runtime';
 import ReactDOMServer from 'react-dom/server';
 import rehypeRaw from 'rehype-raw';
 import rehypeReact from 'rehype-react';
-import rehypeRewrite from 'rehype-rewrite';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
@@ -19,7 +17,6 @@ import { visit } from 'unist-util-visit';
 
 import { Link, Reminder, SyntaxHighlighter } from '@/design-system';
 import { mdxComponents } from '@/helpers/mdxComponents';
-import { intersection } from '@/helpers/objectHelper';
 import { remarkFigurePlugin } from '@/helpers/remarkPlugins/remarkFigurePlugin';
 import {
   remarkSectionHeadingsPlugin,
@@ -136,11 +133,30 @@ const rehypeCellAlignToStyle = () => (tree: Parameters<typeof visit>[0]) => {
   });
 };
 
-const tableRewriteOptions: RehypeRewriteOptions = {
-  selector: 'table',
-  rewrite: (node): void => {
-    const table = node as unknown as HastElement;
-    if (!isElement(table, 'table')) {
+/**
+ * Each rewrite is its own plugin: unified keeps a single entry per plugin, so a second `.use()` of a same plugin
+ * overrides the options of the first one instead of adding a pass.
+ */
+const rehypeAdmonitions = () => (tree: Parameters<typeof visit>[0]) => {
+  visit(tree, 'element', (node: HastElement) => {
+    const classNames = (node.properties?.className as string[] | undefined) ?? [];
+    if (node.tagName !== 'div' || !node.properties?.markdown || !classNames.includes('admonition')) {
+      return;
+    }
+
+    // The title is the first element, whatever its class: `admonition-title`, or `admonition-note` in older contents
+    const titleIndex = node.children.findIndex((child) => isElement(child));
+    const [titleNode] = titleIndex === -1 ? [] : node.children.splice(titleIndex, 1);
+    node.properties = {
+      'reminder-variant': getReminderVariantByAdmonitionVariant(classNames[1]),
+      'reminder-title': titleNode ? getNodeText(titleNode).trim() : '',
+    };
+  });
+};
+
+const rehypeTableCellLabels = () => (tree: Parameters<typeof visit>[0]) => {
+  visit(tree, 'element', (table: HastElement) => {
+    if (table.tagName !== 'table') {
       return;
     }
     const head = findChildElement(table, 'thead');
@@ -160,7 +176,7 @@ const tableRewriteOptions: RehypeRewriteOptions = {
         }
       });
     }
-  },
+  });
 };
 
 // Shared by markdown and MDX contents so that the same HTML elements render the same way
@@ -258,7 +274,7 @@ export const mdxToHtml = (content: string, options: Omit<MarkdownToHtmlOptions, 
     ] as NonNullable<Parameters<typeof evaluateSync>[1]['remarkPlugins']>,
     rehypePlugins: [
       rehypeSlug,
-      [rehypeRewrite, tableRewriteOptions],
+      rehypeTableCellLabels,
       rehypeCellAlignToStyle,
     ] as NonNullable<Parameters<typeof evaluateSync>[1]['rehypePlugins']>,
   });
@@ -283,27 +299,8 @@ export const markdownToHtml = (content: string, options: MarkdownToHtmlOptions =
     .use(remark2rehype, { allowDangerousHtml: true })
     .use(rehypeSlug)
     .use(rehypeRaw)
-    .use(rehypeRewrite, {
-      selector: 'div',
-      rewrite: (node): void => {
-        if (node.type === 'element') {
-          const classNames: string[] = (node?.properties?.className as string[]) || [];
-          if (node.properties?.markdown && intersection(['admonition'], classNames).length > 0) {
-            const reminderVariant = getReminderVariantByAdmonitionVariant(classNames[1]);
-            const titleNode = node.children.shift();
-            const reminderTitle =
-              titleNode?.type === 'element'
-                ? titleNode?.children?.map((child) => (child.type === 'text' ? child.value : '')).join()
-                : '';
-            node.properties = {
-              'reminder-variant': reminderVariant,
-              'reminder-title': reminderTitle,
-            };
-          }
-        }
-      },
-    })
-    .use(rehypeRewrite, tableRewriteOptions)
+    .use(rehypeAdmonitions)
+    .use(rehypeTableCellLabels)
     .use(rehypeReact, {
       createElement: React.createElement,
       Fragment: React.Fragment,
