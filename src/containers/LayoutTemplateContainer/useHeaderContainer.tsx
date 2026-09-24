@@ -20,6 +20,7 @@ export const useHeaderContainer = ({ layoutTemplateData }: HeaderContainerProps)
   const searchParams = new URLSearchParams(!IS_SSR ? window.location.search : '');
 
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
+  const [searchIsOpen, setSearchIsOpen] = useState<boolean>(false);
   const [search, setSearch] = React.useState<string>(searchParams.get('search') ?? '');
   const debouncedSearch = useDebounce<string>(search, 500);
   const [searchHits, setSearchHits] = React.useState<AlgoliaPostData[]>([]);
@@ -72,7 +73,17 @@ export const useHeaderContainer = ({ layoutTemplateData }: HeaderContainerProps)
 
   return {
     menuIsOpen: menuIsOpen,
-    onToggleMenu: () => setMenuIsOpen((currentIsOpen) => !currentIsOpen),
+    // Le menu et la recherche occupent tous deux l'espace sous l'en-tête : ouvrir l'un ferme l'autre.
+    onToggleMenu: () => {
+      setMenuIsOpen((currentIsOpen) => !currentIsOpen);
+      setSearchIsOpen(false);
+    },
+    searchIsOpen,
+    searchButtonLabel: t('common.header.search_label_button'),
+    onToggleSearch: () => {
+      setSearchIsOpen((currentIsOpen) => !currentIsOpen);
+      setMenuIsOpen(false);
+    },
     homeLink: {
       hrefLang: i18n.language,
       href: getHomePath(i18n.language),

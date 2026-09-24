@@ -30,17 +30,18 @@ export const enhanceStickyHeader = (): (() => void) => {
     );
   };
 
-  const isMenuOpen = (): boolean => {
-    const menu = header.querySelector<HTMLElement>('[data-header-menu]');
-    return !!menu && window.getComputedStyle(menu).display !== 'none';
-  };
+  // The menu and the search field only show on small screens when the reader opens them
+  const isPanelOpen = (): boolean =>
+    Array.from(header.querySelectorAll<HTMLElement>('[data-header-menu], [data-header-search]')).some(
+      (panel) => window.getComputedStyle(panel).display !== 'none'
+    );
 
   const update = (): void => {
     animationFrame = undefined;
     const scrollY = Math.max(0, window.scrollY);
     const delta = scrollY - lastScrollY;
 
-    if (!smallScreen.matches || scrollY <= header.offsetHeight || isMenuOpen()) {
+    if (!smallScreen.matches || scrollY <= header.offsetHeight || isPanelOpen()) {
       setHidden(false);
     } else if (delta > SCROLL_THRESHOLD || (delta < 0 && Date.now() < anchorScrollUntil)) {
       setHidden(true);

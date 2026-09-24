@@ -33,6 +33,8 @@ const meta: Meta<typeof Header> = {
     },
     autocomplete: AutocompleteStories.default.args as HeaderProps['autocomplete'],
     onToggleMenu: action('toggleMenu'),
+    searchButtonLabel: 'Rechercher un article',
+    onToggleSearch: action('toggleSearch'),
   },
   parameters: {
     layout: 'full',
@@ -50,6 +52,22 @@ export const Overview: Story = {};
 export const WithMenuIsOpen: Story = {
   args: {
     menuIsOpen: true,
+  },
+};
+
+export const WithSearchIsOpen: Story = {
+  args: {
+    searchIsOpen: true,
+  },
+};
+
+export const WithSearchIsOpenAndResult: Story = {
+  args: {
+    searchIsOpen: true,
+    autocomplete: {
+      ...AutocompleteStories.default.args,
+      ...AutocompleteStories.WithResult.args,
+    } as HeaderProps['autocomplete'],
   },
 };
 
