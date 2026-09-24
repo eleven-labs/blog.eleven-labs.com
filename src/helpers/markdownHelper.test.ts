@@ -14,7 +14,6 @@ import {
   validateMarkdown,
   validateMarkdownContent,
   validatePost,
-  validateTags,
 } from './markdownHelper';
 
 vi.mock('node:fs');
@@ -360,16 +359,6 @@ describe('validateMarkdown', () => {
   });
 });
 
-describe('validateTags', () => {
-  it('should generate an error when an img tag is used', () => {
-    const contentInvalid = `<img src="/imgs/articles/test.png" width="300px" alt="title image" />`;
-
-    expect(() => validateTags(contentInvalid)).toThrow(
-      `The img tag are no longer allowed, please use the markdown syntax or the Figure component! ${contentInvalid}`
-    );
-  });
-});
-
 describe('validateExistingAssets', () => {
   it('should throw an error when an asset file does not exist', () => {
     const assetPath = `_assets/articles/test.png`;
@@ -463,7 +452,7 @@ describe('validateMarkdownContent', () => {
     };
 
     expect(() => validateMarkdownContent(options)).toThrow(
-      `The markdown of the file "${options.markdownFilePath}" is invalid! The img tag are no longer allowed, please use the markdown syntax or the Figure component! ${tagInvalid}`
+      `The markdown of the file "${options.markdownFilePath}" is invalid! The HTML element <img> isn't allowed, write it in markdown or with a component of src/helpers/mdxComponents.tsx!`
     );
   });
 
@@ -499,6 +488,24 @@ describe('validateMarkdownContent', () => {
 
     expect(error?.reason).toMatch(/^The MDX doesn't compile!/);
     expect(error?.line).toEqual(3);
+  });
+
+  it('should generate an error with the line of the file when a content holds HTML', () => {
+    let error: MarkdownInvalidError | undefined;
+    try {
+      validateMarkdownContent({
+        markdownFilePath: '/path/to/file.mdx',
+        content: '## Heading\n\nA <b>bold</b> text and `<b>code</b>`',
+        contentLineOffset: 5,
+      });
+    } catch (e) {
+      error = e as MarkdownInvalidError;
+    }
+
+    expect(error?.reason).toEqual(
+      "The HTML element <b> isn't allowed, write it in markdown or with a component of src/helpers/mdxComponents.tsx!"
+    );
+    expect(error?.line).toEqual(8);
   });
 
   it('should validate the headings of an MDX content', () => {

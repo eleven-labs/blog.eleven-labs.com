@@ -8,7 +8,7 @@ L'en-tête (frontmatter) s'écrit en YAML, entre deux lignes `---`, au début du
 
 ## Le markdown d'abord
 
-Tout ce que le markdown sait rendre s'écrit en markdown. N'utilisez un composant que lorsque le markdown n'a pas d'équivalent, et n'écrivez pas de HTML : la validation le signale par un avertissement.
+Tout ce que le markdown sait rendre s'écrit en markdown. N'utilisez un composant que lorsque le markdown n'a pas d'équivalent, et n'écrivez pas de HTML : la validation le refuse.
 
 ### Citation
 
@@ -130,17 +130,16 @@ Une page intégrée, comme une démo CodePen. `src` est l'URL d'intégration fou
 ## Particularités du MDX
 
 - `<` et `{` ouvrent une balise ou une expression : dans le texte, échappez-les (`\<`, `\{`) ou placez-les dans du code.
-- Le HTML est à éviter. Lorsqu'il reste indispensable, pour intégrer un tweet ou une vidéo par exemple, il s'écrit comme en HTML (`class`, `style="…"`) et il est rendu comme le markdown, mais toute balise doit être fermée : `<br />`, `<img />`, `<p>…</p>`.
+- Le HTML n'est pas autorisé, en dehors du code : tweets, vidéos et pages intégrées ont leur composant, et le reste s'écrit en markdown. Dans du code, en ligne ou en bloc, les balises sont libres.
 - Un retour à la ligne se fait par une ligne vide, qui commence un nouveau paragraphe, et non par `<br />`.
-- Une balise de bloc (`<div>`, `<blockquote>`, `<table>`…) qui s'étend sur plusieurs lignes doit être seule sur sa ligne d'ouverture et sur sa ligne de fermeture.
 - Les commentaires s'écrivent `{/* commentaire */}` au lieu de `<!-- commentaire -->`.
 - Il n'y a ni lien automatique entre chevrons (`<https://…>`) ni code indenté : écrivez `[https://…](https://…)` et utilisez un bloc de code entre ` ``` `.
 
 ## Validation
 
-`pnpm validate-markdown`, lancé par la CI, valide l'en-tête, les titres et les images, puis compile chaque fichier `.mdx`. Une syntaxe invalide ou un composant non autorisé fait échouer la validation, avec la ligne et la colonne concernées.
+`pnpm validate-markdown`, lancé par la CI, valide l'en-tête, les titres et les images, puis compile chaque fichier `.mdx`. Une syntaxe invalide, un composant non autorisé ou un élément HTML fait échouer la validation, avec la ligne concernée.
 
-Sans faire échouer la validation, un avertissement signale chaque image sans texte alternatif et chaque élément HTML, avec sa ligne. Dans une pull request, il apparaît en annotation sur le fichier.
+Sans faire échouer la validation, un avertissement signale chaque image sans texte alternatif, avec sa ligne. Dans une pull request, il apparaît en annotation sur le fichier.
 
 ## Ajouter un composant
 

@@ -45,21 +45,6 @@ export class MarkdownInvalidError extends Error {
   }
 }
 
-export const validateTags = (content: string): boolean => {
-  const imgTagMatches = content.match(/`{3}[\s\S]*?`{3}|`{1}[\s\S]*?`{1}|<img[^>]*>/g);
-  if (imgTagMatches) {
-    for (const imgTagMatch of imgTagMatches) {
-      if (!/^`{1,3}/.test(imgTagMatch)) {
-        throw new Error(
-          `The img tag are no longer allowed, please use the markdown syntax or the Figure component! ${imgTagMatch}`
-        );
-      }
-    }
-  }
-
-  return true;
-};
-
 export const validateExistingAssets = (content: string): boolean => {
   const assetRegex = new RegExp('{BASE_URL}\\/imgs\\/[^.]+\\.(jpg|jpeg|png|webp|svg)', 'g');
   const assetMatches = content.match(assetRegex);
@@ -139,16 +124,6 @@ export const getHtmlElements = (content: string): { element: string; line: numbe
   return htmlElements;
 };
 
-export const findHtmlElements = (): { markdownFilePathRelative: string; element: string; line: number }[] =>
-  globSync([`${ARTICLES_DIR}/**/*.mdx`, `${TUTORIALS_DIR}/**/*.mdx`, `${AUTHORS_DIR}/**/*.mdx`])
-    .sort()
-    .flatMap((markdownFilePath) =>
-      getHtmlElements(readFileSync(markdownFilePath, { encoding: 'utf-8' })).map((htmlElement) => ({
-        markdownFilePathRelative: path.relative(process.cwd(), markdownFilePath),
-        ...htmlElement,
-      }))
-    );
-
 export const validateHeaders = (headings: { level: number; text: string }[]): boolean => {
   const minLevel = 2;
   const maxLevel = 5;
@@ -183,7 +158,7 @@ export const validateHeaders = (headings: { level: number; text: string }[]): bo
 export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options: {
   markdownFilePath: string;
   validationSchema: ZodSchema;
-}): TData & { content: string } => {
+}): TData & { content: string; contentLineOffset: number } => {
   const markdownContent = readFileSync(options.markdownFilePath, { encoding: 'utf-8' });
 
   try {
@@ -200,7 +175,12 @@ export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options:
       });
     }
 
-    return { ...result.data, content: frontmatterResult.content };
+    return {
+      ...result.data,
+      content: frontmatterResult.content,
+      // The lines of the frontmatter, before the content
+      contentLineOffset: markdownContent.split('\n').length - frontmatterResult.content.split('\n').length,
+    };
   } catch (error) {
     if (error instanceof MarkdownInvalidError) {
       throw error;
@@ -231,12 +211,25 @@ export const validateMdxContent = (options: { markdownFilePath: string; content:
   }
 };
 
-export const validateMarkdownContent = (options: { markdownFilePath: string; content: string }): string => {
+export const validateMarkdownContent = (options: {
+  markdownFilePath: string;
+  content: string;
+  contentLineOffset?: number;
+}): string => {
   validateMdxContent(options);
+
+  // The contents are written in markdown, with the components of `mdxComponents` when markdown has no equivalent
+  const [htmlElement] = getHtmlElements(options.content);
+  if (htmlElement) {
+    throw new MarkdownInvalidError({
+      markdownFilePath: options.markdownFilePath,
+      reason: `The HTML element ${htmlElement.element} isn't allowed, write it in markdown or with a component of src/helpers/mdxComponents.tsx!`,
+      line: htmlElement.line + (options.contentLineOffset ?? 0),
+    });
+  }
 
   const headers = extractHeaders(options.content);
   try {
-    validateTags(options.content);
     validateExistingAssets(options.content);
     validateHeaders(headers);
   } catch (error) {
@@ -263,7 +256,7 @@ export const validateContentType = <TData>(options: {
     );
   }
 
-  const { content, ...data } = getDataInMarkdownFile<z.infer<typeof options.validationSchema>>({
+  const { content, contentLineOffset, ...data } = getDataInMarkdownFile<z.infer<typeof options.validationSchema>>({
     markdownFilePath: options.markdownFilePath,
     validationSchema: validationSchema,
   });
@@ -273,6 +266,7 @@ export const validateContentType = <TData>(options: {
     content: validateMarkdownContent({
       markdownFilePath: options.markdownFilePath,
       content,
+      contentLineOffset,
     }),
   };
 };
