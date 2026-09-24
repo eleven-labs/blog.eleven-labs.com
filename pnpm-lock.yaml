@@ -252,6 +252,9 @@ importers:
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
+      hastscript:
+        specifier: ^7.2.0
+        version: 7.2.0
       husky:
         specifier: ^9.0.11
         version: 9.1.7

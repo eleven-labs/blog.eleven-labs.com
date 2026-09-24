@@ -61,3 +61,25 @@ describe('mdxToHtml', () => {
     }
   );
 });
+
+describe('mdxToHtml with HTML', () => {
+  const normalize = (html: string): string => html.replace(/^<div>|<\/div>$/g, '').replace(/>\s+</g, '><');
+
+  it.each([
+    ['a link', 'A <a href="https://example.com">link</a> in a sentence.'],
+    ['a table', '<table><tbody><tr><td>a</td></tr></tbody></table>'],
+    ['attributes written as in HTML', '<span class="note" style="color: red">Red</span> text'],
+    ['an iframe', '<iframe width="560" src="https://example.com/embed" frameborder="0" allowfullscreen></iframe>'],
+    ['an inline element on its own line', 'Text\n\n<cite><a href="https://example.com">Source</a></cite>'],
+  ])('should render %s the same way as the markdown', (_, content) => {
+    expect(normalize(mdxToHtml(content))).toEqual(normalize(markdownToHtml(content)));
+  });
+
+  // The markdown renders an empty link followed by an autolinked one
+  it('should render a link whose text is an url as a single link', () => {
+    const html = mdxToHtml('A <a href="https://example.com">https://example.com</a> link');
+
+    expect(html.match(/<a /g)).toHaveLength(1);
+    expect(html).toContain('>https://example.com</a>');
+  });
+});
