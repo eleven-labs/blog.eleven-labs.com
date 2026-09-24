@@ -5,6 +5,7 @@ import { z } from 'zod';
 
 import {
   getDataInMarkdownFile,
+  type MarkdownInvalidError,
   getImagesWithoutAlt,
   validateAuthor,
   validateExistingAssets,
@@ -523,6 +524,38 @@ describe('validateMarkdownContent', () => {
     expect(() => validateMarkdownContent(options)).toThrow(
       `The markdown of the file "${options.markdownFilePath}" is invalid! The img tag are no longer allowed, please use markdown syntax! ${tagInvalid}`
     );
+  });
+
+  it('should validate an MDX content using an allowed component', () => {
+    const content = ['## Heading', '', '<Reminder variant="tip" title="Tip">', '', 'Some **markdown**', '', '</Reminder>'];
+
+    expect(validateMarkdownContent({ markdownFilePath: '/path/to/file.mdx', content: content.join('\n') })).toEqual(
+      content.join('\n')
+    );
+  });
+
+  it('should generate an error when an MDX content uses a component that is not allowed', () => {
+    expect(() =>
+      validateMarkdownContent({ markdownFilePath: '/path/to/file.mdx', content: '## Heading\n\n<Unknown />' })
+    ).toThrow(/The MDX doesn't compile! .*Unknown/);
+  });
+
+  it('should generate an error with its position when an MDX content has an invalid syntax', () => {
+    let error: MarkdownInvalidError | undefined;
+    try {
+      validateMarkdownContent({ markdownFilePath: '/path/to/file.mdx', content: '## Heading\n\nA {broken expression' });
+    } catch (e) {
+      error = e as MarkdownInvalidError;
+    }
+
+    expect(error?.reason).toMatch(/^The MDX doesn't compile!/);
+    expect(error?.line).toEqual(3);
+  });
+
+  it('should validate the headings of an MDX content', () => {
+    const content = '# Title\n\n<Reminder variant="tip" title="Tip">Text</Reminder>';
+
+    expect(() => validateMarkdownContent({ markdownFilePath: '/path/to/file.mdx', content })).toThrow('The h1 "Title" is reserved for the title in the metadata at the top of the markdown!');
   });
 });
 
