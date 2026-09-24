@@ -1,8 +1,9 @@
-import type { ComponentPropsWithoutRef } from '@/design-system';
+import type { ComponentPropsWithoutRef, ReminderProps } from '@/design-system';
 
 import React from 'react';
 
-import { Blockquote, Reminder, SyntaxHighlighter } from '@/design-system';
+import { Blockquote, Reminder as ReminderBase, SyntaxHighlighter } from '@/design-system';
+import { cn } from '@/design-system/helpers/cn';
 
 export interface FigureProps extends ComponentPropsWithoutRef<'figure'> {
   src: string;
@@ -15,6 +16,11 @@ export const Figure: React.FC<FigureProps> = ({ src, alt, caption, children, ...
     <img src={src} alt={alt} loading="lazy" decoding="async" />
     {caption || children ? <figcaption>{caption ?? children}</figcaption> : null}
   </figure>
+);
+
+// Spaced out from the next block, the same way as the admonitions of the markdown
+export const Reminder: React.FC<ReminderProps> = ({ className, ...props }) => (
+  <ReminderBase className={cn('mb-xs', className)} {...props} />
 );
 
 export interface MermaidProps {

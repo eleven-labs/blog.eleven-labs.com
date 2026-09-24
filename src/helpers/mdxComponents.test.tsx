@@ -38,7 +38,7 @@ describe('mdxToHtml', () => {
       'A [link](https://example.com) and `code`.',
       '',
       '| Name | Value |',
-      '| ---- | ----- |',
+      '| ---- | ----: |',
       '| a    | 1     |',
       '',
       '```js',

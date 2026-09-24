@@ -292,10 +292,11 @@ export class DataLoaderProductReviewsLoader implements ProductReviewsLoader {
 }
 ```
 
-<div class="admonition important" markdown="1"><p class="admonition-title">Le contrat de DataLoader</p>
+<Reminder variant="tip" title="Le contrat de DataLoader">
 
 Le tableau retourné doit garder le même ordre que les clés demandées : une position du tableau correspond à une clé donnée, même lorsqu'aucun résultat n'est trouvé. C'est la source d'erreur la plus fréquente lors de l'écriture d'une fonction de batch.
-</div>
+
+</Reminder>
 
 ### Dédupliquer les appels HTTP avec un second DataLoader
 
@@ -377,10 +378,11 @@ Le résultat important est structurel : le nombre d'accès à MongoDB ne dépend
 
 DataLoader est adapté lorsqu'une opération GraphQL résout plusieurs clés individuelles et que la source de données peut répondre à ces clés en lot.
 
-<div class="admonition important" markdown="1"><p class="admonition-title">DataLoader n'est pas un cache applicatif</p>
+<Reminder variant="tip" title="DataLoader n'est pas un cache applicatif">
 
 Son objectif est de limiter les lectures répétées **à l'intérieur d'une même opération GraphQL**. Pour partager des données entre plusieurs requêtes, il faut un cache applicatif avec sa propre stratégie d'invalidation.
-</div>
+
+</Reminder>
 
 Dans d'autres cas, une autre approche peut être plus pertinente :
 

@@ -15,6 +15,7 @@ import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
 import remark2rehype from 'remark-rehype';
 import { unified } from 'unified';
+import { visit } from 'unist-util-visit';
 
 import { Link, Reminder, SyntaxHighlighter } from '@/design-system';
 import { mdxComponents } from '@/helpers/mdxComponents';
@@ -124,6 +125,16 @@ const findChildElement = (node: HastElement, tagName: string): HastElement | und
 
 const getChildElements = (node: HastElement, tagName: string): HastElement[] =>
   node.children.filter((child): child is HastElement => isElement(child, tagName));
+
+// MDX keeps the deprecated `align` attribute of the aligned columns, where the markdown renders an inline style
+const rehypeCellAlignToStyle = () => (tree: Parameters<typeof visit>[0]) => {
+  visit(tree, 'element', (node: HastElement) => {
+    if ((node.tagName === 'th' || node.tagName === 'td') && node.properties?.align) {
+      const { align, ...properties } = node.properties;
+      node.properties = { ...properties, style: `text-align:${align}` };
+    }
+  });
+};
 
 const tableRewriteOptions: RehypeRewriteOptions = {
   selector: 'table',
@@ -245,9 +256,11 @@ export const mdxToHtml = (content: string, options: Omit<MarkdownToHtmlOptions, 
       remarkFigurePlugin,
       remarkGfm,
     ] as NonNullable<Parameters<typeof evaluateSync>[1]['remarkPlugins']>,
-    rehypePlugins: [rehypeSlug, [rehypeRewrite, tableRewriteOptions]] as NonNullable<
-      Parameters<typeof evaluateSync>[1]['rehypePlugins']
-    >,
+    rehypePlugins: [
+      rehypeSlug,
+      [rehypeRewrite, tableRewriteOptions],
+      rehypeCellAlignToStyle,
+    ] as NonNullable<Parameters<typeof evaluateSync>[1]['rehypePlugins']>,
   });
 
   return ReactDOMServer.renderToStaticMarkup(
