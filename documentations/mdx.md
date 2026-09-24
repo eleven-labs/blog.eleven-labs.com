@@ -1,16 +1,14 @@
 # Rédiger un contenu en MDX
 
-Les articles (`_articles`) et les tutoriels (`_tutorials`, fichier `index` et étapes) peuvent être écrits en [MDX](https://mdxjs.com/) : il suffit de donner l'extension `.mdx` au fichier au lieu de `.md`. Le MDX est du markdown dans lequel on peut utiliser des composants React.
-
-Les fichiers `.md` existants restent rendus comme avant, il n'est pas nécessaire de les convertir.
+Les articles (`_articles`), les tutoriels (`_tutorials`, fichier `index` et étapes) et les fiches auteur (`_authors`) s'écrivent en [MDX](https://mdxjs.com/), avec l'extension `.mdx`. Le MDX est du markdown dans lequel on peut utiliser des composants React. Un fichier `.md` est refusé par la validation.
 
 ## En-tête
 
-L'en-tête (frontmatter) est identique à celui d'un fichier `.md` et il est validé de la même manière.
+L'en-tête (frontmatter) s'écrit en YAML, entre deux lignes `---`, au début du fichier.
 
 ## Le markdown d'abord
 
-Un fichier `.mdx` s'écrit comme un fichier `.md` : tout ce que le markdown sait déjà rendre s'écrit en markdown, et le rendu est identique à celui d'un article `.md`. N'utilisez un composant que lorsque le markdown n'a pas d'équivalent.
+Tout ce que le markdown sait rendre s'écrit en markdown. N'utilisez un composant que lorsque le markdown n'a pas d'équivalent.
 
 ### Citation
 
@@ -53,11 +51,9 @@ Le contenu est du **markdown** : laissez une ligne vide après la balise ouvrant
 </Reminder>
 ```
 
-C'est l'équivalent MDX des admonitions HTML des fichiers `.md` (`<div class="admonition tip" markdown="1">`).
-
 ### `Figure`
 
-Une image et sa légende. En MDX, c'est la syntaxe à privilégier plutôt que la ligne `Figure:` du markdown : l'image et sa légende sont regroupées, plus simples à écrire et à relire.
+Une image et sa légende, regroupées pour être plus simples à écrire et à relire.
 
 La légende s'écrit entre les balises, en markdown :
 
@@ -73,16 +69,17 @@ Une légende sans mise en forme peut aussi passer par `caption` :
 
 Comme pour une image markdown, `alt` décrit l'image, et les paramètres `maxWidth`, `maxHeight`, `width` et `height` de l'URL la dimensionnent (`schema.png?maxWidth=400`).
 
-## Différences avec le markdown
+## Particularités du MDX
 
-- `<` et `{` ouvrent une balise ou une expression en MDX : dans le texte, échappez-les (`\<`, `\{`) ou placez-les dans du code.
-- Le HTML est interprété comme du JSX : utilisez `className` au lieu de `class` et fermez les balises vides (`<br />`).
-- Les admonitions en HTML (`<div class="admonition tip" markdown="1">`) ne sont pas prises en charge : utilisez le composant `Reminder`.
+- `<` et `{` ouvrent une balise ou une expression : dans le texte, échappez-les (`\<`, `\{`) ou placez-les dans du code.
+- Le HTML s'écrit comme en HTML (`class`, `style="…"`) et il est rendu comme le markdown, mais toute balise doit être fermée : `<br />`, `<img />`, `<p>…</p>`.
+- Une balise de bloc (`<div>`, `<blockquote>`, `<table>`…) qui s'étend sur plusieurs lignes doit être seule sur sa ligne d'ouverture et sur sa ligne de fermeture.
 - Les commentaires s'écrivent `{/* commentaire */}` au lieu de `<!-- commentaire -->`.
+- Il n'y a ni lien automatique entre chevrons (`<https://…>`) ni code indenté : écrivez `[https://…](https://…)` et utilisez un bloc de code entre ` ``` `.
 
 ## Validation
 
-`pnpm validate-markdown`, lancé par la CI, compile chaque fichier `.mdx` en plus des vérifications déjà faites sur le markdown. Une syntaxe invalide ou un composant non autorisé est signalé avec la ligne et la colonne concernées.
+`pnpm validate-markdown`, lancé par la CI, valide l'en-tête, les titres et les images, puis compile chaque fichier `.mdx`. Une syntaxe invalide ou un composant non autorisé est signalé avec la ligne et la colonne concernées.
 
 ## Ajouter un composant
 

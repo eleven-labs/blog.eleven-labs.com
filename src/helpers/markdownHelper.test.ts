@@ -67,7 +67,7 @@ slug: example-title
 ---
 This is the content`);
 
-    const markdownFilePath = '/path/to/dir/valid-file.md';
+    const markdownFilePath = '/path/to/dir/valid-file.mdx';
     expect(
       getDataInMarkdownFile({
         markdownFilePath,
@@ -81,77 +81,6 @@ This is the content`);
     expect(fs.readFileSync).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 
-  test.each([
-    {
-      content: `---
-title: Example Title
-date: 2023-06-13
----
-
-This is the content with a disallowed syntax {:{key}}`,
-      syntaxInvalid: '{:{key}}',
-    },
-    {
-      content: `---
-title: Example Title
-date: 2023-06-13
----
-
-[Eleven Labs Link](https://eleven-labs.com/){:rel="nofollow noreferrer"}`,
-      syntaxInvalid: '{:rel="nofollow noreferrer"}',
-    },
-    {
-      content: `---
-title: Example Title
-date: 2023-06-13
----
-
-{% raw %}
-\`\`\`js
-const world = 'hello';
-\`\`\`
-{% endraw %}`,
-      syntaxInvalid: '{% raw %}',
-    },
-  ])('should throw an error if markdown contains disallowed syntax', ({ content, syntaxInvalid }) => {
-    vi.mocked(fs.readFileSync).mockReturnValueOnce(content);
-
-    const markdownFilePath = '/path/to/dir/invalid-file-with-markdown-contains-disallowed-syntax.md';
-    expect(() =>
-      getDataInMarkdownFile({
-        markdownFilePath,
-        validationSchema,
-      })
-    ).toThrow(
-      `The markdown of the file "${markdownFilePath}" is invalid! The syntax isn't allowed, please use valid markdown syntax! ${syntaxInvalid}`
-    );
-    expect(fs.readFileSync).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
-  });
-
-  it('should not throw an error if markdown contains disallowed syntax in code', () => {
-    vi.mocked(fs.readFileSync).mockReturnValueOnce(`---
-title: Example Title
-date: 2023-06-13
----
-
-\`\`\`js
-const world = 'hello';
-{% raw %}test{% endraw %}
-\`\`\`
-contient | \`{% raw %}{{{% endraw %}\` \`{% raw %}}}{% endraw %}\` | \`{% raw %}param{{value}}{% endraw %}\` | X | X |  | X |`);
-
-    const markdownFilePath = '/path/to/dir/valid-file-with-markdown.md';
-    expect(() =>
-      getDataInMarkdownFile({
-        markdownFilePath,
-        validationSchema,
-      })
-    ).not.toThrow(
-      `The markdown of the file "${markdownFilePath}" is invalid! The syntax isn't allowed, please use valid markdown syntax! {% raw %}`
-    );
-    expect(fs.readFileSync).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
-  });
-
   it('should throw an error if frontmatter data is invalid', () => {
     vi.mocked(fs.readFileSync).mockReturnValueOnce(`---
 title: Example Title
@@ -160,7 +89,7 @@ date: invalid-date
 
 This is the content`);
 
-    const markdownFilePath = '/path/to/dir/invalid-file-with-validation-schema.md';
+    const markdownFilePath = '/path/to/dir/invalid-file-with-validation-schema.mdx';
     expect(() => {
       getDataInMarkdownFile({
         markdownFilePath,
@@ -183,7 +112,7 @@ description: ->
 
 This is the content`);
 
-    const markdownFilePath = '/path/to/dir/invalid-file-syntax.md';
+    const markdownFilePath = '/path/to/dir/invalid-file-syntax.mdx';
     expect(() => {
       getDataInMarkdownFile({
         markdownFilePath,
@@ -207,7 +136,7 @@ linkedin: account-Linkedin
 ---
 This is some valid content`);
 
-    const markdownFilePath = '/path/to/dir/invalid-author.md';
+    const markdownFilePath = '/path/to/dir/invalid-author.mdx';
     expect(() => validateAuthor({ markdownFilePath })).toThrow(
       `The markdown of the file "${markdownFilePath}" is invalid! Required at "name"`
     );
@@ -225,7 +154,7 @@ linkedin: https://www.linkedin.com/in/account-Linkedin/
 ---
 This is some valid content`);
 
-    const markdownFilePath = '/path/to/dir/invalid-author-social-networks.md';
+    const markdownFilePath = '/path/to/dir/invalid-author-social-networks.mdx';
     expect(() => validateAuthor({ markdownFilePath })).toThrow(
       `The markdown of the file "${markdownFilePath}" is invalid! No need to set the "@" for twitter, just the username. at "twitter"; No need to define the complete url of github, just give the user name at "github"; No need to define the complete url of linkedin, just give the user name at "linkedin"`
     );
@@ -235,7 +164,7 @@ This is some valid content`);
   it('should return valid data and content if markdown is valid', () => {
     vi.mocked(fs.readFileSync).mockReturnValueOnce(markdownContentValidAuthor);
 
-    const markdownFilePath = '/path/to/dir/valid-author.md';
+    const markdownFilePath = '/path/to/dir/valid-author.mdx';
     expect(validateAuthor({ markdownFilePath })).toEqual({
       contentType: 'author',
       username: 'jdoe',
@@ -264,7 +193,7 @@ categories:
 ---
 This is some valid content`);
 
-    const markdownFilePath = '/path/to/dir/invalid-post.md';
+    const markdownFilePath = '/path/to/dir/invalid-post.mdx';
     expect(() =>
       validatePost({
         authors: ['jdoe', 'jdupont'],
@@ -291,7 +220,7 @@ keywords:
 ---
 This is some valid content`);
 
-    const markdownFilePath = '/path/to/dir/invalid-post-keyword-includes-in-categories.md';
+    const markdownFilePath = '/path/to/dir/invalid-post-keyword-includes-in-categories.mdx';
     expect(() =>
       validatePost({
         authors: ['jdoe', 'jdupont'],
@@ -328,7 +257,7 @@ keywords:
 ---
 Some content`);
 
-    const markdownFilePath = '/path/to/dir/invalid-post-too-many-keywords.md';
+    const markdownFilePath = '/path/to/dir/invalid-post-too-many-keywords.mdx';
     expect(() =>
       validatePost({
         authors: ['jdoe', 'jdupont'],
@@ -356,7 +285,7 @@ keywords:
 ---
 Some content`);
 
-    const markdownFilePath = '/path/to/dir/invalid-post-duplicates-keywords.md';
+    const markdownFilePath = '/path/to/dir/invalid-post-duplicates-keywords.mdx';
     expect(() =>
       validatePost({
         authors: ['jdoe', 'jdupont'],
@@ -369,7 +298,7 @@ Some content`);
   it('should return valid data and content if markdown is valid', () => {
     vi.mocked(fs.readFileSync).mockReturnValueOnce(markdownContentValidArticle);
 
-    const markdownFilePath = '/path/to/dir/valid-post.md';
+    const markdownFilePath = '/path/to/dir/valid-post.mdx';
     expect(
       validatePost({
         authors: ['jdoe', 'jdupont'],
@@ -391,21 +320,32 @@ Some content`);
 });
 
 describe('validateMarkdown', () => {
+  it('should throw an error if a content is still written in markdown', () => {
+    vi.mocked(glob.globSync).mockReturnValueOnce(['/path/to/dir/article.md']);
+
+    expect(() => validateMarkdown()).toThrow(
+      'The markdown of the file "/path/to/dir/article.md" is invalid! The markdown contents are no longer supported, rename the file with the .mdx extension!'
+    );
+  });
+
   it('should throw an error if an author already exists with the same username', () => {
-    vi.mocked(glob.globSync).mockReturnValueOnce(['/path/to/dir/valid-author.md', '/path/to/dir/valid-author.md']);
+    vi.mocked(glob.globSync)
+      .mockReturnValueOnce([])
+      .mockReturnValueOnce(['/path/to/dir/valid-author.mdx', '/path/to/dir/valid-author.mdx']);
     vi.mocked(fs.readFileSync)
       .mockReturnValueOnce(markdownContentValidAuthor)
       .mockReturnValueOnce(markdownContentValidAuthor);
 
     expect(() => validateMarkdown()).toThrow('This author already exists with the same username!');
-    expect(fs.readFileSync).toHaveBeenCalledWith('/path/to/dir/valid-author.md', { encoding: 'utf-8' });
-    expect(fs.readFileSync).toHaveBeenCalledWith('/path/to/dir/valid-author.md', { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith('/path/to/dir/valid-author.mdx', { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith('/path/to/dir/valid-author.mdx', { encoding: 'utf-8' });
   });
 
   it('should throw an error if an article already exists with the same slug and language', () => {
     vi.mocked(glob.globSync)
-      .mockReturnValueOnce(['/path/to/dir/valid-author.md'])
-      .mockReturnValueOnce(['/path/to/dir/valid-post.md', '/path/to/dir/valid-post.md']);
+      .mockReturnValueOnce([])
+      .mockReturnValueOnce(['/path/to/dir/valid-author.mdx'])
+      .mockReturnValueOnce(['/path/to/dir/valid-post.mdx', '/path/to/dir/valid-post.mdx']);
 
     vi.mocked(fs.readFileSync)
       .mockReturnValueOnce(markdownContentValidAuthor)
@@ -413,9 +353,9 @@ describe('validateMarkdown', () => {
       .mockReturnValueOnce(markdownContentValidArticle);
 
     expect(() => validateMarkdown()).toThrow('This article already exists with the same slug and the same language!');
-    expect(fs.readFileSync).toHaveBeenCalledWith('/path/to/dir/valid-author.md', { encoding: 'utf-8' });
-    expect(fs.readFileSync).toHaveBeenCalledWith('/path/to/dir/valid-post.md', { encoding: 'utf-8' });
-    expect(fs.readFileSync).toHaveBeenCalledWith('/path/to/dir/valid-post.md', { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith('/path/to/dir/valid-author.mdx', { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith('/path/to/dir/valid-post.mdx', { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith('/path/to/dir/valid-post.mdx', { encoding: 'utf-8' });
   });
 });
 
@@ -424,7 +364,7 @@ describe('validateTags', () => {
     const contentInvalid = `<img src="/imgs/articles/test.png" width="300px" alt="title image" />`;
 
     expect(() => validateTags(contentInvalid)).toThrow(
-      `The img tag are no longer allowed, please use markdown syntax! ${contentInvalid}`
+      `The img tag are no longer allowed, please use the markdown syntax or the Figure component! ${contentInvalid}`
     );
   });
 });
@@ -517,17 +457,25 @@ describe('validateMarkdownContent', () => {
   it('should generate an error when an img tag is used', () => {
     const tagInvalid = '<img src="/imgs/articles/test.png" width="300px" alt="title image" />';
     const options = {
-      markdownFilePath: '/path/to/some/file.md',
+      markdownFilePath: '/path/to/some/file.mdx',
       content: ['## heading 1', tagInvalid].join('\n'),
     };
 
     expect(() => validateMarkdownContent(options)).toThrow(
-      `The markdown of the file "${options.markdownFilePath}" is invalid! The img tag are no longer allowed, please use markdown syntax! ${tagInvalid}`
+      `The markdown of the file "${options.markdownFilePath}" is invalid! The img tag are no longer allowed, please use the markdown syntax or the Figure component! ${tagInvalid}`
     );
   });
 
   it('should validate an MDX content using an allowed component', () => {
-    const content = ['## Heading', '', '<Reminder variant="tip" title="Tip">', '', 'Some **markdown**', '', '</Reminder>'];
+    const content = [
+      '## Heading',
+      '',
+      '<Reminder variant="tip" title="Tip">',
+      '',
+      'Some **markdown**',
+      '',
+      '</Reminder>',
+    ];
 
     expect(validateMarkdownContent({ markdownFilePath: '/path/to/file.mdx', content: content.join('\n') })).toEqual(
       content.join('\n')
@@ -555,7 +503,9 @@ describe('validateMarkdownContent', () => {
   it('should validate the headings of an MDX content', () => {
     const content = '# Title\n\n<Reminder variant="tip" title="Tip">Text</Reminder>';
 
-    expect(() => validateMarkdownContent({ markdownFilePath: '/path/to/file.mdx', content })).toThrow('The h1 "Title" is reserved for the title in the metadata at the top of the markdown!');
+    expect(() => validateMarkdownContent({ markdownFilePath: '/path/to/file.mdx', content })).toThrow(
+      'The h1 "Title" is reserved for the title in the metadata at the top of the markdown!'
+    );
   });
 });
 
@@ -571,6 +521,19 @@ describe('getImagesWithoutAlt', () => {
     expect(getImagesWithoutAlt(content)).toEqual([
       { image: '![]({BASE_URL}/imgs/articles/post/undescribed.png)', line: 3 },
       { image: '![ ]({BASE_URL}/imgs/articles/post/blank.png?width=500)', line: 4 },
+    ]);
+  });
+
+  it('should list the figures without alternative text', () => {
+    const content = [
+      '<Figure src="{BASE_URL}/imgs/described.png" alt="A described image">Caption</Figure>',
+      '<Figure src="{BASE_URL}/imgs/undescribed.png" alt="">Caption</Figure>',
+      '<Figure src="{BASE_URL}/imgs/missing.png" caption="Caption" />',
+    ].join('\n');
+
+    expect(getImagesWithoutAlt(content)).toEqual([
+      { image: '<Figure src="{BASE_URL}/imgs/undescribed.png" alt="">', line: 2 },
+      { image: '<Figure src="{BASE_URL}/imgs/missing.png" caption="Caption" />', line: 3 },
     ]);
   });
 

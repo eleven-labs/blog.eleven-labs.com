@@ -19,7 +19,7 @@ import {
   TutorialStepDataValidationSchema,
 } from '@/config/schemaValidation';
 import { extractHeaders } from '@/helpers/markdownContentManagerHelper';
-import { getContentFormat, mdxToHtml } from '@/helpers/markdownToHtmlHelper';
+import { mdxToHtml } from '@/helpers/markdownToHtmlHelper';
 import { capitalize } from '@/helpers/stringHelper';
 
 export class MarkdownInvalidError extends Error {
@@ -45,7 +45,9 @@ export const validateTags = (content: string): boolean => {
   if (imgTagMatches) {
     for (const imgTagMatch of imgTagMatches) {
       if (!/^`{1,3}/.test(imgTagMatch)) {
-        throw new Error(`The img tag are no longer allowed, please use markdown syntax! ${imgTagMatch}`);
+        throw new Error(
+          `The img tag are no longer allowed, please use the markdown syntax or the Figure component! ${imgTagMatch}`
+        );
       }
     }
   }
@@ -82,8 +84,14 @@ export const getImagesWithoutAlt = (content: string): { image: string; line: num
     if (isInCodeBlock) {
       return;
     }
-    for (const match of lineContent.replace(/`[^`]*`/g, '').matchAll(/!\[\s*\]\([^)]*\)/g)) {
+    const lineWithoutCode = lineContent.replace(/`[^`]*`/g, '');
+    for (const match of lineWithoutCode.matchAll(/!\[\s*\]\([^)]*\)/g)) {
       imagesWithoutAlt.push({ image: match[0], line: index + 1 });
+    }
+    for (const match of lineWithoutCode.matchAll(/<Figure\b[^>]*>/g)) {
+      if (!/\balt=("\s*[^"\s][^"]*"|\{[^}]+\})/.test(match[0])) {
+        imagesWithoutAlt.push({ image: match[0], line: index + 1 });
+      }
     }
   });
 
@@ -92,9 +100,9 @@ export const getImagesWithoutAlt = (content: string): { image: string; line: num
 
 export const findImagesWithoutAlt = (): { markdownFilePathRelative: string; image: string; line: number }[] =>
   [
-    ...globSync(`${ARTICLES_DIR}/**/*.{md,mdx}`),
-    ...globSync(`${TUTORIALS_DIR}/**/index.{md,mdx}`),
-    ...globSync(`${TUTORIALS_DIR}/**/steps/*.{md,mdx}`),
+    ...globSync(`${ARTICLES_DIR}/**/*.mdx`),
+    ...globSync(`${TUTORIALS_DIR}/**/index.mdx`),
+    ...globSync(`${TUTORIALS_DIR}/**/steps/*.mdx`),
   ]
     .sort()
     .flatMap((markdownFilePath) =>
@@ -140,18 +148,6 @@ export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options:
   validationSchema: ZodSchema;
 }): TData & { content: string } => {
   const markdownContent = readFileSync(options.markdownFilePath, { encoding: 'utf-8' });
-
-  const invalidSyntaxMatches = markdownContent.match(/`{1,3}[\s\S]*?`{1,3}|{% raw %}|{% endraw %}|{:[^}]+}}?/g);
-  if (invalidSyntaxMatches) {
-    for (const invalidSyntaxMatch of invalidSyntaxMatches) {
-      if (!/^`{1,3}/.test(invalidSyntaxMatch)) {
-        throw new MarkdownInvalidError({
-          markdownFilePath: options.markdownFilePath,
-          reason: `The syntax isn't allowed, please use valid markdown syntax! ${invalidSyntaxMatch}`,
-        });
-      }
-    }
-  }
 
   try {
     const frontmatterResult = matter(markdownContent);
@@ -199,12 +195,9 @@ export const validateMdxContent = (options: { markdownFilePath: string; content:
 };
 
 export const validateMarkdownContent = (options: { markdownFilePath: string; content: string }): string => {
-  const format = getContentFormat(options.markdownFilePath);
-  if (format === 'mdx') {
-    validateMdxContent(options);
-  }
+  validateMdxContent(options);
 
-  const headers = extractHeaders(options.content, format);
+  const headers = extractHeaders(options.content);
   try {
     validateTags(options.content);
     validateExistingAssets(options.content);
@@ -294,9 +287,21 @@ export const validateTutorialStep = (options: {
   });
 
 export const validateMarkdown = (): boolean => {
-  const authorMarkdownFilePaths = globSync(`${AUTHORS_DIR}/**/*.{md,mdx}`);
-  const articleMarkdownFilePaths = globSync(`${ARTICLES_DIR}/**/*.{md,mdx}`);
-  const tutorialMarkdownFilePaths = globSync(`${TUTORIALS_DIR}/**/index.{md,mdx}`);
+  const [markdownFilePath] = globSync([
+    `${AUTHORS_DIR}/**/*.md`,
+    `${ARTICLES_DIR}/**/*.md`,
+    `${TUTORIALS_DIR}/**/*.md`,
+  ]);
+  if (markdownFilePath) {
+    throw new MarkdownInvalidError({
+      markdownFilePath,
+      reason: 'The markdown contents are no longer supported, rename the file with the .mdx extension!',
+    });
+  }
+
+  const authorMarkdownFilePaths = globSync(`${AUTHORS_DIR}/**/*.mdx`);
+  const articleMarkdownFilePaths = globSync(`${ARTICLES_DIR}/**/*.mdx`);
+  const tutorialMarkdownFilePaths = globSync(`${TUTORIALS_DIR}/**/index.mdx`);
 
   const authors: string[] = [];
 
@@ -333,9 +338,7 @@ export const validateMarkdown = (): boolean => {
       markdownFilePath,
       authors: authors as [string, ...string[]],
     });
-    const tutorialStepsMarkdownFilePaths = globSync(
-      path.resolve(path.dirname(markdownFilePath), 'steps', '**.{md,mdx}')
-    );
+    const tutorialStepsMarkdownFilePaths = globSync(path.resolve(path.dirname(markdownFilePath), 'steps', '**.mdx'));
     for (const tutorialStepMarkdownFilePath of tutorialStepsMarkdownFilePaths) {
       validateTutorialStep({
         markdownFilePath: tutorialStepMarkdownFilePath,
