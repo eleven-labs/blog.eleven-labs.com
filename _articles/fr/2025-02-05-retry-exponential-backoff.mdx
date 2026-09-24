@@ -21,11 +21,11 @@ seo:
 
 Il arrive qu'une fonction ou action ne puisse pas être réalisée a un instant donné. Cela peut être dû à plusieurs facteurs qui ne sont pas maîtrisés. Il est alors possible d'effectuer une nouvelle tentative plus tard. Cependant, réessayer toutes les x secondes n'est pas souhaitable car il est possible que l'action appelée ne soit pas encore disponible. On veut alors donner plus de temps à chaque tentative, on définit alors un délai d'attente qui augmente de façon exponentielle (en anglais: _retries with exponential backoff_).
 
-Sans rentrer dans les détails mathématiques, soit _x_ la tentative en cours, alors nous avons _e<sup>x</sup>_ le nombre de secondes à attendre avant la prochaine tentative. _e_ étant [le nombre d'Euler](https://www.nagwa.com/fr/explainers/656149079142/) élevé à la puissance _x_. Par simplification, le nombre d'Euler peut valoir environ ~2.718281. 
+Sans rentrer dans les détails mathématiques, soit _x_ la tentative en cours, alors nous avons _eˣ_ le nombre de secondes à attendre avant la prochaine tentative. _e_ étant [le nombre d'Euler](https://www.nagwa.com/fr/explainers/656149079142/) élevé à la puissance _x_. Par simplification, le nombre d'Euler peut valoir environ ~2.718281. 
 
 Python permet d'effectuer ce calcul via la bibliothèque standard `math` avec la fonction [`exp()`](https://docs.python.org/3/library/math.html#math.exp).
 
-Ecrivons la fonction de base qui permet d'attendre _e<sup>x</sup>_ secondes. Cette fonction peut s'écrire de façon procédurale ou récursive. Nous allons opter pour une fonction récursive. Il faudra définir une condition d'arrêt : quand le nombre de tentatives atteint le nombre maximal de tentatives attendues.
+Ecrivons la fonction de base qui permet d'attendre _eˣ_ secondes. Cette fonction peut s'écrire de façon procédurale ou récursive. Nous allons opter pour une fonction récursive. Il faudra définir une condition d'arrêt : quand le nombre de tentatives atteint le nombre maximal de tentatives attendues.
 
 ```python
 import math
