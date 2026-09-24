@@ -220,7 +220,7 @@ Imaginons que varnish a la page dans son cache, si un utilisateur arrive à la 2
 
 > Mais que se passe t-il à la 301ème seconde ?
 
-S'il n'y avait pas le Grace, <span class="s1">varnish serait obligé d'appeler directement le serveur pour obtenir la réponse à renvoyer à l'utilisateur.</span> Mais avec le Grace, varnish va renvoyer son cache et demander au serveur un nouveau contenu, ce qui permet de ne pas avoir de temps de latence pour l'utilisateur.
+S'il n'y avait pas le Grace, varnish serait obligé d'appeler directement le serveur pour obtenir la réponse à renvoyer à l'utilisateur. Mais avec le Grace, varnish va renvoyer son cache et demander au serveur un nouveau contenu, ce qui permet de ne pas avoir de temps de latence pour l'utilisateur.
 
 > Et maintenant à la 601ème seconde ?
 

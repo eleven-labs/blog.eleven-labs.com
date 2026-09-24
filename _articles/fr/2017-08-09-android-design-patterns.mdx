@@ -130,13 +130,13 @@ Au final, si l'on veut respecter scrupuleusement cette implémentation, on se re
 
 ![MVC / MVP Android]({BASE_URL}/imgs/articles/2017-08-02-android-design-pattern/mvp-mvc-android.jpg)
 
-<span style="color:green">+</span>
+✅
 ----------
  - Le SDK nous fournit déjà un projet tout prêt pour du MVC
  - Il s'agit d'un des Patterns les plus connus et donc très bien documenté, utilisé etc...
  - Il empêche la création de "god" application, voire de "god" classe
 
-<span style="color:red">-</span>
+❌
 ----------
  - Comme on a vu plus haut, son respect le plus strict peut s'avérer compliqué.
  - Il centralise énormément l'aspect "fonctionnel" de l'application (seul le contrôleur sait ce qui doit être fait)
@@ -178,13 +178,13 @@ La présentation, c'est-à-dire celle qui va indiquer quel contenu mettre dans q
 
 > Sans s'en rendre compte, la plupart des projets respectent plus le MVP que le MVC car il est plus naturel de laisser l'Activity gérer ce qui doit être affiché que d'essayer de lier la vue et son modèle.
 
-<span style="color:green">+</span>
+✅
 ----------
  - Les mêmes point positifs que le MVC
  - Il supprime une des grosses contraintes du MVC (à savoir le lien entre la vue et le modèle) et épouse beaucoup plus l'architecture de base d'Android
  - Il peut amener à respecter encore plus les principes [SOLID](https://fr.wikipedia.org/wiki/SOLID_(informatique))
 
-<span style="color:red">-</span>
+❌
 ----------
  - La logique de l'application est encore plus concentrée dans la présentation
  - La vue et le modèle ne sont plus que des "squelettes" et ne contiennent que très peu, voire pas de logique
@@ -284,14 +284,14 @@ protected void onCreate(Bundle savedInstanceState) {
 ```
 L'un des avantages de cette approche est de proposer du code plus clair et lisible en définissant le rôle de chaque partie très clairement et ce jusqu'au XML.
 
-<span style="color:green">+</span>
+✅
 ----------
  - Notre .XML est bien plus intelligent et clair
  - Moins de code Boiler Plate avec l'absence des `findViewById`.
  - Il permet l'utilisation des [Binding Adapter](https://developer.android.com/reference/android/databinding/BindingAdapter.html)
  - Grâce à l'utilisation de `BaseObservable`, on peut rafraîchir la vue dès que le ViewModel subit un changement, ce qui évite toute gestion manuelle du rafraîchissement.
 
-<span style="color:red">-</span>
+❌
 ----------
  - Approche complètement différente des Design Patterns qui peut perturber.
  - Sur un projet existant, une migration s'impose voir une refonte, ce qui peut prendre du temps.
