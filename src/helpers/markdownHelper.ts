@@ -7,6 +7,11 @@ import { globSync } from 'glob';
 import matter from 'gray-matter';
 import { existsSync, readFileSync } from 'node:fs';
 import * as path from 'path';
+import remarkGfm from 'remark-gfm';
+import remarkMdx from 'remark-mdx';
+import remarkParse from 'remark-parse';
+import { unified } from 'unified';
+import { SKIP, visit } from 'unist-util-visit';
 import { z } from 'zod';
 import { fromZodError } from 'zod-validation-error';
 
@@ -109,6 +114,38 @@ export const findImagesWithoutAlt = (): { markdownFilePathRelative: string; imag
       getImagesWithoutAlt(readFileSync(markdownFilePath, { encoding: 'utf-8' })).map((imageWithoutAlt) => ({
         markdownFilePathRelative: path.relative(process.cwd(), markdownFilePath),
         ...imageWithoutAlt,
+      }))
+    );
+
+/**
+ * The contents are written in markdown, with the components of `mdxComponents` when markdown has no equivalent: the
+ * HTML elements (lowercase JSX) are listed with their line, the elements they contain being part of them.
+ */
+export const getHtmlElements = (content: string): { element: string; line: number }[] => {
+  // The frontmatter is blanked rather than removed, so that the lines stay the ones of the file
+  const markdown = content.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, (frontmatter) =>
+    frontmatter.replace(/[^\n]/g, '')
+  );
+  const tree = unified().use(remarkParse).use(remarkMdx).use(remarkGfm).parse(markdown);
+  const htmlElements: { element: string; line: number }[] = [];
+  visit(tree, (node) => {
+    const { type, name, position } = node as typeof node & { name?: string | null };
+    if ((type === 'mdxJsxFlowElement' || type === 'mdxJsxTextElement') && name && /^[a-z]/.test(name)) {
+      htmlElements.push({ element: `<${name}>`, line: position?.start.line ?? 0 });
+      return SKIP;
+    }
+  });
+
+  return htmlElements;
+};
+
+export const findHtmlElements = (): { markdownFilePathRelative: string; element: string; line: number }[] =>
+  globSync([`${ARTICLES_DIR}/**/*.mdx`, `${TUTORIALS_DIR}/**/*.mdx`, `${AUTHORS_DIR}/**/*.mdx`])
+    .sort()
+    .flatMap((markdownFilePath) =>
+      getHtmlElements(readFileSync(markdownFilePath, { encoding: 'utf-8' })).map((htmlElement) => ({
+        markdownFilePathRelative: path.relative(process.cwd(), markdownFilePath),
+        ...htmlElement,
       }))
     );
 

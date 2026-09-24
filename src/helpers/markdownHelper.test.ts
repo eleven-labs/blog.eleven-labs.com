@@ -5,6 +5,7 @@ import { z } from 'zod';
 
 import {
   getDataInMarkdownFile,
+  getHtmlElements,
   type MarkdownInvalidError,
   getImagesWithoutAlt,
   validateAuthor,
@@ -541,5 +542,30 @@ describe('getImagesWithoutAlt', () => {
     const content = ['```markdown', '![](image.png)', '```', 'Use `![](image.png)` to add an image'].join('\n');
 
     expect(getImagesWithoutAlt(content)).toEqual([]);
+  });
+});
+
+describe('getHtmlElements', () => {
+  it('should list the HTML elements with the line of the file', () => {
+    const content = [
+      '---',
+      'title: Title',
+      '---',
+      '## Title',
+      'A <b>bold</b> text and a <Reminder variant="tip" title="Tip">component</Reminder>',
+      '',
+      '<blockquote class="twitter-tweet"><p>Tweet <a href="https://twitter.com">link</a></p></blockquote>',
+    ].join('\n');
+
+    expect(getHtmlElements(content)).toEqual([
+      { element: '<b>', line: 5 },
+      { element: '<blockquote>', line: 7 },
+    ]);
+  });
+
+  it('should ignore the HTML inside code', () => {
+    const content = ['```html', '<div>Code</div>', '```', 'Use `<br />` to break a line'].join('\n');
+
+    expect(getHtmlElements(content)).toEqual([]);
   });
 });
