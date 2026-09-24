@@ -80,6 +80,8 @@ Copiez le corps de vote article à la suite de l'en-tête, ou rédigez directeme
 
 Vous pouvez retrouver [les règles de syntaxe de ce format par ici](https://docs.framasoft.org/fr/grav/markdown.html). Vous pouvez également ["transformer" votre texte en Markdown via cet outil](https://www.pastetomarkdown.com/).
 
+Pour utiliser des composants (encadrés de rappel, citations, diagrammes…), vous pouvez écrire votre article en MDX avec l'extension `.mdx` : voir [Rédiger un contenu en MDX](mdx.md).
+
 ## 7. Faire sa PR
 
 Une fois ces étapes réalisées, cliquez sur le bouton **"Commit changes"** en haut à droite de votre écran. Renseignez le titre de votre commit dans le champ **"Commit message"** au format suivant : `add-titre-de-votre-article`.

@@ -19,6 +19,7 @@ import {
   TutorialStepDataValidationSchema,
 } from '@/config/schemaValidation';
 import { extractHeaders } from '@/helpers/markdownContentManagerHelper';
+import { getContentFormat, mdxToHtml } from '@/helpers/markdownToHtmlHelper';
 import { capitalize } from '@/helpers/stringHelper';
 
 export class MarkdownInvalidError extends Error {
@@ -91,9 +92,9 @@ export const getImagesWithoutAlt = (content: string): { image: string; line: num
 
 export const findImagesWithoutAlt = (): { markdownFilePathRelative: string; image: string; line: number }[] =>
   [
-    ...globSync(`${ARTICLES_DIR}/**/*.md`),
-    ...globSync(`${TUTORIALS_DIR}/**/index.md`),
-    ...globSync(`${TUTORIALS_DIR}/**/steps/*.md`),
+    ...globSync(`${ARTICLES_DIR}/**/*.{md,mdx}`),
+    ...globSync(`${TUTORIALS_DIR}/**/index.{md,mdx}`),
+    ...globSync(`${TUTORIALS_DIR}/**/steps/*.{md,mdx}`),
   ]
     .sort()
     .flatMap((markdownFilePath) =>
@@ -182,8 +183,28 @@ export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options:
   }
 };
 
+// The compilation fails on an invalid JSX syntax as well as on a component that isn't exposed by `mdxComponents`
+export const validateMdxContent = (options: { markdownFilePath: string; content: string }): void => {
+  try {
+    mdxToHtml(options.content);
+  } catch (error) {
+    const { line, column, reason, message } = error as Error & { line?: number; column?: number; reason?: string };
+    throw new MarkdownInvalidError({
+      markdownFilePath: options.markdownFilePath,
+      reason: `The MDX doesn't compile! ${reason ?? message}`,
+      line: line ?? undefined,
+      column: column ?? undefined,
+    });
+  }
+};
+
 export const validateMarkdownContent = (options: { markdownFilePath: string; content: string }): string => {
-  const headers = extractHeaders(options.content);
+  const format = getContentFormat(options.markdownFilePath);
+  if (format === 'mdx') {
+    validateMdxContent(options);
+  }
+
+  const headers = extractHeaders(options.content, format);
   try {
     validateTags(options.content);
     validateExistingAssets(options.content);
@@ -274,8 +295,8 @@ export const validateTutorialStep = (options: {
 
 export const validateMarkdown = (): boolean => {
   const authorMarkdownFilePaths = globSync(`${AUTHORS_DIR}/**/*.md`);
-  const articleMarkdownFilePaths = globSync(`${ARTICLES_DIR}/**/*.md`);
-  const tutorialMarkdownFilePaths = globSync(`${TUTORIALS_DIR}/**/index.md`);
+  const articleMarkdownFilePaths = globSync(`${ARTICLES_DIR}/**/*.{md,mdx}`);
+  const tutorialMarkdownFilePaths = globSync(`${TUTORIALS_DIR}/**/index.{md,mdx}`);
 
   const authors: string[] = [];
 
@@ -312,7 +333,9 @@ export const validateMarkdown = (): boolean => {
       markdownFilePath,
       authors: authors as [string, ...string[]],
     });
-    const tutorialStepsMarkdownFilePaths = globSync(path.resolve(path.dirname(markdownFilePath), 'steps', '**.md'));
+    const tutorialStepsMarkdownFilePaths = globSync(
+      path.resolve(path.dirname(markdownFilePath), 'steps', '**.{md,mdx}')
+    );
     for (const tutorialStepMarkdownFilePath of tutorialStepsMarkdownFilePaths) {
       validateTutorialStep({
         markdownFilePath: tutorialStepMarkdownFilePath,
