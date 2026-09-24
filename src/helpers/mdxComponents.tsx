@@ -117,6 +117,19 @@ export const YouTube: React.FC<YouTubeProps> = ({ id, title }) => (
   </div>
 );
 
+export interface IframeProps {
+  // The embed URL given by the service, such as CodePen
+  src: string;
+  // Read by the screen readers
+  title: string;
+  height: number;
+}
+
+// An embedded page, such as a CodePen demo: its height is reserved before it loads, and it loads lazily
+export const Iframe: React.FC<IframeProps> = ({ src, title, height }) => (
+  <iframe className="mb-xs w-full border-0" style={{ height }} src={src} title={title} loading="lazy" allowFullScreen />
+);
+
 export interface VideoProps {
   src: string;
   title?: string;
@@ -152,6 +165,7 @@ export const Video: React.FC<VideoProps> = ({ src, title, width, height, caption
  */
 export const mdxComponents = {
   Figure,
+  Iframe,
   Kbd,
   Reminder,
   Tweet,

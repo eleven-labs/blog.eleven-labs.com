@@ -105,6 +105,12 @@ describe('mdxToHtml', () => {
     );
   });
 
+  it('should render an embedded page with its height, lazily', () => {
+    expect(mdxToHtml('<Iframe src="https://codepen.io/a/embed/b" title="A demo" height={300} />')).toEqual(
+      '<iframe class="mb-xs w-full border-0" style="height:300px" src="https://codepen.io/a/embed/b" title="A demo" loading="lazy" allowfullscreen=""></iframe>'
+    );
+  });
+
   it.each(['Unknown', 'Blockquote', 'SyntaxHighlighter', 'Mermaid'])(
     'should throw on the component %s that is not allowed',
     (component) => {

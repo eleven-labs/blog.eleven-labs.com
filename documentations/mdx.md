@@ -109,6 +109,14 @@ Une vidéo hébergée par le blog, dans `_assets` (WebM, MP4 ou Ogg). `width` et
 <Video src="{BASE_URL}/imgs/articles/2026-09-24-mon-article/demo.webm" width={1920} height={1080} />
 ```
 
+### `Iframe`
+
+Une page intégrée, comme une démo CodePen. `src` est l'URL d'intégration fournie par le service, `title` décrit la page pour les lecteurs d'écran, et `height` réserve sa hauteur avant son chargement. Une vidéo YouTube passe par le composant `YouTube`.
+
+```mdx
+<Iframe src="https://codepen.io/seyedi/embed/OJmqVxm?default-tab=html%2Cresult" title="outline-style" height={300} />
+```
+
 ## Particularités du MDX
 
 - `<` et `{` ouvrent une balise ou une expression : dans le texte, échappez-les (`\<`, `\{`) ou placez-les dans du code.
