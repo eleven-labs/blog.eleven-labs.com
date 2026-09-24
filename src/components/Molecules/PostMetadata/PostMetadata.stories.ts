@@ -41,6 +41,13 @@ WithVariantSecondary.args = {
   variant: 'secondary',
 };
 
+export const WithVariantCompact: Story = {};
+WithVariantCompact.args = {
+  ...Overview.args,
+  displayedFields: ['date', 'authors'],
+  variant: 'compact',
+};
+
 export const WithIsLoading: Story = {};
 WithIsLoading.args = {
   isLoading: true,
