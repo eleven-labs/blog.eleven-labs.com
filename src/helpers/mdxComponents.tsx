@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef, ReminderProps } from '@/design-system';
 
 import React from 'react';
 
-import { Reminder as ReminderBase } from '@/design-system';
+import { Icon, Kbd, Reminder as ReminderBase } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
 
 /**
@@ -44,6 +44,126 @@ export const Reminder: React.FC<ReminderProps> = ({ className, ...props }) => (
   <ReminderBase className={cn('mb-xs', className)} {...props} />
 );
 
+export interface TweetProps {
+  url: string;
+  author: string;
+  date: string;
+  // A tweet that X no longer displays, deleted or protected: the Twitter script would replace it with a notice
+  unavailable?: boolean;
+  children?: React.ReactNode;
+}
+
+const getText = (node: React.ReactNode): string =>
+  React.Children.toArray(node)
+    .map((child) =>
+      typeof child === 'string' || typeof child === 'number'
+        ? String(child)
+        : React.isValidElement<{ children?: React.ReactNode; href?: string }>(child)
+        ? `${child.props.href ?? ''} ${getText(child.props.children)}`
+        : ''
+    )
+    .join('');
+
+/**
+ * A tweet: the Twitter script, loaded by `entry-client`, replaces the card with the embed. The card reserves the
+ * height of the embed, so that the page barely shifts once the embed displayed: 240px, or 225px plus the picture when
+ * the tweet has one (a `pic.twitter.com` link), whose height follows the width of the tweet. These are the lowest
+ * heights measured: a taller embed grows the block a little, rather than leaving an empty space under a shorter one.
+ * An unavailable tweet stays the card, which the Twitter script ignores, on the height of its text.
+ */
+export const Tweet: React.FC<TweetProps> = ({ url, author, date, unavailable, children }) => {
+  // `Name (@handle)`, as written by the Twitter embeds
+  const [, name = author, handle] = author.match(/^(.*?)\s*\((@[^)]+)\)$/) ?? [];
+  const hasPicture = getText(children).includes('pic.twitter.com');
+
+  return (
+    <div className="@container mx-auto max-w-[550px]">
+      <div
+        className="flex flex-col"
+        style={unavailable ? undefined : { minHeight: hasPicture ? 'calc(225px + 55cqw)' : '240px' }}
+      >
+        <blockquote className={cn('tweet', !unavailable && 'twitter-tweet')}>
+          <div className="mb-xxs flex items-center justify-between gap-xs">
+            <p className="mb-0">
+              <span className="font-bold">{name}</span>
+              {handle && <span className="text-grey"> {handle}</span>}
+            </p>
+            <Icon name="twitter" size="24px" aria-hidden />
+          </div>
+          {children}
+          <p className="mb-0 text-xs">
+            <a href={url}>{date}</a>
+          </p>
+        </blockquote>
+      </div>
+    </div>
+  );
+};
+
+export interface YouTubeProps {
+  id: string;
+  title: string;
+}
+
+/**
+ * A YouTube video, on the width of the post: its 16/9 ratio reserves its height before it loads, and the
+ * `youtube-nocookie.com` domain sets no cookie until the video is played.
+ */
+export const YouTube: React.FC<YouTubeProps> = ({ id, title }) => (
+  <div className="mb-xs aspect-video w-full">
+    <iframe
+      className="size-full"
+      src={`https://www.youtube-nocookie.com/embed/${id}`}
+      title={title}
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerPolicy="strict-origin-when-cross-origin"
+      allowFullScreen
+    />
+  </div>
+);
+
+export interface IframeProps {
+  // The embed URL given by the service, such as CodePen
+  src: string;
+  // Read by the screen readers
+  title: string;
+  height: number;
+}
+
+// An embedded page, such as a CodePen demo: its height is reserved before it loads, and it loads lazily
+export const Iframe: React.FC<IframeProps> = ({ src, title, height }) => (
+  <iframe className="mb-xs w-full border-0" style={{ height }} src={src} title={title} loading="lazy" allowFullScreen />
+);
+
+export interface VideoProps {
+  src: string;
+  title?: string;
+  // The dimensions of the video, whose ratio reserves its height before it loads
+  width?: number;
+  height?: number;
+  // The WebVTT captions of a video with speech
+  captions?: string;
+}
+
+const VIDEO_TYPES: Record<string, string> = { mp4: 'video/mp4', ogv: 'video/ogg', webm: 'video/webm' };
+
+// A video hosted by the blog, its type telling the browser whether it can play it before loading it
+export const Video: React.FC<VideoProps> = ({ src, title, width, height, captions }) => (
+  // The videos without speech, such as screen recordings, have no captions
+  // eslint-disable-next-line jsx-a11y/media-has-caption
+  <video
+    className="mx-auto mb-xs w-full"
+    title={title}
+    style={width && height ? { aspectRatio: `${width} / ${height}` } : undefined}
+    controls
+    preload="metadata"
+  >
+    <source src={src} type={VIDEO_TYPES[src.split('?')[0].split('.').pop()?.toLowerCase() ?? '']} />
+    {captions && <track kind="captions" src={captions} default />}
+  </video>
+);
+
 /**
  * The only components an MDX content can use: any other one fails the compilation of the content,
  * and therefore the validation of the contents. Whatever the markdown already renders (quotes, code, mermaid
@@ -51,5 +171,10 @@ export const Reminder: React.FC<ReminderProps> = ({ className, ...props }) => (
  */
 export const mdxComponents = {
   Figure,
+  Iframe,
+  Kbd,
   Reminder,
+  Tweet,
+  Video,
+  YouTube,
 };

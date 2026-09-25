@@ -1,4 +1,6 @@
-import { markdownToHtml, mdxToHtml } from './markdownToHtmlHelper';
+import { mdxToHtml } from './markdownToHtmlHelper';
+
+const LINK_CLASS = 'class="font-semibold text-info underline hover:no-underline"';
 
 describe('mdxToHtml', () => {
   it('should render a reminder of the design system', () => {
@@ -17,41 +19,113 @@ describe('mdxToHtml', () => {
     );
   });
 
-  it('should render a figure the same way as an image followed by a markdown caption', () => {
-    const normalize = (html: string): string => html.replace(/^<div>|<\/div>$/g, '').replace(/<p><\/p>/g, '');
-
+  it('should render a figure with a markdown caption and a sized image', () => {
     expect(
-      normalize(mdxToHtml('<Figure src="/imgs/schema.png?maxWidth=400" alt="Schema">*Source : [site](/fr/)*</Figure>'))
-    ).toEqual(normalize(markdownToHtml('![Schema](/imgs/schema.png?maxWidth=400)\nFigure: *Source : [site](/fr/)*')));
+      mdxToHtml('<Figure src="/imgs/schema.png?maxWidth=400" alt="Schema">*Source : [site](/fr/)*</Figure>')
+    ).toEqual(
+      '<figure><img loading="lazy" decoding="async" src="/imgs/schema.png?maxWidth=400" alt="Schema" style="max-width:400px"/>' +
+        `<figcaption><em>Source : <a href="/fr/" style="overflow-wrap:anywhere" ${LINK_CLASS}>site</a></em></figcaption></figure>`
+    );
   });
 
-  it('should render the markdown the same way as a markdown content', () => {
-    const content = [
-      '## A heading',
-      '',
-      'A [link](https://example.com) and `code`.',
-      '',
-      '| Name | Value |',
-      '| ---- | ----: |',
-      '| a    | 1     |',
-      '',
-      '```js',
-      'const a = 1;',
-      '```',
-      '',
-      '> A **quote**',
-      '> on two lines',
-      '',
-      '```mermaid',
-      'graph TD',
-      '  A[Client] --> B[API]',
-      '```',
-    ].join('\n');
+  it('should render the headings, links and inline code', () => {
+    expect(mdxToHtml('## A heading\n\nA [link](https://example.com) and `code`.')).toEqual(
+      '<h2 id="a-heading">A heading</h2>\n' +
+        `<p>A <a href="https://example.com" rel="nofollow noreferrer" target="_blank" style="overflow-wrap:anywhere" ${LINK_CLASS}>link</a>` +
+        ' and <code class="bg-ultra-light-grey px-xxs-2 text-xs text-ultra-dark-grey">code</code>.</p>'
+    );
+  });
 
-    // Only the line breaks between the blocks differ, they have no effect on the rendering
-    const normalize = (html: string): string => html.replace(/^<div>|<\/div>$/g, '').replace(/>\s+</g, '><');
+  it('should render a table that scrolls, labels its cells and aligns its columns', () => {
+    expect(mdxToHtml('| Name | Value |\n| ---- | ----: |\n| a    | 1     |')).toEqual(
+      '<div class="post-content-table"><table><thead><tr><th>Name</th><th style="text-align:right">Value</th></tr></thead>' +
+        '<tbody><tr><td data-label="Name">a</td><td data-label="Value" style="text-align:right">1</td></tr></tbody></table></div>'
+    );
+  });
 
-    expect(normalize(mdxToHtml(content))).toEqual(normalize(markdownToHtml(content)));
+  it('should render the quotes, code and mermaid diagrams written in markdown', () => {
+    expect(mdxToHtml('> A **quote**')).toEqual('<blockquote>\n<p>A <strong>quote</strong></p>\n</blockquote>');
+    expect(mdxToHtml('```js\nconst a = 1;\n```')).toContain('<code class="language-js"');
+    expect(mdxToHtml('```mermaid\ngraph TD\n  A --> B\n```')).toContain(
+      '<pre class="mermaid flex items-center justify-center">graph TD\n  A --&gt; B\n</pre>'
+    );
+  });
+
+  it('should render a tweet as the card that the Twitter script replaces with the embed', () => {
+    const html = mdxToHtml(
+      [
+        '<Tweet url="https://twitter.com/afup/status/1" author="AFUP (@afup)" date="7 octobre 2022">',
+        '',
+        'A **tweet** with a [link](https://t.co/a)',
+        '',
+        '</Tweet>',
+      ].join('\n')
+    );
+
+    expect(html).toContain(
+      '<div class="flex flex-col" style="min-height:240px"><blockquote class="tweet twitter-tweet">'
+    );
+    expect(html).toContain('<span class="font-bold">AFUP</span><span class="text-grey"> @afup</span>');
+    expect(html).toContain('<p>A <strong>tweet</strong> with a <a href="https://t.co/a"');
+    // The Twitter script finds the tweet with the last link of the card
+    expect(html).toMatch(/<a href="https:\/\/twitter.com\/afup\/status\/1">7 octobre 2022<\/a><\/p><\/blockquote>/);
+  });
+
+  it('should render an unavailable tweet as a card only, which the Twitter script ignores', () => {
+    const html = mdxToHtml(
+      [
+        '<Tweet url="https://twitter.com/afup/status/1" author="AFUP (@afup)" date="7 octobre 2022" unavailable>',
+        '',
+        'A deleted tweet',
+        '',
+        '</Tweet>',
+      ].join('\n')
+    );
+
+    expect(html).toContain('<div class="flex flex-col"><blockquote class="tweet">');
+    expect(html).not.toContain('twitter-tweet');
+  });
+
+  it('should reserve the height of the picture of a tweet', () => {
+    const html = mdxToHtml(
+      [
+        '<Tweet url="https://twitter.com/afup/status/1" author="AFUP (@afup)" date="7 octobre 2022">',
+        '',
+        'A picture [pic.twitter.com/a](https://t.co/a)',
+        '',
+        '</Tweet>',
+      ].join('\n')
+    );
+
+    expect(html).toContain('style="min-height:calc(225px + 55cqw)"');
+  });
+
+  it('should render a key of the keyboard', () => {
+    expect(mdxToHtml('Press <Kbd>Ctrl</Kbd> + <Kbd>F5</Kbd>')).toMatch(
+      /^<p>Press <kbd class="[^"]*rounded-xs[^"]*">Ctrl<\/kbd> \+ <kbd class="[^"]*">F5<\/kbd><\/p>$/
+    );
+  });
+
+  it('should render a YouTube video with its ratio, lazily and without cookie', () => {
+    expect(mdxToHtml('<YouTube id="9Cfxm7cikMY" title="7 Ways AMP Makes Your Pages Fast" />')).toMatch(
+      /^<div class="mb-xs aspect-video w-full"><iframe class="size-full" src="https:\/\/www.youtube-nocookie.com\/embed\/9Cfxm7cikMY" title="7 Ways AMP Makes Your Pages Fast" loading="lazy"/
+    );
+  });
+
+  it('should render a video of the blog, with its type, ratio and captions', () => {
+    expect(mdxToHtml('<Video src="/imgs/video.webm" width={1600} height={900} />')).toEqual(
+      '<video class="mx-auto mb-xs w-full" style="aspect-ratio:1600 / 900" controls="" preload="metadata">' +
+        '<source src="/imgs/video.webm" type="video/webm"/></video>'
+    );
+    expect(mdxToHtml('<Video src="/imgs/video.mp4" captions="/imgs/video.vtt" />')).toContain(
+      '<source src="/imgs/video.mp4" type="video/mp4"/><track kind="captions" src="/imgs/video.vtt" default=""/>'
+    );
+  });
+
+  it('should render an embedded page with its height, lazily', () => {
+    expect(mdxToHtml('<Iframe src="https://codepen.io/a/embed/b" title="A demo" height={300} />')).toEqual(
+      '<iframe class="mb-xs w-full border-0" style="height:300px" src="https://codepen.io/a/embed/b" title="A demo" loading="lazy" allowfullscreen=""></iframe>'
+    );
   });
 
   it.each(['Unknown', 'Blockquote', 'SyntaxHighlighter', 'Mermaid'])(

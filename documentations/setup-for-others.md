@@ -8,7 +8,7 @@ Accepter l’invitation à rejoindre l'organisation Eleven Labs envoyée par mai
 
 ## 2. Créer sa fiche auteur
 
-Une fois que vous avez accès à l'organisation Eleven Labs, rendez-vous **[ici](https://github.com/eleven-labs/blog.eleven-labs.com/tree/master/_authors)**. Cliquez sur **"Add file"**, puis séléctionnez **"Create New File"** dans le ménu déroulant. Complétez le champ `Name your file...` en écrivant la première lettre de votre prénom suivi de votre nom de famille suivi de **".md"**. Le nom du fichier doit donc ressembler à celui-ci : `pnom.md`.
+Une fois que vous avez accès à l'organisation Eleven Labs, rendez-vous **[ici](https://github.com/eleven-labs/blog.eleven-labs.com/tree/master/_authors)**. Cliquez sur **"Add file"**, puis séléctionnez **"Create New File"** dans le ménu déroulant. Complétez le champ `Name your file...` en écrivant la première lettre de votre prénom suivi de votre nom de famille suivi de **".mdx"**. Le nom du fichier doit donc ressembler à celui-ci : `pnom.mdx`.
 
 Dans le corps du fichier, collez le template ci-dessous, préalablement complété avec vos informations :
 
@@ -45,7 +45,7 @@ Une fois dans le dossier adéquat, cliquez en haut à droite sur le menu déroul
 
 ## 4. Nommer son fichier
 
-Le nom du fichier de l'article doit respecter la nomenclature suivante `yyyy-mm-dd-titre-de-votre-article.md`. Saisissez ces informations dans le champ **"Name your file"**, en haut de votre écran.
+Le nom du fichier de l'article doit respecter la nomenclature suivante `yyyy-mm-dd-titre-de-votre-article.mdx`. Saisissez ces informations dans le champ **"Name your file"**, en haut de votre écran.
 
 ## 5. Créer l'en-tête
 
@@ -76,11 +76,11 @@ keywords:
 
 Copiez le corps de vote article à la suite de l'en-tête, ou rédigez directement.
 
-> **N.B.** : Notez que le format de votre article doit être en Markdown.
+> **N.B.** : Notez que votre article s'écrit en MDX, c'est-à-dire en Markdown enrichi de quelques composants.
 
-Vous pouvez retrouver [les règles de syntaxe de ce format par ici](https://docs.framasoft.org/fr/grav/markdown.html). Vous pouvez également ["transformer" votre texte en Markdown via cet outil](https://www.pastetomarkdown.com/).
+Vous pouvez retrouver [les règles de syntaxe du Markdown par ici](https://docs.framasoft.org/fr/grav/markdown.html). Vous pouvez également ["transformer" votre texte en Markdown via cet outil](https://www.pastetomarkdown.com/).
 
-Pour utiliser des composants (encadrés de rappel, citations, diagrammes…), vous pouvez écrire votre article en MDX avec l'extension `.mdx` : voir [Rédiger un contenu en MDX](mdx.md).
+Les composants disponibles (encadrés de rappel, images avec légende) et les particularités du MDX sont décrits dans [Rédiger un contenu en MDX](mdx.md).
 
 ## 7. Faire sa PR
 

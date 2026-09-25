@@ -7,6 +7,11 @@ import { globSync } from 'glob';
 import matter from 'gray-matter';
 import { existsSync, readFileSync } from 'node:fs';
 import * as path from 'path';
+import remarkGfm from 'remark-gfm';
+import remarkMdx from 'remark-mdx';
+import remarkParse from 'remark-parse';
+import { unified } from 'unified';
+import { SKIP, visit } from 'unist-util-visit';
 import { z } from 'zod';
 import { fromZodError } from 'zod-validation-error';
 
@@ -19,7 +24,7 @@ import {
   TutorialStepDataValidationSchema,
 } from '@/config/schemaValidation';
 import { extractHeaders } from '@/helpers/markdownContentManagerHelper';
-import { getContentFormat, mdxToHtml } from '@/helpers/markdownToHtmlHelper';
+import { mdxToHtml } from '@/helpers/markdownToHtmlHelper';
 import { capitalize } from '@/helpers/stringHelper';
 
 export class MarkdownInvalidError extends Error {
@@ -39,19 +44,6 @@ export class MarkdownInvalidError extends Error {
     this.column = options.column;
   }
 }
-
-export const validateTags = (content: string): boolean => {
-  const imgTagMatches = content.match(/`{3}[\s\S]*?`{3}|`{1}[\s\S]*?`{1}|<img[^>]*>/g);
-  if (imgTagMatches) {
-    for (const imgTagMatch of imgTagMatches) {
-      if (!/^`{1,3}/.test(imgTagMatch)) {
-        throw new Error(`The img tag are no longer allowed, please use markdown syntax! ${imgTagMatch}`);
-      }
-    }
-  }
-
-  return true;
-};
 
 export const validateExistingAssets = (content: string): boolean => {
   const assetRegex = new RegExp('{BASE_URL}\\/imgs\\/[^.]+\\.(jpg|jpeg|png|webp|svg)', 'g');
@@ -82,8 +74,14 @@ export const getImagesWithoutAlt = (content: string): { image: string; line: num
     if (isInCodeBlock) {
       return;
     }
-    for (const match of lineContent.replace(/`[^`]*`/g, '').matchAll(/!\[\s*\]\([^)]*\)/g)) {
+    const lineWithoutCode = lineContent.replace(/`[^`]*`/g, '');
+    for (const match of lineWithoutCode.matchAll(/!\[\s*\]\([^)]*\)/g)) {
       imagesWithoutAlt.push({ image: match[0], line: index + 1 });
+    }
+    for (const match of lineWithoutCode.matchAll(/<Figure\b[^>]*>/g)) {
+      if (!/\balt=("\s*[^"\s][^"]*"|\{[^}]+\})/.test(match[0])) {
+        imagesWithoutAlt.push({ image: match[0], line: index + 1 });
+      }
     }
   });
 
@@ -92,9 +90,9 @@ export const getImagesWithoutAlt = (content: string): { image: string; line: num
 
 export const findImagesWithoutAlt = (): { markdownFilePathRelative: string; image: string; line: number }[] =>
   [
-    ...globSync(`${ARTICLES_DIR}/**/*.{md,mdx}`),
-    ...globSync(`${TUTORIALS_DIR}/**/index.{md,mdx}`),
-    ...globSync(`${TUTORIALS_DIR}/**/steps/*.{md,mdx}`),
+    ...globSync(`${ARTICLES_DIR}/**/*.mdx`),
+    ...globSync(`${TUTORIALS_DIR}/**/index.mdx`),
+    ...globSync(`${TUTORIALS_DIR}/**/steps/*.mdx`),
   ]
     .sort()
     .flatMap((markdownFilePath) =>
@@ -103,6 +101,28 @@ export const findImagesWithoutAlt = (): { markdownFilePathRelative: string; imag
         ...imageWithoutAlt,
       }))
     );
+
+/**
+ * The contents are written in markdown, with the components of `mdxComponents` when markdown has no equivalent: the
+ * HTML elements (lowercase JSX) are listed with their line, the elements they contain being part of them.
+ */
+export const getHtmlElements = (content: string): { element: string; line: number }[] => {
+  // The frontmatter is blanked rather than removed, so that the lines stay the ones of the file
+  const markdown = content.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, (frontmatter) =>
+    frontmatter.replace(/[^\n]/g, '')
+  );
+  const tree = unified().use(remarkParse).use(remarkMdx).use(remarkGfm).parse(markdown);
+  const htmlElements: { element: string; line: number }[] = [];
+  visit(tree, (node) => {
+    const { type, name, position } = node as typeof node & { name?: string | null };
+    if ((type === 'mdxJsxFlowElement' || type === 'mdxJsxTextElement') && name && /^[a-z]/.test(name)) {
+      htmlElements.push({ element: `<${name}>`, line: position?.start.line ?? 0 });
+      return SKIP;
+    }
+  });
+
+  return htmlElements;
+};
 
 export const validateHeaders = (headings: { level: number; text: string }[]): boolean => {
   const minLevel = 2;
@@ -138,20 +158,8 @@ export const validateHeaders = (headings: { level: number; text: string }[]): bo
 export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options: {
   markdownFilePath: string;
   validationSchema: ZodSchema;
-}): TData & { content: string } => {
+}): TData & { content: string; contentLineOffset: number } => {
   const markdownContent = readFileSync(options.markdownFilePath, { encoding: 'utf-8' });
-
-  const invalidSyntaxMatches = markdownContent.match(/`{1,3}[\s\S]*?`{1,3}|{% raw %}|{% endraw %}|{:[^}]+}}?/g);
-  if (invalidSyntaxMatches) {
-    for (const invalidSyntaxMatch of invalidSyntaxMatches) {
-      if (!/^`{1,3}/.test(invalidSyntaxMatch)) {
-        throw new MarkdownInvalidError({
-          markdownFilePath: options.markdownFilePath,
-          reason: `The syntax isn't allowed, please use valid markdown syntax! ${invalidSyntaxMatch}`,
-        });
-      }
-    }
-  }
 
   try {
     const frontmatterResult = matter(markdownContent);
@@ -167,7 +175,12 @@ export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options:
       });
     }
 
-    return { ...result.data, content: frontmatterResult.content };
+    return {
+      ...result.data,
+      content: frontmatterResult.content,
+      // The lines of the frontmatter, before the content
+      contentLineOffset: markdownContent.split('\n').length - frontmatterResult.content.split('\n').length,
+    };
   } catch (error) {
     if (error instanceof MarkdownInvalidError) {
       throw error;
@@ -198,15 +211,25 @@ export const validateMdxContent = (options: { markdownFilePath: string; content:
   }
 };
 
-export const validateMarkdownContent = (options: { markdownFilePath: string; content: string }): string => {
-  const format = getContentFormat(options.markdownFilePath);
-  if (format === 'mdx') {
-    validateMdxContent(options);
+export const validateMarkdownContent = (options: {
+  markdownFilePath: string;
+  content: string;
+  contentLineOffset?: number;
+}): string => {
+  validateMdxContent(options);
+
+  // The contents are written in markdown, with the components of `mdxComponents` when markdown has no equivalent
+  const [htmlElement] = getHtmlElements(options.content);
+  if (htmlElement) {
+    throw new MarkdownInvalidError({
+      markdownFilePath: options.markdownFilePath,
+      reason: `The HTML element ${htmlElement.element} isn't allowed, write it in markdown or with a component of src/helpers/mdxComponents.tsx!`,
+      line: htmlElement.line + (options.contentLineOffset ?? 0),
+    });
   }
 
-  const headers = extractHeaders(options.content, format);
+  const headers = extractHeaders(options.content);
   try {
-    validateTags(options.content);
     validateExistingAssets(options.content);
     validateHeaders(headers);
   } catch (error) {
@@ -233,7 +256,7 @@ export const validateContentType = <TData>(options: {
     );
   }
 
-  const { content, ...data } = getDataInMarkdownFile<z.infer<typeof options.validationSchema>>({
+  const { content, contentLineOffset, ...data } = getDataInMarkdownFile<z.infer<typeof options.validationSchema>>({
     markdownFilePath: options.markdownFilePath,
     validationSchema: validationSchema,
   });
@@ -243,6 +266,7 @@ export const validateContentType = <TData>(options: {
     content: validateMarkdownContent({
       markdownFilePath: options.markdownFilePath,
       content,
+      contentLineOffset,
     }),
   };
 };
@@ -294,9 +318,21 @@ export const validateTutorialStep = (options: {
   });
 
 export const validateMarkdown = (): boolean => {
-  const authorMarkdownFilePaths = globSync(`${AUTHORS_DIR}/**/*.md`);
-  const articleMarkdownFilePaths = globSync(`${ARTICLES_DIR}/**/*.{md,mdx}`);
-  const tutorialMarkdownFilePaths = globSync(`${TUTORIALS_DIR}/**/index.{md,mdx}`);
+  const [markdownFilePath] = globSync([
+    `${AUTHORS_DIR}/**/*.md`,
+    `${ARTICLES_DIR}/**/*.md`,
+    `${TUTORIALS_DIR}/**/*.md`,
+  ]);
+  if (markdownFilePath) {
+    throw new MarkdownInvalidError({
+      markdownFilePath,
+      reason: 'The markdown contents are no longer supported, rename the file with the .mdx extension!',
+    });
+  }
+
+  const authorMarkdownFilePaths = globSync(`${AUTHORS_DIR}/**/*.mdx`);
+  const articleMarkdownFilePaths = globSync(`${ARTICLES_DIR}/**/*.mdx`);
+  const tutorialMarkdownFilePaths = globSync(`${TUTORIALS_DIR}/**/index.mdx`);
 
   const authors: string[] = [];
 
@@ -333,9 +369,7 @@ export const validateMarkdown = (): boolean => {
       markdownFilePath,
       authors: authors as [string, ...string[]],
     });
-    const tutorialStepsMarkdownFilePaths = globSync(
-      path.resolve(path.dirname(markdownFilePath), 'steps', '**.{md,mdx}')
-    );
+    const tutorialStepsMarkdownFilePaths = globSync(path.resolve(path.dirname(markdownFilePath), 'steps', '**.mdx'));
     for (const tutorialStepMarkdownFilePath of tutorialStepsMarkdownFilePaths) {
       validateTutorialStep({
         markdownFilePath: tutorialStepMarkdownFilePath,

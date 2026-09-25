@@ -86,6 +86,8 @@ export default [
             'reminder\\-\\-[a-z]+',
             'reminder\\-title',
             'mermaid',
+            // La carte d'un tweet, et la classe attendue par le script de Twitter pour la transformer en tweet intégré.
+            '(twitter\\-)?tweet',
             // Classes du formulaire Webmecanik, dont le balisage ne nous appartient pas.
             'mauticform.*',
             'btn(\\-default)?',

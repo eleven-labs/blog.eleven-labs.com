@@ -24,17 +24,11 @@ import { visit } from 'unist-util-visit';
 import { ASSETS_DIR, MARKDOWN_FILE_PATHS } from '@/app-paths';
 import { MARKDOWN_CONTENT_TYPES } from '@/constants';
 import { getPathFile } from '@/helpers/assetHelper';
-import {
-  type ContentFormat,
-  markdownToHtml as defaultMarkdownToHtml,
-  getContentFormat,
-  type MarkdownToHtmlOptions,
-} from '@/helpers/markdownToHtmlHelper';
+import { mdxToHtml as defaultMdxToHtml, type MdxToHtmlOptions } from '@/helpers/markdownToHtmlHelper';
 
 interface MarkdownCacheData<TData = ResultData> {
   data: TData;
   content: string;
-  format: ContentFormat;
   html: string;
   mtime?: number;
 }
@@ -47,15 +41,9 @@ const frontmatter = <TData = { [p: string]: unknown }>(
   return matter(content) as Omit<matter.GrayMatterFile<string>, 'data'> & { data: TData };
 };
 
-export const extractHeaders = (
-  markdownContent: string,
-  format: ContentFormat = 'md'
-): { id: string; level: number; text: string }[] => {
+export const extractHeaders = (markdownContent: string): { id: string; level: number; text: string }[] => {
   const slugger = new GithubSlugger();
-  const ast = unified()
-    .use(remarkParse)
-    .use(format === 'mdx' ? [remarkMdx] : [])
-    .parse(markdownContent);
+  const ast = unified().use(remarkParse).use(remarkMdx).parse(markdownContent);
 
   const headers: { id: string; level: number; text: string }[] = [];
   visit(ast, 'heading', (node) => {
@@ -72,10 +60,10 @@ export const extractHeaders = (
 
 export const loadDataByMarkdownFilePath = ({
   filePath,
-  markdownToHtml = defaultMarkdownToHtml,
+  mdxToHtml = defaultMdxToHtml,
 }: {
   filePath: string;
-  markdownToHtml?: (content: string, options?: MarkdownToHtmlOptions) => string;
+  mdxToHtml?: (content: string, options?: MdxToHtmlOptions) => string;
 }): MarkdownCacheData['data'] | undefined => {
   const stat = statSync(filePath);
   const cached = markdownCache.get(filePath);
@@ -85,8 +73,7 @@ export const loadDataByMarkdownFilePath = ({
   const markdownContent = readFileSync(filePath, { encoding: 'utf-8' });
 
   const { data, content } = frontmatter<MarkdownCacheData['data']>(markdownContent);
-  const format = getContentFormat(filePath);
-  markdownCache.set(filePath, { data, content, format, html: markdownToHtml(content, { format }), mtime: stat.mtimeMs });
+  markdownCache.set(filePath, { data, content, html: mdxToHtml(content), mtime: stat.mtimeMs });
 
   return markdownCache.get(filePath)?.data;
 };
@@ -134,12 +121,12 @@ export const getAuthors = (): TransformedAuthorData[] =>
 
 export const getArticles = (): TransformedArticleData[] =>
   getCollection<ArticleData>(MARKDOWN_CONTENT_TYPES.ARTICLE).reduce<TransformedArticleData[]>(
-    (currentArticles, { data, content, format, html }) => {
+    (currentArticles, { data, content, html }) => {
       currentArticles.push({
         ...data,
         date: new Date(data.date).toISOString(),
         updatedAt: data.updatedAt ? new Date(data.updatedAt).toISOString() : undefined,
-        summary: extractHeaders(content, format),
+        summary: extractHeaders(content),
         readingTime: getReadingTime(content),
         content: html,
       });
@@ -167,8 +154,7 @@ export const getTutorials = (): TransformedTutorialData[] => {
             slug: currentStep.data.slug,
             title: currentStep.data?.title,
             readingTime: getReadingTime(currentStep.content),
-            content: defaultMarkdownToHtml(currentStep.content, {
-              format: currentStep.format,
+            content: defaultMdxToHtml(currentStep.content, {
               section: { title: currentStep.data.title, slugger },
             }),
           });

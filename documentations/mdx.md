@@ -1,16 +1,14 @@
 # Rédiger un contenu en MDX
 
-Les articles (`_articles`) et les tutoriels (`_tutorials`, fichier `index` et étapes) peuvent être écrits en [MDX](https://mdxjs.com/) : il suffit de donner l'extension `.mdx` au fichier au lieu de `.md`. Le MDX est du markdown dans lequel on peut utiliser des composants React.
-
-Les fichiers `.md` existants restent rendus comme avant, il n'est pas nécessaire de les convertir.
+Les articles (`_articles`), les tutoriels (`_tutorials`, fichier `index` et étapes) et les fiches auteur (`_authors`) s'écrivent en [MDX](https://mdxjs.com/), avec l'extension `.mdx`. Le MDX est du markdown dans lequel on peut utiliser des composants React. Un fichier `.md` est refusé par la validation.
 
 ## En-tête
 
-L'en-tête (frontmatter) est identique à celui d'un fichier `.md` et il est validé de la même manière.
+L'en-tête (frontmatter) s'écrit en YAML, entre deux lignes `---`, au début du fichier.
 
 ## Le markdown d'abord
 
-Un fichier `.mdx` s'écrit comme un fichier `.md` : tout ce que le markdown sait déjà rendre s'écrit en markdown, et le rendu est identique à celui d'un article `.md`. N'utilisez un composant que lorsque le markdown n'a pas d'équivalent.
+Tout ce que le markdown sait rendre s'écrit en markdown. N'utilisez un composant que lorsque le markdown n'a pas d'équivalent, et n'écrivez pas de HTML : la validation le refuse.
 
 ### Citation
 
@@ -53,11 +51,9 @@ Le contenu est du **markdown** : laissez une ligne vide après la balise ouvrant
 </Reminder>
 ```
 
-C'est l'équivalent MDX des admonitions HTML des fichiers `.md` (`<div class="admonition tip" markdown="1">`).
-
 ### `Figure`
 
-Une image et sa légende. En MDX, c'est la syntaxe à privilégier plutôt que la ligne `Figure:` du markdown : l'image et sa légende sont regroupées, plus simples à écrire et à relire.
+Une image et sa légende, regroupées pour être plus simples à écrire et à relire.
 
 La légende s'écrit entre les balises, en markdown :
 
@@ -73,16 +69,77 @@ Une légende sans mise en forme peut aussi passer par `caption` :
 
 Comme pour une image markdown, `alt` décrit l'image, et les paramètres `maxWidth`, `maxHeight`, `width` et `height` de l'URL la dimensionnent (`schema.png?maxWidth=400`).
 
-## Différences avec le markdown
+### `Kbd`
 
-- `<` et `{` ouvrent une balise ou une expression en MDX : dans le texte, échappez-les (`\<`, `\{`) ou placez-les dans du code.
-- Le HTML est interprété comme du JSX : utilisez `className` au lieu de `class` et fermez les balises vides (`<br />`).
-- Les admonitions en HTML (`<div class="admonition tip" markdown="1">`) ne sont pas prises en charge : utilisez le composant `Reminder`.
+Une touche du clavier, pour décrire un raccourci.
+
+```mdx
+Videz le cache avec <Kbd>Ctrl</Kbd> + <Kbd>F5</Kbd>.
+```
+
+### `Tweet`
+
+Un tweet intégré. La page affiche d'abord une carte avec l'auteur, le texte du tweet, écrit en markdown entre les balises, et la date, qui renvoie vers le tweet. Le script de Twitter la remplace ensuite par le tweet, avec ses images et ses réactions. La carte réserve la hauteur estimée du tweet, un peu plus haute quand il contient une image (un lien `pic.twitter.com`), pour que la page ne se décale presque pas à ce moment-là.
+
+```mdx
+<Tweet url="https://twitter.com/afup/status/1578341478518362112" author="AFUP (@afup)" date="7 octobre 2022">
+
+Et vous, il est comment votre vendredi ? [pic.twitter.com/SFMqKjIGfb](https://t.co/SFMqKjIGfb)
+
+</Tweet>
+```
+
+Un tweet qui n'est plus disponible, supprimé ou dont le compte est protégé, prend `unavailable` : il reste affiché sous forme de carte, que le script de Twitter ne remplace pas par un avertissement.
+
+```mdx
+<Tweet url="https://twitter.com/cath2nos/status/1047763114161328128" author="Catherine Denos (@cath2nos)" date="4 octobre 2018" unavailable>
+
+Conf suivante, l'UX en Terra Incognita par Sébastien Desbenoit
+
+</Tweet>
+```
+
+Le code d'intégration proposé par Twitter (`<blockquote class="twitter-tweet">` suivi d'un `<script>`) n'est pas à copier, il en fournit les valeurs : `url` est le lien vers le tweet, `author` le texte qui le précède (`Nom (@compte)`) et `date` le texte de ce lien.
+
+### `YouTube`
+
+Une vidéo YouTube, sur toute la largeur de l'article. `id` est l'identifiant de la vidéo (`https://www.youtube.com/watch?v=<id>`) et `title` son titre, lu par les lecteurs d'écran.
+
+```mdx
+<YouTube id="9Cfxm7cikMY" title="7 Ways AMP Makes Your Pages Fast" />
+```
+
+La vidéo n'est chargée qu'à l'approche de sa position dans la page, depuis `youtube-nocookie.com`, qui ne dépose pas de cookie tant qu'elle n'est pas lancée.
+
+### `Video`
+
+Une vidéo hébergée par le blog, dans `_assets` (WebM, MP4 ou Ogg). `width` et `height`, les dimensions de la vidéo, réservent sa place avant son chargement. Une vidéo parlée a des sous-titres, au format WebVTT, dans `captions`.
+
+```mdx
+<Video src="{BASE_URL}/imgs/articles/2026-09-24-mon-article/demo.webm" width={1920} height={1080} />
+```
+
+### `Iframe`
+
+Une page intégrée, comme une démo CodePen. `src` est l'URL d'intégration fournie par le service, `title` décrit la page pour les lecteurs d'écran, et `height` réserve sa hauteur avant son chargement. Une vidéo YouTube passe par le composant `YouTube`.
+
+```mdx
+<Iframe src="https://codepen.io/seyedi/embed/OJmqVxm?default-tab=html%2Cresult" title="outline-style" height={300} />
+```
+
+## Particularités du MDX
+
+- `<` et `{` ouvrent une balise ou une expression : dans le texte, échappez-les (`\<`, `\{`) ou placez-les dans du code.
+- Le HTML n'est pas autorisé, en dehors du code : tweets, vidéos et pages intégrées ont leur composant, et le reste s'écrit en markdown. Dans du code, en ligne ou en bloc, les balises sont libres.
+- Un retour à la ligne se fait par une ligne vide, qui commence un nouveau paragraphe, et non par `<br />`.
 - Les commentaires s'écrivent `{/* commentaire */}` au lieu de `<!-- commentaire -->`.
+- Il n'y a ni lien automatique entre chevrons (`<https://…>`) ni code indenté : écrivez `[https://…](https://…)` et utilisez un bloc de code entre ` ``` `.
 
 ## Validation
 
-`pnpm validate-markdown`, lancé par la CI, compile chaque fichier `.mdx` en plus des vérifications déjà faites sur le markdown. Une syntaxe invalide ou un composant non autorisé est signalé avec la ligne et la colonne concernées.
+`pnpm validate-markdown`, lancé par la CI, valide l'en-tête, les titres et les images, puis compile chaque fichier `.mdx`. Une syntaxe invalide, un composant non autorisé ou un élément HTML fait échouer la validation, avec la ligne concernée.
+
+Sans faire échouer la validation, un avertissement signale chaque image sans texte alternatif, avec sa ligne. Dans une pull request, il apparaît en annotation sur le fichier.
 
 ## Ajouter un composant
 

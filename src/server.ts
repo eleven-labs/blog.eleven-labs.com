@@ -2,6 +2,7 @@ import chokidar from 'chokidar';
 import express from 'express';
 import i18next from 'i18next';
 import * as i18nextHttpMiddleware from 'i18next-http-middleware';
+import mime from 'mime';
 import { cpSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
 import cookiesMiddleware from 'universal-cookie-express';
@@ -95,6 +96,10 @@ const createServer = async (): Promise<void> => {
     });
 
     app.get(/\/imgs\//, (req, res, next) => {
+      // The videos, and their captions, of the contents are served as they are
+      if (/^(video|audio|text)\//.test(mime.getType(req.path) ?? '')) {
+        return next();
+      }
       void imageMiddleware(req, res).catch(next);
     });
     app.use(vite.middlewares);
