@@ -44,12 +44,6 @@ export const PATHS = {
   SEARCH: '/:lang/search/',
 };
 
-export const ALGOLIA_CONFIG = {
-  APP_ID: getEnv<string>('VITE_ALGOLIA_APP_ID'),
-  API_KEY: getEnv<string>('VITE_ALGOLIA_API_KEY'),
-  INDEX: getEnv<string>('VITE_ALGOLIA_INDEX'),
-};
-
 export const GTM_ID = getEnv<string>('VITE_GTM_ID');
 
 export const GOOGLE_SITE_VERIFICATION = getEnv<string>('VITE_GOOGLE_SITE_VERIFICATION');

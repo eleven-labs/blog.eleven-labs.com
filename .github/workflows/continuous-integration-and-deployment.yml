@@ -44,9 +44,6 @@ jobs:
           NODE_ENV: production
           BASE_URL: ${{ env.BASE_URL }}
           VITE_HOST_URL: ${{ env.ENV_URL }}
-          VITE_ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
-          VITE_ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_SEARCH_KEY }}
-          VITE_ALGOLIA_INDEX: ${{ vars.ALGOLIA_INDEX }}
           VITE_GTM_ID: ${{ vars.GTM_ID }}
           VITE_IS_DEBUG: ${{ vars.IS_DEBUG }}
 
@@ -74,13 +71,6 @@ jobs:
 
       - name: Clear caches
         run: aws cloudfront create-invalidation --distribution-id "${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}" --paths "${{ env.BASE_URL }}*"
-
-      - name: Indexing on Algolia
-        run: pnpm indexation:algolia
-        env:
-          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
-          ALGOLIA_API_INDEXING_KEY: ${{ secrets.ALGOLIA_API_INDEXING_KEY }}
-          ALGOLIA_INDEX: ${{ vars.ALGOLIA_INDEX }}
 
       - name: Update deployment status
         uses: bobheadxi/deployments@v1
