@@ -17,7 +17,7 @@ const meta = {
     sections,
     sectionActive: 'installation',
   },
-  parameters: { viewport: { defaultViewport: 'extraSmallScreen' } },
+  globals: { viewport: { value: 'mobile', isRotated: false } },
 } satisfies Meta<typeof SummaryBar>;
 
 export default meta;

@@ -28,11 +28,9 @@ const meta: Meta<typeof SearchPage> = {
     ],
     isLoading: false,
   },
+  globals: { viewport: { value: 'mobile', isRotated: false } },
   parameters: {
-    layout: 'full',
-    viewport: {
-      defaultViewport: 'extraSmallScreen',
-    },
+    layout: 'fullscreen',
   },
   decorators: [LayoutTemplateDecorator],
 };

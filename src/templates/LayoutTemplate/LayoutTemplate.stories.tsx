@@ -19,11 +19,9 @@ const meta: Meta<typeof LayoutTemplate> = {
     footer: FooterStories.args as FooterProps,
     children: <div className="flex flex-1 items-center justify-center p-8">Content</div>,
   },
+  globals: { viewport: { value: 'mobile', isRotated: false } },
   parameters: {
-    layout: 'full',
-    viewport: {
-      defaultViewport: 'extraSmallScreen',
-    },
+    layout: 'fullscreen',
   },
 };
 

@@ -38,11 +38,9 @@ const meta = {
     searchButtonLabel: 'Rechercher un article',
     onToggleSearch: action('toggleSearch'),
   },
+  globals: { viewport: { value: 'mobile', isRotated: false } },
   parameters: {
     layout: 'fullscreen',
-    viewport: {
-      defaultViewport: 'extraSmallScreen',
-    },
   },
 } satisfies Meta<typeof Header>;
 
@@ -80,11 +78,6 @@ export const AutocompleteOpen: Story = {
       ...AutocompleteStories.WithResult.args,
     } as HeaderProps['autocomplete'],
   },
-  parameters: {
-    viewport: {
-      defaultViewport: 'full',
-    },
-  },
 };
 
 export const AutocompleteNotFound: Story = {
@@ -93,10 +86,5 @@ export const AutocompleteNotFound: Story = {
       ...autocompleteArgs,
       ...AutocompleteStories.WithNoResult.args,
     } as HeaderProps['autocomplete'],
-  },
-  parameters: {
-    viewport: {
-      defaultViewport: 'full',
-    },
   },
 };

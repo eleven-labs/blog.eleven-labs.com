@@ -1,7 +1,7 @@
 import type { RelatedPostListProps } from './RelatedPostList';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { postCardArgs } from '@/components/post-card/post-card.stories';
+import { postCardArgs } from '@/stories/post-card';
 
 import { RelatedPostList } from './RelatedPostList';
 

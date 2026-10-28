@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { postCardArgs } from '@/components/post-card/post-card.stories';
+import { postCardArgs } from '@/stories/post-card';
 
 import { PostCardList } from './post-card-list';
 
@@ -11,11 +11,9 @@ const meta = {
     posts: Array.from({ length: 7 }, () => postCardArgs),
     isLoading: false,
   },
+  globals: { viewport: { value: 'mobile', isRotated: false } },
   parameters: {
     layout: 'fullscreen',
-    viewport: {
-      defaultViewport: 'extraSmallScreen',
-    },
   },
   decorators: [
     (Story) => (

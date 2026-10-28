@@ -57,7 +57,7 @@ const meta: Meta<typeof LayoutContentWithSidebar> = {
     ),
   },
   parameters: {
-    layout: 'full',
+    layout: 'fullscreen',
   },
   decorators: [LayoutTemplateDecorator],
 };

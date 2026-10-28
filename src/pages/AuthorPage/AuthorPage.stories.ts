@@ -45,11 +45,9 @@ const meta: Meta<typeof AuthorPage> = {
     } as PostCardListProps),
     newsletterCard: NewsletterCardStories.args as CategoryPageProps['newsletterCard'],
   },
+  globals: { viewport: { value: 'mobile', isRotated: false } },
   parameters: {
-    layout: 'full',
-    viewport: {
-      defaultViewport: 'extraSmallScreen',
-    },
+    layout: 'fullscreen',
   },
   decorators: [LayoutTemplateDecorator],
 };

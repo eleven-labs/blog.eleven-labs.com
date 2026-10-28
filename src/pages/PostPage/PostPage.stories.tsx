@@ -124,11 +124,9 @@ const meta: Meta<typeof PostPage> = {
       sections: SummaryCardStories.default.args?.sections,
     } as PostPageProps['summary'],
   },
+  globals: { viewport: { value: 'mobile', isRotated: false } },
   parameters: {
-    layout: 'full',
-    viewport: {
-      defaultViewport: 'extraSmallScreen',
-    },
+    layout: 'fullscreen',
   },
   decorators: [LayoutTemplateDecorator],
 };

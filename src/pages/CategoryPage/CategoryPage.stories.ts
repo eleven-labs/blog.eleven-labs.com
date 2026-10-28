@@ -27,11 +27,9 @@ const meta: Meta<typeof CategoryPage> = {
     categoryEndingBlock: CategoryEndingBlockStories.args as CategoryPageProps['categoryEndingBlock'],
     newsletterCard: NewsletterCardStories.args as CategoryPageProps['newsletterCard'],
   },
+  globals: { viewport: { value: 'mobile', isRotated: false } },
   parameters: {
-    layout: 'full',
-    viewport: {
-      defaultViewport: 'extraSmallScreen',
-    },
+    layout: 'fullscreen',
   },
   decorators: [LayoutTemplateDecorator],
 };
