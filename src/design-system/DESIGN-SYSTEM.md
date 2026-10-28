@@ -17,10 +17,10 @@ de chaque étape, sous 120 lignes. Les conventions sont dans `docs/design-system
 
 ## Mode et état
 
-- Mode : migration d'un design system maison (Atomic design, tokens nommés d'après la palette, Storybook 7) vers les
-  conventions du skill, sur Base UI.
-- Dernier audit (28/10/2026, après le socle) : 107 erreurs (41 couleurs en dur dont 8 icônes de marque, 61 valeurs
-  arbitraires, 2 hors de l'échelle, 2 `bg-muted`), 29 avertissements.
+- Mode : maintenir. Migré le 28/10/2026 depuis un design system maison (Atomic design, tokens nommés d'après la
+  palette, Storybook 7), sur Base UI.
+- Dernier audit (28/10/2026, fin de migration) : aucune erreur ni avertissement (`audit.mjs --strict`). Au départ :
+  115 erreurs (couleurs en dur, palette, valeurs arbitraires) et 28 avertissements.
 
 ## Décisions
 
@@ -54,7 +54,7 @@ de chaque étape, sous 120 lignes. Les conventions sont dans `docs/design-system
 4. Pages et mises en page (`src/pages`, `src/templates`), contenu rédigé (`PostContent.css`, `mdxComponents`).
    **Fait** : histoires `Pages/`, `Features/Post/`, `Layouts/` ; contenu stylé par classes (`tutorial-steps`, classe
    `js` sur `<html>`) ; `mdxComponents` découpé (un fichier par composant) ; `grid-cols-content-aside`, `max-h-sticky`.
-5. Fin : accessibilité en `error`, lint en `error`, audit sans erreur.
+5. Fin : accessibilité en `error`, lint en `error`, audit sans erreur. **Fait.**
 
 ## Versions
 

@@ -67,10 +67,10 @@ export default [
       ],
     },
   },
-  // Classes Tailwind et conventions du design system ; 'warn' pendant la migration, 'error' au dernier lot
+  // Classes Tailwind et conventions du design system
   ...designSystem({
     entryPoint: 'src/styles.css',
-    level: 'warn',
+    level: 'error',
     // eslint-plugin-react 7 ne charge pas sous ESLint 10 : un composant par fichier est vérifié par l'audit du skill
     oneComponentPerFile: false,
     externalClasses: [
