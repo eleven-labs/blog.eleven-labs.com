@@ -10,13 +10,18 @@
  */
 @import './utilities.css';
 
+/* Classes sans composant React, avant les composants qui peuvent les surcharger */
+@import './classes/card.css';
+@import './classes/overlay.css';
+@import './classes/typography.css';
+
 /* Composants */
-@import '../ui/input/input.css';
 @import '../ui/blockquote/blockquote.css';
 @import '../ui/breadcrumb/breadcrumb.css';
 @import '../ui/burger-button/burger-button.css';
 @import '../ui/button/button.css';
 @import '../ui/close-button/close-button.css';
+@import '../ui/input/input.css';
 @import '../ui/kbd/kbd.css';
 @import '../ui/link/link.css';
 @import '../ui/pagination/pagination.css';
@@ -25,6 +30,20 @@
 @import '../ui/separator/separator.css';
 @import '../ui/skeleton/skeleton.css';
 
-/* Classes sans composant React */
-@import './classes/overlay.css';
-@import './classes/typography.css';
+/* Blocs partagés */
+@import '../../components/author-card/author-card.css';
+@import '../../components/autocomplete/autocomplete.css';
+@import '../../components/category-intro-block/category-intro-block.css';
+@import '../../components/contact-card/contact-card.css';
+@import '../../components/footer/footer.css';
+@import '../../components/header/header.css';
+@import '../../components/home-intro-block/home-intro-block.css';
+@import '../../components/last-articles-block/last-articles-block.css';
+@import '../../components/last-tutorials-block/last-tutorials-block.css';
+@import '../../components/logo/logo.css';
+@import '../../components/newsletter-card/newsletter-card.css';
+@import '../../components/not-found-block/not-found-block.css';
+@import '../../components/post-card/post-card.css';
+@import '../../components/post-metadata/post-metadata.css';
+@import '../../components/summary-bar/summary-bar.css';
+@import '../../components/summary-card/summary-card.css';

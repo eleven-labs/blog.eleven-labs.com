@@ -3,7 +3,7 @@ import type { PostListPageData } from '@/types';
 
 import React from 'react';
 
-import { PostCardList } from '@/components';
+import { PostCardList } from '@/components/post-card-list';
 
 import { usePostCardListContainer } from './usePostCardListContainer';
 

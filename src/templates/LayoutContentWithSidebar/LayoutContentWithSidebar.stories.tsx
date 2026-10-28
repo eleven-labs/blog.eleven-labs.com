@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import React from 'react';
 
-import { SummaryCard } from '@/components';
+import { SummaryCard } from '@/components/summary-card';
 import { LayoutTemplateDecorator } from '@/storybook/decorators';
 
 import { LayoutContentWithSidebar } from './LayoutContentWithSidebar';

@@ -5,7 +5,7 @@ import type { BreadcrumbData } from '@/hooks/useBreadcrumb';
 
 import React from 'react';
 
-import { SummaryCard } from '@/components';
+import { SummaryCard } from '@/components/summary-card';
 import {
   Breadcrumb,
   BreadcrumbItem,

@@ -21,9 +21,6 @@ const meta = {
   },
   parameters: {
     layout: 'centered',
-    backgrounds: {
-      default: 'ultra-light-grey',
-    },
   },
 } satisfies Meta<typeof SearchField>;
 

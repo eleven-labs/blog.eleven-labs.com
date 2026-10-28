@@ -1,8 +1,8 @@
-import type { AuthorCardProps } from '@/components';
+import type { AuthorCardProps } from '@/components/author-card';
 
 import React from 'react';
 
-import { AuthorCard } from '@/components';
+import { AuthorCard } from '@/components/author-card';
 import { Heading } from '@/design-system/ui/heading';
 
 export interface PostFooterProps {

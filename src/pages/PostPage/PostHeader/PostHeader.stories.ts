@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import ShareLinksStories from '@/components/Molecules/ShareLinks/ShareLinks.stories';
+import ShareLinksStories from '@/components/share-links/share-links.stories';
 
 import { PostHeader, type PostHeaderProps } from './PostHeader';
 

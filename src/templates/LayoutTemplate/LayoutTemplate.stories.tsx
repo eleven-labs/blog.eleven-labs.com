@@ -1,12 +1,13 @@
 import type { Meta, StoryFn } from '@storybook/react-vite';
 
-import type { FooterProps, HeaderProps } from '@/components';
+import type { FooterProps } from '@/components/footer';
+import type { HeaderProps } from '@/components/header';
 
 import React from 'react';
 
-import { Header } from '@/components';
-import FooterStories from '@/components/Organisms/Footer/Footer.stories';
-import HeaderStories from '@/components/Organisms/Header/Header.stories';
+import FooterStories from '@/components/footer/footer.stories';
+import { Header } from '@/components/header';
+import HeaderStories from '@/components/header/header.stories';
 
 import { LayoutTemplate } from './LayoutTemplate';
 

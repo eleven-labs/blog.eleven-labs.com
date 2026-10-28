@@ -1,0 +1,15 @@
+/* Carte de contact : illustration en bas à droite et contenu centré. */
+@layer components {
+  .contact-card {
+    @apply flex items-center justify-center py-8;
+    background-image: url('/imgs/contact-background.png');
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .contact-card-content {
+    @apply flex flex-col items-center justify-center gap-6 px-6 text-center;
+    /* 35 rem : largeur de lecture du texte, hors de l'échelle d'espacement. */
+    max-width: 35rem;
+  }
+}

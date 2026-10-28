@@ -1,8 +1,8 @@
-import type { CategoryEndingBlockProps } from '@/components';
+import type { CategoryEndingBlockProps } from '@/components/category-ending-block';
 
 import React from 'react';
 
-import { CategoryEndingBlock } from '@/components';
+import { CategoryEndingBlock } from '@/components/category-ending-block';
 import { Heading } from '@/design-system/ui/heading';
 import { Separator } from '@/design-system/ui/separator';
 

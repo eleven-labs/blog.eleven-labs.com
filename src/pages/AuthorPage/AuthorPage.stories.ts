@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import type { PostCardListProps } from '@/components';
+import type { PostCardListProps } from '@/components/post-card-list';
 import type { CategoryPageProps } from '@/pages/CategoryPage';
 
 import React from 'react';
 
-import { PostCardList } from '@/components';
-import NewsletterCardStories from '@/components/Molecules/Cards/NewsletterCard/NewsletterCard.stories';
-import * as PostCardListStories from '@/components/Organisms/PostCardList/PostCardList.stories';
+import NewsletterCardStories from '@/components/newsletter-card/newsletter-card.stories';
+import { PostCardList } from '@/components/post-card-list';
+import * as PostCardListStories from '@/components/post-card-list/post-card-list.stories';
 import { LayoutTemplateDecorator } from '@/storybook/decorators';
 
 import { AuthorPage } from './AuthorPage';

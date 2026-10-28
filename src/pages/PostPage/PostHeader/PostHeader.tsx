@@ -1,11 +1,11 @@
-import type { PostMetadataProps } from '@/components';
-import type { ShareLinksProps } from '@/components/Molecules/ShareLinks';
+import type { PostMetadataProps } from '@/components/post-metadata';
+import type { ShareLinksProps } from '@/components/share-links';
 import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
 import React from 'react';
 
-import { PostMetadata } from '@/components';
-import { ShareLinks } from '@/components/Molecules/ShareLinks';
+import { PostMetadata } from '@/components/post-metadata';
+import { ShareLinks } from '@/components/share-links';
 import { cn } from '@/design-system/helpers/cn';
 import { Heading } from '@/design-system/ui/heading';
 

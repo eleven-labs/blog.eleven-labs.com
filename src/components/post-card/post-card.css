@@ -1,0 +1,52 @@
+/*
+ * Carte d'article. Trois déclinaisons : `highlight-light` (vignette au-dessus du texte, sur fond blanc),
+ * `highlight-dark` (carte translucide sur fond bleu) et `side-image` (vignette à côté du texte dès `sm`).
+ * La largeur de la vignette passe par la propriété `--post-card-cover-width`, que seule `side-image` modifie.
+ */
+@layer components {
+  .post-card {
+    @apply flex flex-col gap-4 p-4;
+    --post-card-cover-width: 100%;
+  }
+  .post-card-highlight-dark {
+    @apply text-on-brand;
+  }
+  .card.post-card-highlight-dark {
+    /* Encre translucide posée sur le fond bleu de la page : aucun token ne porte cette transparence. */
+    background-color: color-mix(in srgb, var(--color-ink) 15%, transparent);
+  }
+  /* Seule déclinaison à poser la couverture à côté du texte, et seulement une fois la carte assez large : en
+     dessous, la vignette serait trop petite pour porter quoi que ce soit. */
+  .post-card-side-image {
+    @apply sm:flex-row sm:items-center;
+    @variant sm {
+      /* Entre 160 et 288 px, soit environ un tiers de la carte. */
+      --post-card-cover-width: clamp(10rem, 32%, 18rem);
+    }
+  }
+
+  /* Porte la largeur de la couverture : un pourcentage posé sur l'<img> ne saurait pas contre quoi se résoudre. */
+  .post-card-cover {
+    @apply flex-none;
+    width: var(--post-card-cover-width);
+  }
+  .post-card-cover > * {
+    @apply block w-full;
+  }
+  /* Toutes les déclinaisons, à toutes les largeurs, rendent la couverture dans le même cadre 16/9 : une seule
+     image source, cadrée une fois, suffit pour toutes. */
+  .post-card-image {
+    @apply block aspect-video h-auto w-full rounded-card object-cover;
+  }
+
+  .post-card-title-link {
+    @apply text-ink;
+  }
+  .post-card-highlight-dark .post-card-title-link {
+    @apply text-on-brand;
+  }
+  /* Posée sur la ligne du titre plutôt qu'épinglée au coin de la carte, où elle recouvrirait la couverture. */
+  .post-card-badge {
+    @apply flex-none rounded-card bg-highlight px-1.5 py-1 font-display font-bold tracking-wide text-brand uppercase;
+  }
+}

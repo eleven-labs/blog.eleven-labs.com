@@ -1,0 +1,17 @@
+/*
+ * CategoryIntroBlock : bandeau d'introduction d'une catégorie, sur une photo différente selon la largeur de l'écran
+ * (images du dossier public, hors des tokens).
+ */
+@layer components {
+  .category-intro {
+    @apply text-on-brand;
+    background-image: url('/imgs/category-intro-block-mobile.jpg');
+    background-size: cover;
+    background-position: bottom;
+  }
+  @media (min-width: 48rem) {
+    .category-intro {
+      background-image: url('/imgs/category-intro-block-desktop.jpg');
+    }
+  }
+}

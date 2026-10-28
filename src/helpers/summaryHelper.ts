@@ -1,4 +1,4 @@
-import { getSummarySectionState } from '@/components/Molecules/Cards/SummaryCard/SummaryCard';
+import { getSummarySectionState } from '@/components/summary-card';
 
 // A section becomes the active one once its top has gone past this distance from the top of the viewport
 const ACTIVE_SECTION_OFFSET = 120;
@@ -33,6 +33,7 @@ export const enhanceSummaries = (): (() => void) => {
     for (const link of links) {
       const state = getSummarySectionState(sectionIds.indexOf(link.dataset.summaryLink as string), activeIndex);
       link.dataset.state = state;
+      link.classList.toggle('summary-card-link-past', state === 'past');
       if (state === 'active') {
         link.setAttribute('aria-current', 'location');
       } else {

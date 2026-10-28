@@ -35,6 +35,8 @@ de chaque étape, sous 120 lignes. Les conventions sont dans `docs/design-system
 - 28/10 : `primary` assombri (#dd3156 → #c42848) : 3,95:1 sur canvas, sous le seuil AA, pour les liens et la page
   active. Coloration du code sur des tokens `code-*` (commentaires #969896 → #6a737d, balises, variables et littéraux
   assombris pour l'AA).
+- 28/10 : métadonnées d'une carte posée sur le bleu en `highlight` (le rose y faisait 2,1:1) ; attributs `data-*` lus
+  par les scripts (`data-header-menu`, `data-summary-*`, `data-tutorial-*`) gardés, pas lus par le CSS.
 - 28/10 : `cn` déclare à tailwind-merge les noms propres au design system (utilitaires de texte, `control`, rayons,
   ombres) ; les noms de l'ancienne échelle sont retirés.
 - 28/10 : accessibilité bloquante (`error`), sauf les histoires des blocs pas encore migrés (`a11y: { test: 'todo' }`
@@ -48,6 +50,7 @@ de chaque étape, sous 120 lignes. Les conventions sont dans `docs/design-system
    équivalents de shadcn (Kbd, Skeleton, Separator, Breadcrumb, Pagination, Input), histoires `UI/<Catégorie>/…`.
    **Fait** : 20 composants, plus de baril `@/design-system` (imports par `@/design-system/ui/<composant>`).
 3. Blocs de `src/components` (Atoms, Molecules, Organisms) → `src/components/<bloc>/`, histoires `Shared/…`.
+   **Fait** : 19 blocs, classe générique `card` (`styles/classes/card.css`), plus de baril `@/components`.
 4. Pages et mises en page (`src/pages`, `src/templates`), contenu rédigé (`PostContent.css`, `mdxComponents`).
 5. Fin : accessibilité en `error`, lint en `error`, audit sans erreur.
 

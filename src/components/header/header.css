@@ -1,0 +1,79 @@
+/* Header : en-tête du blog, menu des catégories et champ de recherche (ouverts à la demande sous `md`). */
+@layer components {
+  .header {
+    @apply relative flex items-center justify-between bg-surface p-6;
+    /* Filet fin sous l'en-tête */
+    border-bottom: 0.5px solid var(--color-surface-alt);
+  }
+
+  /* Logo : plus petit sur mobile */
+  .header-logo {
+    @apply text-brand;
+  }
+  .header-logo .logo {
+    font-size: 2rem;
+  }
+  @variant md {
+    .header-logo .logo {
+      font-size: 2.75rem;
+    }
+  }
+
+  /* Menu : sous `md` il quitte le flux et occupe l'écran sous l'en-tête, haut de 5rem (80px), fermé par défaut */
+  .header-menu {
+    @apply fixed bottom-0 left-0 z-10 hidden w-full flex-col bg-surface font-display font-bold tracking-wide uppercase;
+    top: 5rem;
+    border-top: 0.5px solid var(--color-line);
+    @variant md {
+      @apply static mx-3 flex w-auto flex-row gap-6 border-t-0 bg-transparent;
+    }
+    @variant lg {
+      @apply mx-0 gap-10;
+    }
+  }
+  .header-menu-open {
+    @apply flex;
+  }
+  .header-menu .header-menu-item {
+    @apply self-center px-6 py-3 font-bold text-primary no-underline hover:text-brand hover:underline;
+    border-bottom: 0.5px solid var(--color-line);
+    @variant md {
+      @apply border-b-0 p-0;
+    }
+  }
+  .header-menu-divider {
+    @apply w-px bg-brand;
+  }
+  .header-menu-contact {
+    @apply mt-6 flex items-center justify-center md:hidden;
+  }
+
+  /* Champ de recherche : sous `md` il s'affiche à la demande, sur toute la largeur sous l'en-tête. Il ne dépasse
+     pas le bas de l'écran (`100%` y vaut la hauteur de l'en-tête) : les suggestions défilent à l'intérieur. */
+  .header-search {
+    @variant max-md {
+      @apply absolute top-full left-0 z-10 hidden w-full flex-col bg-surface p-4;
+      max-height: calc(100dvh - 100%);
+      border-block: 0.5px solid var(--color-surface-alt);
+    }
+  }
+  .header-search-open {
+    @variant max-md {
+      @apply flex;
+    }
+  }
+
+  /* Loupe et burger/croix, visibles sous `md` seulement */
+  .header-actions {
+    @apply flex items-center gap-4 md:hidden;
+  }
+  .header-search-toggle {
+    @apply flex bg-transparent p-0 text-brand;
+  }
+  /* Le burger et la croix partagent la même boîte (30px), pour que la loupe ne bouge pas quand le menu s'ouvre */
+  .header-menu-toggle {
+    @apply justify-center p-0;
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+}

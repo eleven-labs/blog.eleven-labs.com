@@ -405,6 +405,23 @@ un modificateur `reminder--<variante>` : `reminder--note`, `reminder--summary`, 
   </div>
 </Unstyled>
 
+## Cartes
+
+`card` est la surface blanche aux coins arrondis des cartes du blog (article, auteur, sommaire, contact) ; le
+remplissage reste en utilitaires, il varie d'une carte à l'autre. `card-stretched-link` étire le lien principal sur
+toute la carte, qui devient cliquable d'un bout à l'autre.
+
+<Unstyled>
+  <article className="card max-w-sm p-4">
+    <h3 className="heading-xs">
+      <a className="card-stretched-link text-ink" href="#article">
+        Migrer un design system vers Tailwind CSS v4
+      </a>
+    </h3>
+    <p className="body-xs text-muted">28 octobre 2026 · 8 min de lecture</p>
+  </article>
+</Unstyled>
+
 ## Calques
 
 `overlay` est le voile des fenêtres modales ; `popup` anime l'apparition des calques flottants (menus, popovers,
@@ -412,7 +429,7 @@ infobulles) selon `data-side` et `data-open` / `data-closed`, posés par Base UI
 composants à calque (`<Dialog>`, `<Menu>`, `<Popover>`…) et non par un composant dédié.
 
 <Unstyled>
-  <div className="relative h-40 overflow-hidden rounded-card bg-surface">
+  <div className="relative h-32 overflow-hidden rounded-card bg-surface">
     <div className="overlay absolute!" data-open="" />
     <div
       className="popup absolute top-4 left-4 rounded-card bg-canvas p-4 shadow-card"

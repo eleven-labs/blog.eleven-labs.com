@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NewsletterCard } from '@/components';
+import { NewsletterCard } from '@/components/newsletter-card';
 import { useNewsletterCard } from '@/hooks/useNewsletterCard';
 import { LayoutContentWithSidebar } from '@/templates';
 

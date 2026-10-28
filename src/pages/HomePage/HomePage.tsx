@@ -1,8 +1,14 @@
-import type { HomeIntroBlockProps, LastArticlesBlockProps, LastTutorialsBlockProps, NewsletterCardProps } from '@/components';
+import type { HomeIntroBlockProps } from '@/components/home-intro-block';
+import type { LastArticlesBlockProps } from '@/components/last-articles-block';
+import type { LastTutorialsBlockProps } from '@/components/last-tutorials-block';
+import type { NewsletterCardProps } from '@/components/newsletter-card';
 
 import React from 'react';
 
-import { HomeIntroBlock, LastArticlesBlock, LastTutorialsBlock, NewsletterCard } from '@/components';
+import { HomeIntroBlock } from '@/components/home-intro-block';
+import { LastArticlesBlock } from '@/components/last-articles-block';
+import { LastTutorialsBlock } from '@/components/last-tutorials-block';
+import { NewsletterCard } from '@/components/newsletter-card';
 
 export type HomePageProps = {
   homeIntroBlock: HomeIntroBlockProps;

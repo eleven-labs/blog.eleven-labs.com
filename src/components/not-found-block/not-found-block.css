@@ -1,0 +1,8 @@
+/* NotFoundBlock : illustration « aucun résultat » (image du dossier public, hauteur propre à l'image). */
+@layer components {
+  .not-found-picture {
+    @apply w-full bg-center bg-no-repeat;
+    height: 135px;
+    background-image: url('/imgs/not-found.png');
+  }
+}

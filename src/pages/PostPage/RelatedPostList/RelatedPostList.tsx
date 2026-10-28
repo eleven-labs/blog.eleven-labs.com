@@ -1,8 +1,8 @@
-import type { PostCardProps } from '@/components';
+import type { PostCardProps } from '@/components/post-card';
 
 import React from 'react';
 
-import { PostCard } from '@/components';
+import { PostCard } from '@/components/post-card';
 import { Heading } from '@/design-system/ui/heading';
 
 export interface RelatedPostListProps {

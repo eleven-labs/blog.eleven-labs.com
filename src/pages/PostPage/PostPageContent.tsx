@@ -2,12 +2,14 @@ import type { PostFooterProps } from './PostFooter';
 import type { PostHeaderProps } from './PostHeader';
 import type { RelatedPostListProps } from './RelatedPostList';
 
-import type { ContactCardProps, SummaryCardProps } from '@/components';
+import type { ContactCardProps } from '@/components/contact-card';
+import type { SummaryCardProps } from '@/components/summary-card';
 import type { PictureProps } from '@/design-system/ui/picture';
 
 import React from 'react';
 
-import { ContactCard, SummaryBar } from '@/components';
+import { ContactCard } from '@/components/contact-card';
+import { SummaryBar } from '@/components/summary-bar';
 import { Picture } from '@/design-system/ui/picture';
 import { Separator } from '@/design-system/ui/separator';
 

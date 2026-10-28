@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NotFoundBlock } from '@/components';
+import { NotFoundBlock } from '@/components/not-found-block';
 
 export type NotFoundPageProps = {
   title: React.ReactNode;

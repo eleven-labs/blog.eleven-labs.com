@@ -1,8 +1,8 @@
-import type { NotFoundBlockProps } from '@/components';
+import type { NotFoundBlockProps } from '@/components/not-found-block';
 
 import React from 'react';
 
-import { NotFoundBlock } from '@/components';
+import { NotFoundBlock } from '@/components/not-found-block';
 import { Heading } from '@/design-system/ui/heading';
 import { Skeleton } from '@/design-system/ui/skeleton';
 
