@@ -1,0 +1,24 @@
+/* Breadcrumb : fil d'Ariane du blog. */
+@layer components {
+  .breadcrumb-list {
+    @apply my-4 flex list-none flex-wrap items-center gap-1 p-0 body-s font-semibold wrap-break-word;
+  }
+  .breadcrumb-item {
+    @apply inline-flex items-center gap-1;
+  }
+  .breadcrumb-link {
+    @apply text-primary underline hover:no-underline;
+  }
+  .breadcrumb-page {
+    @apply font-normal;
+  }
+  .breadcrumb-separator > svg {
+    @apply size-4;
+  }
+  .breadcrumb-ellipsis {
+    @apply flex size-5 items-center justify-center;
+  }
+  .breadcrumb-ellipsis > svg {
+    @apply size-4;
+  }
+}

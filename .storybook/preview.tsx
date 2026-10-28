@@ -16,9 +16,9 @@ const preview: Preview = {
     layout: 'centered',
     controls: { matchers: { color: /(background|color)$/i, date: /Date$/i } },
     viewport: { options: viewports },
-    // Migration en cours : les violations d'accessibilité sont signalées sans faire échouer l'histoire. Repasse à
-    // 'error' (bloquant, vitest et CI) au dernier lot, comme le lint de warn à error.
-    a11y: { test: 'todo' },
+    // Une violation d'accessibilité fait échouer le test de l'histoire (vitest, CI). Pendant la migration, les histoires
+    // des blocs pas encore migrés sont en 'todo' dans leur meta.
+    a11y: { test: 'error' },
     options: {
       // Sections dans l'ordre des rôles, UI par catégories, puis titres par ordre alphabétique ; les histoires d'un
       // fichier gardent leur ordre.

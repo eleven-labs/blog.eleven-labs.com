@@ -3,7 +3,7 @@ import type { PostCardProps } from '@/components';
 import React from 'react';
 
 import { PostCard } from '@/components';
-import { Heading } from '@/design-system';
+import { Heading } from '@/design-system/ui/heading';
 
 export interface RelatedPostListProps {
   relatedPostListTitle: string;

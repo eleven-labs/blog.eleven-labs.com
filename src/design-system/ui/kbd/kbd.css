@@ -1,0 +1,12 @@
+/* Kbd : touche du clavier, fond gris, bordure marquée. */
+@layer components {
+  .kbd {
+    @apply inline-block w-fit rounded-card border border-line-strong bg-surface-alt px-2 py-1 body-xs font-semibold text-ink-soft;
+  }
+  .kbd svg {
+    @apply size-3;
+  }
+  .kbd-group {
+    @apply inline-flex items-center gap-1;
+  }
+}

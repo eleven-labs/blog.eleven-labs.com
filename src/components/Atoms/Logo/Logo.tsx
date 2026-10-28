@@ -2,8 +2,9 @@ import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
 import * as React from 'react';
 
-import { Svgs, Text } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
+import { Svgs } from '@/design-system/ui/icon';
+import { Text } from '@/design-system/ui/text';
 
 export const logoName = ['website', 'blog'] as const;
 export type LogoNameType = (typeof logoName)[number];

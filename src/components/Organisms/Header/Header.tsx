@@ -4,8 +4,12 @@ import type { ComponentPropsWithoutRef } from '@/design-system/types';
 import React from 'react';
 
 import { Autocomplete, Logo } from '@/components';
-import { BurgerButton, Button, CloseButton, Icon, Link } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
+import { BurgerButton } from '@/design-system/ui/burger-button';
+import { Button } from '@/design-system/ui/button';
+import { CloseButton } from '@/design-system/ui/close-button';
+import { Icon } from '@/design-system/ui/icon';
+import { Link } from '@/design-system/ui/link';
 
 export interface HeaderProps {
   homeLink: ComponentPropsWithoutRef<'a'>;
@@ -104,9 +108,7 @@ export const Header: React.FC<HeaderProps> = ({
           </>
         )}
         <div className="mt-6 flex items-center justify-center md:hidden">
-          <Button render={<a {...contactLink} />}>
-            {contactLinkLabel}
-          </Button>
+          <Button render={<a {...contactLink} />}>{contactLinkLabel}</Button>
         </div>
       </div>
       <div

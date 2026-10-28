@@ -5,8 +5,11 @@ import type { ComponentPropsWithoutRef } from '@/design-system/types';
 import { cva } from 'class-variance-authority';
 import React, { Fragment } from 'react';
 
-import { Icon, Link, Skeleton, Text } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
+import { Icon } from '@/design-system/ui/icon';
+import { Link } from '@/design-system/ui/link';
+import { Skeleton } from '@/design-system/ui/skeleton';
+import { Text } from '@/design-system/ui/text';
 
 export const postMetadataVariants = cva('flex flex-wrap items-center body-s', {
   variants: {

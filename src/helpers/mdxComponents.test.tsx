@@ -1,6 +1,6 @@
 import { mdxToHtml } from './markdownToHtmlHelper';
 
-const LINK_CLASS = 'class="font-semibold text-primary underline hover:no-underline"';
+const LINK_CLASS = 'class="link"';
 
 describe('mdxToHtml', () => {
   it('should render a reminder of the design system', () => {
@@ -8,7 +8,7 @@ describe('mdxToHtml', () => {
       ['<Reminder variant="warning" title="Attention">', '', 'Some **markdown**', '', '</Reminder>'].join('\n')
     );
 
-    expect(html).toContain('class="reminder--warning');
+    expect(html).toContain('reminder--warning');
     expect(html).toContain('<p class="reminder-title');
     expect(html).toContain('<p>Some <strong>markdown</strong></p>');
   });
@@ -102,7 +102,7 @@ describe('mdxToHtml', () => {
 
   it('should render a key of the keyboard', () => {
     expect(mdxToHtml('Press <Kbd>Ctrl</Kbd> + <Kbd>F5</Kbd>')).toMatch(
-      /^<p>Press <kbd class="[^"]*rounded-card[^"]*">Ctrl<\/kbd> \+ <kbd class="[^"]*">F5<\/kbd><\/p>$/
+      /^<p>Press <kbd class="kbd">Ctrl<\/kbd> \+ <kbd class="kbd">F5<\/kbd><\/p>$/
     );
   });
 

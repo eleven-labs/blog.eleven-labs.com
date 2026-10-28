@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef } from '@/design-system';
+import type { ComponentPropsWithoutRef } from '@/design-system/types';
 import type { PostListPageData } from '@/types';
 
 import React from 'react';

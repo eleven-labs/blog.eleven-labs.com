@@ -3,7 +3,11 @@ import type { ComponentPropsWithoutRef, IconNameType } from '@/design-system/typ
 import React from 'react';
 
 import { Logo } from '@/components';
-import { Button, Heading, Icon, Link, Text } from '@/design-system';
+import { Button } from '@/design-system/ui/button';
+import { Heading } from '@/design-system/ui/heading';
+import { Icon } from '@/design-system/ui/icon';
+import { Link } from '@/design-system/ui/link';
+import { Text } from '@/design-system/ui/text';
 
 export interface FooterProps {
   introBlock: {
@@ -73,9 +77,7 @@ export const Footer: React.FC<FooterProps> = ({
               />
             </a>
           ))}
-          <Button render={<a {...contactLink} />}>
-            {contactLabel}
-          </Button>
+          <Button render={<a {...contactLink} />}>{contactLabel}</Button>
         </div>
       </div>
     </div>

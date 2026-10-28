@@ -6,8 +6,8 @@ import React from 'react';
 
 import { PostMetadata } from '@/components';
 import { ShareLinks } from '@/components/Molecules/ShareLinks';
-import { Heading } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
+import { Heading } from '@/design-system/ui/heading';
 
 export interface PostHeaderProps {
   title: React.ReactNode;
@@ -22,14 +22,7 @@ export interface PostHeaderProps {
   className?: string;
 }
 
-export const PostHeader: React.FC<PostHeaderProps> = ({
-  title,
-  date,
-  readingTime,
-  authors,
-  shareLinks,
-  className,
-}) => (
+export const PostHeader: React.FC<PostHeaderProps> = ({ title, date, readingTime, authors, shareLinks, className }) => (
   <div className={cn('body-xs', className)}>
     <Heading render={<h1 />} size="xl" className="text-brand">
       {title}

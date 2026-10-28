@@ -1,0 +1,12 @@
+/* Separator : classes posées par le composant (premier jet de rehome.mjs, à relire). */
+@layer components {
+  .separator {
+    @apply shrink-0 bg-line;
+  }
+  .separator[data-orientation='horizontal'] {
+    @apply h-px w-full;
+  }
+  .separator[data-orientation='vertical'] {
+    @apply w-px self-stretch;
+  }
+}

@@ -4,32 +4,23 @@ import { clsx } from 'clsx';
 import { extendTailwindMerge } from 'tailwind-merge';
 
 /**
- * Les échelles personnalisées déclarées dans `styles/theme.css` sont répétées ici : sans elles,
- * `tailwind-merge` prendrait `heading-xl` pour une couleur et le supprimerait face à
- * `text-brand`. Toute valeur ajoutée au thème doit l'être des deux côtés.
+ * Les échelles des tokens gardent les noms de Tailwind (`text-sm`, `p-4`), que `tailwind-merge` connaît. Seuls les noms
+ * propres au design system sont déclarés ici : sans eux, `heading-xl` et `text-primary` ne seraient pas reconnus comme
+ * taille et couleur concurrentes, et une dimension nommée (`size-control`) ne remplacerait pas `size-4`. Un token de
+ * taille ajouté dans `styles/tokens.css`, ou un utilitaire de `styles/classes/typography.css`, l'est aussi ici.
  */
 const twMerge = extendTailwindMerge({
   extend: {
     theme: {
-      color: [
-        'primary',
-        'primary-dark',
-        'primary-very-dark',
-        'secondary',
-        'secondary-dark',
-        'info',
-        'accent',
-        'ultra-light-grey',
-        'light-grey',
-        'grey',
-        'dark-grey',
-        'ultra-dark-grey',
-      ],
-      font: ['base', 'heading', 'blockquote'],
-      text: [
-        'xs',
-        's',
-        'm',
+      spacing: ['control'],
+      radius: ['control', 'card'],
+      shadow: ['card', 'overlay'],
+    },
+    classGroups: {
+      'font-size': [
+        'body-xs',
+        'body-s',
+        'body-m',
         'heading-xs',
         'heading-s',
         'heading-m',
@@ -40,11 +31,6 @@ const twMerge = extendTailwindMerge({
         'markup-l',
         'markup-xl',
       ],
-      leading: ['base', 'large'],
-      tracking: ['heading-xl'],
-      radius: ['xs', 's', 'full-rounded'],
-      spacing: ['xxs-3', 'xxs-2', 'xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'xxl-2', 'xxl-3'],
-      breakpoint: ['sm', 'md', 'lg'],
     },
   },
 });

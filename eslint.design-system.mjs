@@ -23,6 +23,8 @@ export function designSystem({ entryPoint, oneComponentPerFile = true, level = '
   return [
     {
       files: ['**/*.{ts,tsx,js,jsx}'],
+      // Les tests comparent du HTML rendu (const LINK_CLASS = 'class="…"') : ce ne sont pas des listes de classes
+      ignores: ['**/*.{test,spec}.{ts,tsx,js,jsx}'],
       plugins: { 'better-tailwindcss': betterTailwindcss },
       settings: {
         // detectComponentClasses : les classes sémantiques de @layer components sont des classes connues

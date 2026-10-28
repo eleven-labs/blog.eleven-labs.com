@@ -1,14 +1,23 @@
-import type { BreadcrumbProps } from '@/design-system';
+import type { BreadcrumbData } from '@/hooks/useBreadcrumb';
 
 import React from 'react';
 
-import { Breadcrumb, Heading, Text } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/design-system/ui/breadcrumb';
+import { Heading } from '@/design-system/ui/heading';
+import { Text } from '@/design-system/ui/text';
 
 export interface CategoryIntroBlockProps {
   title: React.ReactNode;
   description: React.ReactNode;
-  breadcrumb: BreadcrumbProps;
+  breadcrumb: BreadcrumbData;
   className?: string;
 }
 
@@ -26,7 +35,22 @@ export const CategoryIntroBlock: React.FC<CategoryIntroBlockProps> = ({
   >
     <div className="flex items-center justify-center bg-brand px-8 opacity-90 md:px-0">
       <div className="container-content pt-6 pb-16">
-        <Breadcrumb {...breadcrumb} />
+        <Breadcrumb>
+          <BreadcrumbList>
+            {breadcrumb.items.map((item, index) => (
+              <React.Fragment key={index}>
+                {index > 0 && <BreadcrumbSeparator />}
+                <BreadcrumbItem>
+                  {item.href ? (
+                    <BreadcrumbLink href={item.href}>{item.label}</BreadcrumbLink>
+                  ) : (
+                    <BreadcrumbPage>{item.label}</BreadcrumbPage>
+                  )}
+                </BreadcrumbItem>
+              </React.Fragment>
+            ))}
+          </BreadcrumbList>
+        </Breadcrumb>
         <Heading render={<h1 />} size="xl">
           {title}
         </Heading>

@@ -6,7 +6,7 @@
  *
  * Bloc @theme de Tailwind v4, importé par la feuille d'entrée juste après Tailwind. Valeurs en hexadécimal, une ligne
  * par token, commentaire d'usage en fin de ligne : la page Tokens de Storybook les lit telles quelles.
- * Contrastes AA vérifiés : primary 4,5:1 et muted 4,6:1 sur surface, brand 8,9:1 sur canvas, états 4,8:1 et plus.
+ * Contrastes AA vérifiés : primary 5,6:1 sur surface et 4,9:1 sur canvas, muted 4,6:1 sur surface, brand 8,9:1 sur canvas, états 4,8:1 et plus.
  */
 @theme static {
   /* Polices : Google Fonts, chargées par l'application et par Storybook (preview-head.html) */
@@ -33,7 +33,7 @@
   --color-on-brand: #ffffff; /* texte posé sur brand */
   --color-footer: #194180; /* pied de page */
   --color-footer-strong: #093670; /* bandeau du pied de page */
-  --color-primary: #dd3156; /* actions, liens, mise en avant */
+  --color-primary: #c42848; /* actions, liens, mise en avant (assombri de #dd3156 : 4,9:1 sur canvas) */
   --color-on-primary: #ffffff; /* texte posé sur primary */
   --color-highlight: #f8fa9b; /* étiquettes, titre de la newsletter */
 
@@ -46,6 +46,16 @@
   --color-warning-soft: #fff3e0;
   --color-danger: #c62828;
   --color-danger-soft: #ffebee;
+
+  /* Coloration du code (thème github-gist), contrastes AA sur surface */
+  --color-code-comment: #6a737d; /* commentaires */
+  --color-code-keyword: #d73a49; /* mots-clés */
+  --color-code-literal: #007a9c; /* littéraux, fonctions natives */
+  --color-code-number: #005cc5; /* nombres */
+  --color-code-string: #032f62; /* chaînes */
+  --color-code-title: #6f42c1; /* titres, fonctions, propriétés */
+  --color-code-tag: #22863a; /* balises */
+  --color-code-variable: #b93a00; /* variables */
 
   /* Voile derrière les calques modaux */
   --color-overlay: #00000080;

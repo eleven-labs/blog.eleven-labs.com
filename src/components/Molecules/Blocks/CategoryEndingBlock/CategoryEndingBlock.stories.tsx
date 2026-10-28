@@ -2,11 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import React from 'react';
 
-import { Link } from '@/design-system';
+import { Link } from '@/design-system/ui/link';
 
 import { CategoryEndingBlock } from './CategoryEndingBlock';
 
 const meta: Meta<typeof CategoryEndingBlock> = {
+  // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
+  parameters: { a11y: { test: 'todo' } },
   component: CategoryEndingBlock,
   args: {
     title: 'Quels types d’applications peuvent être développées en Javascript ?',

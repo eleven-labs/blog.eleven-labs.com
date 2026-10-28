@@ -32,14 +32,21 @@ de chaque étape, sous 120 lignes. Les conventions sont dans `docs/design-system
 - 28/10 : échelles de Tailwind restreintes (`--spacing-*: initial`…), espaces nommés convertis (`p-m` → `p-6`,
   42 px → `10`), tailles de texte arrondies à l'échelle ; pas de token responsive : la taille bureau est dans les
   utilitaires `body-*`, `heading-*`, `markup-*` (`classes/typography.css`).
-- 28/10 : accessibilité en `todo` et lint en `warn` pendant la migration ; `react/no-multi-comp` désactivé
+- 28/10 : `primary` assombri (#dd3156 → #c42848) : 3,95:1 sur canvas, sous le seuil AA, pour les liens et la page
+  active. Coloration du code sur des tokens `code-*` (commentaires #969896 → #6a737d, balises, variables et littéraux
+  assombris pour l'AA).
+- 28/10 : `cn` déclare à tailwind-merge les noms propres au design system (utilitaires de texte, `control`, rayons,
+  ombres) ; les noms de l'ancienne échelle sont retirés.
+- 28/10 : accessibilité bloquante (`error`), sauf les histoires des blocs pas encore migrés (`a11y: { test: 'todo' }`
+  dans leur meta, retiré à leur lot) ; lint en `warn` pendant la migration ; `react/no-multi-comp` désactivé
   (eslint-plugin-react 7 ne charge pas sous ESLint 10), un composant par fichier vérifié par l'audit.
 
 ## Migration
 
 1. Socle et tokens : Storybook 10, vitest 5, Vite 6, tokens, thème, lint. **Fait.**
 2. Composants de `src/design-system` → `src/design-system/ui/<composant>/` (kebab-case), classes sémantiques,
-   équivalents de shadcn (Kbd, Skeleton, Separator, Breadcrumb, Pagination), histoires `UI/<Catégorie>/…`.
+   équivalents de shadcn (Kbd, Skeleton, Separator, Breadcrumb, Pagination, Input), histoires `UI/<Catégorie>/…`.
+   **Fait** : 20 composants, plus de baril `@/design-system` (imports par `@/design-system/ui/<composant>`).
 3. Blocs de `src/components` (Atoms, Molecules, Organisms) → `src/components/<bloc>/`, histoires `Shared/…`.
 4. Pages et mises en page (`src/pages`, `src/templates`), contenu rédigé (`PostContent.css`, `mdxComponents`).
 5. Fin : accessibilité en `error`, lint en `error`, audit sans erreur.

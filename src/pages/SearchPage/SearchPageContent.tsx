@@ -3,7 +3,8 @@ import type { NotFoundBlockProps } from '@/components';
 import React from 'react';
 
 import { NotFoundBlock } from '@/components';
-import { Heading, Skeleton } from '@/design-system';
+import { Heading } from '@/design-system/ui/heading';
+import { Skeleton } from '@/design-system/ui/skeleton';
 
 export type SearchPageContentProps = {
   title: React.ReactNode;

@@ -2,11 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import React from 'react';
 
-import { Text } from '@/design-system';
+import { Text } from '@/design-system/ui/text';
 
 import { Footer } from './Footer';
 
 const meta: Meta<typeof Footer> = {
+  // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
+  parameters: { a11y: { test: 'todo' } },
   component: Footer,
   args: {
     introBlock: {

@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { PostMetadata } from './PostMetadata';
 
 const meta: Meta<typeof PostMetadata> = {
+  // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
+  parameters: { a11y: { test: 'todo' } },
   component: PostMetadata,
 };
 

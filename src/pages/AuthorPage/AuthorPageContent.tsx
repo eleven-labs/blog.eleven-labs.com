@@ -1,7 +1,10 @@
 import React from 'react';
 
-import { Divider, Icon, Link, Text } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
+import { Icon } from '@/design-system/ui/icon';
+import { Link } from '@/design-system/ui/link';
+import { Separator } from '@/design-system/ui/separator';
+import { Text } from '@/design-system/ui/text';
 
 export type SocialNetworkName = 'github' | 'twitter' | 'linkedin';
 
@@ -57,7 +60,7 @@ export const AuthorPageContent: React.FC<AuthorPageContentProps> = ({ author, ti
         )}
       </div>
     </div>
-    <Divider />
+    <Separator />
     <Text size="m" className="font-medium">
       {title}
     </Text>

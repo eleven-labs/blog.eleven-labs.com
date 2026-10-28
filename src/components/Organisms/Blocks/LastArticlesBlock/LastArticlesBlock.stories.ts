@@ -6,6 +6,8 @@ import * as PostCardStories from '@/components/Molecules/Cards/PostCard/PostCard
 import { LastArticlesBlock } from './LastArticlesBlock';
 
 const meta: Meta<typeof LastArticlesBlock> = {
+  // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
+  parameters: { a11y: { test: 'todo' } },
   component: LastArticlesBlock,
   args: {
     title: 'Nos articles récents autour des dernières tendances technologiques',

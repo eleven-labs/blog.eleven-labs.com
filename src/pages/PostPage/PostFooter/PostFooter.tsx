@@ -3,7 +3,7 @@ import type { AuthorCardProps } from '@/components';
 import React from 'react';
 
 import { AuthorCard } from '@/components';
-import { Heading } from '@/design-system';
+import { Heading } from '@/design-system/ui/heading';
 
 export interface PostFooterProps {
   title: React.ReactNode;

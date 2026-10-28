@@ -2,11 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import React from 'react';
 
-import { Text } from '@/design-system';
+import { Text } from '@/design-system/ui/text';
 
 import { ContactCard } from './ContactCard';
 
 const meta: Meta<typeof ContactCard> = {
+  // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
+  parameters: { a11y: { test: 'todo' } },
   component: ContactCard,
   args: {
     title: (

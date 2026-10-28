@@ -2,8 +2,10 @@ import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
 import React from 'react';
 
-import { Divider, Heading, Text } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
+import { Heading } from '@/design-system/ui/heading';
+import { Separator } from '@/design-system/ui/separator';
+import { Text } from '@/design-system/ui/text';
 
 export const SummaryCardVariant = ['primary', 'secondary'] as const;
 export type SummaryCardVariantType = (typeof SummaryCardVariant)[number];
@@ -72,7 +74,7 @@ export const SummaryCard: React.FC<SummaryCardProps> = ({
               </Text>
               <Text>{label}</Text>
             </a>
-            {index !== sections.length - 1 && <Divider className="my-2" />}
+            {index !== sections.length - 1 && <Separator className="my-2" />}
           </React.Fragment>
         ))}
       </div>

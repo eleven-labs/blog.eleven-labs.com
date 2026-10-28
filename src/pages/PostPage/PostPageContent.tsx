@@ -3,12 +3,13 @@ import type { PostHeaderProps } from './PostHeader';
 import type { RelatedPostListProps } from './RelatedPostList';
 
 import type { ContactCardProps, SummaryCardProps } from '@/components';
-import type { PictureProps } from '@/design-system';
+import type { PictureProps } from '@/design-system/ui/picture';
 
 import React from 'react';
 
 import { ContactCard, SummaryBar } from '@/components';
-import { Divider, Picture } from '@/design-system';
+import { Picture } from '@/design-system/ui/picture';
+import { Separator } from '@/design-system/ui/separator';
 
 import { PostFooter } from './PostFooter';
 import { PostHeader } from './PostHeader';
@@ -42,7 +43,7 @@ export const PostPageContent: React.FC<PostPageContentProps> = ({
   <>
     <div>
       <PostHeader {...header} />
-      <Divider className="mt-6" />
+      <Separator className="mt-6" />
       {cover && (
         <Picture
           {...cover}
@@ -50,15 +51,11 @@ export const PostPageContent: React.FC<PostPageContentProps> = ({
           img={{ ...cover.img, className: 'block h-auto w-full rounded-card object-cover aspect-video' }}
         />
       )}
-      <SummaryBar
-        className="mt-8 md:hidden"
-        variant={variant === 'tutorial' ? 'secondary' : 'primary'}
-        {...summary}
-      />
+      <SummaryBar className="mt-8 md:hidden" variant={variant === 'tutorial' ? 'secondary' : 'primary'} {...summary} />
       <div className="post-content mt-8 md:mt-6">{children}</div>
       <PostFooter className="mt-8" {...footer} />
     </div>
-    <Divider />
+    <Separator />
     <ContactCard {...contactCard} />
     {relatedPostList.posts.length > 0 && <RelatedPostList {...relatedPostList} />}
   </>

@@ -1,4 +1,4 @@
-import { Meta, Unstyled } from '@storybook/addon-docs/blocks';
+import { Meta, Unstyled } from "@storybook/addon-docs/blocks";
 
 <Meta title="Design system/Classes" />
 
@@ -6,7 +6,7 @@ import { Meta, Unstyled } from '@storybook/addon-docs/blocks';
 
 Déclarées à côté de leur composant (`src/design-system/ui/<composant>/<composant>.css`), ou dans `src/design-system/styles/classes` pour les
 classes sans composant, et rassemblées par `src/design-system/styles/components.css` (`@layer components`, `@apply` pour les cas
-simples, CSS standard pour les états). Les variantes sont des classes de modificateur (`btn-primary`, `sheet-right`) ;
+simples, CSS standard pour les états). Les variantes sont des classes de modificateur (`btn-primary`, `btn-secondary`) ;
 les états passent par les attributs d'accessibilité et les pseudo-classes (`aria-selected`, `aria-invalid`, `:focus`,
 `:disabled`). Seuls `data-open` et `data-closed`, posés par Base UI, servent aux animations d'ouverture et de fermeture. Les composants de
 `src/design-system/ui` les posent ; le JSX peut aussi les utiliser directement, par exemple sur un lien : `<a className="btn btn-outline">`.
@@ -14,4 +14,413 @@ les états passent par les attributs d'accessibilité et les pseudo-classes (`ar
 Chaque famille de classes a sa section ci-dessous, avec un exemple rendu dans `<Unstyled>` : une classe ajoutée au
 design system s'ajoute ici dans le même changement (`audit.mjs` signale celles qui manquent).
 
-{/* Une section par famille : ## Boutons, ## Cartes et encadrés, ## Formulaires, ## Badges… */}
+## Actions
+
+### Boutons
+
+`btn` est la base (pilule, texte en capitales) ; elle se combine avec une variante, une taille et, pour un bouton carré,
+un modificateur `btn-icon-*`. Posées par `<Button variant size>`.
+
+- Variantes : `btn-primary`, `btn-secondary`, `btn-accent`, `btn-outline`, `btn-ghost`, `btn-danger`, `btn-link`
+- Tailles : `btn-xs`, `btn-sm`, `btn-lg` (la taille par défaut est celle de `btn`)
+- Boutons carrés : `btn-icon`, `btn-icon-xs`, `btn-icon-sm`, `btn-icon-lg`
+- Flèche de retour : `btn-arrow-back`
+
+<Unstyled>
+  <div className="flex flex-wrap items-center gap-4">
+    <button type="button" className="btn btn-primary">
+      Lire l'article
+    </button>
+    <button type="button" className="btn btn-secondary">
+      Voir les auteurs
+    </button>
+    <button type="button" className="btn btn-accent">
+      S'abonner
+    </button>
+    <button type="button" className="btn btn-outline btn-sm">
+      Filtrer
+    </button>
+    <button type="button" className="btn btn-ghost btn-sm">
+      Annuler
+    </button>
+    <button type="button" className="btn btn-danger btn-xs">
+      Supprimer
+    </button>
+    <button type="button" className="btn btn-link">
+      En savoir plus
+    </button>
+    <a href="/" className="btn btn-primary btn-lg">
+      Retour à l'accueil
+    </a>
+    <button
+      type="button"
+      className="btn btn-outline btn-icon btn-icon-sm"
+      aria-label="Page suivante"
+    >
+      &rarr;
+    </button>
+  </div>
+</Unstyled>
+
+### Bouton de fermeture
+
+`close-button` dessine une croix à partir de deux traits (`close-button-line`, `close-button-line-up`,
+`close-button-line-down`). Variantes : `close-button-primary` et `close-button-secondary`. Posées par
+`<CloseButton variant>`.
+
+<Unstyled>
+  <div className="flex items-center gap-6">
+    <button
+      type="button"
+      className="close-button close-button-primary"
+      aria-label="Fermer le menu"
+    >
+      <span
+        className="close-button-line close-button-line-up"
+        aria-hidden="true"
+      />
+      <span
+        className="close-button-line close-button-line-down"
+        aria-hidden="true"
+      />
+    </button>
+    <button
+      type="button"
+      className="close-button close-button-secondary"
+      aria-label="Effacer la recherche"
+    >
+      <span
+        className="close-button-line close-button-line-up"
+        aria-hidden="true"
+      />
+      <span
+        className="close-button-line close-button-line-down"
+        aria-hidden="true"
+      />
+    </button>
+  </div>
+</Unstyled>
+
+### Burger
+
+`burger-button` ouvre le menu de navigation mobile ; chaque trait est un `burger-button-line`. Posées par
+`<BurgerButton>`.
+
+<Unstyled>
+  <button type="button" className="burger-button" aria-label="Ouvrir le menu">
+    <span className="burger-button-line" aria-hidden="true" />
+    <span className="burger-button-line" aria-hidden="true" />
+    <span className="burger-button-line" aria-hidden="true" />
+  </button>
+</Unstyled>
+
+## Typographie
+
+Des utilitaires (`@utility`) plutôt que des classes de composant : une taille par rôle, fixe sur mobile et plus grande
+à partir de `md`. Posés par `<Text>` et `<Heading>`, ou par `@apply` dans les feuilles du contenu rédigé.
+
+- Texte courant : `body-xs`, `body-s`, `body-m`
+- Titres de l'interface : `heading-xs`, `heading-s`, `heading-m`, `heading-l`, `heading-xl`
+- Intertitres du contenu rédigé : `markup-s`, `markup-m`, `markup-l`, `markup-xl`
+
+<Unstyled>
+  <div className="flex flex-col gap-2">
+    <p className="heading-xl">Tester une API REST</p>
+    <p className="heading-l">Écrire des tests d'intégration</p>
+    <p className="heading-m">Pourquoi isoler la base de données</p>
+    <p className="heading-s">Les fixtures en pratique</p>
+    <p className="heading-xs">Un exemple complet</p>
+    <p className="body-m">Chapeau de l'article, en texte courant large.</p>
+    <p className="body-s">
+      Paragraphe courant : les tests rapides se lancent à chaque commit.
+    </p>
+    <p className="body-xs">Publié le 12 mars 2025 par l'équipe Eleven Labs.</p>
+    <p className="markup-xl">Intertitre de niveau 2</p>
+    <p className="markup-l">Intertitre de niveau 3</p>
+    <p className="markup-m">Intertitre de niveau 4</p>
+    <p className="markup-s">Intertitre de niveau 5</p>
+  </div>
+</Unstyled>
+
+## Navigation
+
+### Lien
+
+`link` est le lien de texte du blog ; `link-icon` aligne une icône devant le libellé. Posées par `<Link>`.
+
+<Unstyled>
+  <p className="body-s">
+    Retrouvez le code sur{" "}
+    <a href="https://github.com" className="link">
+      GitHub
+    </a>{" "}
+    ou{" "}
+    <a href="/" className="link link-icon">
+      consultez les autres articles
+    </a>
+    .
+  </p>
+</Unstyled>
+
+### Fil d'Ariane
+
+`breadcrumb-list` contient des `breadcrumb-item` ; chaque étape est un `breadcrumb-link`, la page courante un
+`breadcrumb-page`. `breadcrumb-separator` et `breadcrumb-ellipsis` complètent le fil. Posées par `<Breadcrumb>` et ses
+sous-composants.
+
+<Unstyled>
+  <nav aria-label="Fil d'Ariane">
+    <ol className="breadcrumb-list">
+      <li className="breadcrumb-item">
+        <a href="/" className="breadcrumb-link">
+          Accueil
+        </a>
+      </li>
+      <li
+        className="breadcrumb-separator"
+        role="presentation"
+        aria-hidden="true"
+      >
+        /
+      </li>
+      <li className="breadcrumb-item">
+        <a href="/categories" className="breadcrumb-link">
+          Catégories
+        </a>
+      </li>
+      <li
+        className="breadcrumb-separator"
+        role="presentation"
+        aria-hidden="true"
+      >
+        /
+      </li>
+      <li className="breadcrumb-item">
+        <span className="breadcrumb-ellipsis" aria-hidden="true">
+          …
+        </span>
+      </li>
+      <li
+        className="breadcrumb-separator"
+        role="presentation"
+        aria-hidden="true"
+      >
+        /
+      </li>
+      <li className="breadcrumb-item">
+        <span className="breadcrumb-page" aria-current="page">
+          Tester une API REST
+        </span>
+      </li>
+    </ol>
+  </nav>
+</Unstyled>
+
+### Pagination
+
+`pagination` entoure `pagination-content`, une liste de cases `pagination-link` (page courante : `aria-current="page"`,
+case désactivée : `aria-disabled="true"`) et `pagination-ellipsis`. `pagination-previous` retourne la flèche. Posées par
+`<Pagination>` et ses sous-composants.
+
+<Unstyled>
+  <nav aria-label="Pagination" className="pagination">
+    <ul className="pagination-content">
+      <li>
+        <a
+          role="link"
+          aria-disabled="true"
+          aria-label="Page précédente"
+          className="pagination-link pagination-previous"
+        >
+          &larr;
+        </a>
+      </li>
+      <li>
+        <a href="?page=1" aria-current="page" className="pagination-link">
+          1
+        </a>
+      </li>
+      <li>
+        <a href="?page=2" className="pagination-link">
+          2
+        </a>
+      </li>
+      <li>
+        <span className="pagination-ellipsis" aria-hidden="true">
+          …
+        </span>
+      </li>
+      <li>
+        <a href="?page=9" className="pagination-link">
+          9
+        </a>
+      </li>
+      <li>
+        <a
+          href="?page=2"
+          aria-label="Page suivante"
+          className="pagination-link"
+        >
+          &rarr;
+        </a>
+      </li>
+    </ul>
+  </nav>
+</Unstyled>
+
+## Formulaires
+
+### Champ de recherche
+
+`search-field` est le conteneur ; le champ porte `input search-field-input`, les boutons sont dans `search-field-actions`
+et le lancement de la recherche est un `search-field-submit`. Posées par `<SearchField>`.
+
+<Unstyled>
+  <div className="search-field">
+    <input
+      type="search"
+      className="input search-field-input"
+      placeholder="Rechercher un article"
+      aria-label="Rechercher un article"
+    />
+    <div className="search-field-actions">
+      <button
+        type="button"
+        className="search-field-submit"
+        aria-label="Rechercher"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</Unstyled>
+
+### Champ de saisie
+
+`input` est un champ sur une ligne ; l'état invalide passe par `aria-invalid`, l'état désactivé par `disabled`. Posée par
+`<Input>`.
+
+<Unstyled>
+  <div className="flex flex-col gap-4">
+    <input
+      type="email"
+      className="input"
+      placeholder="prenom.nom@exemple.fr"
+      aria-label="Adresse e-mail"
+    />
+    <input
+      type="email"
+      className="input"
+      defaultValue="adresse-invalide"
+      aria-invalid="true"
+      aria-label="E-mail invalide"
+    />
+    <input
+      type="email"
+      className="input"
+      placeholder="Indisponible"
+      disabled
+      aria-label="Adresse e-mail désactivée"
+    />
+  </div>
+</Unstyled>
+
+## Affichage
+
+### Citation
+
+`blockquote` entoure une citation de grands guillemets ouvrant et fermant. Posée par `<Blockquote>`.
+
+<Unstyled>
+  <blockquote className="blockquote">
+    Un test qui échoue vaut mieux qu'un bug découvert en production.
+  </blockquote>
+</Unstyled>
+
+### Touches du clavier
+
+`kbd` représente une touche ; `kbd-group` aligne un raccourci de plusieurs touches. Posées par `<Kbd>`.
+
+<Unstyled>
+  <p className="body-s">
+    Pour rechercher, tapez{" "}
+    <span className="kbd-group">
+      <kbd className="kbd">Ctrl</kbd>
+      <kbd className="kbd">K</kbd>
+    </span>
+    .
+  </p>
+</Unstyled>
+
+### Séparateur
+
+`separator` trace un filet ; l'orientation vient de l'attribut `data-orientation` (`horizontal` ou `vertical`). Posée
+par `<Separator orientation>`.
+
+<Unstyled>
+  <div className="flex h-8 items-center gap-4">
+    <span className="body-s">Articles</span>
+    <div
+      className="separator"
+      data-orientation="vertical"
+      role="separator"
+      aria-orientation="vertical"
+    />
+    <span className="body-s">Auteurs</span>
+  </div>
+</Unstyled>
+
+### Encarts
+
+`reminder` est l'encart des « admonitions » du markdown, avec `reminder-title` et `reminder-content`. La variante est
+un modificateur `reminder--<variante>` : `reminder--note`, `reminder--summary`, `reminder--info`, `reminder--tip`,
+`reminder--success`, `reminder--question`, `reminder--warning`, `reminder--failure`, `reminder--danger`,
+`reminder--bug`, `reminder--example` et `reminder--quote`. Posées par `<Reminder variant title>`.
+
+<Unstyled>
+  <div className="flex flex-col gap-4">
+    <div className="reminder reminder--tip">
+      <p className="reminder-title">Astuce</p>
+      <div className="reminder-content">
+        Lancez les tests en mode watch pour un retour immédiat.
+      </div>
+    </div>
+    <div className="reminder reminder--warning">
+      <p className="reminder-title">Attention</p>
+      <div className="reminder-content">
+        Ne partagez jamais vos clés d'API dans un dépôt public.
+      </div>
+    </div>
+  </div>
+</Unstyled>
+
+### Squelette
+
+`skeleton` est le bloc grisé qui pulse pendant le chargement ; son contenu, invisible, lui donne sa taille. Posée par
+`<Skeleton>`.
+
+<Unstyled>
+  <div className="skeleton" aria-hidden="true">
+    <p className="body-s">Chargement de l'article en cours</p>
+  </div>
+</Unstyled>
+
+## Calques
+
+`overlay` est le voile des fenêtres modales ; `popup` anime l'apparition des calques flottants (menus, popovers,
+infobulles) selon `data-side` et `data-open` / `data-closed`, posés par Base UI. Ces classes sont posées par les
+composants à calque (`<Dialog>`, `<Menu>`, `<Popover>`…) et non par un composant dédié.
+
+<Unstyled>
+  <div className="relative h-40 overflow-hidden rounded-card bg-surface">
+    <div className="overlay absolute!" data-open="" />
+    <div
+      className="popup absolute top-4 left-4 rounded-card bg-canvas p-4 shadow-card"
+      data-side="bottom"
+      role="dialog"
+      aria-label="Exemple de calque"
+    >
+      <p className="body-s">Fenêtre posée au-dessus du voile.</p>
+    </div>
+  </div>
+</Unstyled>

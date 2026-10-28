@@ -3,8 +3,10 @@ import type { VariantProps } from 'class-variance-authority';
 import { cva } from 'class-variance-authority';
 import React from 'react';
 
-import { Heading, Icon, Text } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
+import { Heading } from '@/design-system/ui/heading';
+import { Icon } from '@/design-system/ui/icon';
+import { Text } from '@/design-system/ui/text';
 
 export const newsletterCardVariant = ['horizontal', 'vertical'] as const;
 export type NewsletterCardVariantType = (typeof newsletterCardVariant)[number];

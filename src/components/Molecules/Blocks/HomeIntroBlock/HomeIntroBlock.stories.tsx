@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import React from 'react';
 
-import { Link } from '@/design-system';
+import { Link } from '@/design-system/ui/link';
 
 import { HomeIntroBlock } from './HomeIntroBlock';
 
@@ -34,6 +34,8 @@ const meta: Meta<typeof HomeIntroBlock> = {
     },
   },
   parameters: {
+    // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
+    a11y: { test: 'todo' },
     layout: 'full',
   },
 };

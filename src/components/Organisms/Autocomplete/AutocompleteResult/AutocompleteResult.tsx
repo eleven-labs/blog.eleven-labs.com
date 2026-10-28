@@ -3,8 +3,11 @@ import type { ComponentPropsWithoutRef } from '@/design-system/types';
 import React from 'react';
 
 import { PostMetadata } from '@/components';
-import { Heading, Link, Text, TextHighlight } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
+import { Heading } from '@/design-system/ui/heading';
+import { Link } from '@/design-system/ui/link';
+import { Text } from '@/design-system/ui/text';
+import { TextHighlight } from '@/design-system/ui/text-highlight';
 
 export interface AutocompleteItem {
   slug: string;
@@ -60,12 +63,7 @@ export const AutocompleteResult = React.forwardRef<HTMLDivElement, AutocompleteR
         <>
           {items.map(({ slug, title, date, authors, link }, index) => (
             <React.Fragment key={slug}>
-              <div
-                className={cn(
-                  'relative block px-6 pt-2 pb-3',
-                  highlightedIndex === index && 'bg-canvas'
-                )}
-              >
+              <div className={cn('relative block px-6 pt-2 pb-3', highlightedIndex === index && 'bg-canvas')}>
                 <TextHighlight
                   render={<a {...link} />}
                   size="s"
@@ -73,12 +71,7 @@ export const AutocompleteResult = React.forwardRef<HTMLDivElement, AutocompleteR
                   textQuery={searchValue}
                   className="line-clamp-4 text-ink before:absolute before:inset-0 before:z-1 before:content-['_'] md:line-clamp-2"
                 />
-                <PostMetadata
-                  className="mt-1"
-                  date={date}
-                  authors={authors}
-                  displayedFields={['date', 'authors']}
-                />
+                <PostMetadata className="mt-1" date={date} authors={authors} displayedFields={['date', 'authors']} />
               </div>
             </React.Fragment>
           ))}

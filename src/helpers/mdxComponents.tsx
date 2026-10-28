@@ -1,9 +1,12 @@
-import type { ComponentPropsWithoutRef, ReminderProps } from '@/design-system';
+import type { ComponentPropsWithoutRef } from '@/design-system/types';
+import type { ReminderProps } from '@/design-system/ui/reminder';
 
 import React from 'react';
 
-import { Icon, Kbd, Reminder as ReminderBase } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
+import { Icon } from '@/design-system/ui/icon';
+import { Kbd } from '@/design-system/ui/kbd';
+import { Reminder as ReminderBase } from '@/design-system/ui/reminder';
 
 /**
  * An image of a content: the `maxWidth`, `maxHeight`, `width` and `height` parameters of its url size it,

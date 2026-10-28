@@ -130,7 +130,7 @@ export default [
       'public/**',
       'storybook-static/**',
       // Générés par svgr et style-dictionary (cf. le script build:design-system)
-      'src/design-system/components/Atoms/Svgs/**',
+      'src/design-system/ui/icon/svgs/**',
       'src/design-system/constants/tokenVariables.ts',
       'src/design-system/constants/tokenVariablesDesktop.ts',
     ],

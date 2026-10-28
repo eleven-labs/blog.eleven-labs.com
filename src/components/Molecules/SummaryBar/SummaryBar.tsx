@@ -3,8 +3,9 @@ import type { SummaryCardProps } from '@/components/Molecules/Cards/SummaryCard'
 import React from 'react';
 
 import { SummaryCard } from '@/components/Molecules/Cards/SummaryCard';
-import { Icon, Text } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
+import { Icon } from '@/design-system/ui/icon';
+import { Text } from '@/design-system/ui/text';
 
 export type SummaryBarProps = SummaryCardProps;
 
@@ -36,7 +37,10 @@ export const SummaryBar: React.FC<SummaryBarProps> = ({
   return (
     <details
       data-summary-bar={variant}
-      className={cn('group sticky top-(--sticky-header-offset,0px) z-5 overflow-hidden rounded-card bg-surface shadow-md transition-[top]', className)}
+      className={cn(
+        'group sticky top-(--sticky-header-offset,0px) z-5 overflow-hidden rounded-card bg-surface shadow-md transition-[top]',
+        className
+      )}
     >
       <summary className="relative flex cursor-pointer list-none items-center gap-4 px-6 py-4 [&::-webkit-details-marker]:hidden">
         <span className="flex min-w-0 flex-1 flex-col">

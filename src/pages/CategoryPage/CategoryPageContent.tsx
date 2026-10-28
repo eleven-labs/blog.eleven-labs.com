@@ -3,7 +3,8 @@ import type { CategoryEndingBlockProps } from '@/components';
 import React from 'react';
 
 import { CategoryEndingBlock } from '@/components';
-import { Divider, Heading } from '@/design-system';
+import { Heading } from '@/design-system/ui/heading';
+import { Separator } from '@/design-system/ui/separator';
 
 export type CategoryPageContentProps = {
   categoryEndingBlock?: CategoryEndingBlockProps;
@@ -23,7 +24,7 @@ export const CategoryPageContent: React.FC<CategoryPageContentProps> = ({
     {postCardList}
     {categoryEndingBlock && (
       <>
-        <Divider className="mt-6" />
+        <Separator className="mt-6" />
         <CategoryEndingBlock className="mt-8" {...categoryEndingBlock} />
       </>
     )}

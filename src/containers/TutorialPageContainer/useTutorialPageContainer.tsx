@@ -5,7 +5,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { MARKDOWN_CONTENT_TYPES } from '@/constants';
-import { Button } from '@/design-system';
+import { Button } from '@/design-system/ui/button';
 import { usePostPage } from '@/hooks/usePostPage';
 
 export const useTutorialPageContainer = (tutorial: TutorialPageData): PostPageProps => {

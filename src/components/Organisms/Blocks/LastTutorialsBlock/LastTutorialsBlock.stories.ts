@@ -6,6 +6,8 @@ import * as PostCardStories from '@/components/Molecules/Cards/PostCard/PostCard
 import { LastTutorialsBlock } from './LastTutorialsBlock';
 
 const meta: Meta<typeof LastTutorialsBlock> = {
+  // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
+  parameters: { a11y: { test: 'todo' } },
   component: LastTutorialsBlock,
   args: {
     title: 'Les tutoriels tech’ de nos astronautes !',

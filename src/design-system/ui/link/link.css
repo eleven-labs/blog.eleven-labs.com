@@ -1,0 +1,9 @@
+/* Link : lien de texte, avec icône facultative devant le libellé. */
+@layer components {
+  .link {
+    @apply font-semibold text-primary underline hover:no-underline;
+  }
+  .link-icon {
+    @apply inline-flex items-center;
+  }
+}

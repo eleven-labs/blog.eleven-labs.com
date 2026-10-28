@@ -11,7 +11,19 @@
 @import './utilities.css';
 
 /* Composants */
-@import '../components/Molecules/Reminder/Reminder.css';
+@import '../ui/input/input.css';
+@import '../ui/blockquote/blockquote.css';
+@import '../ui/breadcrumb/breadcrumb.css';
+@import '../ui/burger-button/burger-button.css';
+@import '../ui/button/button.css';
+@import '../ui/close-button/close-button.css';
+@import '../ui/kbd/kbd.css';
+@import '../ui/link/link.css';
+@import '../ui/pagination/pagination.css';
+@import '../ui/reminder/reminder.css';
+@import '../ui/search-field/search-field.css';
+@import '../ui/separator/separator.css';
+@import '../ui/skeleton/skeleton.css';
 
 /* Classes sans composant React */
 @import './classes/overlay.css';

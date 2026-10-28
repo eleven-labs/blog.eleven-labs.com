@@ -1,15 +1,18 @@
 import type { VariantProps } from 'class-variance-authority';
 
 import type { PostMetadataProps } from '@/components';
-import type { PictureProps } from '@/design-system';
 import type { ComponentPropsWithoutRef } from '@/design-system/types';
+import type { PictureProps } from '@/design-system/ui/picture';
 
 import { cva } from 'class-variance-authority';
 import React from 'react';
 
 import { PostMetadata } from '@/components';
-import { Heading, Picture, Skeleton, Text } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
+import { Heading } from '@/design-system/ui/heading';
+import { Picture } from '@/design-system/ui/picture';
+import { Skeleton } from '@/design-system/ui/skeleton';
+import { Text } from '@/design-system/ui/text';
 
 export const postCardVariant = ['highlight-light', 'highlight-dark', 'side-image'] as const;
 export type PostCardVariantType = (typeof postCardVariant)[number];
@@ -81,8 +84,8 @@ export const PostCard: React.FC<PostCardProps> = ({
               variant === 'highlight-dark'
                 ? 'line-clamp-2'
                 : variant === 'side-image'
-                  ? 'line-clamp-4 md:line-clamp-2'
-                  : 'line-clamp-4 md:line-clamp-3'
+                ? 'line-clamp-4 md:line-clamp-2'
+                : 'line-clamp-4 md:line-clamp-3'
             )}
           >
             <Text

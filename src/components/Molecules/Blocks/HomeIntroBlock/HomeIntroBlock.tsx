@@ -2,8 +2,10 @@ import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
 import React from 'react';
 
-import { Button, Heading, Text } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
+import { Button } from '@/design-system/ui/button';
+import { Heading } from '@/design-system/ui/heading';
+import { Text } from '@/design-system/ui/text';
 
 export interface HomeIntroBlockProps {
   intro: React.ReactNode;

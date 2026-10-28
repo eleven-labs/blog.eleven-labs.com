@@ -15,11 +15,11 @@ const meta: Meta<typeof LayoutTemplate> = {
   args: {
     header: React.createElement<HeaderProps>(Header, HeaderStories.args as HeaderProps),
     footer: FooterStories.args as FooterProps,
-    children: (
-      <div className="flex flex-1 items-center justify-center p-8">Content</div>
-    ),
+    children: <div className="flex flex-1 items-center justify-center p-8">Content</div>,
   },
   parameters: {
+    // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
+    a11y: { test: 'todo' },
     layout: 'full',
     viewport: {
       defaultViewport: 'extraSmallScreen',

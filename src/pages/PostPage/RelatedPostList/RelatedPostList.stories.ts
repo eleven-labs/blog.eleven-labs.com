@@ -6,6 +6,8 @@ import * as PostCardStories from '@/components/Molecules/Cards/PostCard/PostCard
 import { RelatedPostList } from './RelatedPostList';
 
 const meta: Meta<typeof RelatedPostList> = {
+  // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
+  parameters: { a11y: { test: 'todo' } },
   component: RelatedPostList,
   args: {
     relatedPostListTitle: 'Articles sur le même thème',

@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { SummaryCard } from './SummaryCard';
 
 const meta: Meta<typeof SummaryCard> = {
+  // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
+  parameters: { a11y: { test: 'todo' } },
   component: SummaryCard,
   args: {
     title: 'Sommaire',

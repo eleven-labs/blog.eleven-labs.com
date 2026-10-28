@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { Heading, Text } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
+import { Heading } from '@/design-system/ui/heading';
+import { Text } from '@/design-system/ui/text';
 
 export type NotFoundBlockOptions = {
   title: React.ReactNode;

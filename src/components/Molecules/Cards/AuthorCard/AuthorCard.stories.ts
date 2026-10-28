@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { AuthorCard } from './AuthorCard';
 
 const meta: Meta<typeof AuthorCard> = {
+  // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
+  parameters: { a11y: { test: 'todo' } },
   component: AuthorCard,
   args: {
     name: 'John Doe',

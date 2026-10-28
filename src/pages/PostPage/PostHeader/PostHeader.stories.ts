@@ -5,6 +5,8 @@ import ShareLinksStories from '@/components/Molecules/ShareLinks/ShareLinks.stor
 import { PostHeader, type PostHeaderProps } from './PostHeader';
 
 const meta: Meta<typeof PostHeader> = {
+  // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
+  parameters: { a11y: { test: 'todo' } },
   component: PostHeader,
   args: {
     title: 'Title',

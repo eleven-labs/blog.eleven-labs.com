@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Icon } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
+import { Icon } from '@/design-system/ui/icon';
 
 export interface ShareLinksProps {
   urlToShare: string;

@@ -2,7 +2,8 @@ import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
 import React from 'react';
 
-import { Button, Text } from '@/design-system';
+import { Button } from '@/design-system/ui/button';
+import { Text } from '@/design-system/ui/text';
 
 export interface CategoryEndingBlockProps {
   title: React.ReactNode;

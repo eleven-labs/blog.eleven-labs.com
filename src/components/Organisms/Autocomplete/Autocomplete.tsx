@@ -4,8 +4,8 @@ import type { UseComboboxProps } from 'downshift';
 import { useCombobox } from 'downshift';
 import React from 'react';
 
-import { SearchField } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
+import { SearchField } from '@/design-system/ui/search-field';
 
 import { AutocompleteResult } from './AutocompleteResult';
 

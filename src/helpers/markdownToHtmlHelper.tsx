@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef } from '@/design-system';
+import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
 import { evaluateSync } from '@mdx-js/mdx';
 import React from 'react';
@@ -8,7 +8,8 @@ import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import { visit } from 'unist-util-visit';
 
-import { Link, SyntaxHighlighter } from '@/design-system';
+import { Link } from '@/design-system/ui/link';
+import { SyntaxHighlighter } from '@/design-system/ui/syntax-highlighter';
 import { ContentImage, mdxComponents } from '@/helpers/mdxComponents';
 import {
   remarkSectionHeadingsPlugin,
@@ -38,9 +39,7 @@ const getTextContent = (children: React.ReactNode): string =>
         return String(child);
       }
 
-      return React.isValidElement<{ children?: React.ReactNode }>(child)
-        ? getTextContent(child.props.children)
-        : '';
+      return React.isValidElement<{ children?: React.ReactNode }>(child) ? getTextContent(child.props.children) : '';
     })
     .join('');
 
@@ -157,11 +156,9 @@ export const mdxToHtml = (content: string, options: MdxToHtmlOptions = {}): stri
       ...(options.section ? [[remarkSectionHeadingsPlugin, options.section] as const] : []),
       remarkGfm,
     ] as NonNullable<Parameters<typeof evaluateSync>[1]['remarkPlugins']>,
-    rehypePlugins: [
-      rehypeSlug,
-      rehypeTableCellLabels,
-      rehypeCellAlignToStyle,
-    ] as NonNullable<Parameters<typeof evaluateSync>[1]['rehypePlugins']>,
+    rehypePlugins: [rehypeSlug, rehypeTableCellLabels, rehypeCellAlignToStyle] as NonNullable<
+      Parameters<typeof evaluateSync>[1]['rehypePlugins']
+    >,
   });
 
   return ReactDOMServer.renderToStaticMarkup(

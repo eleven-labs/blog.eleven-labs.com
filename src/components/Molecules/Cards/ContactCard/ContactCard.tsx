@@ -2,8 +2,10 @@ import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
 import React from 'react';
 
-import { Button, Heading, Text } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
+import { Button } from '@/design-system/ui/button';
+import { Heading } from '@/design-system/ui/heading';
+import { Text } from '@/design-system/ui/text';
 
 export type ContactCardProps = {
   title: React.ReactNode;
@@ -24,14 +26,12 @@ export const ContactCard: React.FC<ContactCardProps> = ({
       className
     )}
   >
-    <div className="flex max-w-140 flex-col items-center justify-center gap-6 px-6 text-center">
+    <div className="max-w-140 flex flex-col items-center justify-center gap-6 px-6 text-center">
       <Heading size="l" className="text-brand">
         {title}
       </Heading>
       <Text size="s">{description}</Text>
-      <Button render={<a {...link} />}>
-        {linkLabel}
-      </Button>
+      <Button render={<a {...link} />}>{linkLabel}</Button>
     </div>
   </div>
 );
