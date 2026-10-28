@@ -38,14 +38,14 @@
   --color-highlight: #f8fa9b; /* étiquettes, titre de la newsletter */
 
   /* États : encarts du markdown ; la variante -soft sert de fond, la couleur pleine de bordure, d'icône ou de texte */
-  --color-info: #0277bd;
-  --color-info-soft: #e1f5fe;
-  --color-success: #2e7d32;
-  --color-success-soft: #e8f5e9;
-  --color-warning: #b45309;
-  --color-warning-soft: #fff3e0;
-  --color-danger: #c62828;
-  --color-danger-soft: #ffebee;
+  --color-info: #0277bd; /* encarts note, résumé, info */
+  --color-info-soft: #e1f5fe; /* fond du titre des encarts info */
+  --color-success: #2e7d32; /* encarts astuce, succès, question ; ligne ajoutée d'un diff */
+  --color-success-soft: #e8f5e9; /* fond des encarts succès, d'une ligne ajoutée */
+  --color-warning: #b45309; /* encarts attention */
+  --color-warning-soft: #fff3e0; /* fond du titre des encarts attention */
+  --color-danger: #c62828; /* encarts échec, danger, bug ; ligne retirée d'un diff */
+  --color-danger-soft: #ffebee; /* fond des encarts danger, d'une ligne retirée, erreurs du formulaire */
 
   /* Coloration du code (thème github-gist), contrastes AA sur surface */
   --color-code-comment: #6a737d; /* commentaires */
@@ -58,7 +58,7 @@
   --color-code-variable: #b93a00; /* variables */
 
   /* Voile derrière les calques modaux */
-  --color-overlay: #00000080;
+  --color-overlay: #00000080; /* voile des calques modaux */
 
   /* Points de rupture : mobile d'abord, xs sans minimum */
   --breakpoint-*: initial;

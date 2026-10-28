@@ -71,7 +71,7 @@ export function ScaleTokens({ prefix }: { prefix: Prefix }) {
                 )}
                 {prefix === 'text-' && (
                   <span
-                    className="block truncate"
+                    className="block max-w-sm truncate"
                     style={{ fontSize: variable, lineHeight: lineHeights.get(token.name) }}
                   >
                     Portez ce vieux whisky au juge blond
