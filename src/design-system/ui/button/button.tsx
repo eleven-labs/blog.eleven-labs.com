@@ -2,6 +2,7 @@ import type { VariantProps } from 'class-variance-authority';
 
 import { Button as ButtonPrimitive } from '@base-ui/react/button';
 import { cva } from 'class-variance-authority';
+import * as React from 'react';
 
 import { cn } from '@/design-system/helpers/cn';
 import { Icon } from '@/design-system/ui/icon';
@@ -45,24 +46,20 @@ export interface ButtonProps extends ButtonPrimitive.Props, VariantProps<typeof 
 const arrowVariants = new Set(['default', 'primary', 'secondary', 'accent']);
 
 /**
- * Bouton d'action. `render` change la balise (un lien, par exemple) sans changer le rendu.
+ * Bouton d'action. `render` change la balise (un lien, par exemple) sans changer le rendu. `forwardRef` : en React 18,
+ * une fonction ne reçoit pas la `ref` en prop.
  * La variante `secondary` ramène en arrière : sa flèche précède le libellé, retournée.
  */
-export const Button: React.FC<ButtonProps> = ({
-  className,
-  variant = 'primary',
-  size = 'default',
-  arrow,
-  render,
-  nativeButton = !render,
-  children,
-  ...props
-}) => {
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(
+  { className, variant = 'primary', size = 'default', arrow, render, nativeButton = !render, children, ...props },
+  ref
+) {
   const hasArrow = arrow ?? arrowVariants.has(variant ?? 'primary');
 
   return (
     <ButtonPrimitive
       {...props}
+      ref={ref}
       render={render}
       nativeButton={nativeButton}
       className={cn(buttonVariants({ variant, size }), className)}
@@ -72,4 +69,4 @@ export const Button: React.FC<ButtonProps> = ({
       {hasArrow && variant !== 'secondary' && <Icon name="arrow" aria-hidden="true" />}
     </ButtonPrimitive>
   );
-};
+});

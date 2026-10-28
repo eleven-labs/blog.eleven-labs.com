@@ -37,7 +37,7 @@
   [id] {
     scroll-margin-top: var(--spacing-6);
 
-    @media (width < 1001px) {
+    @media (width < theme(--breakpoint-md)) {
       scroll-margin-top: 88px;
     }
   }

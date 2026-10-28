@@ -6,7 +6,7 @@
   .last-articles-grid {
     @apply mt-8 grid gap-6;
   }
-  @media (min-width: 48rem) {
+  @media (width >= theme(--breakpoint-md)) {
     .last-articles-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -14,7 +14,7 @@
       display: none;
     }
   }
-  @media (min-width: 64rem) {
+  @media (width >= theme(--breakpoint-lg)) {
     .last-articles-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }

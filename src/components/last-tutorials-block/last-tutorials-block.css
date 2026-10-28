@@ -3,7 +3,7 @@
   .last-tutorials-cards {
     @apply grid w-full gap-8;
   }
-  @media (min-width: 48rem) {
+  @media (width >= theme(--breakpoint-md)) {
     .last-tutorials-cards {
       flex: 2;
       grid-template-columns: repeat(2, minmax(0, 1fr));

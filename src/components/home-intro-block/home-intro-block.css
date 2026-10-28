@@ -13,7 +13,7 @@
   .home-intro-picture {
     @apply hidden flex-1;
   }
-  @media (min-width: 48rem) {
+  @media (width >= theme(--breakpoint-md)) {
     .home-intro-text {
       @apply py-10;
       margin: 0 0 0 5vw;

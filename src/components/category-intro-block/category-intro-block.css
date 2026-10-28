@@ -8,10 +8,13 @@
     background-image: url('/imgs/category-intro-block-mobile.jpg');
     background-size: cover;
     background-position: bottom;
-  }
-  @media (min-width: 48rem) {
-    .category-intro {
+
+    @variant md {
       background-image: url('/imgs/category-intro-block-desktop.jpg');
     }
+  }
+  /* Liens du bandeau bleu (fil d'Ariane, description) : le rose n'y est pas lisible (1,9:1), jaune de la marque */
+  .category-intro a {
+    @apply text-highlight;
   }
 }
