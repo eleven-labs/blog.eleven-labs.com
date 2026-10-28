@@ -14,6 +14,10 @@
  * usage.
  */
 @theme {
+  /* Contenu et colonne latérale des pages d'article, d'auteur et de catégorie (70 % et 30 %) : md:grid-cols-content-aside */
+  --grid-template-columns-content-aside: minmax(0, 1fr) 30%;
+  /* Bloc collé en haut de l'écran, avec une marge en haut et en bas : max-h-sticky */
+  --spacing-sticky: calc(100vh - 2 * var(--spacing-6));
 }
 
 :root {

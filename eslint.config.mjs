@@ -75,7 +75,10 @@ export default [
     oneComponentPerFile: false,
     externalClasses: [
       // Le HTML issu du markdown porte des classes qui ne sont pas des utilitaires Tailwind.
-      'post-content(-table)?',
+      'post-content(-table|-labelled-cell)?',
+      // Étapes d'un tutoriel et tweets du contenu rédigé, mis en forme par PostContent.css (hors couche)
+      'tutorial-step(s|-nav)',
+      'tweet-frame',
       'reminder-.*',
       'mermaid',
       // La carte d'un tweet, et la classe attendue par le script de Twitter pour la transformer en tweet intégré.

@@ -3,8 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { PostFooter } from './PostFooter';
 
 const meta: Meta<typeof PostFooter> = {
-  // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
-  parameters: { a11y: { test: 'todo' } },
+  title: 'Features/Post/PostFooter',
   component: PostFooter,
   args: {
     title: 'Auteur(s)',

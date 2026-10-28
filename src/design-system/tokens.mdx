@@ -32,9 +32,15 @@ ou dans la classe d'un composant.
 ## Espaces et dimensions
 
 Marges, gouttières, paddings et petites dimensions (`p-4`, `gap-2`, `size-4`), puis les dimensions nommées d'après
-leur usage (`h-control`). Une largeur d'écran ou de calque est une entrée nommée du thème (`max-w-measure`).
+leur usage (`size-control`, `max-h-sticky`). Une largeur d'écran est une entrée nommée du thème (`grid-cols-content-aside`).
 
 <ScaleTokens prefix="spacing-" />
+
+## Points de rupture
+
+Mobile d'abord : une classe sans préfixe vaut pour toutes les largeurs, `md:` à partir de 1001 px.
+
+<ScaleTokens prefix="breakpoint-" />
 
 ## Rayons
 
@@ -46,6 +52,6 @@ leur usage (`h-control`). Une largeur d'écran ou de calque est une entrée nomm
 
 ## Mises en page
 
-Les colonnes des grilles des écrans (`grid-cols-content-aside`…) et les largeurs de lecture (`max-w-measure`) sont des
+Les colonnes des grilles des écrans (`grid-cols-content-aside`) et les hauteurs d'un bloc collé (`max-h-sticky`) sont des
 entrées nommées du thème, dans `src/design-system/styles/theme.css` : aucune valeur arbitraire (`grid-cols-[minmax(0,1fr)_300px]`)
 dans les composants.

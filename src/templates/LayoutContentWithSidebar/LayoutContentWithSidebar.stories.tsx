@@ -8,6 +8,7 @@ import { LayoutTemplateDecorator } from '@/storybook/decorators';
 import { LayoutContentWithSidebar } from './LayoutContentWithSidebar';
 
 const meta: Meta<typeof LayoutContentWithSidebar> = {
+  title: 'Layouts/LayoutContentWithSidebar',
   component: LayoutContentWithSidebar,
   args: {
     content: <>Content</>,
@@ -56,8 +57,6 @@ const meta: Meta<typeof LayoutContentWithSidebar> = {
     ),
   },
   parameters: {
-    // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
-    a11y: { test: 'todo' },
     layout: 'full',
   },
   decorators: [LayoutTemplateDecorator],

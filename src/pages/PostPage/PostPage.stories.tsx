@@ -13,6 +13,7 @@ import { LayoutTemplateDecorator } from '@/storybook/decorators';
 import { PostPage } from './PostPage';
 
 const meta: Meta<typeof PostPage> = {
+  title: 'Pages/Post',
   component: PostPage,
   args: {
     variant: 'article',
@@ -124,8 +125,6 @@ const meta: Meta<typeof PostPage> = {
     } as PostPageProps['summary'],
   },
   parameters: {
-    // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
-    a11y: { test: 'todo' },
     layout: 'full',
     viewport: {
       defaultViewport: 'extraSmallScreen',

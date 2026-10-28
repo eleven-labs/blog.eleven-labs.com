@@ -1,17 +1,16 @@
 import type { RelatedPostListProps } from './RelatedPostList';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import * as PostCardStories from '@/components/post-card/post-card.stories';
+import { postCardArgs } from '@/components/post-card/post-card.stories';
 
 import { RelatedPostList } from './RelatedPostList';
 
 const meta: Meta<typeof RelatedPostList> = {
-  // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
-  parameters: { a11y: { test: 'todo' } },
+  title: 'Features/Post/RelatedPostList',
   component: RelatedPostList,
   args: {
     relatedPostListTitle: 'Articles sur le même thème',
-    posts: Array.from({ length: 3 }).map(() => PostCardStories.Overview.args as RelatedPostListProps['posts'][0]),
+    posts: Array.from({ length: 3 }).map(() => postCardArgs as RelatedPostListProps['posts'][0]),
   },
 };
 

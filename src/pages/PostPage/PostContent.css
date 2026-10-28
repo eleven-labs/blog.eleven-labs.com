@@ -9,25 +9,25 @@
   /* Un tutoriel contient toutes ses étapes dans le HTML servi, mais n'en affiche qu'une à la fois :
      celle que vise l'ancre de l'URL (l'étape elle-même ou un titre qu'elle contient), sinon la première.
      Les boutons Précédent et Suivant passent d'une étape à l'autre par leurs ancres. Sans JavaScript
-     (`data-js`, posé par HtmlTemplate), les étapes se lisent à la suite et ces boutons sont inutiles. */
-  [data-tutorial-step-nav] {
+     (classe `js` sur `<html>`, posée par HtmlTemplate), les étapes se lisent à la suite et ces boutons sont inutiles. */
+  .tutorial-step-nav {
     display: none;
   }
 
-  :root[data-js] & {
-    [data-tutorial-steps] > section {
+  :root.js & {
+    .tutorial-steps > section {
       display: none;
     }
 
-    [data-tutorial-steps] > section:is(:target, :has(:target)) {
+    .tutorial-steps > section:is(:target, :has(:target)) {
       display: block;
     }
 
-    [data-tutorial-steps]:not(:has(:target)) > section:first-child {
+    .tutorial-steps:not(:has(:target)) > section:first-child {
       display: block;
     }
 
-    [data-tutorial-step-nav] {
+    .tutorial-step-nav {
       display: flex;
     }
   }
@@ -161,6 +161,11 @@
     }
   }
 
+  /* Largeur d'un tweet intégré par le script de Twitter (550 px) */
+  .tweet-frame {
+    max-width: 34.375rem;
+  }
+
   /* La carte d'un tweet, avant que le script de Twitter la remplace par le tweet, ou celle d'un tweet qui n'est
      plus disponible : elle reprend les marges du tweet et occupe la hauteur réservée par le composant Tweet. */
   blockquote.tweet {
@@ -236,7 +241,7 @@
           border-bottom-width: 0;
         }
 
-        &[data-label]::before {
+        &.post-content-labelled-cell::before {
           display: block;
           margin-bottom: var(--spacing-1);
           color: var(--color-brand);

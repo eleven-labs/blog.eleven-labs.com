@@ -24,7 +24,8 @@ export type AuthorPageContentProps = {
   postCardList: React.ReactNode;
 };
 
-const avatarClassName = 'size-[120px] rounded-[100%]';
+// Avatar de la carte d'auteur, en grand
+const avatarClassName = 'author-card-avatar author-card-avatar-lg';
 
 export const AuthorPageContent: React.FC<AuthorPageContentProps> = ({ author, title, postCardList }) => (
   <>
@@ -32,7 +33,7 @@ export const AuthorPageContent: React.FC<AuthorPageContentProps> = ({ author, ti
       {author.avatarImageUrl ? (
         <img src={author.avatarImageUrl} alt={author.name} className={avatarClassName} />
       ) : (
-        <div className={cn(avatarClassName, 'bg-[url(/imgs/astronaut.png)] bg-cover bg-no-repeat')} />
+        <div className={cn(avatarClassName, 'author-card-avatar-default')} aria-hidden="true" />
       )}
       <div className="mt-4 ml-4">
         <Text size="m" className="font-medium text-primary">
@@ -44,7 +45,7 @@ export const AuthorPageContent: React.FC<AuthorPageContentProps> = ({ author, ti
             {author.socialNetworks.map((socialNetwork, index) => (
               <React.Fragment key={socialNetwork.name}>
                 <Text>
-                  <Icon name={socialNetwork.name} size="24px" className="rounded-[6px]" />{' '}
+                  <Icon name={socialNetwork.name} size="24px" className="rounded-control" />{' '}
                   <Link href={socialNetwork.url} target="_blank">
                     {socialNetwork.username}
                   </Link>

@@ -12,6 +12,7 @@ import { LayoutTemplateDecorator } from '@/storybook/decorators';
 import { HomePage } from './HomePage';
 
 const meta: Meta<typeof HomePage> = {
+  title: 'Pages/Home',
   component: HomePage,
   args: {
     homeIntroBlock: HomeIntroBlockStories.args as HomePageProps['homeIntroBlock'],
@@ -20,8 +21,6 @@ const meta: Meta<typeof HomePage> = {
     newsletterCard: NewsletterCardStories.args as CategoryPageProps['newsletterCard'],
   },
   parameters: {
-    // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
-    a11y: { test: 'todo' },
     layout: 'full',
     viewport: {
       defaultViewport: 'extraSmallScreen',

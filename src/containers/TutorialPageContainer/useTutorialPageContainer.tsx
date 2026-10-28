@@ -28,10 +28,10 @@ export const useTutorialPageContainer = (tutorial: TutorialPageData): PostPagePr
       })),
       sectionActive: tutorial.steps[0]?.slug,
     },
-    // Every step is in the HTML served, but the reader only sees one at a time: see `[data-tutorial-steps]`
+    // Every step is in the HTML served, but the reader only sees one at a time: see `.tutorial-steps`
     // in PostContent.css. The navigation moves from one step to another through their anchors.
     children: (
-      <div data-tutorial-steps>
+      <div data-tutorial-steps className="tutorial-steps">
         {tutorial.steps.map((step, index) => {
           const previousStep = tutorial.steps[index - 1];
           const nextStep = tutorial.steps[index + 1];
@@ -41,7 +41,7 @@ export const useTutorialPageContainer = (tutorial: TutorialPageData): PostPagePr
               <h2>{step.title}</h2>
               <div dangerouslySetInnerHTML={{ __html: step.content }} />
               {(previousStep || nextStep) && (
-                <div data-tutorial-step-nav className="gap-8">
+                <div className="tutorial-step-nav gap-8">
                   {previousStep && (
                     <Button render={<a {...getStepLink(previousStep)} />} className="mt-8" variant="secondary">
                       {t('pages.tutorial.previous_button')}

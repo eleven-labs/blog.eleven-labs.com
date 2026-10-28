@@ -5,8 +5,7 @@ import ShareLinksStories from '@/components/share-links/share-links.stories';
 import { PostHeader, type PostHeaderProps } from './PostHeader';
 
 const meta: Meta<typeof PostHeader> = {
-  // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
-  parameters: { a11y: { test: 'todo' } },
+  title: 'Features/Post/PostHeader',
   component: PostHeader,
   args: {
     title: 'Title',

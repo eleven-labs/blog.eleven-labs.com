@@ -97,7 +97,11 @@ const rehypeTableCellLabels = () => (tree: Parameters<typeof visit>[0]) => {
     for (const row of getChildElements(body, 'tr')) {
       getChildElements(row, 'td').forEach((cell, index) => {
         if (labels[index]) {
-          cell.properties = { ...cell.properties, 'data-label': labels[index] };
+          const className = [
+            ...((cell.properties?.className as string[] | undefined) ?? []),
+            'post-content-labelled-cell',
+          ];
+          cell.properties = { ...cell.properties, className, 'data-label': labels[index] };
         }
       });
     }

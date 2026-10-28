@@ -6,6 +6,11 @@
     width: 4.5rem;
     height: 4.5rem;
   }
+  /* Avatar de la page d'un auteur : 120 px */
+  .author-card-avatar-lg {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
   /* Sans photo, l'astronaute du blog tient lieu d'avatar. */
   .author-card-avatar-default {
     background-image: url('/imgs/astronaut.png');

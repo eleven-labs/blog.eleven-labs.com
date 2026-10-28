@@ -31,12 +31,18 @@ export function designSystem({ entryPoint, oneComponentPerFile = true, level = '
         'better-tailwindcss': {
           entryPoint,
           detectComponentClasses: true,
-          // Constantes de classes (MENU_BUTTON_CLASS_NAME, SIZE_CLASS…) lintées aussi : sinon elles cachent des valeurs arbitraires
+          // Constantes de classes (MENU_BUTTON_CLASS_NAME, menuClassName…) lintées aussi : sinon elles cachent des valeurs arbitraires
           selectors: [
             ...getDefaultSelectors(),
             {
               kind: 'variable',
               name: '^[A-Z][A-Z0-9_]*_(CLASS|CLASSES|CLASS_NAME|CLASS_NAMES)$',
+              match: [{ type: 'strings' }, { type: 'objectValues' }],
+            },
+            // Même chose en camelCase : const menuClassName = '…', avatarClasses = { … }
+            {
+              kind: 'variable',
+              name: '^[a-z][A-Za-z0-9]*(Class|Classes|ClassName|ClassNames)$',
               match: [{ type: 'strings' }, { type: 'objectValues' }],
             },
           ],

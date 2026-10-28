@@ -52,6 +52,8 @@ de chaque étape, sous 120 lignes. Les conventions sont dans `docs/design-system
 3. Blocs de `src/components` (Atoms, Molecules, Organisms) → `src/components/<bloc>/`, histoires `Shared/…`.
    **Fait** : 19 blocs, classe générique `card` (`styles/classes/card.css`), plus de baril `@/components`.
 4. Pages et mises en page (`src/pages`, `src/templates`), contenu rédigé (`PostContent.css`, `mdxComponents`).
+   **Fait** : histoires `Pages/`, `Features/Post/`, `Layouts/` ; contenu stylé par classes (`tutorial-steps`, classe
+   `js` sur `<html>`) ; `mdxComponents` découpé (un fichier par composant) ; `grid-cols-content-aside`, `max-h-sticky`.
 5. Fin : accessibilité en `error`, lint en `error`, audit sans erreur.
 
 ## Versions

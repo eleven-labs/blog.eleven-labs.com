@@ -13,6 +13,7 @@ import { LayoutTemplateDecorator } from '@/storybook/decorators';
 import { AuthorPage } from './AuthorPage';
 
 const meta: Meta<typeof AuthorPage> = {
+  title: 'Pages/Author',
   component: AuthorPage,
   args: {
     author: {
@@ -45,8 +46,6 @@ const meta: Meta<typeof AuthorPage> = {
     newsletterCard: NewsletterCardStories.args as CategoryPageProps['newsletterCard'],
   },
   parameters: {
-    // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
-    a11y: { test: 'todo' },
     layout: 'full',
     viewport: {
       defaultViewport: 'extraSmallScreen',

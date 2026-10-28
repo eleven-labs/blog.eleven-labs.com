@@ -12,6 +12,7 @@ import HeaderStories from '@/components/header/header.stories';
 import { LayoutTemplate } from './LayoutTemplate';
 
 const meta: Meta<typeof LayoutTemplate> = {
+  title: 'Layouts/LayoutTemplate',
   component: LayoutTemplate,
   args: {
     header: React.createElement<HeaderProps>(Header, HeaderStories.args as HeaderProps),
@@ -19,8 +20,6 @@ const meta: Meta<typeof LayoutTemplate> = {
     children: <div className="flex flex-1 items-center justify-center p-8">Content</div>,
   },
   parameters: {
-    // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
-    a11y: { test: 'todo' },
     layout: 'full',
     viewport: {
       defaultViewport: 'extraSmallScreen',

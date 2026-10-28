@@ -20,11 +20,12 @@ n'est pas forcément installé dans le dépôt.
 ## Classes sémantiques
 
 - Un motif d'interface répété devient un **composant de `src/design-system/ui`** (ou de `src/components` s'il assemble plusieurs
-  composants), pas une classe recopiée dans le JSX : `Card` (`CardHeader`, `CardTitle`), `Alert`, `Field`… Avant
+  composants), pas une classe recopiée dans le JSX : `Button`, `Breadcrumb` (`BreadcrumbItem`, `BreadcrumbLink`),
+  `Pagination`, `Reminder`… Avant
   d'écrire un bloc, chercher s'il existe déjà dans `src/design-system/ui`, puis dans le catalogue de shadcn/ui : un contrôle de
   formulaire (liste, zone de texte, case, bascule…) passe par son composant, ajouté s'il manque, même pour un seul usage.
 - Un style répété (au moins deux fois, ou un motif du design system) devient une classe : `btn`, `btn-primary`,
-  `btn-sm`, `card`, `alert`, `input`, `field-error`, `badge-success`, `dialog`, `sheet`, `menu`, `tabs-trigger`… Un
+  `btn-sm`, `card`, `link`, `kbd`, `input`, `reminder`, `pagination-link`, `breadcrumb-link`… Un
   ajustement ponctuel (marge, largeur, position) reste un utilitaire Tailwind dans le JSX.
 - `@apply` pour les cas simples ; CSS standard pour les sélecteurs complexes et les états. `focus-ring` est un
   `@utility` pour pouvoir être appliqué par `@apply`.
@@ -35,7 +36,7 @@ n'est pas forcément installé dans le dépôt.
   variante arbitraire (`aria-[current=page]:`, `[&>svg]:`) : une taille vient des échelles des tokens (noms de
   Tailwind restreints aux pas retenus : `p-4`, `gap-2`, `text-sm`, listés sur la page Tokens de Storybook) ou d'une
   dimension nommée d'après son usage (`h-control`), une mise en page d'écran d'une entrée nommée du thème
-  (`grid-cols-content-aside`, `max-w-measure`), une variante d'un `@custom-variant` (`aria-current:`). Une classe
+  (`grid-cols-content-aside`, `max-h-sticky`), une variante d'un `@custom-variant` (`can-hover:`). Une classe
   hors de l'échelle (`p-5`) n'existe pas : un pas qui manque s'ajoute aux tokens. Dans une feuille de style, du CSS
   standard plutôt qu'un `@apply` à valeur arbitraire.
 - Une taille ne change pas selon l'écran dans les tokens : la variation s'écrit dans le JSX (`md:`) ou dans la classe
@@ -49,8 +50,8 @@ n'est pas forcément installé dans le dépôt.
 
 ## Pas d'attribut data-*
 
-- Ni `data-slot`, ni `data-variant`, ni `data-size`. Une variante est une classe de modificateur (`btn-primary`,
-  `sheet-right`, `menu-item-danger`) ; un test cible un rôle ou un libellé accessible.
+- Ni `data-slot`, ni `data-variant`, ni `data-size`. Une variante est une classe de modificateur (`btn-secondary`,
+  `post-card-highlight-dark`, `summary-card-secondary`) ; un test cible un rôle ou un libellé accessible.
 - Un état se lit dans les attributs d'accessibilité ou les pseudo-classes : `[aria-selected='true']`,
   `[aria-expanded='true']`, `[aria-invalid='true']`, `[aria-disabled='true']`, `:focus`, `:disabled`.
 - Seuls `data-open` et `data-closed`, posés par Base UI, servent aux animations d'ouverture et de fermeture
@@ -98,3 +99,20 @@ n'est pas forcément installé dans le dépôt.
 - Chaque histoire est rendue dans Chromium avec son contrôle d'accessibilité (axe), en local comme en CI : une
   histoire qui plante ou une violation fait échouer. Une violation se corrige dans le composant, jamais en
   désactivant la règle.
+
+## Propre au blog
+
+- **Typographie** : les tailles du texte courant, des titres et des intertitres du contenu rédigé sont des utilitaires
+  de rôle (`body-s`, `heading-xl`, `markup-m`, dans `src/design-system/styles/classes/typography.css`), posés par
+  `Text` et `Heading` et par `@apply` dans les feuilles du contenu. Chacun fixe sa taille mobile et sa taille à partir
+  de `md`. Un nouvel utilitaire s'ajoute aussi à `cn` (`src/design-system/helpers/cn.ts`).
+- **Contenu rédigé** : le HTML produit par le markdown est mis en forme par `src/pages/PostPage/PostContent.css`, hors
+  couche, avec ses propres classes (`post-content`, `tutorial-steps`, `tweet-frame`), déclarées au lint par
+  `externalClasses` dans `eslint.config.mjs`, comme celles du formulaire Webmecanik (`mauticform*`).
+- **Attributs lus par les scripts** : `data-header-menu`, `data-header-search`, `data-summary-*`, `data-tutorial-steps`
+  et `data-internal-link` servent aux scripts de la page (`src/helpers`), jamais au CSS.
+- **Icônes** : générées par svgr dans `src/design-system/ui/icon/svgs` (`pnpm build:icons`), ignorées par le lint et
+  l'audit ; les logos des réseaux gardent leurs couleurs de marque.
+- **Histoires** : `Pages/<Écran>` pour `src/pages`, `Features/Post/<Bloc>` pour les parties d'une page d'article,
+  `Layouts/<Nom>` pour `src/templates`.
+

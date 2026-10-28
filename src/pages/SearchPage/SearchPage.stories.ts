@@ -14,6 +14,7 @@ import { LayoutTemplateDecorator } from '@/storybook/decorators';
 import { SearchPage } from './SearchPage';
 
 const meta: Meta<typeof SearchPage> = {
+  title: 'Pages/Search',
   component: SearchPage,
   args: {
     title: '26 résultats',
@@ -28,8 +29,6 @@ const meta: Meta<typeof SearchPage> = {
     isLoading: false,
   },
   parameters: {
-    // Accessibilité signalée sans bloquer jusqu'au lot de migration de ce bloc
-    a11y: { test: 'todo' },
     layout: 'full',
     viewport: {
       defaultViewport: 'extraSmallScreen',

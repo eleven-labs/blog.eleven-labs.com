@@ -39,7 +39,7 @@ describe('mdxToHtml', () => {
   it('should render a table that scrolls, labels its cells and aligns its columns', () => {
     expect(mdxToHtml('| Name | Value |\n| ---- | ----: |\n| a    | 1     |')).toEqual(
       '<div class="post-content-table"><table><thead><tr><th>Name</th><th style="text-align:right">Value</th></tr></thead>' +
-        '<tbody><tr><td data-label="Name">a</td><td data-label="Value" style="text-align:right">1</td></tr></tbody></table></div>'
+        '<tbody><tr><td class="post-content-labelled-cell" data-label="Name">a</td><td class="post-content-labelled-cell" data-label="Value" style="text-align:right">1</td></tr></tbody></table></div>'
     );
   });
 
