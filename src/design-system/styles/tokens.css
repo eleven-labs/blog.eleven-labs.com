@@ -1,0 +1,124 @@
+/*
+ * Tokens du design system : blog Eleven Labs
+ * Source : valeurs de l'ancien thème (styles/theme.css), relevées le 28/10/2026 et renommées d'après leur usage ;
+ * gris fusionnés (#9b9b9b → muted, contraste AA), encarts du markdown ramenés aux couleurs d'état, tailles et espaces
+ * arrondis à l'échelle de Tailwind (42 px → 40 px, titres 40/64 px → 36/60 px).
+ *
+ * Bloc @theme de Tailwind v4, importé par la feuille d'entrée juste après Tailwind. Valeurs en hexadécimal, une ligne
+ * par token, commentaire d'usage en fin de ligne : la page Tokens de Storybook les lit telles quelles.
+ * Contrastes AA vérifiés : primary 5,6:1 sur surface et 4,9:1 sur canvas, muted 4,6:1 sur surface, brand 8,9:1 sur canvas, états 4,8:1 et plus.
+ */
+@theme static {
+  /* Polices : Google Fonts, chargées par l'application et par Storybook (preview-head.html) */
+  --font-*: initial;
+  --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif; /* texte courant */
+  --font-display: 'Agdasima', ui-sans-serif, sans-serif; /* titres, boutons, étiquettes */
+  --font-serif: georgia, 'Times New Roman', times, serif; /* citations */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace; /* code */
+
+  /* Surfaces */
+  --color-canvas: #e9f1f8; /* fond du blog */
+  --color-surface: #ffffff; /* cartes, en-tête, encarts */
+  --color-surface-alt: #ededed; /* code en ligne, touches, squelettes */
+  --color-line: #c5d3e9; /* séparateurs, bordures de la pagination */
+  --color-line-strong: #c4c4c4; /* bordure des touches */
+
+  /* Texte */
+  --color-ink: #000000; /* texte principal */
+  --color-ink-soft: #333333; /* code */
+  --color-muted: #757575; /* texte secondaire, éléments désactivés */
+
+  /* Marque */
+  --color-brand: #0a4084; /* titres, blocs bleus (newsletter, tutoriels) */
+  --color-on-brand: #ffffff; /* texte posé sur brand */
+  --color-footer: #194180; /* pied de page */
+  --color-footer-strong: #093670; /* bandeau du pied de page */
+  --color-primary: #c42848; /* actions, liens, mise en avant (assombri de #dd3156 : 4,9:1 sur canvas) */
+  --color-on-primary: #ffffff; /* texte posé sur primary */
+  --color-highlight: #f8fa9b; /* étiquettes, titre de la newsletter */
+
+  /* États : encarts du markdown ; la variante -soft sert de fond, la couleur pleine de bordure, d'icône ou de texte */
+  --color-info: #0277bd; /* encarts note, résumé, info */
+  --color-info-soft: #e1f5fe; /* fond du titre des encarts info */
+  --color-success: #2e7d32; /* encarts astuce, succès, question ; ligne ajoutée d'un diff */
+  --color-success-soft: #e8f5e9; /* fond des encarts succès, d'une ligne ajoutée */
+  --color-warning: #b45309; /* encarts attention */
+  --color-warning-soft: #fff3e0; /* fond du titre des encarts attention */
+  --color-danger: #c62828; /* encarts échec, danger, bug ; ligne retirée d'un diff */
+  --color-danger-soft: #ffebee; /* fond des encarts danger, d'une ligne retirée, erreurs du formulaire */
+
+  /* Coloration du code (thème github-gist), contrastes AA sur surface */
+  --color-code-comment: #6a737d; /* commentaires */
+  --color-code-keyword: #d73a49; /* mots-clés */
+  --color-code-literal: #007a9c; /* littéraux, fonctions natives */
+  --color-code-number: #005cc5; /* nombres */
+  --color-code-string: #032f62; /* chaînes */
+  --color-code-title: #6f42c1; /* titres, fonctions, propriétés */
+  --color-code-tag: #22863a; /* balises */
+  --color-code-variable: #b93a00; /* variables */
+
+  /* Voile derrière les calques modaux */
+  --color-overlay: #00000080; /* voile des calques modaux */
+
+  /* Points de rupture : mobile d'abord, xs sans minimum */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 571px;
+  --breakpoint-md: 1001px;
+  --breakpoint-lg: 1201px;
+
+  /*
+   * Échelles : les noms de Tailwind, restreints aux pas retenus. Chaque famille est remise à zéro puis redéclarée :
+   * une autre classe (p-7, text-5xl) n'est pas générée et le lint la signale. Les tailles sont fixes : la variation
+   * d'écran s'écrit en md: dans le JSX ou dans la classe d'un composant (heading-xl).
+   */
+  --text-*: initial;
+  --text-xs: 0.75rem; /* 12 px : métadonnées, code en ligne */
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.875rem; /* 14 px : texte courant sur mobile, boutons */
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem; /* 16 px : texte courant */
+  --text-base--line-height: 1.5;
+  --text-lg: 1.125rem; /* 18 px : chapô, texte d'article sur mobile */
+  --text-lg--line-height: 1.5;
+  --text-xl: 1.25rem; /* 20 px : texte d'article, petits titres */
+  --text-xl--line-height: 1.5;
+  --text-2xl: 1.5rem; /* 24 px : titres de carte, intertitres d'article */
+  --text-2xl--line-height: 1.2;
+  --text-3xl: 1.875rem; /* 30 px : titres de section */
+  --text-3xl--line-height: 1.2;
+  --text-4xl: 2.25rem; /* 36 px : titres de page sur mobile */
+  --text-4xl--line-height: 1.2;
+  --text-6xl: 3.75rem; /* 60 px : titre de l'accueil sur bureau */
+  --text-6xl--line-height: 1.2;
+
+  --spacing-*: initial;
+  --spacing-0: 0px;
+  --spacing-px: 1px; /* filets */
+  --spacing-0\.5: 0.125rem;
+  --spacing-1: 0.25rem;
+  --spacing-1\.5: 0.375rem;
+  --spacing-2: 0.5rem;
+  --spacing-2\.5: 0.625rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem; /* icônes */
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem; /* gouttières des cartes */
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem; /* marges entre blocs */
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-32: 8rem;
+
+  /* Dimensions nommées d'après leur usage */
+  --spacing-control: 3rem; /* boutons de la pagination, champ de recherche */
+
+  /* Formes et relief : theme.css ramène les noms de shadcn (rounded-md, shadow-sm…) sur ces tokens */
+  --radius-*: initial;
+  --radius-control: 0.375rem; /* rounded-control : icônes des réseaux, champs */
+  --radius-card: 0.25rem; /* rounded-card : cartes, encarts, étiquettes */
+  --shadow-*: initial;
+  --shadow-card: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 20%); /* encarts */
+  --shadow-overlay: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%); /* barre de sommaire, calques */
+}

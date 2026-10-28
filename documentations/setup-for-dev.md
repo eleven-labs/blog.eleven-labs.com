@@ -28,7 +28,7 @@ git clone git@github.com:eleven-labs/blog.eleven-labs.com.git
 ### 2 - Run the project locally
 ```bash
 nvm install
-npx concurrently "yarn start:storybook" "yarn ts-node bin/dev"
+npx concurrently "pnpm storybook" "yarn ts-node bin/dev"
 ```
 
 Urls:
@@ -45,7 +45,7 @@ Url: http://localhost:5173
 
 ### 4 - Start Storybook
 ```bash
-docker-compose exec app yarn start:storybook
+docker-compose exec app pnpm storybook
 ```
 
 Url: http://localhost:6006

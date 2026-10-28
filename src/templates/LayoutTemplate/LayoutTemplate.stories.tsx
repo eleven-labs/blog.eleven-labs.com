@@ -1,29 +1,27 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 
-import type { FooterProps, HeaderProps } from '@/components';
+import type { FooterProps } from '@/components/footer';
+import type { HeaderProps } from '@/components/header';
 
 import React from 'react';
 
-import { Header } from '@/components';
-import FooterStories from '@/components/Organisms/Footer/Footer.stories';
-import HeaderStories from '@/components/Organisms/Header/Header.stories';
+import FooterStories from '@/components/footer/footer.stories';
+import { Header } from '@/components/header';
+import HeaderStories from '@/components/header/header.stories';
 
 import { LayoutTemplate } from './LayoutTemplate';
 
 const meta: Meta<typeof LayoutTemplate> = {
+  title: 'Layouts/LayoutTemplate',
   component: LayoutTemplate,
   args: {
     header: React.createElement<HeaderProps>(Header, HeaderStories.args as HeaderProps),
     footer: FooterStories.args as FooterProps,
-    children: (
-      <div className="flex flex-1 items-center justify-center p-l">Content</div>
-    ),
+    children: <div className="flex flex-1 items-center justify-center p-8">Content</div>,
   },
+  globals: { viewport: { value: 'mobile', isRotated: false } },
   parameters: {
-    layout: 'full',
-    viewport: {
-      defaultViewport: 'extraSmallScreen',
-    },
+    layout: 'fullscreen',
   },
 };
 

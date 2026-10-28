@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design system/Introduction" />
+
+# Design system
+
+Un blog technique lumineux : fond bleu très clair, cartes blanches aux angles à peine arrondis, titres en Agdasima
+et texte en Montserrat. Le bleu de la marque porte les titres et les grands blocs, le rose les actions et les liens.
+
+## Trois couches
+
+1. **Tokens** : `src/design-system/styles/tokens.css`, source unique des couleurs, polices, tailles, rayons et hauteurs (page _Tokens_).
+2. **Classes sémantiques** : dans `@layer components`, le CSS de chaque composant à côté de lui
+   (`src/design-system/ui/button/button.css`), les classes sans composant dans `src/design-system/styles/classes` ; `src/design-system/styles/components.css` les
+   rassemble (`btn`, `btn-primary`, `link`, `reminder`, `kbd`…), à la manière de daisyUI (page _Classes_).
+   Les ajustements ponctuels restent en utilitaires Tailwind dans le JSX.
+3. **Composants** : `src/design-system/ui` (shadcn/ui sur Base UI). Leurs variantes typées (CVA) posent ces classes :
+   `<Button variant="primary" size="sm">` rend `btn btn-primary btn-sm`.
+
+## Règles
+
+- Un style répété va dans une classe sémantique ; un ajustement ponctuel reste un utilitaire.
+- Les couleurs passent par les tokens (`bg-surface`, `text-muted`) ou les variables de shadcn (`bg-background`).
+- Aucune valeur arbitraire (`w-[720px]`, `text-[13px]`) : l'échelle de Tailwind, un token ou une entrée nommée du thème.
+- Le focus clavier est toujours visible (`focus-ring`) ; les rôles et attributs ARIA viennent des primitives Base UI.
+
+L'onglet _Accessibility_ contrôle chaque histoire ; quand le mode sombre existe, la barre d'outils bascule de thème.

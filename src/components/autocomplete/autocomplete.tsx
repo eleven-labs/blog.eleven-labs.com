@@ -1,0 +1,103 @@
+import type { AutocompleteItem, AutocompleteResultOptions } from './autocomplete-result';
+import type { UseComboboxProps } from 'downshift';
+
+import { useCombobox } from 'downshift';
+import React from 'react';
+
+import { cn } from '@/design-system/helpers/cn';
+import { SearchField } from '@/design-system/ui/search-field';
+
+import { AutocompleteResult } from './autocomplete-result';
+
+export type AutocompleteOptions = {
+  placeholder: string;
+  searchLink: Exclude<AutocompleteResultOptions['searchLink'], undefined>;
+  defaultValue?: string;
+  onEnter?: (value: string) => void;
+  /** Appelé après que le bouton de fermeture du champ l'a vidé. */
+  onClose?: () => void;
+  className?: string;
+};
+
+export type AutocompleteProps = AutocompleteOptions &
+  Omit<AutocompleteResultOptions, 'highlightedIndex' | 'searchLink' | 'getItemProps'> &
+  Pick<UseComboboxProps<AutocompleteItem>, 'onInputValueChange' | 'onSelectedItemChange' | 'isOpen'>;
+
+/** Champ de recherche à suggestions (combobox downshift) : saisie, liste d'articles, lien vers tous les résultats. */
+export const Autocomplete: React.FC<AutocompleteProps> = ({
+  placeholder,
+  defaultValue,
+  items = [],
+  searchLink: { label: searchLinkLabel, ...searchLinkProps },
+  searchNotFound,
+  onInputValueChange,
+  onSelectedItemChange,
+  onEnter,
+  onClose: onCloseProp,
+  isOpen: defaultIsOpen,
+  className,
+}) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>): void => {
+    if (onEnter && event.key === 'Enter') {
+      onEnter(event.currentTarget.value);
+    }
+  };
+
+  const {
+    getInputProps,
+    getLabelProps,
+    getMenuProps,
+    getItemProps,
+    selectItem,
+    toggleMenu,
+    isOpen,
+    inputValue,
+    highlightedIndex,
+  } = useCombobox<AutocompleteItem>({
+    // Sans identifiant fixe, downshift dérive le sien de `useId`. Le serveur rend le champ dans la
+    // page entière quand le navigateur n'hydrate que l'en-tête : les deux identifiants diffèrent
+    // et React signale alors un défaut d'hydratation.
+    id: 'autocomplete',
+    defaultInputValue: defaultValue,
+    onInputValueChange,
+    onSelectedItemChange,
+    items,
+    itemToString: (item) => (item ? item.title : ''),
+    isOpen: defaultIsOpen,
+  });
+
+  const onClose = (): void => {
+    selectItem(null);
+    onCloseProp?.();
+  };
+
+  return (
+    <div className={cn('autocomplete', className)}>
+      {/* Le champ n'affiche pas de libellé : on en rend un pour les lecteurs d'écran, faute de
+          quoi l'`aria-labelledby` posé par downshift ne désigne aucun élément de la page. */}
+      <label {...getLabelProps()} className="sr-only">
+        {placeholder}
+      </label>
+      <SearchField
+        input={getInputProps({ placeholder, onKeyDown: handleKeyDown })}
+        buttonSearch={{ render: <a {...searchLinkProps} /> }}
+        buttonClose={{ onClick: onClose }}
+        className="autocomplete-field"
+      />
+      <AutocompleteResult
+        isOpen={isOpen && inputValue.length > 0}
+        {...getMenuProps()}
+        items={items}
+        getItemProps={({ item, index }) => getItemProps({ item, index })}
+        highlightedIndex={highlightedIndex === -1 ? 0 : highlightedIndex}
+        searchValue={inputValue}
+        searchLink={{
+          label: searchLinkLabel,
+          ...searchLinkProps,
+          onClick: toggleMenu,
+        }}
+        searchNotFound={searchNotFound}
+      />
+    </div>
+  );
+};

@@ -77,6 +77,25 @@ jobs:
       - name: Run Tests
         run: pnpm test
 
+  stories:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js and restore pnpm cache
+        uses: ./.github/actions/setup-nodejs-and-restore-pnpm-cache
+
+      - name: Build Storybook
+        run: pnpm build-storybook
+
+      - name: Install Chromium
+        run: pnpm exec playwright install --with-deps chromium
+
+      # Chaque histoire rendue dans Chromium, contrôle d'accessibilité compris
+      - name: Run Stories
+        run: pnpm test:stories
+
   build:
     runs-on: ubuntu-latest
     steps:

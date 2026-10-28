@@ -1,10 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import ShareLinksStories from '@/components/Molecules/ShareLinks/ShareLinks.stories';
+import ShareLinksStories from '@/components/share-links/share-links.stories';
 
 import { PostHeader, type PostHeaderProps } from './PostHeader';
 
 const meta: Meta<typeof PostHeader> = {
+  title: 'Features/Post/PostHeader',
   component: PostHeader,
   args: {
     title: 'Title',

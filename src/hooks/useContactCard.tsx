@@ -1,4 +1,4 @@
-import type { ContactCardProps } from '@/components';
+import type { ContactCardProps } from '@/components/contact-card';
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';

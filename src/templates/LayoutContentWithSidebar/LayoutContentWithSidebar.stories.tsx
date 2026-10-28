@@ -1,13 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import React from 'react';
 
-import { SummaryCard } from '@/components';
+import { SummaryCard } from '@/components/summary-card';
 import { LayoutTemplateDecorator } from '@/storybook/decorators';
 
 import { LayoutContentWithSidebar } from './LayoutContentWithSidebar';
 
 const meta: Meta<typeof LayoutContentWithSidebar> = {
+  title: 'Layouts/LayoutContentWithSidebar',
   component: LayoutContentWithSidebar,
   args: {
     content: <>Content</>,
@@ -56,7 +57,7 @@ const meta: Meta<typeof LayoutContentWithSidebar> = {
     ),
   },
   parameters: {
-    layout: 'full',
+    layout: 'fullscreen',
   },
   decorators: [LayoutTemplateDecorator],
 };

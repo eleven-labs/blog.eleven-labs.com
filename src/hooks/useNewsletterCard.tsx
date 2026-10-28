@@ -1,4 +1,4 @@
-import type { NewsletterCardProps } from '@/components';
+import type { NewsletterCardProps } from '@/components/newsletter-card';
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';

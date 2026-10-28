@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef } from '@/design-system';
+import type { ComponentPropsWithoutRef } from '@/design-system/types';
 
 import { evaluateSync } from '@mdx-js/mdx';
 import React from 'react';
@@ -8,7 +8,8 @@ import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import { visit } from 'unist-util-visit';
 
-import { Link, SyntaxHighlighter } from '@/design-system';
+import { Link } from '@/design-system/ui/link';
+import { SyntaxHighlighter } from '@/design-system/ui/syntax-highlighter';
 import { ContentImage, mdxComponents } from '@/helpers/mdxComponents';
 import {
   remarkSectionHeadingsPlugin,
@@ -38,9 +39,7 @@ const getTextContent = (children: React.ReactNode): string =>
         return String(child);
       }
 
-      return React.isValidElement<{ children?: React.ReactNode }>(child)
-        ? getTextContent(child.props.children)
-        : '';
+      return React.isValidElement<{ children?: React.ReactNode }>(child) ? getTextContent(child.props.children) : '';
     })
     .join('');
 
@@ -98,7 +97,11 @@ const rehypeTableCellLabels = () => (tree: Parameters<typeof visit>[0]) => {
     for (const row of getChildElements(body, 'tr')) {
       getChildElements(row, 'td').forEach((cell, index) => {
         if (labels[index]) {
-          cell.properties = { ...cell.properties, 'data-label': labels[index] };
+          const className = [
+            ...((cell.properties?.className as string[] | undefined) ?? []),
+            'post-content-labelled-cell',
+          ];
+          cell.properties = { ...cell.properties, className, 'data-label': labels[index] };
         }
       });
     }
@@ -136,7 +139,7 @@ const htmlComponents = {
     return match ? (
       <SyntaxHighlighter children={code.replace(/\n$/, '')} language={match[1]} {...props} />
     ) : (
-      <code className="bg-ultra-light-grey px-xxs-2 text-xs text-ultra-dark-grey">{children}</code>
+      <code className="bg-surface-alt px-1.5 body-xs text-ink-soft">{children}</code>
     );
   },
   img: (props: ComponentPropsWithoutRef<'img'>): React.JSX.Element => <ContentImage {...props} />,
@@ -157,11 +160,9 @@ export const mdxToHtml = (content: string, options: MdxToHtmlOptions = {}): stri
       ...(options.section ? [[remarkSectionHeadingsPlugin, options.section] as const] : []),
       remarkGfm,
     ] as NonNullable<Parameters<typeof evaluateSync>[1]['remarkPlugins']>,
-    rehypePlugins: [
-      rehypeSlug,
-      rehypeTableCellLabels,
-      rehypeCellAlignToStyle,
-    ] as NonNullable<Parameters<typeof evaluateSync>[1]['rehypePlugins']>,
+    rehypePlugins: [rehypeSlug, rehypeTableCellLabels, rehypeCellAlignToStyle] as NonNullable<
+      Parameters<typeof evaluateSync>[1]['rehypePlugins']
+    >,
   });
 
   return ReactDOMServer.renderToStaticMarkup(

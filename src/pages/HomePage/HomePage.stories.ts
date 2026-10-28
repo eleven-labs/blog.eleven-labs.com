@@ -1,17 +1,18 @@
 import type { HomePageProps } from './HomePage';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import type { CategoryPageProps } from '@/pages/CategoryPage';
 
-import HomeIntroBlockStories from '@/components/Molecules/Blocks/HomeIntroBlock/HomeIntroBlock.stories';
-import NewsletterCardStories from '@/components/Molecules/Cards/NewsletterCard/NewsletterCard.stories';
-import LastArticlesBlockStories from '@/components/Organisms/Blocks/LastArticlesBlock/LastArticlesBlock.stories';
-import LastTutorialsBlockStories from '@/components/Organisms/Blocks/LastTutorialsBlock/LastTutorialsBlock.stories';
+import HomeIntroBlockStories from '@/components/home-intro-block/home-intro-block.stories';
+import LastArticlesBlockStories from '@/components/last-articles-block/last-articles-block.stories';
+import LastTutorialsBlockStories from '@/components/last-tutorials-block/last-tutorials-block.stories';
+import NewsletterCardStories from '@/components/newsletter-card/newsletter-card.stories';
 import { LayoutTemplateDecorator } from '@/storybook/decorators';
 
 import { HomePage } from './HomePage';
 
 const meta: Meta<typeof HomePage> = {
+  title: 'Pages/Home',
   component: HomePage,
   args: {
     homeIntroBlock: HomeIntroBlockStories.args as HomePageProps['homeIntroBlock'],
@@ -19,11 +20,9 @@ const meta: Meta<typeof HomePage> = {
     lastTutorialsBlock: LastTutorialsBlockStories.args as HomePageProps['lastTutorialsBlock'],
     newsletterCard: NewsletterCardStories.args as CategoryPageProps['newsletterCard'],
   },
+  globals: { viewport: { value: 'mobile', isRotated: false } },
   parameters: {
-    layout: 'full',
-    viewport: {
-      defaultViewport: 'extraSmallScreen',
-    },
+    layout: 'fullscreen',
   },
   decorators: [LayoutTemplateDecorator],
 };

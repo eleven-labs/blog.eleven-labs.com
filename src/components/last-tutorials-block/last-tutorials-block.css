@@ -1,0 +1,12 @@
+/* LastTutorialsBlock : la colonne des cartes pèse deux fois celle du texte de présentation (rapport de flex propre à ce bloc). */
+@layer components {
+  .last-tutorials-cards {
+    @apply grid w-full gap-8;
+  }
+  @media (width >= theme(--breakpoint-md)) {
+    .last-tutorials-cards {
+      flex: 2;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}

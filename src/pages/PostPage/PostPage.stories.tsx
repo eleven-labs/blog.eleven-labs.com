@@ -1,11 +1,10 @@
 import type { PostPageProps } from './PostPage';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import React from 'react';
 
-import ContactCardStories from '@/components/Molecules/Cards/ContactCard/ContactCard.stories';
-import * as SummaryCardStories from '@/components/Molecules/Cards/SummaryCard/SummaryCard.stories';
-import BreadcrumbStories from '@/design-system/components/Atoms/Breadcrumb/Breadcrumb.stories';
+import ContactCardStories from '@/components/contact-card/contact-card.stories';
+import * as SummaryCardStories from '@/components/summary-card/summary-card.stories';
 import PostFooterStories from '@/pages/PostPage/PostFooter/PostFooter.stories';
 import PostHeaderStories from '@/pages/PostPage/PostHeader/PostHeader.stories';
 import RelatedPostListStories from '@/pages/PostPage/RelatedPostList/RelatedPostList.stories';
@@ -14,10 +13,13 @@ import { LayoutTemplateDecorator } from '@/storybook/decorators';
 import { PostPage } from './PostPage';
 
 const meta: Meta<typeof PostPage> = {
+  title: 'Pages/Post',
   component: PostPage,
   args: {
     variant: 'article',
-    breadcrumb: BreadcrumbStories.args as PostPageProps['breadcrumb'],
+    breadcrumb: {
+      items: [{ label: 'Accueil', href: '#' }, { label: 'JavaScript' }],
+    },
     cover: {
       img: {
         src: 'https://i.ibb.co/gPtFC17/pexels-matheus-bertelli-1830252.jpg',
@@ -122,11 +124,9 @@ const meta: Meta<typeof PostPage> = {
       sections: SummaryCardStories.default.args?.sections,
     } as PostPageProps['summary'],
   },
+  globals: { viewport: { value: 'mobile', isRotated: false } },
   parameters: {
-    layout: 'full',
-    viewport: {
-      defaultViewport: 'extraSmallScreen',
-    },
+    layout: 'fullscreen',
   },
   decorators: [LayoutTemplateDecorator],
 };
@@ -140,8 +140,8 @@ export const WithVariantTutorial: Story = {};
 WithVariantTutorial.args = {
   variant: 'tutorial',
   summary: {
-    title: SummaryCardStories.WithVariantSecondary.args?.title,
-    sections: SummaryCardStories.WithVariantSecondary.args?.sections,
-    sectionActive: SummaryCardStories.WithVariantSecondary.args?.sectionActive,
+    title: SummaryCardStories.Secondary.args?.title,
+    sections: SummaryCardStories.Secondary.args?.sections,
+    sectionActive: SummaryCardStories.Secondary.args?.sectionActive,
   } as PostPageProps['summary'],
 };

@@ -1,0 +1,49 @@
+/*
+ * SummaryBar : barre de sommaire des petits écrans, collée sous l'en-tête (`--sticky-header-offset`, posée par
+ * stickyHeaderHelper) ; elle repose sur `<details>`, l'ouverture se lit dans l'attribut `open`.
+ */
+@layer components {
+  .summary-bar {
+    @apply overflow-hidden rounded-card bg-surface shadow-overlay;
+    position: sticky;
+    top: var(--sticky-header-offset, 0px);
+    z-index: 5;
+    transition: top 150ms;
+  }
+  .summary-bar-header {
+    @apply relative flex cursor-pointer items-center gap-4 px-6 py-4;
+    list-style: none;
+  }
+  .summary-bar-header::-webkit-details-marker {
+    display: none;
+  }
+  .summary-bar-chevron {
+    @apply shrink-0 text-brand;
+    transform: rotate(90deg);
+    transition: transform 150ms;
+  }
+  .summary-bar[open] .summary-bar-chevron {
+    transform: rotate(-90deg);
+  }
+  /* Piste de progression : filet de 3 px au bas du résumé, seul à rester affiché quand la liste est repliée. */
+  .summary-bar-track {
+    @apply absolute inset-x-0 bottom-0 block bg-surface-alt;
+    height: 3px;
+  }
+  .summary-bar-progress {
+    @apply block h-full bg-brand;
+    transition: width 150ms;
+  }
+  /* Liste dépliée : elle défile au-delà de 60 % de la hauteur de l'écran. */
+  .summary-bar-list {
+    @apply overflow-y-auto;
+    max-height: 60vh;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .summary-bar,
+    .summary-bar-chevron,
+    .summary-bar-progress {
+      transition: none;
+    }
+  }
+}

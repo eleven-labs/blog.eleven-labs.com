@@ -1,0 +1,49 @@
+/*
+ * Classes sémantiques du design system (à la daisyUI, sans daisyUI) : les styles répétés sont dans des classes, les
+ * ajustements ponctuels restent en utilitaires dans le JSX. Variantes par classes de modificateur (`btn-primary`,
+ * `sheet-right`, `menu-item-danger`), états par les attributs d'accessibilité et les pseudo-classes (`aria-selected`,
+ * `aria-invalid`, `:focus`, `:disabled`) ; Seuls `data-open` et `data-closed`, posés par Base UI, servent aux animations d'ouverture et de fermeture.
+ *
+ * Chaque composant a son CSS à côté de lui (src/design-system/ui/button/ : button.tsx, button.css, son histoire, index.ts) ; les
+ * classes sans composant React sont dans classes/, un fichier par famille. Ce fichier les rassemble : une nouvelle
+ * feuille s'y ajoute (rehome.mjs le fait pour un composant de shadcn). Documentation : Storybook.
+ */
+@import './utilities.css';
+
+/* Classes sans composant React, avant les composants qui peuvent les surcharger */
+@import './classes/card.css';
+@import './classes/overlay.css';
+@import './classes/typography.css';
+
+/* Composants */
+@import '../ui/blockquote/blockquote.css';
+@import '../ui/breadcrumb/breadcrumb.css';
+@import '../ui/burger-button/burger-button.css';
+@import '../ui/button/button.css';
+@import '../ui/close-button/close-button.css';
+@import '../ui/input/input.css';
+@import '../ui/kbd/kbd.css';
+@import '../ui/link/link.css';
+@import '../ui/pagination/pagination.css';
+@import '../ui/reminder/reminder.css';
+@import '../ui/search-field/search-field.css';
+@import '../ui/separator/separator.css';
+@import '../ui/skeleton/skeleton.css';
+
+/* Blocs partagés */
+@import '../../components/author-card/author-card.css';
+@import '../../components/autocomplete/autocomplete.css';
+@import '../../components/category-intro-block/category-intro-block.css';
+@import '../../components/contact-card/contact-card.css';
+@import '../../components/footer/footer.css';
+@import '../../components/header/header.css';
+@import '../../components/home-intro-block/home-intro-block.css';
+@import '../../components/last-articles-block/last-articles-block.css';
+@import '../../components/last-tutorials-block/last-tutorials-block.css';
+@import '../../components/logo/logo.css';
+@import '../../components/newsletter-card/newsletter-card.css';
+@import '../../components/not-found-block/not-found-block.css';
+@import '../../components/post-card/post-card.css';
+@import '../../components/post-metadata/post-metadata.css';
+@import '../../components/summary-bar/summary-bar.css';
+@import '../../components/summary-card/summary-card.css';

@@ -1,0 +1,56 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { ColorTokens } from './tokens/color-tokens';
+import { ScaleTokens } from './tokens/scale-tokens';
+
+<Meta title="Design system/Tokens" />
+
+# Tokens
+
+Lus dans `src/design-system/styles/tokens.css` (bloc `@theme` de Tailwind v4) : cette page suit le fichier sans copie. Le blog n'a pas de mode sombre. Les variables de shadcn/ui (`--background`,
+`--primary-foreground`, `--ring`…) pointent sur ces tokens.
+
+Les échelles gardent les noms de Tailwind (`p-4`, `text-sm`), mais seuls les pas listés ici existent : chaque famille
+est remise à zéro (`--spacing-*: initial`) puis redéclarée. Une autre classe (`p-5`, `text-[13px]`) n'est pas générée
+et le lint la signale. Une valeur qui manque s'ajoute au fichier de tokens, avec son usage.
+
+## Couleurs
+
+<ColorTokens />
+
+## Polices
+
+<ScaleTokens prefix="font-" />
+
+## Tailles de texte
+
+Chaque taille porte son interligne. Une taille ne change pas selon l'écran : la variation s'écrit dans le JSX (`md:`)
+ou dans la classe d'un composant.
+
+<ScaleTokens prefix="text-" />
+
+## Espaces et dimensions
+
+Marges, gouttières, paddings et petites dimensions (`p-4`, `gap-2`, `size-4`), puis les dimensions nommées d'après
+leur usage (`size-control`, `max-h-sticky`). Une largeur d'écran est une entrée nommée du thème (`grid-cols-content-aside`).
+
+<ScaleTokens prefix="spacing-" />
+
+## Points de rupture
+
+Mobile d'abord : une classe sans préfixe vaut pour toutes les largeurs, `md:` à partir de 1001 px.
+
+<ScaleTokens prefix="breakpoint-" />
+
+## Rayons
+
+<ScaleTokens prefix="radius-" />
+
+## Ombres
+
+<ScaleTokens prefix="shadow-" />
+
+## Mises en page
+
+Les colonnes des grilles des écrans (`grid-cols-content-aside`) et les hauteurs d'un bloc collé (`max-h-sticky`) sont des
+entrées nommées du thème, dans `src/design-system/styles/theme.css` : aucune valeur arbitraire (`grid-cols-[minmax(0,1fr)_300px]`)
+dans les composants.

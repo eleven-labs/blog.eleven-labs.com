@@ -1,6 +1,6 @@
 import type { PostCardListContainerProps } from './PostCardListContainer';
 
-import type { PostCardListProps } from '@/components';
+import type { PostCardListProps } from '@/components/post-card-list';
 
 import { IMAGE_FORMATS, NUMBER_OF_ITEMS_PER_PAGE } from '@/constants';
 import { usePostsForCardList } from '@/hooks/usePostsForCardList';
