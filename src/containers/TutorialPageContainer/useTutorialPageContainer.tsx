@@ -41,14 +41,14 @@ export const useTutorialPageContainer = (tutorial: TutorialPageData): PostPagePr
               <h2>{step.title}</h2>
               <div dangerouslySetInnerHTML={{ __html: step.content }} />
               {(previousStep || nextStep) && (
-                <div data-tutorial-step-nav className="gap-l">
+                <div data-tutorial-step-nav className="gap-8">
                   {previousStep && (
-                    <Button render={<a {...getStepLink(previousStep)} />} className="mt-l" variant="secondary">
+                    <Button render={<a {...getStepLink(previousStep)} />} className="mt-8" variant="secondary">
                       {t('pages.tutorial.previous_button')}
                     </Button>
                   )}
                   {nextStep && (
-                    <Button render={<a {...getStepLink(nextStep)} />} className="mt-l">
+                    <Button render={<a {...getStepLink(nextStep)} />} className="mt-8">
                       {t('pages.tutorial.next_button')}
                     </Button>
                   )}

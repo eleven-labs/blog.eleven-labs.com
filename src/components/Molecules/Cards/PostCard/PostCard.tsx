@@ -14,14 +14,14 @@ import { cn } from '@/design-system/helpers/cn';
 export const postCardVariant = ['highlight-light', 'highlight-dark', 'side-image'] as const;
 export type PostCardVariantType = (typeof postCardVariant)[number];
 
-export const postCardVariants = cva('relative flex flex-col gap-s rounded-s p-s [--post-card-cover-width:100%]', {
+export const postCardVariants = cva('relative flex flex-col gap-4 rounded-card p-4 [--post-card-cover-width:100%]', {
   variants: {
     variant: {
-      'highlight-light': 'bg-white',
-      'highlight-dark': 'bg-[rgb(0_0_0/15%)] text-white',
+      'highlight-light': 'bg-surface',
+      'highlight-dark': 'bg-[rgb(0_0_0/15%)] text-on-brand',
       // Seule déclinaison à poser la couverture à côté du texte, et seulement une fois la carte
       // assez large : en dessous, la vignette serait trop petite pour porter quoi que ce soit.
-      'side-image': 'bg-white sm:flex-row sm:items-center sm:[--post-card-cover-width:clamp(160px,32%,288px)]',
+      'side-image': 'bg-surface sm:flex-row sm:items-center sm:[--post-card-cover-width:clamp(160px,32%,288px)]',
     },
   },
   defaultVariants: {
@@ -46,7 +46,7 @@ export interface PostCardProps extends VariantProps<typeof postCardVariants> {
 
 // Toutes les déclinaisons, à toutes les largeurs, rendent la couverture dans le même cadre 16/9 :
 // une seule image source, cadrée une fois, suffit pour toutes.
-const coverClassName = 'block h-auto w-full rounded-xs object-cover aspect-video';
+const coverClassName = 'block h-auto w-full rounded-card object-cover aspect-video';
 
 export const PostCard: React.FC<PostCardProps> = ({
   contentType,
@@ -71,7 +71,7 @@ export const PostCard: React.FC<PostCardProps> = ({
       </Skeleton>
     </div>
     <div className="flex-1">
-      <div className="flex items-start justify-between gap-xs">
+      <div className="flex items-start justify-between gap-3">
         <Skeleton isLoading={isLoading} className="min-w-0 flex-1">
           <Heading
             render={<h2 />}
@@ -91,7 +91,7 @@ export const PostCard: React.FC<PostCardProps> = ({
               // Le lien couvre toute la carte, qui devient ainsi cliquable d'un bout à l'autre.
               className={cn(
                 "before:absolute before:inset-0 before:z-1 before:content-['_']",
-                variant === 'highlight-dark' ? 'text-white' : 'text-black'
+                variant === 'highlight-dark' ? 'text-on-brand' : 'text-ink'
               )}
             >
               {title}
@@ -103,7 +103,7 @@ export const PostCard: React.FC<PostCardProps> = ({
         {contentType === 'tutorial' && (
           <Text
             size="xs"
-            className="flex-none rounded-xs bg-accent px-xxs-2 py-xxs-3 font-heading font-bold tracking-[0.5px] text-primary uppercase"
+            className="flex-none rounded-card bg-highlight px-1.5 py-1 font-display font-bold tracking-wide text-brand uppercase"
           >
             {tutorialLabel}
           </Text>
@@ -111,7 +111,7 @@ export const PostCard: React.FC<PostCardProps> = ({
       </div>
       <PostMetadata
         variant="primary"
-        className="mt-xxs"
+        className="mt-2"
         date={date}
         readingTime={readingTime}
         authors={authors}
@@ -121,7 +121,7 @@ export const PostCard: React.FC<PostCardProps> = ({
         <Skeleton isLoading={isLoading}>
           <Text
             size="s"
-            className={cn('mt-xs max-md:hidden', variant === 'side-image' ? 'line-clamp-2' : 'line-clamp-4')}
+            className={cn('mt-3 max-md:hidden', variant === 'side-image' ? 'line-clamp-2' : 'line-clamp-4')}
           >
             {excerpt}
           </Text>

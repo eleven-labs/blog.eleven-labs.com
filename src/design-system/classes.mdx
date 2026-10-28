@@ -1,0 +1,17 @@
+import { Meta, Unstyled } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design system/Classes" />
+
+# Classes sémantiques
+
+Déclarées à côté de leur composant (`src/design-system/ui/<composant>/<composant>.css`), ou dans `src/design-system/styles/classes` pour les
+classes sans composant, et rassemblées par `src/design-system/styles/components.css` (`@layer components`, `@apply` pour les cas
+simples, CSS standard pour les états). Les variantes sont des classes de modificateur (`btn-primary`, `sheet-right`) ;
+les états passent par les attributs d'accessibilité et les pseudo-classes (`aria-selected`, `aria-invalid`, `:focus`,
+`:disabled`). Seuls `data-open` et `data-closed`, posés par Base UI, servent aux animations d'ouverture et de fermeture. Les composants de
+`src/design-system/ui` les posent ; le JSX peut aussi les utiliser directement, par exemple sur un lien : `<a className="btn btn-outline">`.
+
+Chaque famille de classes a sa section ci-dessous, avec un exemple rendu dans `<Unstyled>` : une classe ajoutée au
+design system s'ajoute ici dans le même changement (`audit.mjs` signale celles qui manquent).
+
+{/* Une section par famille : ## Boutons, ## Cartes et encadrés, ## Formulaires, ## Badges… */}

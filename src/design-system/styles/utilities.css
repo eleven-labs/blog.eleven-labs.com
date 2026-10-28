@@ -7,11 +7,16 @@
  * lisible sur un écran large, où 85vw seul l'étirerait au-delà de 2000px.
  */
 @utility container-content {
-  width: calc(100vw - (2 * var(--spacing-s)));
-  margin-inline: var(--spacing-s);
+  width: calc(100vw - (2 * var(--spacing-4)));
+  margin-inline: var(--spacing-4);
 
   @media (width >= theme(--breakpoint-md)) {
     max-width: min(85vw, 1280px);
     margin-inline: auto;
   }
+}
+
+/* Anneau de focus commun, visible au clavier seulement (utilitaire : réutilisable par @apply). */
+@utility focus-ring {
+  @apply outline-none focus-visible:ring-3 focus-visible:ring-ring/40;
 }

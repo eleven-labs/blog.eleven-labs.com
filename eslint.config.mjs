@@ -4,8 +4,9 @@ import globals from 'globals';
 import importPlugin from 'eslint-plugin-import';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 import perfectionist from 'eslint-plugin-perfectionist';
-import tailwindcss from 'eslint-plugin-tailwindcss';
 import tseslint from 'typescript-eslint';
+
+import { designSystem } from './eslint.design-system.mjs';
 
 const files = ['src/**/*.{ts,tsx}', 'bin/**/*.ts'];
 
@@ -66,44 +67,24 @@ export default [
       ],
     },
   },
-  { ...tailwindcss.configs.recommended, files },
-  {
-    files,
-    settings: {
-      tailwindcss: {
-        // Le thème étant décrit en CSS, le plugin a besoin du point d'entrée pour connaître les
-        // classes valides, y compris celles issues de `@theme` et de `@utility`.
-        cssConfigPath: './src/styles.css',
-      },
-    },
-    rules: {
+  // Classes Tailwind et conventions du design system ; 'warn' pendant la migration, 'error' au dernier lot
+  ...designSystem({
+    entryPoint: 'src/styles.css',
+    level: 'warn',
+    // eslint-plugin-react 7 ne charge pas sous ESLint 10 : un composant par fichier est vérifié par l'audit du skill
+    oneComponentPerFile: false,
+    externalClasses: [
       // Le HTML issu du markdown porte des classes qui ne sont pas des utilitaires Tailwind.
-      'tailwindcss/no-custom-classname': [
-        'error',
-        {
-          whitelist: [
-            'post\\-content(\\-table)?',
-            'reminder\\-\\-[a-z]+',
-            'reminder\\-title',
-            'mermaid',
-            // La carte d'un tweet, et la classe attendue par le script de Twitter pour la transformer en tweet intégré.
-            '(twitter\\-)?tweet',
-            // Classes du formulaire Webmecanik, dont le balisage ne nous appartient pas.
-            'mauticform.*',
-            'btn(\\-default)?',
-          ],
-        },
-      ],
-    },
-  },
-  {
-    // Le helper `cn` passe une variable aux fonctions que le plugin sait lire : il n'a rien à
-    // analyser ici.
-    files: ['src/design-system/helpers/cn.ts'],
-    rules: {
-      'tailwindcss/no-custom-classname': 'off',
-    },
-  },
+      'post-content(-table)?',
+      'reminder-.*',
+      'mermaid',
+      // La carte d'un tweet, et la classe attendue par le script de Twitter pour la transformer en tweet intégré.
+      '(twitter-)?tweet',
+      // Classes du formulaire Webmecanik, dont le balisage ne nous appartient pas.
+      'mauticform.*',
+      'btn(-default)?',
+    ],
+  }).map((config) => ({ ...config, files: config.files.map((pattern) => pattern.replace('**/', 'src/**/')) })),
   {
     files,
     plugins: {

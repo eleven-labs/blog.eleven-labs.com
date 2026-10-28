@@ -32,11 +32,11 @@ export const Reminder: React.FC<ReminderProps> = ({ variant, title, className, c
     // La couleur et l'icône de la variante sont portées par `Reminder.css`.
     className={cn(
       `reminder--${variant}`,
-      'border-l-[0.2rem] border-(--reminder-accent-color) bg-white shadow-[0_2px_2px_0_rgb(0_0_0/14%),0_1px_5px_0_rgb(0_0_0/12%),0_3px_1px_-2px_rgb(0_0_0/20%)]',
+      'border-l-[0.2rem] border-(--reminder-accent-color) bg-surface shadow-[0_2px_2px_0_rgb(0_0_0/14%),0_1px_5px_0_rgb(0_0_0/12%),0_3px_1px_-2px_rgb(0_0_0/20%)]',
       className
     )}
   >
-    <p className="reminder-title bg-(--reminder-title-background-color) p-xxs font-bold">{title}</p>
-    <div className="p-xxs">{children}</div>
+    <p className="reminder-title bg-(--reminder-title-background-color) p-2 font-bold">{title}</p>
+    <div className="p-2">{children}</div>
   </div>
 );

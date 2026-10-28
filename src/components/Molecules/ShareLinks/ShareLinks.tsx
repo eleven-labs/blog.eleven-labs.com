@@ -22,14 +22,14 @@ const objectToGetParams = (object: { [key: string]: string | number | undefined 
 };
 
 export const ShareLinks: React.FC<ShareLinksProps> = ({ urlToShare, shares, className }) => (
-  <div className={cn('flex items-center gap-xs', className)}>
+  <div className={cn('flex items-center gap-3', className)}>
     {shares.twitter && (
       <a
         href={`https://twitter.com/intent/tweet${objectToGetParams({ url: urlToShare })}`}
         target="_blank"
         rel="noreferrer"
       >
-        <Icon name="twitter" className="text-black" size="36px" />
+        <Icon name="twitter" className="text-ink" size="36px" />
       </a>
     )}
     {shares.facebook && (

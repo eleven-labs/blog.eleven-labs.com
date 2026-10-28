@@ -18,7 +18,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({ isLoading = true, className,
     <div
       {...props}
       // Le contenu reste en place pour donner sa taille au bloc, mais n'est plus visible.
-      className={cn('animate-pulse bg-ultra-light-grey *:invisible *:cursor-default', className)}
+      className={cn('animate-pulse bg-surface-alt *:invisible *:cursor-default', className)}
     >
       {children ?? <div>&nbsp;</div>}
     </div>

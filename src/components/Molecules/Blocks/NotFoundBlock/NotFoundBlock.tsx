@@ -13,10 +13,10 @@ export type NotFoundBlockProps = NotFoundBlockOptions & { className?: string };
 export const NotFoundBlock: React.FC<NotFoundBlockProps> = ({ title, description, className }) => (
   <div className={cn('flex flex-col items-center', className)}>
     <div className="h-[135px] w-full bg-[url(/imgs/not-found.png)] bg-center bg-no-repeat" />
-    <Heading size="xl" className="mt-s">
+    <Heading size="xl" className="mt-4">
       {title}
     </Heading>
-    <Text size="s" className="mt-xxs">
+    <Text size="s" className="mt-2">
       {description}
     </Text>
   </div>

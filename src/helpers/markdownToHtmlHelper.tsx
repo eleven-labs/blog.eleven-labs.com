@@ -136,7 +136,7 @@ const htmlComponents = {
     return match ? (
       <SyntaxHighlighter children={code.replace(/\n$/, '')} language={match[1]} {...props} />
     ) : (
-      <code className="bg-ultra-light-grey px-xxs-2 text-xs text-ultra-dark-grey">{children}</code>
+      <code className="bg-surface-alt px-1.5 body-xs text-ink-soft">{children}</code>
     );
   },
   img: (props: ComponentPropsWithoutRef<'img'>): React.JSX.Element => <ContentImage {...props} />,

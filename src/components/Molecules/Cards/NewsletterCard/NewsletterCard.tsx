@@ -10,7 +10,7 @@ export const newsletterCardVariant = ['horizontal', 'vertical'] as const;
 export type NewsletterCardVariantType = (typeof newsletterCardVariant)[number];
 
 export const newsletterCardVariants = cva(
-  'flex rounded-xs bg-primary bg-[url(/imgs/wave-background.png)] bg-bottom-right bg-no-repeat p-l text-white',
+  'flex rounded-card bg-brand bg-[url(/imgs/wave-background.png)] bg-bottom-right bg-no-repeat p-8 text-on-brand',
   {
     variants: {
       // En dessous de `md` la carte s'empile toujours : la colonne latérale y passe sous le contenu.
@@ -28,8 +28,8 @@ export const newsletterCardVariants = cva(
 const introVariants = cva('flex-1 border-[rgb(0_0_0/20%)]', {
   variants: {
     variant: {
-      vertical: 'mb-xl border-b pb-xl',
-      horizontal: 'max-md:mb-xl max-md:border-b max-md:pb-xl md:mr-xl md:border-r md:pr-xl',
+      vertical: 'mb-10 border-b pb-10',
+      horizontal: 'max-md:mb-10 max-md:border-b max-md:pb-10 md:mr-10 md:border-r md:pr-10',
     },
   },
   defaultVariants: {
@@ -53,11 +53,11 @@ export const NewsletterCard: React.FC<NewsletterCardProps> = ({
 }) => (
   <div className={cn(newsletterCardVariants({ variant }), className)}>
     <div className={introVariants({ variant })}>
-      <Heading size="m" className="text-accent">
+      <Heading size="m" className="text-highlight">
         {title}
       </Heading>
-      <Icon name="underline" className="text-accent" width="56px" />
-      <Text className="mt-m">{description}</Text>
+      <Icon name="underline" className="text-highlight" width="56px" />
+      <Text className="mt-6">{description}</Text>
     </div>
     <div className="flex-2">{children}</div>
   </div>

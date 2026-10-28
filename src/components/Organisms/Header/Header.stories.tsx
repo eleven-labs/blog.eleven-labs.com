@@ -1,7 +1,7 @@
 import type { HeaderProps } from './Header';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 import * as AutocompleteStories from '@/components/Organisms/Autocomplete/Autocomplete.stories';
 

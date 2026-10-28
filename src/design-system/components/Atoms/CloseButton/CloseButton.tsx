@@ -7,11 +7,11 @@ import React from 'react';
 
 import { cn } from '@/design-system/helpers/cn';
 
-export const closeButtonVariants = cva('relative flex flex-col gap-xxs bg-transparent', {
+export const closeButtonVariants = cva('relative flex flex-col gap-2 bg-transparent', {
   variants: {
     variant: {
-      primary: 'size-[30px] [--close-button-color:var(--color-primary)]',
-      secondary: 'size-[20px] [--close-button-color:var(--color-grey)]',
+      primary: 'size-[30px] [--close-button-color:var(--color-brand)]',
+      secondary: 'size-[20px] [--close-button-color:var(--color-muted)]',
     },
   },
   defaultVariants: {

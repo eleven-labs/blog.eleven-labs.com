@@ -24,22 +24,22 @@ export const LastTutorialsBlock: React.FC<LastTutorialsBlockProps> = ({
   linkSeeMore: { label: labelLinkSeeMore, ...linkSeeMore },
   className,
 }) => (
-  <div className="bg-primary text-white">
+  <div className="bg-brand text-on-brand">
     <div
       className={cn(
-        'container-content flex flex-col items-center justify-center gap-xl py-xl md:flex-row',
+        'container-content flex flex-col items-center justify-center gap-10 py-10 md:flex-row',
         className
       )}
     >
       <div className="flex-1">
         <Heading size="m">{title}</Heading>
-        <Icon name="underline" className="text-white" width="56px" />
-        <Text className="mt-l">{description}</Text>
-        <Button render={<a {...linkSeeMore} />} className="mt-l" variant="accent">
+        <Icon name="underline" className="text-on-brand" width="56px" />
+        <Text className="mt-8">{description}</Text>
+        <Button render={<a {...linkSeeMore} />} className="mt-8" variant="accent">
           {labelLinkSeeMore}
         </Button>
       </div>
-      <div className="grid w-full gap-l md:flex-2 md:grid-cols-2">
+      <div className="grid w-full gap-8 md:flex-2 md:grid-cols-2">
         {posts.map((post, index) => (
           <React.Fragment key={post?.slug ?? index}>
             <PostCard variant="highlight-dark" tutorialLabel={tutorialLabel} {...(post || {})} />

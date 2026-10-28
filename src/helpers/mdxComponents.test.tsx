@@ -1,6 +1,6 @@
 import { mdxToHtml } from './markdownToHtmlHelper';
 
-const LINK_CLASS = 'class="font-semibold text-info underline hover:no-underline"';
+const LINK_CLASS = 'class="font-semibold text-primary underline hover:no-underline"';
 
 describe('mdxToHtml', () => {
   it('should render a reminder of the design system', () => {
@@ -32,7 +32,7 @@ describe('mdxToHtml', () => {
     expect(mdxToHtml('## A heading\n\nA [link](https://example.com) and `code`.')).toEqual(
       '<h2 id="a-heading">A heading</h2>\n' +
         `<p>A <a href="https://example.com" rel="nofollow noreferrer" target="_blank" style="overflow-wrap:anywhere" ${LINK_CLASS}>link</a>` +
-        ' and <code class="bg-ultra-light-grey px-xxs-2 text-xs text-ultra-dark-grey">code</code>.</p>'
+        ' and <code class="bg-surface-alt px-1.5 body-xs text-ink-soft">code</code>.</p>'
     );
   });
 
@@ -65,7 +65,7 @@ describe('mdxToHtml', () => {
     expect(html).toContain(
       '<div class="flex flex-col" style="min-height:240px"><blockquote class="tweet twitter-tweet">'
     );
-    expect(html).toContain('<span class="font-bold">AFUP</span><span class="text-grey"> @afup</span>');
+    expect(html).toContain('<span class="font-bold">AFUP</span><span class="text-muted"> @afup</span>');
     expect(html).toContain('<p>A <strong>tweet</strong> with a <a href="https://t.co/a"');
     // The Twitter script finds the tweet with the last link of the card
     expect(html).toMatch(/<a href="https:\/\/twitter.com\/afup\/status\/1">7 octobre 2022<\/a><\/p><\/blockquote>/);
@@ -102,19 +102,19 @@ describe('mdxToHtml', () => {
 
   it('should render a key of the keyboard', () => {
     expect(mdxToHtml('Press <Kbd>Ctrl</Kbd> + <Kbd>F5</Kbd>')).toMatch(
-      /^<p>Press <kbd class="[^"]*rounded-xs[^"]*">Ctrl<\/kbd> \+ <kbd class="[^"]*">F5<\/kbd><\/p>$/
+      /^<p>Press <kbd class="[^"]*rounded-card[^"]*">Ctrl<\/kbd> \+ <kbd class="[^"]*">F5<\/kbd><\/p>$/
     );
   });
 
   it('should render a YouTube video with its ratio, lazily and without cookie', () => {
     expect(mdxToHtml('<YouTube id="9Cfxm7cikMY" title="7 Ways AMP Makes Your Pages Fast" />')).toMatch(
-      /^<div class="mb-xs aspect-video w-full"><iframe class="size-full" src="https:\/\/www.youtube-nocookie.com\/embed\/9Cfxm7cikMY" title="7 Ways AMP Makes Your Pages Fast" loading="lazy"/
+      /^<div class="mb-3 aspect-video w-full"><iframe class="size-full" src="https:\/\/www.youtube-nocookie.com\/embed\/9Cfxm7cikMY" title="7 Ways AMP Makes Your Pages Fast" loading="lazy"/
     );
   });
 
   it('should render a video of the blog, with its type, ratio and captions', () => {
     expect(mdxToHtml('<Video src="/imgs/video.webm" width={1600} height={900} />')).toEqual(
-      '<video class="mx-auto mb-xs w-full" style="aspect-ratio:1600 / 900" controls="" preload="metadata">' +
+      '<video class="mx-auto mb-3 w-full" style="aspect-ratio:1600 / 900" controls="" preload="metadata">' +
         '<source src="/imgs/video.webm" type="video/webm"/></video>'
     );
     expect(mdxToHtml('<Video src="/imgs/video.mp4" captions="/imgs/video.vtt" />')).toContain(
@@ -124,7 +124,7 @@ describe('mdxToHtml', () => {
 
   it('should render an embedded page with its height, lazily', () => {
     expect(mdxToHtml('<Iframe src="https://codepen.io/a/embed/b" title="A demo" height={300} />')).toEqual(
-      '<iframe class="mb-xs w-full border-0" style="height:300px" src="https://codepen.io/a/embed/b" title="A demo" loading="lazy" allowfullscreen=""></iframe>'
+      '<iframe class="mb-3 w-full border-0" style="height:300px" src="https://codepen.io/a/embed/b" title="A demo" loading="lazy" allowfullscreen=""></iframe>'
     );
   });
 

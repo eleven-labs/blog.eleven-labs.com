@@ -115,7 +115,7 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({ language, 
     language={language}
     style={githubGistTheme}
     customStyle={{
-      padding: 'var(--spacing-s)',
+      padding: 'var(--spacing-4)',
       borderRadius: '4px',
     }}
     PreTag="div"

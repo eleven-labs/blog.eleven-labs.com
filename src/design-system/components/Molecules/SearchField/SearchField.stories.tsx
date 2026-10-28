@@ -1,7 +1,7 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 
-import { action } from '@storybook/addon-actions';
 import * as React from 'react';
+import { action } from 'storybook/actions';
 
 import { SearchField } from '@/design-system';
 

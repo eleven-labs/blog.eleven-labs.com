@@ -11,7 +11,7 @@ export interface LinkProps extends useRender.ComponentProps<'a'> {
   icon?: IconNameType;
 }
 
-const linkClassName = 'font-semibold text-info underline hover:no-underline';
+const linkClassName = 'font-semibold text-primary underline hover:no-underline';
 
 export const Link: React.FC<LinkProps> = ({ render, icon, className, children, ...props }) =>
   useRender({

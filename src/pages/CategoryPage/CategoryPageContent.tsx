@@ -17,14 +17,14 @@ export const CategoryPageContent: React.FC<CategoryPageContentProps> = ({
   categoryEndingBlock,
 }) => (
   <div>
-    <Heading size="m" className="mb-l text-primary">
+    <Heading size="m" className="mb-8 text-brand">
       {title}
     </Heading>
     {postCardList}
     {categoryEndingBlock && (
       <>
-        <Divider className="mt-m" />
-        <CategoryEndingBlock className="mt-l" {...categoryEndingBlock} />
+        <Divider className="mt-6" />
+        <CategoryEndingBlock className="mt-8" {...categoryEndingBlock} />
       </>
     )}
   </div>

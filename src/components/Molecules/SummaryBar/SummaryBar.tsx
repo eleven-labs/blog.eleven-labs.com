@@ -36,11 +36,11 @@ export const SummaryBar: React.FC<SummaryBarProps> = ({
   return (
     <details
       data-summary-bar={variant}
-      className={cn('group sticky top-(--sticky-header-offset,0px) z-5 overflow-hidden rounded-xs bg-white shadow-md transition-[top]', className)}
+      className={cn('group sticky top-(--sticky-header-offset,0px) z-5 overflow-hidden rounded-card bg-surface shadow-md transition-[top]', className)}
     >
-      <summary className="relative flex cursor-pointer list-none items-center gap-s px-m py-s [&::-webkit-details-marker]:hidden">
+      <summary className="relative flex cursor-pointer list-none items-center gap-4 px-6 py-4 [&::-webkit-details-marker]:hidden">
         <span className="flex min-w-0 flex-1 flex-col">
-          <Text render={<span />} size="xs" className="font-semibold text-primary">
+          <Text render={<span />} size="xs" className="font-semibold text-brand">
             {title}
             {variant === 'secondary' && (
               <>
@@ -53,13 +53,13 @@ export const SummaryBar: React.FC<SummaryBarProps> = ({
             {activeSection.label}
           </Text>
         </span>
-        <Icon name="arrow" className="shrink-0 rotate-90 text-primary transition-transform group-open:-rotate-90" />
+        <Icon name="arrow" className="shrink-0 rotate-90 text-brand transition-transform group-open:-rotate-90" />
         {/* Dans le `<summary>`, seul à rester affiché quand la liste est repliée */}
         {variant === 'secondary' && (
-          <span className="absolute inset-x-0 bottom-0 block h-[3px] bg-ultra-light-grey" aria-hidden="true">
+          <span className="absolute inset-x-0 bottom-0 block h-[3px] bg-surface-alt" aria-hidden="true">
             <span
               data-summary-bar-progress
-              className="block h-full bg-primary transition-[width]"
+              className="block h-full bg-brand transition-[width]"
               style={{ width: `${((activeIndex + 1) / sections.length) * 100}%` }}
             />
           </span>

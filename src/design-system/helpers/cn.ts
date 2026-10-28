@@ -5,8 +5,8 @@ import { extendTailwindMerge } from 'tailwind-merge';
 
 /**
  * Les échelles personnalisées déclarées dans `styles/theme.css` sont répétées ici : sans elles,
- * `tailwind-merge` prendrait `text-heading-xl` pour une couleur et le supprimerait face à
- * `text-primary`. Toute valeur ajoutée au thème doit l'être des deux côtés.
+ * `tailwind-merge` prendrait `heading-xl` pour une couleur et le supprimerait face à
+ * `text-brand`. Toute valeur ajoutée au thème doit l'être des deux côtés.
  */
 const twMerge = extendTailwindMerge({
   extend: {

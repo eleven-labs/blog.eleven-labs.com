@@ -16,7 +16,7 @@ export interface PaginationProps {
 
 /* La première case ferme la bordure à gauche et retourne sa flèche : c'est le lien « précédent ». */
 const itemClassName =
-  'flex size-[48px] items-center justify-center border-y border-r border-secondary-dark text-primary-dark first:border-l first:[&_svg]:rotate-180';
+  'flex size-[48px] items-center justify-center border-y border-r border-line text-footer first:border-l first:[&_svg]:rotate-180';
 
 export const Pagination: React.FC<PaginationProps> = ({
   currentPage,
@@ -34,7 +34,7 @@ export const Pagination: React.FC<PaginationProps> = ({
     children: React.ReactNode;
   }): React.JSX.Element => {
     const itemProps = {
-      className: cn(itemClassName, options.active && 'text-info', options.disabled && 'text-grey'),
+      className: cn(itemClassName, options.active && 'text-primary', options.disabled && 'text-muted'),
     };
 
     return options.disabled ? (

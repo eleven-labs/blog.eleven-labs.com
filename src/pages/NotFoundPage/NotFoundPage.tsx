@@ -9,6 +9,6 @@ export type NotFoundPageProps = {
 
 export const NotFoundPage: React.FC<NotFoundPageProps> = ({ title, description }) => (
   <div className="flex flex-1 items-center justify-center">
-    <NotFoundBlock className="m-xxl" title={title} description={description} />
+    <NotFoundBlock className="m-16" title={title} description={description} />
   </div>
 );

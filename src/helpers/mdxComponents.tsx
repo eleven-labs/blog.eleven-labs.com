@@ -41,7 +41,7 @@ export const Figure: React.FC<FigureProps> = ({ src, alt, caption, children, ...
 
 // Spaced out from the next block, the same way as the admonitions of the markdown
 export const Reminder: React.FC<ReminderProps> = ({ className, ...props }) => (
-  <ReminderBase className={cn('mb-xs', className)} {...props} />
+  <ReminderBase className={cn('mb-3', className)} {...props} />
 );
 
 export interface TweetProps {
@@ -83,15 +83,15 @@ export const Tweet: React.FC<TweetProps> = ({ url, author, date, unavailable, ch
         style={unavailable ? undefined : { minHeight: hasPicture ? 'calc(225px + 55cqw)' : '240px' }}
       >
         <blockquote className={cn('tweet', !unavailable && 'twitter-tweet')}>
-          <div className="mb-xxs flex items-center justify-between gap-xs">
+          <div className="mb-2 flex items-center justify-between gap-3">
             <p className="mb-0">
               <span className="font-bold">{name}</span>
-              {handle && <span className="text-grey"> {handle}</span>}
+              {handle && <span className="text-muted"> {handle}</span>}
             </p>
             <Icon name="twitter" size="24px" aria-hidden />
           </div>
           {children}
-          <p className="mb-0 text-xs">
+          <p className="mb-0 body-xs">
             <a href={url}>{date}</a>
           </p>
         </blockquote>
@@ -110,7 +110,7 @@ export interface YouTubeProps {
  * `youtube-nocookie.com` domain sets no cookie until the video is played.
  */
 export const YouTube: React.FC<YouTubeProps> = ({ id, title }) => (
-  <div className="mb-xs aspect-video w-full">
+  <div className="mb-3 aspect-video w-full">
     <iframe
       className="size-full"
       src={`https://www.youtube-nocookie.com/embed/${id}`}
@@ -133,7 +133,7 @@ export interface IframeProps {
 
 // An embedded page, such as a CodePen demo: its height is reserved before it loads, and it loads lazily
 export const Iframe: React.FC<IframeProps> = ({ src, title, height }) => (
-  <iframe className="mb-xs w-full border-0" style={{ height }} src={src} title={title} loading="lazy" allowFullScreen />
+  <iframe className="mb-3 w-full border-0" style={{ height }} src={src} title={title} loading="lazy" allowFullScreen />
 );
 
 export interface VideoProps {
@@ -153,7 +153,7 @@ export const Video: React.FC<VideoProps> = ({ src, title, width, height, caption
   // The videos without speech, such as screen recordings, have no captions
   // eslint-disable-next-line jsx-a11y/media-has-caption
   <video
-    className="mx-auto mb-xs w-full"
+    className="mx-auto mb-3 w-full"
     title={title}
     style={width && height ? { aspectRatio: `${width} / ${height}` } : undefined}
     controls

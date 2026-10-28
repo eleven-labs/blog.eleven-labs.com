@@ -11,7 +11,7 @@ export interface BreadcrumbProps {
 }
 
 export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className }) => (
-  <ol className={cn('my-[1em] flex list-none gap-xxs-3 p-0 font-semibold', className)}>
+  <ol className={cn('my-[1em] flex list-none gap-1 p-0 font-semibold', className)}>
     {items.map(({ label, ...itemLink }, index) => (
       <Fragment key={index}>
         <li>

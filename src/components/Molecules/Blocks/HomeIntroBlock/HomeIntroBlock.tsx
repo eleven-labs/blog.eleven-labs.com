@@ -20,16 +20,16 @@ export const HomeIntroBlock: React.FC<HomeIntroBlockProps> = ({
   elevenLabsLink: { label: elevelLabsLinkLabel, ...elevenLabsLink },
   className,
 }) => (
-  <div className={cn('flex bg-white', className)}>
-    <div className="flex flex-1 flex-col items-baseline py-0 max-md:mx-auto max-md:my-xl max-md:max-w-[90vw] md:ml-[5vw] md:py-xl">
-      <Heading size="s" className="text-info uppercase">
+  <div className={cn('flex bg-surface', className)}>
+    <div className="flex flex-1 flex-col items-baseline py-0 max-md:mx-auto max-md:my-10 max-md:max-w-[90vw] md:ml-[5vw] md:py-10">
+      <Heading size="s" className="text-primary uppercase">
         {intro}
       </Heading>
-      <Heading render={<h1 />} size="xl" className="mt-m text-primary">
+      <Heading render={<h1 />} size="xl" className="mt-6 text-brand">
         {title}
       </Heading>
-      <Text className="mt-l">{description}</Text>
-      <Button render={<a {...elevenLabsLink} />} className="mt-l">
+      <Text className="mt-8">{description}</Text>
+      <Button render={<a {...elevenLabsLink} />} className="mt-8">
         {elevelLabsLinkLabel}
       </Button>
     </div>

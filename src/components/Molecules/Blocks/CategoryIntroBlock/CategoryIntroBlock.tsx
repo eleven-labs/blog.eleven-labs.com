@@ -20,17 +20,17 @@ export const CategoryIntroBlock: React.FC<CategoryIntroBlockProps> = ({
 }) => (
   <div
     className={cn(
-      'bg-[url(/imgs/category-intro-block-mobile.jpg)] bg-cover bg-bottom text-white md:bg-[url(/imgs/category-intro-block-desktop.jpg)]',
+      'bg-[url(/imgs/category-intro-block-mobile.jpg)] bg-cover bg-bottom text-on-brand md:bg-[url(/imgs/category-intro-block-desktop.jpg)]',
       className
     )}
   >
-    <div className="flex items-center justify-center bg-primary px-l opacity-90 md:px-0">
-      <div className="container-content pt-m pb-xxl">
+    <div className="flex items-center justify-center bg-brand px-8 opacity-90 md:px-0">
+      <div className="container-content pt-6 pb-16">
         <Breadcrumb {...breadcrumb} />
         <Heading render={<h1 />} size="xl">
           {title}
         </Heading>
-        <Text className="mt-l">{description}</Text>
+        <Text className="mt-8">{description}</Text>
       </div>
     </div>
   </div>

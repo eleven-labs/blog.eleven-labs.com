@@ -25,12 +25,12 @@ export const SearchPageContent: React.FC<SearchPageContentProps> = ({
   ) : (
     <div>
       <Skeleton isLoading={isLoading}>
-        <Heading size="m" className="text-primary">
+        <Heading size="m" className="text-brand">
           {title}
         </Heading>
       </Skeleton>
       <Skeleton isLoading={isLoading}>
-        <Heading size="s" className="mb-l">
+        <Heading size="s" className="mb-8">
           {description}
         </Heading>
       </Skeleton>

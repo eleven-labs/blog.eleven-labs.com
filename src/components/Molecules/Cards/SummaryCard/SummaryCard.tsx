@@ -36,8 +36,8 @@ export const getSummarySectionState = (index: number, activeIndex: number): Summ
  * que `src/helpers/summaryHelper.ts` met à jour pendant la lecture. Les couleurs en découlent en CSS.
  */
 const sectionColorClassNames: Record<SummaryCardVariantType, string> = {
-  primary: 'text-black data-[state=active]:text-primary',
-  secondary: 'text-black data-[state=active]:text-primary data-[state=past]:text-grey',
+  primary: 'text-ink data-[state=active]:text-brand',
+  secondary: 'text-ink data-[state=active]:text-brand data-[state=past]:text-muted',
 };
 
 export const SummaryCard: React.FC<SummaryCardProps> = ({
@@ -51,13 +51,13 @@ export const SummaryCard: React.FC<SummaryCardProps> = ({
   const activeIndex = sections.findIndex(({ name }) => name === sectionActive);
 
   return (
-    <div className={cn('rounded-xs bg-white p-m', className)}>
+    <div className={cn('rounded-card bg-surface p-6', className)}>
       {withTitle && (
-        <Heading size="m" className="text-primary">
+        <Heading size="m" className="text-brand">
           {title}
         </Heading>
       )}
-      <div className={cn('flex flex-col', withTitle && 'mt-m')}>
+      <div className={cn('flex flex-col', withTitle && 'mt-6')}>
         {sections.map(({ name, label, ...link }, index) => (
           <React.Fragment key={index}>
             <a
@@ -65,14 +65,14 @@ export const SummaryCard: React.FC<SummaryCardProps> = ({
               data-summary-link={name}
               data-summary-label={label}
               data-state={getSummarySectionState(index, activeIndex)}
-              className={cn('flex gap-s font-semibold', sectionColorClassNames[variant])}
+              className={cn('flex gap-4 font-semibold', sectionColorClassNames[variant])}
             >
-              <Text className={variant === 'primary' ? 'text-info' : undefined}>
+              <Text className={variant === 'primary' ? 'text-primary' : undefined}>
                 {variant === 'secondary' ? index + 1 : '•'}
               </Text>
               <Text>{label}</Text>
             </a>
-            {index !== sections.length - 1 && <Divider className="my-xxs" />}
+            {index !== sections.length - 1 && <Divider className="my-2" />}
           </React.Fragment>
         ))}
       </div>

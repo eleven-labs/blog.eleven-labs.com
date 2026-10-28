@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import type { PostCardListProps } from '@/components';
 
@@ -23,7 +23,7 @@ const meta: Meta<typeof PostCardList> = {
   },
   decorators: [
     (Story): React.ReactElement => (
-      <div className="mx-auto max-w-191 p-s">
+      <div className="mx-auto max-w-191 p-4">
         <Story />
       </div>
     ),

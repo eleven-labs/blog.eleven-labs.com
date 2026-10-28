@@ -13,7 +13,7 @@ export interface PostCardListProps {
 }
 
 export const PostCardList: React.FC<PostCardListProps> = ({ posts, pagination, isLoading = false }) => (
-  <div className="flex flex-col gap-m">
+  <div className="flex flex-col gap-6">
     {posts.map((post, index) => (
       <React.Fragment key={post?.slug ?? index}>
         <PostCard {...(post || {})} isLoading={isLoading} />

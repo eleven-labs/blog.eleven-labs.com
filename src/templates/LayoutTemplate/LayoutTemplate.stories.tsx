@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 
 import type { FooterProps, HeaderProps } from '@/components';
 
@@ -16,7 +16,7 @@ const meta: Meta<typeof LayoutTemplate> = {
     header: React.createElement<HeaderProps>(Header, HeaderStories.args as HeaderProps),
     footer: FooterStories.args as FooterProps,
     children: (
-      <div className="flex flex-1 items-center justify-center p-l">Content</div>
+      <div className="flex flex-1 items-center justify-center p-8">Content</div>
     ),
   },
   parameters: {

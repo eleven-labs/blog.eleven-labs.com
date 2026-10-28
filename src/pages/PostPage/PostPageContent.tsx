@@ -42,21 +42,21 @@ export const PostPageContent: React.FC<PostPageContentProps> = ({
   <>
     <div>
       <PostHeader {...header} />
-      <Divider className="mt-m" />
+      <Divider className="mt-6" />
       {cover && (
         <Picture
           {...cover}
-          className="mt-l"
-          img={{ ...cover.img, className: 'block h-auto w-full rounded-s object-cover aspect-video' }}
+          className="mt-8"
+          img={{ ...cover.img, className: 'block h-auto w-full rounded-card object-cover aspect-video' }}
         />
       )}
       <SummaryBar
-        className="mt-l md:hidden"
+        className="mt-8 md:hidden"
         variant={variant === 'tutorial' ? 'secondary' : 'primary'}
         {...summary}
       />
-      <div className="post-content mt-l md:mt-m">{children}</div>
-      <PostFooter className="mt-l" {...footer} />
+      <div className="post-content mt-8 md:mt-6">{children}</div>
+      <PostFooter className="mt-8" {...footer} />
     </div>
     <Divider />
     <ContactCard {...contactCard} />

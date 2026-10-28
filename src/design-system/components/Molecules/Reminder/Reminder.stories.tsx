@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 
 import React from 'react';
 
@@ -22,7 +22,7 @@ export const Overview = Template.bind({});
 export const All: StoryFn<typeof Reminder> = () => (
   <>
     {reminderVariantList.map((variant) => (
-      <Reminder key={variant} variant={variant} title={variant} className="mb-m">
+      <Reminder key={variant} variant={variant} title={variant} className="mb-6">
         Lorem ipsum
       </Reminder>
     ))}

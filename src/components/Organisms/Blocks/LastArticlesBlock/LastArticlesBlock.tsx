@@ -20,13 +20,13 @@ export const LastArticlesBlock: React.FC<LastArticlesBlockProps> = ({
   linkSeeMore: { label: labelLinkSeeMore, ...linkSeeMore },
   className,
 }) => (
-  <div className={cn('container-content my-xl', className)}>
-    <Heading size="m" className="text-primary">
+  <div className={cn('container-content my-10', className)}>
+    <Heading size="m" className="text-brand">
       {title}
     </Heading>
     {/* Deux colonnes sur un écran moyen, trois au-delà : la troisième carte n'apparaît qu'une fois
         qu'elle a la place de remplir sa propre colonne. */}
-    <div className="mt-l grid gap-m md:grid-cols-2 lg:grid-cols-3 md:[&>*:last-child]:hidden lg:[&>*:last-child]:flex">
+    <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3 md:[&>*:last-child]:hidden lg:[&>*:last-child]:flex">
       {posts.map((post, index) => (
         <React.Fragment key={post?.slug ?? index}>
           <PostCard variant="highlight-light" {...(post || {})} />
@@ -34,7 +34,7 @@ export const LastArticlesBlock: React.FC<LastArticlesBlockProps> = ({
       ))}
     </div>
     <div className="flex items-center justify-center">
-      <Button render={<a {...linkSeeMore} />} className="mt-l">
+      <Button render={<a {...linkSeeMore} />} className="mt-8">
         {labelLinkSeeMore}
       </Button>
     </div>

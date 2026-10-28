@@ -10,16 +10,16 @@ import {
   getTutorialStepRedirects,
 } from './getUrls';
 
-describe('getSitemapEntries', () => {
-  vi.mock('@/constants', async () => {
-    const mod = await vi.importActual<typeof ConstantsModule>('@/constants');
-    return {
-      ...mod,
-      IS_DEBUG: false,
-      LANGUAGES_AVAILABLE_WITH_DT: mod.LANGUAGES_AVAILABLE,
-    };
-  });
+vi.mock('@/constants', async () => {
+  const mod = await vi.importActual<typeof ConstantsModule>('@/constants');
+  return {
+    ...mod,
+    IS_DEBUG: false,
+    LANGUAGES_AVAILABLE_WITH_DT: mod.LANGUAGES_AVAILABLE,
+  };
+});
 
+describe('getSitemapEntries', () => {
   it('should return URLs of home page grouped by language', () => {
     const expectedUrls: ReturnType<typeof getHomePageUrls> = [
       { lang: 'fr', url: '/' },

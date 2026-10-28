@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 
 import React from 'react';
 
@@ -7,7 +7,7 @@ import { Divider } from './Divider';
 const meta: Meta<typeof Divider> = {
   component: Divider,
   args: {
-    className: 'bg-black',
+    className: 'bg-ink',
   },
 };
 

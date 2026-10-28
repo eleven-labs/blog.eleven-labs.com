@@ -21,7 +21,7 @@ export const TextHighlight: React.FC<TextHighlightProps> = ({ text, textQuery = 
   return (
     <Text {...props}>
       {parts.map((part, index) => (
-        <span key={index} className={part.highlight ? 'font-medium text-info' : 'font-normal text-black'}>
+        <span key={index} className={part.highlight ? 'font-medium text-primary' : 'font-normal text-ink'}>
           {part.text}
         </span>
       ))}

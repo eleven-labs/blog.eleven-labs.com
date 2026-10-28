@@ -10,7 +10,7 @@ export const Kbd: React.FC<KbdProps> = ({ children, className, ...props }) => (
   <kbd
     {...props}
     className={cn(
-      'rounded-xs border border-light-grey bg-ultra-light-grey px-xxs py-xxs-3 text-xs font-semibold text-ultra-dark-grey',
+      'rounded-card border border-line-strong bg-surface-alt px-2 py-1 body-xs font-semibold text-ink-soft',
       className
     )}
   >

@@ -8,11 +8,11 @@ import React, { Fragment } from 'react';
 import { Icon, Link, Skeleton, Text } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
 
-export const postMetadataVariants = cva('flex flex-wrap items-center text-s', {
+export const postMetadataVariants = cva('flex flex-wrap items-center body-s', {
   variants: {
     variant: {
-      primary: 'gap-xxs font-heading font-bold tracking-[0.5px] text-info uppercase',
-      secondary: 'gap-s font-semibold text-primary',
+      primary: 'gap-2 font-display font-bold tracking-wide text-primary uppercase',
+      secondary: 'gap-4 font-semibold text-brand',
     },
   },
 });
@@ -56,8 +56,8 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
             style={{ minWidth: 60, minHeight: 16 }}
           >
             {/* La date ne se coupe pas : elle garde toujours la largeur de son contenu. */}
-            <div className="flex min-w-max content-center items-center gap-xxs">
-              {variant === 'secondary' && <Icon name="calendar" size="24px" className="text-light-grey" />}
+            <div className="flex min-w-max content-center items-center gap-2">
+              {variant === 'secondary' && <Icon name="calendar" size="24px" className="text-line-strong" />}
               {date && <Text render={<span />}>{date}</Text>}
             </div>
           </Skeleton>
@@ -72,8 +72,8 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
             className="inline-block"
             style={{ minWidth: 26, minHeight: 16 }}
           >
-            <div className="flex content-center items-center gap-xxs">
-              {variant === 'secondary' && <Icon name="access-time" size="24px" className="text-light-grey" />}
+            <div className="flex content-center items-center gap-2">
+              {variant === 'secondary' && <Icon name="access-time" size="24px" className="text-line-strong" />}
               {readingTime && (
                 <Text render={<time dateTime={readingTime.dateTime} />} className="whitespace-nowrap">
                   {readingTime.label}
@@ -87,7 +87,7 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
       case 'authors': {
         const authorChildren = authors && (
           <>
-            {variant === 'secondary' && <Icon name="person" size="24px" className="text-light-grey" />}
+            {variant === 'secondary' && <Icon name="person" size="24px" className="text-line-strong" />}
             {authors.map(({ username, name, link }, authorIndex) => (
               <Fragment key={username}>
                 {link ? <Link {...link}>{name}</Link> : <Text render={<span />}>{name}</Text>}
@@ -104,7 +104,7 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
             style={{ minWidth: 50, minHeight: 16 }}
           >
             {variant === 'secondary' ? (
-              <div className="flex content-center items-center gap-xxs">{authorChildren}</div>
+              <div className="flex content-center items-center gap-2">{authorChildren}</div>
             ) : (
               <>{authorChildren}</>
             )}

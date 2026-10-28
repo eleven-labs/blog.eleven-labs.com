@@ -9,8 +9,8 @@
   display: inline-block;
   width: 1.2rem;
   height: 1.2rem;
-  margin-right: var(--spacing-xxs);
-  margin-left: var(--spacing-xxs-2);
+  margin-right: var(--spacing-2);
+  margin-left: var(--spacing-1\.5);
   background-color: var(--reminder-accent-color);
   mask-image: var(--reminder-icon);
   mask-repeat: no-repeat;

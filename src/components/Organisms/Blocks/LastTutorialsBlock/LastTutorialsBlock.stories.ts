@@ -1,5 +1,5 @@
 import type { LastTutorialsBlockProps } from './LastTutorialsBlock';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import * as PostCardStories from '@/components/Molecules/Cards/PostCard/PostCard.stories';
 

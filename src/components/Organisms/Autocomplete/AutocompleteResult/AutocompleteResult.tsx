@@ -49,10 +49,10 @@ export const AutocompleteResult = React.forwardRef<HTMLDivElement, AutocompleteR
       ref={ref}
       hidden={!isOpen}
       className={cn(
-        'mt-s bg-white px-s pt-s',
+        'mt-4 bg-surface px-4 pt-4',
         // Sous `md` les suggestions restent dans le panneau de recherche de l'en-tête et y défilent.
-        'max-md:-mx-s max-md:min-h-0 max-md:overflow-y-auto max-md:overscroll-contain',
-        'md:absolute md:left-0 md:z-2 md:-mt-m md:w-full md:rounded-b-xs md:px-0 md:pt-l md:filter-[drop-shadow(0_4px_14px_rgb(0_0_0/25%))]',
+        'max-md:-mx-4 max-md:min-h-0 max-md:overflow-y-auto max-md:overscroll-contain',
+        'md:absolute md:left-0 md:z-2 md:-mt-6 md:w-full md:rounded-b-card md:px-0 md:pt-8 md:filter-[drop-shadow(0_4px_14px_rgb(0_0_0/25%))]',
         className
       )}
     >
@@ -62,8 +62,8 @@ export const AutocompleteResult = React.forwardRef<HTMLDivElement, AutocompleteR
             <React.Fragment key={slug}>
               <div
                 className={cn(
-                  'relative block px-m pt-xxs pb-xs',
-                  highlightedIndex === index && 'bg-secondary'
+                  'relative block px-6 pt-2 pb-3',
+                  highlightedIndex === index && 'bg-canvas'
                 )}
               >
                 <TextHighlight
@@ -71,10 +71,10 @@ export const AutocompleteResult = React.forwardRef<HTMLDivElement, AutocompleteR
                   size="s"
                   text={title}
                   textQuery={searchValue}
-                  className="line-clamp-4 text-black before:absolute before:inset-0 before:z-1 before:content-['_'] md:line-clamp-2"
+                  className="line-clamp-4 text-ink before:absolute before:inset-0 before:z-1 before:content-['_'] md:line-clamp-2"
                 />
                 <PostMetadata
-                  className="mt-xxs-3"
+                  className="mt-1"
                   date={date}
                   authors={authors}
                   displayedFields={['date', 'authors']}
@@ -83,19 +83,19 @@ export const AutocompleteResult = React.forwardRef<HTMLDivElement, AutocompleteR
             </React.Fragment>
           ))}
           {searchLinkProps && searchLinkLabel && (
-            <div className="pt-s pb-m text-center text-s font-medium md:pt-m md:pb-l">
+            <div className="pt-4 pb-6 text-center body-s font-medium md:pt-6 md:pb-8">
               <Link {...searchLinkProps}>{searchLinkLabel}</Link>
             </div>
           )}
         </>
       )}
       {items.length === 0 && searchNotFound && (
-        <div className="px-xl py-m text-center">
+        <div className="px-10 py-6 text-center">
           <div className="h-[135px] w-full bg-[url(/imgs/not-found.png)] bg-center bg-no-repeat" />
-          <Heading size="m" className="mt-s">
+          <Heading size="m" className="mt-4">
             {searchNotFound.title}
           </Heading>
-          <Text size="xs" className="mt-xxs">
+          <Text size="xs" className="mt-2">
             {searchNotFound.description}
           </Text>
         </div>

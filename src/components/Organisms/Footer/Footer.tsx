@@ -30,29 +30,29 @@ export const Footer: React.FC<FooterProps> = ({
   socialLinks,
   languageLinks,
 }) => (
-  <footer className="bg-primary-dark text-center text-s text-white md:text-left">
-    <div className="flex flex-col items-center justify-center gap-s bg-primary-very-dark py-m md:flex-row md:items-end">
+  <footer className="bg-footer text-center body-s text-on-brand md:text-left">
+    <div className="flex flex-col items-center justify-center gap-4 bg-footer-strong py-6 md:flex-row md:items-end">
       <Heading size="s">{introBlock.title}</Heading>
-      <a {...elevenLabsSiteLink} className="text-white underline">
+      <a {...elevenLabsSiteLink} className="text-on-brand underline">
         {introBlock.description}
       </a>
     </div>
-    <div className="mx-s flex flex-col items-center justify-around py-l md:flex-row md:py-xl">
-      <div className="mb-xl">
-        <div className="mb-xxs flex items-center justify-center md:justify-start">
+    <div className="mx-4 flex flex-col items-center justify-around py-8 md:flex-row md:py-10">
+      <div className="mb-10">
+        <div className="mb-2 flex items-center justify-center md:justify-start">
           <Logo name="website" size="2.5em" />
         </div>
       </div>
       <div>
-        <div className="flex flex-col md:flex-row md:gap-xl">
+        <div className="flex flex-col md:flex-row md:gap-10">
           {addressList.map((currentContact, contactIndex) => (
-            <div key={contactIndex} className="mb-m">
-              {currentContact.title && <Text className="mb-xxs-2 font-bold">{currentContact.title}</Text>}
+            <div key={contactIndex} className="mb-6">
+              {currentContact.title && <Text className="mb-1.5 font-bold">{currentContact.title}</Text>}
               {currentContact.description}
             </div>
           ))}
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-s md:justify-start">
+        <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
           {socialLinks.map(({ iconName, ...linkProps }, socialLinkIndex) => (
             <a
               key={socialLinkIndex}
@@ -69,7 +69,7 @@ export const Footer: React.FC<FooterProps> = ({
               <Icon
                 name={iconName}
                 size="36px"
-                className={iconName === 'twitter' ? 'rounded-[6px] text-black' : 'rounded-[6px] text-white'}
+                className={iconName === 'twitter' ? 'rounded-[6px] text-ink' : 'rounded-[6px] text-on-brand'}
               />
             </a>
           ))}
@@ -79,8 +79,8 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
       </div>
     </div>
-    <div className="flex items-center justify-center border-t border-[rgb(0_0_0/20%)] py-s">
-      <div className="mr-xxs">
+    <div className="flex items-center justify-center border-t border-[rgb(0_0_0/20%)] py-4">
+      <div className="mr-2">
         <Icon size="28px" name="language" />
       </div>
       {languageLinks.map(({ label, isActive, ...linkProps }, index) => (
@@ -92,7 +92,7 @@ export const Footer: React.FC<FooterProps> = ({
               {label}
             </Link>
           )}
-          {languageLinks.length - 1 !== index && <div className="mx-s" />}
+          {languageLinks.length - 1 !== index && <div className="mx-4" />}
         </React.Fragment>
       ))}
     </div>

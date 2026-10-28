@@ -31,13 +31,13 @@ export const AuthorPageContent: React.FC<AuthorPageContentProps> = ({ author, ti
       ) : (
         <div className={cn(avatarClassName, 'bg-[url(/imgs/astronaut.png)] bg-cover bg-no-repeat')} />
       )}
-      <div className="mt-s ml-s">
-        <Text size="m" className="font-medium text-info">
+      <div className="mt-4 ml-4">
+        <Text size="m" className="font-medium text-primary">
           {author.name}
         </Text>
         <div>{author.content}</div>
         {author.socialNetworks && (
-          <div className="mt-s flex flex-col items-center justify-center sm:flex-row md:justify-start">
+          <div className="mt-4 flex flex-col items-center justify-center sm:flex-row md:justify-start">
             {author.socialNetworks.map((socialNetwork, index) => (
               <React.Fragment key={socialNetwork.name}>
                 <Text>
@@ -47,7 +47,7 @@ export const AuthorPageContent: React.FC<AuthorPageContentProps> = ({ author, ti
                   </Link>
                 </Text>
                 {index !== (author.socialNetworks?.length ?? 0) - 1 && (
-                  <Text render={<span />} className="mx-xxs">
+                  <Text render={<span />} className="mx-2">
                     •
                   </Text>
                 )}

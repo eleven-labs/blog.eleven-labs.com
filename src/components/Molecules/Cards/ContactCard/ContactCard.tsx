@@ -20,12 +20,12 @@ export const ContactCard: React.FC<ContactCardProps> = ({
 }) => (
   <div
     className={cn(
-      'flex items-center justify-center rounded-xs bg-white bg-[url(/imgs/contact-background.png)] bg-contain bg-bottom-right bg-no-repeat py-l',
+      'flex items-center justify-center rounded-card bg-surface bg-[url(/imgs/contact-background.png)] bg-contain bg-bottom-right bg-no-repeat py-8',
       className
     )}
   >
-    <div className="flex max-w-140 flex-col items-center justify-center gap-m px-m text-center">
-      <Heading size="l" className="text-primary">
+    <div className="flex max-w-140 flex-col items-center justify-center gap-6 px-6 text-center">
+      <Heading size="l" className="text-brand">
         {title}
       </Heading>
       <Text size="s">{description}</Text>

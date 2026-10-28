@@ -8,13 +8,13 @@ import { Icon, Text } from '@/design-system';
 import { cn } from '@/design-system/helpers/cn';
 
 export const buttonVariants = cva(
-  'inline-flex flex-row items-center justify-center rounded-[100px] border-transparent px-m py-xs font-heading text-s font-bold tracking-[1px] uppercase disabled:cursor-not-allowed',
+  'inline-flex flex-row items-center justify-center rounded-full border-transparent px-6 py-3 font-display body-s font-bold tracking-wider uppercase disabled:cursor-not-allowed',
   {
     variants: {
       variant: {
-        primary: 'border-0 bg-info text-white disabled:bg-dark-grey',
-        secondary: 'border-2 bg-white text-info hover:border-info disabled:border-dark-grey',
-        accent: 'border-0 bg-accent text-primary',
+        primary: 'border-0 bg-primary text-on-primary disabled:bg-muted',
+        secondary: 'border-2 bg-surface text-primary hover:border-primary disabled:border-muted',
+        accent: 'border-0 bg-highlight text-brand',
       },
     },
     defaultVariants: {

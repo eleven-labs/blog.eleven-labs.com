@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 
 import * as React from 'react';
 
@@ -17,7 +17,7 @@ const meta: Meta<typeof Logo> = {
   },
   args: {
     name: 'blog',
-    className: 'text-primary',
+    className: 'text-brand',
     size: '10em',
   },
   parameters: {

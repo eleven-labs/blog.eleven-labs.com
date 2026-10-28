@@ -22,18 +22,18 @@ export const AuthorCard: React.FC<AuthorCardProps> = ({
   link: { label: linkLabel, ...link },
   className,
 }) => (
-  <div className={cn('relative flex items-center gap-s rounded-xs bg-white px-s py-m', className)}>
+  <div className={cn('relative flex items-center gap-4 rounded-card bg-surface px-4 py-6', className)}>
     {avatarImageUrl ? (
       <img src={avatarImageUrl} alt={name} className={avatarClassName} />
     ) : (
       <div className={cn(avatarClassName, 'bg-[url(/imgs/astronaut.png)] bg-cover bg-no-repeat')} />
     )}
-    <div className="flex flex-1 flex-col items-start justify-between gap-s md:flex-row md:items-center">
+    <div className="flex flex-1 flex-col items-start justify-between gap-4 md:flex-row md:items-center">
       <div>
-        <Text size="m" className="font-semibold text-primary">
+        <Text size="m" className="font-semibold text-brand">
           {name}
         </Text>
-        <Text render={<div />} size="xs" className="mt-xxs-3 italic">
+        <Text render={<div />} size="xs" className="mt-1 italic">
           {description}
         </Text>
       </div>
@@ -41,7 +41,7 @@ export const AuthorCard: React.FC<AuthorCardProps> = ({
       <Link
         {...link}
         data-internal-link="author"
-        className="px-0 font-heading tracking-[1px] uppercase before:absolute before:inset-0 before:z-1 before:content-['_'] md:px-m"
+        className="px-0 font-display tracking-wider uppercase before:absolute before:inset-0 before:z-1 before:content-['_'] md:px-6"
       >
         {linkLabel}
       </Link>

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import type { PostCardListProps } from '@/components';
 import type { CategoryPageProps } from '@/pages/CategoryPage';

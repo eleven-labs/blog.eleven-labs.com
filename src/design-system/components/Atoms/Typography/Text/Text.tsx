@@ -9,9 +9,9 @@ import { cn } from '@/design-system/helpers/cn';
 export const textVariants = cva('', {
   variants: {
     size: {
-      xs: 'text-xs',
-      s: 'text-s',
-      m: 'text-m',
+      xs: 'body-xs',
+      s: 'body-s',
+      m: 'body-m',
     },
   },
 });

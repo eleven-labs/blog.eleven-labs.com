@@ -1,5 +1,5 @@
 import type { HomePageProps } from './HomePage';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import type { CategoryPageProps } from '@/pages/CategoryPage';
 
