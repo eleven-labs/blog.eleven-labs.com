@@ -155,32 +155,32 @@ salade-tomate-oignon/
 └─ scripts/             bot.ts (refuses beyond 1,000 seeds), screenshots.ts, brief-to-md.mjs
 ```
 
+You can read these files in [this archive]({BASE_URL}/imgs/articles/2026-10-27-workflow-claude-code-kebab-roguelite/sto-workflow.zip): `CLAUDE.md`, rules, skills, hooks and permissions, without the game's code, private links masked. It is there to read and adapt, not to install as is: they assume this repository and its scripts.
+
 ## A typical request, from "next" to the game online
 
 To see what it looks like for real, let's take PR 117 of 26 October, "where markets and breaks go on the map". Twelve steps, from "next" to the game online. **I only appear three times**: at the start, in parallel, and at the merge. The rest is tooling calling tooling.
 
 ```mermaid
-sequenceDiagram
-  participant G as Giuseppe
-  participant S as Claude Code session
-  participant K as Skills
-  participant H as Hooks
-  participant A as Subagents
-  participant O as Tools and scripts
-  participant D as Artifacts and docs
-  participant P as GitHub and production
-  G->>S: 1. "next"
-  S->>K: 2. next reads the last merged PR, milestone reads the issue and the docs
-  S->>D: 3. the rule goes into the brief first (revision 90), then /brief regenerates the snapshot
-  S->>O: 4. the spec written and seen red (vitest), then the code
-  H-->>S: 5. every edited file formatted, commit refused if it fails lint or targets main
-  S->>O: 6. the cards' golden fingerprints updated, a test seed picked again
-  K->>O: 7. bot skill, throwaway worktree, strong bot, 1,000 seeds per chef, in the background
-  O->>D: 8. the measure published in the artifact, guard-bots refuses vitest until then
-  G->>A: 9. meanwhile, my requests on the REX (this write-up), through the rex-sto skill and the rex-writer agent
-  A-->>S: 10. /code-review high in a subagent, the session sorts and fixes
-  K->>P: 11. ship skill, pnpm check once, changelog, balance.md, issue, PR and next prompt
-  G->>P: 12. I merge, the game is deployed, online
+flowchart TB
+  S1["<b>1. Giuseppe</b><br/>'next'"]:::me
+  S2["<b>2. next, milestone skills</b><br/>read the last PR,<br/>the issue and the docs"]:::tool
+  S3["<b>3. Session → brief</b><br/>the rule first (revision 90),<br/>then /brief regenerates<br/>the snapshot"]:::tool
+  S4["<b>4. Session → vitest</b><br/>the spec seen red,<br/>then the code"]:::tool
+  S5["<b>5. Hooks</b><br/>edited file formatted, commit<br/>refused if it fails lint<br/>or targets main"]:::tool
+  S6["<b>6. Session</b><br/>golden fingerprints updated,<br/>a test seed picked again"]:::tool
+  S7["<b>7. Bot skill</b><br/>throwaway worktree, strong bot,<br/>1,000 seeds per chef,<br/>in the background"]:::tool
+  S8["<b>8. Bot → artifact</b><br/>the measure published,<br/>guard-bots refuses vitest until then"]:::tool
+  S9["<b>9. Giuseppe</b><br/>meanwhile, the REX (this write-up),<br/>through the rex-sto skill<br/>and the rex-writer agent"]:::me
+  S10["<b>10. Subagent</b><br/>/code-review high,<br/>the session sorts"]:::tool
+  S11["<b>11. Ship skill</b><br/>pnpm check once, changelog,<br/>balance.md, issue, PR,<br/>next prompt"]:::tool
+  S12["<b>12. Giuseppe</b><br/>I merge, the game<br/>is deployed, online"]:::me
+  S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9 --> S10 --> S11 --> S12
+  S5 -.->|refused| S4
+  S10 -.->|fixes| S4
+  S12 -.->|next PR| S1
+  classDef me fill:#FDE4EE,stroke:#F42B72,color:#B01850
+  classDef tool fill:#EEF5FF,stroke:#6F9BE8,color:#102048
 ```
 
 A few details that matter.
@@ -192,7 +192,7 @@ A few details that matter.
 
 And the PR ends with the next session's prompt, which already says what the PR after that will be: the rent. In the repo as in the game, it always comes due.
 
-What I take from this sequence: every arrow that doesn't start from me is **a decision I took once, then filed away in a file**.
+What I take from this sequence: every box that isn't mine is **a decision I took once, then filed away in a file**.
 
 ## The persistence ladder
 

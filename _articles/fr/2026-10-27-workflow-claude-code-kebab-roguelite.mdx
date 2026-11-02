@@ -155,32 +155,32 @@ salade-tomate-oignon/
 └─ scripts/             bot.ts (refuse au-delà de 1 000 graines), screenshots.ts, brief-to-md.mjs
 ```
 
+Ces fichiers sont à lire dans [cette archive]({BASE_URL}/imgs/articles/2026-10-27-workflow-claude-code-kebab-roguelite/sto-workflow.zip) : `CLAUDE.md`, règles, skills, hooks et permissions, sans le code du jeu, liens privés masqués. C'est à lire et à adapter, pas à installer tel quel : ils supposent ce dépôt et ses scripts.
+
 ## Une demande type, de « next » au jeu en ligne
 
 Pour voir ce que ça donne en vrai, prenons la PR 117 du 26 octobre, « la place des marchés et des pauses sur la carte ». Douze étapes, de « next » au jeu en ligne. **Je n'y apparais que trois fois** : au début, en parallèle, et au merge. Le reste, c'est l'outillage qui appelle l'outillage.
 
 ```mermaid
-sequenceDiagram
-  participant G as Giuseppe
-  participant S as Session Claude Code
-  participant K as Skills
-  participant H as Hooks
-  participant A as Sous-agents
-  participant O as Outils et scripts
-  participant D as Artifacts et docs
-  participant P as GitHub et prod
-  G->>S: 1. « next »
-  S->>K: 2. next lit la dernière PR fusionnée, milestone lit l'issue et les docs
-  S->>D: 3. la règle d'abord dans le brief (révision 90), puis /brief régénère le snapshot
-  S->>O: 4. la spec écrite et vue rouge (vitest), puis le code
-  H-->>S: 5. chaque fichier édité formaté, commit refusé s'il échoue au lint ou vise main
-  S->>O: 6. les empreintes dorées des cartes reprises, une graine de test rechoisie
-  K->>O: 7. skill bot, worktree jetable, bot fort, 1 000 graines par chef, en arrière-plan
-  O->>D: 8. la mesure publiée dans l'artifact, guard-bots refuse vitest d'ici là
-  G->>A: 9. pendant ce temps, mes demandes sur le REX, par le skill rex-sto et l'agent rex-writer
-  A-->>S: 10. /code-review high dans un sous-agent, la session trie et corrige
-  K->>P: 11. skill ship, pnpm check une fois, changelog, balance.md, issue, PR et prompt suivant
-  G->>P: 12. je fusionne, le jeu est déployé, en ligne
+flowchart TB
+  S1["<b>1. Giuseppe</b><br/>« next »"]:::me
+  S2["<b>2. Skills next, milestone</b><br/>lisent la dernière PR,<br/>l'issue et les docs"]:::tool
+  S3["<b>3. Session → brief</b><br/>la règle d'abord (révision 90),<br/>puis /brief régénère<br/>le snapshot"]:::tool
+  S4["<b>4. Session → vitest</b><br/>la spec vue rouge,<br/>puis le code"]:::tool
+  S5["<b>5. Hooks</b><br/>fichier édité formaté, commit<br/>refusé s'il échoue au lint<br/>ou vise main"]:::tool
+  S6["<b>6. Session</b><br/>empreintes dorées reprises,<br/>graine de test rechoisie"]:::tool
+  S7["<b>7. Skill bot</b><br/>worktree jetable, bot fort,<br/>1 000 graines par chef,<br/>en arrière-plan"]:::tool
+  S8["<b>8. Bot → artifact</b><br/>la mesure publiée, guard-bots<br/>refuse vitest d'ici là"]:::tool
+  S9["<b>9. Giuseppe</b><br/>pendant ce temps, le REX,<br/>par le skill rex-sto<br/>et l'agent rex-writer"]:::me
+  S10["<b>10. Sous-agent</b><br/>/code-review high,<br/>la session trie"]:::tool
+  S11["<b>11. Skill ship</b><br/>pnpm check une fois, changelog,<br/>balance.md, issue, PR,<br/>prompt suivant"]:::tool
+  S12["<b>12. Giuseppe</b><br/>je fusionne, le jeu<br/>est déployé, en ligne"]:::me
+  S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9 --> S10 --> S11 --> S12
+  S5 -.->|refus| S4
+  S10 -.->|retouches| S4
+  S12 -.->|PR suivante| S1
+  classDef me fill:#FDE4EE,stroke:#F42B72,color:#B01850
+  classDef tool fill:#EEF5FF,stroke:#6F9BE8,color:#102048
 ```
 
 Quelques détails qui comptent.
@@ -192,7 +192,7 @@ Quelques détails qui comptent.
 
 Et la PR se termine par le prompt de la session suivante, qui dit déjà ce que sera la PR d'après : le loyer. Dans le dépôt comme dans le jeu, il finit toujours par tomber.
 
-Ce que je retiens de cette séquence : chaque flèche qui ne part pas de moi est **une décision que j'ai prise une fois, puis rangée dans un fichier**.
+Ce que je retiens de cette séquence : chaque case qui n'est pas à moi est **une décision que j'ai prise une fois, puis rangée dans un fichier**.
 
 ## L'échelle de persistance
 
