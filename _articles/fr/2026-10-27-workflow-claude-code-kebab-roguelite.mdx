@@ -77,7 +77,7 @@ Le principe est simple : **l'agent code, je décide**. Pour que ça marche, il a
 
 **Le glossaire.** `docs/glossaire.md` : un terme français, un identifiant anglais, un sens. Une fonction du moteur dont le nom n'y est pas est renommée, ou le glossaire grandit d'abord. Sans table, chaque session invente son mot (`queue` ou `line`, `district` ou `neighborhood`) et **le code se remplit de synonymes**. Il a aujourd'hui 471 lignes, une colonne anglaise et une italienne : c'est lui qui a servi de lexique quand le jeu a été traduit.
 
-**Un `CLAUDE.md` court.** C'est le fichier que l'agent lit à chaque session. Le mien ne décrit pas le code (le code le dit mieux) : il dit **où est la vérité et ce que le code ne peut pas dire**. Un extrait, tel quel :
+**Un `CLAUDE.md` court.** C'est le fichier que l'agent lit à chaque session. Le mien ne décrit pas le code (le code le dit mieux) : il dit **où est la vérité et ce que le code ne peut pas dire**. Un extrait, tel quel ([le fichier complet](https://gist.github.com/gcunsolo/cd2536ae9cbac810a499a5e637e0bea3#file-claude-md)) :
 
 ```md
 Topic rules live in `.claude/rules/` and load when you touch matching files (engine and content,
@@ -97,6 +97,19 @@ the code can't tell.
 - la spec s'écrit d'abord et se montre rouge ;
 - la CI fait ce que fait `pnpm check`, en un job.
 
+Le bloc `paths` dit quand une règle se charge. Un extrait de `stores.md` ([le fichier complet](https://gist.github.com/gcunsolo/cd2536ae9cbac810a499a5e637e0bea3#file-rules-stores-md)) :
+
+```md
+---
+paths:
+  - 'src/stores/**'
+---
+
+# Stores
+
+- A store holds state and calls the engine; it contains no game rule.
+```
+
 **Le TDD imposé, pas suggéré.** La spec d'abord, montrée rouge, puis le code. Chaque règle numérotée du brief a un test qui porte son nom. Couverture de 90 % exigée sur le moteur depuis le jour 1, jamais abaissée. Le rouge montré avant le code est la seule preuve que le test teste quelque chose, et c'est encore plus vrai avec un agent : **le test est la seule spécification qu'il ne peut pas interpréter**.
 
 **Les skills.** Les procédures vivent dans `.claude/skills/`, pas dans ma tête.
@@ -107,7 +120,23 @@ the code can't tell.
 - `/brief` régénère le snapshot ;
 - `/bot` mesure l'équilibrage.
 
-Une procédure dans un fichier **se corrige une fois pour toutes les sessions** ; un rappel dans un prompt s'oublie à la troisième.
+Une procédure dans un fichier **se corrige une fois pour toutes les sessions** ; un rappel dans un prompt s'oublie à la troisième. `/next`, par exemple, tient en deux étapes et renvoie à `/milestone` ([le fichier complet](https://gist.github.com/gcunsolo/cd2536ae9cbac810a499a5e637e0bea3#file-skills-next-skill-md)) :
+
+```md
+# Start the next PR
+
+A shortcut for `/milestone`: same procedure, but the session finds what to start by itself.
+
+1. **What to start.** With `$ARGUMENTS`, they name the milestone (and maybe the boxes). Without
+   them, read the last merged PR (`gh pr list --state merged --limit 1`, then
+   `gh pr view <number> --json body -q .body`): its "Prompt de la prochaine session" names the
+   milestone N, the PR's boxes and the decisions to honour. If the current branch's PR isn't merged
+   yet, use its own body instead; `/milestone` stops on it unless the user asked to stack. If the
+   prompt says `/milestone N+1`, the next milestone starts.
+2. **Then follow `.claude/skills/milestone/SKILL.md` to the letter**, with that N and that prompt
+   as its arguments: land the previous PR, ground yourself, prepare the branch, plan (in plan
+   mode when decisions are open) and show the first red test. Say in one line which milestone and PR you took, and from where.
+```
 
 **Les hooks.** Cinq garde-fous **exécutés par l'outil, pas par la bonne volonté** :
 
@@ -117,7 +146,12 @@ Une procédure dans un fichier **se corrige une fois pour toutes les sessions** 
 - refuser le check complet, vitest et les captures tant qu'un bot d'équilibrage tourne ;
 - et dire au démarrage de chaque session ce qui tourne déjà.
 
-**Le prompt de la prochaine session.** Chaque PR se termine par un bloc de texte que la session suivante copie-colle : le jalon, les cases qu'elle prend, les pointeurs. Les décisions prises hors du brief sont dans une section « Décisions » du corps de la PR, que `/milestone` relit. C'est **le passage de relais entre deux contextes vides** : le mot laissé sur le comptoir pour l'équipe du soir.
+**Le prompt de la prochaine session.** Chaque PR se termine par un bloc de texte que la session suivante copie-colle : le jalon, les cases qu'elle prend, les pointeurs. Les décisions prises hors du brief sont dans une section « Décisions » du corps de la PR, que `/milestone` relit. C'est **le passage de relais entre deux contextes vides** : le mot laissé sur le comptoir pour l'équipe du soir. Sa forme, fixée dans `/ship` ([le fichier complet](https://gist.github.com/gcunsolo/cd2536ae9cbac810a499a5e637e0bea3#file-skills-ship-skill-md)) :
+
+```text
+Run /milestone N for Salade Tomate Oignon (repo <owner>/salade-tomate-oignon),
+next PR: <the boxes it takes>.
+```
 
 **Les bots.** Dès le premier jour, un bot joue des milliers de services pour mesurer chaque réglage ; le 23 octobre arrive le *bot fort*, qui essaie tous les kebabs légaux de la main et tient lieu de joueur expérimenté. Chaque ligne de `docs/balance.md` dit avant, après, pourquoi, et le taux mesuré. **Sans ça, l'équilibrage est une opinion.**
 
@@ -131,7 +165,7 @@ salade-tomate-oignon/
 │  ├─ settings.json     l'allowlist des commandes permises et le branchement des hooks
 │  ├─ rules/            lues seulement quand on touche les fichiers qu'elles visent
 │  │  ├─ engine.md      réducteur pur, rng semé, le contenu est de la donnée
-│  │  ├─ stores.md      trois stores, aucune règle de jeu
+│  │  ├─ stores.md      aucune règle de jeu dans un store
 │  │  ├─ components.md  des sélecteurs, pas de règle en composant
 │  │  ├─ testing.md     la spec d'abord, montrée rouge
 │  │  └─ ci.md          check.yml fait ce que fait pnpm check, en un job
@@ -155,7 +189,7 @@ salade-tomate-oignon/
 └─ scripts/             bot.ts (refuse au-delà de 1 000 graines), screenshots.ts, brief-to-md.mjs
 ```
 
-Ces fichiers sont à lire dans [cette archive]({BASE_URL}/imgs/articles/2026-10-27-workflow-claude-code-kebab-roguelite/sto-workflow.zip) : `CLAUDE.md`, règles, skills, hooks et permissions, sans le code du jeu, liens privés masqués. C'est à lire et à adapter, pas à installer tel quel : ils supposent ce dépôt et ses scripts.
+Ces fichiers sont à lire dans [ce gist](https://gist.github.com/gcunsolo/cd2536ae9cbac810a499a5e637e0bea3) : `CLAUDE.md`, règles, skills, hooks et permissions, sans le code du jeu, liens privés masqués. C'est à lire et à adapter, pas à installer tel quel : ils supposent ce dépôt et ses scripts. Un gist n'ayant pas de dossiers, son README donne le vrai chemin de chaque fichier.
 
 ## Une demande type, de « next » au jeu en ligne
 
@@ -209,7 +243,24 @@ C'est **la leçon la plus transférable** de ces neuf jours. Chaque correction d
 
 Exemple vécu, le 26 octobre à 10 h 52 : « *fini les runs à 2 000, le max doit être 1 000 ; ajuster le flow pour que ça prenne place le plus tôt possible, et faire persister cette préférence* ». Les mesures à 2 000 graines prenaient une heure par chef et bloquaient la machine. Dans la matinée, le plafond a parcouru toute l'échelle : dans la mémoire persistante, dans le skill `/bot`, dans le changelog, et dans `scripts/bot.ts` lui-même, qui refuse au-delà de 1 000. **Le prompt s'use ; le script, non.**
 
-Un hook, concrètement, c'est un script que Claude Code exécute avant ou après un appel d'outil, et qui peut refuser l'appel. Voici la fin de `guard-main.mjs`, celui qui garde `main`, tel quel :
+Un hook, concrètement, c'est un script que Claude Code exécute avant ou après un appel d'outil, et qui peut refuser l'appel. Il se branche dans `.claude/settings.json`, dont voici un extrait réduit à ce hook ([le fichier complet](https://gist.github.com/gcunsolo/cd2536ae9cbac810a499a5e637e0bea3#file-settings-json)) :
+
+```json
+"PreToolUse": [
+  {
+    "matcher": "Bash",
+    "hooks": [
+      {
+        "type": "command",
+        "if": "Bash(git *)",
+        "command": "node \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/guard-main.mjs"
+      }
+    ]
+  }
+]
+```
+
+Et voici la fin de `guard-main.mjs`, celui qui garde `main`, tel quel ([le fichier complet](https://gist.github.com/gcunsolo/cd2536ae9cbac810a499a5e637e0bea3#file-hooks-guard-main-mjs)) :
 
 ```js
   const verb = words[at];

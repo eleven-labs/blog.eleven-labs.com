@@ -77,7 +77,7 @@ The principle is simple: **the agent codes, I decide**. For that to work, I had 
 
 **The glossary.** `docs/glossaire.md`: a French term, an English identifier, a meaning. An engine function whose name isn't in it gets renamed, or the glossary grows first. Without the table, each session invents its own word (`queue` or `line`, `district` or `neighborhood`) and **the code fills up with synonyms**. It now has 471 lines, an English column and an Italian one: it served as the lexicon when the game was translated.
 
-**A short `CLAUDE.md`.** It is the file the agent reads at every session. Mine doesn't describe the code (the code says it better): it says **where the truth is and what the code can't tell**. An excerpt, verbatim:
+**A short `CLAUDE.md`.** It is the file the agent reads at every session. Mine doesn't describe the code (the code says it better): it says **where the truth is and what the code can't tell**. An excerpt, verbatim ([the full file](https://gist.github.com/gcunsolo/cd2536ae9cbac810a499a5e637e0bea3#file-claude-md)):
 
 ```md
 Topic rules live in `.claude/rules/` and load when you touch matching files (engine and content,
@@ -97,6 +97,19 @@ the code can't tell.
 - the spec is written first and shown red;
 - CI does what `pnpm check` does, in one job.
 
+The `paths` block says when a rule loads. An excerpt of `stores.md` ([the full file](https://gist.github.com/gcunsolo/cd2536ae9cbac810a499a5e637e0bea3#file-rules-stores-md)):
+
+```md
+---
+paths:
+  - 'src/stores/**'
+---
+
+# Stores
+
+- A store holds state and calls the engine; it contains no game rule.
+```
+
 **TDD enforced, not suggested.** The spec first, shown red, then the code. Every numbered rule of the brief has a test named after it. 90% coverage required on the engine since day 1, never lowered. The red shown before the code is the only proof that the test tests something, and that is even truer with an agent: **the test is the only specification it cannot interpret**.
 
 **Skills.** Procedures live in `.claude/skills/`, not in my head.
@@ -107,7 +120,23 @@ the code can't tell.
 - `/brief` regenerates the snapshot;
 - `/bot` measures the balance.
 
-A procedure in a file **gets fixed once for every session**; a reminder in a prompt is forgotten by the third one.
+A procedure in a file **gets fixed once for every session**; a reminder in a prompt is forgotten by the third one. `/next`, for example, takes two steps and hands over to `/milestone` ([the full file](https://gist.github.com/gcunsolo/cd2536ae9cbac810a499a5e637e0bea3#file-skills-next-skill-md)):
+
+```md
+# Start the next PR
+
+A shortcut for `/milestone`: same procedure, but the session finds what to start by itself.
+
+1. **What to start.** With `$ARGUMENTS`, they name the milestone (and maybe the boxes). Without
+   them, read the last merged PR (`gh pr list --state merged --limit 1`, then
+   `gh pr view <number> --json body -q .body`): its "Prompt de la prochaine session" names the
+   milestone N, the PR's boxes and the decisions to honour. If the current branch's PR isn't merged
+   yet, use its own body instead; `/milestone` stops on it unless the user asked to stack. If the
+   prompt says `/milestone N+1`, the next milestone starts.
+2. **Then follow `.claude/skills/milestone/SKILL.md` to the letter**, with that N and that prompt
+   as its arguments: land the previous PR, ground yourself, prepare the branch, plan (in plan
+   mode when decisions are open) and show the first red test. Say in one line which milestone and PR you took, and from where.
+```
 
 **Hooks.** Five guardrails **run by the tool, not by goodwill**:
 
@@ -117,7 +146,12 @@ A procedure in a file **gets fixed once for every session**; a reminder in a pro
 - refuse the full check, vitest and the screenshots while a balance bot is running;
 - and say at the start of every session what is already running.
 
-**The next session's prompt.** Every PR ends with a block of text that the next session copies and pastes: the milestone, the boxes it takes, the pointers. Decisions taken outside the brief go in a "Décisions" (decisions) section of the PR body, which `/milestone` re-reads. It is **the baton pass between two empty contexts**: the note left on the counter for the evening shift.
+**The next session's prompt.** Every PR ends with a block of text that the next session copies and pastes: the milestone, the boxes it takes, the pointers. Decisions taken outside the brief go in a "Décisions" (decisions) section of the PR body, which `/milestone` re-reads. It is **the baton pass between two empty contexts**: the note left on the counter for the evening shift. Its shape, set in `/ship` ([the full file](https://gist.github.com/gcunsolo/cd2536ae9cbac810a499a5e637e0bea3#file-skills-ship-skill-md)):
+
+```text
+Run /milestone N for Salade Tomate Oignon (repo <owner>/salade-tomate-oignon),
+next PR: <the boxes it takes>.
+```
 
 **The bots.** From day one, a bot plays thousands of services to measure every setting; on 23 October comes the *strong bot*, which tries every legal kebab in the hand and stands in for an experienced player. Every line of `docs/balance.md` says before, after, why, and the measured rate. **Without that, balancing is an opinion.**
 
@@ -131,7 +165,7 @@ salade-tomate-oignon/
 │  ├─ settings.json     the allowlist of permitted commands and the wiring of the hooks
 │  ├─ rules/            read only when you touch the files they target
 │  │  ├─ engine.md      pure reducer, seeded rng, content is data
-│  │  ├─ stores.md      three stores, no game rule
+│  │  ├─ stores.md      no game rule in a store
 │  │  ├─ components.md  selectors, no rule inside a component
 │  │  ├─ testing.md     the spec first, shown red
 │  │  └─ ci.md          check.yml does what pnpm check does, in one job
@@ -155,7 +189,7 @@ salade-tomate-oignon/
 └─ scripts/             bot.ts (refuses beyond 1,000 seeds), screenshots.ts, brief-to-md.mjs
 ```
 
-You can read these files in [this archive]({BASE_URL}/imgs/articles/2026-10-27-workflow-claude-code-kebab-roguelite/sto-workflow.zip): `CLAUDE.md`, rules, skills, hooks and permissions, without the game's code, private links masked. It is there to read and adapt, not to install as is: they assume this repository and its scripts.
+You can read these files in [this gist](https://gist.github.com/gcunsolo/cd2536ae9cbac810a499a5e637e0bea3): `CLAUDE.md`, rules, skills, hooks and permissions, without the game's code, private links masked. It is there to read and adapt, not to install as is: they assume this repository and its scripts. Since a gist has no folders, its README gives each file's real path.
 
 ## A typical request, from "next" to the game online
 
@@ -209,7 +243,24 @@ This is **the most transferable lesson** of these nine days. Every fix to the wo
 
 A lived example, 26 October at 10:52 (my chat messages, here and below, are translated from French): "*no more runs at 2,000, the max must be 1,000; adjust the flow so that it kicks in as early as possible, and make this preference persist*". Measures at 2,000 seeds took an hour per chef and locked up the machine. Over the morning, the cap travelled the whole ladder: into persistent memory, into the `/bot` skill, into the changelog, and into `scripts/bot.ts` itself, which refuses beyond 1,000. **A prompt wears out; a script doesn't.**
 
-A hook, concretely, is a script that Claude Code runs before or after a tool call, and which can refuse the call. Here is the end of `guard-main.mjs`, the one that guards `main`, verbatim:
+A hook, concretely, is a script that Claude Code runs before or after a tool call, and which can refuse the call. It is wired in `.claude/settings.json`, shown here cut down to this hook ([the full file](https://gist.github.com/gcunsolo/cd2536ae9cbac810a499a5e637e0bea3#file-settings-json)):
+
+```json
+"PreToolUse": [
+  {
+    "matcher": "Bash",
+    "hooks": [
+      {
+        "type": "command",
+        "if": "Bash(git *)",
+        "command": "node \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/guard-main.mjs"
+      }
+    ]
+  }
+]
+```
+
+And here is the end of `guard-main.mjs`, the one that guards `main`, verbatim ([the full file](https://gist.github.com/gcunsolo/cd2536ae9cbac810a499a5e637e0bea3#file-hooks-guard-main-mjs)):
 
 ```js
   const verb = words[at];
