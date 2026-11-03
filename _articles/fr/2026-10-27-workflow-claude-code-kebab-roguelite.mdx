@@ -43,7 +43,7 @@ Les chiffres, lus dans le dépôt le 26 octobre :
 - 18 377 lignes de TypeScript hors tests, et 16 856 lignes de tests ;
 - 88 sessions Claude Code.
 
-Rien n'est arrondi vers le haut, sauf mon ego. Le jeu est en ligne depuis le troisième jour, en français, en anglais et en italien, et il reste privé : vous n'aurez que des captures.
+Rien n'est arrondi vers le haut, sauf mon ego. Le jeu est en ligne depuis le troisième jour, en français, en anglais et en italien, et vous pouvez [y jouer sur sto.peq.pe](https://sto.peq.pe). Il vous demandera un compte Google : c'est ce qui tient son Palmarès, et le seul accroc à la règle « pas de compte » que vous lirez plus bas.
 
 <Figure src="{BASE_URL}/imgs/articles/2026-10-27-workflow-claude-code-kebab-roguelite/service.png" alt="L'écran de service du jeu en pixel art, thème nuit : la cliente Nadia, son contrat affiché, une main de six cartes-ingrédients et le kebab en cours" caption="Le service, thème nuit. Nadia prend le train dans quatre minutes." />
 
@@ -58,7 +58,7 @@ Les contraintes que je me suis données :
 - *mobile first* à 360 px, jouable au pouce, sans survol obligatoire ;
 - *bundle* initial sous 250 kB gzip ;
 - aucune requête réseau en jeu ;
-- pas de framework CSS, pas de compte, pas d'API externe ;
+- pas de framework CSS, pas de compte (oups, ça a changé depuis), pas d'API externe ;
 - clavier complet, contraste AA, `prefers-reduced-motion` respecté.
 
 Et une règle de langue : **le jeu parle français, le code parle anglais**. La stack, choisie avant la première ligne : React 19, TypeScript strict, Vite, Zustand, Motion, Vitest, ESLint et Prettier, GitHub Actions.
@@ -358,6 +358,7 @@ Si vous ne retenez qu'une chose : **l'agent est un excellent cuisinier qui ne so
 
 ## Ressources
 
+- [Jouer à *Salade Tomate Oignon*](https://sto.peq.pe) (avec un compte Google)
 - [La documentation de Claude Code](https://code.claude.com/docs/)
 - [La mémoire et les fichiers `CLAUDE.md`](https://code.claude.com/docs/en/memory)
 - [Les skills](https://code.claude.com/docs/en/skills)

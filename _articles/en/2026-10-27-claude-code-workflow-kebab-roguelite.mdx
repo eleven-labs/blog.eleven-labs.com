@@ -43,7 +43,7 @@ The figures, read in the repository on 26 October:
 - 18,377 lines of TypeScript outside tests, and 16,856 lines of tests;
 - 88 Claude Code sessions.
 
-Nothing is rounded up, except my ego. The game has been online since day three, in French, English and Italian, and it stays private: you'll only get screenshots.
+Nothing is rounded up, except my ego. The game has been online since day three, in French, English and Italian, and you can [play it at sto.peq.pe](https://sto.peq.pe). It will ask for a Google account: that is what holds its hall of fame together, and the one exception to the "no account" rule you'll read below.
 
 <Figure src="{BASE_URL}/imgs/articles/2026-10-27-workflow-claude-code-kebab-roguelite/service.png" alt="The game's service screen in pixel art, night theme: the customer Nadia, her contract on display, a hand of six ingredient cards and the kebab in progress" caption="The service, night theme. Nadia's train leaves in four minutes." />
 
@@ -58,7 +58,7 @@ The constraints I set myself:
 - *mobile first* at 360 px, playable with a thumb, no required hover;
 - initial *bundle* under 250 kB gzipped;
 - no network requests in play;
-- no CSS framework, no account, no external API;
+- no CSS framework, no account (oops, that has changed since), no external API;
 - full keyboard, AA contrast, `prefers-reduced-motion` respected.
 
 And a language rule: **the game speaks French, the code speaks English**. The stack, chosen before the first line: React 19, strict TypeScript, Vite, Zustand, Motion, Vitest, ESLint and Prettier, GitHub Actions.
@@ -358,6 +358,7 @@ If you take away one thing: **the agent is an excellent cook who never leaves th
 
 ## Resources
 
+- [Play *Salade Tomate Oignon*](https://sto.peq.pe) (with a Google account)
 - [The Claude Code documentation](https://code.claude.com/docs/)
 - [Memory and `CLAUDE.md` files](https://code.claude.com/docs/en/memory)
 - [Skills](https://code.claude.com/docs/en/skills)
