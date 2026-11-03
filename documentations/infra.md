@@ -14,6 +14,30 @@ Le blog est un site statique : `pnpm prerender` génère `dist/public/`, que la 
 - CloudFront lit le bucket par son **endpoint REST**, avec un Origin Access Control. Le bucket n'est pas public.
 - Chaque pull request est déployée sur le staging sous un préfixe portant le nom de sa branche, par exemple `https://blog.staging.eleven-labs.com/feat/single-page-tutorials/`.
 
+## Indexation : seule la production est indexée
+
+Le staging et les environnements de PR servent des copies des pages de la production. Ils ne doivent pas être indexés, sous peine de faire concurrence à la production dans les résultats de recherche.
+
+- **Côté build** : `IS_INDEXABLE` (`src/constants.ts`) n'est vrai que si `VITE_HOST_URL` a pour domaine `blog.eleven-labs.com`. Sinon, toutes les pages portent `<meta name="robots" content="noindex, nofollow">` (`useLayoutTemplateContainer`). La CI vérifie la directive de `index.html` après le build : un déploiement de production en `noindex`, ou de staging en `index`, échoue avant d'arriver sur S3.
+- **Côté CloudFront** : la distribution du staging ajoute l'en-tête `X-Robots-Tag: noindex, nofollow` à toutes ses réponses, avec la *response headers policy* `blog-staging-noindex`. L'en-tête couvre aussi ce que la meta ne couvre pas : les environnements déployés avant elle, les images, les PDF, le flux RSS, les sitemaps et la page 404.
+- **Ne pas** ajouter de `Disallow: /` dans un `robots.txt` du staging. Sans exploration, Google ne voit pas le `noindex`, et les URL déjà indexées le restent (« Indexée, mais bloquée par robots.txt »).
+
+Pour la recréer (par exemple sur une nouvelle distribution) :
+```sh
+aws cloudfront create-response-headers-policy --profile <profil> --response-headers-policy-config '{
+  "Name": "blog-staging-noindex",
+  "Comment": "Keeps the staging out of the search engines",
+  "CustomHeadersConfig": { "Quantity": 1, "Items": [
+    { "Header": "X-Robots-Tag", "Value": "noindex, nofollow", "Override": true }
+  ] }
+}'
+# Puis renseigner son Id dans DefaultCacheBehavior.ResponseHeadersPolicyId de la distribution du staging
+# (même procédure get-distribution-config / update-distribution que l'étape 4 ci-dessous).
+curl -sI https://blog.staging.eleven-labs.com/<branche>/ | grep -i x-robots-tag
+```
+
+Pour retirer rapidement de Google les URL du staging déjà indexées : dans Search Console, sur une propriété couvrant `blog.staging.eleven-labs.com` (la propriété de domaine `eleven-labs.com` suffit), outil **Suppressions** → **Supprimer toutes les URL avec ce préfixe** → `https://blog.staging.eleven-labs.com/`. La suppression dure environ six mois. Le `noindex` la rend définitive, à mesure que Google repasse sur les pages.
+
 > ⚠️ Avec l'endpoint REST, S3 ne sert pas de page d'index et ignore les redirections S3 (`x-amz-website-redirect-location`, règles de redirection du mode « website »). Toutes les redirections passent donc par les Lambda@Edge ci-dessous.
 
 ## Lambda@Edge
@@ -36,21 +60,25 @@ Source versionnée : [`infra/lambda-edge/origin-request/index.mjs`](../infra/lam
 La fonction ne s'exécute que sur un défaut de cache. Ses réponses, 301 comprises, sont mises en cache par CloudFront.
 
 1. **Anciennes URL AMP** : `/amp/<chemin>` → 301 vers `/<chemin>`.
-2. **Anciennes URL d'étape de tutoriel** : `/<lang>/<tutoriel>/<étape>/` → 301 vers `/<lang>/<tutoriel>/#<étape>`.
+2. **Ancienne home de la langue par défaut** : `/fr`, `/fr/` et `/fr/index.html` → 301 vers `/`.
+   - La home française est servie à la racine, seule URL indexée (#1234). `/fr/` n'est plus générée et répondait en 404 aux liens et redirections qui y pointent encore.
+   - Le préfixe d'une PR est conservé (`/feat/x/fr/` → `/feat/x/`), ainsi que la query string (paramètres de campagne).
+   - Une branche dont le nom finit par `/fr` verrait sa home redirigée vers son préfixe parent : à éviter.
+3. **Anciennes URL d'étape de tutoriel** : `/<lang>/<tutoriel>/<étape>/` → 301 vers `/<lang>/<tutoriel>/#<étape>`.
    - Depuis que chaque tutoriel tient sur une seule page (#1247), une étape est une section de la page du tutoriel, dont l'`id` est le slug de l'étape.
    - La règle est générique : seule une étape de tutoriel a une URL à trois segments sous une langue (`fr` ou `en`). Les pages `authors/` et `categories/` sont exclues, et les segments contenant un point (fichiers) ne sont pas concernés. Aucune liste de tutoriels n'est à tenir à jour.
    - Le préfixe d'une PR est conservé : `/feat/x/fr/<tutoriel>/<étape>/` → `/feat/x/fr/<tutoriel>/#<étape>`.
-3. **Fichiers** (URI avec extension) : transmis tels quels à S3.
-4. **Slash final manquant** : 301 vers la même URL suivie de `/`.
-5. **Réécriture** : `/<chemin>/` → `/<chemin>/index.html`.
+4. **Fichiers** (URI avec extension) : transmis tels quels à S3.
+5. **Slash final manquant** : 301 vers la même URL suivie de `/`.
+6. **Réécriture** : `/<chemin>/` → `/<chemin>/index.html`.
 
-> Une nouvelle route à trois segments sous une langue (par exemple `/fr/tags/<tag>/`) serait redirigée par la règle 2 : il faut alors l'ajouter à l'exclusion `(?!authors\/|categories\/)`.
+> Une nouvelle route à trois segments sous une langue (par exemple `/fr/tags/<tag>/`) serait redirigée par la règle 3 : il faut alors l'ajouter à l'exclusion `(?!authors\/|categories\/)`.
 
 ### Filet de sécurité côté build
 
-Pour chaque ancienne URL d'étape, le prérendu génère aussi une page `index.html` (`src/helpers/prerenderHelper/generateRedirectFiles.ts`). Elle contient un `meta refresh` immédiat, un `location.replace` et une canonique vers le tutoriel. Elle n'est servie que si la Lambda ne redirige pas, par exemple lors d'un rollback de la fonction.
+Pour `/fr/` et pour chaque ancienne URL d'étape, le prérendu génère aussi une page `index.html` (`src/helpers/prerenderHelper/generateRedirectFiles.ts`). Elle contient un `meta refresh` immédiat, un `location.replace` et une canonique vers la cible (la racine, ou le tutoriel). Elle n'est servie que si la Lambda ne redirige pas, par exemple lors d'un rollback de la fonction.
 
-En local, `pnpm start:dev` répond aussi par une 301 (`src/middlewares/tutorialStepRedirectMiddleware.ts`).
+En local, `pnpm start:dev` répond aussi par une 301 (`src/middlewares/defaultLanguageHomeRedirectMiddleware.ts` et `src/middlewares/tutorialStepRedirectMiddleware.ts`).
 
 ## Modifier une Lambda@Edge
 

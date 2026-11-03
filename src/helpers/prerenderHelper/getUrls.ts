@@ -8,6 +8,7 @@ import type {
 
 import {
   CATEGORIES,
+  DEFAULT_LANGUAGE,
   IS_DEBUG,
   LANGUAGES,
   LANGUAGES_AVAILABLE_WITH_DT,
@@ -162,6 +163,13 @@ export type Redirect = {
   from: string;
   to: string;
 };
+
+// The home of the default language is served at the root, its former url `/fr/` points to it
+export const getDefaultLanguageHomeRedirect = (): Redirect => ({
+  lang: DEFAULT_LANGUAGE,
+  from: generatePath(PATHS.HOME, { lang: DEFAULT_LANGUAGE }),
+  to: getHomePath(DEFAULT_LANGUAGE),
+});
 
 // Every step of a tutorial now lives in a section of the tutorial page, its former url points to that section
 export const getTutorialStepRedirects = (

@@ -4,7 +4,10 @@ import { getEnv } from '@/helpers/getEnvHelper';
 
 export const IS_SSR = import.meta.env?.SSR ?? false;
 export const IS_PRERENDER = import.meta.env?.MODE === 'prerender';
-export const HOST_URL = getEnv<string>('VITE_HOST_URL') || 'https://blog.eleven-labs.com';
+export const PRODUCTION_HOST_URL = 'https://blog.eleven-labs.com';
+export const HOST_URL = getEnv<string>('VITE_HOST_URL') || PRODUCTION_HOST_URL;
+// Only the production may be indexed: the staging and the environments of the pull requests serve copies of its pages
+export const IS_INDEXABLE = new URL(HOST_URL).hostname === new URL(PRODUCTION_HOST_URL).hostname;
 export const BASE_URL = import.meta.env?.BASE_URL || '/';
 
 export const IS_DEBUG = getEnv<string>('VITE_IS_DEBUG') === 'true';

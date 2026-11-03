@@ -19,6 +19,27 @@ export const handler = async (event, context, callback) => {
     );
   }
 
+  // home of the default language: it is served at the root, its former url `/fr/` points to `/`. The
+  // environments of the pull requests are served under the name of their branch: any prefix is kept, as is
+  // the query string (campaign parameters).
+  const defaultLanguageHomeMatch = uri.match(/^(.*?)\/fr(\/|\/index\.html)?$/);
+  if (defaultLanguageHomeMatch) {
+    const [, prefix] = defaultLanguageHomeMatch;
+    return callback(
+      null,
+      {
+        status: "301",
+        statusDescription: "Moved Permanently",
+        headers: {
+          location: [{
+            key: "Location",
+            value: `https://${request.headers.host[0].value.replace(".s3.eu-west-3.amazonaws.com", "")}${prefix}/${request.querystring ? `?${request.querystring}` : ""}`,
+          }],
+        },
+      }
+    );
+  }
+
   // tutorial step redirection: every step of a tutorial is now a section of its page, `/:lang/:slug/:step/`
   // points to `/:lang/:slug/#:step`. Only a tutorial step has an url with three segments under a language,
   // the author and category pages aside. The environments of the pull requests are served under the name

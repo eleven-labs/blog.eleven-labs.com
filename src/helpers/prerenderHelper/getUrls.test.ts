@@ -7,6 +7,7 @@ import {
   getCategoryPageUrls,
   getHomePageUrls,
   getPostPageUrls,
+  getDefaultLanguageHomeRedirect,
   getTutorialStepRedirects,
 } from './getUrls';
 
@@ -26,6 +27,10 @@ describe('getSitemapEntries', () => {
       { lang: 'en', url: '/en/' },
     ];
     expect(getHomePageUrls()).toEqual(expectedUrls);
+  });
+
+  it('should redirect the former home of the default language to the root', () => {
+    expect(getDefaultLanguageHomeRedirect()).toEqual({ lang: 'fr', from: '/fr/', to: '/' });
   });
 
   it.each<{
