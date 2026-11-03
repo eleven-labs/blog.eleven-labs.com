@@ -50,6 +50,15 @@ jobs:
           VITE_GTM_ID: ${{ vars.GTM_ID }}
           VITE_IS_DEBUG: ${{ vars.IS_DEBUG }}
 
+      - name: Check the indexing directives
+        # Only the production may be indexed, the staging and the environments of the pull requests must not
+        run: |
+          if [ "${{ env.ENV }}" = "production" ]; then
+            grep -q '<meta name="robots" content="index, follow' dist/public/index.html
+          else
+            grep -q '<meta name="robots" content="noindex' dist/public/index.html
+          fi
+
       - name: Install aws cli
         id: install-aws-cli
         uses: unfor19/install-aws-cli-action@v1

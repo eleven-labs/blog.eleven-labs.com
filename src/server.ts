@@ -15,7 +15,9 @@ import { writeJsonDataFiles } from '@/helpers/contentHelper';
 import { loadDataByMarkdownFilePath } from '@/helpers/markdownContentManagerHelper';
 import { getSitemap } from '@/helpers/prerenderHelper/generateSitemap';
 import { getSitemapEntries } from '@/helpers/prerenderHelper/getSitemapEntries';
+import { getDefaultLanguageHomeRedirect } from '@/helpers/prerenderHelper/getUrls';
 import { createRequestByExpressRequest } from '@/helpers/requestHelper';
+import { defaultLanguageHomeRedirectMiddleware } from '@/middlewares/defaultLanguageHomeRedirectMiddleware';
 import { imageMiddleware } from '@/middlewares/imageMiddleware';
 import { tutorialStepRedirectMiddleware } from '@/middlewares/tutorialStepRedirectMiddleware';
 
@@ -51,6 +53,7 @@ const createServer = async (): Promise<void> => {
       res.status(200).set({ 'Content-Type': 'text/xml' }).end(sitemap);
     });
 
+    app.get(getDefaultLanguageHomeRedirect().from, defaultLanguageHomeRedirectMiddleware);
     app.get(PATHS.TUTORIAL_STEP.replace('/:lang/', `${BASE_URL}:lang/`), tutorialStepRedirectMiddleware);
 
     app.use('*', (req, res, next) => {
@@ -110,6 +113,7 @@ const createServer = async (): Promise<void> => {
       res.status(200).set({ 'Content-Type': 'text/xml' }).end(sitemap);
     });
 
+    app.get(getDefaultLanguageHomeRedirect().from, defaultLanguageHomeRedirectMiddleware);
     app.get(PATHS.TUTORIAL_STEP.replace('/:lang/', `${BASE_URL}:lang/`), tutorialStepRedirectMiddleware);
 
     app.use('*', (req, res, next) => {

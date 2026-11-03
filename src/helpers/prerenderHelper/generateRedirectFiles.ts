@@ -12,7 +12,8 @@ const escapeHtmlAttribute = (value: string): string =>
 /**
  * The 301 is answered by the origin request Lambda@Edge (see documentations/infra.md).
  * Should it not run, S3 serves this page instead: it redirects at once, and its canonical points to the
- * target so that the former url is merged into it.
+ * target so that the former url is merged into it. This covers the former home of the default language and
+ * the former urls of the tutorial steps.
  */
 export const getRedirectHtml = (redirect: Pick<Redirect, 'lang' | 'to'>): string => {
   const target = escapeHtmlAttribute(redirect.to);
