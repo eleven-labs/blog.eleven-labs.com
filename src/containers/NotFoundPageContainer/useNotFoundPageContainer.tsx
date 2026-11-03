@@ -5,6 +5,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouteError } from 'react-router-dom';
 
+import { NOT_INDEXED_ROBOTS_CONTENT } from '@/constants';
 import { TransWithHtml } from '@/containers/TransWithHtml';
 import { useTitle } from '@/hooks/useTitle';
 
@@ -14,7 +15,7 @@ export const useNotFoundPageContainer = (): NotFoundPageProps => {
   const title = t('pages.not-found.title');
   useTitle(title);
   // The server answers 200 on unknown urls, the page must tell the crawlers not to index it
-  useMeta({ name: 'robots', content: 'noindex, follow' });
+  useMeta({ name: 'robots', content: NOT_INDEXED_ROBOTS_CONTENT });
 
   if (error) {
     console.error(error);

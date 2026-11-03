@@ -11,4 +11,11 @@ describe('getRedirectHtml', () => {
     expect(html).toContain('<meta http-equiv="refresh" content="0; url=/fr/tutorial-1/#tutorial-step">');
     expect(html).toContain('<script>window.location.replace("/fr/tutorial-1/#tutorial-step");</script>');
   });
+
+  it('should redirect at once to the root and declare it as canonical', () => {
+    const html = getRedirectHtml({ lang: 'fr', to: '/' });
+
+    expect(html).toContain(`<link rel="canonical" href="${getUrl('/')}">`);
+    expect(html).toContain('<meta http-equiv="refresh" content="0; url=/">');
+  });
 });

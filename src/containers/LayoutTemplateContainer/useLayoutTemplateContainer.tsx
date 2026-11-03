@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { matchPath, useLoaderData, useLocation } from 'react-router-dom';
 
 import { themeColor } from '@/config/website';
-import { GOOGLE_SITE_VERIFICATION, PATHS } from '@/constants';
+import { GOOGLE_SITE_VERIFICATION, IS_INDEXABLE, PATHS } from '@/constants';
 import { generateUrl } from '@/helpers/assetHelper';
 import { getUrl } from '@/helpers/getUrlHelper';
 import { getHomePath } from '@/helpers/routerHelper';
@@ -45,7 +45,10 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
       },
       {
         name: 'robots',
-        content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+        // The staging and the environments of the pull requests must stay out of the search engines
+        content: IS_INDEXABLE
+          ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+          : 'noindex, nofollow',
       },
     ],
     language: i18n.language,

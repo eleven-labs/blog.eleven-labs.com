@@ -9,7 +9,7 @@ import { generateHtmlFiles } from './generateHtmlFiles';
 import { generateRedirectFiles } from './generateRedirectFiles';
 import { generateSitemap } from './generateSitemap';
 import { getSitemapEntries } from './getSitemapEntries';
-import { getAuthorPageUrls, getTutorialStepRedirects } from './getUrls';
+import { getAuthorPageUrls, getDefaultLanguageHomeRedirect, getTutorialStepRedirects } from './getUrls';
 
 export const generateFiles = async (options: { rootDir: string; baseUrl: string }): Promise<void> => {
   const __dirname = resolve(options.rootDir, 'public');
@@ -51,7 +51,7 @@ export const generateFiles = async (options: { rootDir: string; baseUrl: string 
   generateRedirectFiles({
     rootDir: __dirname,
     baseUrl: options.baseUrl,
-    redirects: getTutorialStepRedirects(getPosts()),
+    redirects: [getDefaultLanguageHomeRedirect(), ...getTutorialStepRedirects(getPosts())],
   });
 
   console.log('🦖🖨 Your static site is ready to deploy from dist');

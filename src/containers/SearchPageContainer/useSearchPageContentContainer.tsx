@@ -6,7 +6,7 @@ import { useMeta, useTitleTemplate } from 'hoofd';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { IS_SSR } from '@/constants';
+import { IS_SSR, NOT_INDEXED_ROBOTS_CONTENT } from '@/constants';
 import { PostCardListContainer } from '@/containers/PostCardListContainer';
 import { TransWithHtml } from '@/containers/TransWithHtml';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
@@ -19,7 +19,7 @@ export const useSearchPageContentContainer = (): SearchPageContentProps => {
   const search = new URLSearchParams(!IS_SSR ? window.location.search : '').get('search') || '';
   useTitleTemplate('Blog Eleven Labs - %s');
   useTitle(t('pages.search.seo.title', { search }));
-  useMeta({ name: 'robots', content: 'noindex, follow' });
+  useMeta({ name: 'robots', content: NOT_INDEXED_ROBOTS_CONTENT });
 
   const [postsBySearch, setPostsBySearch] = useState<PostCardListContainerProps['allPosts']>([]);
 
