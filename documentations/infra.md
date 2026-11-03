@@ -18,8 +18,17 @@ Le blog est un site statique : `pnpm prerender` génère `dist/public/`, que la 
 
 Le staging et les environnements de PR servent des copies des pages de la production. Ils ne doivent pas être indexés, sous peine de faire concurrence à la production dans les résultats de recherche.
 
-- **Côté build** : `IS_INDEXABLE` (`src/constants.ts`) n'est vrai que si `VITE_HOST_URL` a pour domaine `blog.eleven-labs.com`. Sinon, toutes les pages portent `<meta name="robots" content="noindex, nofollow">` (`useLayoutTemplateContainer`). La CI vérifie la directive de `index.html` après le build : un déploiement de production en `noindex`, ou de staging en `index`, échoue avant d'arriver sur S3.
+- **Côté build** : `IS_INDEXABLE` (`src/constants.ts`) n'est vrai que si `VITE_HOST_URL` a pour domaine `blog.eleven-labs.com`. Sinon, toutes les pages portent `<meta name="robots" content="noindex, nofollow">` : le layout (`useLayoutTemplateContainer`) comme les pages exclues de l'index en production (404, auteur, recherche), via `NOT_INDEXED_ROBOTS_CONTENT`. La CI vérifie la directive de `index.html` après le build : un déploiement de production en `noindex`, ou de staging en `index`, échoue avant d'arriver sur S3.
 - **Côté CloudFront** : la distribution du staging ajoute l'en-tête `X-Robots-Tag: noindex, nofollow` à toutes ses réponses, avec la *response headers policy* `blog-staging-noindex`. L'en-tête couvre aussi ce que la meta ne couvre pas : les environnements déployés avant elle, les images, les PDF, le flux RSS, les sitemaps et la page 404.
+- **Racine du staging** : aucun environnement n'y est déployé. CloudFront y répond avec sa page d'erreur, `/404.html` à la racine du bucket, qu'aucune CI ne met à jour. Pour la régénérer, construire le site pour la racine du staging, puis n'envoyer que la page et ce qu'elle charge (elle n'hydrate que l'en-tête et ne lit aucune donnée de `/data/`) :
+  ```sh
+  NODE_ENV=production BASE_URL=/ VITE_HOST_URL=https://blog.staging.eleven-labs.com \
+    VITE_IS_DEBUG=false VITE_GTM_ID= VITE_GOOGLE_SITE_VERIFICATION= pnpm prerender
+  mkdir -p /tmp/staging-root/imgs && cp -r dist/public/{404.html,assets,favicon.ico,web-app-manifest.json} /tmp/staging-root/ \
+    && cp -r dist/public/imgs/icons /tmp/staging-root/imgs/
+  aws s3 cp /tmp/staging-root/ s3://blog.staging.eleven-labs.com/ --recursive --profile <profil>
+  aws cloudfront create-invalidation --profile <profil> --distribution-id "$DISTRIBUTION_ID" --paths "/*"
+  ```
 - **Ne pas** ajouter de `Disallow: /` dans un `robots.txt` du staging. Sans exploration, Google ne voit pas le `noindex`, et les URL déjà indexées le restent (« Indexée, mais bloquée par robots.txt »).
 
 Pour la recréer (par exemple sur une nouvelle distribution) :
@@ -62,7 +71,8 @@ La fonction ne s'exécute que sur un défaut de cache. Ses réponses, 301 compri
 1. **Anciennes URL AMP** : `/amp/<chemin>` → 301 vers `/<chemin>`.
 2. **Ancienne home de la langue par défaut** : `/fr`, `/fr/` et `/fr/index.html` → 301 vers `/`.
    - La home française est servie à la racine, seule URL indexée (#1234). `/fr/` n'est plus générée et répondait en 404 aux liens et redirections qui y pointent encore.
-   - Le préfixe d'une PR est conservé (`/feat/x/fr/` → `/feat/x/`), ainsi que la query string (paramètres de campagne).
+   - Le préfixe d'une PR est conservé (`/feat/x/fr/` → `/feat/x/`).
+   - La query string serait conservée, mais les distributions ne la transmettent pas à l'origine (`ForwardedValues.QueryString: false`) : la Lambda ne la reçoit pas, et comme pour les autres redirections, elle est perdue.
    - Une branche dont le nom finit par `/fr` verrait sa home redirigée vers son préfixe parent : à éviter.
 3. **Anciennes URL d'étape de tutoriel** : `/<lang>/<tutoriel>/<étape>/` → 301 vers `/<lang>/<tutoriel>/#<étape>`.
    - Depuis que chaque tutoriel tient sur une seule page (#1247), une étape est une section de la page du tutoriel, dont l'`id` est le slug de l'étape.
@@ -135,5 +145,7 @@ DISTRIBUTION_ID=$(aws cloudfront list-distributions --profile <profil> \
 | — | production | `blog-prod-origin-request-lambda:3` | Idem. |
 | 2026-09-23 | staging | `blog-staging-origin-request-lambda:6` | Redirection des anciennes URL d'étape de tutoriel (#1247). |
 | 2026-09-23 | production | `blog-prod-origin-request-lambda:4` | Idem, déployée après le merge de #1256. Le cache des tutoriels (`/fr/<tutoriel>/*`) a été invalidé. |
+| 2026-11-03 | staging | `blog-staging-origin-request-lambda:7` | Redirection de l'ancienne home `/fr/` vers `/` (#1266). |
+| 2026-11-03 | production | `blog-prod-origin-request-lambda:5` | Idem. Le cache de `/fr`, `/fr/` et `/fr/index.html` a été invalidé. |
 
 La version en service de chaque environnement est la dernière de ce tableau. Pour revenir en arrière, il suffit de réassocier la version précédente, qui reste publiée (voir **Rollback**).

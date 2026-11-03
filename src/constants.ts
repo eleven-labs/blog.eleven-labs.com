@@ -8,6 +8,8 @@ export const PRODUCTION_HOST_URL = 'https://blog.eleven-labs.com';
 export const HOST_URL = getEnv<string>('VITE_HOST_URL') || PRODUCTION_HOST_URL;
 // Only the production may be indexed: the staging and the environments of the pull requests serve copies of its pages
 export const IS_INDEXABLE = new URL(HOST_URL).hostname === new URL(PRODUCTION_HOST_URL).hostname;
+// The pages left out of the index still let the crawlers follow their links, except outside the production
+export const NOT_INDEXED_ROBOTS_CONTENT = IS_INDEXABLE ? 'noindex, follow' : 'noindex, nofollow';
 export const BASE_URL = import.meta.env?.BASE_URL || '/';
 
 export const IS_DEBUG = getEnv<string>('VITE_IS_DEBUG') === 'true';

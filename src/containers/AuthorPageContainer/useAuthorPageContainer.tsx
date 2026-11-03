@@ -7,7 +7,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLoaderData, useParams } from 'react-router-dom';
 
-import { PATHS } from '@/constants';
+import { NOT_INDEXED_ROBOTS_CONTENT, PATHS } from '@/constants';
 import { PostCardListContainer } from '@/containers/PostCardListContainer';
 import { generatePath } from '@/helpers/routerHelper';
 import { getTextSummaryFromHtml } from '@/helpers/stringHelper';
@@ -29,7 +29,7 @@ export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
     content: getTextSummaryFromHtml(authorPageData?.author.content ?? '', 155) || seoTitle,
   });
   // Thin pages (a biography and a list) that use crawl budget without bringing clicks, their links are still followed
-  useMeta({ name: 'robots', content: 'noindex, follow' });
+  useMeta({ name: 'robots', content: NOT_INDEXED_ROBOTS_CONTENT });
 
   const getPaginatedLink: PostCardListContainerProps['getPaginatedLink'] = (page: number) => ({
     href: generatePath(PATHS.AUTHOR_PAGINATED, { lang: i18n.language, authorUsername, page }),
