@@ -1,0 +1,30 @@
+/* Métadonnées d'un article : date, temps de lecture et auteurs sur une ligne qui se replie. */
+@layer components {
+  .post-metadata {
+    @apply body-s flex flex-wrap items-center;
+  }
+  .post-metadata-primary {
+    @apply gap-2 font-display font-bold tracking-wide text-primary uppercase;
+  }
+  /* Sur une carte posée sur le bleu de la marque, le rose n'est pas lisible (2,1:1) : jaune de la marque */
+  .post-card-highlight-dark .post-metadata-primary {
+    @apply text-highlight;
+  }
+  .post-metadata-secondary {
+    @apply gap-4 font-semibold text-brand;
+  }
+  .post-metadata-field {
+    @apply inline-block;
+    /* Dimensions minimales du squelette de chargement (16 px de haut). */
+    min-height: 1rem;
+  }
+  .post-metadata-field-date {
+    min-width: 3.75rem;
+  }
+  .post-metadata-field-reading-time {
+    min-width: 1.625rem;
+  }
+  .post-metadata-field-authors {
+    min-width: 3.125rem;
+  }
+}

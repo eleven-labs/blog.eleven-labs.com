@@ -2,13 +2,16 @@ import type { PostFooterProps } from './PostFooter';
 import type { PostHeaderProps } from './PostHeader';
 import type { RelatedPostListProps } from './RelatedPostList';
 
-import type { ContactCardProps, SummaryCardProps } from '@/components';
-import type { PictureProps } from '@/design-system';
+import type { ContactCardProps } from '@/components/contact-card';
+import type { SummaryCardProps } from '@/components/summary-card';
+import type { PictureProps } from '@/design-system/ui/picture';
 
 import React from 'react';
 
-import { ContactCard, SummaryBar } from '@/components';
-import { Divider, Picture } from '@/design-system';
+import { ContactCard } from '@/components/contact-card';
+import { SummaryBar } from '@/components/summary-bar';
+import { Picture } from '@/design-system/ui/picture';
+import { Separator } from '@/design-system/ui/separator';
 
 import { PostFooter } from './PostFooter';
 import { PostHeader } from './PostHeader';
@@ -42,23 +45,19 @@ export const PostPageContent: React.FC<PostPageContentProps> = ({
   <>
     <div>
       <PostHeader {...header} />
-      <Divider className="mt-m" />
+      <Separator className="mt-6" />
       {cover && (
         <Picture
           {...cover}
-          className="mt-l"
-          img={{ ...cover.img, className: 'block h-auto w-full rounded-s object-cover aspect-video' }}
+          className="mt-8"
+          img={{ ...cover.img, className: 'block h-auto w-full rounded-card object-cover aspect-video' }}
         />
       )}
-      <SummaryBar
-        className="mt-l md:hidden"
-        variant={variant === 'tutorial' ? 'secondary' : 'primary'}
-        {...summary}
-      />
-      <div className="post-content mt-l md:mt-m">{children}</div>
-      <PostFooter className="mt-l" {...footer} />
+      <SummaryBar className="mt-8 md:hidden" variant={variant === 'tutorial' ? 'secondary' : 'primary'} {...summary} />
+      <div className="post-content mt-8 md:mt-6">{children}</div>
+      <PostFooter className="mt-8" {...footer} />
     </div>
-    <Divider />
+    <Separator />
     <ContactCard {...contactCard} />
     {relatedPostList.posts.length > 0 && <RelatedPostList {...relatedPostList} />}
   </>

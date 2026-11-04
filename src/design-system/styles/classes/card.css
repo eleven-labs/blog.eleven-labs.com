@@ -1,0 +1,14 @@
+/*
+ * Carte : surface blanche aux coins arrondis, repère de positionnement de ses enfants. Le remplissage reste en
+ * utilitaires dans le JSX, il varie d'une carte à l'autre. `card-stretched-link` étire le lien principal sur toute
+ * la carte (pseudo-élément), qui devient cliquable d'un bout à l'autre.
+ */
+@layer components {
+  .card {
+    @apply relative rounded-card bg-surface;
+  }
+  .card-stretched-link::before {
+    @apply absolute inset-0 z-1;
+    content: '';
+  }
+}

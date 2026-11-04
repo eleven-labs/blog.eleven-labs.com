@@ -1,0 +1,34 @@
+/* Footer : pied de page sur fond de marque, bandeau d'accroche, adresses, réseaux sociaux et langues. */
+@layer components {
+  .footer {
+    @apply bg-footer text-center body-s text-on-brand md:text-left;
+  }
+  .footer-banner {
+    @apply flex flex-col items-center justify-center gap-4 bg-footer-strong py-6 md:flex-row md:items-end;
+  }
+  .footer-banner-link {
+    @apply text-on-brand underline;
+  }
+  .footer-body {
+    @apply mx-4 flex flex-col items-center justify-around py-8 md:flex-row md:py-10;
+  }
+  .footer-social {
+    @apply flex flex-wrap items-center justify-center gap-4 md:justify-start;
+  }
+  .footer-social-icon {
+    @apply rounded-control text-on-brand;
+  }
+  /* Le logo de X est noir sur fond clair */
+  .footer-social-icon-twitter {
+    @apply text-ink;
+  }
+  /* Lien de langue : primary est illisible sur le fond de marque */
+  .footer .footer-language-link {
+    @apply text-on-brand underline;
+  }
+  .footer-languages {
+    @apply flex items-center justify-center py-4;
+    /* Filet sombre translucide sur le fond de marque */
+    border-top: 1px solid color-mix(in srgb, var(--color-ink) 20%, transparent);
+  }
+}

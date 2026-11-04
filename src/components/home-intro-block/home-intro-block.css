@@ -1,0 +1,30 @@
+/*
+ * HomeIntroBlock : introduction de la page d'accueil. Les marges sont relatives à la largeur de l'écran (`vw`), et
+ * l'astronaute est une image du dossier public, hors des échelles des tokens.
+ */
+@layer components {
+  .home-intro-text {
+    @apply flex flex-1 flex-col items-baseline py-0;
+    /* Sous `md`, le texte est centré et ne dépasse pas 90 % de la largeur. */
+    margin: 2.5rem auto;
+    max-width: 90vw;
+  }
+  /* L'astronaute n'apparaît qu'à partir de `md`, faute de place à côté du texte en dessous. */
+  .home-intro-picture {
+    @apply hidden flex-1;
+  }
+  @media (width >= theme(--breakpoint-md)) {
+    .home-intro-text {
+      @apply py-10;
+      margin: 0 0 0 5vw;
+      max-width: none;
+    }
+    .home-intro-picture {
+      @apply block;
+      background-image: url('/imgs/home-intro-block.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: top right;
+    }
+  }
+}

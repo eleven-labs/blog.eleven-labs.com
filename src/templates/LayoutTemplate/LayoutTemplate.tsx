@@ -1,8 +1,8 @@
-import type { FooterProps } from '@/components';
+import type { FooterProps } from '@/components/footer';
 
 import React from 'react';
 
-import { Footer } from '@/components';
+import { Footer } from '@/components/footer';
 
 export type LayoutTemplateProps = {
   header: React.ReactNode;

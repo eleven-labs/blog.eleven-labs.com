@@ -1,8 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { PostFooter } from './PostFooter';
 
 const meta: Meta<typeof PostFooter> = {
+  title: 'Features/Post/PostFooter',
   component: PostFooter,
   args: {
     title: 'Auteur(s)',

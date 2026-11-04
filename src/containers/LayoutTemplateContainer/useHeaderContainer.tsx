@@ -1,4 +1,5 @@
-import type { AutocompleteProps, HeaderProps } from '@/components';
+import type { AutocompleteProps } from '@/components/autocomplete';
+import type { HeaderProps } from '@/components/header';
 import type { HeaderContainerProps } from '@/containers/LayoutTemplateContainer/HeaderContainer';
 import type { AlgoliaPostData } from '@/types';
 

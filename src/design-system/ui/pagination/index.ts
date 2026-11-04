@@ -1,0 +1,11 @@
+export { Pagination } from './pagination';
+export { PaginationContent } from './pagination-content';
+export { PaginationEllipsis } from './pagination-ellipsis';
+export type { PaginationEllipsisProps } from './pagination-ellipsis';
+export { PaginationItem } from './pagination-item';
+export { PaginationLink } from './pagination-link';
+export type { PaginationLinkProps } from './pagination-link';
+export { PaginationNext } from './pagination-next';
+export type { PaginationNextProps } from './pagination-next';
+export { PaginationPrevious } from './pagination-previous';
+export type { PaginationPreviousProps } from './pagination-previous';

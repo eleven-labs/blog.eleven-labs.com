@@ -1,0 +1,20 @@
+/* Carte d'auteur : avatar rond et lien étiré sur toute la carte. */
+@layer components {
+  .author-card-avatar {
+    @apply rounded-full;
+    /* 72 px d'origine : entre les pas 16 et 20 de l'échelle d'espacement. */
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+  /* Avatar de la page d'un auteur : 120 px */
+  .author-card-avatar-lg {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
+  /* Sans photo, l'astronaute du blog tient lieu d'avatar. */
+  .author-card-avatar-default {
+    background-image: url('/imgs/astronaut.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}

@@ -1,0 +1,21 @@
+/* Carte d'inscription à la newsletter : fond bleu et vague en bas à droite, présentation à gauche, formulaire à droite. */
+@layer components {
+  .newsletter-card {
+    @apply flex flex-col rounded-card bg-brand p-8 text-on-brand;
+    background-image: url('/imgs/wave-background.png');
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
+  .newsletter-card-intro {
+    @apply mb-10 flex-1 border-b pb-10;
+    /* Filet sombre translucide sur le fond bleu : aucun token ne porte cette transparence, d'où le mélange avec l'encre. */
+    border-color: color-mix(in srgb, var(--color-ink) 20%, transparent);
+  }
+  /* Déclinaison horizontale : à partir de `md`, la présentation passe à côté du formulaire, séparée par un filet vertical. */
+  .newsletter-card-horizontal {
+    @apply md:flex-row;
+  }
+  .newsletter-card-horizontal > .newsletter-card-intro {
+    @apply md:mr-10 md:mb-0 md:border-r md:border-b-0 md:pr-10 md:pb-0;
+  }
+}

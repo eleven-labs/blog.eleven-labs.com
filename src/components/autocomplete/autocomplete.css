@@ -1,0 +1,50 @@
+/* Autocomplete : champ de recherche et liste de suggestions, sous le champ dès `md`, dans le panneau de l'en-tête en dessous. */
+@layer components {
+  .autocomplete {
+    @apply flex min-h-0 flex-col md:relative md:block;
+  }
+  .autocomplete-field {
+    @apply relative z-3;
+  }
+
+  /* Suggestions : sous `md` elles restent dans le panneau de recherche et y défilent */
+  .autocomplete-result {
+    @apply mt-4 min-h-0 -mx-4 overflow-y-auto overscroll-contain bg-surface px-4 pt-4;
+    @variant md {
+      @apply absolute left-0 z-2 mx-0 -mt-6 w-full overflow-visible rounded-b-card px-0 pt-8;
+      /* Ombre portée qui épouse le contour de la liste */
+      filter: drop-shadow(0 4px 14px color-mix(in srgb, var(--color-ink) 25%, transparent));
+    }
+  }
+  .autocomplete-result-list {
+    @apply m-0 list-none p-0;
+  }
+  .autocomplete-result-item {
+    @apply relative block px-6 pt-2 pb-3;
+  }
+  .autocomplete-result-item-active {
+    @apply bg-canvas;
+  }
+  /* Le lien couvre toute la suggestion : le clic sur la date ou l'auteur suit aussi le lien */
+  .autocomplete-result-link {
+    @apply line-clamp-4 text-ink md:line-clamp-2;
+  }
+  .autocomplete-result-link::before {
+    @apply absolute inset-0 z-1;
+    content: '';
+  }
+  .autocomplete-result-more {
+    @apply pt-4 pb-6 text-center body-s font-medium md:pt-6 md:pb-8;
+  }
+
+  /* Aucun résultat */
+  .autocomplete-not-found {
+    @apply px-10 py-6 text-center;
+  }
+  .autocomplete-not-found-image {
+    @apply w-full;
+    /* Illustration décorative, hauteur de l'image */
+    height: 8.4375rem;
+    background: url('/imgs/not-found.png') center / auto no-repeat;
+  }
+}

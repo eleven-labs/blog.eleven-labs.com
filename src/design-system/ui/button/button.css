@@ -1,0 +1,75 @@
+/* Button : bouton d'action, pilule par défaut, flèche posée par le composant. */
+@layer components {
+  .btn {
+    @apply body-s inline-flex shrink-0 items-center justify-center rounded-full border border-transparent bg-clip-padding px-6 py-3 font-display font-bold tracking-wider whitespace-nowrap uppercase transition-colors outline-none select-none focus-visible:border-brand focus-visible:ring-3 focus-visible:ring-brand/50 disabled:cursor-not-allowed aria-invalid:border-danger aria-invalid:ring-3 aria-invalid:ring-danger/20;
+  }
+  /* Léger enfoncement au clic, sauf pour un bouton qui ouvre un menu. */
+  .btn:active:not([aria-haspopup]) {
+    transform: translateY(1px);
+  }
+  /* Une icône suit la taille du texte, quelle que soit sa bibliothèque. */
+  .btn svg {
+    @apply pointer-events-none shrink-0;
+    width: 1em;
+    height: 1em;
+  }
+  /* La flèche de retour est retournée et précède le libellé. */
+  .btn-arrow-back {
+    transform: scaleX(-1);
+  }
+
+  /* Variantes du blog */
+  .btn-primary {
+    @apply border-0 bg-primary text-on-primary;
+  }
+  .btn-primary:disabled {
+    background-color: var(--color-muted);
+  }
+  .btn-secondary {
+    @apply border-2 bg-surface text-primary hover:border-primary;
+  }
+  .btn-secondary:disabled {
+    border-color: var(--color-muted);
+  }
+  .btn-accent {
+    @apply border-0 bg-highlight text-brand;
+  }
+
+  /* Variantes de shadcn/ui */
+  .btn-outline {
+    @apply border-line bg-canvas hover:bg-surface-alt hover:text-ink aria-expanded:bg-surface-alt aria-expanded:text-ink disabled:opacity-50;
+  }
+  .btn-ghost {
+    @apply hover:bg-surface-alt hover:text-ink aria-expanded:bg-surface-alt aria-expanded:text-ink disabled:opacity-50;
+  }
+  .btn-danger {
+    @apply bg-danger-soft text-danger hover:bg-danger/20 focus-visible:border-danger/40 focus-visible:ring-danger/20 disabled:opacity-50;
+  }
+  .btn-link {
+    @apply text-primary underline-offset-4 hover:underline disabled:opacity-50;
+  }
+
+  /* Tailles : la taille par défaut (texte courant, body-s) est celle de la classe de base. */
+  .btn-xs {
+    @apply px-3 py-1 text-xs;
+  }
+  .btn-sm {
+    @apply px-4 py-2 text-xs;
+  }
+  .btn-lg {
+    @apply px-8 py-4 text-base;
+  }
+  /* Boutons carrés : la hauteur d'un contrôle (pagination), sans marge intérieure. */
+  .btn-icon {
+    @apply size-control p-0;
+  }
+  .btn-icon-xs {
+    @apply size-6 p-0;
+  }
+  .btn-icon-sm {
+    @apply size-8 p-0;
+  }
+  .btn-icon-lg {
+    @apply size-16 p-0;
+  }
+}

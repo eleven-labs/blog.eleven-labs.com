@@ -1,0 +1,26 @@
+/* CloseButton : croix formée de deux traits qui se croisent. */
+@layer components {
+  .close-button {
+    @apply relative flex flex-col gap-2 bg-transparent;
+  }
+  /* 30 px : hors de l'échelle des espacements (2 px de plus avec size-8), donc en CSS standard. */
+  .close-button-primary {
+    width: 1.875rem;
+    height: 1.875rem;
+    --close-button-color: var(--color-brand);
+  }
+  .close-button-secondary {
+    @apply size-5;
+    --close-button-color: var(--color-muted);
+  }
+  .close-button-line {
+    @apply absolute top-1/2 left-0 h-0.5 w-full;
+    background-color: var(--close-button-color);
+  }
+  .close-button-line-up {
+    @apply rotate-45;
+  }
+  .close-button-line-down {
+    @apply -rotate-45;
+  }
+}

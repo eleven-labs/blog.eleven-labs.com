@@ -1,15 +1,16 @@
 import type { RelatedPostListProps } from './RelatedPostList';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import * as PostCardStories from '@/components/Molecules/Cards/PostCard/PostCard.stories';
+import { postCardArgs } from '@/stories/post-card';
 
 import { RelatedPostList } from './RelatedPostList';
 
 const meta: Meta<typeof RelatedPostList> = {
+  title: 'Features/Post/RelatedPostList',
   component: RelatedPostList,
   args: {
     relatedPostListTitle: 'Articles sur le même thème',
-    posts: Array.from({ length: 3 }).map(() => PostCardStories.Overview.args as RelatedPostListProps['posts'][0]),
+    posts: Array.from({ length: 3 }).map(() => postCardArgs as RelatedPostListProps['posts'][0]),
   },
 };
 

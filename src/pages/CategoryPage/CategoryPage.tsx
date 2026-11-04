@@ -1,12 +1,12 @@
 import type { CategoryPageContentProps } from './CategoryPageContent';
 
-import type { CategoryIntroBlockProps } from '@/components';
-import type { NewsletterCardProps } from '@/components/Molecules/Cards/NewsletterCard';
+import type { CategoryIntroBlockProps } from '@/components/category-intro-block';
+import type { NewsletterCardProps } from '@/components/newsletter-card';
 
 import React from 'react';
 
-import { CategoryIntroBlock } from '@/components';
-import { NewsletterCard } from '@/components/Molecules/Cards/NewsletterCard';
+import { CategoryIntroBlock } from '@/components/category-intro-block';
+import { NewsletterCard } from '@/components/newsletter-card';
 import { LayoutContentWithSidebar } from '@/templates/LayoutContentWithSidebar';
 
 import { CategoryPageContent } from './CategoryPageContent';

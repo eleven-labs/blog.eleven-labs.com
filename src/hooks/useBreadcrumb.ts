@@ -1,11 +1,14 @@
-import type { BreadcrumbProps } from '@/design-system';
-
 import { useTranslation } from 'react-i18next';
 
 import { PATHS } from '@/constants';
 import { generatePath, getHomePath } from '@/helpers/routerHelper';
 
-export const useBreadcrumb = (options: { categoryName?: string; withCategoryLink?: boolean }): BreadcrumbProps => {
+export interface BreadcrumbData {
+  /** Étapes du fil d'Ariane ; sans `href`, l'étape est la page courante. */
+  items: { label: string; href?: string }[];
+}
+
+export const useBreadcrumb = (options: { categoryName?: string; withCategoryLink?: boolean }): BreadcrumbData => {
   const { t, i18n } = useTranslation();
   return {
     items: [
@@ -16,7 +19,10 @@ export const useBreadcrumb = (options: { categoryName?: string; withCategoryLink
       {
         label: t(`common.categories.${options.categoryName ?? 'all'}`),
         href: options.withCategoryLink
-          ? generatePath(PATHS.CATEGORY, { lang: i18n.language, categoryName: options.categoryName ?? 'all' })
+          ? generatePath(PATHS.CATEGORY, {
+              lang: i18n.language,
+              categoryName: options.categoryName ?? 'all',
+            })
           : undefined,
       },
     ],

@@ -1,9 +1,10 @@
-import type { NotFoundBlockProps } from '@/components';
+import type { NotFoundBlockProps } from '@/components/not-found-block';
 
 import React from 'react';
 
-import { NotFoundBlock } from '@/components';
-import { Heading, Skeleton } from '@/design-system';
+import { NotFoundBlock } from '@/components/not-found-block';
+import { Heading } from '@/design-system/ui/heading';
+import { Skeleton } from '@/design-system/ui/skeleton';
 
 export type SearchPageContentProps = {
   title: React.ReactNode;
@@ -25,12 +26,12 @@ export const SearchPageContent: React.FC<SearchPageContentProps> = ({
   ) : (
     <div>
       <Skeleton isLoading={isLoading}>
-        <Heading size="m" className="text-primary">
+        <Heading size="m" className="text-brand">
           {title}
         </Heading>
       </Skeleton>
       <Skeleton isLoading={isLoading}>
-        <Heading size="s" className="mb-l">
+        <Heading size="s" className="mb-8">
           {description}
         </Heading>
       </Skeleton>

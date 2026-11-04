@@ -1,0 +1,20 @@
+/*
+ * CategoryIntroBlock : bandeau d'introduction d'une catégorie, sur une photo différente selon la largeur de l'écran
+ * (images du dossier public, hors des tokens).
+ */
+@layer components {
+  .category-intro {
+    @apply text-on-brand;
+    background-image: url('/imgs/category-intro-block-mobile.jpg');
+    background-size: cover;
+    background-position: bottom;
+
+    @variant md {
+      background-image: url('/imgs/category-intro-block-desktop.jpg');
+    }
+  }
+  /* Liens du bandeau bleu (fil d'Ariane, description) : le rose n'y est pas lisible (1,9:1), jaune de la marque */
+  .category-intro a {
+    @apply text-highlight;
+  }
+}

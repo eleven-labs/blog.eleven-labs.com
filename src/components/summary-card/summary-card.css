@@ -1,0 +1,15 @@
+/*
+ * Sommaire d'un article. La section en cours (`aria-current`) ressort en bleu ; dans la déclinaison `secondary`,
+ * qui se lit comme une progression, les sections déjà passées (`summary-card-link-past`) sont en gris.
+ */
+@layer components {
+  .summary-card-link {
+    @apply flex gap-4 font-semibold text-ink;
+  }
+  .summary-card-link[aria-current] {
+    @apply text-brand;
+  }
+  .summary-card-secondary .summary-card-link-past {
+    @apply text-muted;
+  }
+}

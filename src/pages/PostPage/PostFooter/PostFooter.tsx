@@ -1,9 +1,9 @@
-import type { AuthorCardProps } from '@/components';
+import type { AuthorCardProps } from '@/components/author-card';
 
 import React from 'react';
 
-import { AuthorCard } from '@/components';
-import { Heading } from '@/design-system';
+import { AuthorCard } from '@/components/author-card';
+import { Heading } from '@/design-system/ui/heading';
 
 export interface PostFooterProps {
   title: React.ReactNode;
@@ -13,10 +13,10 @@ export interface PostFooterProps {
 
 export const PostFooter: React.FC<PostFooterProps> = ({ title, authors, className }) => (
   <div className={className}>
-    <Heading size="m" className="mb-xxs text-primary">
+    <Heading size="m" className="mb-2 text-brand">
       {title}
     </Heading>
-    <div className="mt-l flex flex-col gap-s">
+    <div className="mt-8 flex flex-col gap-4">
       {authors.map((author, authorIndex) => (
         <AuthorCard key={authorIndex} {...author} />
       ))}

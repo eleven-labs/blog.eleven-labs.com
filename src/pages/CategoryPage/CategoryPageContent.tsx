@@ -1,9 +1,10 @@
-import type { CategoryEndingBlockProps } from '@/components';
+import type { CategoryEndingBlockProps } from '@/components/category-ending-block';
 
 import React from 'react';
 
-import { CategoryEndingBlock } from '@/components';
-import { Divider, Heading } from '@/design-system';
+import { CategoryEndingBlock } from '@/components/category-ending-block';
+import { Heading } from '@/design-system/ui/heading';
+import { Separator } from '@/design-system/ui/separator';
 
 export type CategoryPageContentProps = {
   categoryEndingBlock?: CategoryEndingBlockProps;
@@ -17,14 +18,14 @@ export const CategoryPageContent: React.FC<CategoryPageContentProps> = ({
   categoryEndingBlock,
 }) => (
   <div>
-    <Heading size="m" className="mb-l text-primary">
+    <Heading size="m" className="mb-8 text-brand">
       {title}
     </Heading>
     {postCardList}
     {categoryEndingBlock && (
       <>
-        <Divider className="mt-m" />
-        <CategoryEndingBlock className="mt-l" {...categoryEndingBlock} />
+        <Separator className="mt-6" />
+        <CategoryEndingBlock className="mt-8" {...categoryEndingBlock} />
       </>
     )}
   </div>

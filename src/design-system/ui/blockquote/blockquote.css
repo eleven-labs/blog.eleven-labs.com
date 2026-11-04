@@ -1,0 +1,17 @@
+/* Blockquote : citation avec grands guillemets ouvrant et fermant. */
+@layer components {
+  .blockquote {
+    @apply pl-6 font-serif body-m italic;
+  }
+  /* Les guillemets : le fermant est l'ouvrant retourné. */
+  .blockquote::before,
+  .blockquote::after {
+    @apply block h-20 font-medium text-brand;
+    /* 8 rem : taille décorative hors de l'échelle de texte. */
+    font-size: 8rem;
+    content: '“';
+  }
+  .blockquote::after {
+    transform: rotate(180deg);
+  }
+}

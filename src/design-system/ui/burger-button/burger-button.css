@@ -1,0 +1,11 @@
+/* BurgerButton : trois traits de 30 px. */
+@layer components {
+  .burger-button {
+    @apply flex flex-col gap-2 bg-transparent;
+  }
+  .burger-button-line {
+    @apply block h-0.5 bg-brand;
+    /* 30 px : hors de l'échelle des espacements, donc en CSS standard. */
+    width: 1.875rem;
+  }
+}

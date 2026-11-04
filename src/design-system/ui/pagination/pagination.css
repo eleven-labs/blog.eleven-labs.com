@@ -1,0 +1,30 @@
+/* Pagination : cases carrées bordées, page courante en primaire, case désactivée en gris. */
+@layer components {
+  .pagination {
+    @apply flex;
+  }
+  .pagination-content {
+    @apply flex list-none p-0;
+  }
+  .pagination-link,
+  .pagination-ellipsis {
+    @apply flex size-control items-center justify-center border-y border-r border-line text-footer;
+  }
+  /* La première case ferme la bordure à gauche */
+  .pagination-content > li:first-child > * {
+    @apply border-l;
+  }
+  .pagination-link[aria-current='page'] {
+    @apply text-primary;
+  }
+  .pagination-link[aria-disabled='true'] {
+    @apply text-muted;
+  }
+  /* La flèche du SVG pointe vers la droite : « précédent » la retourne */
+  .pagination-previous svg {
+    @apply rotate-180;
+  }
+  .pagination-ellipsis svg {
+    @apply size-4;
+  }
+}

@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { contact, socialNetworks, websiteUrl } from '@/config/website';
 import { LANGUAGES_AVAILABLE_WITH_DT } from '@/constants';
 import { TransWithHtml } from '@/containers/TransWithHtml';
-import { Text } from '@/design-system';
+import { Text } from '@/design-system/ui/text';
 import { getHomePath } from '@/helpers/routerHelper';
 
 export const useFooterContainer = (): LayoutTemplateProps['footer'] => {

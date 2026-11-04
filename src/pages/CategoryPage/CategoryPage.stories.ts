@@ -1,20 +1,21 @@
 import type { CategoryPageProps } from './CategoryPage';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import type { PostCardListProps } from '@/components';
+import type { PostCardListProps } from '@/components/post-card-list';
 
 import React from 'react';
 
-import { PostCardList } from '@/components';
-import CategoryEndingBlockStories from '@/components/Molecules/Blocks/CategoryEndingBlock/CategoryEndingBlock.stories';
-import CategoryIntroBlockStories from '@/components/Molecules/Blocks/CategoryIntroBlock/CategoryIntroBlock.stories';
-import NewsletterCardStories from '@/components/Molecules/Cards/NewsletterCard/NewsletterCard.stories';
-import * as PostCardListStories from '@/components/Organisms/PostCardList/PostCardList.stories';
+import CategoryEndingBlockStories from '@/components/category-ending-block/category-ending-block.stories';
+import CategoryIntroBlockStories from '@/components/category-intro-block/category-intro-block.stories';
+import NewsletterCardStories from '@/components/newsletter-card/newsletter-card.stories';
+import { PostCardList } from '@/components/post-card-list';
+import * as PostCardListStories from '@/components/post-card-list/post-card-list.stories';
 import { LayoutTemplateDecorator } from '@/storybook/decorators';
 
 import { CategoryPage } from './CategoryPage';
 
 const meta: Meta<typeof CategoryPage> = {
+  title: 'Pages/Category',
   component: CategoryPage,
   args: {
     categoryIntroBlock: CategoryIntroBlockStories.args as CategoryPageProps['categoryIntroBlock'],
@@ -26,11 +27,9 @@ const meta: Meta<typeof CategoryPage> = {
     categoryEndingBlock: CategoryEndingBlockStories.args as CategoryPageProps['categoryEndingBlock'],
     newsletterCard: NewsletterCardStories.args as CategoryPageProps['newsletterCard'],
   },
+  globals: { viewport: { value: 'mobile', isRotated: false } },
   parameters: {
-    layout: 'full',
-    viewport: {
-      defaultViewport: 'extraSmallScreen',
-    },
+    layout: 'fullscreen',
   },
   decorators: [LayoutTemplateDecorator],
 };

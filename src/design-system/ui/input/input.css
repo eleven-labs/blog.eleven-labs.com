@@ -1,0 +1,6 @@
+/* Input : champ de saisie sur une ligne. */
+@layer components {
+  .input {
+    @apply h-control w-full min-w-0 rounded-control border border-line-strong bg-surface px-3 py-1 text-base text-ink transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-ink placeholder:text-muted focus-visible:border-brand focus-visible:ring-3 focus-visible:ring-brand/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-danger aria-invalid:ring-3 aria-invalid:ring-danger/20;
+  }
+}

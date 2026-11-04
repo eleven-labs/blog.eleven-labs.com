@@ -1,4 +1,4 @@
-import type { Svgs } from '@/design-system/components/Atoms';
+import type * as Svgs from '@/design-system/ui/icon/svgs';
 
 /**
  * Convertit un nom de composant SVG généré par svgr (`AccessTime`) en nom d'icône (`access-time`).

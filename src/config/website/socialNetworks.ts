@@ -1,4 +1,4 @@
-import type { IconNameType } from '@/design-system';
+import type { IconNameType } from '@/design-system/types';
 
 import { generateUrl } from '@/helpers/assetHelper';
 

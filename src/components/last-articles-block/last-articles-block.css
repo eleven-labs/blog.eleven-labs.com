@@ -1,0 +1,25 @@
+/*
+ * LastArticlesBlock : grille des derniers articles. Deux colonnes sur un écran moyen, trois au-delà : la troisième
+ * carte n'apparaît qu'une fois qu'elle a la place de remplir sa propre colonne.
+ */
+@layer components {
+  .last-articles-grid {
+    @apply mt-8 grid gap-6;
+  }
+  @media (width >= theme(--breakpoint-md)) {
+    .last-articles-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .last-articles-grid > :last-child {
+      display: none;
+    }
+  }
+  @media (width >= theme(--breakpoint-lg)) {
+    .last-articles-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .last-articles-grid > :last-child {
+      display: flex;
+    }
+  }
+}

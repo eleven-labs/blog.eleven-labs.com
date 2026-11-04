@@ -1,4 +1,4 @@
-import type { PictureProps } from '@/design-system';
+import type { PictureProps } from '@/design-system/ui/picture';
 import type {
   DeviceType,
   ImageExtensionType,

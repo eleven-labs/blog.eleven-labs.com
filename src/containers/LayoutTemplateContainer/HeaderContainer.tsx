@@ -2,7 +2,7 @@ import type { LayoutTemplateData } from '@/types';
 
 import React from 'react';
 
-import { Header } from '@/components';
+import { Header } from '@/components/header';
 
 import { useHeaderContainer } from './useHeaderContainer';
 

@@ -1,4 +1,4 @@
-import type { PostCardListProps } from '@/components';
+import type { PostCardListProps } from '@/components/post-card-list';
 import type { ImageFormatType, TransformedPostDataWithTransformedAuthors } from '@/types';
 
 import { useTranslation } from 'react-i18next';

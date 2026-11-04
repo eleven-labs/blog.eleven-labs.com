@@ -24,8 +24,8 @@
   }
 
   body {
-    background-color: var(--color-secondary);
-    font-family: var(--font-base);
+    background-color: var(--color-canvas);
+    font-family: var(--font-sans);
   }
 
   ::before,
