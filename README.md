@@ -23,6 +23,7 @@ Setting up the blog
 - [For others](documentations/setup-for-others.md)
 - [Infrastructure and redirects](documentations/infra.md)
 - [Writing contents in MDX](documentations/mdx.md)
+- [Search engine](documentations/search.md)
 
 ----------
 

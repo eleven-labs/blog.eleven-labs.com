@@ -1,6 +1,6 @@
 import type { AutocompleteProps, HeaderProps } from '@/components';
 import type { HeaderContainerProps } from '@/containers/LayoutTemplateContainer/HeaderContainer';
-import type { AlgoliaPostData } from '@/types';
+import type { SearchPostData } from '@/types';
 
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -10,9 +10,9 @@ import { IS_SSR, NUMBER_OF_ITEMS_FOR_SEARCH, PATHS } from '@/constants';
 import { TransWithHtml } from '@/containers/TransWithHtml';
 import { trackContentSearchEvent } from '@/helpers/dataLayerHelper';
 import { generatePath, getHomePath } from '@/helpers/routerHelper';
-import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
 import { useDateToString } from '@/hooks/useDateToString';
 import { useDebounce } from '@/hooks/useDebounce';
+import { useSearchIndex } from '@/hooks/useSearchIndex';
 
 export const useHeaderContainer = ({ layoutTemplateData }: HeaderContainerProps): HeaderProps => {
   const { t, i18n } = useTranslation();
@@ -23,8 +23,8 @@ export const useHeaderContainer = ({ layoutTemplateData }: HeaderContainerProps)
   const [searchIsOpen, setSearchIsOpen] = useState<boolean>(false);
   const [search, setSearch] = React.useState<string>(searchParams.get('search') ?? '');
   const debouncedSearch = useDebounce<string>(search, 500);
-  const [searchHits, setSearchHits] = React.useState<AlgoliaPostData[]>([]);
-  const algoliaSearchIndex = useAlgoliaSearchIndex();
+  const [searchHits, setSearchHits] = React.useState<SearchPostData[]>([]);
+  const { searchIndex, loadSearchIndex } = useSearchIndex();
 
   const handleChange: AutocompleteProps['onInputValueChange'] = ({ inputValue }): void => {
     setSearch(inputValue || '');
@@ -37,21 +37,19 @@ export const useHeaderContainer = ({ layoutTemplateData }: HeaderContainerProps)
   React.useEffect(() => {
     if (debouncedSearch.length > 0) {
       trackContentSearchEvent(debouncedSearch);
-      void algoliaSearchIndex
-        .search<AlgoliaPostData>(debouncedSearch, {
-          hitsPerPage: NUMBER_OF_ITEMS_FOR_SEARCH,
-          facetFilters: [`lang:${i18n.language}`],
-        })
-        .then(({ hits }) => {
-          setSearchHits(hits);
-        });
     }
-  }, [i18n.language, debouncedSearch]);
+  }, [debouncedSearch]);
+
+  React.useEffect(() => {
+    if (searchIndex && debouncedSearch.length > 0) {
+      void searchIndex.search(debouncedSearch, { limit: NUMBER_OF_ITEMS_FOR_SEARCH }).then(setSearchHits);
+    }
+  }, [searchIndex, debouncedSearch]);
 
   const items = React.useMemo<AutocompleteProps['items']>(
     () =>
       searchHits.map<AutocompleteProps['items'][0]>((hit) => ({
-        id: hit.objectID,
+        id: hit.slug,
         slug: hit.slug,
         contentType: hit.contentType,
         title: hit.title,
@@ -115,6 +113,7 @@ export const useHeaderContainer = ({ layoutTemplateData }: HeaderContainerProps)
       defaultValue: search,
       onInputValueChange: handleChange,
       onEnter: handleEnter,
+      onFocus: loadSearchIndex,
       items,
       searchLink: {
         hrefLang: i18n.language,
