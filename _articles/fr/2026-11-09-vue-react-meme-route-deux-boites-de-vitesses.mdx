@@ -1,0 +1,204 @@
+---
+contentType: article
+lang: fr
+date: 2026-11-09
+slug: vue-react-meme-route-deux-boites-de-vitesses
+title: "Vue et React : même route, deux boîtes de vitesses"
+excerpt: "Vue, c'est l'automatique ; React, la manuelle. Un même composant écrit dans les deux, ce qui se passe sous le capot (réactivité, setup et hooks, écosystème), comment les deux se rapprochent par le compilateur, et les questions à poser avant de choisir."
+cover:
+  alt: "Un astronaute sur la Lune, la main au-dessus de deux leviers de vitesse lumineux, l'un vert, l'autre bleu, la Terre à l'horizon"
+  path: /imgs/articles/2026-11-09-vue-react-meme-route-deux-boites-de-vitesses/cover.jpg
+  position: center
+categories:
+  - javascript
+keywords:
+  - vue
+  - react
+  - réactivité
+  - hooks
+  - composition api
+  - react compiler
+  - vapor mode
+  - virtual dom
+  - frontend
+  - framework
+authors:
+  - gcunsolo
+seo:
+  title: "Vue ou React ? Même route, deux boîtes de vitesses"
+  description: "Vue et React sur un même composant : réactivité, setup et hooks, écosystème, React Compiler et Vapor Mode, et les questions à poser avant de choisir."
+---
+
+## « Alors, Vue ou React ? »
+
+On me la pose à chaque démarrage de mission, en général entre la machine à café et le premier ticket. Du Vue pendant des années, plusieurs projets React depuis, et aujourd'hui je passe de l'un à l'autre selon le client.
+
+Ma réponse honnête tient en une phrase : les deux t'amènent au même endroit, mais pas avec la même boîte de vitesses. Vue, c'est l'automatique. React, la manuelle.
+
+Et comme pour une voiture, la vraie question n'est pas laquelle roule le mieux. C'est qui conduit, et sur quelle route.
+
+Dans les dix prochaines minutes, on prend un petit composant, on l'écrit dans les deux, et on regarde ce qui se passe sous le capot. Pas de benchmark, pas de guerre de religion, promis. Enfin... presque pas :-)
+
+## Un compteur, deux philosophies
+
+Le cobaye du jour : un bouton qui compte les clics, affiche le double, et se plaint si on clique trop.
+
+En Vue :
+
+```vue
+<script setup>
+import { ref, computed } from "vue";
+
+const count = ref(0);
+const double = computed(() => count.value * 2);
+</script>
+
+<template>
+  <button @click="count++">{{ count }} × 2 = {{ double }}</button>
+  <p v-if="count > 10">Doucement sur la souris</p>
+</template>
+```
+
+En React :
+
+```jsx
+import { useState } from "react";
+
+export function Counter() {
+  const [count, setCount] = useState(0);
+  const double = count * 2;
+
+  return (
+    <>
+      <button onClick={() => setCount(count + 1)}>
+        {count} × 2 = {double}
+      </button>
+      {count > 10 && <p>Doucement sur la souris</p>}
+    </>
+  );
+}
+```
+
+Première différence, celle qui saute aux yeux : Vue sépare le script et un template qui ressemble à du HTML, avec quelques attributs en plus (`v-if`, `v-for`, `@click`). React, lui, met tout dans du JavaScript : le HTML est du JSX, une condition est un `&&` ou un ternaire, une boucle est un `.map()`.
+
+Aucun des deux n'est « plus propre ». Le template de Vue se lit tout seul, même pour un intégrateur qui n'a jamais ouvert la doc. Le JSX donne toute la puissance du langage... y compris celle d'écrire un ternaire dans un ternaire dans un `.map()`, si personne dans l'équipe ne fixe de règles.
+
+Deuxième différence, plus discrète, et c'est elle qui compte vraiment : en Vue on fait `count++`. En React, on ne touche jamais `count`, on demande à `setCount` de le remplacer. Tout le reste de l'article découle de ce détail.
+
+## La réactivité : qui surveille qui ?
+
+Vue, c'est Sherlock (celui de la BBC, j'adooore Benedict Cumberbatch). Il observe tout et retient qui dépend de quoi. Quand le template lit `count`, Vue retient « ce bout d'affichage dépend de `count` ». Le jour où `count` change, il repère ce seul détail et va droit à ce qui en dépend, sans fouiller le reste. Le `computed` ne se recalcule que si `count` a bougé.
+
+React, c'est plutôt _Scotland Yard_. À chaque `setCount`, l'équipe boucle la scène et refait tout le relevé : la fonction `Counter` est réexécutée, `double` est recalculé, le JSX est regénéré. Puis on compare avec les photos d'hier pour savoir quoi toucher dans le DOM. Et par défaut, on refouille aussi les pièces d'à côté : les composants enfants.
+
+Sur notre compteur, on s'en fiche. Sur un écran avec une liste de 500 lignes et un champ de recherche, beaucoup moins.
+
+C'est aussi pour ça que React tient à l'immutabilité. Pour savoir si quelque chose a changé, il compare des références, pas des contenus :
+
+```js
+// Vue : on modifie, le proxy voit passer la modification
+todos.value.push(newTodo);
+
+// React : on crée un nouveau tableau, sinon React ne voit rien
+setTodos([...todos, newTodo]);
+```
+
+Le `push` en React est un grand classique de la première semaine : le tableau change, l'écran non. Et on finit par mettre un `console.log` dans le render pour comprendre... qui s'affiche deux fois, en mode strict. Bienvenue :-)
+
+Pendant des années, le travail du dev React a donc inclus de dire à React quoi _ne pas_ refaire : `useMemo` pour un calcul, `useCallback` pour une fonction, `React.memo` pour un composant. Avec une difficulté : en mettre là où ça sert, et pas partout par réflexe, parce qu'une mémoïsation a aussi un coût.
+
+Depuis octobre 2025, le React Compiler est en version stable, et il fait ce travail tout seul au moment du build. On y revient plus bas, parce que c'est là que l'histoire devient intéressante.
+
+## Le setup tourne une fois, les hooks tournent tout le temps
+
+Cette différence de modèle se retrouve dans la façon d'organiser la logique.
+
+En Vue, le `<script setup>` s'exécute **une seule fois**, à la création du composant. Les composables (`useMouse()`, `useFetch()`...) sont de simples fonctions : on peut les appeler où on veut dans le setup, même dans un `if`.
+
+En React, les hooks sont rejoués **à chaque rendu**. React les reconnaît à leur ordre d'appel, d'où les fameuses règles : jamais dans un `if`, jamais dans une boucle, toujours dans le même ordre. Rien de sorcier, mais c'est une autre façon de penser.
+
+Le piège le plus connu, c'est la closure périmée. Un compteur qui s'incrémente tout seul chaque seconde :
+
+```jsx
+useEffect(() => {
+  const id = setInterval(() => setCount(count + 1), 1000);
+  return () => clearInterval(id);
+}, []); // count vaut 0 pour toujours dans cette closure
+```
+
+Résultat : le compteur passe à 1... et y reste. L'effet n'a vu que le premier rendu, où `count` valait 0. La correction : passer une fonction plutôt qu'une valeur.
+
+```jsx
+setInterval(() => setCount((c) => c + 1), 1000);
+```
+
+Le même compteur en Vue :
+
+```js
+let id;
+onMounted(() => {
+  id = setInterval(() => count.value++, 1000);
+});
+onUnmounted(() => clearInterval(id));
+```
+
+Pas de tableau de dépendances, pas de closure à surveiller : `count` est toujours le même objet réactif, on lit sa valeur du moment.
+
+En contrepartie, Vue a ses propres pièges, et ils sont plus sournois parce qu'ils ne font pas de bruit. Déstructurer un objet réactif, et la réactivité s'en va sans prévenir. Oublier le `.value` dans le script (et pas dans le template, sinon ce serait trop simple). L'automatique cale moins souvent, mais quand ça arrive, il faut savoir où regarder.
+
+## La maison meublée et le terrain à bâtir
+
+Vue se présente comme un framework, React comme une bibliothèque. Ça a l'air d'une nuance de vocabulaire, c'est une différence de quotidien.
+
+Vue te livre la maison meublée. Le routeur (Vue Router), le store (Pinia), les devtools : tout est officiel, maintenu ensemble, documenté au même endroit. Et pour le méta-framework, Nuxt est la recommandation officielle. Le style aussi est prévu, avec `<style scoped>` directement dans le composant.
+
+React te donne un excellent terrain, et tu choisis le reste. Le framework : Next.js, React Router, autre chose. L'état global : Zustand, Redux Toolkit, Jotai, ou juste le contexte. Les données serveur : TanStack Query, SWR. Le style : CSS Modules, Tailwind, du CSS-in-JS. Chaque brique est très bonne, mais c'est à toi de les assembler.
+
+En mission, ça change la première semaine. Sur un projet Vue, je reconnais la structure en ouvrant le dossier. Sur un projet React, je commence par lire le `package.json` pour savoir dans quelle maison je suis tombé.
+
+Génial si tu aimes choisir. Épuisant si tu veux juste livrer. Et dans les deux cas, un conseil : écris tes choix quelque part (un ADR, un README, peu importe), parce que la personne qui arrive dans six mois n'aura pas assisté au débat.
+
+## Et pendant ce temps, les deux se rapprochent
+
+Le plus drôle dans l'histoire, c'est que chacun est en train d'emprunter le chemin de l'autre. Et les deux passent par le même outil : le compilateur.
+
+**React apprend à savoir quoi ne pas refaire.** Le React Compiler, stable depuis sa version 1.0 en octobre 2025, analyse les composants au build et ajoute lui-même la mémoïsation, plus finement qu'un `useMemo` écrit à la main. Autrement dit, React obtient automatiquement une partie de ce que la réactivité de Vue donnait déjà gratuitement. Petite réserve d'expert : le compilateur saute les composants qui ne respectent pas les règles de React, et la doc conseille de ne pas arracher les mémoïsations existantes sans tester. Comprendre quand un composant re-render reste donc utile.
+
+**Vue apprend à se passer du DOM virtuel.** Le Vapor Mode compile un composant en opérations directes sur le DOM, sans virtual DOM à créer ni à comparer. Il s'active composant par composant avec `<script setup vapor>`. Il est complet fonctionnellement dans Vue 3.6, mais début octobre 2026 cette version était encore en _release candidate_ : à tester, pas encore à mettre en prod.
+
+Résumons : React, qui a popularisé le virtual DOM, ajoute un compilateur pour en faire moins. Vue, connu pour sa réactivité fine, ajoute un compilateur pour se passer du virtual DOM. Les deux boîtes de vitesses ont de plus en plus d'électronique dedans, et de moins en moins de différences au volant.
+
+## Alors, lequel pour ton projet ?
+
+La réponse que je donne en mission commence rarement par la technique. Dans l'ordre où je pose les questions :
+
+1. **Qu'est-ce que l'équipe sait déjà faire ?** Le meilleur framework est celui que les gens qui vont le maintenir maîtrisent. Une équipe Vue solide livrera mieux en Vue qu'en React, et inversement.
+2. **Qui va-t-on recruter ?** React a un vivier de profils plus large. Si le projet doit grossir vite, ça pèse.
+3. **Combien de cadre faut-il ?** Une équipe avec des juniors, ou qui tourne beaucoup, profite des conventions de Vue. Une équipe expérimentée qui veut choisir chaque brique sera à l'aise avec React.
+4. **Y a-t-il du mobile natif au programme ?** Si oui, React Native fait pencher la balance.
+5. **Y a-t-il déjà un existant ?** Migrer une application qui marche juste pour changer de framework se justifie rarement. Il faut une vraie raison métier, pas une envie.
+
+Pour le SEO et le rendu serveur, pas de jaloux : Nuxt et Next.js font très bien le travail. Pour les performances, sur une application de gestion classique, ce n'est presque jamais le framework qui ralentit, c'est ce qu'on met dedans.
+
+## Conclusion
+
+Vue et React résolvent le même problème avec deux modèles mentaux :
+
+- **Vue suit les dépendances** : on modifie une valeur, il met à jour ce qui en dépend, et le setup ne tourne qu'une fois.
+- **React relance le composant** : on remplace une valeur, il réexécute la fonction, et les hooks suivent leurs règles d'ordre.
+- **Vue fournit la maison, React le terrain** : conventions officielles d'un côté, liberté de choix de l'autre.
+- **Les deux convergent vers le compilateur**, et l'écart se réduit d'année en année.
+
+Passer de l'un à l'autre, ce n'est pas réapprendre à conduire. C'est juste se souvenir de quel côté est le levier.
+
+La prochaine fois qu'on me pose la question à la machine à café, j'aurai ma réponse : ça dépend de qui conduit.
+
+Et si quelqu'un enchaîne sur Angular, là on ne parle plus de boîte de vitesses, mais de changer de véhicule. Ce sera pour un autre article. Et une cafetière entière.
+
+## Ressources
+
+- [Vue : la réactivité en profondeur](https://vuejs.org/guide/extras/reactivity-in-depth.html)
+- [React : les règles des hooks](https://react.dev/reference/rules/rules-of-hooks)
+- [React Compiler v1.0](https://react.dev/blog/2025/10/07/react-compiler-1)
+- [Vue core : les releases (statut de Vue 3.6 et du Vapor Mode)](https://github.com/vuejs/core/releases)
+- [What Is Vue Vapor Mode?](https://blog.openreplay.com/vue-vapor-mode/)
