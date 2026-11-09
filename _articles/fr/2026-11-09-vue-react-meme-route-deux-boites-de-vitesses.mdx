@@ -87,7 +87,7 @@ Deuxième différence, plus discrète, et c'est elle qui compte vraiment : en Vu
 
 ## La réactivité : qui surveille qui ?
 
-Vue, c'est Sherlock (celui de la BBC, j'adooore Benedict Cumberbatch). Il observe tout et retient qui dépend de quoi. Quand le template lit `count`, Vue retient « ce bout d'affichage dépend de `count` ». Le jour où `count` change, il repère ce seul détail et va droit à ce qui en dépend, sans fouiller le reste. Le `computed` ne se recalcule que si `count` a bougé.
+Vue, c'est Sherlock (celui de la BBC, j'adooore Benedict Cumberbatch). Il observe tout et retient qui dépend de quoi. Quand le template lit `count`, Vue retient « ce bout d'affichage dépend de `count` ». Le jour où `count` change, il sait exactement quels composants en dépendent et ne relance qu'eux. Les autres, les enfants compris, ne bougent pas. Et grâce au compilateur du template, même la comparaison de ce composant ne regarde que les parties dynamiques. Le `computed` ne se recalcule que si `count` a bougé.
 
 React, c'est plutôt _Scotland Yard_. À chaque `setCount`, l'équipe boucle la scène et refait tout le relevé : la fonction `Counter` est réexécutée, `double` est recalculé, le JSX est regénéré. Puis on compare avec les photos d'hier pour savoir quoi toucher dans le DOM. Et par défaut, on refouille aussi les pièces d'à côté : les composants enfants.
 
@@ -103,7 +103,7 @@ todos.value.push(newTodo);
 setTodos([...todos, newTodo]);
 ```
 
-Le `push` en React est un grand classique de la première semaine : le tableau change, l'écran non. Et on finit par mettre un `console.log` dans le render pour comprendre... qui s'affiche deux fois, en mode strict. Bienvenue :-)
+Le `push` en React est un grand classique de la première semaine : le tableau change, l'écran non. Et on finit par mettre un `console.log` dans le render pour comprendre... qui s'affiche deux fois, en mode strict, en développement. Bienvenue :-)
 
 Pendant des années, le travail du dev React a donc inclus de dire à React quoi _ne pas_ refaire : `useMemo` pour un calcul, `useCallback` pour une fonction, `React.memo` pour un composant. Avec une difficulté : en mettre là où ça sert, et pas partout par réflexe, parce qu'une mémoïsation a aussi un coût.
 
@@ -150,7 +150,7 @@ En contrepartie, Vue a ses propres pièges, et ils sont plus sournois parce qu'i
 
 Vue se présente comme un framework, React comme une bibliothèque. Ça a l'air d'une nuance de vocabulaire, c'est une différence de quotidien.
 
-Vue te livre la maison meublée. Le routeur (Vue Router), le store (Pinia), les devtools : tout est officiel, maintenu ensemble, documenté au même endroit. Et pour le méta-framework, Nuxt est la recommandation officielle. Le style aussi est prévu, avec `<style scoped>` directement dans le composant.
+Vue te livre la maison meublée. Le routeur (Vue Router), le store (Pinia), les devtools : tout est officiel, maintenu ensemble, documenté au même endroit. Et pour le méta-framework, Nuxt est le choix naturel : c'est le premier que cite la doc de Vue, même s'il n'est pas maintenu par l'équipe core. Le style aussi est prévu, avec `<style scoped>` directement dans le composant.
 
 React te donne un excellent terrain, et tu choisis le reste. Le framework : Next.js, React Router, autre chose. L'état global : Zustand, Redux Toolkit, Jotai, ou juste le contexte. Les données serveur : TanStack Query, SWR. Le style : CSS Modules, Tailwind, du CSS-in-JS. Chaque brique est très bonne, mais c'est à toi de les assembler.
 
@@ -162,9 +162,9 @@ Génial si tu aimes choisir. Épuisant si tu veux juste livrer. Et dans les deux
 
 Le plus drôle dans l'histoire, c'est que chacun est en train d'emprunter le chemin de l'autre. Et les deux passent par le même outil : le compilateur.
 
-**React apprend à savoir quoi ne pas refaire.** Le React Compiler, stable depuis sa version 1.0 en octobre 2025, analyse les composants au build et ajoute lui-même la mémoïsation, plus finement qu'un `useMemo` écrit à la main. Autrement dit, React obtient automatiquement une partie de ce que la réactivité de Vue donnait déjà gratuitement. Petite réserve d'expert : le compilateur saute les composants qui ne respectent pas les règles de React, et la doc conseille de ne pas arracher les mémoïsations existantes sans tester. Comprendre quand un composant re-render reste donc utile.
+**React apprend à savoir quoi ne pas refaire.** Le React Compiler, stable depuis sa version 1.0 en octobre 2025, analyse les composants au build et ajoute lui-même la mémoïsation, plus finement qu'un `useMemo` écrit à la main. Autrement dit, React obtient automatiquement une partie de ce que la réactivité de Vue donnait déjà gratuitement. Petite réserve d'expert : le compilateur saute les composants où il repère une entorse aux règles de React (et ne repère pas toutes les entorses), et la doc conseille de ne pas arracher les mémoïsations existantes sans tester. Comprendre quand un composant re-render reste donc utile.
 
-**Vue apprend à se passer du DOM virtuel.** Le Vapor Mode compile un composant en opérations directes sur le DOM, sans virtual DOM à créer ni à comparer. Il s'active composant par composant avec `<script setup vapor>`. Il est complet fonctionnellement dans Vue 3.6, mais début octobre 2026 cette version était encore en _release candidate_ : à tester, pas encore à mettre en prod.
+**Vue apprend à se passer du DOM virtuel.** Le Vapor Mode compile un composant en opérations directes sur le DOM, sans virtual DOM à créer ni à comparer. Il s'active composant par composant, avec `<script setup vapor>`, et seulement avec `<script setup>` : pas d'Options API. Il est complet fonctionnellement dans Vue 3.6, mais début novembre 2026 cette version était encore en _release candidate_ (3.6.0-rc.14, du 30 octobre). L'équipe Vue conseille pour l'instant de l'essayer sur une page sensible aux performances ou sur une petite application neuve, pas de migrer toute une application.
 
 Résumons : React, qui a popularisé le virtual DOM, ajoute un compilateur pour en faire moins. Vue, connu pour sa réactivité fine, ajoute un compilateur pour se passer du virtual DOM. Les deux boîtes de vitesses ont de plus en plus d'électronique dedans, et de moins en moins de différences au volant.
 

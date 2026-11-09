@@ -6,7 +6,7 @@ slug: vue-react-same-road-two-gearboxes
 title: "Vue and React: same road, two gearboxes"
 excerpt: "Vue is the automatic; React, the stick shift. The same component written in both, what happens under the hood (reactivity, setup and hooks, ecosystem), how the two are converging through the compiler, and the questions to ask before choosing."
 cover:
-  alt: "An astronaut on the Moon, a hand above two glowing gear levers, one green, one blue, the Earth on the horizon"
+  alt: "An astronaut on the Moon, one hand above two glowing gearshifts, one green, one blue, the Earth on the horizon"
   path: /imgs/articles/2026-11-09-vue-react-meme-route-deux-boites-de-vitesses/cover.jpg
   position: center
 categories:
@@ -31,17 +31,17 @@ seo:
 
 ## "So, Vue or React?"
 
-I get asked at the start of every assignment, usually somewhere between the coffee machine and the first ticket. Years of Vue, several React projects since, and today I switch from one to the other depending on the client.
+I get asked this at the start of every assignment, usually somewhere between the coffee machine and the first ticket. Years of Vue, several React projects since, and today I switch from one to the other depending on the client.
 
 My honest answer fits in one sentence: both get you to the same place, just not with the same gearbox. Vue is the automatic. React, the stick shift.
 
-And as with a car, the real question isn't which one drives best. It's who's driving, and on which road.
+And as with a car, the real question isn't which one drives better. It's who's driving, and on which road.
 
 Over the next ten minutes, we'll take a small component, write it in both, and look at what happens under the hood. No benchmark, no holy war, promise. Well... almost none :-)
 
 ## One counter, two philosophies
 
-Today's guinea pig: a button that counts clicks, shows the double, and complains if you click too much.
+Today's guinea pig: a button that counts clicks, shows it doubled, and complains if you click too much.
 
 In Vue:
 
@@ -79,33 +79,33 @@ export function Counter() {
 }
 ```
 
-First difference, the one that jumps out: Vue splits the script from a template that looks like HTML, with a few extra attributes (`v-if`, `v-for`, `@click`). React puts everything in JavaScript: the HTML is JSX, a condition is a `&&` or a ternary, a loop is a `.map()`.
+The first difference, the one that jumps out at you: Vue splits the script from a template that looks like HTML, with a few extra attributes (`v-if`, `v-for`, `@click`). React puts everything in JavaScript: the HTML is JSX, a condition is a `&&` or a ternary, a loop is a `.map()`.
 
-Neither is "cleaner". Vue's template reads by itself, even for a front-end integrator who has never opened the docs. JSX gives you the full power of the language... including the power to write a ternary inside a ternary inside a `.map()`, if nobody on the team sets rules.
+Neither is "cleaner". Vue's template reads by itself, even for an HTML/CSS developer who's never opened the docs. JSX gives you the full power of the language... including the power to write a ternary inside a ternary inside a `.map()`, if nobody on the team sets rules.
 
-Second difference, quieter, and it's the one that really matters: in Vue you write `count++`. In React, you never touch `count`, you ask `setCount` to replace it. The rest of this article follows from that detail.
+The second difference is quieter, and it's the one that really matters: in Vue you write `count++`. In React, you never touch `count`, you ask `setCount` to replace it. The rest of this article follows from that detail.
 
 ## Reactivity: who's watching whom?
 
-Vue is Sherlock (the BBC one, I loooove Benedict Cumberbatch). He watches everything and remembers what depends on what. When the template reads `count`, Vue notes "this piece of display depends on `count`". The day `count` changes, he spots that single detail and goes straight to whatever depends on it, without searching the rest. The `computed` is only recalculated if `count` has moved.
+Vue is Sherlock (the BBC one, I loooove Benedict Cumberbatch). He watches everything and remembers what depends on what. When the template reads `count`, Vue notes "this piece of display depends on `count`". The day `count` changes, he knows exactly which components depend on it and reruns only those. The others, children included, don't move. And thanks to the template compiler, even that component's comparison only looks at its dynamic parts. The `computed` is only recalculated if `count` has changed.
 
-React is more like _Scotland Yard_. On every `setCount`, the team seals off the scene and redoes the whole survey: the `Counter` function runs again, `double` is recalculated, the JSX is regenerated. Then they compare with yesterday's photos to know what to touch in the DOM. And by default, they search the rooms next door too: the child components.
+React is more like _Scotland Yard_. On every `setCount`, the team seals off the scene and goes over the whole scene again: the `Counter` function runs again, `double` is recalculated, the JSX is regenerated. Then they compare it with yesterday's photos to work out what to change in the DOM. And by default, they search the rooms next door too: the child components.
 
-On our counter, who cares. On a screen with a 500-row list and a search field, a lot more.
+On our counter, who cares? On a screen with a 500-row list and a search field, it matters a lot more.
 
 That's also why React is so attached to immutability. To know whether something changed, it compares references, not contents:
 
 ```js
-// Vue: you mutate, the proxy sees the change go by
+// Vue: you mutate, the proxy catches the change
 todos.value.push(newTodo);
 
 // React: you create a new array, otherwise React sees nothing
 setTodos([...todos, newTodo]);
 ```
 
-The `push` in React is a first-week classic: the array changes, the screen doesn't. And you end up putting a `console.log` in the render to understand... which prints twice, in strict mode. Welcome :-)
+The `push` in React is a first-week classic: the array changes, the screen doesn't. And you end up putting a `console.log` in the render to figure out what's going on... which prints twice in Strict Mode, in development. Welcome :-)
 
-So for years, a React dev's job included telling React what _not_ to redo: `useMemo` for a computation, `useCallback` for a function, `React.memo` for a component. With one difficulty: putting them where they help, not everywhere out of habit, because memoization has a cost too.
+So for years, a React dev's job included telling React what _not_ to redo: `useMemo` for a computation, `useCallback` for a function, `React.memo` for a component. The hard part: putting them where they help, not everywhere out of habit, because memoization has a cost too.
 
 Since October 2025, the React Compiler has been stable, and it does that work by itself at build time. We'll come back to it below, because that's where the story gets interesting.
 
@@ -115,9 +115,9 @@ That difference in model shows up in how you organize logic.
 
 In Vue, `<script setup>` runs **only once**, when the component is created. Composables (`useMouse()`, `useFetch()`...) are plain functions: you can call them anywhere in setup, even inside an `if`.
 
-In React, hooks are replayed **on every render**. React recognizes them by their call order, hence the famous rules: never in an `if`, never in a loop, always in the same order. Nothing magic, but it's another way of thinking.
+In React, hooks run again **on every render**. React recognizes them by their call order, hence the famous rules: never in an `if`, never in a loop, always in the same order. Nothing magical about it, but it's another way of thinking.
 
-The best-known trap is the stale closure. A counter that increments itself every second:
+The best-known trap is the stale closure. A counter that increments every second:
 
 ```jsx
 useEffect(() => {
@@ -142,43 +142,43 @@ onMounted(() => {
 onUnmounted(() => clearInterval(id));
 ```
 
-No dependency array, no closure to watch: `count` is always the same reactive object, you read its current value.
+No dependency array, no stale closure to watch out for: `count` is always the same reactive object, you read its current value.
 
-In return, Vue has its own traps, and they're sneakier because they make no noise. Destructure a reactive object, and reactivity leaves without warning. Forget the `.value` in the script (but not in the template, that would be too easy). The automatic stalls less often, but when it does, you need to know where to look.
+On the flip side, Vue has its own traps, and they're sneakier because they make no noise. Destructure a reactive object, and reactivity leaves without warning. Forget the `.value` in the script (you need it there, but not in the template, otherwise it would be too easy). The automatic stalls less often, but when it does, you need to know where to look.
 
 ## The furnished house and the building plot
 
-Vue presents itself as a framework, React as a library. It sounds like a nuance of vocabulary; it's a day-to-day difference.
+Vue presents itself as a framework, React as a library. It sounds like a matter of wording, but it makes a real day-to-day difference.
 
-Vue hands you the furnished house. The router (Vue Router), the store (Pinia), the devtools: everything is official, maintained together, documented in the same place. And for the meta-framework, Nuxt is the official recommendation. Styling is covered too, with `<style scoped>` right in the component.
+Vue hands you the furnished house. The router (Vue Router), the store (Pinia), the devtools: everything is official, maintained together, documented in the same place. And for the meta-framework, Nuxt is the natural choice: it's the first one Vue's docs mention, even though the core team doesn't maintain it. Styling is covered too, with `<style scoped>` right in the component.
 
-React gives you an excellent plot, and you choose the rest. The framework: Next.js, React Router, something else. Global state: Zustand, Redux Toolkit, Jotai, or just context. Server data: TanStack Query, SWR. Styling: CSS Modules, Tailwind, CSS-in-JS. Every brick is very good, but assembling them is up to you.
+React gives you an excellent plot, and you choose the rest. The framework: Next.js, React Router, something else. Global state: Zustand, Redux Toolkit, Jotai, or just context. Server data: TanStack Query, SWR. Styling: CSS Modules, Tailwind, CSS-in-JS. Every piece is very good, but assembling them is up to you.
 
-On an assignment, it changes the first week. On a Vue project, I recognize the structure by opening the folder. On a React project, I start by reading the `package.json` to find out which house I've landed in.
+On an assignment, it changes what your first week looks like. On a Vue project, I recognize the structure as soon as I open the folder. On a React project, I start by reading the `package.json` to find out which house I've landed in.
 
 Great if you like choosing. Exhausting if you just want to ship. And either way, one piece of advice: write your choices down somewhere (an ADR, a README, whatever), because whoever joins in six months won't have been there for the debate.
 
 ## Meanwhile, the two are getting closer
 
-The funny part of the story is that each one is taking the other's road. And both go through the same tool: the compiler.
+The funny part of the story is that each one is taking the other's road. And both rely on the same tool: the compiler.
 
-**React is learning what not to redo.** The React Compiler, stable since its 1.0 in October 2025, analyzes components at build time and adds memoization by itself, more finely than a hand-written `useMemo`. In other words, React automatically gets part of what Vue's reactivity was already giving for free. A small expert caveat: the compiler skips components that break the rules of React, and the docs advise against ripping out existing memoization without testing. Understanding when a component re-renders is still useful.
+**React is learning what not to redo.** The React Compiler, stable since its 1.0 in October 2025, analyzes components at build time and adds memoization by itself, more finely than a hand-written `useMemo`. In other words, React automatically gets part of what Vue's reactivity already gave you for free. One caveat for the experts: the compiler skips components where it spots a break of the Rules of React (and it doesn't spot them all), and the docs advise against ripping out existing memoization without testing. Understanding when a component re-renders is still useful.
 
-**Vue is learning to do without the virtual DOM.** Vapor Mode compiles a component into direct DOM operations, with no virtual DOM to create or compare. It's enabled component by component with `<script setup vapor>`. It's feature-complete in Vue 3.6, but in early October 2026 that version was still a _release candidate_: to try, not yet for production.
+**Vue is learning to do without the virtual DOM.** Vapor Mode compiles a component into direct DOM operations, with no virtual DOM to create or compare. It's enabled component by component, with `<script setup vapor>`, and only with `<script setup>`: no Options API. It's feature-complete in Vue 3.6, but in early November 2026 that version was still a _release candidate_ (3.6.0-rc.14, from October 30). For now, the Vue team advises trying it on a performance-sensitive page or a small new app, not migrating a whole application.
 
-To sum up: React, which popularized the virtual DOM, adds a compiler to do less of it. Vue, known for its fine-grained reactivity, adds a compiler to do without the virtual DOM. Both gearboxes have more and more electronics inside, and fewer and fewer differences at the wheel.
+To sum up: React, which popularized the virtual DOM, adds a compiler to redo less work. Vue, known for its fine-grained reactivity, adds a compiler to do without the virtual DOM. Both gearboxes have more and more electronics inside, and fewer and fewer differences at the wheel.
 
 ## So, which one for your project?
 
-The answer I give on assignments rarely starts with the tech. In the order I ask the questions:
+The answer I give on assignments rarely starts with the tech. Here are the questions, in the order I ask them:
 
 1. **What does the team already know how to do?** The best framework is the one the people who'll maintain it have mastered. A strong Vue team will ship better in Vue than in React, and vice versa.
-2. **Who are we going to hire?** React has a larger pool of profiles. If the project has to grow fast, that counts.
-3. **How much structure is needed?** A team with juniors, or with high turnover, benefits from Vue's conventions. An experienced team that wants to pick every brick will be at home with React.
+2. **Who are we going to hire?** React has a larger talent pool. If the project has to grow fast, that counts.
+3. **How much structure is needed?** A team with juniors, or with high turnover, benefits from Vue's conventions. An experienced team that wants to pick every piece will be at home with React.
 4. **Is native mobile on the roadmap?** If so, React Native tips the scales.
-5. **Is there an existing codebase?** Migrating an application that works just to change frameworks is rarely justified. You need a real business reason, not a craving.
+5. **Is there an existing codebase?** Migrating an application that works just to change frameworks is rarely justified. You need a real business reason, not a whim.
 
-For SEO and server rendering, no favourites: Nuxt and Next.js both do the job very well. For performance, on a typical business application, it's almost never the framework that slows things down, it's what you put in it.
+For SEO and server-side rendering, no favorites: Nuxt and Next.js both do the job very well. For performance, on a typical business application, it's almost never the framework that slows things down, it's what you put in it.
 
 ## Conclusion
 
@@ -189,11 +189,11 @@ Vue and React solve the same problem with two mental models:
 - **Vue provides the house, React the plot**: official conventions on one side, freedom of choice on the other.
 - **Both are converging on the compiler**, and the gap narrows year after year.
 
-Switching from one to the other isn't learning to drive again. It's just remembering which side the lever is on.
+Switching from one to the other isn't like learning to drive all over again. It's just remembering which side the lever is on.
 
 Next time I get the question at the coffee machine, I'll have my answer: it depends on who's driving.
 
-And if someone follows up with Angular, then we're no longer talking gearboxes, but changing vehicles. That'll be for another article. And a whole pot of coffee.
+And if someone follows up with Angular, then we're not talking gearboxes anymore, we're talking about switching cars. That'll be for another article. And a whole pot of coffee.
 
 ## Resources
 
