@@ -33,9 +33,9 @@ seo:
 
 On me la pose à chaque démarrage de mission, en général entre la machine à café et le premier ticket. Du Vue pendant des années, plusieurs projets React depuis, et aujourd'hui je passe de l'un à l'autre selon le client.
 
-Ma réponse honnête tient en une phrase : les deux t'amènent au même endroit, mais pas avec la même boîte de vitesses. Vue, c'est l'automatique. React, la manuelle.
+Ma réponse honnête tient en une phrase : les deux t'amènent au même endroit, mais pas avec la même boîte de vitesses. **Vue, c'est l'automatique. React, la manuelle.**
 
-Et comme pour une voiture, la vraie question n'est pas laquelle roule le mieux. C'est qui conduit, et sur quelle route.
+Et comme pour une voiture, la vraie question n'est pas laquelle roule le mieux. **C'est qui conduit, et sur quelle route.**
 
 Dans les dix prochaines minutes, on prend un petit composant, on l'écrit dans les deux, et on regarde ce qui se passe sous le capot. Pas de benchmark, pas de guerre de religion, promis. Enfin... presque pas :-)
 
@@ -81,19 +81,19 @@ export function Counter() {
 
 Première différence, celle qui saute aux yeux : Vue sépare le script et un template qui ressemble à du HTML, avec quelques attributs en plus (`v-if`, `v-for`, `@click`). React, lui, met tout dans du JavaScript : le HTML est du JSX, une condition est un `&&` ou un ternaire, une boucle est un `.map()`.
 
-Aucun des deux n'est « plus propre ». Le template de Vue se lit tout seul, même pour un intégrateur qui n'a jamais ouvert la doc. Le JSX donne toute la puissance du langage... y compris celle d'écrire un ternaire dans un ternaire dans un `.map()`, si personne dans l'équipe ne fixe de règles.
+**Aucun des deux n'est « plus propre ».** Le template de Vue se lit tout seul, même pour un intégrateur qui n'a jamais ouvert la doc. Le JSX donne toute la puissance du langage... y compris celle d'écrire un ternaire dans un ternaire dans un `.map()`, si personne dans l'équipe ne fixe de règles.
 
-Deuxième différence, plus discrète, et c'est elle qui compte vraiment : en Vue on fait `count++`. En React, on ne touche jamais `count`, on demande à `setCount` de le remplacer. Tout le reste de l'article découle de ce détail.
+Deuxième différence, plus discrète, et c'est elle qui compte vraiment : en Vue **on fait `count++`**. En React, **on ne touche jamais `count`**, on demande à `setCount` de le remplacer. Tout le reste de l'article découle de ce détail.
 
 ## La réactivité : qui surveille qui ?
 
-Vue, c'est Sherlock (celui de la BBC, j'adooore Benedict Cumberbatch). Il observe tout et retient qui dépend de quoi. Quand le template lit `count`, Vue retient « ce bout d'affichage dépend de `count` ». Le jour où `count` change, il sait exactement quels composants en dépendent et ne relance qu'eux. Les autres, les enfants compris, ne bougent pas. Et grâce au compilateur du template, même la comparaison de ce composant ne regarde que les parties dynamiques. Le `computed` ne se recalcule que si `count` a bougé.
+Vue, c'est Sherlock (celui de la BBC, j'adooore Benedict Cumberbatch). Il observe tout et **retient qui dépend de quoi**. Quand le template lit `count`, Vue retient « ce bout d'affichage dépend de `count` ». Le jour où `count` change, il sait exactement quels composants en dépendent et ne relance qu'eux. Les autres, les enfants compris, ne bougent pas. Et grâce au compilateur du template, même la comparaison de ce composant ne regarde que les parties dynamiques. Le `computed` ne se recalcule que si `count` a bougé.
 
-React, c'est plutôt _Scotland Yard_. À chaque `setCount`, l'équipe boucle la scène et refait tout le relevé : la fonction `Counter` est réexécutée, `double` est recalculé, le JSX est regénéré. Puis on compare avec les photos d'hier pour savoir quoi toucher dans le DOM. Et par défaut, on refouille aussi les pièces d'à côté : les composants enfants.
+React, c'est plutôt _Scotland Yard_. À chaque `setCount`, l'équipe boucle la scène et **refait tout le relevé** : la fonction `Counter` est réexécutée, `double` est recalculé, le JSX est regénéré. Puis on compare avec les photos d'hier pour savoir quoi toucher dans le DOM. Et par défaut, on refouille aussi les pièces d'à côté : les composants enfants.
 
 Sur notre compteur, on s'en fiche. Sur un écran avec une liste de 500 lignes et un champ de recherche, beaucoup moins.
 
-C'est aussi pour ça que React tient à l'immutabilité. Pour savoir si quelque chose a changé, il compare des références, pas des contenus :
+C'est aussi pour ça que React tient à l'immutabilité. Pour savoir si quelque chose a changé, il **compare des références, pas des contenus** :
 
 ```js
 // Vue : on modifie, le proxy voit passer la modification
@@ -117,7 +117,7 @@ En Vue, le `<script setup>` s'exécute **une seule fois**, à la création du co
 
 En React, les hooks sont rejoués **à chaque rendu**. React les reconnaît à leur ordre d'appel, d'où les fameuses règles : jamais dans un `if`, jamais dans une boucle, toujours dans le même ordre. Rien de sorcier, mais c'est une autre façon de penser.
 
-Le piège le plus connu, c'est la closure périmée. Un compteur qui s'incrémente tout seul chaque seconde :
+Le piège le plus connu, c'est **la closure périmée**. Un compteur qui s'incrémente tout seul chaque seconde :
 
 ```jsx
 useEffect(() => {
@@ -150,13 +150,13 @@ En contrepartie, Vue a ses propres pièges, et ils sont plus sournois parce qu'i
 
 Vue se présente comme un framework, React comme une bibliothèque. Ça a l'air d'une nuance de vocabulaire, c'est une différence de quotidien.
 
-Vue te livre la maison meublée. Le routeur (Vue Router), le store (Pinia), les devtools : tout est officiel, maintenu ensemble, documenté au même endroit. Et pour le méta-framework, Nuxt est le choix naturel : c'est le premier que cite la doc de Vue, même s'il n'est pas maintenu par l'équipe core. Le style aussi est prévu, avec `<style scoped>` directement dans le composant.
+**Vue te livre la maison meublée.** Le routeur (Vue Router), le store (Pinia), les devtools : tout est officiel, maintenu ensemble, documenté au même endroit. Et pour le méta-framework, Nuxt est le choix naturel : c'est le premier que cite la doc de Vue, même s'il n'est pas maintenu par l'équipe core. Le style aussi est prévu, avec `<style scoped>` directement dans le composant.
 
-React te donne un excellent terrain, et tu choisis le reste. Le framework : Next.js, React Router, autre chose. L'état global : Zustand, Redux Toolkit, Jotai, ou juste le contexte. Les données serveur : TanStack Query, SWR. Le style : CSS Modules, Tailwind, du CSS-in-JS. Chaque brique est très bonne, mais c'est à toi de les assembler.
+**React te donne un excellent terrain, et tu choisis le reste.** Le framework : Next.js, React Router, autre chose. L'état global : Zustand, Redux Toolkit, Jotai, ou juste le contexte. Les données serveur : TanStack Query, SWR. Le style : CSS Modules, Tailwind, du CSS-in-JS. Chaque brique est très bonne, mais c'est à toi de les assembler.
 
 En mission, ça change la première semaine. Sur un projet Vue, je reconnais la structure en ouvrant le dossier. Sur un projet React, je commence par lire le `package.json` pour savoir dans quelle maison je suis tombé.
 
-Génial si tu aimes choisir. Épuisant si tu veux juste livrer. Et dans les deux cas, un conseil : écris tes choix quelque part (un ADR, un README, peu importe), parce que la personne qui arrive dans six mois n'aura pas assisté au débat.
+Génial si tu aimes choisir. Épuisant si tu veux juste livrer. Et dans les deux cas, un conseil : **écris tes choix quelque part** (un ADR, un README, peu importe), parce que la personne qui arrive dans six mois n'aura pas assisté au débat.
 
 ## Et pendant ce temps, les deux se rapprochent
 

@@ -33,9 +33,9 @@ seo:
 
 I get asked this at the start of every assignment, usually somewhere between the coffee machine and the first ticket. Years of Vue, several React projects since, and today I switch from one to the other depending on the client.
 
-My honest answer fits in one sentence: both get you to the same place, just not with the same gearbox. Vue is the automatic. React, the stick shift.
+My honest answer fits in one sentence: both get you to the same place, just not with the same gearbox. **Vue is the automatic. React, the stick shift.**
 
-And as with a car, the real question isn't which one drives better. It's who's driving, and on which road.
+And as with a car, the real question isn't which one drives better. **It's who's driving, and on which road.**
 
 Over the next ten minutes, we'll take a small component, write it in both, and look at what happens under the hood. No benchmark, no holy war, promise. Well... almost none :-)
 
@@ -81,19 +81,19 @@ export function Counter() {
 
 The first difference, the one that jumps out at you: Vue splits the script from a template that looks like HTML, with a few extra attributes (`v-if`, `v-for`, `@click`). React puts everything in JavaScript: the HTML is JSX, a condition is a `&&` or a ternary, a loop is a `.map()`.
 
-Neither is "cleaner". Vue's template reads by itself, even for an HTML/CSS developer who's never opened the docs. JSX gives you the full power of the language... including the power to write a ternary inside a ternary inside a `.map()`, if nobody on the team sets rules.
+**Neither is "cleaner".** Vue's template reads by itself, even for an HTML/CSS developer who's never opened the docs. JSX gives you the full power of the language... including the power to write a ternary inside a ternary inside a `.map()`, if nobody on the team sets rules.
 
-The second difference is quieter, and it's the one that really matters: in Vue you write `count++`. In React, you never touch `count`, you ask `setCount` to replace it. The rest of this article follows from that detail.
+The second difference is quieter, and it's the one that really matters: in Vue **you write `count++`**. In React, **you never touch `count`**, you ask `setCount` to replace it. The rest of this article follows from that detail.
 
 ## Reactivity: who's watching whom?
 
-Vue is Sherlock (the BBC one, I loooove Benedict Cumberbatch). He watches everything and remembers what depends on what. When the template reads `count`, Vue notes "this piece of display depends on `count`". The day `count` changes, he knows exactly which components depend on it and reruns only those. The others, children included, don't move. And thanks to the template compiler, even that component's comparison only looks at its dynamic parts. The `computed` is only recalculated if `count` has changed.
+Vue is Sherlock (the BBC one, I loooove Benedict Cumberbatch). He watches everything and **remembers what depends on what**. When the template reads `count`, Vue notes "this piece of display depends on `count`". The day `count` changes, he knows exactly which components depend on it and reruns only those. The others, children included, don't move. And thanks to the template compiler, even that component's comparison only looks at its dynamic parts. The `computed` is only recalculated if `count` has changed.
 
-React is more like _Scotland Yard_. On every `setCount`, the team seals off the scene and goes over the whole scene again: the `Counter` function runs again, `double` is recalculated, the JSX is regenerated. Then they compare it with yesterday's photos to work out what to change in the DOM. And by default, they search the rooms next door too: the child components.
+React is more like _Scotland Yard_. On every `setCount`, the team seals off the scene and **goes over the whole scene again**: the `Counter` function runs again, `double` is recalculated, the JSX is regenerated. Then they compare it with yesterday's photos to work out what to change in the DOM. And by default, they search the rooms next door too: the child components.
 
 On our counter, who cares? On a screen with a 500-row list and a search field, it matters a lot more.
 
-That's also why React is so attached to immutability. To know whether something changed, it compares references, not contents:
+That's also why React is so attached to immutability. To know whether something changed, it **compares references, not contents**:
 
 ```js
 // Vue: you mutate, the proxy catches the change
@@ -117,7 +117,7 @@ In Vue, `<script setup>` runs **only once**, when the component is created. Comp
 
 In React, hooks run again **on every render**. React recognizes them by their call order, hence the famous rules: never in an `if`, never in a loop, always in the same order. Nothing magical about it, but it's another way of thinking.
 
-The best-known trap is the stale closure. A counter that increments every second:
+The best-known trap is **the stale closure**. A counter that increments every second:
 
 ```jsx
 useEffect(() => {
@@ -150,13 +150,13 @@ On the flip side, Vue has its own traps, and they're sneakier because they make 
 
 Vue presents itself as a framework, React as a library. It sounds like a matter of wording, but it makes a real day-to-day difference.
 
-Vue hands you the furnished house. The router (Vue Router), the store (Pinia), the devtools: everything is official, maintained together, documented in the same place. And for the meta-framework, Nuxt is the natural choice: it's the first one Vue's docs mention, even though the core team doesn't maintain it. Styling is covered too, with `<style scoped>` right in the component.
+**Vue hands you the furnished house.** The router (Vue Router), the store (Pinia), the devtools: everything is official, maintained together, documented in the same place. And for the meta-framework, Nuxt is the natural choice: it's the first one Vue's docs mention, even though the core team doesn't maintain it. Styling is covered too, with `<style scoped>` right in the component.
 
-React gives you an excellent plot, and you choose the rest. The framework: Next.js, React Router, something else. Global state: Zustand, Redux Toolkit, Jotai, or just context. Server data: TanStack Query, SWR. Styling: CSS Modules, Tailwind, CSS-in-JS. Every piece is very good, but assembling them is up to you.
+**React gives you an excellent plot, and you choose the rest.** The framework: Next.js, React Router, something else. Global state: Zustand, Redux Toolkit, Jotai, or just context. Server data: TanStack Query, SWR. Styling: CSS Modules, Tailwind, CSS-in-JS. Every piece is very good, but assembling them is up to you.
 
 On an assignment, it changes what your first week looks like. On a Vue project, I recognize the structure as soon as I open the folder. On a React project, I start by reading the `package.json` to find out which house I've landed in.
 
-Great if you like choosing. Exhausting if you just want to ship. And either way, one piece of advice: write your choices down somewhere (an ADR, a README, whatever), because whoever joins in six months won't have been there for the debate.
+Great if you like choosing. Exhausting if you just want to ship. And either way, one piece of advice: **write your choices down somewhere** (an ADR, a README, whatever), because whoever joins in six months won't have been there for the debate.
 
 ## Meanwhile, the two are getting closer
 
