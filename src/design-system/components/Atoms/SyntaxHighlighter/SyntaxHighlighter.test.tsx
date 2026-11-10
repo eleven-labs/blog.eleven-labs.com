@@ -62,6 +62,7 @@ const codeByLanguage: Record<string, string> = {
   typescript: 'interface Props { name: string }',
   uri: 'https://eleven-labs.com/articles?page=2',
   url: 'https://eleven-labs.com/articles?page=2',
+  vue: '<template>\n  <button @click="count++">{{ count }}</button>\n</template>',
   xhtml: '<p class="intro">Hello</p>',
   xml: '<link rel="stylesheet" href="style.css" />',
   yaml: 'name: design-system\nsteps:\n  - install',
@@ -79,6 +80,18 @@ describe('SyntaxHighlighter', () => {
     const { container } = render(<SyntaxHighlighter language="rust">{'fn main() { let a = 1; }'}</SyntaxHighlighter>);
 
     expect(container.querySelectorAll('span[style*="color"]')).toHaveLength(0);
+  });
+
+  it('highlights the script of a vue single-file component as javascript', () => {
+    const code = '<script setup>\nconst count = ref(0)\n</script>\n\n<template>\n  <p>{{ count }}</p>\n</template>';
+    const { container } = render(<SyntaxHighlighter language="vue">{code}</SyntaxHighlighter>);
+
+    // The renderer flattens the tokens: each one is a sibling span tagged with its embedded language.
+    const script = [...container.querySelectorAll<HTMLElement>('.language-javascript')];
+    const colorOf = (text: string) => script.find((span) => span.textContent === text)?.style.color;
+
+    expect(colorOf('const')).toBeTruthy();
+    expect(colorOf('const')).not.toBe(colorOf(' count '));
   });
 
   it('leaves the prism automatic browser highlighting disarmed', () => {
