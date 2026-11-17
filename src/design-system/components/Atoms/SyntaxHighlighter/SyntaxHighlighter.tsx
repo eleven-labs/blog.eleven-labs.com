@@ -93,7 +93,9 @@ const aliases = {
   go: ['golang'],
   hcl: ['terraform'],
   markdown: ['mdx'],
-  markup: ['xhtml'],
+  // Prism has no vue grammar: markup colors a single-file component's tags, and the javascript of
+  // its <script>.
+  markup: ['xhtml', 'vue'],
   objectivec: ['objective-c'],
   protobuf: ['proto'],
   ruby: ['podfile'],
