@@ -13,11 +13,14 @@ export const postMetadataVariants = cva('flex flex-wrap items-center text-s', {
     variant: {
       primary: 'gap-xxs font-heading font-bold tracking-[0.5px] text-info uppercase',
       secondary: 'gap-s font-semibold text-primary',
+      // Pour une liste dense, comme les suggestions de la recherche : la date et les auteurs,
+      // plus petits que le titre qu'ils accompagnent, se lisent d'un coup d'œil grâce à leur icône.
+      compact: 'gap-x-s gap-y-xxs-3 text-xs text-primary',
     },
   },
 });
 
-export type PostMetadataVariantType = 'primary' | 'secondary';
+export type PostMetadataVariantType = 'primary' | 'secondary' | 'compact';
 
 export interface PostMetadataProps extends VariantProps<typeof postMetadataVariants> {
   date?: string;
@@ -36,6 +39,11 @@ export interface PostMetadataProps extends VariantProps<typeof postMetadataVaria
   className?: string;
 }
 
+const ICON_SIZES: Partial<Record<PostMetadataVariantType, string>> = {
+  secondary: '24px',
+  compact: '16px',
+};
+
 export const PostMetadata: React.FC<PostMetadataProps> = ({
   variant,
   date,
@@ -45,6 +53,9 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
   displayedFields = ['date', 'readingTime', 'authors'],
   className,
 }) => {
+  const iconSize = variant ? ICON_SIZES[variant] : undefined;
+  const hasIcons = Boolean(iconSize);
+
   const fields = displayedFields.reduce<React.ReactNode[]>((currentFields, displayedField, index) => {
     switch (displayedField) {
       case 'date': {
@@ -57,7 +68,7 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
           >
             {/* La date ne se coupe pas : elle garde toujours la largeur de son contenu. */}
             <div className="flex min-w-max content-center items-center gap-xxs">
-              {variant === 'secondary' && <Icon name="calendar" size="24px" className="text-light-grey" />}
+              {hasIcons && <Icon name="calendar" size={iconSize} className="flex-none text-light-grey" />}
               {date && <Text render={<span />}>{date}</Text>}
             </div>
           </Skeleton>
@@ -73,7 +84,7 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
             style={{ minWidth: 26, minHeight: 16 }}
           >
             <div className="flex content-center items-center gap-xxs">
-              {variant === 'secondary' && <Icon name="access-time" size="24px" className="text-light-grey" />}
+              {hasIcons && <Icon name="access-time" size={iconSize} className="flex-none text-light-grey" />}
               {readingTime && (
                 <Text render={<time dateTime={readingTime.dateTime} />} className="whitespace-nowrap">
                   {readingTime.label}
@@ -85,16 +96,17 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
         break;
       }
       case 'authors': {
-        const authorChildren = authors && (
-          <>
-            {variant === 'secondary' && <Icon name="person" size="24px" className="text-light-grey" />}
+        // Les auteurs forment un seul texte : la liste ne se coupe pas entre un nom et son « & »,
+        // et les espaces qui entourent ce dernier sont conservés.
+        const authorNames = authors && (
+          <span className={cn(variant === 'compact' && 'min-w-0 truncate')}>
             {authors.map(({ username, name, link }, authorIndex) => (
               <Fragment key={username}>
-                {link ? <Link {...link}>{name}</Link> : <Text render={<span />}>{name}</Text>}
-                {authorIndex !== authors.length - 1 && <Text render={<span />}>{' & '}</Text>}
+                {authorIndex > 0 && ' & '}
+                {link ? <Link {...link}>{name}</Link> : name}
               </Fragment>
             ))}
-          </>
+          </span>
         );
         currentFields.push(
           <Skeleton
@@ -103,10 +115,13 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
             className="inline-block"
             style={{ minWidth: 50, minHeight: 16 }}
           >
-            {variant === 'secondary' ? (
-              <div className="flex content-center items-center gap-xxs">{authorChildren}</div>
+            {hasIcons ? (
+              <div className="flex min-w-0 content-center items-center gap-xxs">
+                <Icon name="person" size={iconSize} className="flex-none text-light-grey" />
+                {authorNames}
+              </div>
             ) : (
-              <>{authorChildren}</>
+              authorNames
             )}
           </Skeleton>
         );
@@ -114,7 +129,7 @@ export const PostMetadata: React.FC<PostMetadataProps> = ({
       }
     }
 
-    if (variant !== 'secondary' && index !== displayedFields.length - 1) {
+    if (!hasIcons && index !== displayedFields.length - 1) {
       currentFields.push(
         <Text key={`circle-${displayedField}`} render={<span />}>
           •
