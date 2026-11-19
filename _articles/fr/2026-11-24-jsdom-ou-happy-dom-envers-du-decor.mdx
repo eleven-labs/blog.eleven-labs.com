@@ -1,0 +1,245 @@
+---
+contentType: article
+lang: fr
+date: 2026-11-24
+slug: jsdom-ou-happy-dom-envers-du-decor
+title: "jsdom ou happy-dom : l'envers du décor"
+excerpt: "J'ai passé les tests de composants d'un jeu React de jsdom à happy-dom pour gagner une minute de CI par PR. Les chiffres de la migration, trois tests rouges et 406 erreurs réseau, ce qu'ils disent des deux faux navigateurs, et les questions à se poser avant de changer."
+cover:
+  alt: "Un astronaute sur la Lune, un clap à la main, entre deux décors de cinéma en bois, l'un éclairé en orange, l'autre en bleu, une caméra et un fauteuil de réalisateur devant, la Terre à l'horizon"
+  path: /imgs/articles/2026-11-24-jsdom-ou-happy-dom-envers-du-decor/cover.jpg
+  position: center
+categories:
+  - javascript
+keywords:
+  - jsdom
+  - happy-dom
+  - vitest
+  - tests
+  - testing library
+  - react
+  - motion
+  - fetch
+  - ci
+  - github actions
+authors:
+  - gcunsolo
+seo:
+  title: "jsdom ou happy-dom ? Ce que j'ai appris en changeant"
+  description: "Tests Vitest de jsdom à happy-dom : 30 % de moins sur les specs DOM, des fetch qui sortent sur le réseau, un fondu de 0 à 0, et quoi vérifier avant."
+---
+
+## Un quart du temps à monter le décor
+
+Lundi 16 novembre, un peu avant 22 h. Je regarde la CI de _Salade Tomate Oignon_ tourner, et je me rends compte que je la regarde beaucoup.
+
+Pour ceux qui n'ont pas suivi [l'épisode précédent](https://blog.eleven-labs.com/fr/workflow-claude-code-kebab-roguelite/) : c'est un petit _deckbuilder roguelite_ dans le navigateur, où tu tiens un kebab. React 19, TypeScript strict, Vite, Vitest. Et beaucoup de tests, parce que c'est un agent qui écrit le code et que les tests sont ma seule façon de dormir.
+
+Le job de vérification d'une PR prenait **5 min 02**. Dedans :
+
+- le lint et Prettier : 27 s ;
+- le _type-check_ : 16 s ;
+- les tests : **236 s**.
+
+Le coupable n'était pas difficile à trouver.
+
+Le dépôt est privé, donc le _runner_ de GitHub n'a que 2 vCPU. Et le résumé de Vitest, lu dans la CI ce soir-là, disait où partait le temps des tests : 57 % dans les tests eux-mêmes, 8 % dans le _setup_, 6 % dans les imports... et **24 % à fabriquer l'environnement jsdom**.
+
+Un quart du temps à monter le décor. Deux machinistes clouent les planches d'un faux navigateur, et personne n'a encore dit « action ».
+
+Alors j'ai fait ce que tout le monde finit par faire un jour : j'ai essayé happy-dom. Une ligne de config, des tests plus rapides, merci bonsoir.
+
+Trois tests rouges et 406 erreurs réseau plus tard, j'avais surtout appris **en quoi les deux sont vraiment différents**. C'est ce que je te raconte ici, avec les chiffres de la PR.
+
+## Deux studios, zéro caméra
+
+Un test de composant a besoin d'un `document`, d'un `window`, de quoi cliquer. Lancer un vrai Chrome pour chaque fichier de test coûterait trop cher, alors on triche : on donne à Node **un DOM écrit en JavaScript**, sans moteur de rendu, sans fenêtre, sans pixels.
+
+Un studio, en somme. Tes composants y jouent leurs scènes : les portes s'ouvrent, les répliques sont dites, tout s'actionne. Mais **personne ne regarde dans le viseur**.
+
+jsdom et happy-dom font tous les deux exactement ça. Leurs présentations se ressemblent d'ailleurs beaucoup :
+
+- jsdom se décrit comme une implémentation en pur JavaScript de nombreux standards du web, pour émuler « assez » d'un navigateur pour tester et _scraper_ ;
+- happy-dom, comme une implémentation JavaScript d'un navigateur sans son interface graphique, pour les tests, le _scraping_ et le rendu côté serveur.
+
+La différence est dans la phrase d'après.
+
+**jsdom vise la fidélité aux standards.** C'est l'ancien : le dépôt date de 2010, et Jest en a fait son environnement par défaut jusqu'à sa version 26. Quand il implémente quelque chose, il le fait comme la spec le dit. Et quand il ne l'implémente pas, il le dit aussi : son README annonce que la mise en page et la navigation sont hors périmètre, et que par défaut il ne charge ni scripts, ni feuilles de style, ni images.
+
+**happy-dom vise la vitesse.** Son wiki l'écrit noir sur blanc : il se concentre fortement sur la performance, et il affiche un tableau de _benchmarks_ face à jsdom (les siens, sur la page d'accueil du wiki, donc à lire comme tels). Il arrive aussi avec plus de choses dans le coffre, dont une Fetch API maison. Retiens ce détail, on va le recroiser plus bas.
+
+La doc de Vitest résume l'affaire en une ligne, que je traduis à peine : happy-dom est considéré comme plus rapide que jsdom, **mais il lui manque certaines API**.
+
+Voilà pour la théorie. Ce que la doc ne dit pas, c'est qu'entre deux faux navigateurs, le problème n'est pas seulement ce qui manque.
+
+C'est aussi **ce que l'un fait et que l'autre ne faisait pas**.
+
+## Changer de studio en deux lignes
+
+Avec Vitest, changer d'environnement, c'est une dépendance et un mot dans la config. Voilà tout le diff utile de la PR, côté `package.json` :
+
+```diff
+-    "jsdom": "^30.1.3",
++    "happy-dom": "^21.0.4",
+```
+
+Et côté `vite.config.ts`, dans le projet Vitest qui porte les specs de composants et de pages :
+
+```diff
+         test: {
+           name: 'dom',
+-          environment: 'jsdom',
++          environment: 'happy-dom',
+           include: ['src/tests/**/*.spec.{ts,tsx}'],
+```
+
+React Testing Library, `user-event`, les _matchers_ de jest-dom : rien à toucher. Ils parlent au DOM et se fichent de qui le fabrique. Les comédiens connaissent leur texte, peu importe qui a monté le plateau.
+
+Avant de casser quoi que ce soit, j'ai mesuré. En local, avec 2 _workers_ pour imiter les 2 vCPU du runner, toute la suite, avant et après la PR :
+
+| Variante                                 | Durée | CPU   |
+| ---------------------------------------- | ----- | ----- |
+| jsdom, couverture sur tout (avant)       | 114 s | 280 s |
+| happy-dom, couverture sur le moteur seul | 77 s  | 190 s |
+
+&nbsp;
+
+**De 114 s à 77 s, la suite perd 37 secondes**, et un tiers de son temps CPU (de 280 s à 190 s). Mais ce n'est pas happy-dom tout seul : deux changements se partagent le gain, et il faut être honnête sur qui fait quoi.
+
+Le premier n'a rien à voir avec le DOM : j'instrumentais la couverture sur tous les tests alors que mon seuil de 90 % ne lit que le moteur du jeu. Resserrée sur le moteur, toujours sous jsdom, elle fait déjà passer la suite de 114 s à 97 s. 17 secondes, cadeau.
+
+Les 20 secondes restantes, de 97 s à 77 s, c'est happy-dom : **les specs DOM passent de 67 s à 47 s**, soit 30 % de moins. La part de l'environnement dans leur temps tombe de 39 % à 26 %.
+
+Sur le vrai runner, les deux ensemble : le premier run de la PR, le 16 novembre, comparé à un run de la veille :
+
+- les tests : **163 s au lieu de 236** (−31 %) ;
+- le job entier : 3 min 51 au lieu de 5 min 02.
+
+Un run contre un run, donc à lire avec prudence : les runs suivants, le même soir, sont tombés entre 91 et 128 s de tests. **Le runner n'est pas régulier.**
+
+Sur mes 8 cœurs, la même suite passe de 56 s à 45. Onze secondes, je ne les aurais même pas remarquées. **C'est sur le petit runner, deux fois plus lent que mon poste, que ça devient plus d'une minute par PR.**
+
+Voilà pour la bonne nouvelle. Sauf que le premier passage sous happy-dom n'était pas vert.
+
+## Première prise : trois tests rouges, 406 erreurs réseau
+
+Le bilan du premier lancement : 3 tests en échec, et 406 erreurs `ECONNREFUSED 127.0.0.1:3000` dans la sortie.
+
+Sous jsdom, tout était vert depuis des semaines. Le code n'avait pas changé d'une ligne : même scénario, même troupe. **Ce qui avait changé, c'est le plateau.**
+
+### Le figurant qui sort dans la rue
+
+Mon jeu fait quelques appels à son serveur : qui est connecté, un compteur. Des URL relatives, du genre `/api/me`. Et plusieurs specs rendaient ces écrans sans _mocker_ `fetch`. Oui, je sais.
+
+Sous jsdom, ça ne se voyait pas : le figurant qu'on envoyait chercher une réponse ne quittait jamais le plateau. Et ce n'est même pas le studio qui le retenait. jsdom n'apporte pas de `fetch` : celui que le test appelle est celui de Node, qui ne sait pas quoi faire d'une URL relative et échoue aussitôt. Le code du jeu traite ça comme « hors ligne », et tout le monde est content.
+
+happy-dom, lui, a **son propre `fetch`**, et Vitest le branche à la place de celui de Node. Comme un navigateur, il résout l'URL relative sur l'adresse de la page. Et l'adresse de la page, dans Vitest, c'est `http://localhost:3000` par défaut, sous jsdom comme sous happy-dom. La différence, c'est que seul happy-dom a un `fetch` pour s'en servir.
+
+La même adresse est peinte sur la porte des deux studios. Un seul a une vraie porte.
+
+Donc mes specs envoyaient de vraies requêtes à un serveur qui n'existe pas. Le figurant sortait dans la rue, pour de bon.
+
+Le plus vicieux n'est pas l'erreur, c'est le moment où elle arrive. La requête reste en attente, la spec se termine, la suivante démarre... et **le refus de connexion tombe dans le test d'après**. Le figurant revient au milieu de la scène suivante, annoncer qu'il n'y avait personne. C'est comme ça qu'un test de la page d'accueil, qui n'avait rien demandé à personne, ne trouvait plus l'e-mail de sa session.
+
+La correction : verrouiller la porte. Une ligne dans le fichier de _setup_ des tests :
+
+```ts
+// No spec's fetch reaches the network. […] A spec that wants an answer stubs fetch itself
+// (vi.stubGlobal), and vi.unstubAllGlobals() puts this one back.
+globalThis.fetch = () => Promise.reject(new TypeError('no network in the specs'));
+```
+
+`fetch` échoue tout de suite, partout, comme hors ligne. Une spec qui veut une réponse engage une doublure : elle la _stubbe_ elle-même avec `vi.stubGlobal`.
+
+Le mot n'est pas de moi. Le métier dit _test double_, un terme proposé par Gerard Meszaros, et [Martin Fowler précise](https://martinfowler.com/bliki/TestDouble.html) qu'il faut y entendre le _stunt double_ du cinéma.
+
+Honnêtement, c'est happy-dom qui avait raison. Des tests qui comptent sur un `fetch` cassé pour ne pas toucher le réseau, ce n'était pas une stratégie, c'était de la chance.
+
+### Un fondu du noir vers le noir
+
+Les deux autres tests rouges regardaient un écran pendant qu'il sort : le marché qui se ferme doit garder ce qu'il montrait jusqu'à la fin de sa transition. Les sorties sont animées avec Motion.
+
+Le test cliquait sur « J'ai fini » avec `userEvent.click`, puis cherchait le bouton sur l'écran sortant. Sous jsdom, il le trouvait. Sous happy-dom, plus personne : l'écran était déjà parti.
+
+J'ai d'abord accusé la cadence. jsdom, tel que Vitest le configure, fait tourner `requestAnimationFrame` sur un intervalle de 1000 / 60 ms. happy-dom l'exécute dans un `setImmediate`. Beau coupable. Sauf que ce n'est pas lui : avec l'horloge de l'un branchée sur l'autre, rien ne change.
+
+L'explication est dans **ce que chacun répond à `getComputedStyle`**, et je suis allé la lire dans leur code, aux versions du projet le 16 novembre (jsdom 30.1.3, happy-dom 21.0.4, Vitest 5.0.5, Motion 14.12.0) :
+
+- sous jsdom, l'opacité d'un élément que personne n'a stylé vaut `"1"`, comme dans un navigateur ;
+- sous happy-dom, elle vaut `""`.
+
+Motion lit cette valeur pour savoir d'où part le fondu, comme on demande à la scripte où en était la lumière. jsdom répond « plein feu ». happy-dom tend une page blanche, et Motion la lit comme du noir : une chaîne vide, il la prend pour 0.
+
+**Un fondu du noir vers le noir**, de 0 vers 0, il n'y a rien à tourner. Coupez : la sortie se termine aussitôt, au lieu de durer ses 120 ms.
+
+Or `userEvent` ne tourne pas un simple clic, mais un plan-séquence. Il joue tous les gestes d'un vrai pointeur, avec de petites pauses asynchrones entre les événements. Sous jsdom, le clic finit bien avant le fondu. Sous happy-dom, ces pauses suffisent : l'écran est démonté, et le test regarde un plateau vide.
+
+À dater : c'est [un manque connu de happy-dom](https://github.com/capricorn86/happy-dom/issues/2488), et [la PR #2617](https://github.com/capricorn86/happy-dom/pull/2617), encore ouverte au 17 novembre 2026, doit changer ce comportement.
+
+La correction, dans les deux specs concernées :
+
+```diff
+-    await userEvent.click(screen.getByRole('button', { name: leave }));
++    fireEvent.click(screen.getByRole('button', { name: leave }));
+```
+
+`fireEvent`, c'est l'insert : il déclenche le clic de façon synchrone, et le test regarde tout de suite. Je garde `userEvent` partout ailleurs, il est plus proche d'un vrai utilisateur. Mais **quand le test observe un état transitoire, il doit agir et regarder dans le même souffle**.
+
+### Le suspect idéal
+
+Un dernier test est tombé pendant la soirée : une page qui note dans un _store_, depuis un `useEffect`, que tu as vu la dernière version du jeu. Le test lisait le store juste après l'apparition du titre.
+
+Le soir d'une migration, le suspect est tout trouvé. Sauf que happy-dom n'y était pour rien : ma machine était chargée à 20 pour 8 cœurs (une autre session tournait à côté), et l'effet passait simplement après l'affichage. Le test était fragile depuis le début. Un `waitFor` autour de l'assertion, et c'est réglé.
+
+Je le raconte quand même, parce que c'est le piège de toute migration : **le jour où tu changes un outil, tout ce qui casse a l'air d'être de sa faute**.
+
+## Pour le cadre, on tourne en extérieur
+
+Un mot pour calmer le débat : sur l'essentiel, les deux ont **les mêmes angles morts**.
+
+Personne au viseur, dans un studio comme dans l'autre : ni jsdom ni happy-dom ne calculent une mise en page. Pas de largeur, pas de débordement, pas de « ce bouton est-il sous le pouce ». Dans mon fichier de _setup_, les bouchons écrits pour jsdom, mes accessoires factices, sont restés tels quels : un `scrollIntoView` qui ne fait rien, un `matchMedia` à ma main. happy-dom fournit les deux, mais son `scrollIntoView` ne fait rien non plus, et mon `matchMedia` sert à forcer les animations réduites. J'ai surtout remplacé « jsdom » par « le DOM de test » dans les commentaires.
+
+Même les petites infidélités se ressemblent : le même tiroir coincé, dans les deux studios. Un commentaire d'une de mes specs disait que jsdom n'ouvre pas un `<details>` à la touche Entrée, alors qu'un navigateur le fait. Vérifié pendant la PR : happy-dom non plus.
+
+Pour tout ça, la réponse n'est pas un meilleur studio. C'est de tourner en extérieur, dans **un vrai navigateur**. Chez moi, la mise en page, la sauvegarde réelle et les rechargements passent par Playwright, sur le site construit (455 tests le 16 novembre). Les specs Vitest gardent le comportement des écrans, et c'est tout ce qu'on leur demande.
+
+## Les repérages avant de déménager
+
+Faut-il passer ta suite de jsdom à happy-dom ? Ça dépend, mais de quelques points précis. Voici les questions que je me poserais avant de migrer, dans l'ordre :
+
+1. **Est-ce que l'environnement pèse vraiment ?** Regarde le résumé de Vitest à la fin d'un run de CI, il donne la part de l'environnement. À 24 % sur 2 vCPU, ça valait une soirée. À 5 %, laisse tomber et va te coucher.
+2. **Qu'est-ce que tes tests demandent au DOM ?** Du React Testing Library par rôle et par nom accessible, des clics, du texte : les deux font le travail. Si tu t'appuies sur des coins précis des standards, c'est le terrain de jsdom, et la doc de Vitest te prévient que happy-dom n'a pas tout.
+3. **Tes tests touchent-ils le réseau sans le dire ?** Sous happy-dom, tu vas le savoir très vite. Coupe `fetch` dans le _setup_ avant de migrer, pas après.
+4. **As-tu des tests qui regardent une animation ?** Transitions, sorties, `requestAnimationFrame` : ni l'horloge ni les styles calculés ne sont les mêmes, attends-toi à en reprendre quelques-uns.
+5. **Peux-tu mesurer avant de décider ?** Une branche jetable, les deux environnements, le même nombre de _workers_ que ta CI. Dix minutes, et tu discutes sur des chiffres.
+
+Et si une seule scène fait de la résistance, elle peut rester dans l'ancien studio : Vitest accepte un commentaire `// @vitest-environment jsdom` en tête de fichier. Je n'en ai pas eu besoin, mais c'est bon à savoir.
+
+Dernier détail de ménage : chez moi, jsdom est resté dans le `pnpm-lock.yaml` après la migration, comme dépendance paire optionnelle de Vitest. L'installation entière prend quatre secondes en CI, alors je n'ai pas creusé.
+
+## Coupez
+
+jsdom et happy-dom sont deux décors pour le même film.
+
+jsdom joue la fidélité : plus lent à monter, plus proche des standards, et honnête sur ce qu'il ne fait pas.
+
+happy-dom joue la vitesse : chez moi, 30 % de moins sur les specs DOM, et avec la couverture resserrée, 73 secondes de tests en moins par PR sur le runner.
+
+Et aucun des deux n'est un navigateur. Personne au viseur : la mise en page et le vrai réseau, c'est le travail d'un test _end-to-end_.
+
+Ce que je retiens surtout, c'est que la migration m'a moins appris sur happy-dom que sur mes propres tests. Des `fetch` qui partaient dans le vide. Des assertions qui tenaient à un fondu de 120 ms. Un effet lu trop tôt.
+
+**Changer de faux navigateur, c'est faire relire ses tests par quelqu'un qui n'a pas les mêmes habitudes.** Rien que pour ça, la soirée était rentable.
+
+La minute gagnée à chaque PR, c'est la scène après le générique :-)
+
+## Ressources
+
+- [jsdom : le README](https://github.com/jsdom/jsdom) (ce qu'il émule, ce qu'il laisse hors périmètre)
+  - [ce qui n'est pas implémenté : navigation, mise en page](https://github.com/jsdom/jsdom#unimplemented-parts-of-the-web-platform)
+  - [l'option `pretendToBeVisual`](https://github.com/jsdom/jsdom#pretending-to-be-a-visual-browser)
+  - [l'issue « Implement the Fetch API », ouverte depuis 2017](https://github.com/jsdom/jsdom/issues/1724)
+  - [jsdom 30.1.3 : `requestAnimationFrame` sur `setInterval(…, 1000 / 60)`](https://github.com/jsdom/jsdom/blob/v30.1.3/lib/jsdom/browser/Window.js#L592-L606)
+- [happy-dom : le dépôt](https://github.com/capricorn86/happy-dom) et [son wiki](https://github.com/capricorn86/happy-dom/wiki) (dont les _benchmarks_ face à jsdom)
+  - [le protocole de ses _benchmarks_](https://github.com/capricorn86/happy-dom-performance-test)
+  - [happy-dom 21.0.4 : `requestAnimationFrame` dans un `setImmediate`, et son `fetch`](https://github.com/capricorn86/happy-dom/blob/v21.0.4/packages/happy-dom/src/window/BrowserWindow.ts#L2633-L2667)
