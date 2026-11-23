@@ -26,7 +26,7 @@ authors:
   - gcunsolo
 seo:
   title: "jsdom ou happy-dom ? Ce que j'ai appris en changeant"
-  description: "Tests Vitest de jsdom à happy-dom : 30 % de moins sur les specs DOM, des fetch qui sortent sur le réseau, un fondu de 0 à 0, et quoi vérifier avant."
+  description: "Tests Vitest de jsdom à happy-dom : 30% de moins sur les specs DOM, des fetch qui sortent sur le réseau, un fondu de 0 à 0, et quoi vérifier avant."
 ---
 
 ## Un quart du temps à monter le décor
@@ -43,7 +43,7 @@ Le job de vérification d'une PR prenait **5 min 02**. Dedans :
 
 Le coupable n'était pas difficile à trouver.
 
-Le dépôt est privé, donc le _runner_ de GitHub n'a que 2 vCPU. Et le résumé de Vitest, lu dans la CI ce soir-là, disait où partait le temps des tests : 57 % dans les tests eux-mêmes, 8 % dans le _setup_, 6 % dans les imports... et **24 % à fabriquer l'environnement jsdom**.
+Le dépôt est privé, donc le _runner_ de GitHub n'a que 2 vCPU. Et le résumé de Vitest, lu dans la CI ce soir-là, disait où partait le temps des tests : 57% dans les tests eux-mêmes, 8% dans le _setup_, 6% dans les imports... et **24% à fabriquer l'environnement jsdom**.
 
 Un quart du temps à monter le décor. Deux machinistes clouent les planches d'un faux navigateur, et personne n'a encore dit « action ».
 
@@ -53,7 +53,7 @@ Trois tests rouges et 406 erreurs réseau plus tard, j'avais surtout appris **en
 
 ## Deux studios, zéro caméra
 
-Un test de composant a besoin d'un `document`, d'un `window`, de quoi cliquer. Lancer un vrai Chrome pour chaque fichier de test coûterait trop cher, alors on triche : on donne à Node **un DOM écrit en JavaScript**, sans moteur de rendu, sans fenêtre, sans pixels.
+Un test de composant a besoin d'un `document`, d'un `window`, de quoi cliquer. Faire tourner ces tests dans un vrai navigateur coûterait plus cher, alors on triche : on donne à Node **un DOM écrit en JavaScript**, sans moteur de rendu, sans fenêtre graphique, sans pixels.
 
 Un studio, en somme. Tes composants y jouent leurs scènes : les portes s'ouvrent, les répliques sont dites, tout s'actionne. Mais **personne ne regarde dans le viseur**.
 
@@ -64,9 +64,9 @@ jsdom et happy-dom font tous les deux exactement ça. Leurs présentations se re
 
 La différence est dans la phrase d'après.
 
-**jsdom vise la fidélité aux standards.** C'est l'ancien : le dépôt date de 2010, et Jest en a fait son environnement par défaut jusqu'à sa version 26. Quand il implémente quelque chose, il le fait comme la spec le dit. Et quand il ne l'implémente pas, il le dit aussi : son README annonce que la mise en page et la navigation sont hors périmètre, et que par défaut il ne charge ni scripts, ni feuilles de style, ni images.
+**jsdom vise la fidélité aux standards.** C'est le plus ancien des deux : son dépôt date de 2010, et Jest en a fait son environnement par défaut jusqu'à la version 26 incluse. Son objectif est de coller au plus près des spécifications du web. Et quand il ne l'implémente pas, il le dit aussi : son README annonce que la mise en page et la navigation sont hors périmètre, et que par défaut il ne charge ni scripts, ni feuilles de style, ni images.
 
-**happy-dom vise la vitesse.** Son wiki l'écrit noir sur blanc : il se concentre fortement sur la performance, et il affiche un tableau de _benchmarks_ face à jsdom (les siens, sur la page d'accueil du wiki, donc à lire comme tels). Il arrive aussi avec plus de choses dans le coffre, dont une Fetch API maison. Retiens ce détail, on va le recroiser plus bas.
+**happy-dom vise la vitesse.** Son wiki l'écrit noir sur blanc : il met la performance au premier plan et affiche des benchmarks face à jsdom (les siens, donc à prendre avec le recul nécessaire). Il arrive aussi avec une API 'fetch' intégrée. Retiens ce détail, on va le recroiser plus bas.
 
 La doc de Vitest résume l'affaire en une ligne, que je traduis à peine : happy-dom est considéré comme plus rapide que jsdom, **mais il lui manque certaines API**.
 
@@ -95,7 +95,7 @@ Et côté `vite.config.ts`, dans le projet Vitest qui porte les specs de composa
 
 React Testing Library, `user-event`, les _matchers_ de jest-dom : rien à toucher. Ils parlent au DOM et se fichent de qui le fabrique. Les comédiens connaissent leur texte, peu importe qui a monté le plateau.
 
-Avant de casser quoi que ce soit, j'ai mesuré. En local, avec 2 _workers_ pour imiter les 2 vCPU du runner, toute la suite, avant et après la PR :
+Avant de casser quoi que ce soit, j'ai mesuré. En local, avec 2 workers pour me rapprocher des 2 vCPU du runner, j'ai chronométré toute la suite avant et après la PR :
 
 | Variante                                 | Durée | CPU   |
 | ---------------------------------------- | ----- | ----- |
@@ -117,7 +117,7 @@ Sur le vrai runner, les deux ensemble : le premier run de la PR, le 16 novembre,
 
 Un run contre un run, donc à lire avec prudence : les runs suivants, le même soir, sont tombés entre 91 et 128 s de tests. **Le runner n'est pas régulier.**
 
-Sur mes 8 cœurs, la même suite passe de 56 s à 45. Onze secondes, je ne les aurais même pas remarquées. **C'est sur le petit runner, deux fois plus lent que mon poste, que ça devient plus d'une minute par PR.**
+Sur mes 8 cœurs, la même suite passe de 56 s à 45. Onze secondes, je ne les aurais même pas remarquées. **C'est sur le petit runner, nettement plus lent que mon poste, que le gain dépasse une minute par PR.**
 
 Voilà pour la bonne nouvelle. Sauf que le premier passage sous happy-dom n'était pas vert.
 
@@ -129,7 +129,7 @@ Sous jsdom, tout était vert depuis des semaines. Le code n'avait pas changé d'
 
 ### Le figurant qui sort dans la rue
 
-Mon jeu fait quelques appels à son serveur : qui est connecté, un compteur. Des URL relatives, du genre `/api/me`. Et plusieurs specs rendaient ces écrans sans _mocker_ `fetch`. Oui, je sais.
+Mon jeu fait quelques appels à son serveur : vérifier qui est connecté, récupérer un compteur. Des URL relatives, du genre `/api/me`. Et plusieurs specs affichaient ces écrans sans _mocker_ `fetch`. Oui, je sais.
 
 Sous jsdom, ça ne se voyait pas : le figurant qu'on envoyait chercher une réponse ne quittait jamais le plateau. Et ce n'est même pas le studio qui le retenait. jsdom n'apporte pas de `fetch` : celui que le test appelle est celui de Node, qui ne sait pas quoi faire d'une URL relative et échoue aussitôt. Le code du jeu traite ça comme « hors ligne », et tout le monde est content.
 
@@ -163,7 +163,7 @@ Le test cliquait sur « J'ai fini » avec `userEvent.click`, puis cherchait le b
 
 J'ai d'abord accusé la cadence. jsdom, tel que Vitest le configure, fait tourner `requestAnimationFrame` sur un intervalle de 1000 / 60 ms. happy-dom l'exécute dans un `setImmediate`. Beau coupable. Sauf que ce n'est pas lui : avec l'horloge de l'un branchée sur l'autre, rien ne change.
 
-L'explication est dans **ce que chacun répond à `getComputedStyle`**, et je suis allé la lire dans leur code, aux versions du projet le 16 novembre (jsdom 30.1.3, happy-dom 21.0.4, Vitest 5.0.5, Motion 14.12.0) :
+L'explication tient à **ce que chacun renvoie via `getComputedStyle`**. Je suis allé la chercher dans leur code, avec les versions utilisées dans le projet le 16 novembre (jsdom 30.1.3, happy-dom 21.0.4, Vitest 5.0.5, Motion 14.12.0) :
 
 - sous jsdom, l'opacité d'un élément que personne n'a stylé vaut `"1"`, comme dans un navigateur ;
 - sous happy-dom, elle vaut `""`.
