@@ -73,6 +73,8 @@ But the other half of the problem sits with the reviewers. We still review like 
 
 And bolting an AI onto the review tool isn't enough. Meta showed reviewers fixes suggested by a model: reviews got more than 5% longer. Shown to the author alone, the fixes no longer slowed anything down. Where you put the AI matters more than whether you put it in.
 
+And one point people often forget: DORA describes AI as an amplifier. A team with solid foundations (tests, small PRs, frequent deployments) goes much faster. A team without them mostly goes much faster… straight into a wall. Throughput goes up and stability goes down, says the 2025 report, when the foundations aren't solid. Faros is less optimistic in 2026: in its data, even good foundations don't protect against the decline.
+
 ## "The POs can't keep up"
 
 I've heard this other one too, more than once: *the POs can't keep the backlog filled anymore*. Ready tickets get picked up within the day, the ones left are vague, and devs ask "what should I take?" a bit more often.
@@ -93,13 +95,7 @@ I don't want to write yet another glass-half-empty article. Because honestly, so
 
 **The stuff we kept putting off gets done.** The tests we "didn't have time" to write, the docs, the bit of tech debt that's been lying around for two years, the refactoring we didn't dare to start: it costs next to nothing to write now. The excuse is gone. It still has to be reviewed, and we'll get to that.
 
-**The PO can show instead of describe.** A working prototype in an afternoon is worth ten pages of specs. Marty Cagan draws a clear line between *building to learn* and *building to earn*: the prototype is there to learn, not to ship. But learning in an afternoon is new.
-
 **Being wrong is cheaper.** If a feature takes two hours to code, you can throw it away without drama. Try two versions, keep the better one, and own it when you got it wrong.
-
-**The AI reviewer doesn't get tired.** By the fifteenth PR of the day, I do. It catches the missing error handling I no longer see. Not everything, far from it, but it's there at 10 p.m. just like at 9 a.m.
-
-And one point people often forget: DORA describes AI as an amplifier. A team with solid foundations (tests, small PRs, frequent deployments) goes much faster. A team without them mostly goes much faster… straight into a wall. Throughput goes up and stability goes down, says the 2025 report, when the foundations aren't solid. Faros is less optimistic in 2026: in its data, even good foundations don't protect against the decline.
 
 ## Six ideas that will annoy people
 
@@ -116,8 +112,6 @@ Right. We can keep reviewing the way we always have and grit our teeth, or we ca
 **5. Do acceptance testing in production.** Everything behind a *feature flag*, opened to five real users the same day. Acceptance testing is no longer a step the PO gets to when they have time: it's real, measured usage. Whatever nobody uses after a month gets deleted. Yes, deleting is shipping too.
 
 **6. Merge the roles, at least a little.** A dev who talks to users, a PO who knows how to run an agent. The *product engineer* isn't a fad, it's what's left when code costs nothing and judgment costs everything.
-
-And for us, as a consultancy, there's a question that nags at us: we sell developer days. If development becomes the cheapest part, **what do we sell tomorrow?** My answer for now: judgment. Knowing what to build, what not to build, and proving that what ships actually works.
 
 ## The plan in the PR
 
@@ -153,6 +147,9 @@ For the agent to write that plan without being asked every time, you have to be 
 ```md
 Before coding, write your plan in Markdown, for a reviewer who has ten minutes:
 500 words max, not counting Proof.
+
+A one-line change, a typo, a dependency bump: only Problem and Proof, and
+code without waiting.
 
 Format:
 - one ## heading per section, all six in order, even when empty ("None");
@@ -210,11 +207,13 @@ as-is in the description, with deviations and proof filled in. Don't rewrite
 it: whatever changed goes in Deviations, nothing gets erased.
 ```
 
+I haven't run it as-is yet: it's the version I'm testing, grown out of what my PRs already do halfway.
+
 It's long, and that's on purpose: an adjective doesn't guide an agent, a criterion does. The agent can read "the ones someone could challenge" however it likes. Two conditions, though, it can check. Hence the caps, the line formats, and the "None" escape hatch, so it doesn't make up a decision just to fill the slot.
 
 Two instructions do the rest. Deviations get written down while coding, not at the end: at the end, the agent tells you what it wishes it had done. And the plan isn't rewritten for the PR, or you're back to the after-the-fact summary.
 
-Now, where to put this text. Not in a *skill*: a skill loads when the agent decides it needs it, and that's one call I don't want to leave to it. The plan has to show up for every change, not whenever the agent remembers. Not in a path-scoped *rule* either: it waits for a specific file to be opened, and a plan isn't tied to any file.
+Now, where to put this text. Not in a *skill*: a skill loads when the agent decides it needs it, and that's one call I don't want to leave to it. The plan has to show up for every change that matters, not whenever the agent remembers. Not in a path-scoped *rule* either: it waits for a specific file to be opened, and a plan isn't tied to any file.
 
 It belongs in the instructions file read at every session: the repo's `CLAUDE.md`, for Claude Code. And the six headings also go into the repo's PR template, so the reviewer finds them even when a human wrote the PR.
 
@@ -232,16 +231,12 @@ And there's a bonus you don't see right away. The plan stays in the PR. Six mont
 
 ## Conclusion
 
-One last thing struck me while preparing this article. METR, which measured in 2025 that experienced devs were 19% *slower* with AI while believing they were 20% faster, ran the study again in August 2025. And struggled: between 30% and 50% of the devs were steering clear of tasks they no longer wanted to do without AI, even for the study.
-
-**We already can't really measure the gain.** So we might as well stop measuring throughput, and measure what matters: what gets used, what works, what we had the nerve not to build.
+For a consultancy like ours, there's a question that nags: we sell developer days. If development becomes the cheapest part, **what do we sell tomorrow?** My answer for now: judgment. Knowing what to build, what not to build, and proving that what ships actually works.
 
 Code moves fast. It's up to us to relearn how to decide just as fast, and to review what deserves it. So, do you still review everything?
 
 ## Resources
 
-- [Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/), METR, July 2025
-- [We are Changing our Developer Productivity Experiment Design](https://metr.org/blog/2026-02-24-uplift-update/), METR, February 2026
 - [The Acceleration Whiplash](https://www.faros.ai/research/ai-acceleration-whiplash), AI Engineering Report 2026, Faros AI
 - [2026 Software Engineering Benchmarks Report](https://linearb.io/resources/software-engineering-benchmarks-report), LinearB
 - [State of AI-assisted Software Development 2025](https://dora.dev/research/2025/dora-report/), DORA, September 2025, read through [InfoQ](https://www.infoq.com/news/2025/09/dora-state-of-ai-in-dev-2025/) and [Google Cloud's announcement](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report)
@@ -254,7 +249,6 @@ Code moves fast. It's up to us to relearn how to decide just as fast, and to rev
 - [AI-Native Software Development Needs Generalists](https://www.deeplearning.ai/the-batch/ai-native-software-development-needs-generalists), Andrew Ng, April 2026
 - [Anthropic's CPO on what comes next](https://www.lennysnewsletter.com/p/anthropics-cpo-heres-what-comes-next), Lenny's Podcast with Mike Krieger, June 2025
 - [TBM 427: The Bottleneck Strike Again!](https://cutlefish.substack.com/p/tbm-427-the-bottleneck-strike-again), John Cutler, June 2026
-- [Build to Learn vs Build to Earn](https://www.svpg.com/build-to-learn-vs-build-to-earn/), Marty Cagan, April 2026
 - [Spec-driven development with AI: Get started with a new open source toolkit](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/), GitHub, September 2025
 - [Introducing Kiro](https://kiro.dev/blog/introducing-kiro/), AWS, July 2025
 - [Reflexive AI usage](https://www.shopify.com/careers/candidate-guide/ai-usage), Tobi Lütke, Shopify, memo from March 2025, made public in April 2025

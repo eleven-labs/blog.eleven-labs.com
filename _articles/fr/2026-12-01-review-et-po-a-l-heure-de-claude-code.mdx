@@ -73,6 +73,8 @@ Mais l'autre moitié du problème est chez les relecteurs. On relit encore comme
 
 Et coller une IA dans l'outil de review ne suffit pas. Meta a montré aux relecteurs des correctifs proposés par un modèle : les reviews ont rallongé de plus de 5 %. Montrés à l'auteur seul, ils ne ralentissaient plus rien. L'endroit où tu mets l'IA compte plus que le fait d'en mettre.
 
+Et un point qu'on oublie souvent : DORA décrit l'IA comme un amplificateur. Une équipe avec de bonnes fondations (tests, petites PR, déploiement fréquent) va beaucoup plus vite. Une équipe sans fondations va surtout beaucoup plus vite… dans le mur. Le débit monte, la stabilité baisse, dit le rapport 2025, quand la base n'est pas solide. Faros est moins optimiste en 2026 : dans ses mesures, même les bonnes fondations ne protègent pas de la dégradation.
+
 ## « Les PO ne suivent pas »
 
 L'autre phrase, je l'ai entendue aussi, et plus d'une fois : *les PO n'arrivent plus à alimenter le backlog*. Les tickets prêts partent dans la journée, ceux qui restent sont flous, et le dev demande « je prends quoi ? » un peu plus souvent.
@@ -91,15 +93,9 @@ John Cutler a une phrase qui m'a fait sourire : le goulot s'est déplacé… ver
 
 Je ne veux pas faire l'article qui ne voit que le verre à moitié vide. Parce que franchement, il y a des trucs géniaux là-dedans.
 
-**Ce qu'on remettait à plus tard se fait.** Les tests qu'on n'avait « pas le temps » d'écrire, la doc, la petite dette qui traîne depuis deux ans, le refacto qu'on n'osait pas : ça ne coûte presque plus rien à écrire. L'excuse a disparu. Reste à le relire, et on y revient.
-
-**Le PO peut montrer au lieu de décrire.** Un prototype qui marche en une après-midi vaut dix pages de spécifications. Marty Cagan fait bien la différence entre *building to learn* et *building to earn* : le prototype sert à apprendre, pas à livrer. Mais apprendre en une après-midi, c'est nouveau.
+**Ce qu'on remettait à plus tard se fait.** Les tests qu'on n'avait « pas le temps » d'écrire, la doc, la petite dette qui traîne depuis deux ans, le refacto qu'on n'osait pas : ça ne coûte presque plus rien à écrire. L'excuse a disparu. Reste à relire tout ça, et on y revient.
 
 **Se tromper coûte moins cher.** Si une fonctionnalité se code en deux heures, on peut la jeter sans drame. Tester deux versions, garder la meilleure, assumer d'avoir eu tort.
-
-**Le relecteur IA ne fatigue pas.** À la quinzième PR de la journée, moi si. Il trouve l'oubli de gestion d'erreur que je ne vois plus. Pas tout, loin de là, mais il est là à 22 h comme à 9 h.
-
-Et un point qu'on oublie souvent : DORA décrit l'IA comme un amplificateur. Une équipe avec de bonnes fondations (tests, petites PR, déploiement fréquent) va beaucoup plus vite. Une équipe sans fondations va surtout beaucoup plus vite… dans le mur. Le débit monte, la stabilité baisse, dit le rapport 2025, quand la base n'est pas solide. Faros est moins optimiste en 2026 : dans ses mesures, même les bonnes fondations ne protègent pas de la dégradation.
 
 ## Six idées qui fâchent
 
@@ -116,8 +112,6 @@ Bon. On peut continuer à relire comme avant en serrant les dents, ou on peut ca
 **5. Recetter en production.** Tout derrière un *feature flag*, ouvert à cinq vrais utilisateurs le jour même. La recette n'est plus une étape que le PO fait quand il a le temps : c'est l'usage réel, mesuré. Ce qui n'est pas utilisé au bout d'un mois, on le supprime. Oui, supprimer, c'est aussi livrer.
 
 **6. Fusionner les rôles, au moins un peu.** Un dev qui parle aux utilisateurs, un PO qui sait lancer un agent. Le *product engineer* n'est pas une mode, c'est ce qui reste quand le code ne coûte plus rien et que le jugement coûte tout.
-
-Et pour nous, en ESN, il y a une question qui gratte : on vend des jours de développement. Si le développement devient la partie la moins chère, **qu'est-ce qu'on vend demain ?** Ma réponse du moment : du jugement. Savoir quoi construire, quoi ne pas construire, et prouver que ce qui est livré marche.
 
 ## Le plan dans la PR
 
@@ -153,6 +147,9 @@ Pour que l'agent écrive ce plan sans qu'on le lui redemande, il faut être pré
 ```md
 Avant de coder, écris ton plan en Markdown, pour un relecteur qui a dix minutes :
 500 mots au plus hors Preuve.
+
+Changement d'une ligne, typo, mise à jour de dépendance : seulement Problème et
+Preuve, et code sans attendre.
 
 Forme :
 - un titre ## par rubrique, les six dans l'ordre, même vides (« Aucune ») ;
@@ -209,11 +206,13 @@ quel dans la description, écarts et preuves remplis. Ne le réécris pas : ce
 qui a changé va dans Écarts, rien n'est effacé.
 ```
 
+Je ne l'ai pas encore fait tourner tel quel : c'est la version que je teste, née de ce que mes PR font déjà à moitié.
+
 C'est long, et c'est exprès : un adjectif ne guide pas un agent, un critère si. « Celles qu'on pourrait contester », il le comprend comme il veut. Deux conditions à remplir, il sait les vérifier. D'où les plafonds, les formats de ligne, et la sortie « Aucune », pour qu'il n'invente pas une décision juste pour remplir la case.
 
 Deux consignes font le reste. Les écarts se notent pendant le code, pas à la fin : à la fin, l'agent raconte ce qu'il aurait voulu faire. Et le plan ne se réécrit pas pour la PR, sinon on retombe sur le résumé rédigé après coup.
 
-Reste à savoir où ranger ce texte. Pas dans un *skill* : un skill se charge quand l'agent juge qu'il en a besoin, et ce jugement-là, je ne veux pas le lui laisser. Le plan doit tomber à chaque changement, pas quand l'agent y pense. Pas dans une *rule* rattachée à des chemins non plus : elle attend qu'on ouvre un fichier précis, et un plan n'est attaché à aucun.
+Reste à savoir où ranger ce texte. Pas dans un *skill* : un skill se charge quand l'agent juge qu'il en a besoin, et ce jugement-là, je ne veux pas le lui laisser. Le plan doit tomber à chaque changement qui compte, pas quand l'agent y pense. Pas dans une *rule* rattachée à des chemins non plus : elle attend qu'on ouvre un fichier précis, et un plan n'est attaché à aucun.
 
 Sa place, c'est le fichier d'instructions lu à chaque session : le `CLAUDE.md` du dépôt, pour Claude Code. Et les six titres vont aussi dans le modèle de PR du dépôt, pour que le relecteur les retrouve même quand c'est un humain qui a écrit la PR.
 
@@ -231,16 +230,12 @@ Et un bonus qu'on ne voit pas tout de suite. Le plan reste dans la PR. Six mois 
 
 ## Conclusion
 
-Une dernière chose m'a frappé en préparant cet article. METR, qui avait mesuré en 2025 que des devs expérimentés allaient 19 % *moins* vite avec l'IA en croyant aller 20 % plus vite, a relancé l'exercice en août 2025. Et a eu du mal : entre 30 et 50 % des devs écartaient les tâches qu'ils ne voulaient plus faire sans IA, même pour l'étude.
-
-**On ne sait déjà plus vraiment mesurer le gain.** Alors autant arrêter de mesurer le débit, et mesurer ce qui compte : ce qui est utilisé, ce qui marche, ce qu'on a eu le courage de ne pas faire.
+Pour nous, en ESN, il y a une question qui gratte : on vend des jours de développement. Si le développement devient la partie la moins chère, **qu'est-ce qu'on vend demain ?** Ma réponse du moment : du jugement. Savoir quoi construire, quoi ne pas construire, et prouver que ce qui est livré marche.
 
 Le code va vite. À nous de réapprendre à décider aussi vite, et à relire ce qui mérite de l'être. Et toi, tu relis encore tout ?
 
 ## Ressources
 
-- [Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/), METR, juillet 2025
-- [We are Changing our Developer Productivity Experiment Design](https://metr.org/blog/2026-02-24-uplift-update/), METR, février 2026
 - [The Acceleration Whiplash](https://www.faros.ai/research/ai-acceleration-whiplash), AI Engineering Report 2026, Faros AI
 - [2026 Software Engineering Benchmarks Report](https://linearb.io/resources/software-engineering-benchmarks-report), LinearB
 - [State of AI-assisted Software Development 2025](https://dora.dev/research/2025/dora-report/), DORA, septembre 2025, lu via [InfoQ](https://www.infoq.com/news/2025/09/dora-state-of-ai-in-dev-2025/) et [l'annonce de Google Cloud](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report)
@@ -253,7 +248,6 @@ Le code va vite. À nous de réapprendre à décider aussi vite, et à relire ce
 - [AI-Native Software Development Needs Generalists](https://www.deeplearning.ai/the-batch/ai-native-software-development-needs-generalists), Andrew Ng, avril 2026
 - [Anthropic's CPO on what comes next](https://www.lennysnewsletter.com/p/anthropics-cpo-heres-what-comes-next), Lenny's Podcast avec Mike Krieger, juin 2025
 - [TBM 427: The Bottleneck Strike Again!](https://cutlefish.substack.com/p/tbm-427-the-bottleneck-strike-again), John Cutler, juin 2026
-- [Build to Learn vs Build to Earn](https://www.svpg.com/build-to-learn-vs-build-to-earn/), Marty Cagan, avril 2026
 - [Spec-driven development with AI: Get started with a new open source toolkit](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/), GitHub, septembre 2025
 - [Introducing Kiro](https://kiro.dev/blog/introducing-kiro/), AWS, juillet 2025
 - [Reflexive AI usage](https://www.shopify.com/careers/candidate-guide/ai-usage), Tobi Lütke, Shopify, mémo de mars 2025, rendu public en avril 2025
