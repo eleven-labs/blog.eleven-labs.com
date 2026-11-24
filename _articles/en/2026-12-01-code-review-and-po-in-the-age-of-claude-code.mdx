@@ -4,9 +4,9 @@ lang: en
 date: 2026-12-01
 slug: code-review-and-po-in-the-age-of-claude-code
 title: "Code review and the PO in the age of Claude Code"
-excerpt: "When every dev opens five times as many PRs, who reviews them? And when the backlog runs dry in a week, who fills it? What we can already do, the pitfalls ahead, six ideas that will annoy people, and one proposal: ship the plan in the PR, next to the code."
+excerpt: "When every dev opens three times as many PRs, who reviews them? And when the backlog runs dry in a week, who fills it? What we can already do, the pitfalls ahead, six ideas that will annoy people, and one proposal: ship the plan in the PR, next to the code."
 cover:
-  alt: "An astronaut on the Moon, sitting at a desk, reads a single sheet of paper under a lamp, next to a stack of code printouts taller than they are, the Earth on the horizon"
+  alt: "An astronaut on the Moon, sitting at a desk, reads a single sheet of paper under a lamp, next to a tall stack of code printouts spilling onto the ground, the Earth on the horizon"
   path: /imgs/articles/2026-12-01-review-et-po-a-l-heure-de-claude-code/cover.jpg
   position: center
 categories:
@@ -37,13 +37,13 @@ Alone on a side project, that's fine. On a team, with colleagues who review and 
 
 When every dev ships three, four, five times as many PRs, who reads them? And when the *backlog* runs dry in a week, who fills it?
 
-This isn't quite a field report. **It's me thinking out loud**: what we can already do, the pitfalls I see coming, what's genuinely great, and where all this might take us. Fair warning: I have more questions than answers.
+This isn't quite a field report. It's me thinking out loud: what we can already do, the pitfalls I see coming, the upside, and a proposal I already practice halfway: **ship the plan in the PR.** Fair warning: I have more questions than answers.
 
 I'm starting from a single idea: **code is no longer the bottleneck.** What comes before and after it is.
 
 ## What we can already do, right now
 
-Before playing Cassandra, let's take stock. All of this exists and works today, not two years from now.
+Before playing Cassandra, let's take stock. All of this exists today, not two years from now.
 
 - **The agent reviews the agent.** An independent subagent, starting from an empty context, goes over the diff before a human opens it. It can't see what the coding session thinks it knows, and that's the whole point.
 - **The PR that proves itself.** Tests shown failing before the code, screenshots, a demo. Addy Osmani calls it a *PR contract*: what, why, the proof, the risk, what the AI wrote, where to look.
@@ -54,70 +54,70 @@ So on paper, we have everything: the means to build fast, check fast and specify
 
 On paper.
 
-## "Way too many PRs, it's too much"
+## "That dev opens way too many PRs, it's too much"
 
-I've actually heard that one. A dev starts using an agent, and their colleagues watch the PRs roll in like on an assembly line: *it's too much to ask us to review all that*.
+I've actually heard that one. A dev starts using an agent, and their colleagues watch the PRs roll in, assembly-line style: *it's too much to ask us to review all that*.
 
 The worst part is, they're not wrong. But they're not entirely right either.
 
 The numbers back them up:
 
-- at Faros AI, across 22,000 devs, when a team goes from low to high AI usage, the median time a PR spends in review gets **five times longer**, and 31% more PRs get merged with no review at all;
-- at LinearB, across 8.1 million PRs, an AI-generated PR waits **4.6 times longer** before someone picks it up… and then gets reviewed twice as fast.
+- at Faros AI, across 22,000 devs, when a team goes from low to high AI usage, the median time a PR spends in review gets five times longer, and 31% more PRs get merged with no review at all;
+- at LinearB, across 8.1 million PRs, an AI-generated PR waits 4.6 times longer before someone picks it up… and then gets reviewed twice as fast.
 
 Read that second line again. We put it off, and when we finally open it, we skim it. **Code review turns into a queue followed by a glance**, with an "*approved*" stamp on top as if nothing happened. That's the real problem: not the workload, the illusion of control.
 
-Simon Willison doesn't mince words: dumping a huge, unproven PR on your colleagues means handing them the actual work. "*This is rude.*" So yes, **there is such a thing as PR etiquette**, and the agent didn't invent it, it just made it urgent.
+Simon Willison doesn't mince words: dumping a huge, unproven PR on your colleagues means handing them the work. "*This is rude.*" So **there really is such a thing as PR etiquette**, and the agent didn't invent it, it just made it urgent.
 
-But the other half of the problem sits with the reviewers. We still review like it's 2019: line by line, top to bottom, hunting for typos. That contract ("someone read every line") held because writing cost as much as reading. It doesn't anymore.
+But the other half of the problem sits with the reviewers. We still review like it's 2019: line by line, top to bottom, hunting for bugs. That contract ("someone read every line") held because writing cost more than reading: the author's pace capped the reviewer's load. It doesn't anymore.
 
-And bolting an AI onto the review tool isn't enough. Meta showed reviewers fixes suggested by a model: reviews got **more than 5% longer**. Shown to the author alone, the fixes no longer slowed anything down. Where you put the AI matters more than whether you put it in.
+And bolting an AI onto the review tool isn't enough. Meta showed reviewers fixes suggested by a model: reviews got more than 5% longer. Shown to the author alone, the fixes no longer slowed anything down. Where you put the AI matters more than whether you put it in.
 
 ## "The POs can't keep up"
 
 I've heard this other one too, more than once: *the POs can't keep the backlog filled anymore*. Ready tickets get picked up within the day, the ones left are vague, and devs ask "what should I take?" a bit more often.
 
-Andrew Ng wrote it back in July 2025, and again in April 2026: *deciding what to build* is the new bottleneck. Mike Krieger, at Anthropic, says the same thing: the bottleneck has moved from writing code to making decisions.
+Andrew Ng said as much back in July 2025, and again in April 2026: *deciding what to build* is the new bottleneck. Mike Krieger, at Anthropic, says the same thing: the bottleneck has shifted from writing code to making decisions.
 
-Except the PO isn't slow. **Their work just doesn't compress.** Talking to users, arbitrating between two business teams who want opposite things, saying no to a sponsor: no agent does that for them. A user interview still takes an hour.
+Except the PO isn't slow. **Their work just doesn't compress.** Talking to users, refereeing between two business teams that want opposite things, saying no to a sponsor: no agent does that for them. A user interview still takes an hour.
 
-And in my view, what really gets stuck comes after the spec: **validation**. Writing a *user story*, we know how to speed up, and AI does it very well. Actually trying what was shipped, on a real case, with a real user: no. Features pile up in QA, and nobody knows anymore which ones were really looked at.
+And in my view, what gets stuck comes after the spec: **validation**. Writing a *user story* is something we know how to speed up, and AI does it very well. Trying out what shipped, on an actual case, with a real user? Not so much. Features pile up in QA, and nobody knows anymore which ones someone has looked at.
 
-The next pitfall shows up on its own: with no decision made, **the dev decides**. Or worse, the agent decides, and nobody notices because the code is clean. Kiro says as much in its launch post: without a spec, you're left with the assumptions the model never documented anywhere.
+The next pitfall shows up on its own: with no decision made, **the dev decides**. Or worse, the agent decides, and nobody notices because the code is clean. Kiro says as much in its launch post: without a spec, you inherit assumptions the model made without writing them down anywhere.
 
-John Cutler has a line that made me smile: the bottleneck has moved… to conversations about the bottleneck moving. He has a point. **The bottleneck isn't a role, it's an organization that can't make decisions fast.** Adding a PO won't help if every decision still goes through three committees.
+John Cutler has a line that made me smile: the bottleneck has shifted… to conversations about the bottleneck shifting. Cutler's right. **The bottleneck isn't a role, it's an organization that can't make decisions fast.** Adding a PO won't help if every decision still goes through three committees.
 
 ## The upside, for real
 
-I don't want to write the article that only sees the glass half empty. Because honestly, some of this is amazing.
+I don't want to write yet another glass-half-empty article. Because honestly, some of this is amazing.
 
-**The stuff we kept putting off gets done.** The tests we "didn't have time" to write, the docs, the little debt that's been lying around for two years, the refactoring we didn't dare to start: it costs next to nothing now. The excuse is gone.
+**The stuff we kept putting off gets done.** The tests we "didn't have time" to write, the docs, the bit of tech debt that's been lying around for two years, the refactoring we didn't dare to start: it costs next to nothing to write now. The excuse is gone. It still has to be reviewed, and we'll get to that.
 
 **The PO can show instead of describe.** A working prototype in an afternoon is worth ten pages of specs. Marty Cagan draws a clear line between *building to learn* and *building to earn*: the prototype is there to learn, not to ship. But learning in an afternoon is new.
 
-**Being wrong is cheaper.** If a feature takes two hours to code, you can throw it away without drama. Try two versions, keep the better one, own being wrong.
+**Being wrong is cheaper.** If a feature takes two hours to code, you can throw it away without drama. Try two versions, keep the better one, and own it when you got it wrong.
 
 **The AI reviewer doesn't get tired.** By the fifteenth PR of the day, I do. It catches the missing error handling I no longer see. Not everything, far from it, but it's there at 10 p.m. just like at 9 a.m.
 
-And one point people often forget: DORA describes AI as **an amplifier**. A team with solid foundations (tests, small PRs, frequent deployments) goes much faster. A team without them mostly goes much faster… straight into a wall. Throughput goes up and stability goes down, says the 2025 report, when the foundations aren't solid. Faros is less optimistic in 2026: in its data, even good foundations don't protect against the decline.
+And one point people often forget: DORA describes AI as an amplifier. A team with solid foundations (tests, small PRs, frequent deployments) goes much faster. A team without them mostly goes much faster… straight into a wall. Throughput goes up and stability goes down, says the 2025 report, when the foundations aren't solid. Faros is less optimistic in 2026: in its data, even good foundations don't protect against the decline.
 
 ## Six ideas that will annoy people
 
 Right. We can keep reviewing the way we always have and grit our teeth, or we can break a few habits. Here's what I'd put on the table. Some of these will make people scream, which is sort of the point.
 
-**1. Stop reviewing the diff.** Yes, I'm putting it in writing. The reviewer agent reads the diff better than you do at 6 p.m. What the human should review is **the plan**: the intent, the choices, what's out of scope, the proof that it works. Ideally, that happens *before* the code: ten minutes on a plan beat an hour on 1,500 lines already written. But you don't have to move the review to get there. The plan can come in the PR, next to the code, and take up most of the review time (I give it a whole section, after the six ideas).
+**1. Stop reviewing the diff line by line.** I'm putting it in writing. The reviewer agent does that better than you do at 6 p.m. What the human should review is the plan: the intent, the choices, what's out of scope, the proof that it works. Ideally, that happens *before* the code: ten minutes on a plan beat an hour on 1,500 lines already written. But you don't have to move the review to get there. The plan can come in the PR, next to the code, and take up most of the review time (I give it a whole section, after the six ideas).
 
-**2. Sample, like on a factory floor.** Nobody checks every bottle on a bottling line. Pick one PR in five at random and review it properly, in pairs, in depth. The rest go through on automated proof. That's less hypocritical than 100% of PRs "*approved*" after a skim.
+**2. Spot-check, like on a factory floor.** Nobody checks every bottle on a bottling line. PRs that touch permissions, data or a migration always get reviewed. Among the rest, pick one in five at random and review it in pairs, in depth. Everything else goes through on automated proof. The difference with Faros's PRs merged without review: here, it's decided and tracked, not something that just happens. And it's less hypocritical than 100% of PRs "*approved*" after a skim.
 
 **3. Open one PR, review one PR.** Want to open your tenth PR of the day? Review other people's first. A dead-simple quota that restores the balance the agent broke. And I bet it settles the "it's too much" complaint within two weeks.
 
-**4. The PO stops writing the backlog.** They write bets instead: a problem, a measurable success criterion, a date to judge it by. Devs and their agents come up with two or three solutions, actually prototyped. **The PO becomes a judge, not a writer.** Picking between three running prototypes is a lot faster than writing three *user stories*.
+**4. The PO stops writing the backlog.** They write bets instead: a problem, a measurable success criterion, a date to judge it by. Devs and their agents come up with two or three solutions, each one prototyped. **The PO becomes a judge, not a writer.** Picking between three running prototypes is already validation: the PO judges the real thing instead of rereading a spec.
 
 **5. Do acceptance testing in production.** Everything behind a *feature flag*, opened to five real users the same day. Acceptance testing is no longer a step the PO gets to when they have time: it's real, measured usage. Whatever nobody uses after a month gets deleted. Yes, deleting is shipping too.
 
 **6. Merge the roles, at least a little.** A dev who talks to users, a PO who knows how to run an agent. The *product engineer* isn't a fad, it's what's left when code costs nothing and judgment costs everything.
 
-And for us, as a consultancy, there's a question that itches: we sell days of development. If development becomes the cheapest part, **what do we sell tomorrow?** My answer for now: judgment. Knowing what to build, what not to build, and proving that what ships actually works.
+And for us, as a consultancy, there's a question that nags at us: we sell developer days. If development becomes the cheapest part, **what do we sell tomorrow?** My answer for now: judgment. Knowing what to build, what not to build, and proving that what ships actually works.
 
 ## The plan in the PR
 
@@ -127,9 +127,11 @@ Today, a PR is a diff and a three-line description. The reviewer has only the co
 
 With an agent, that intent already exists, in writing: it's the plan you approved before it started coding. And it vanishes right at commit time.
 
-Ideally, you'd review that plan before the agent gets going. Except that means changing the whole team's ritual, and rituals move slowly. There's a simpler way: leave the review where it is, and change what you read in it.
+Ideally, you'd review that plan before the agent gets going. Except that means changing the whole team's ritual, and rituals are slow to change. There's a simpler way: leave the review where it is, and change what you read in it.
 
-Others have made this shift, and written about it before me. At Zencoder, Neeraj Khandelwal wants the plan reviewed before the code: "*diff review is becoming the receipt*." At Giant Swarm, the number of PRs tripled in a year: the team now reviews plans, and most PRs get merged without a human reading the diff. They move the review. I only change what you read in it.
+There's one objection left, and it's a good one: if the reviewer challenges a decision, the code is already written. Except that redoing it now costs an hour of agent time, not three days of dev work. And for the few decisions where getting it wrong costs more than redoing, you ask for a second opinion before starting the agent.
+
+Others have made this shift, and written about it before me. At Zencoder, Neeraj Khandelwal wants the plan reviewed before the code: "*diff review is becoming the receipt*." At Giant Swarm, the number of PRs tripled in a year: the team now reviews plans, and most PRs get merged without a human reading the diff.
 
 Here's my proposal: **the plan travels in the PR, next to the code.** Not a summary written after the fact for the PR, like Addy Osmani's *PR contract*. The plan itself, the one the agent followed, with whatever changed along the way. One page, in the order the reviewer reads it:
 
@@ -144,20 +146,23 @@ So the reviewer's job changes. **They spend most of their time on the plan, not 
 
 They read the code differently too. They check that it matches the plan, and they go straight to the deviations and the sensitive spots the plan points them to. The line-by-line pass is the reviewer agent's job, and it does it pretty well.
 
+And the PO gets something out of it too. Without opening the diff, they read the Problem and its "Fixed when", Out of scope and Proof. Their acceptance testing starts there.
+
 For the agent to write that plan without being asked every time, you have to be precise. Something like this:
 
 ```md
-Before coding, write your plan in Markdown, for a reviewer who has five minutes:
+Before coding, write your plan in Markdown, for a reviewer who has ten minutes:
 500 words max, not counting Proof.
 
 Format:
 - one ## heading per section, all six in order, even when empty ("None");
-- bullets only: one idea per bullet, 40 words max, no paragraphs;
+- bullets only, except Problem: one idea per bullet, 40 words max, no paragraphs;
 - no code, except paths and names, in backticks;
 - no introduction, no conclusion, no summary of the diff.
 
-A section goes over its cap? Don't squeeze it: say so at the top of the plan,
-in one line, with a split into several PRs or the reason to keep it all.
+A section goes over its cap? Don't cram it: say so at the top of the plan,
+in one line, proposing a split into several PRs or explaining why it should
+stay as one.
 
 ## Problem
 Two sentences max. Then "Fixed when:" followed by an observable check:
@@ -176,10 +181,11 @@ A decision made in conversation goes in the same format, with its date
 and who made it.
 
 ## Where to look
-3 spots max, as path:line (or function), each with what breaks if we got it
-wrong, "if …, then …" (permissions, database writes, external calls,
-concurrency…). When the PR opens, a spot the diff didn't touch, or that is
-no longer the riskiest, is struck through and replaced.
+3 spots max, as path (or function) in the plan, as path:line when the PR
+opens, each with what breaks if we got it wrong, "if …, then …" (permissions,
+database writes, external calls, concurrency…). When you open the PR, strike
+through and replace any spot the diff didn't touch or that is no longer the
+riskiest.
 
 ## Out of scope
 What you're deliberately not touching, with a link to the issue tracking it,
@@ -196,33 +202,33 @@ goes in Proof.
 In the plan, what you'll show. In the PR, first one line that answers
 "Fixed when", then 5 lines max: command run and its output, test seen
 failing then passing, screenshot, what the review or CI found. The rest in a
-collapsed <details> block. Whatever couldn't be checked is written
+collapsed <details> block. Mark anything you couldn't check as
 "Not verified: <reason>".
 
 Wait for my go-ahead before coding. When you open the PR, put this plan
 as-is in the description, with deviations and proof filled in. Don't rewrite
-it: a sentence that turned out wrong is struck through, with what replaces it.
+it: whatever changed goes in Deviations, nothing gets erased.
 ```
 
-Yes, it's long. On purpose: **an adjective doesn't guide an agent, a criterion does.** "The ones someone could challenge" means whatever it wants it to mean. Two conditions to meet, it can check. Hence the caps, the line formats, and the "None" way out, so it doesn't make up a decision just to fill the slot.
+It's long, and that's on purpose: an adjective doesn't guide an agent, a criterion does. The agent can read "the ones someone could challenge" however it likes. Two conditions, though, it can check. Hence the caps, the line formats, and the "None" escape hatch, so it doesn't make up a decision just to fill the slot.
 
-Two instructions do the rest. **Deviations get written down while coding**, not at the end: at the end, the agent tells you what it wishes it had done. And the plan isn't rewritten for the PR, or you're back to the after-the-fact summary.
+Two instructions do the rest. Deviations get written down while coding, not at the end: at the end, the agent tells you what it wishes it had done. And the plan isn't rewritten for the PR, or you're back to the after-the-fact summary.
 
-Now, where to put this text. Not in a *skill*: **a skill loads when the agent decides it needs it**, and that's one call I don't want to leave to it. The plan has to show up for every change, not whenever the agent remembers. Not in a path-scoped *rule* either: it waits for a specific file to be opened, and a plan isn't tied to any file.
+Now, where to put this text. Not in a *skill*: a skill loads when the agent decides it needs it, and that's one call I don't want to leave to it. The plan has to show up for every change, not whenever the agent remembers. Not in a path-scoped *rule* either: it waits for a specific file to be opened, and a plan isn't tied to any file.
 
-It belongs in **the instructions file read at every session**: the repo's `CLAUDE.md`, for Claude Code. And the six headings also go into the repo's PR template, so the reviewer finds them even when a human wrote the PR.
+It belongs in the instructions file read at every session: the repo's `CLAUDE.md`, for Claude Code. And the six headings also go into the repo's PR template, so the reviewer finds them even when a human wrote the PR.
 
-On my side, on an internal tool, my PRs explain the critical choices in their description: permissions, security, departures from the ticket. A paragraph that turned out wrong gets struck through, with a link to what replaces it.
+On the internal tool I work on, my PRs explain the critical choices in their description: permissions, security, departures from the ticket. A paragraph that turned out wrong gets struck through, with a link to what replaces it.
 
 On November 18, an audit of duplicated code produced a plan split into batches, one brief per PR. By the next evening, five batches were merged. Reviewing each of those PRs mostly meant reading its brief, then checking that the diff told the same story.
 
 Of course, there's a catch. **A plan can lie: only the code is the ground truth.** On an earlier project, a PR announced as 100 to 150 lines lighter ended up at net zero. In the audit, 17 translation keys were flagged as dead: 13 actually were.
 
-So the reviewer doesn't let go of the code. What they hunt for is the gap between what the plan promises and what the diff does. An agent can even point it out for them.
+So the reviewer doesn't let go of the code. What they hunt for is the gap between what the plan promises and what the diff does. That's the reviewer agent's job: give it the plan and the diff, and it lists what one promises and the other doesn't do. The deviations are declared by the agent that wrote the code: someone else has to check that list.
 
 Another limit: a fifteen-page plan is just a second diff. One page, readable in ten minutes, or it has failed.
 
-And there's a bonus you don't see right away. Pushed with the code, the plan stays in the history. Six months later, when someone wonders why it was done this way, the answer is right there, next to the commit.
+And there's a bonus you don't see right away. The plan stays in the PR. Six months later, when someone wonders why it was done this way, the answer is one click away from the commit.
 
 ## Conclusion
 
