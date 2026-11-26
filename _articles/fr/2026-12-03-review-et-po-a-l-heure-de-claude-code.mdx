@@ -1,0 +1,253 @@
+---
+contentType: article
+lang: fr
+date: 2026-12-03
+slug: review-et-po-a-l-heure-de-claude-code
+title: "La review et le PO à l'heure de Claude Code"
+excerpt: "Quand chaque dev ouvre trois fois plus de PR, qui les relit ? Et quand le backlog se vide en une semaine, qui le remplit ? Ce qu'on sait déjà faire, les travers qui arrivent, six idées qui fâchent, et une proposition : livrer le plan dans la PR, à côté du code."
+cover:
+  alt: "Un astronaute sur la Lune, assis à un bureau, lit une seule feuille à la lumière d'une lampe, à côté d'une haute pile de listings de code qui déborde sur le sol, la Terre à l'horizon"
+  path: /imgs/articles/2026-12-03-review-et-po-a-l-heure-de-claude-code/cover.jpg
+  position: center
+categories:
+  - agile
+keywords:
+  - claude code
+  - agent ia
+  - ia generative
+  - code review
+  - pull request
+  - product owner
+  - backlog
+  - spec-driven development
+  - plan
+  - claude.md
+authors:
+  - gcunsolo
+seo:
+  title: "Code review et PO à l'heure de Claude Code : relire le plan"
+  description: "Avec un agent de code, la review et le backlog deviennent le goulot. Les chiffres, six idées qui fâchent, et le plan livré dans la PR, à côté du code."
+---
+
+Il y a un mois, je racontais ici [un jeu complet en neuf jours avec Claude Code](https://blog.eleven-labs.com/fr/workflow-claude-code-kebab-roguelite/). J'y jouais le PO, le *reviewer* et le testeur. L'agent écrivait tout le code.
+
+La conclusion m'est restée en travers : je n'écrivais plus de code, mais je lisais 93 PR. **J'étais devenu le goulot.**
+
+Seul sur un projet perso, ça passe. Dans une équipe, avec des collègues qui relisent et un PO qui décide, ça pose une vraie question.
+
+Quand chaque dev produit trois, quatre, cinq fois plus de PR, qui les lit ? Et quand le *backlog* se vide en une semaine, qui le remplit ?
+
+Cet article n'est pas exactement un REX. C'est une réflexion à voix haute : ce qu'on sait déjà faire, les travers que je vois venir, le bon côté, et une proposition que j'applique déjà à moitié : **livrer le plan dans la PR.** J'ai plus de questions que de réponses, je te préviens.
+
+Je pars d'une seule idée : **le code n'est plus le goulot.** Ce qu'il y a avant et après lui, si.
+
+## Ce qu'on sait déjà faire, là, aujourd'hui
+
+Avant de jouer les Cassandre, un inventaire. Tout ça existe déjà, pas dans deux ans.
+
+- **L'agent relit l'agent.** Un sous-agent indépendant, avec un contexte vide, passe sur le diff avant qu'un humain l'ouvre. Il ne voit pas ce que la session qui a codé croit savoir, et c'est tout l'intérêt.
+- **La PR qui se prouve elle-même.** Des tests montrés rouges avant le code, des captures, une démo. Addy Osmani appelle ça un *PR contract* : quoi, pourquoi, la preuve, le risque, ce que l'IA a écrit, où regarder.
+- **La spec comme source de vérité.** GitHub (Spec Kit) et AWS (Kiro) poussent le *spec-driven development* : l'intention écrite d'abord, le code ensuite. « *intent is the source of truth* ».
+- **Le PO qui prototype.** Un prototype cliquable en une après-midi, sans dev. Chez Shopify, depuis le mémo de Tobi Lütke en 2025, la phase de prototype « *should be dominated by AI exploration* ».
+
+Sur le papier, on a donc tout : de quoi produire vite, de quoi vérifier vite, de quoi spécifier vite.
+
+Sur le papier.
+
+## « Il fait trop de PR, c'est abusé »
+
+Celle-là, je l'ai entendue. Un dev qui s'est mis à l'agent, et des collègues qui voient arriver ses PR à la chaîne : *c'est abusé de nous demander autant de review*.
+
+Le pire, c'est qu'ils n'ont pas tort. Mais ils n'ont pas tout à fait raison non plus.
+
+Les chiffres vont dans leur sens :
+
+- chez Faros AI, sur 22 000 devs, quand une équipe passe d'un faible à un fort usage de l'IA, le temps médian d'une PR en review est multiplié par cinq, et 31 % de PR en plus sont fusionnées sans aucune review ;
+- chez LinearB, sur 8,1 millions de PR, une PR générée par IA attend 4,6 fois plus longtemps avant qu'on la prenne… puis elle est relue deux fois plus vite.
+
+Relis la deuxième ligne. On la repousse, et quand on finit par l'ouvrir, on la survole. **La review devient une file d'attente suivie d'un coup d'œil**, avec le tampon « *approved* » dessus comme si de rien n'était. C'est ça, le vrai travers : pas la charge, le faux contrôle.
+
+Simon Willison le dit sans prendre de gants : lancer sur ses collègues une PR énorme et non prouvée, c'est leur refiler le travail. « *This is rude* ». Donc **il y a bien une politesse de la PR**, et l'agent ne l'a pas inventée, il l'a juste rendue urgente.
+
+Mais l'autre moitié du problème est chez les relecteurs. On relit encore comme en 2019 : ligne par ligne, du haut vers le bas, en cherchant le bug. Ce contrat (« quelqu'un a lu chaque ligne ») tenait parce qu'écrire coûtait plus cher que lire : le débit de l'auteur bornait la charge du relecteur. Ce n'est plus vrai.
+
+Et coller une IA dans l'outil de review ne suffit pas. Meta a montré aux relecteurs des correctifs proposés par un modèle : les reviews ont rallongé de plus de 5 %. Montrés à l'auteur seul, ils ne ralentissaient plus rien. L'endroit où tu mets l'IA compte plus que le fait d'en mettre.
+
+Et un point qu'on oublie souvent : DORA décrit l'IA comme un amplificateur. Une équipe avec de bonnes fondations (tests, petites PR, déploiement fréquent) va beaucoup plus vite. Une équipe sans fondations va surtout beaucoup plus vite… dans le mur. Le débit monte, la stabilité baisse, dit le rapport 2025, quand la base n'est pas solide. Faros est moins optimiste en 2026 : dans ses mesures, même les bonnes fondations ne protègent pas de la dégradation.
+
+## « Les PO ne suivent pas »
+
+L'autre phrase, je l'ai entendue aussi, et plus d'une fois : *les PO n'arrivent plus à alimenter le backlog*. Les tickets prêts partent dans la journée, ceux qui restent sont flous, et le dev demande « je prends quoi ? » un peu plus souvent.
+
+Andrew Ng l'a écrit dès juillet 2025, et redit en avril 2026 : *deciding what to build* est le nouveau goulot. Mike Krieger, chez Anthropic, dit la même chose : le goulot est passé de l'écriture du code à la décision.
+
+Sauf que le PO n'est pas lent. **C'est son travail qui ne se compresse pas.** Parler aux utilisateurs, arbitrer entre deux métiers qui veulent l'inverse, dire non à un sponsor : aucun agent ne fait ça à sa place. Un entretien utilisateur dure toujours une heure.
+
+Et à mon avis, ce qui coince vient après la spec : **la validation**. Écrire une *user story*, on sait l'accélérer, l'IA le fait très bien. Essayer ce qui a été livré, sur un cas réel, avec un vrai utilisateur : non. Les fonctionnalités s'empilent en recette, et plus personne ne sait lesquelles quelqu'un a regardées.
+
+Le travers suivant arrive tout seul : faute de décision, **le dev décide**. Ou pire, l'agent décide, et personne ne s'en rend compte parce que le code est propre. Kiro le dit dans son lancement : sans spec, tu hérites des hypothèses que le modèle a faites sans les écrire nulle part.
+
+John Cutler a une phrase qui m'a fait sourire : le goulot s'est déplacé… vers les conversations sur le déplacement du goulot. Il a raison. **Le goulot n'est pas un rôle, c'est une organisation qui ne sait pas trancher vite.** Ajouter un PO ne sert à rien si chaque décision passe encore par trois comités.
+
+## Le bon côté, pour de vrai
+
+Je ne veux pas faire l'article qui ne voit que le verre à moitié vide. Parce que franchement, il y a des trucs géniaux là-dedans.
+
+**Ce qu'on remettait à plus tard se fait.** Les tests qu'on n'avait « pas le temps » d'écrire, la doc, la petite dette qui traîne depuis deux ans, le refacto qu'on n'osait pas : ça ne coûte presque plus rien à écrire. L'excuse a disparu. Reste à relire tout ça, et on y revient.
+
+**Se tromper coûte moins cher.** Si une fonctionnalité se code en deux heures, on peut la jeter sans drame. Tester deux versions, garder la meilleure, assumer d'avoir eu tort.
+
+## Six idées qui fâchent
+
+Bon. On peut continuer à relire comme avant en serrant les dents, ou on peut casser deux ou trois habitudes. Voilà ce que je mettrais sur la table. Certaines vont faire hurler, c'est un peu le but.
+
+**1. Arrêter de relire le diff ligne par ligne.** Je l'écris. Ça, l'agent relecteur le fait mieux que toi à 18 h. Ce que l'humain doit relire, c'est le plan : l'intention, les choix, ce qui est hors périmètre, la preuve que ça marche. Dans l'idéal, ça se passe *avant* le code : dix minutes sur un plan valent mieux qu'une heure sur 1 500 lignes déjà écrites. Mais pas besoin de déplacer la review pour autant. Le plan peut arriver dans la PR, à côté du code, et prendre le gros du temps de relecture (j'en fais une section entière, après les six idées).
+
+**2. Contrôler par échantillon, comme à l'usine.** Personne ne vérifie chaque bouteille sur une chaîne d'embouteillage. Les PR qui touchent aux droits, aux données ou à une migration sont toujours relues. Parmi les autres, on en tire une sur cinq au sort, relue à deux, en profondeur. Le reste passe sur la preuve automatique. La différence avec les PR fusionnées sans review de Faros : ici, c'est décidé et tracé, pas subi. Et c'est moins hypocrite que 100 % de PR « *approved* » survolées.
+
+**3. Une PR ouverte, une PR relue.** Tu veux ouvrir ta dixième PR de la journée ? Relis d'abord celles des autres. Un quota tout bête, qui remet l'équilibre là où l'agent l'a cassé. Et qui règle le « c'est abusé » en deux semaines, je parie.
+
+**4. Le PO n'écrit plus le backlog.** Il écrit des paris : un problème, un critère de succès mesurable, une date pour juger. Les devs et leurs agents proposent deux ou trois solutions, chacune prototypée. **Le PO devient un juge, plus un rédacteur.** Choisir entre trois prototypes qui tournent, c'est déjà de la validation : le PO juge sur pièce au lieu de relire une spec.
+
+**5. Recetter en production.** Tout derrière un *feature flag*, ouvert à cinq vrais utilisateurs le jour même. La recette n'est plus une étape que le PO fait quand il a le temps : c'est l'usage réel, mesuré. Ce qui n'est pas utilisé au bout d'un mois, on le supprime. Oui, supprimer, c'est aussi livrer.
+
+**6. Fusionner les rôles, au moins un peu.** Un dev qui parle aux utilisateurs, un PO qui sait lancer un agent. Le *product engineer* n'est pas une mode, c'est ce qui reste quand le code ne coûte plus rien et que le jugement coûte tout.
+
+## Le plan dans la PR
+
+La première des six mérite plus qu'un paragraphe. C'est la seule que j'applique déjà, au moins à moitié.
+
+Aujourd'hui, une PR, c'est un diff et une description de trois lignes. Le relecteur n'a que le code pour deviner ce que l'auteur voulait faire. Il reconstitue l'intention à partir de 1 500 lignes, à la main.
+
+Avec un agent, cette intention existe déjà, par écrit : c'est le plan qu'on a validé avant qu'il code. Et elle disparaît pile au moment du commit.
+
+L'idéal serait de relire ce plan avant que l'agent se lance. Sauf que ça demande de changer le rituel de toute l'équipe, et un rituel, ça se déplace lentement. Il y a plus simple : laisser la review là où elle est, et changer ce qu'on y lit.
+
+Reste une objection, et elle est bonne : si le relecteur conteste une décision, le code est déjà écrit. Sauf que refaire coûte maintenant une heure d'agent, plus trois jours de dev. Et pour les rares décisions où se tromper coûte plus cher que refaire, on demande un avis avant de lancer l'agent.
+
+Ce déplacement, d'autres l'ont fait, et l'ont écrit avant moi. Chez Zencoder, Neeraj Khandelwal veut qu'on relise le plan avant le code : « *diff review is becoming the receipt* ». Chez Giant Swarm, le nombre de PR a triplé en un an : l'équipe relit maintenant les plans, et la plupart des PR sont fusionnées sans qu'un humain lise le diff.
+
+Ce que je propose : **le plan voyage dans la PR, à côté du code.** Pas un résumé rédigé après coup pour la PR, comme le *PR contract* d'Addy Osmani. Le plan lui-même, celui que l'agent a suivi, avec ce qui a changé en route. Une page, dans l'ordre où le relecteur la lit :
+
+- **le problème** : ce qui ne va pas, et à quoi on verra que c'est réglé ;
+- **les décisions** : seulement celles qu'on pourrait contester, chacune avec l'option écartée et pourquoi ;
+- **où regarder** : les deux ou trois endroits du diff où une erreur coûterait cher (permissions, données, migration) ;
+- **le hors périmètre** : ce qu'on n'a pas touché, exprès, et où c'est noté pour plus tard ;
+- **les écarts** : là où le code s'est éloigné du plan en route, et pourquoi ;
+- **la preuve** : les tests vus rouges puis verts, les captures, l'écran vérifié.
+
+Du coup, le relecteur change de métier. **Il passe l'essentiel de son temps sur le plan, et non plus sur le code ligne par ligne.** C'est le bon problème ? Le bon choix ? Il manque un cas ? C'est là que se cachent les erreurs qui coûtent cher : une mauvaise décision, pas une variable mal nommée.
+
+Le code, il le lit autrement. Il vérifie qu'il colle au plan, et il va droit aux écarts et aux endroits sensibles que le plan lui désigne. Le ligne par ligne, l'agent relecteur s'en charge, et plutôt bien.
+
+Et le PO y trouve son compte. Sans ouvrir le diff, il lit le Problème et son « Réglé quand », le Hors périmètre et la Preuve. Sa recette commence là.
+
+Pour que l'agent écrive ce plan sans qu'on le lui redemande, il faut être précis. Quelque chose comme ça :
+
+```md
+Avant de coder, écris ton plan en Markdown, pour un relecteur qui a dix minutes :
+500 mots au plus hors Preuve.
+
+Changement d'une ligne, typo, mise à jour de dépendance : seulement Problème et
+Preuve, et code sans attendre.
+
+Forme :
+- un titre ## par rubrique, les six dans l'ordre, même vides (« Aucune ») ;
+- rien que des puces, sauf Problème : une idée par puce, 40 mots au plus, pas de paragraphe ;
+- pas de code, sauf les chemins et les noms, entre backticks ;
+- pas d'introduction, pas de conclusion, pas de résumé du diff.
+
+Une rubrique dépasse son plafond ? Ne tasse pas : dis-le en tête du plan,
+en une ligne, avec un découpage en plusieurs PR ou la raison de tout garder.
+
+## Problème
+Deux phrases au plus. Puis « Réglé quand : » suivi d'une vérification
+observable : un test nommé, une commande et son résultat attendu, ou un
+écran avec l'action à faire et ce qu'on doit voir.
+
+## Décisions
+3 au plus. Une décision entre ici seulement si les deux conditions sont
+vraies :
+- il existait au moins une autre option qui tenait la route ;
+- se tromper coûte plus que refaire la PR : données écrites ou migrées,
+  droits d'accès, contrat d'API ou de schéma partagé, nouvelle dépendance,
+  coût récurrent, ou écart avec une convention du dépôt ou avec le ticket.
+Une puce par décision : « Décision : … / Écarté : … / Parce que : … ».
+Jamais ici : nommage, découpage en fichiers, style.
+Une décision tranchée en conversation entre au même format, avec sa date
+et qui l'a prise.
+
+## Où regarder
+3 endroits au plus, en chemin (ou fonction) dans le plan, en chemin:ligne à
+l'ouverture de la PR, chacun avec ce qui casse si on se trompe, « si …, alors … » (droits, écriture en base, appel externe,
+concurrence…). À l'ouverture de la PR, un endroit que le diff n'a pas touché,
+ou qui n'est plus le plus risqué, est barré et remplacé.
+
+## Hors périmètre
+Ce que tu ne touches pas exprès, avec le lien de l'issue qui le suit, ou
+« non suivi ».
+
+## Écarts
+Vide au départ. Ajoute une puce dès que tu changes une décision, agrandis ou
+réduis le périmètre, ou abandonnes une étape :
+« Prévu : … / Fait : … / Parce que : … ». Pendant le code, pas à la fin.
+Un fichier non prévu n'est pas un écart. Ce que la review ou la CI a
+trouvé va dans la Preuve.
+
+## Preuve
+Dans le plan, ce que tu vas montrer. Dans la PR, d'abord une ligne qui répond au
+« Réglé quand », puis 5 lignes au plus : commande lancée et résultat, test vu
+rouge puis vert, capture, ce que la review ou la CI a trouvé. Le reste dans un
+bloc <details> replié. Ce qui n'a pas pu être
+vérifié s'écrit « Non vérifié : <raison> ».
+
+Attends mon accord avant de coder. À l'ouverture de la PR, mets ce plan tel
+quel dans la description, écarts et preuves remplis. Ne le réécris pas : ce
+qui a changé va dans Écarts, rien n'est effacé.
+```
+
+Je ne l'ai pas encore fait tourner tel quel : c'est la version que je teste, née de ce que mes PR font déjà à moitié.
+
+C'est long, et c'est exprès : un adjectif ne guide pas un agent, un critère si. « Celles qu'on pourrait contester », il le comprend comme il veut. Deux conditions à remplir, il sait les vérifier. D'où les plafonds, les formats de ligne, et la sortie « Aucune », pour qu'il n'invente pas une décision juste pour remplir la case.
+
+Deux consignes font le reste. Les écarts se notent pendant le code, pas à la fin : à la fin, l'agent raconte ce qu'il aurait voulu faire. Et le plan ne se réécrit pas pour la PR, sinon on retombe sur le résumé rédigé après coup.
+
+Reste à savoir où ranger ce texte. Pas dans un *skill* : un skill se charge quand l'agent juge qu'il en a besoin, et ce jugement-là, je ne veux pas le lui laisser. Le plan doit tomber à chaque changement qui compte, pas quand l'agent y pense. Pas dans une *rule* rattachée à des chemins non plus : elle attend qu'on ouvre un fichier précis, et un plan n'est attaché à aucun.
+
+Sa place, c'est le fichier d'instructions lu à chaque session : le `CLAUDE.md` du dépôt, pour Claude Code. Et les six titres vont aussi dans le modèle de PR du dépôt, pour que le relecteur les retrouve même quand c'est un humain qui a écrit la PR.
+
+Sur l'outil interne où je travaille, mes PR motivent dans leur description les choix critiques : permissions, sécurité, écarts avec le ticket. Un paragraphe devenu faux y est barré, avec un lien vers ce qui le remplace.
+
+Le 18 novembre, un audit du code dupliqué a donné un plan découpé en lots, une fiche par PR. Le lendemain soir, cinq lots étaient fusionnés. Relire chacune de ces PR, c'était surtout relire sa fiche, puis vérifier que le diff racontait la même histoire.
+
+Bien sûr, il y a un piège. **Un plan peut mentir : seul le code fait foi.** Sur un chantier précédent, une PR annoncée à 100 ou 150 lignes en moins a fini à zéro net. Dans l'audit, 17 clés de traduction étaient annoncées comme mortes : 13 l'étaient vraiment.
+
+Le relecteur ne lâche donc pas le code. Ce qu'il traque, c'est l'écart entre ce que le plan promet et ce que le diff fait. C'est le travail de l'agent relecteur : on lui donne le plan et le diff, il liste ce que l'un promet et que l'autre ne fait pas. Les écarts, c'est l'agent qui a codé qui les déclare : il faut quelqu'un d'autre pour vérifier la liste.
+
+Autre limite : un plan de quinze pages, c'est un deuxième diff. Une page, lisible en dix minutes, sinon c'est raté.
+
+Et un bonus qu'on ne voit pas tout de suite. Le plan reste dans la PR. Six mois plus tard, quand quelqu'un se demande pourquoi c'est fait comme ça, la réponse est à un clic du commit.
+
+## Conclusion
+
+Pour nous, en ESN, il y a une question qui gratte : on vend des jours de développement. Si le développement devient la partie la moins chère, **qu'est-ce qu'on vend demain ?** Ma réponse du moment : du jugement. Savoir quoi construire, quoi ne pas construire, et prouver que ce qui est livré marche.
+
+Le code va vite. À nous de réapprendre à décider aussi vite, et à relire ce qui mérite de l'être. Et toi, tu relis encore tout ?
+
+## Ressources
+
+- [The Acceleration Whiplash](https://www.faros.ai/research/ai-acceleration-whiplash), AI Engineering Report 2026, Faros AI
+- [2026 Software Engineering Benchmarks Report](https://linearb.io/resources/software-engineering-benchmarks-report), LinearB
+- [State of AI-assisted Software Development 2025](https://dora.dev/research/2025/dora-report/), DORA, septembre 2025, lu via [InfoQ](https://www.infoq.com/news/2025/09/dora-state-of-ai-in-dev-2025/) et [l'annonce de Google Cloud](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report)
+- [AI-Assisted Fixes to Code Review Comments at Scale](https://arxiv.org/abs/2507.13499), Meta, juillet 2025
+- [Your job is to deliver code you have proven to work](https://simonwillison.net/2025/Dec/18/code-proven-to-work/), Simon Willison, décembre 2025
+- [Code Review in the Age of AI](https://addyosmani.com/blog/code-review-in-the-age-of-ai/), Addy Osmani, janvier 2026
+- [Plan Review Is the New Linter for AI-Generated Code](https://zencoder.ai/newsletter/plan-review-new-linter-ai-generated-code), Neeraj Khandelwal, Zencoder, juillet 2026
+- [Spec-driven development: how we review plans, not pull requests](https://www.giantswarm.io/blog/spec-driven-development), Dominik Schmidle, Giant Swarm, octobre 2026
+- [How to Get Through the Product Management Bottleneck](https://www.deeplearning.ai/the-batch/how-to-get-through-the-product-management-bottleneck), Andrew Ng, juillet 2025
+- [AI-Native Software Development Needs Generalists](https://www.deeplearning.ai/the-batch/ai-native-software-development-needs-generalists), Andrew Ng, avril 2026
+- [Anthropic's CPO on what comes next](https://www.lennysnewsletter.com/p/anthropics-cpo-heres-what-comes-next), Lenny's Podcast avec Mike Krieger, juin 2025
+- [TBM 427: The Bottleneck Strike Again!](https://cutlefish.substack.com/p/tbm-427-the-bottleneck-strike-again), John Cutler, juin 2026
+- [Spec-driven development with AI: Get started with a new open source toolkit](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/), GitHub, septembre 2025
+- [Introducing Kiro](https://kiro.dev/blog/introducing-kiro/), AWS, juillet 2025
+- [Reflexive AI usage](https://www.shopify.com/careers/candidate-guide/ai-usage), Tobi Lütke, Shopify, mémo de mars 2025, rendu public en avril 2025
