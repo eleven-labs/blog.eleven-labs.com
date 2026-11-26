@@ -3,6 +3,7 @@ import type {
   LayoutTemplateData,
   PostListPageData,
   PostPageData,
+  SearchPostData,
   TransformedAuthorData,
   TransformedPostData,
   TransformedPostDataWithoutContent,
@@ -119,6 +120,32 @@ export const getPostListPageData = (options: {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
 });
 
+export const getSearchData = (options: {
+  posts: TransformedPostData[];
+  authors: TransformedAuthorData[];
+}): SearchPostData[] =>
+  options.posts.map((post) => {
+    const authorsByPost = options.authors.filter((author) => post.authors.includes(author.username));
+    return {
+      contentType: post.contentType,
+      lang: post.lang,
+      slug: post.slug,
+      readingTime: post.readingTime,
+      title: post.title,
+      date: post.date,
+      excerpt: post.excerpt,
+      categories: post.categories || [],
+      authorUsernames: authorsByPost.map((author) => author.username),
+      authorNames: authorsByPost.map((author) => author.name),
+      keywords: post.keywords || [],
+      headings:
+        post.contentType === MARKDOWN_CONTENT_TYPES.TUTORIAL
+          ? post.steps.map((step) => step.title)
+          : post.summary.filter((heading) => heading.level === 2).map((heading) => heading.text),
+      cover: post.cover,
+    };
+  });
+
 const writeJsonFileSync = <TData = Record<string, unknown> | Array<unknown>>(options: {
   filePath: string;
   data: TData;
@@ -164,6 +191,16 @@ export const writeJsonDataFiles = (): void => {
           posts: postsByLangWithoutContentOrSteps,
           authors,
           lang,
+        }),
+      });
+
+      // L'index de recherche est construit dans le navigateur à partir de ces documents : ils pèsent
+      // quatre fois moins qu'un index sérialisé, et l'indexation ne prend que quelques millisecondes.
+      writeJsonFileSync({
+        filePath: resolve(DATA_DIR, `${lang}/search.json`),
+        data: getSearchData({
+          posts: postsByLang,
+          authors,
         }),
       });
 

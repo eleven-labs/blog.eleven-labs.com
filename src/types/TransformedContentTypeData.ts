@@ -1,7 +1,7 @@
 import type { ArticleData, AuthorData, TutorialData, TutorialStepData } from './ContentTypeData';
 
 export interface TransformedArticleData
-  extends Pick<ArticleData, 'lang' | 'slug' | 'cover' | 'title' | 'excerpt' | 'authors' | 'categories'> {
+  extends Pick<ArticleData, 'lang' | 'slug' | 'cover' | 'title' | 'excerpt' | 'authors' | 'categories' | 'keywords'> {
   contentType: 'article';
   summary: { id: string; level: number; text: string }[];
   date: string;
@@ -11,7 +11,7 @@ export interface TransformedArticleData
 }
 
 export interface TransformedTutorialData
-  extends Pick<TutorialData, 'lang' | 'slug' | 'cover' | 'title' | 'excerpt' | 'authors' | 'categories'> {
+  extends Pick<TutorialData, 'lang' | 'slug' | 'cover' | 'title' | 'excerpt' | 'authors' | 'categories' | 'keywords'> {
   contentType: 'tutorial';
   date: string;
   updatedAt?: string;

@@ -16,6 +16,7 @@ export type AutocompleteOptions = {
   onEnter?: (value: string) => void;
   /** Appelé après que le bouton de fermeture du champ l'a vidé. */
   onClose?: () => void;
+  onFocus?: React.FocusEventHandler<HTMLInputElement>;
   className?: string;
 };
 
@@ -33,6 +34,7 @@ export const Autocomplete: React.FC<AutocompleteProps> = ({
   onSelectedItemChange,
   onEnter,
   onClose: onCloseProp,
+  onFocus,
   isOpen: defaultIsOpen,
   className,
 }) => {
@@ -89,7 +91,7 @@ export const Autocomplete: React.FC<AutocompleteProps> = ({
         {placeholder}
       </label>
       <SearchField
-        input={getInputProps({ placeholder, onKeyDown: handleKeyDown })}
+        input={getInputProps({ placeholder, onKeyDown: handleKeyDown, onFocus })}
         buttonSearch={{ render: <a {...searchLinkProps} /> }}
         buttonClose={{ onClick: onClose }}
         className="relative z-3"

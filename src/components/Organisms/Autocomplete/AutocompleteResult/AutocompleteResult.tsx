@@ -74,6 +74,7 @@ export const AutocompleteResult = React.forwardRef<HTMLDivElement, AutocompleteR
                   className="line-clamp-4 text-black before:absolute before:inset-0 before:z-1 before:content-['_'] md:line-clamp-2"
                 />
                 <PostMetadata
+                  variant="compact"
                   className="mt-xxs-3"
                   date={date}
                   authors={authors}

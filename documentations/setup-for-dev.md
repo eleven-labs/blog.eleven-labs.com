@@ -112,7 +112,7 @@ cover:
 categories:
     - javascript | php | agile | architecture
 keywords:
-- keyword (limited to 10, must not be identical to the categories, informative only: not used for SEO nor for the search)
+- keyword (limited to 10, must not be identical to the categories, not used for SEO, but searched by the search engine of the blog)
 authors:
     - author's username
 seo:
@@ -224,7 +224,7 @@ excerpt: Description of the tutorial (Visible on the list pages)
 categories:
     - javascript | php | agile | architecture
 keywords:
-- keyword (limited to 10, must not be identical to the categories, informative only: not used for SEO nor for the search)
+- keyword (limited to 10, must not be identical to the categories, not used for SEO, but searched by the search engine of the blog)
 authors:
     - author's username
 steps:
